@@ -1,13 +1,13 @@
 {
-  "key_insight": "A reconstructed discontinuous Galerkin method on unfitted meshes achieves stable high-order interface discretization while enabling a low-order preconditioner with mesh-, coefficient-, and interface-independent conditioning.",
-  "engineering_relevance": "This offers a robust finite-element strategy for elliptic interface problems where geometry cuts the mesh, improving solver scalability and reliability in multiphysics and material-interface simulations.",
+  "key_insight": "A reconstructed discontinuous Galerkin formulation on unfitted meshes can be preconditioned using a lowest-order piecewise constant space, yielding mesh-, coefficient-, and interface-robust solver performance.",
+  "engineering_relevance": "This enables accurate and efficient simulation of elliptic interface problems with complex geometries without requiring mesh conformity to the interface.",
   "method": [
-    "Build a high-order reconstructed discontinuous space from local least-squares fitting with added constraints.",
-    "Enforce interface jump conditions weakly using Nitsche’s penalty formulation in a cut DG framework.",
-    "Derive norm equivalence to a piecewise-constant space and use it to form an optimal preconditioner with multigrid inversion for the lowest-order system."
+    "Build a high-order reconstructed discontinuous approximation from local least-squares fits with one DOF per element.",
+    "Modify the local reconstruction with constraints to improve stability near the interface and prove norm equivalence to the lowest-order space.",
+    "Use the piecewise constant space as a preconditioner, with multigrid acting as the inverse of the lowest-order system."
   ],
-  "evidence_signal": "Numerical experiments in 2D and 3D report optimal convergence rates and show that the preconditioned condition number remains robust with respect to mesh size, coefficient contrast, and interface position.",
-  "watch_item": "Performance depends on the quality and stability of the local constrained reconstruction near complex interfaces, so implementation details of the fitting and cut-cell handling matter.",
+  "evidence_signal": "Numerical experiments in 2D and 3D report optimal convergence and show the preconditioner remains effective independent of mesh size, coefficients, and interface position.",
+  "watch_item": "Performance depends on the quality of the local reconstruction and the multigrid solve for the lowest-order system, which may require careful implementation on highly cut meshes.",
   "hashtags": [
     "#FiniteElementMethod",
     "#DiscontinuousGalerkin",
@@ -19,6 +19,6 @@
   "paper_title": "Preconditioned Discontinuous Galerkin Method for Elliptic Interface Problem on Unfitted Mesh with Reconstructed Discontinuous Approximation",
   "paper_date": "2026-05-27",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-05-30T23:14:29",
+  "generated_at": "2026-05-31T10:53:01",
   "generator": "openai"
 }

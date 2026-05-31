@@ -26,80 +26,27 @@
     ],
     "score": 79,
     "infographic": {
-      "key_insight": "IGA-ODIL replaces neural-network PINN parameterizations with smooth B-spline/isogeometric bases, making residual minimization faster, sparser, and better conditioned for both forward and inverse PDE problems.",
-      "engineering_relevance": "This offers a practical surrogate-solving route for solid mechanics and PDE-based engineering models when PINNs are too slow or unstable to optimize.",
+      "key_insight": "IGA-ODIL replaces neural-network PINN parameterizations with smooth B-spline/isogeometric bases, yielding sparse Gauss--Newton optimization and faster, more stable residual minimization.",
+      "engineering_relevance": "The approach offers a practical surrogate-solver framework for forward and inverse PDE problems where accuracy, conditioning, and runtime matter in computational engineering workflows.",
       "method": [
-        "Represent unknown fields with B-spline basis functions instead of neural networks.",
-        "Minimize robust residual losses using weighted Gram operators so the loss better reflects true error.",
-        "Use sparse, structured Gauss-Newton optimization enabled by isogeometric analysis."
+        "Represent the unknown field with B-spline basis functions from Isogeometric Analysis (IGA).",
+        "Minimize a robust residual loss derived from ODIL and weighted Gram operators.",
+        "Exploit sparse Jacobians and Gauss--Newton iterations for efficient optimization."
       ],
-      "evidence_signal": "The abstract reports benchmark tests on Poisson, advection-diffusion, Helmholtz, Allen–Cahn, and inverse Helmholtz problems, with orders-of-magnitude speedups over PINNs and CRVPINNs while preserving high accuracy.",
-      "watch_item": "Performance depends on robust Gauss-Newton optimization and spline discretization quality, so difficult geometries, poor initial guesses, or ill-conditioned inverse setups may still require careful tuning.",
+      "evidence_signal": "The method was benchmarked on Poisson, advection--diffusion, Helmholtz, Allen--Cahn, and inverse Helmholtz problems, showing orders-of-magnitude speedups over PINNs and CRVPINNs while preserving high accuracy.",
+      "watch_item": "Performance may depend on careful spline discretization, problem conditioning, and implementation of the Gauss--Newton solver for stiff or highly oscillatory PDEs.",
       "hashtags": [
+        "#ScientificMachineLearning",
         "#IsogeometricAnalysis",
         "#PINNs",
-        "#ScientificMachineLearning",
-        "#PDEsolvers",
-        "#InverseProblems"
+        "#PDEs",
+        "#NumericalOptimization"
       ],
       "paper_id": "2026-05-28-arxiv-iga_odil_optimizing_discretre_robust_loss_with_isogeometric_analysis_to_solve_forward_and",
       "paper_title": "IGA-ODIL: Optimizing DIscretre robust Loss with Isogeometric Analysis to solve forward and inverse problems faster using machine learning tools",
       "paper_date": "2026-05-28",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:13:58",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-26-arxiv-high_fidelity_industrial_crash_dynamics_prediction_via_geometry_aware_operator_learning_wi",
-    "arxiv_id": "2605.27758v1",
-    "date": "2026-05-26",
-    "title": "High-Fidelity Industrial Crash Dynamics Prediction via Geometry-Aware Operator Learning with Memory-Efficient Low-Rank Attention",
-    "authors": "Deepak Akhare, Mohammad Amin Nabian, Corey Adams, Sudeep Chavare, Sanjay Choudhry",
-    "abstract": "Automotive crashworthiness optimization remains a safety-critical challenge, requiring the management of large-scale nonlinear structural deformations and energy dissipation through iterative, high-fidelity simulations. While traditional finite element solvers are computationally prohibitive, emerging operator learning frameworks provide rapid surrogate predictions; however, applying them to industrial-scale crash analysis, where complex geometry, contact nonlinearities, and rapidly evolving transient deformation coexist, remains an open challenge. In this paper, we demonstrate that the GeoTransolver framework provides a viable solution for accurate, high-fidelity crash dynamics prediction at industrial scale. Benchmarked on complex bumper beam and full-vehicle crash datasets, GeoTransolver captures multi-scale geometric context and accurately resolves plastic deformation patterns as well as acceleration profiles at critical occupant locations. Beyond the architecture itself, we propose and systematically evaluate a suite of temporal prediction recipes, including one-shot, time-conditional, and autoregressive rollout strategies, demonstrating that the one-shot approach achieves state-of-the-art accuracy with significantly reduced training overhead and inference latency. As a secondary contribution, we introduce a Fast Low-rank Attention Routing Engine (FLARE)-based modification to the GeoTransolver attention backbone that reduces memory overhead by approximately 2x while further improving predictive accuracy for O(N) long-range, high-frequency transients, preserving the geometry-aware cross-attention strengths of the base framework. Our results highlight the practical viability of geometry-aware operator learning for high-fidelity surrogate modeling of complex, safety-critical automotive dynamics.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-05-26T23:15:53Z",
-    "updated": "2026-05-26T23:15:53Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "cs.AI",
-      "physics.comp-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.27758v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.27758v1"
-      }
-    ],
-    "score": 70,
-    "infographic": {
-      "key_insight": "Geometry-aware operator learning can predict industrial crash dynamics with high fidelity, capturing complex deformation and transient responses more efficiently than traditional FEM.",
-      "engineering_relevance": "This enables faster crashworthiness evaluation and design iteration for safety-critical automotive structures without sacrificing key physical accuracy.",
-      "method": [
-        "GeoTransolver learns crash dynamics with geometry-aware cross-attention.",
-        "Compared one-shot, time-conditional, and autoregressive temporal rollout strategies.",
-        "Added FLARE low-rank attention to cut memory use and improve long-range transient prediction."
-      ],
-      "evidence_signal": "Validated on complex bumper beam and full-vehicle crash datasets, with one-shot prediction reported as state-of-the-art in accuracy while reducing training overhead and inference latency.",
-      "watch_item": "Performance depends on robust handling of contact nonlinearities and evolving deformation, so generalization to unseen crash scenarios should be checked carefully.",
-      "hashtags": [
-        "#CrashDynamics",
-        "#OperatorLearning",
-        "#FiniteElementSurrogates",
-        "#AutomotiveSafety",
-        "#GeometryAwareAI"
-      ],
-      "paper_id": "2026-05-26-arxiv-high_fidelity_industrial_crash_dynamics_prediction_via_geometry_aware_operator_learning_wi",
-      "paper_title": "High-Fidelity Industrial Crash Dynamics Prediction via Geometry-Aware Operator Learning with Memory-Efficient Low-Rank Attention",
-      "paper_date": "2026-05-26",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:14:00",
+      "generated_at": "2026-05-31T10:52:33",
       "generator": "openai"
     }
   },
@@ -132,27 +79,80 @@
     ],
     "score": 65,
     "infographic": {
-      "key_insight": "LEIA is a real-time learned world model that predicts step-by-step deformation and stress responses of architected materials under interactive loading.",
-      "engineering_relevance": "It could accelerate solid mechanics design by replacing repeated finite element solves with fast surrogate exploration and ranking of candidate material designs.",
+      "key_insight": "LEIA is a learned world model for solid mechanics that updates deformation and stress fields step by step under applied boundary conditions, even for large 3D architected materials.",
+      "engineering_relevance": "It offers real-time surrogate analysis and candidate ranking for architected material design, helping accelerate FEM-guided discovery and optimization.",
       "method": [
-        "Autoregressive world model for interactive boundary-condition updates",
-        "Supports large 3D unstructured meshes and history-dependent responses",
-        "Benchmarked on MicroPlate across explicit lattice and implicit microstructure regimes"
+        "Autoregressive world model for interactive loading and response prediction",
+        "Handles both explicit lattice microstructures and implicit homogeneous models with internal state",
+        "Works on large 3D unstructured meshes with nonlinear, history-dependent behavior"
       ],
-      "evidence_signal": "The abstract reports comparison against four baselines on the MicroPlate benchmark and validation of stress-accurate candidate ranking against finite element ground truth.",
-      "watch_item": "Performance may depend on how well the training data covers nonlinear, history-dependent, and multiscale loading regimes, especially for out-of-distribution designs.",
+      "evidence_signal": "The paper evaluates LEIA on MicroPlate, a benchmark spanning two microstructure regimes, and compares it against four baseline methods with finite-element ground truth for stress-accurate ranking.",
+      "watch_item": "Performance may depend on benchmark-specific training data and careful handling of mesh complexity, history effects, and extrapolation to unseen loading or designs.",
       "hashtags": [
-        "#FEMSurrogate",
         "#ComputationalMechanics",
+        "#SurrogateModel",
+        "#FiniteElementMethod",
         "#ArchitectedMaterials",
-        "#WorldModel",
-        "#DesignOptimization"
+        "#AIForEngineering"
       ],
       "paper_id": "2026-05-27-arxiv-leia_learned_environment_for_interactive_architected_materials",
       "paper_title": "LEIA: Learned Environment for Interactive Architected Materials",
       "paper_date": "2026-05-27",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:14:05",
+      "generated_at": "2026-05-31T10:52:36",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-26-arxiv-high_fidelity_industrial_crash_dynamics_prediction_via_geometry_aware_operator_learning_wi",
+    "arxiv_id": "2605.27758v1",
+    "date": "2026-05-26",
+    "title": "High-Fidelity Industrial Crash Dynamics Prediction via Geometry-Aware Operator Learning with Memory-Efficient Low-Rank Attention",
+    "authors": "Deepak Akhare, Mohammad Amin Nabian, Corey Adams, Sudeep Chavare, Sanjay Choudhry",
+    "abstract": "Automotive crashworthiness optimization remains a safety-critical challenge, requiring the management of large-scale nonlinear structural deformations and energy dissipation through iterative, high-fidelity simulations. While traditional finite element solvers are computationally prohibitive, emerging operator learning frameworks provide rapid surrogate predictions; however, applying them to industrial-scale crash analysis, where complex geometry, contact nonlinearities, and rapidly evolving transient deformation coexist, remains an open challenge. In this paper, we demonstrate that the GeoTransolver framework provides a viable solution for accurate, high-fidelity crash dynamics prediction at industrial scale. Benchmarked on complex bumper beam and full-vehicle crash datasets, GeoTransolver captures multi-scale geometric context and accurately resolves plastic deformation patterns as well as acceleration profiles at critical occupant locations. Beyond the architecture itself, we propose and systematically evaluate a suite of temporal prediction recipes, including one-shot, time-conditional, and autoregressive rollout strategies, demonstrating that the one-shot approach achieves state-of-the-art accuracy with significantly reduced training overhead and inference latency. As a secondary contribution, we introduce a Fast Low-rank Attention Routing Engine (FLARE)-based modification to the GeoTransolver attention backbone that reduces memory overhead by approximately 2x while further improving predictive accuracy for O(N) long-range, high-frequency transients, preserving the geometry-aware cross-attention strengths of the base framework. Our results highlight the practical viability of geometry-aware operator learning for high-fidelity surrogate modeling of complex, safety-critical automotive dynamics.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-05-26T23:15:53Z",
+    "updated": "2026-05-26T23:15:53Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.27758v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.27758v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "Geometry-aware operator learning can accurately predict industrial crash dynamics while capturing both deformation and acceleration responses with much lower cost than full finite element simulation.",
+      "engineering_relevance": "This enables faster crashworthiness design iteration for safety-critical automotive structures, supporting surrogate-based optimization on complex nonlinear transient problems.",
+      "method": [
+        "Use GeoTransolver to learn crash dynamics from complex bumper beam and full-vehicle geometries.",
+        "Compare one-shot, time-conditional, and autoregressive temporal prediction recipes.",
+        "Add FLARE low-rank attention to cut memory use while preserving long-range geometric interactions."
+      ],
+      "evidence_signal": "The approach is benchmarked on complex bumper beam and full-vehicle crash datasets, with one-shot prediction reported as state-of-the-art and FLARE improving accuracy while reducing memory by about 2x.",
+      "watch_item": "Performance may depend on the quality and diversity of training crash datasets, and industrial deployment will need validation across unseen geometries, materials, and contact conditions.",
+      "hashtags": [
+        "#CrashDynamics",
+        "#OperatorLearning",
+        "#FiniteElementSurrogates",
+        "#AutomotiveSafety",
+        "#GeometryAwareAI"
+      ],
+      "paper_id": "2026-05-26-arxiv-high_fidelity_industrial_crash_dynamics_prediction_via_geometry_aware_operator_learning_wi",
+      "paper_title": "High-Fidelity Industrial Crash Dynamics Prediction via Geometry-Aware Operator Learning with Memory-Efficient Low-Rank Attention",
+      "paper_date": "2026-05-26",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-05-31T10:52:38",
       "generator": "openai"
     }
   },
@@ -184,27 +184,27 @@
     ],
     "score": 65,
     "infographic": {
-      "key_insight": "PINNsur extends physics-informed neural networks to PDEs on curved surfaces by learning surface normals and projecting Euclidean differential operators onto the manifold.",
-      "engineering_relevance": "This offers a mesh-free alternative to FEM for geometry-processing and surface PDE problems, potentially reducing sensitivity to mesh quality and geometric discretization errors.",
+      "key_insight": "PINNSur extends physics-informed neural networks to curved surfaces by learning surface normals and projecting 3D differential operators onto the manifold, making PINNs usable for broad classes of orientable surfaces.",
+      "engineering_relevance": "This offers a mesh-free alternative to FEM for surface PDEs, potentially reducing sensitivity to mesh quality and geometric discretization in geometry processing and scientific computing.",
       "method": [
-        "Train a neural field to approximate surface normals on the curved manifold.",
-        "Compute surface differential operators by projecting operators from R^3 onto the surface.",
-        "Use the framework on orientable surfaces of arbitrary curvature/topology and test convergence empirically."
+        "Train a neural field to approximate the surface normal vector field.",
+        "Define surface differential operators by projecting Euclidean operators from R^3 onto the surface.",
+        "Use the framework to solve PDEs directly on curved, orientable manifolds."
       ],
-      "evidence_signal": "The abstract reports an empirical convergence test to study whether the PINN solution and the surface approximation converge toward the true PDE solution.",
-      "watch_item": "Accuracy depends on both the learned geometry (normals/surface representation) and the PDE solution, so geometric approximation error can limit convergence.",
+      "evidence_signal": "The paper evaluates convergence behavior with a simple empirical convergence test, focusing on whether PINNs can approach the true surface PDE solution as both function and geometry approximations improve.",
+      "watch_item": "Reliable performance depends on accurately learning normals and geometric approximations, so convergence may be limited by surface representation errors as well as the usual PINN optimization challenges.",
       "hashtags": [
         "#PINNs",
         "#SurfacePDEs",
-        "#ScientificComputing",
+        "#FEMSurrogates",
         "#GeometryProcessing",
-        "#FEMAlternatives"
+        "#ScientificComputing"
       ],
       "paper_id": "2026-05-26-arxiv-pinnsur_physics_informed_neural_networks_for_pdes_on_curved_surfaces",
       "paper_title": "PINNsur: Physics-Informed Neural Networks for PDEs on Curved Surfaces",
       "paper_date": "2026-05-26",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:14:07",
+      "generated_at": "2026-05-31T10:52:41",
       "generator": "openai"
     }
   },
@@ -235,15 +235,15 @@
     ],
     "score": 64,
     "infographic": {
-      "key_insight": "Chat-ISV uses a knowledge graph plus multi-agent retrieval to give traceable, lower-hallucination answers for hard industrial VOCs questions in the steel industry.",
-      "engineering_relevance": "It turns scattered environmental engineering literature into a decision-support system that can help engineers identify and compare pollution-control options with source-backed evidence.",
+      "key_insight": "Chat-ISV turns scattered steel-industry VOC knowledge into a traceable knowledge graph so LLMs can answer specialized pollution-control questions with less hallucination.",
+      "engineering_relevance": "The framework supports reliable decision support for industrial emissions management by linking process, pollutant, and control-technology evidence in a queryable environment.",
       "method": [
-        "Parse a curated steel-industry VOCs literature corpus into a Neo4j knowledge graph.",
-        "Use prompt-constrained extraction, chunk-centered topology optimization, and source-backtracking retrieval.",
-        "Combine multi-agent routing, local literature retrieval, open-domain knowledge access, and subgraph visualization."
+        "Parsed a curated VOC literature corpus and built a Neo4j knowledge graph with 27,180 nodes and 81,779 semantic edges.",
+        "Used prompt-constrained extraction, chunk-centered topology optimization, and multi-agent routing for retrieval and answer generation.",
+        "Added source-backtracking, local literature retrieval, open-domain knowledge access, and interactive subgraph visualization."
       ],
-      "evidence_signal": "The system was built on 27,180 nodes and 81,779 semantic edges, and evaluation showed 96.93% precision, 72.63% recall, an F1-score of 0.830, and a mean expert score of 1.69/2.00.",
-      "watch_item": "Performance depends on the quality and coverage of the curated literature corpus, so incomplete or outdated sources could limit answer reliability.",
+      "evidence_signal": "Benchmark tests and 400 expert blind evaluations reported 96.93% precision, 72.63% recall, F1 = 0.830, and a mean score of 1.69/2.00; topology optimization reduced isolated nodes from 57% to 4.08%.",
+      "watch_item": "Performance depends on high-quality curated literature and graph construction, so coverage gaps or extraction errors could still affect answer reliability.",
       "hashtags": [
         "#KnowledgeGraph",
         "#LLM",
@@ -255,58 +255,7 @@
       "paper_title": "Traceable Knowledge Graph Reasoning Enables LLM-Assisted Decision Support for Industrial VOCs in the Steel Industry",
       "paper_date": "2026-05-26",
       "paper_category": "Topology Optimization",
-      "generated_at": "2026-05-30T23:14:09",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-28-arxiv-bistability_of_midpoint_fused_arches_with_pinned_pinned_boundary_conditions",
-    "arxiv_id": "2605.29239v1",
-    "date": "2026-05-28",
-    "title": "Bistability of midpoint-fused arches with pinned-pinned boundary conditions",
-    "authors": "Rajat Goswami, Safvan Palathingal",
-    "abstract": "Arranging multiple arches in a circular pattern and fusing them at their midpoint yields a three-dimensional configuration that we refer to as midpoint-fused arches (MFA). This study investigates the structural bistability of MFA, i.e., their ability to admit two distinct, force-free stable equilibrium states. Starting from an as-fabricated, stress-free configuration, MFA can invert into a stressed, toggled state reminiscent of an umbrella's ribs. We develop an analytical model for the response of a pinned-pinned MFA subjected to a concentrated mid-span load by minimizing the total potential energy. Individual arches are treated as spatially deforming, and kinematic compatibility relations are derived at the fusion point to couple their deformations. Various deformation symmetries are then exploited to simplify the problem. We demonstrate the model's utility by characterizing the force-displacement response of a two-arch MFA, identifying distinct deformation pathways and discussing the pathway transitions that occur during toggling. In particular, we show how the structure switches between symmetric and asymmetric deformation modes as it moves between stable configurations. The generality of the framework is further established through analysis of a three-arch MFA, which exhibits richer coupled deformation behaviour. Nonlinear finite-element simulations and table-top experiments corroborate the analytical predictions, showing close agreement in both equilibrium states and the associated transition responses.",
-    "category": "Physics-Informed ML",
-    "source": "arXiv",
-    "published": "2026-05-28T01:59:47Z",
-    "updated": "2026-05-28T01:59:47Z",
-    "primary_category": "cond-mat.soft",
-    "categories": [
-      "cond-mat.soft"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29239v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29239v1"
-      }
-    ],
-    "score": 63,
-    "infographic": {
-      "key_insight": "Midpoint-fused arches can be designed to be bistable, snapping between two force-free equilibrium shapes through nonlinear coupled deformation.",
-      "engineering_relevance": "This offers a lightweight structural mechanism for deployable, switchable, and energy-storing systems inspired by umbrella-like rib inversion.",
-      "method": [
-        "Built an analytical energy-minimization model for pinned-pinned midpoint-fused arches under a concentrated mid-span load.",
-        "Enforced kinematic compatibility at the fusion point to couple the deformation of individual arches.",
-        "Explored symmetric and asymmetric deformation pathways for two-arch and three-arch configurations."
-      ],
-      "evidence_signal": "The analytical predictions were corroborated by nonlinear finite-element simulations and table-top experiments, with close agreement in both equilibrium states and transition responses.",
-      "watch_item": "The bistable response depends strongly on boundary conditions, geometric symmetry, and pathway transitions, so fabrication tolerances and load placement may affect real-world switching behavior.",
-      "hashtags": [
-        "#Bistability",
-        "#SolidMechanics",
-        "#StructuralDynamics",
-        "#NonlinearAnalysis",
-        "#FiniteElement"
-      ],
-      "paper_id": "2026-05-28-arxiv-bistability_of_midpoint_fused_arches_with_pinned_pinned_boundary_conditions",
-      "paper_title": "Bistability of midpoint-fused arches with pinned-pinned boundary conditions",
-      "paper_date": "2026-05-28",
-      "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-05-30T23:14:11",
+      "generated_at": "2026-05-31T10:52:43",
       "generator": "openai"
     }
   },
@@ -339,80 +288,27 @@
     ],
     "score": 61,
     "infographic": {
-      "key_insight": "An interpretable vision-transformer can classify fracture causes in zirconia-toughened alumina from SEM images, and low-magnification views can be nearly as informative as high-magnification ones.",
-      "engineering_relevance": "This could speed up implant quality assurance by enabling earlier, lower-cost pre-screening of fracture origins while reducing dependence on time-intensive expert fractography.",
+      "key_insight": "An interpretable vision transformer can classify fracture causes in zirconia-toughened alumina from SEM images, and low-magnification views can be nearly as informative as high-magnification ones.",
+      "engineering_relevance": "This enables faster, less subjective implant fracture QA by using low-magnification SEM as an effective pre-screening step for ceramic quality control.",
       "method": [
-        "Curated 8,493 SEM fracture images from 5 years of production burst and proof tests",
-        "Trained a fine-tuned ViT to classify three defect origins: green body, hard machining, and material defects",
-        "Used Grad-CAM plus leakage auditing (phash/SSIM) to verify interpretability and minimize specimen overlap"
+        "Fine-tuned ViT on 8,493 SEM images spanning 50x to 10,000x magnification.",
+        "Classified fractures into three manufacturing-related defect classes: green body, hard machining, and material defects.",
+        "Used Grad-CAM plus leakage auditing to check interpretability and specimen independence."
       ],
-      "evidence_signal": "In stratified five-fold cross-validation, the model achieved 0.907 accuracy and 0.888 macro-F1, with low-magnification (50x) performance comparable to 1k–10kx images.",
-      "watch_item": "Deployment should account for severe class imbalance and the need to validate generalization on new production lines, imaging setups, and rare defect types.",
+      "evidence_signal": "In stratified five-fold cross-validation, the model achieved 0.907 accuracy and 0.888 macro-F1, with comparable performance at 50x and at 1k-10kx magnification.",
+      "watch_item": "The workflow was validated on a specific ceramic implant material and manufacturing test dataset, so broader deployment will need external validation across other scanners, labs, and failure modes.",
       "hashtags": [
-        "#Fractography",
-        "#VisionTransformer",
+        "#FractureMechanics",
         "#SEM",
-        "#CeramicImplants",
-        "#QualityAssurance"
+        "#VisionTransformer",
+        "#InterpretableAI",
+        "#BiomedicalMaterials"
       ],
       "paper_id": "2026-05-28-arxiv-low_magnification_sem_may_suffice_interpretable_deep_learning_for_multi_scale_fracture_cau",
       "paper_title": "Low-Magnification SEM May Suffice: Interpretable Deep Learning for Multi-Scale Fracture-Cause Classification in Zirconia-Toughened Alumina",
       "paper_date": "2026-05-28",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-05-30T23:14:14",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-27-arxiv-a_variational_quantum_algorithm_for_nonlinear_finite_element_analysis_of_hyperelastic_mate",
-    "arxiv_id": "2605.29181v1",
-    "date": "2026-05-27",
-    "title": "A Variational Quantum Algorithm for Nonlinear Finite Element Analysis of Hyperelastic Materials",
-    "authors": "Uditnarayan Kouskiya, Caglar Oskay",
-    "abstract": "This manuscript explores a variational quantum formulation for nonlinear elasticity problems arising from hyperelastic material models, targeting near term noisy intermediate scale quantum (NISQ) devices. The approach leverages the potential energy structure of hyperelasticity and employs a hybrid quantum classical framework in which the energy functional is evaluated using parameterized quantum circuits and optimized through classical routines. To enable implementation on current quantum hardware, polynomial approximations of the nonlinear strain energy density are introduced, yielding a representation compatible with variational quantum algorithms. The methodology is demonstrated on a one dimensional NeoHookean material model using finite element discretizations with first and second order shape functions and nonhomogeneous boundary conditions. Numerical experiments investigate the influence of the polynomial approximation order on the accuracy and efficiency of the proposed approach, illustrating its feasibility for near term quantum devices.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-05-27T23:37:04Z",
-    "updated": "2026-05-27T23:37:04Z",
-    "primary_category": "quant-ph",
-    "categories": [
-      "quant-ph",
-      "math.NA",
-      "physics.comp-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29181v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29181v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "The paper reformulates nonlinear hyperelastic finite element analysis as a variational quantum optimization problem by approximating the strain energy with polynomials suitable for NISQ hardware.",
-      "engineering_relevance": "This offers a potential hybrid quantum-classical path for solving nonlinear solid mechanics problems, especially where classical nonlinear FE solves are costly.",
-      "method": [
-        "Use potential energy minimization for hyperelasticity in a hybrid quantum-classical loop",
-        "Approximate nonlinear strain energy density with polynomial forms to make it quantum-circuit compatible",
-        "Test the framework on a 1D Neo-Hookean model with first- and second-order FE shape functions and nonhomogeneous boundary conditions"
-      ],
-      "evidence_signal": "The abstract reports numerical experiments comparing polynomial approximation orders and assessing accuracy and efficiency on a 1D Neo-Hookean finite element benchmark.",
-      "watch_item": "Performance likely depends strongly on polynomial approximation order and the method is demonstrated only on a simplified 1D model, so scalability to full 3D problems remains uncertain.",
-      "hashtags": [
-        "#QuantumComputing",
-        "#FiniteElementAnalysis",
-        "#Hyperelasticity",
-        "#VariationalAlgorithms",
-        "#NISQ"
-      ],
-      "paper_id": "2026-05-27-arxiv-a_variational_quantum_algorithm_for_nonlinear_finite_element_analysis_of_hyperelastic_mate",
-      "paper_title": "A Variational Quantum Algorithm for Nonlinear Finite Element Analysis of Hyperelastic Materials",
-      "paper_date": "2026-05-27",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-05-30T23:14:16",
+      "generated_at": "2026-05-31T10:52:45",
       "generator": "openai"
     }
   },
@@ -444,27 +340,27 @@
     ],
     "score": 61,
     "infographic": {
-      "key_insight": "VFEAgent automates the full finite element analysis workflow from images and text by combining multimodal reasoning with verification-first code generation.",
-      "engineering_relevance": "This could reduce manual setup effort in engineering simulation and make FEA more accessible to users without deep domain expertise.",
+      "key_insight": "VFEAgent automates finite element analysis end-to-end from images and text by combining multimodal reasoning with verification-first code generation.",
+      "engineering_relevance": "The framework can reduce manual modeling effort and make FEA more accessible for engineering design workflows that require fast, reliable simulation.",
       "method": [
-        "Uses a multimodal vision-language multi-agent pipeline to extract structured FEA specifications from heterogeneous inputs.",
-        "Applies ReAct-style reasoning to plan and refine the analysis workflow.",
-        "Generates simulation code with self-debugging, fallback, and validation checks to improve executability and physical correctness."
+        "Multimodal vision-language multi-agent pipeline parses heterogeneous inputs into structured FEA specifications.",
+        "ReAct-style reasoning guides task decomposition and decision-making across agents.",
+        "Verification-first code synthesis adds self-debugging and fallback mechanisms to ensure executable, physically valid simulations."
       ],
-      "evidence_signal": "The abstract reports systematic evaluation across multiple engineering mechanics scenarios, with VFEAgent achieving a high success rate and outperforming LLM-based baselines in reliability and correctness.",
-      "watch_item": "Performance depends on accurate interpretation of input images and the robustness of automated code verification, so ambiguous geometry or physics assumptions may still require human review.",
+      "evidence_signal": "The authors evaluated VFEAgent across multiple engineering mechanics scenarios and report higher success in generating complete, physically valid simulations than LLM-based baselines.",
+      "watch_item": "Performance likely depends on the quality of input images/descriptions and robust handling of edge cases, so human review may still be needed for safety-critical analyses.",
       "hashtags": [
         "#FiniteElementAnalysis",
-        "#AIforEngineering",
         "#MultimodalAI",
         "#AgenticAI",
+        "#EngineeringSimulation",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-05-27-arxiv-vfeagent_a_multimodal_agent_framework_for_end_to_end_automated_finite_element_analysis",
       "paper_title": "VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis",
       "paper_date": "2026-05-27",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:14:18",
+      "generated_at": "2026-05-31T10:52:47",
       "generator": "openai"
     }
   },
@@ -495,27 +391,27 @@
     ],
     "score": 61,
     "infographic": {
-      "key_insight": "The paper introduces a polyconvex, symmetry-aware constitutive modeling framework that enforces key mechanical admissibility conditions while remaining flexible enough for anisotropic hyperelastic materials.",
-      "engineering_relevance": "This advances reliable data-driven material laws for solids, especially for metamaterials and other anisotropic structures where stability, symmetry, and physical consistency are critical.",
+      "key_insight": "The paper introduces a polyconvex, symmetry-aware framework for anisotropic hyperelasticity that can satisfy standard mechanical constitutive requirements by construction.",
+      "engineering_relevance": "This enables more reliable constitutive models for complex materials, especially for physics-augmented neural networks used in nonlinear solid mechanics.",
       "method": [
-        "Build a polyconvex PANN using triclinic invariants plus group symmetrization.",
-        "Construct polyconvex invariant bases for finite symmetry groups, including new tetragonal and cubic bases.",
-        "Benchmark the models on highly nonlinear homogenization data of cubic metamaterials."
+        "Builds a new PANN constitutive model using triclinic invariants and group symmetrization.",
+        "Derives polyconvex invariants/bases for multiple symmetry classes, including new results for tetragonal and cubic groups.",
+        "Uses finite symmetry-group structure so constitutive conditions are enforced a priori."
       ],
-      "evidence_signal": "The abstract reports an extensive benchmark against highly nonlinear homogenization data from cubic metamaterials, indicating the method was tested on challenging nonlinear response data.",
-      "watch_item": "The framework is tailored to finite symmetry groups and may require careful basis construction or symmetry specification when extending to more general material classes.",
+      "evidence_signal": "The proposed models are benchmarked against highly nonlinear homogenization data from cubic metamaterials.",
+      "watch_item": "The approach relies on carefully chosen symmetry-group and invariant constructions, so extending it to more complex or imperfect material symmetries may require additional derivations.",
       "hashtags": [
         "#Hyperelasticity",
         "#Polyconvexity",
+        "#AnisotropicMaterials",
         "#ConstitutiveModeling",
-        "#NeuralMaterials",
-        "#SolidMechanics"
+        "#PhysicsAugmentedNN"
       ],
       "paper_id": "2026-05-26-arxiv-advances_in_polyconvex_anisotropic_hyperelasticity",
       "paper_title": "Advances in polyconvex anisotropic hyperelasticity",
       "paper_date": "2026-05-26",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-05-30T23:14:20",
+      "generated_at": "2026-05-31T10:52:50",
       "generator": "openai"
     }
   },
@@ -547,27 +443,27 @@
     ],
     "score": 60,
     "infographic": {
-      "key_insight": "Ultrasound-driven microbubbles can penetrate dense fibrin networks and, through repeated sub-fracture oscillatory loading, progressively soften and damage the matrix rather than breaking fibers in a single event.",
-      "engineering_relevance": "This provides a mechanistic basis for using acoustic cavitation to improve drug transport and thrombolysis in stiff, fibrotic blood clots.",
+      "key_insight": "Ultrasound-driven cavitation bubbles can penetrate dense fibrin networks and, through repeated sub-fracture oscillatory loading, progressively soften and damage the mesh while creating transport pathways.",
+      "engineering_relevance": "This provides a mechanistic basis for using acoustic cavitation to improve drug penetration and thrombolysis in stiff, fibrotic clots.",
       "method": [
-        "Observed bubble–fibrin interactions under ultrasound-driven cavitation",
-        "Measured network mechanical response over thousands of loading cycles",
-        "Compared response across peak force levels to distinguish shakedown from progressive damage"
+        "Drive microbubbles with ultrasound in dense fibrin networks",
+        "Track bubble penetration, oscillation, and 3D path formation",
+        "Measure network mechanics over thousands of loading cycles"
       ],
-      "evidence_signal": "The abstract reports penetrated bubbles forming 3D transport paths, nanobead infiltration to about 200 \u0000bm depth, and drastic dissipation losses with network softening over thousands of cycles.",
-      "watch_item": "The reported benefits depend on repeated cyclic loading and force level, so translating this to therapy will require careful control to avoid unintended tissue damage or insufficient cavitation.",
+      "evidence_signal": "The abstract reports bubble-created 3D paths enabling nanobeads to infiltrate up to 200 µm deep, along with strong dissipation losses and softening over thousands of cycles.",
+      "watch_item": "The bubble radial stress was insufficient to cause single-cycle fracture, so effectiveness depends on repeated loading and the resulting damage accumulation rather than immediate breakage.",
       "hashtags": [
         "#AcousticCavitation",
-        "#FibrinNetworks",
+        "#Fibrin",
         "#Thrombolysis",
-        "#FractureMechanics",
-        "#SoftMatter"
+        "#Viscoplasticity",
+        "#Mechanobiology"
       ],
       "paper_id": "2026-05-27-arxiv-interaction_mechanics_of_acoustic_cavitation_with_fibrin_networks",
       "paper_title": "Interaction mechanics of acoustic cavitation with fibrin networks",
       "paper_date": "2026-05-27",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-05-30T23:14:22",
+      "generated_at": "2026-05-31T10:52:52",
       "generator": "openai"
     }
   },
@@ -598,27 +494,78 @@
     ],
     "score": 59,
     "infographic": {
-      "key_insight": "A multiphysics phase-field model links fracture mechanics and piezoresistive sensing in short carbon fiber composites, enabling damage to be inferred from electrical signals.",
-      "engineering_relevance": "The framework offers a physics-based path for real-time structural health monitoring and inverse crack assessment in self-sensing SCFRP components.",
+      "key_insight": "A unified multiphysics phase-field model links anisotropic, rate-dependent fracture and piezoresistive conductivity through fiber orientation, enabling damage inference in short carbon fiber composites.",
+      "engineering_relevance": "It provides a physics-based route for real-time structural health monitoring of SCFRP parts without direct mechanical sensing.",
       "method": [
-        "Finite-deformation phase-field fracture coupled with viscoelastic-viscoplastic constitutive behavior",
-        "Anisotropic crack resistance and conductivity both derived from the second-order fiber orientation tensor",
-        "Eight-electrode EIT data fed to a neural network to predict crack length and mechanical compliance"
+        "Finite-deformation phase-field fracture coupled with viscoelastic-viscoplastic constitutive behavior.",
+        "Second-order fiber orientation tensor used to define crack resistance anisotropy and conduction pathways.",
+        "Eight-electrode EIT data fed to a neural network to predict normalized crack length and compliance."
       ],
-      "evidence_signal": "On held-out configurations, the neural network achieved R2 = 0.99, indicating strong predictive performance across microstructure variations.",
-      "watch_item": "Performance depends on accurate orientation-tensor fields and calibrated conductivity-damage coupling, which may be challenging to transfer across materials or manufacturing conditions.",
+      "evidence_signal": "The feedforward neural network achieved R2 = 0.99 on held-out configurations, indicating strong generalization across microstructure variations.",
+      "watch_item": "Performance depends on accurate orientation-tensor and conductivity-model calibration, so transfer to new composite layups or loading rates may require retraining or validation.",
       "hashtags": [
         "#StructuralHealthMonitoring",
         "#PhaseFieldFracture",
         "#SmartComposites",
-        "#Piezoresistivity",
-        "#MachineLearning"
+        "#PiezoresistiveSensing",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-05-24-arxiv-data_driven_structural_health_monitoring_of_short_carbon_fiber_reinforced_polymer_composit",
       "paper_title": "Data-Driven Structural Health Monitoring of Short Carbon Fiber-Reinforced Polymer Composites via Multiphysics Phase-Field Simulation",
       "paper_date": "2026-05-24",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-05-30T23:14:24",
+      "generated_at": "2026-05-31T10:52:55",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-28-arxiv-bistability_of_midpoint_fused_arches_with_pinned_pinned_boundary_conditions",
+    "arxiv_id": "2605.29239v1",
+    "date": "2026-05-28",
+    "title": "Bistability of midpoint-fused arches with pinned-pinned boundary conditions",
+    "authors": "Rajat Goswami, Safvan Palathingal",
+    "abstract": "Arranging multiple arches in a circular pattern and fusing them at their midpoint yields a three-dimensional configuration that we refer to as midpoint-fused arches (MFA). This study investigates the structural bistability of MFA, i.e., their ability to admit two distinct, force-free stable equilibrium states. Starting from an as-fabricated, stress-free configuration, MFA can invert into a stressed, toggled state reminiscent of an umbrella's ribs. We develop an analytical model for the response of a pinned-pinned MFA subjected to a concentrated mid-span load by minimizing the total potential energy. Individual arches are treated as spatially deforming, and kinematic compatibility relations are derived at the fusion point to couple their deformations. Various deformation symmetries are then exploited to simplify the problem. We demonstrate the model's utility by characterizing the force-displacement response of a two-arch MFA, identifying distinct deformation pathways and discussing the pathway transitions that occur during toggling. In particular, we show how the structure switches between symmetric and asymmetric deformation modes as it moves between stable configurations. The generality of the framework is further established through analysis of a three-arch MFA, which exhibits richer coupled deformation behaviour. Nonlinear finite-element simulations and table-top experiments corroborate the analytical predictions, showing close agreement in both equilibrium states and the associated transition responses.",
+    "category": "Physics-Informed ML",
+    "source": "arXiv",
+    "published": "2026-05-28T01:59:47Z",
+    "updated": "2026-05-28T01:59:47Z",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.29239v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.29239v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "Midpoint-fused arches can snap between two stable, force-free shapes, and the paper explains this bistability with an energy-based pinned-pinned model.",
+      "engineering_relevance": "This provides a design framework for deployable or reconfigurable shell/arch structures that must toggle reliably between configurations.",
+      "method": [
+        "Minimize total potential energy for pinned-pinned midpoint-fused arches under a concentrated mid-span load",
+        "Derive kinematic compatibility at the fusion point to couple multiple arches",
+        "Use symmetry assumptions to reduce the nonlinear deformation problem and analyze 2-arch and 3-arch cases"
+      ],
+      "evidence_signal": "The analytical predictions are validated against nonlinear finite-element simulations and table-top experiments, with close agreement in both equilibrium states and transition responses.",
+      "watch_item": "The model depends on symmetry choices and ideal pinned-pinned boundary conditions, so real structures with manufacturing imperfections or boundary compliance may deviate.",
+      "hashtags": [
+        "#SolidMechanics",
+        "#Bistability",
+        "#NonlinearStructures",
+        "#FiniteElementAnalysis",
+        "#DeployableStructures"
+      ],
+      "paper_id": "2026-05-28-arxiv-bistability_of_midpoint_fused_arches_with_pinned_pinned_boundary_conditions",
+      "paper_title": "Bistability of midpoint-fused arches with pinned-pinned boundary conditions",
+      "paper_date": "2026-05-28",
+      "paper_category": "Physics-Informed ML",
+      "generated_at": "2026-05-31T10:52:57",
       "generator": "openai"
     }
   },
@@ -649,17 +596,17 @@
     ],
     "score": 58,
     "infographic": {
-      "key_insight": "A physics-constrained graph-based calibration framework can identify stable lumped thermal models for spacecraft directly from sparse temperature trajectories and inputs.",
-      "engineering_relevance": "This enables faster, physically admissible thermal digital twins that can support spacecraft design, monitoring, and long-horizon prediction without detailed material or geometry-based parameterization.",
+      "key_insight": "A physics-constrained graph-based LPTM can be identified directly from sparse temperature measurements and inputs, yielding a stable and physically meaningful thermal surrogate for spacecraft digital twins.",
+      "engineering_relevance": "The approach offers a practical reduced-order thermal model that balances accuracy and computational efficiency for spacecraft thermal analysis and long-horizon prediction.",
       "method": [
-        "Formulate LPTM identification as a trajectory-matching inverse problem on a graph dynamical system.",
-        "Enforce physics by construction through positive nodal coefficients and symmetric conductive couplings.",
-        "Calibrate the reduced model from temperature measurements and known inputs, avoiding ad hoc regularization."
+        "Formulate thermal calibration as a trajectory-matching inverse problem on a graph dynamical system.",
+        "Enforce physical admissibility by construction: positive nodal coefficients and symmetric conductive couplings.",
+        "Fit model parameters using measured temperature trajectories and known inputs without relying on material- or geometry-derived priors."
       ],
-      "evidence_signal": "The approach is validated on synthetic data from high-fidelity finite element simulations, including progressively more complex forcing, and it reproduces long-term temperature evolution robustly under measurement noise.",
-      "watch_item": "Performance is demonstrated on synthetic FE-generated datasets, so transfer to real spacecraft telemetry will depend on sensor placement, excitation richness, and model mismatch.",
+      "evidence_signal": "The method was validated on synthetic datasets from high-fidelity finite element simulations, and it remained accurate over long time horizons and robust to measurement noise.",
+      "watch_item": "Performance is demonstrated on synthetic FEM-generated data, so transfer to real spacecraft telemetry may require careful handling of model mismatch and sensor sparsity.",
       "hashtags": [
-        "#DigitalTwins",
+        "#DigitalTwin",
         "#ThermalModeling",
         "#GraphDynamics",
         "#ReducedOrderModeling",
@@ -669,7 +616,7 @@
       "paper_title": "Physics-constrained identification of graph-based thermal networks for spacecraft digital twins",
       "paper_date": "2026-05-27",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:14:27",
+      "generated_at": "2026-05-31T10:52:59",
       "generator": "openai"
     }
   },
@@ -700,15 +647,15 @@
     ],
     "score": 58,
     "infographic": {
-      "key_insight": "A reconstructed discontinuous Galerkin method on unfitted meshes achieves stable high-order interface discretization while enabling a low-order preconditioner with mesh-, coefficient-, and interface-independent conditioning.",
-      "engineering_relevance": "This offers a robust finite-element strategy for elliptic interface problems where geometry cuts the mesh, improving solver scalability and reliability in multiphysics and material-interface simulations.",
+      "key_insight": "A reconstructed discontinuous Galerkin formulation on unfitted meshes can be preconditioned using a lowest-order piecewise constant space, yielding mesh-, coefficient-, and interface-robust solver performance.",
+      "engineering_relevance": "This enables accurate and efficient simulation of elliptic interface problems with complex geometries without requiring mesh conformity to the interface.",
       "method": [
-        "Build a high-order reconstructed discontinuous space from local least-squares fitting with added constraints.",
-        "Enforce interface jump conditions weakly using Nitsche’s penalty formulation in a cut DG framework.",
-        "Derive norm equivalence to a piecewise-constant space and use it to form an optimal preconditioner with multigrid inversion for the lowest-order system."
+        "Build a high-order reconstructed discontinuous approximation from local least-squares fits with one DOF per element.",
+        "Modify the local reconstruction with constraints to improve stability near the interface and prove norm equivalence to the lowest-order space.",
+        "Use the piecewise constant space as a preconditioner, with multigrid acting as the inverse of the lowest-order system."
       ],
-      "evidence_signal": "Numerical experiments in 2D and 3D report optimal convergence rates and show that the preconditioned condition number remains robust with respect to mesh size, coefficient contrast, and interface position.",
-      "watch_item": "Performance depends on the quality and stability of the local constrained reconstruction near complex interfaces, so implementation details of the fitting and cut-cell handling matter.",
+      "evidence_signal": "Numerical experiments in 2D and 3D report optimal convergence and show the preconditioner remains effective independent of mesh size, coefficients, and interface position.",
+      "watch_item": "Performance depends on the quality of the local reconstruction and the multigrid solve for the lowest-order system, which may require careful implementation on highly cut meshes.",
       "hashtags": [
         "#FiniteElementMethod",
         "#DiscontinuousGalerkin",
@@ -720,58 +667,7 @@
       "paper_title": "Preconditioned Discontinuous Galerkin Method for Elliptic Interface Problem on Unfitted Mesh with Reconstructed Discontinuous Approximation",
       "paper_date": "2026-05-27",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:14:29",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-25-arxiv-towards_end_to_end_llm_based_censoring_aware_survival_analysis",
-    "arxiv_id": "2605.25399v1",
-    "date": "2026-05-25",
-    "title": "Towards end-to-end LLM-based censoring-aware survival analysis",
-    "authors": "Yishu Wei, Hexin Dong, Yi Lin, Jiahe Qian, Yi Liu, Yifan Peng",
-    "abstract": "Objective: Survival analysis is central to medical prediction, yet large language models (LLMs) are rarely used as end-to-end survival models because censoring prevents straightforward supervised fine-tuning. Here we present LLMSurvival, a framework that enables censoring-aware survival analysis with unmodified LLMs operating directly on tabular clinical data. Materials and Methods: LLMSurvival reformulates time-to-event prediction as pairwise ranking among comparable subjects, and derives test-time risk by aggregating comparisons against anchor individuals from the training cohort. Results: Across two clinical tasks (ICU mortality prediction in MIMIC-IV and fragility fracture prediction in a NewYork-Presbyterian/Weill Cornell Medicine cohort), LLMSurvival improves overall concordance over Cox proportional hazards modeling by 3.1% for ICU mortality and 0.5% for fracture risk, 2.1% on average for ICU mortality and 2.8% for fracture risk over three established deep learning survival models. Discussion: The results show that survival modeling with censoring can be made compatible with LLM fine-tuning through comparison-based reformulation. The framework demonstrates high portability and superior performance over expert curated scores like SAPS-II and FRAX scores across diverse clinical context. Furthermore, the framework supports local deployment, as compact, publicly available base models provide sufficient performance. Conclusion: The LLMSurvival framework serves as a proof of concept for an integrated, censoring-conscious approach to survival analysis via LLMs.",
-    "category": "Fracture and Damage",
-    "source": "arXiv",
-    "published": "2026-05-25T03:45:42Z",
-    "updated": "2026-05-25T03:45:42Z",
-    "primary_category": "cs.AI",
-    "categories": [
-      "cs.AI"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.25399v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.25399v1"
-      }
-    ],
-    "score": 58,
-    "infographic": {
-      "key_insight": "LLMSurvival turns censored time-to-event prediction into pairwise ranking, allowing unmodified LLMs to learn survival risk directly from tabular clinical data.",
-      "engineering_relevance": "The framework shows that censoring-aware learning can be embedded into a general-purpose foundation model pipeline, offering a portable alternative to hand-crafted risk scores and classical survival models.",
-      "method": [
-        "Reformulate survival prediction as comparisons among comparable patient pairs.",
-        "Train unmodified LLMs on tabular clinical features using censoring-aware pairwise ranking.",
-        "Estimate test-time risk by aggregating comparisons against anchor subjects from the training cohort."
-      ],
-      "evidence_signal": "Evaluated on ICU mortality in MIMIC-IV and fragility fracture prediction in a NewYork-Presbyterian/Weill Cornell cohort, LLMSurvival outperformed Cox PH and three deep survival models, with gains reported in concordance.",
-      "watch_item": "Performance depends on the quality and representativeness of anchor comparisons, and the approach still needs careful validation before deployment across new clinical settings.",
-      "hashtags": [
-        "#SurvivalAnalysis",
-        "#LLM",
-        "#Censoring",
-        "#ClinicalAI",
-        "#TabularData"
-      ],
-      "paper_id": "2026-05-25-arxiv-towards_end_to_end_llm_based_censoring_aware_survival_analysis",
-      "paper_title": "Towards end-to-end LLM-based censoring-aware survival analysis",
-      "paper_date": "2026-05-25",
-      "paper_category": "Fracture and Damage",
-      "generated_at": "2026-05-30T23:14:31",
+      "generated_at": "2026-05-31T10:53:01",
       "generator": "openai"
     }
   },
@@ -802,79 +698,80 @@
     ],
     "score": 57,
     "infographic": {
-      "key_insight": "BiMU keeps a binary Bayesian neural network’s uncertainty from collapsing during non-stationary online learning by using a bounded-memory update that balances learning new data with controlled forgetting.",
-      "engineering_relevance": "This is useful for always-on edge systems that must adapt under tight compute and labeling budgets while also flagging unreliable predictions in changing environments.",
+      "key_insight": "BiMU keeps Bayesian binary neural networks plastic and uncertain over long non-stationary streams by using a bounded-memory variational update with uncertainty-aware step sizing.",
+      "engineering_relevance": "This enables always-on edge learning systems to adapt online, query labels only when needed, and maintain reliable out-of-distribution detection under tight compute and memory budgets.",
       "method": [
-        "Bounded-memory variational objective combining data fit, prior relaxation, and forgetting control",
-        "Uncertainty-dependent step size to prevent posterior saturation and preserve epistemic uncertainty",
-        "Fully online active querying with Monte Carlo disagreement, avoiding replay buffers"
+        "Combines the data likelihood with controlled relaxation toward the prior to balance stability, plasticity, and forgetting.",
+        "Uses an uncertainty-dependent step size to prevent posterior saturation and preserve epistemic uncertainty.",
+        "Supports fully online, buffer-free active querying via Monte Carlo disagreement to reduce label and backpropagation updates."
       ],
-      "evidence_signal": "The abstract reports sustained learning and strong out-of-distribution detection on 1000-task Permuted-MNIST, and up to 32× savings in labels/updates on OpenLORIS-Object at matched accuracy.",
-      "watch_item": "Performance depends on stable uncertainty calibration; in deployment, the Monte Carlo querying and binary Bayesian updates may still be sensitive to hyperparameter choice and class imbalance.",
+      "evidence_signal": "The abstract reports strong results on 1000-task Permuted-MNIST and OpenLORIS-Object, including up to 32× savings in labels/updates at matched accuracy.",
+      "watch_item": "Performance depends on careful control of the bounded-memory variational update and may be sensitive to imbalance, compression, and the quality of uncertainty estimates.",
       "hashtags": [
         "#ContinualLearning",
-        "#BayesianNeuralNetworks",
+        "#BayesianNN",
         "#EdgeAI",
         "#ActiveLearning",
-        "#UncertaintyQuantification"
+        "#OODDetection"
       ],
       "paper_id": "2026-05-28-arxiv-active_continual_learning_with_metaplastic_binary_bayesian_neural_networks",
       "paper_title": "Active Continual Learning with Metaplastic Binary Bayesian Neural Networks",
       "paper_date": "2026-05-28",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-05-30T23:14:33",
+      "generated_at": "2026-05-31T10:53:03",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-05-28-arxiv-an_imex_dg_solver_with_non_conforming_mesh_refinement_for_atmospheric_dynamics_with_rotati",
-    "arxiv_id": "2605.29598v1",
-    "date": "2026-05-28",
-    "title": "An IMEX-DG solver with non-conforming mesh refinement for atmospheric dynamics with rotation",
-    "authors": "Letizia Bottani, Tommaso Benacchio, Giuseppe Orlando, Luca Bonaventura, Allan Peter Engsig-Karup",
-    "abstract": "We present a high-order implicit-explicit discontinuous Galerkin (IMEX-DG) solver for the compressible Euler equations to account for rotational effects within a fully compressible atmospheric framework. Time integration follows a second-order additive Runge-Kutta scheme, treating stiff acoustic modes implicitly and advective terms explicitly. The solver is built on the deal.II finite element library, combining matrix-free operator evaluation, adaptive non-conforming meshes capabilities, and distributed-memory parallelism. Two alternative treatments of the rotational and gravitational source terms within the solution strategy, based on nonlinear fixed-point iterations, are introduced and compared in terms of accuracy, robustness, and computational efficiency. A discrete analysis of the rotational operator is also carried out in order to derive a formulation suitable for efficient matrix-free implementation and to avoid inconsistent naive discretisations. The proposed formulation is validated through convergence studies on rotating inertia-gravity wave benchmarks and further assessed in fully three-dimensional simulations of stratified flow over orography on both uniform and adaptive meshes. The numerical results show that the rotating IMEX-DG framework has the expected accuracy and stability properties while correctly capturing the asymmetry and wave structures induced by rotation in large-scale atmospheric flows.",
-    "category": "FEM Surrogates",
+    "id": "2026-05-27-arxiv-a_variational_quantum_algorithm_for_nonlinear_finite_element_analysis_of_hyperelastic_mate",
+    "arxiv_id": "2605.29181v1",
+    "date": "2026-05-27",
+    "title": "A Variational Quantum Algorithm for Nonlinear Finite Element Analysis of Hyperelastic Materials",
+    "authors": "Uditnarayan Kouskiya, Caglar Oskay",
+    "abstract": "This manuscript explores a variational quantum formulation for nonlinear elasticity problems arising from hyperelastic material models, targeting near term noisy intermediate scale quantum (NISQ) devices. The approach leverages the potential energy structure of hyperelasticity and employs a hybrid quantum classical framework in which the energy functional is evaluated using parameterized quantum circuits and optimized through classical routines. To enable implementation on current quantum hardware, polynomial approximations of the nonlinear strain energy density are introduced, yielding a representation compatible with variational quantum algorithms. The methodology is demonstrated on a one dimensional NeoHookean material model using finite element discretizations with first and second order shape functions and nonhomogeneous boundary conditions. Numerical experiments investigate the influence of the polynomial approximation order on the accuracy and efficiency of the proposed approach, illustrating its feasibility for near term quantum devices.",
+    "category": "Constitutive Modeling",
     "source": "arXiv",
-    "published": "2026-05-28T08:36:56Z",
-    "updated": "2026-05-28T08:36:56Z",
-    "primary_category": "math.NA",
+    "published": "2026-05-27T23:37:04Z",
+    "updated": "2026-05-27T23:37:04Z",
+    "primary_category": "quant-ph",
     "categories": [
+      "quant-ph",
       "math.NA",
-      "physics.ao-ph"
+      "physics.comp-ph"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.29598v1"
+        "url": "https://arxiv.org/abs/2605.29181v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.29598v1"
+        "url": "https://arxiv.org/pdf/2605.29181v1"
       }
     ],
-    "score": 54,
+    "score": 56,
     "infographic": {
-      "key_insight": "The paper introduces a high-order IMEX discontinuous Galerkin solver for fully compressible atmospheric dynamics that handles rotation efficiently via matrix-free operators, adaptive non-conforming meshes, and tailored source-term treatment.",
-      "engineering_relevance": "This enables more accurate and scalable simulation of rotating atmospheric flows, especially where stiff acoustic dynamics and mesh adaptivity make standard explicit methods inefficient.",
+      "key_insight": "The paper reformulates nonlinear hyperelastic finite element analysis as a variational quantum optimization problem by approximating the strain energy with polynomials suitable for NISQ hardware.",
+      "engineering_relevance": "This could provide a hybrid quantum-classical route for solving nonlinear elasticity problems in solid mechanics when conventional methods become computationally expensive.",
       "method": [
-        "Second-order additive Runge-Kutta IMEX time integration: implicit for stiff acoustic modes, explicit for advection.",
-        "deal.II-based matrix-free DG implementation with distributed-memory parallelism and adaptive non-conforming refinement.",
-        "Two nonlinear fixed-point treatments for rotational and gravitational source terms, compared for accuracy and efficiency."
+        "Build a finite element discretization of the hyperelastic potential energy.",
+        "Replace the nonlinear strain energy density with a polynomial approximation compatible with parameterized quantum circuits.",
+        "Use a hybrid workflow where a quantum circuit evaluates the energy and a classical optimizer updates the parameters."
       ],
-      "evidence_signal": "The approach is validated with convergence studies on rotating inertia-gravity waves and 3D stratified flow over orography on both uniform and adaptive meshes.",
-      "watch_item": "The rotational source term requires careful discrete formulation; naive discretization can be inconsistent and hurt robustness or efficiency.",
+      "evidence_signal": "The approach is demonstrated on a 1D NeoHookean material model with first- and second-order elements and nonhomogeneous boundary conditions, with experiments assessing accuracy and efficiency versus polynomial order.",
+      "watch_item": "The method depends on polynomial approximation quality and is currently shown only on a simplified 1D test problem, so scalability and hardware noise effects remain open concerns.",
       "hashtags": [
-        "#IMEXDG",
-        "#AtmosphericDynamics",
-        "#FiniteElements",
-        "#AdaptiveMesh",
-        "#MatrixFree"
+        "#QuantumComputing",
+        "#FiniteElementMethod",
+        "#Hyperelasticity",
+        "#NISQ",
+        "#ComputationalMechanics"
       ],
-      "paper_id": "2026-05-28-arxiv-an_imex_dg_solver_with_non_conforming_mesh_refinement_for_atmospheric_dynamics_with_rotati",
-      "paper_title": "An IMEX-DG solver with non-conforming mesh refinement for atmospheric dynamics with rotation",
-      "paper_date": "2026-05-28",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-05-30T23:14:35",
+      "paper_id": "2026-05-27-arxiv-a_variational_quantum_algorithm_for_nonlinear_finite_element_analysis_of_hyperelastic_mate",
+      "paper_title": "A Variational Quantum Algorithm for Nonlinear Finite Element Analysis of Hyperelastic Materials",
+      "paper_date": "2026-05-27",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-05-31T10:53:05",
       "generator": "openai"
     }
   },
@@ -906,27 +803,27 @@
     ],
     "score": 54,
     "infographic": {
-      "key_insight": "PEFT methods should be judged not only by downstream accuracy, but by a stability-plasticity trade-off between task adaptation and preservation of pretrained capabilities.",
-      "engineering_relevance": "For large-model adaptation workflows, this provides a practical way to choose finetuning schemes that improve the target task without eroding general-purpose performance.",
+      "key_insight": "PEFT methods should be judged not only by task accuracy, but by how well they balance adaptation with retention of pretrained capabilities.",
+      "engineering_relevance": "For large-model adaptation in computational science and engineering, this highlights which finetuning choices preserve general-purpose reliability while still meeting downstream task goals.",
       "method": [
-        "Introduced PEFT-Arena, a benchmark that jointly measures downstream task performance and general-capability retention.",
-        "Compared PEFT methods via stability-plasticity profiles and Pareto fronts under similar parameter budgets.",
-        "Analyzed updates in weight space and activation space, then tested post-hoc improvement with path-wise rewinding."
+        "PEFT-Arena benchmark jointly measures downstream performance and capability retention.",
+        "Compares PEFT methods through stability-plasticity trade-offs under matched parameter budgets.",
+        "Uses spectral analysis in weight space and retention metrics in activation space to explain forgetting."
       ],
-      "evidence_signal": "Across the benchmark, methods showed distinct stability-plasticity profiles, and orthogonal finetuning achieved the most favorable Pareto frontier under comparable parameter budgets.",
-      "watch_item": "Retention gains depend on the chosen benchmark and representation metrics, so reported improvements may not transfer uniformly across tasks or model families.",
+      "evidence_signal": "Across methods and evaluation settings, the abstract reports distinct stability-plasticity profiles and identifies orthogonal finetuning as achieving the strongest Pareto frontier under comparable parameter budgets.",
+      "watch_item": "Reported gains depend on the benchmark design and parameter budget, so results may not transfer unchanged to other model families or tasks.",
       "hashtags": [
         "#PEFT",
-        "#LLMFinetuning",
-        "#CatastrophicForgetting",
-        "#Benchmarking",
-        "#RepresentationLearning"
+        "#Finetuning",
+        "#LLMAdaptation",
+        "#StabilityPlasticity",
+        "#ModelRetention"
       ],
       "paper_id": "2026-05-27-arxiv-peft_arena_understanding_parameter_efficient_finetuning_from_a_stability_plasticity_perspe",
       "paper_title": "PEFT-Arena: Understanding Parameter-Efficient Finetuning from a Stability-Plasticity Perspective",
       "paper_date": "2026-05-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-05-30T23:14:37",
+      "generated_at": "2026-05-31T10:53:11",
       "generator": "openai"
     }
   },
@@ -958,27 +855,78 @@
     ],
     "score": 53,
     "infographic": {
-      "key_insight": "In nanocrystalline Al-Ni, amorphous grain-boundary complexions favor homogeneous plasticity via shear-transformation zones, while short-range-ordered complexions increase strength but trigger stress heterogeneity and shear localization.",
-      "engineering_relevance": "Complexion engineering offers a route to tune the strength–ductility balance in nanocrystalline alloys by controlling grain-boundary structure and temperature history.",
+      "key_insight": "Short-range order inside grain-boundary complexions fundamentally changes deformation in nanocrystalline Al-Ni: amorphous films favor homogeneous plasticity via shear-transformation zones, while SRO complexions raise strength but trigger stress heterogeneity and shear localization.",
+      "engineering_relevance": "Complexion engineering can be used to tune the strength-ductility balance in nanocrystalline alloys by controlling whether grain boundaries are amorphous or short-range ordered.",
       "method": [
-        "Large-scale Monte Carlo simulations to generate grain-boundary complexion states",
-        "Molecular dynamics simulations of nanocrystalline Al-Ni at 2 at.% and 4 at.% Ni",
-        "Comparison of annealing at 913 K versus 378 K to isolate amorphous versus semi-amorphous/SRO behaviors"
+        "Large-scale Monte Carlo simulations to generate complexion states at two Ni levels (2 at.% and 4 at.%).",
+        "Molecular dynamics simulations to probe mechanical response after annealing at 913 K vs. 378 K.",
+        "Comparison of amorphous intergranular films with semi-amorphous FCC/BCC SRO complexions."
       ],
-      "evidence_signal": "The abstract reports two simulation-based complexion states with distinct mechanical responses across two Ni concentrations, linking microstructure directly to plasticity mode and localization behavior.",
-      "watch_item": "The results are simulation-derived and may depend on alloy composition, annealing condition, and interatomic modeling, so experimental transferability should be validated case by case.",
+      "evidence_signal": "The abstract reports two composition cases and two annealing conditions, showing a consistent shift from homogeneous plasticity in amorphous complexions to localized shear in SRO complexions.",
+      "watch_item": "The conclusions are simulation-based for specific Al-Ni compositions and annealing states, so transferability to other alloy systems or processing windows should be validated experimentally.",
       "hashtags": [
         "#NanocrystallineMaterials",
         "#GrainBoundaryComplexions",
         "#MolecularDynamics",
         "#Plasticity",
-        "#MaterialsModeling"
+        "#AlloyDesign"
       ],
       "paper_id": "2026-05-26-arxiv-amorphous_vs_short_range_ordered_complexions_consequences_for_grain_boundary_mediated_plas",
       "paper_title": "Amorphous vs. Short-Range-Ordered Complexions: Consequences for Grain-Boundary-Mediated Plasticity in Nanocrystalline Al-Ni Alloys",
       "paper_date": "2026-05-26",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-05-30T23:14:39",
+      "generated_at": "2026-05-31T10:53:13",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-25-arxiv-towards_end_to_end_llm_based_censoring_aware_survival_analysis",
+    "arxiv_id": "2605.25399v1",
+    "date": "2026-05-25",
+    "title": "Towards end-to-end LLM-based censoring-aware survival analysis",
+    "authors": "Yishu Wei, Hexin Dong, Yi Lin, Jiahe Qian, Yi Liu, Yifan Peng",
+    "abstract": "Objective: Survival analysis is central to medical prediction, yet large language models (LLMs) are rarely used as end-to-end survival models because censoring prevents straightforward supervised fine-tuning. Here we present LLMSurvival, a framework that enables censoring-aware survival analysis with unmodified LLMs operating directly on tabular clinical data. Materials and Methods: LLMSurvival reformulates time-to-event prediction as pairwise ranking among comparable subjects, and derives test-time risk by aggregating comparisons against anchor individuals from the training cohort. Results: Across two clinical tasks (ICU mortality prediction in MIMIC-IV and fragility fracture prediction in a NewYork-Presbyterian/Weill Cornell Medicine cohort), LLMSurvival improves overall concordance over Cox proportional hazards modeling by 3.1% for ICU mortality and 0.5% for fracture risk, 2.1% on average for ICU mortality and 2.8% for fracture risk over three established deep learning survival models. Discussion: The results show that survival modeling with censoring can be made compatible with LLM fine-tuning through comparison-based reformulation. The framework demonstrates high portability and superior performance over expert curated scores like SAPS-II and FRAX scores across diverse clinical context. Furthermore, the framework supports local deployment, as compact, publicly available base models provide sufficient performance. Conclusion: The LLMSurvival framework serves as a proof of concept for an integrated, censoring-conscious approach to survival analysis via LLMs.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-05-25T03:45:42Z",
+    "updated": "2026-05-25T03:45:42Z",
+    "primary_category": "cs.AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.25399v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.25399v1"
+      }
+    ],
+    "score": 53,
+    "infographic": {
+      "key_insight": "LLMSurvival turns censored survival prediction into a pairwise ranking problem, enabling unmodified LLMs to learn end-to-end risk models from tabular clinical data.",
+      "engineering_relevance": "The approach offers a portable, local-deployable alternative to traditional survival models and expert scores for failure/risk prediction in real-world engineering and medical decision settings.",
+      "method": [
+        "Reformulate time-to-event prediction as comparisons between comparable subjects.",
+        "Fine-tune standard LLMs on tabular data using censoring-aware pairwise ranking.",
+        "Estimate test-time risk by aggregating comparisons against anchor patients from training."
+      ],
+      "evidence_signal": "Evaluated on ICU mortality (MIMIC-IV) and fragility fracture prediction (NewYork-Presbyterian/Weill Cornell), with improved concordance over Cox models and established deep survival baselines.",
+      "watch_item": "Performance depends on the quality and coverage of anchor comparisons, so cohort shift or sparse comparable pairs could reduce reliability.",
+      "hashtags": [
+        "#SurvivalAnalysis",
+        "#LLM",
+        "#Censoring",
+        "#RiskPrediction",
+        "#HealthAI"
+      ],
+      "paper_id": "2026-05-25-arxiv-towards_end_to_end_llm_based_censoring_aware_survival_analysis",
+      "paper_title": "Towards end-to-end LLM-based censoring-aware survival analysis",
+      "paper_date": "2026-05-25",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-05-31T10:53:16",
       "generator": "openai"
     }
   },
@@ -1009,27 +957,79 @@
     ],
     "score": 52,
     "infographic": {
-      "key_insight": "MISTnetX learns a direct bridge from atomistic shock physics to continuum-scale response, enabling microstructure-aware prediction of shock-to-detonation transition in energetic composites.",
-      "engineering_relevance": "This provides a parameter-free way to inform FE simulations with sub-grid hotspot and chemistry effects, improving predictive design of safer, more reliable energetic materials.",
+      "key_insight": "A microstructure-aware convolutional neural network can bridge atomistic MD and continuum FE to predict shock-to-detonation behavior in energetic composites without relying on traditional scale separation.",
+      "engineering_relevance": "This enables parameter-free, multiscale prediction of hotspot formation, deflagration, and run-to-detonation in nanostructured energetic materials, improving design and safety analysis.",
       "method": [
-        "Train a convolutional deep neural network on large-scale MD shock simulations of complex microstructures.",
-        "Use the learned model to transfer shock-microstructure interaction, hotspot formation, and deflagration onset into FE models.",
-        "Couple mechanics, shock, thermal transport, and chemistry across scales without relying on classical scale-separation assumptions."
+        "Train MISTnetX on large-scale molecular dynamics shock simulations with complex microstructures.",
+        "Use the network to provide sub-grid shock–microstructure, thermal, and chemistry information to continuum finite-element models.",
+        "Apply the coupled MD-to-FE workflow to a synthetic nanostructured plastic-bonded RDX composite."
       ],
-      "evidence_signal": "The abstract reports application to a synthetic yet realistic nanostructured plastic-bonded RDX composite, where the trained model enables full run-to-detonation prediction.",
-      "watch_item": "Performance may depend on the representativeness of the MD training set and on how well the synthetic microstructures capture real manufacturing variability.",
+      "evidence_signal": "The abstract reports that MISTnetX was trained on MD shock-propagation data and successfully applied to predict the full run-to-detonation transition in a realistic synthetic composite.",
+      "watch_item": "The demonstrated application is on a synthetic but realistic RDX composite, so broader validation across different energetic formulations and microstructure classes is still needed.",
       "hashtags": [
         "#DeepLearning",
         "#MultiscaleModeling",
         "#ShockPhysics",
         "#EnergeticMaterials",
-        "#FiniteElementAnalysis"
+        "#FiniteElement"
       ],
       "paper_id": "2026-05-26-arxiv-microstructure_aware_deep_learning_bridges_atomistics_to_macroscale_for_shock_to_detonatio",
       "paper_title": "Microstructure-Aware Deep Learning Bridges Atomistics to Macroscale for Shock-to-Detonation Prediction",
       "paper_date": "2026-05-26",
       "paper_category": "Composites and Metamaterials",
-      "generated_at": "2026-05-30T23:14:42",
+      "generated_at": "2026-05-31T10:53:18",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-26-arxiv-revisiting_bruck_phase_efficient_all_to_all_communication_in_reconfigurable_networks",
+    "arxiv_id": "2605.26930v1",
+    "date": "2026-05-26",
+    "title": "Revisiting Bruck: Phase-Efficient All-to-All Communication in Reconfigurable Networks",
+    "authors": "Anton Juerss, Stefan Schmid",
+    "abstract": "All-to-All communication is a key performance bottleneck for distributed machine learning (ML) and high-performance computing (HPC) workloads, where dense traffic increasingly stresses scale-up interconnects. While these ML and HPC workloads have driven unprecedented infrastructure demand, optical reconfigurable networks (ORNs) offer a promising path forward. By adapting the physical topology to the active workload, they improve communication cost and bandwidth utilization. However, their benefit is critically contingent on whether the collective consists of structured phases that can be served by sparse and reusable topology states. In this paper, we revisit Bruck's All-to-All implementation and demonstrate the benefits of topology optimization in which both communication pattern and reconfiguration strategy are co-designed. We present ReTri, a bidirectional All-to-All schedule for ORNs. ReTri uses balanced ternary block propagation to complete All-to-All in $\\lceil \\log_3 n\\rceil$ phases. The induced reconfiguration strategy from ReTri's pairwise bidirectional exchanges allow reconfiguration delays to be amortized across multiple phases. Preliminary simulations show that ReTri improves completion time by up to $10\\times$ over static All-to-All, even for millisecond-scale reconfiguration delays, and improving reconfigurable Bruck by up to $2.1\\times$.",
+    "category": "Topology Optimization",
+    "source": "arXiv",
+    "published": "2026-05-26T12:24:04Z",
+    "updated": "2026-05-26T12:24:04Z",
+    "primary_category": "cs.DC",
+    "categories": [
+      "cs.DC",
+      "cs.NI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.26930v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.26930v1"
+      }
+    ],
+    "score": 52,
+    "infographic": {
+      "key_insight": "ReTri co-designs all-to-all communication and optical network reconfiguration so the collective finishes in only ⌈log3 n⌉ phases with reusable topology states.",
+      "engineering_relevance": "This can substantially reduce completion time and improve bandwidth utilization for distributed ML and HPC systems that are bottlenecked by dense all-to-all traffic.",
+      "method": [
+        "Uses balanced ternary block propagation for bidirectional all-to-all communication.",
+        "Schedules pairwise exchanges so reconfiguration delays are amortized across multiple phases.",
+        "Revisits Bruck’s algorithm and adapts it to reconfigurable optical networks."
+      ],
+      "evidence_signal": "Preliminary simulations report up to 10× faster completion than static all-to-all and up to 2.1× improvement over reconfigurable Bruck, even with millisecond-scale reconfiguration delays.",
+      "watch_item": "Benefits depend on structured phased traffic and a reconfiguration model that can be amortized; performance may drop for less regular workloads or higher switching overheads.",
+      "hashtags": [
+        "#AllToAll",
+        "#ReconfigurableNetworks",
+        "#HPC",
+        "#DistributedML",
+        "#TopologyOptimization"
+      ],
+      "paper_id": "2026-05-26-arxiv-revisiting_bruck_phase_efficient_all_to_all_communication_in_reconfigurable_networks",
+      "paper_title": "Revisiting Bruck: Phase-Efficient All-to-All Communication in Reconfigurable Networks",
+      "paper_date": "2026-05-26",
+      "paper_category": "Topology Optimization",
+      "generated_at": "2026-05-31T10:53:20",
       "generator": "openai"
     }
   }

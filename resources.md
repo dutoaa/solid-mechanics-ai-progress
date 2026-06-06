@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-06-05
+Generated: 2026-06-06
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Endowing variational phase-field fracture models with custom strength criteria
@@ -11,7 +11,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.06169v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-endowing_variational_phase_field_fracture_models_with_custom_strength_criteria_infographic.json
 
-## 2. An Octahedral Fibrous Constitutive Model for Heart Valve Mechanics and Function
+## 2. Resolving room temperature microscale fracture and plasticity of iron oxides along the cascade of iron ore reduction via nanoindentation and microcantilever bending
+
+- Date: 2026-06-04
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.06001v1
+- PDF: https://arxiv.org/pdf/2606.06001v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-resolving_room_temperature_microscale_fracture_and_plasticity_of_iron_oxides_along_the_cas_infographic.json
+
+## 3. An Octahedral Fibrous Constitutive Model for Heart Valve Mechanics and Function
 
 - Date: 2026-06-02
 - Category: Constitutive Modeling
@@ -19,7 +27,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.04234v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-an_octahedral_fibrous_constitutive_model_for_heart_valve_mechanics_and_function_infographic.json
 
-## 3. PINNOCHIO: Physics-Informed Neural Network for Coupled Hyperelastic Interface-Volume Simulation in Orthognathic Surgery
+## 4. PINNOCHIO: Physics-Informed Neural Network for Coupled Hyperelastic Interface-Volume Simulation in Orthognathic Surgery
 
 - Date: 2026-06-01
 - Category: FEM Surrogates
@@ -27,21 +35,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.01572v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-01-arxiv-pinnochio_physics_informed_neural_network_for_coupled_hyperelastic_interface_volume_simula_infographic.json
 
-## 4. Critical evaluation of PINN for FWD inverse analysis and differentiable FEM as an alternative
+## 5. Critical evaluation of PINN for FWD inverse analysis and differentiable FEM as an alternative
 
 - Date: 2026-06-02
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2606.03210v1
 - PDF: https://arxiv.org/pdf/2606.03210v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-critical_evaluation_of_pinn_for_fwd_inverse_analysis_and_differentiable_fem_as_an_alternat_infographic.json
-
-## 5. Resolving room temperature microscale fracture and plasticity of iron oxides along the cascade of iron ore reduction via nanoindentation and microcantilever bending
-
-- Date: 2026-06-04
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.06001v1
-- PDF: https://arxiv.org/pdf/2606.06001v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-resolving_room_temperature_microscale_fracture_and_plasticity_of_iron_oxides_along_the_cas_infographic.json
 
 ## 6. Uncertainty Aware Functional Behavior Prediction and Material Fatigue Assessment for Circular Factory
 
@@ -59,7 +59,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.04893v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-03-arxiv-influence_of_anisotropy_on_the_expansion_performance_of_auxetic_skin_meshing_geometries_a_infographic.json
 
-## 8. Physics-Informed Neural Network Modeling of Biodegradable Contaminant Transport through GCL/SL Composite Liners
+## 8. Modified augmented Lagrangian preconditioning for mixed-dimensional beam-solid coupling
+
+- Date: 2026-06-04
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.06035v1
+- PDF: https://arxiv.org/pdf/2606.06035v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-modified_augmented_lagrangian_preconditioning_for_mixed_dimensional_beam_solid_coupling_infographic.json
+
+## 9. Physics-Informed Neural Network Modeling of Biodegradable Contaminant Transport through GCL/SL Composite Liners
 
 - Date: 2026-06-03
 - Category: Physics-Informed ML
@@ -67,7 +75,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.04392v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-03-arxiv-physics_informed_neural_network_modeling_of_biodegradable_contaminant_transport_through_gc_infographic.json
 
-## 9. Morphogenesis driven by nematic defects in active biological networks
+## 10. Morphogenesis driven by nematic defects in active biological networks
 
 - Date: 2026-06-02
 - Category: Constitutive Modeling
@@ -75,7 +83,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.04256v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-morphogenesis_driven_by_nematic_defects_in_active_biological_networks_infographic.json
 
-## 10. A Systematic Benchmark of Physics-Informed Neural Network Architectures for the Stiff Poisson-Nernst-Planck System: Adaptive LossWeighting and Multi-Scale Resolution
+## 11. A Systematic Benchmark of Physics-Informed Neural Network Architectures for the Stiff Poisson-Nernst-Planck System: Adaptive LossWeighting and Multi-Scale Resolution
 
 - Date: 2026-06-02
 - Category: Physics-Informed ML
@@ -83,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.04125v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-a_systematic_benchmark_of_physics_informed_neural_network_architectures_for_the_stiff_pois_infographic.json
 
-## 11. Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials
+## 12. Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials
 
 - Date: 2026-06-02
 - Category: Constitutive Modeling
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.03816v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-learning_finite_viscoelasticity_with_davis_a_supervised_framework_for_generalized_standard_infographic.json
 
-## 12. Hydrogen-induced lattice cohesion weakening favors atomic displacement
+## 13. Hydrogen-induced lattice cohesion weakening favors atomic displacement
 
 - Date: 2026-06-03
 - Category: Constitutive Modeling
@@ -99,21 +107,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.05325v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-03-arxiv-hydrogen_induced_lattice_cohesion_weakening_favors_atomic_displacement_infographic.json
 
-## 13. Optimal Design and Analytical Modeling of a Soft Fin-Ray Effect Gripper Finger Using the Finite Rigid Elements Method
+## 14. Optimal Design and Analytical Modeling of a Soft Fin-Ray Effect Gripper Finger Using the Finite Rigid Elements Method
 
 - Date: 2026-06-02
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2606.03798v1
 - PDF: https://arxiv.org/pdf/2606.03798v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-optimal_design_and_analytical_modeling_of_a_soft_fin_ray_effect_gripper_finger_using_the_f_infographic.json
-
-## 14. Modified augmented Lagrangian preconditioning for mixed-dimensional beam-solid coupling
-
-- Date: 2026-06-04
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.06035v1
-- PDF: https://arxiv.org/pdf/2606.06035v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-modified_augmented_lagrangian_preconditioning_for_mixed_dimensional_beam_solid_coupling_infographic.json
 
 ## 15. VITO: Vascular Geometry and Blood Flow Estimation Using Inverse Topology Optimization
 

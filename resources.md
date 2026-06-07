@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-06-06
+Generated: 2026-06-07
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Endowing variational phase-field fracture models with custom strength criteria
@@ -11,15 +11,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.06169v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-endowing_variational_phase_field_fracture_models_with_custom_strength_criteria_infographic.json
 
-## 2. Resolving room temperature microscale fracture and plasticity of iron oxides along the cascade of iron ore reduction via nanoindentation and microcantilever bending
-
-- Date: 2026-06-04
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.06001v1
-- PDF: https://arxiv.org/pdf/2606.06001v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-resolving_room_temperature_microscale_fracture_and_plasticity_of_iron_oxides_along_the_cas_infographic.json
-
-## 3. An Octahedral Fibrous Constitutive Model for Heart Valve Mechanics and Function
+## 2. An Octahedral Fibrous Constitutive Model for Heart Valve Mechanics and Function
 
 - Date: 2026-06-02
 - Category: Constitutive Modeling
@@ -27,7 +19,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.04234v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-an_octahedral_fibrous_constitutive_model_for_heart_valve_mechanics_and_function_infographic.json
 
-## 4. PINNOCHIO: Physics-Informed Neural Network for Coupled Hyperelastic Interface-Volume Simulation in Orthognathic Surgery
+## 3. PINNOCHIO: Physics-Informed Neural Network for Coupled Hyperelastic Interface-Volume Simulation in Orthognathic Surgery
 
 - Date: 2026-06-01
 - Category: FEM Surrogates
@@ -35,13 +27,21 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.01572v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-01-arxiv-pinnochio_physics_informed_neural_network_for_coupled_hyperelastic_interface_volume_simula_infographic.json
 
-## 5. Critical evaluation of PINN for FWD inverse analysis and differentiable FEM as an alternative
+## 4. Critical evaluation of PINN for FWD inverse analysis and differentiable FEM as an alternative
 
 - Date: 2026-06-02
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2606.03210v1
 - PDF: https://arxiv.org/pdf/2606.03210v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-02-arxiv-critical_evaluation_of_pinn_for_fwd_inverse_analysis_and_differentiable_fem_as_an_alternat_infographic.json
+
+## 5. Resolving room temperature microscale fracture and plasticity of iron oxides along the cascade of iron ore reduction via nanoindentation and microcantilever bending
+
+- Date: 2026-06-04
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.06001v1
+- PDF: https://arxiv.org/pdf/2606.06001v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-04-arxiv-resolving_room_temperature_microscale_fracture_and_plasticity_of_iron_oxides_along_the_cas_infographic.json
 
 ## 6. Uncertainty Aware Functional Behavior Prediction and Material Fatigue Assessment for Circular Factory
 

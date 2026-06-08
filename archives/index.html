@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Solid Mechanics Research Papers - Archives</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07110f;--panel:#0f1f1b;--text:#eef8f3;--muted:#a5b8b0;--line:#234038;--accent:#5ee0b5;--gold:#f2c86b}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#07110f,#0b1715 42%,#07110f);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial,sans-serif;padding:28px 18px 72px}
+    main{max-width:960px;margin:0 auto} header{display:flex;justify-content:space-between;gap:18px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}
+    h1{font-size:28px;line-height:1.1;margin:0;letter-spacing:0}.sub{margin:8px 0 0;color:var(--muted);line-height:1.5}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.actions{display:flex;gap:12px;flex-wrap:wrap}
+    .list{display:grid;gap:12px}.archive{display:flex;justify-content:space-between;gap:16px;align-items:center;background:rgba(15,31,27,.86);border:1px solid var(--line);border-radius:8px;padding:16px}
+    .archive h2{font-size:18px;margin:0 0 6px;letter-spacing:0}.archive p{margin:0;color:var(--muted);font-size:14px}.count{color:var(--gold);font-weight:700;white-space:nowrap}
+    .empty{color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:16px}
+    @media(max-width:680px){body{padding:20px 12px 56px}header,.archive{display:block}.actions{margin-top:14px}.count{display:block;margin-top:10px}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>AI Solid Mechanics Research Papers - Archives</h1>
+        <p class="sub">Browse previous daily snapshots of the AI solid mechanics paper list.</p>
+      </div>
+      <nav class="actions">
+        <a href="../">Latest</a>
+        <a href="index.json">Archive JSON</a>
+      </nav>
+    </header>
+    <section id="archives" class="list">
+      <p class="empty">Loading archives...</p>
+    </section>
+  </main>
+  <script>
+    const container = document.getElementById('archives');
+    const fmt = new Intl.DateTimeFormat(undefined, { dateStyle: 'long' });
+
+    function archiveCard(item) {
+      const date = item.date || '';
+      const label = date ? fmt.format(new Date(date + 'T00:00:00')) : item.filename;
+      const filename = encodeURIComponent(item.filename || '');
+      return `
+        <article class="archive">
+          <div>
+            <h2><a href="${filename}">${label}</a></h2>
+            <p>${item.filename || ''}</p>
+          </div>
+          <span class="count">${item.paper_count || 0} papers</span>
+        </article>
+      `;
+    }
+
+    fetch('index.json')
+      .then((response) => {
+        if (!response.ok) throw new Error(`Archive index returned ${response.status}`);
+        return response.json();
+      })
+      .then((data) => {
+        const archives = Array.isArray(data.archives) ? data.archives : [];
+        container.innerHTML = archives.length
+          ? archives.map(archiveCard).join('')
+          : '<p class="empty">No archives have been published yet.</p>';
+      })
+      .catch((error) => {
+        container.innerHTML = `<p class="empty">Archive index could not be loaded: ${error.message}</p>`;
+      });
+  </script>
+</body>
+</html>

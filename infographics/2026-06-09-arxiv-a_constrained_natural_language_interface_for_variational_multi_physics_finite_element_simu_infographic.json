@@ -1,24 +1,24 @@
 {
-  "key_insight": "Large language models can reduce the manual effort required to set up finite element simulations, but they introduce reliability risks when generated solver code lies on the critical path.",
-  "engineering_relevance": "Potential relevance: constitutive modeling workflows and research evaluation.",
+  "key_insight": "The paper shows that natural-language FEM workflows can be made reliable by constraining the LLM to front-end parsing and geometry tasks while keeping solver templates fully deterministic.",
+  "engineering_relevance": "This design lowers setup effort for multi-physics finite element simulations in FEniCS without letting the model generate the critical solver core, improving trustworthiness for engineering use.",
   "method": [
-    "AI Solid Mechanics paper selected from recent arXiv submissions.",
-    "Ranked by recency plus AI and solid mechanics relevance signals.",
-    "Use the linked paper for methods, data, and validation details."
+    "LLM parses user prompts into structured JSON",
+    "LLM generates Gmsh code only for non-catalog geometries with retry/validation",
+    "A deterministic dispatcher maps the validated spec to five human-written FEniCS/UFL templates"
   ],
-  "evidence_signal": "Evidence details are summarized from the public abstract only.",
-  "watch_item": "Review the full paper for assumptions, validation data, mesh or material scope, and generalization limits.",
+  "evidence_signal": "On a 15-prompt parser benchmark, final valid parse rate reached 100.0% with 97.1% field-extraction accuracy, and the real LLM-to-Gmsh path achieved 90.0% success on 10 custom-geometry cases.",
+  "watch_item": "The approach still depends on front-end parsing and geometry validity, so malformed or ambiguous prompts can fail before the deterministic solver stage.",
   "hashtags": [
-    "#AISolidMechanics",
-    "#ComputationalMechanics",
-    "#ScientificML",
-    "#MaterialsAI",
-    "#arXiv"
+    "#FEniCS",
+    "#FiniteElementMethod",
+    "#Multiphysics",
+    "#LLMforEngineering",
+    "#ComputationalMechanics"
   ],
   "paper_id": "2026-06-09-arxiv-a_constrained_natural_language_interface_for_variational_multi_physics_finite_element_simu",
   "paper_title": "A Constrained Natural-Language Interface for Variational Multi-Physics Finite Element Simulations in FEniCS",
   "paper_date": "2026-06-09",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-06-10T12:15:10",
+  "generated_at": "2026-06-11T12:38:41",
   "generator": "openai"
 }

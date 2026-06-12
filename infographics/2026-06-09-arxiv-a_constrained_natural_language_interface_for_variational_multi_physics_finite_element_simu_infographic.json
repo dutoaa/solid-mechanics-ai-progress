@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper shows that natural-language FEM workflows can be made reliable by constraining the LLM to front-end parsing and geometry tasks while keeping solver templates fully deterministic.",
-  "engineering_relevance": "This design lowers setup effort for multi-physics finite element simulations in FEniCS without letting the model generate the critical solver core, improving trustworthiness for engineering use.",
+  "key_insight": "A constrained LLM front end can safely automate finite-element setup by handling parsing and geometry generation, while deterministic human-written FEniCS templates keep the solver core reliable.",
+  "engineering_relevance": "This enables natural-language-driven multi-physics simulation workflows for solid mechanics without letting the model directly write weak forms or numerical solver code.",
   "method": [
-    "LLM parses user prompts into structured JSON",
-    "LLM generates Gmsh code only for non-catalog geometries with retry/validation",
-    "A deterministic dispatcher maps the validated spec to five human-written FEniCS/UFL templates"
+    "LLM converts prompts into validated JSON specifications.",
+    "Deterministic dispatcher maps specs to five fixed FEniCS/UFL templates.",
+    "LLM is only used for non-catalog geometry via Gmsh and retry feedback."
   ],
-  "evidence_signal": "On a 15-prompt parser benchmark, final valid parse rate reached 100.0% with 97.1% field-extraction accuracy, and the real LLM-to-Gmsh path achieved 90.0% success on 10 custom-geometry cases.",
-  "watch_item": "The approach still depends on front-end parsing and geometry validity, so malformed or ambiguous prompts can fail before the deterministic solver stage.",
+  "evidence_signal": "In evaluation, the parser reached 100% final valid parses on 15 prompts, and the custom-geometry path achieved 90% success on 10 cases, while benchmark simulations matched analytic/published results from sub-percent to about 2–5% error.",
+  "watch_item": "The approach depends on tightly scoped templates and validation, so performance may drop for geometries or physics outside the supported catalog.",
   "hashtags": [
+    "#FiniteElement",
     "#FEniCS",
-    "#FiniteElementMethod",
-    "#Multiphysics",
     "#LLMforEngineering",
-    "#ComputationalMechanics"
+    "#SolidMechanics",
+    "#ComputationalPhysics"
   ],
   "paper_id": "2026-06-09-arxiv-a_constrained_natural_language_interface_for_variational_multi_physics_finite_element_simu",
   "paper_title": "A Constrained Natural-Language Interface for Variational Multi-Physics Finite Element Simulations in FEniCS",
   "paper_date": "2026-06-09",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-06-11T12:38:41",
+  "generated_at": "2026-06-12T12:12:57",
   "generator": "openai"
 }

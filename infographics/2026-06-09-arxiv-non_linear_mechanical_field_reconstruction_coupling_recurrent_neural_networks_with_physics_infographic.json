@@ -1,24 +1,24 @@
 {
-  "key_insight": "A coupled LSTM + physics-informed GNN can reconstruct nonlinear, history-dependent local stress fields by separating temporal constitutive memory from spatial equilibrium enforcement.",
-  "engineering_relevance": "This enables fast surrogate stress-field prediction for heterogeneous microstructures, offering large speedups over finite element analysis while preserving accuracy across different mesh resolutions and element types.",
+  "key_insight": "A coupled LSTM + physics-informed GNN can reconstruct history-dependent, non-linear local stress fields by separating temporal constitutive memory from spatial equilibrium-consistent field prediction.",
+  "engineering_relevance": "This enables fast, mesh-agnostic surrogate simulation of elasto-plastic microstructures, reducing finite element cost by orders of magnitude while preserving field accuracy.",
   "method": [
-    "LSTM encodes macroscopic stress-strain loading history into a compact latent state",
-    "Physics-informed GNN reconstructs the spatial stress field from mesh connectivity at each time step",
-    "Training uses a warm-up relative loss to balance reconstruction error and discrete equilibrium penalty"
+    "LSTM encodes macroscopic stress-strain loading history into a compact hidden state.",
+    "Physics-informed GNN/MeshGraphNet reconstructs spatial stress fields using mesh connectivity and equilibrium-based regularization.",
+    "A linear warm-up weighting balances reconstruction loss and divergence-based physics loss during training."
   ],
-  "evidence_signal": "Trained on 10,000 non-proportional loading paths for a plate-with-a-hole elasto-plastic microstructure, the model achieved about three orders of magnitude speedup and 1.9% cumulative error on sequences twice as long as training.",
-  "watch_item": "Performance depends on careful loss-weight scheduling; fixed weighting can fail in the elasto-plastic regime, so convergence and transferability should be checked for new constitutive settings.",
+  "evidence_signal": "Trained on 10,000 non-proportional loading paths for a plate-with-a-hole microstructure, the model achieved roughly 10^3× speedup over FE and 1.9% cumulative error on sequences twice the training length.",
+  "watch_item": "Mesh-agnostic transfer is promising, but accuracy may still depend on how well the training data cover extreme loading paths, mesh resolutions, and constitutive regimes.",
   "hashtags": [
-    "#PhysicsInformedAI",
+    "#SolidMechanics",
+    "#PhysicsInformedML",
     "#GraphNeuralNetworks",
-    "#Elastoplasticity",
-    "#SurrogateModeling",
-    "#ComputationalMechanics"
+    "#ElastoPlasticity",
+    "#SurrogateModeling"
   ],
   "paper_id": "2026-06-09-arxiv-non_linear_mechanical_field_reconstruction_coupling_recurrent_neural_networks_with_physics",
   "paper_title": "Non-linear mechanical field reconstruction coupling recurrent neural networks with physics-informed graph neural networks",
   "paper_date": "2026-06-09",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-06-11T12:38:44",
+  "generated_at": "2026-06-12T12:12:59",
   "generator": "openai"
 }

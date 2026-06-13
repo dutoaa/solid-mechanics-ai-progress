@@ -1,24 +1,24 @@
 {
-  "key_insight": "A constrained LLM front end can safely automate finite-element setup by handling parsing and geometry generation, while deterministic human-written FEniCS templates keep the solver core reliable.",
-  "engineering_relevance": "This enables natural-language-driven multi-physics simulation workflows for solid mechanics without letting the model directly write weak forms or numerical solver code.",
+  "key_insight": "Constrain the LLM to parsing, geometry handling, and validation while keeping the finite-element solver fully deterministic and human-written.",
+  "engineering_relevance": "This architecture makes natural-language setup of multi-physics FEniCS simulations more practical without placing the numerical core of the analysis under LLM control.",
   "method": [
-    "LLM converts prompts into validated JSON specifications.",
-    "Deterministic dispatcher maps specs to five fixed FEniCS/UFL templates.",
-    "LLM is only used for non-catalog geometry via Gmsh and retry feedback."
+    "LLM converts prompts into structured JSON and only generates Gmsh code for non-catalog geometries.",
+    "A deterministic dispatcher selects one of five prebuilt FEniCS/UFL templates: linear elasticity, hyperelasticity, elastoplasticity, thermo-mechanical coupling, or phase-field fracture.",
+    "Retry feedback is used only for parsing and geometry generation; weak forms and solver code remain fixed."
   ],
-  "evidence_signal": "In evaluation, the parser reached 100% final valid parses on 15 prompts, and the custom-geometry path achieved 90% success on 10 cases, while benchmark simulations matched analytic/published results from sub-percent to about 2–5% error.",
-  "watch_item": "The approach depends on tightly scoped templates and validation, so performance may drop for geometries or physics outside the supported catalog.",
+  "evidence_signal": "The parser benchmark reached 100% final valid parses after retries, and the deterministic templates matched analytical and published benchmarks with sub-percent errors in smooth cases and about 2–5% in harder nonlinear cases.",
+  "watch_item": "The approach still depends on reliable prompt parsing and geometry generation, and custom-geometry failures can remain unrecovered in edge cases.",
   "hashtags": [
     "#FiniteElement",
     "#FEniCS",
     "#LLMforEngineering",
-    "#SolidMechanics",
-    "#ComputationalPhysics"
+    "#ComputationalMechanics",
+    "#ConstitutiveModeling"
   ],
   "paper_id": "2026-06-09-arxiv-a_constrained_natural_language_interface_for_variational_multi_physics_finite_element_simu",
   "paper_title": "A Constrained Natural-Language Interface for Variational Multi-Physics Finite Element Simulations in FEniCS",
   "paper_date": "2026-06-09",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-06-12T12:12:57",
+  "generated_at": "2026-06-13T11:10:04",
   "generator": "openai"
 }

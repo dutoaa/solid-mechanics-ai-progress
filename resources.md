@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-06-12
+Generated: 2026-06-13
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Adjoint Method versus Physics-Informed Neural Networks in PDE-Constrained Inverse Problems
@@ -115,13 +115,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.13320v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-11-arxiv-learning_light_scattering_from_operator_parameter_spaces_to_galerkin_consistent_solution_s_infographic.json
 
-## 15. Strain localization in softening plasticity without modifying standard constitutive models: a deformable Cosserat approach
+## 15. HAMNO: A Hierarchical Adaptive Multi-scale Neural Operator with Physics-Informed Learning for Dynamical Systems
 
-- Date: 2026-06-06
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.08095v1
-- PDF: https://arxiv.org/pdf/2606.08095v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-06-arxiv-strain_localization_in_softening_plasticity_without_modifying_standard_constitutive_models_infographic.json
+- Date: 2026-06-10
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.11963v1
+- PDF: https://arxiv.org/pdf/2606.11963v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-10-arxiv-hamno_a_hierarchical_adaptive_multi_scale_neural_operator_with_physics_informed_learning_f_infographic.json
 
 ## 16. Reduced integration with scaled boundary parametrization for virtual elements at finite strains
 

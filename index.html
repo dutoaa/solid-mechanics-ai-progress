@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI Solid Mechanics Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-06-12. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-06-13. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,7 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>94</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>89</strong></div>
         <p class="date">2026-06-10</p>
         <h2>Adjoint Method versus Physics-Informed Neural Networks in PDE-Constrained Inverse Problems</h2>
         <p class="authors">Zhen Zhang, Alessandro Alla, George Em Karniadakis</p>
@@ -39,18 +39,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12337v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12337v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Fair, like-for-like benchmarking shows that the best inverse-solver choice depends mainly on how the unknown is represented: grid fields favor adjoint methods, while neural representations favor PINNs.</p>
-          <p><b>Engineering relevance:</b> For PDE-constrained material and parameter identification, this comparison helps engineers choose the solver that best matches the physics representation, cost constraints, and time-dependence of the problem.</p>
-          <ul><li>Unified both methods under the same PDEs, domains, observation models, regularization, optimizer, and precision.</li><li>Tested on Burgers, Darcy permeability inversion, Allen–Cahn reaction identification, and Navier–Stokes viscosity identification.</li><li>Compared discrete adjoint optimization against PINNs, including a PINN-warm-started adjoint hybrid.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports benchmark evaluations across four inverse-problem cases, showing different performance regimes by parameterization and that warm-starting PINNs can reduce adjoint cost while preserving adjoint-level accuracy.</p>
-          <p><b>Watch item:</b> Results depend strongly on the chosen unknown representation and on practical factors such as trajectory storage, differentiation overhead, and fair optimizer/regularization matching.</p>
-          <div class="tags"><span>#PDEInverseProblems</span> <span>#AdjointMethods</span> <span>#PINNs</span> <span>#ComputationalMechanics</span> <span>#ScientificML</span></div>
+          <p><b>Key insight:</b> Adjoint optimization and PINNs are most effective when matched to the unknown’s representation: grid-based fields tend to favor adjoints, while neural representations favor PINNs.</p>
+          <p><b>Engineering relevance:</b> For PDE-constrained inverse problems in mechanics and fluids, the choice of solver can materially affect accuracy, cost, and practicality depending on whether the target is a field, closure term, or constitutive parameter.</p>
+          <ul><li>Use a common inverse-problem formulation with identical PDEs, observations, regularization, optimizer, and precision.</li><li>Compare discrete adjoint optimization against PINNs on unsteady Burgers, noisy Darcy, 3D Allen--Cahn, and unsteady Navier--Stokes inversion tasks.</li><li>Test a PINN-warm-started adjoint workflow to combine fast approximate recovery with high-accuracy refinement.</li></ul>
+          <p><b>Evidence signal:</b> The comparison is benchmarked on four PDE inverse problems and evaluates reconstruction quality and computational cost under matched settings.</p>
+          <p><b>Watch item:</b> Results depend strongly on how the unknown is parameterized, so conclusions may not transfer directly if the discretization, neural representation, or training setup changes.</p>
+          <div class="tags"><span>#PhysicsInformedML</span> <span>#AdjointMethods</span> <span>#PDEInverseProblems</span> <span>#ComputationalMechanics</span> <span>#ScientificMachineLearning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>93</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>88</strong></div>
         <p class="date">2026-06-09</p>
         <h2>A Constrained Natural-Language Interface for Variational Multi-Physics Finite Element Simulations in FEniCS</h2>
         <p class="authors">Nilay Upadhyay, Wesley F. Reinhart</p>
@@ -58,18 +58,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.10928v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.10928v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A constrained LLM front end can safely automate finite-element setup by handling parsing and geometry generation, while deterministic human-written FEniCS templates keep the solver core reliable.</p>
-          <p><b>Engineering relevance:</b> This enables natural-language-driven multi-physics simulation workflows for solid mechanics without letting the model directly write weak forms or numerical solver code.</p>
-          <ul><li>LLM converts prompts into validated JSON specifications.</li><li>Deterministic dispatcher maps specs to five fixed FEniCS/UFL templates.</li><li>LLM is only used for non-catalog geometry via Gmsh and retry feedback.</li></ul>
-          <p><b>Evidence signal:</b> In evaluation, the parser reached 100% final valid parses on 15 prompts, and the custom-geometry path achieved 90% success on 10 cases, while benchmark simulations matched analytic/published results from sub-percent to about 2–5% error.</p>
-          <p><b>Watch item:</b> The approach depends on tightly scoped templates and validation, so performance may drop for geometries or physics outside the supported catalog.</p>
-          <div class="tags"><span>#FiniteElement</span> <span>#FEniCS</span> <span>#LLMforEngineering</span> <span>#SolidMechanics</span> <span>#ComputationalPhysics</span></div>
+          <p><b>Key insight:</b> Constrain the LLM to parsing, geometry handling, and validation while keeping the finite-element solver fully deterministic and human-written.</p>
+          <p><b>Engineering relevance:</b> This architecture makes natural-language setup of multi-physics FEniCS simulations more practical without placing the numerical core of the analysis under LLM control.</p>
+          <ul><li>LLM converts prompts into structured JSON and only generates Gmsh code for non-catalog geometries.</li><li>A deterministic dispatcher selects one of five prebuilt FEniCS/UFL templates: linear elasticity, hyperelasticity, elastoplasticity, thermo-mechanical coupling, or phase-field fracture.</li><li>Retry feedback is used only for parsing and geometry generation; weak forms and solver code remain fixed.</li></ul>
+          <p><b>Evidence signal:</b> The parser benchmark reached 100% final valid parses after retries, and the deterministic templates matched analytical and published benchmarks with sub-percent errors in smooth cases and about 2–5% in harder nonlinear cases.</p>
+          <p><b>Watch item:</b> The approach still depends on reliable prompt parsing and geometry generation, and custom-geometry failures can remain unrecovered in edge cases.</p>
+          <div class="tags"><span>#FiniteElement</span> <span>#FEniCS</span> <span>#LLMforEngineering</span> <span>#ComputationalMechanics</span> <span>#ConstitutiveModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>93</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>88</strong></div>
         <p class="date">2026-06-09</p>
         <h2>Non-linear mechanical field reconstruction coupling recurrent neural networks with physics-informed graph neural networks</h2>
         <p class="authors">Manuel Ricardo Guevara Garban, Yves Chemisky, Étienne Prulière, Michaël Clément, Martin Abendroth, Björn Kiefer</p>
@@ -77,18 +77,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.10909v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.10909v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A coupled LSTM + physics-informed GNN can reconstruct history-dependent, non-linear local stress fields by separating temporal constitutive memory from spatial equilibrium-consistent field prediction.</p>
-          <p><b>Engineering relevance:</b> This enables fast, mesh-agnostic surrogate simulation of elasto-plastic microstructures, reducing finite element cost by orders of magnitude while preserving field accuracy.</p>
-          <ul><li>LSTM encodes macroscopic stress-strain loading history into a compact hidden state.</li><li>Physics-informed GNN/MeshGraphNet reconstructs spatial stress fields using mesh connectivity and equilibrium-based regularization.</li><li>A linear warm-up weighting balances reconstruction loss and divergence-based physics loss during training.</li></ul>
-          <p><b>Evidence signal:</b> Trained on 10,000 non-proportional loading paths for a plate-with-a-hole microstructure, the model achieved roughly 10^3× speedup over FE and 1.9% cumulative error on sequences twice the training length.</p>
-          <p><b>Watch item:</b> Mesh-agnostic transfer is promising, but accuracy may still depend on how well the training data cover extreme loading paths, mesh resolutions, and constitutive regimes.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#PhysicsInformedML</span> <span>#GraphNeuralNetworks</span> <span>#ElastoPlasticity</span> <span>#SurrogateModeling</span></div>
+          <p><b>Key insight:</b> A coupled LSTM + physics-informed GNN can reconstruct history-dependent, spatially varying stress fields in nonlinear microstructures by separating time-path encoding from equilibrium-constrained spatial prediction.</p>
+          <p><b>Engineering relevance:</b> This enables fast surrogate stress-field prediction for elasto-plastic multiscale simulation, offering orders-of-magnitude speedup while remaining transferable across mesh resolutions and element types.</p>
+          <ul><li>LSTM encodes macroscopic stress-strain loading history into a compact latent state.</li><li>Physics-informed GNN/MeshGraphNet reconstructs local stress on the mesh using connectivity and a discrete divergence equilibrium penalty.</li><li>A linear warm-up weighting balances reconstruction loss and physics loss to stabilize training in the elasto-plastic regime.</li></ul>
+          <p><b>Evidence signal:</b> Trained on 10,000 non-proportional loading paths for a periodic plate-with-a-hole microstructure, the model reportedly achieves about 1000× speedup over finite elements and generalizes to sequences twice as long with 1.9% cumulative error.</p>
+          <p><b>Watch item:</b> Transferability depends on having a mesh/connectivity representation consistent with the trained physics and loading regime, so robustness outside the demonstrated constitutive setting may require retraining or further validation.</p>
+          <div class="tags"><span>#ConstitutiveModeling</span> <span>#PhysicsInformedML</span> <span>#GraphNeuralNetworks</span> <span>#ElastoPlasticity</span> <span>#DigitalTwins</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>86</strong></div>
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>81</strong></div>
         <p class="date">2026-06-10</p>
         <h2>Local Stress Redistribution Controls Interactions between Hydraulic Fractures and Pre-existing Fractures</h2>
         <p class="authors">S. Shandilaya, M. Alaleeli, S. H. Kim, M. Mobasher, S. Roshankhah</p>
@@ -96,18 +96,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12347v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12347v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Natural fractures reshape local stress fields, and the resulting shear-driven stress redistribution determines whether a hydraulic fracture deflects, arrests, or links up with the fracture network.</p>
-          <p><b>Engineering relevance:</b> Predicting near-fracture stress evolution can improve hydraulic stimulation, CO2 storage, and subsurface integrity design by guiding fracture trajectory control in naturally fractured rock.</p>
-          <ul><li>Coupled laboratory tests on intact and pre-fractured PMMA specimens under plane-strain loading</li><li>Digital image correlation to measure full-field displacement and strain during loading and fluid injection</li><li>Poroelastic extended finite element simulations with mixed-mode fracture criteria</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports that experiments and simulations reproduced distinct HF trajectories, with intact specimens showing Mode I growth and pre-fractured specimens requiring mixed-mode (Mode I-II) behavior to match observed curvature.</p>
-          <p><b>Watch item:</b> Results are based on PMMA analog specimens and controlled boundary conditions, so direct transfer to heterogeneous subsurface rocks will require careful calibration.</p>
-          <div class="tags"><span>#HydraulicFracture</span> <span>#NaturalFractures</span> <span>#SolidMechanics</span> <span>#XFEM</span> <span>#GeoEngineering</span></div>
+          <p><b>Key insight:</b> Pre-existing natural fractures reshape local shear stress and strain, and that redistributed stress field determines whether a hydraulic fracture is deflected, attracted, or linked.</p>
+          <p><b>Engineering relevance:</b> Understanding NF-induced stress redistribution helps predict and control fracture paths during subsurface stimulation and storage, improving treatment design in naturally fractured rock.</p>
+          <ul><li>Coupled PMMA laboratory fracture experiments under plane-strain loading</li><li>Digital image correlation to measure full-field displacement and strain evolution</li><li>Poroelastic extended finite element simulations with mixed-mode fracture criteria</li></ul>
+          <p><b>Evidence signal:</b> The study combines laboratory observations and numerical reproduction of fracture curvature in intact and pre-fractured specimens under fixed-base, lateral confinement, and vertical compression conditions.</p>
+          <p><b>Watch item:</b> Results are based on PMMA specimens and idealized boundary conditions, so field-scale rock heterogeneity and in-situ stress complexity may limit direct transferability.</p>
+          <div class="tags"><span>#HydraulicFracturing</span> <span>#FractureMechanics</span> <span>#NaturalFractures</span> <span>#SolidMechanics</span> <span>#XFEM</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>80</strong></div>
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>75</strong></div>
         <p class="date">2026-06-11</p>
         <h2>DeepJEB++: Foundation Model-Driven Large-Scale 3D Engineering Dataset via 2D Latent Space Augmentation</h2>
         <p class="authors">Soyoung Yoo, Leekyo Jeong, Jinsu Ra, Dongeon Lee, Sunwoong Yang, Hyogu Jeong</p>
@@ -115,18 +115,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12994v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12994v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> DeepJEB++ scales small 2D multi-view seeds into a large, simulation-labeled 3D engineering dataset by augmenting in latent image space first and then lifting to geometry and labels.</p>
-          <p><b>Engineering relevance:</b> This enables faster creation of manufacturable, physics-annotated 3D parts for solid mechanics design studies when manual CAD generation and simulation labeling are too costly.</p>
-          <ul><li>Fine-tune a pretrained 2D latent diffusion model on multi-view renders and generate new views via latent interpolation.</li><li>Use a vision-language model filter to keep only manufacturable, plausible designs.</li><li>Lift validated images to 3D meshes with a domain-adapted generative foundation model, then auto-assign FE labels from recognized load and bolt interfaces.</li></ul>
-          <p><b>Evidence signal:</b> Starting from fewer than 400 seed designs, the pipeline produced 15,360 simulation-labeled 3D brackets, a 40x expansion, while evaluating manufacturability, label fidelity against SimJEB, and distributional consistency.</p>
-          <p><b>Watch item:</b> The pipeline depends on accurate interface recognition and domain adaptation across stages, so errors in view synthesis, 3D lifting, or boundary-condition assignment could propagate into the final labels.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#EngineeringAI</span> <span>#3DDataset</span> <span>#FoundationModels</span> <span>#GenerativeDesign</span></div>
+          <p><b>Key insight:</b> DeepJEB++ grows a small set of jet engine bracket designs into a large, simulation-labeled 3D dataset by augmenting in 2D latent space first, then transferring the results to 3D.</p>
+          <p><b>Engineering relevance:</b> It provides a practical path to build scalable, physics-labeled CAD/CAE datasets for solid mechanics and design optimization when 3D data and manual labeling are scarce.</p>
+          <ul><li>Fine-tune a pretrained 2D latent diffusion model on multi-view renders and generate new views via latent interpolation.</li><li>Use a vision-language-model quality filter to keep manufacturable designs.</li><li>Lift validated images into 3D meshes with a domain-adapted generative foundation model, then auto-assign FE labels from detected interfaces.</li></ul>
+          <p><b>Evidence signal:</b> Starting from fewer than 400 seed designs, the pipeline produces 15,360 simulation-labeled 3D brackets, a 40x expansion, and the authors evaluate manufacturability, label fidelity versus SimJEB ground truth, and distributional consistency.</p>
+          <p><b>Watch item:</b> Performance depends on reliable interface recognition and the quality of the 2D-to-3D lifting step, so label errors or geometry artifacts could propagate into the final dataset.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#GenerativeAI</span> <span>#EngineeringDesign</span> <span>#3DDatasets</span> <span>#PhysicsInformedAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>77</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>72</strong></div>
         <p class="date">2026-06-10</p>
         <h2>MATLAB-Based Layerwise Self-Adaptive Physics-Informed Neural Network in Applications to Multidimensional Coupled Burgers&#x27; Equations with High Reynolds Numbers</h2>
         <p class="authors">Harish P. Bhatt, Xi Chen, Jingsai Liang</p>
@@ -134,18 +134,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12348v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12348v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A layerwise self-adaptive PINN can better resolve sharp shock fronts in high-Reynolds-number coupled Burgers’ equations by dynamically reweighting physics, initial, and boundary losses during training.</p>
-          <p><b>Engineering relevance:</b> This improves simulation of stiff, shock-forming spatio-temporal flows where conventional mesh-based solvers can struggle with stability and strong grid dependence.</p>
-          <ul><li>Layerwise self-adaptive weighting of residual, initial-condition, and boundary-condition penalties</li><li>Dual-phase optimization for more stable convergence</li><li>Implemented and tested in MATLAB</li></ul>
-          <p><b>Evidence signal:</b> The paper evaluates the method on numerical experiments for multidimensional coupled Burgers’ equations and reports lower relative L2 error than standard PINN variants, including versions with and without L-BFGS.</p>
-          <p><b>Watch item:</b> Performance may depend on careful tuning of adaptive weights and optimization phases, especially for very sharp gradients or more complex coupled PDEs.</p>
-          <div class="tags"><span>#PhysicsInformedML</span> <span>#PINN</span> <span>#BurgersEquation</span> <span>#ScientificComputing</span> <span>#HighReynoldsNumber</span></div>
+          <p><b>Key insight:</b> A layerwise self-adaptive PINN improves training balance across residual, initial, and boundary terms, enabling better capture of sharp shock fronts in high-Reynolds multidimensional coupled Burgers’ equations.</p>
+          <p><b>Engineering relevance:</b> The method offers a more stable mesh-free alternative for simulating nonlinear transport with steep gradients, where classical finite-difference and finite-element solvers struggle.</p>
+          <ul><li>Layerwise self-adaptive weighting updates penalty terms during training.</li><li>Dual-phase optimization is used to improve convergence stability.</li><li>Compared against standard PINN variants with and without L-BFGS.</li></ul>
+          <p><b>Evidence signal:</b> Numerical experiments report lower relative L2 error than baseline PINNs and improved ability to track shock-front formation over time.</p>
+          <p><b>Watch item:</b> Performance may depend on careful tuning of adaptive weights and optimization stages, especially for stiff high-Re problems.</p>
+          <div class="tags"><span>#PINN</span> <span>#PhysicsInformedML</span> <span>#BurgersEquation</span> <span>#ShockCapturing</span> <span>#ScientificML</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>77</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>72</strong></div>
         <p class="date">2026-06-07</p>
         <h2>A Non-Overlapping Schwarz Hybrid Finite Element-Neural Operator Framework for Solid Mechanics on Irregular Domains</h2>
         <p class="authors">Wei Wang, Abhinav Gupta, Haihui Ruan, Somdatta Goswami</p>
@@ -153,18 +153,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.08796v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.08796v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper replaces overlapping FE–neural operator coupling with a non-overlapping Schwarz scheme that exchanges Neumann/Dirichlet data, enabling faster and more geometry-flexible hybrid solid mechanics simulation.</p>
-          <p><b>Engineering relevance:</b> This makes high-fidelity simulation more practical for domains with local nonlinearities, fine-scale features, and irregular geometries, while preserving mechanical consistency.</p>
-          <ul><li>Non-overlapping Schwarz alternating coupling between FE and Point-DeepONet subdomains</li><li>Neumann-Dirichlet interface exchange: traction from NO to FE, displacement from FE to NO</li><li>Analytical derivation of strain and stress operators from displacement to reduce parameters and enforce physics</li></ul>
-          <p><b>Evidence signal:</b> The framework is validated on three benchmarks—static linear elasticity, quasi-static hyperelasticity, and elastodynamics—covering both regular and irregular geometries, with reduced inner Schwarz iterations and bounded error accumulation reported in the abstract.</p>
-          <p><b>Watch item:</b> Performance depends on stable interface coupling and accurate traction transfer; implementing the Neumann-Dirichlet exchange on complex meshes may be sensitive to discretization and training quality.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#FiniteElementMethod</span> <span>#NeuralOperators</span> <span>#DomainDecomposition</span> <span>#PhysicsInformedAI</span></div>
+          <p><b>Key insight:</b> A non-overlapping Schwarz hybrid FE-neural operator method couples FE and Point-DeepONet solvers through Neumann-Dirichlet exchange, removing overlap overhead while handling irregular solid mechanics domains.</p>
+          <p><b>Engineering relevance:</b> The framework can accelerate high-fidelity simulation of nonlinear or dynamic solids by preserving FE accuracy where needed and using learned operators in expensive subdomains.</p>
+          <ul><li>Non-overlapping Schwarz alternating coupling with traction transfer from NO to FE</li><li>Point-DeepONet on unstructured FE point clouds for irregular geometries</li><li>Analytical strain/stress derivation from displacement operators to enforce mechanical consistency</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports validation on three benchmarks—static linear elasticity, quasi-static hyperelasticity, and elastodynamics—across both regular and irregular geometries, with reduced inner Schwarz iterations and bounded error accumulation over long horizons.</p>
+          <p><b>Watch item:</b> Performance depends on stable interface coupling and careful training of the NO subdomain; traction-based exchange may be sensitive to noise or poor generalization near strongly nonlinear interfaces.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#FiniteElementMethod</span> <span>#NeuralOperators</span> <span>#SchwarzMethod</span> <span>#PhysicsInformedAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>74</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>69</strong></div>
         <p class="date">2026-06-06</p>
         <h2>Mesh Graph Neural Network Framework for Accelerating Finite Element Simulation for Arbitrary Geometries</h2>
         <p class="authors">Josiah D. Kunz, Kamal Choudhary</p>
@@ -172,18 +172,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.08287v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.08287v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A mesh graph neural network can predict von Mises stress on 2D parts with different hole geometries, generalizing better than standard ML surrogates because it uses mesh topology and relative features instead of absolute coordinates.</p>
-          <p><b>Engineering relevance:</b> This enables faster finite element screening of structural designs under multiple loads, reducing the cost of iterative geometry optimization and what-if analysis.</p>
-          <ul><li>Encode mesh nodes by type: fixed boundary, free surface, and hole edge.</li><li>Use relative edge distances plus global load as inputs for translation- and rotation-invariant prediction.</li><li>Train a graph neural network on simulated FE data and compare against Random Forest, Gradient Boosting, and KNN.</li></ul>
-          <p><b>Evidence signal:</b> Trained on 11 plate geometries under 20 load conditions and tested on 7 unseen geometries and 3 unseen loads, with the best case reaching R^2 &gt;= 0.97 versus about 0.01–0.86 for conventional models.</p>
-          <p><b>Watch item:</b> Performance may degrade on geometries or loading regimes farther outside the training distribution, so high-fidelity FE validation is still needed before design use.</p>
-          <div class="tags"><span>#FiniteElementAnalysis</span> <span>#GraphNeuralNetworks</span> <span>#SurrogateModeling</span> <span>#StructuralMechanics</span> <span>#AIforEngineering</span></div>
+          <p><b>Key insight:</b> A mesh graph neural network can predict stress fields on new 2D geometries with much better transfer than standard machine-learning surrogates by using mesh connectivity, node types, and load context instead of absolute coordinates.</p>
+          <p><b>Engineering relevance:</b> This offers a faster finite-element surrogate for design exploration across changing hole shapes and load cases, reducing repeated simulation cost in structural mechanics workflows.</p>
+          <ul><li>Trains on finite-element meshes as graphs rather than fixed coordinate tables</li><li>Uses node-type, relative edge-distance, and global load features to encode geometry and physics</li><li>Designed to be translation- and rotation-invariant for unseen geometries</li></ul>
+          <p><b>Evidence signal:</b> The model was trained on 11 plate geometries with 20 load conditions and tested on 7 unseen geometries plus 3 unseen loads, reaching up to R^2 &gt;= 0.97 while conventional baselines ranged roughly from 0.01 to 0.86.</p>
+          <p><b>Watch item:</b> Performance can still vary by geometry/load combination, so reliable deployment likely requires careful validation outside the training distribution.</p>
+          <div class="tags"><span>#FiniteElementAnalysis</span> <span>#GraphNeuralNetworks</span> <span>#StructuralMechanics</span> <span>#SurrogateModeling</span> <span>#ComputationalEngineering</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>73</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>68</strong></div>
         <p class="date">2026-06-10</p>
         <h2>A stochastic model for elastoplastic contact of rough surfaces incorporating scale-dependent hardness</h2>
         <p class="authors">Yang Xu, Hengxu Song, Jianqiao Hu</p>
@@ -191,18 +191,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.11765v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.11765v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper introduces a stochastic elastoplastic contact framework that captures how rough-surface contact transitions from elastic to plastic behavior when hardness depends on scale.</p>
-          <p><b>Engineering relevance:</b> It helps predict contact performance and failure limits for rough interfaces in applications such as seals, bearings, electrical contacts, and surface engineering.</p>
-          <ul><li>Builds three coupled integral equations for the scale evolution of elastic pressure, plastic contact area, and non-contact area.</li><li>Uses compounded Chapman-Kolmogorov equations to model rough-surface contact across geometrical scales.</li><li>Derives a new topographic yield parameter and a rapid diagram for identifying contact status.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical solutions and curve-fitting used to estimate elastic and plastic limits and to examine how scale-dependent hardness changes pressure and area-load relationships.</p>
-          <p><b>Watch item:</b> The framework appears model-driven and numerically fitted, so its reliability will depend on the validity of the rough-surface assumptions and parameter calibration for real materials.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#ContactMechanics</span> <span>#Elastoplasticity</span> <span>#RoughSurfaces</span> <span>#StochasticModeling</span></div>
+          <p><b>Key insight:</b> The paper introduces a stochastic, scale-aware model for rough-surface contact that captures the transition from elastic to plastic behavior by evolving contact statistics across geometric scales.</p>
+          <p><b>Engineering relevance:</b> It provides a practical way to predict contact pressure, elastic/plastic area fractions, and yield onset in interfaces where surface roughness and size-dependent hardness both matter.</p>
+          <ul><li>Formulate compounded Chapman-Kolmogorov equations for interfacial evolution across scales</li><li>Solve three coupled integral equations for pressure PDF, plastic contact area, and non-contact area</li><li>Derive a new topographic yield parameter and status diagram for rapid contact classification</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical solutions, curve-fitting-based limit identification, and parametric studies showing smooth transitions from linear elasticity to full plasticity.</p>
+          <p><b>Watch item:</b> The framework appears mathematically and computationally intensive, so accurate calibration of hardness scaling and roughness statistics will be critical for reliable use.</p>
+          <div class="tags"><span>#ContactMechanics</span> <span>#Elastoplasticity</span> <span>#SurfaceRoughness</span> <span>#StochasticModeling</span> <span>#MultiscaleEngineering</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>71</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>66</strong></div>
         <p class="date">2026-06-11</p>
         <h2>MOSAIC: Modality-Specific Adaptation for Incremental Continual Learning in Parkinson&#x27;s Disease Gait Assessment</h2>
         <p class="authors">Minlin Zeng, Zhipeng Zhou, Yang Qiu, Martin J. McKeown, Zhiqi Shen</p>
@@ -210,18 +210,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.13258v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.13258v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> MOSAIC enables continual learning when new gait sensor modalities arrive over time by stabilizing newly learned modality features, separating sensor-specific statistics, and recovering plasticity without catastrophic forgetting.</p>
-          <p><b>Engineering relevance:</b> This is relevant for clinical and wearable sensing systems that must adapt to upgraded devices, changing protocols, or multi-center deployments without retraining from scratch or retaining all historical data.</p>
-          <ul><li>Modality-Specific Warm-Up to reduce unreliable cross-modal distillation from a “toxic teacher” early in learning.</li><li>Statistics-decoupled MSBN to isolate sensor-specific distributions while keeping a shared semantic backbone.</li><li>Curriculum-guided repulsive objective for plasticity recovery to preserve legacy knowledge and regain modality-specific capacity.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports evaluation on three multimodal Parkinson’s gait datasets, where MOSAIC improves final performance and reduces forgetting.</p>
-          <p><b>Watch item:</b> The approach adds architectural and training complexity, so its robustness depends on careful tuning when modalities, data quality, or dataset shift differ from the benchmark setting.</p>
-          <div class="tags"><span>#ContinualLearning</span> <span>#MultimodalAI</span> <span>#ParkinsonsDisease</span> <span>#GaitAnalysis</span> <span>#WearableSensors</span></div>
+          <p><b>Key insight:</b> MOSAIC improves continual Parkinson’s gait assessment by adapting each sensor modality separately while preserving shared disease knowledge across changing multimodal data streams.</p>
+          <p><b>Engineering relevance:</b> The framework is relevant for real-world clinical sensing pipelines where new devices, missing modalities, and privacy limits make retraining on all historical data impractical.</p>
+          <ul><li>Modality-Specific Warm-Up to stabilize new modality features before distillation</li><li>Statistics-decoupled MSBN to separate sensor-specific statistics from a shared semantic backbone</li><li>Curriculum-guided repulsive objective to recover plasticity while limiting forgetting</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports evaluation on three multimodal Parkinson’s gait datasets, with improved final performance and reduced forgetting.</p>
+          <p><b>Watch item:</b> The approach adds architectural and training complexity, so stable tuning across modalities and datasets may be a practical deployment concern.</p>
+          <div class="tags"><span>#ContinualLearning</span> <span>#MultimodalLearning</span> <span>#ParkinsonsDisease</span> <span>#GaitAnalysis</span> <span>#MedicalAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>71</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>66</strong></div>
         <p class="date">2026-06-09</p>
         <h2>A Cryogenic Uniaxial Strain Cell for Quantum Devices</h2>
         <p class="authors">Bradley Lloyd, Davis Rash, Chandler Wilburn, Paul Kliewer, Meenakshi Singh</p>
@@ -229,18 +229,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.11485v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.11485v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A symmetric dual-chip piezoelectric strain cell can deliver homogeneous uniaxial strain to thick, square quantum-device substrates while suppressing bending and shear.</p>
-          <p><b>Engineering relevance:</b> The design enables practical strain tuning of semiconductor qubits by combining high-density RF/DC access with electrical isolation from high-voltage actuators.</p>
-          <ul><li>Use a highly symmetric dual-chip loading geometry to balance forces on the substrate.</li><li>Integrate a high-density RF/DC interposer for standard wire bonding and device connectivity.</li><li>Enclose the piezo actuators in a grounded Faraday cage to prevent stray electrostatic effects.</li></ul>
-          <p><b>Evidence signal:</b> Finite element simulations and surface strain measurements on a 200 μm silicon die show 215 με strain at 200 V piezo bias.</p>
-          <p><b>Watch item:</b> Performance depends on precise symmetric mounting and robust isolation; misalignment or wiring/packaging leakage could reintroduce flexure or unwanted Stark shifts.</p>
-          <div class="tags"><span>#QuantumDevices</span> <span>#UniaxialStrain</span> <span>#PiezoActuator</span> <span>#FiniteElementAnalysis</span> <span>#CryogenicEngineering</span></div>
+          <p><b>Key insight:</b> A symmetric dual-chip piezo loading design enables homogeneous uniaxial strain of thick, square quantum-device substrates while minimizing flexure and shear.</p>
+          <p><b>Engineering relevance:</b> This strain-cell architecture makes cryogenic strain tuning practical for semiconductor qubits by supporting dense RF/DC wiring and strong electrical isolation from high-voltage actuators.</p>
+          <ul><li>Use a highly symmetric dual-chip loading configuration to distribute force evenly.</li><li>Pair stiff piezo actuators with finite-element simulation to reduce deformation and improve strain uniformity.</li><li>Integrate a high-density RF/DC interposer and grounded Faraday cage for wire bonding and electrical isolation.</li></ul>
+          <p><b>Evidence signal:</b> Finite element simulations and surface strain measurements on a 200 μm silicon die show 215 μɛ at 200 V applied piezo bias.</p>
+          <p><b>Watch item:</b> Performance may depend on precise symmetric assembly and robust isolation, since misalignment or wiring/cage implementation could reintroduce strain gradients or electrical cross-talk.</p>
+          <div class="tags"><span>#QuantumDevices</span> <span>#CryogenicMechanics</span> <span>#FiniteElementAnalysis</span> <span>#PiezoStrain</span> <span>#SemiconductorQubits</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>68</strong></div>
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>63</strong></div>
         <p class="date">2026-06-10</p>
         <h2>Residual stress gradient in a thin film within the dislocation pile-up theory</h2>
         <p class="authors">A. V. Druzhinin, C. Cancellieri</p>
@@ -248,18 +248,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12007v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12007v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Residual stress in a thin film can be predicted by treating relaxation as a dislocation pile-up at the film-substrate interface, yielding a stress gradient that depends strongly on geometry and the initial stress profile.</p>
-          <p><b>Engineering relevance:</b> This provides a mechanics-based way to estimate residual stress redistribution in constrained thin films, which is important for reliability, interface integrity, and process design.</p>
-          <ul><li>Model plastic strain through dislocation density and derive a fundamental stress-density relation.</li><li>Apply force balance to obtain a singular integro-differential equation for arbitrary non-uniform residual stress.</li><li>Solve the equation numerically with a collocation method for constant, linear, parabolic, and exponential initial stresses.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical solutions and compares multiple initial stress profiles, showing that residual stress relaxation and dislocation populations vary with thickness-to-width ratio and load shape.</p>
-          <p><b>Watch item:</b> The model assumes an idealized impenetrable interface and requires both positive and negative Burgers vectors in equilibrium, so practical implementation may be sensitive to real interface conditions and material complexity.</p>
-          <div class="tags"><span>#ThinFilms</span> <span>#ResidualStress</span> <span>#DislocationTheory</span> <span>#SolidMechanics</span> <span>#NumericalModeling</span></div>
+          <p><b>Key insight:</b> Residual stress in a thin film can be predicted by modeling relaxation through dislocation pile-ups at the film-substrate interface, which yields a stress profile that depends strongly on geometry and the initial stress shape.</p>
+          <p><b>Engineering relevance:</b> This gives thin-film designers a mechanics-based way to anticipate where stress relaxes most, helping reduce failure risk in constrained coatings and layered materials.</p>
+          <ul><li>Model plastic strain via dislocation density in a screw-dislocation pile-up.</li><li>Derive a singular integro-differential equation from force balance and the residual stress profile.</li><li>Solve numerically with a collocation method for constant, linear, parabolic, and exponential initial stresses.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical solutions across multiple initial stress profiles and shows that the resulting residual stress distribution and dislocation counts vary with thickness-to-width ratio and initial stress shape.</p>
+          <p><b>Watch item:</b> The model assumes a specific pile-up mechanism at an impenetrable interface, so results may be sensitive to boundary conditions and may need extension for more complex microstructures or material behaviors.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#ThinFilms</span> <span>#ResidualStress</span> <span>#Dislocations</span> <span>#ComputationalMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>67</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>62</strong></div>
         <p class="date">2026-06-11</p>
         <h2>Limits of constant-parameter constitutive models for hydrogels under inertial cavitation</h2>
         <p class="authors">Tianyi Chu, Joseph Beckett, Zhiren Zhu, Jonathan B. Estrada, Spencer H. Bryngelson</p>
@@ -267,18 +267,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.13584v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.13584v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Time-resolved parameter estimation reveals that constant-parameter constitutive models break down during inertial cavitation, with apparent shear modulus and viscosity evolving over the event rather than remaining fixed.</p>
-          <p><b>Engineering relevance:</b> For soft-matter impact and cavitation problems, model parameters should be treated as window-dependent diagnostics of physics limits, not as universal material constants.</p>
-          <ul><li>Coupled laser-induced cavitation experiments with bubble-dynamics simulations in IMR.</li><li>Estimated NHKV constitutive parameters over moving, overlapping windows.</li><li>Used modified iterative ensemble Kalman smoother with multiple data assimilation (MIEnKS-MDA) to track time-resolved response.</li></ul>
-          <p><b>Evidence signal:</b> Across PAAm and gelatin hydrogels, inferred modulus and viscosity changed during cavitation, often decreasing then plateauing, with especially strong temperature-dependent trends in gelatin and notable variation during the first two bubble collapses.</p>
-          <p><b>Watch item:</b> Results depend on the chosen constitutive form and fitting window, so the inferred parameters should be interpreted as indicators of model inadequacy rather than definitive intrinsic material constants.</p>
-          <div class="tags"><span>#ConstitutiveModeling</span> <span>#HydrogelMechanics</span> <span>#InertialCavitation</span> <span>#InverseModeling</span> <span>#SoftMatter</span></div>
+          <p><b>Key insight:</b> Moving-window inverse modeling shows that hydrogels do not behave like constant-parameter materials during inertial cavitation; the apparent shear modulus and viscosity evolve over time, revealing where the constitutive assumption breaks down.</p>
+          <p><b>Engineering relevance:</b> This provides a diagnostic tool for high-rate soft-matter characterization and helps guide better constitutive models for bubble–material interactions in biomedical and soft robotics applications.</p>
+          <ul><li>Laser-induced cavitation experiments coupled with bubble-dynamics simulation</li><li>Time-resolved parameter estimation using a modified iterative ensemble Kalman smoother with multiple data assimilation (MIEnKS-MDA)</li><li>Fit a neo-Hookean Kelvin–Voigt model over overlapping moving windows to expose window dependence</li></ul>
+          <p><b>Evidence signal:</b> Across polyacrylamide and gelatin hydrogels, inferred modulus/viscosity changed during cavitation, generally decreasing then plateauing in PAAm, with strong temperature-dependent trends in gelatin and notable variation during the first two bubble collapses.</p>
+          <p><b>Watch item:</b> The results remain tied to the prescribed NHKV model and windowing strategy, so the inferred parameters are diagnostic rather than universal material constants.</p>
+          <div class="tags"><span>#ConstitutiveModeling</span> <span>#Hydrogels</span> <span>#Cavitation</span> <span>#InverseProblems</span> <span>#SoftMatter</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>67</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>62</strong></div>
         <p class="date">2026-06-11</p>
         <h2>Learning light scattering from operator parameter spaces to Galerkin-consistent solution spaces</h2>
         <p class="authors">Lida Liu, Jingwei Wang, Wei Cao, Yang Zhang, Yuntian Chen</p>
@@ -286,37 +286,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.13320v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.13320v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> FEMONet learns light scattering as a Galerkin-consistent operator map from physical parameters to finite-element solution coefficients, enabling accurate complex-valued nanophotonic prediction with better generalization than unconstrained neural surrogates.</p>
-          <p><b>Engineering relevance:</b> This offers a faster surrogate for full-wave electromagnetic simulation and inverse design of nanophotonic devices, while retaining finite-element physics consistency needed for reliable engineering use.</p>
-          <ul><li>Encodes the scattering problem in an operator parameter space and links it to the variational weak form of the vector wave equations.</li><li>Uses finite-element discretization so spatial derivatives are absorbed into stiffness matrices and load vectors instead of being differentiated through the neural network.</li><li>Predicts finite-element expansion coefficients in compatible trial/test spaces, enforcing Galerkin consistency for complex-valued fields.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports high accuracy, stable training, and broad generalization across dielectric, metallic, arrayed, plasmonic, and 3D nanophotonic structures.</p>
-          <p><b>Watch item:</b> Performance likely depends on the quality of the finite-element mesh, basis choice, and problem formulation, so extending to new geometries or boundary conditions may still require careful setup.</p>
-          <div class="tags"><span>#NeuralOperators</span> <span>#FiniteElementMethod</span> <span>#Nanophotonics</span> <span>#PhysicsInformedML</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> FEMONet learns complex optical scattering by combining operator learning with finite-element Galerkin constraints, so predictions live in a physically consistent solution space instead of unconstrained field values.</p>
+          <p><b>Engineering relevance:</b> This enables faster, more generalizable full-wave nanophotonic simulation for forward analysis and inverse design across diverse structures, including 3D and plasmonic geometries.</p>
+          <ul><li>Encodes the wave problem in an operator parameter space of physical entities.</li><li>Uses the variational weak form and finite-element discretization to map to Galerkin-consistent solution coefficients.</li><li>Removes coordinate derivatives from the physics loss by assembling stiffness matrices and load vectors.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports high accuracy, stable training, and strong generalization across dielectric, metallic, arrayed, plasmonic, and three-dimensional nanophotonic structures.</p>
+          <p><b>Watch item:</b> The approach depends on finite-element discretization and compatible weak-form assembly, so implementation quality and mesh/discretization choices may strongly affect performance.</p>
+          <div class="tags"><span>#FEMSurrogates</span> <span>#NeuralOperators</span> <span>#Nanophotonics</span> <span>#GalerkinMethod</span> <span>#PhysicsInformedAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>67</strong></div>
-        <p class="date">2026-06-06</p>
-        <h2>Strain localization in softening plasticity without modifying standard constitutive models: a deformable Cosserat approach</h2>
-        <p class="authors">Andrea Panteghini, M. B. Rubin</p>
-        <p class="abstract">This paper presents a formulation for strain localization in softening plasticity based on a deformable Cosserat model. The approach enables the direct use of standard elastoplastic constitutive models formulated for a classical Cauchy continuum, without modifying the stress update algorithm or consistent tangent operator. A key feature of the framework is the strict separation of dissipative and energetic mechanisms: all dissipation is confined to the macro-continuum, while the micro-continuum contributes only through linear elastic terms associated with the director field. As a result, the constitutive structure of the elastoplastic model is preserved, and existing models can be employed as black-box components. The internal length scale arises naturally from the micro-continuum and governs the development, interaction and selection of localization patterns, rather than acting as a diffusive parameter. The formulation is easy to implement within standard finite element frameworks, requiring only additional linear contributions to the residual and tangent operators. The performance of the approach is assessed through benchmark problems involving shallow foundations on soil, a demanding test due to complex and unstable localization mechanisms. Both Tresca and Matsuoka-Nakai plasticity models are considered, including cases with highly unstable post-peak responses. Numerical results show convergence of load-displacement responses, dissipated energy and shear-band patterns upon mesh refinement, even in the presence of nonlinear interacting localization processes. These findings demonstrate a robust and physically consistent approach for the analysis of strain localization in softening plasticity.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.08095v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.08095v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>61</strong></div>
+        <p class="date">2026-06-10</p>
+        <h2>HAMNO: A Hierarchical Adaptive Multi-scale Neural Operator with Physics-Informed Learning for Dynamical Systems</h2>
+        <p class="authors">Mostafa Bamdad, Mohammad Sadegh Eshaghi, Timon Rabczuk</p>
+        <p class="abstract">Neural operators provide a powerful framework for learning solution mappings of partial differential equations directly in function space. However, many existing architectures still struggle to represent nonlinear time-dependent systems that involve multi-scale structures, long-range interactions, and stable long-time evolution. In this work, we introduce the Hierarchical Adaptive Multi-scale Neural Operator (HAMNO), a neural-operator architecture that combines local convolutional representations, global spectral operators, and hierarchical encoder-decoder processing. The central component of HAMNO is a data-dependent gating mechanism that adaptively balances local and global information at each spatial location, allowing the model to resolve fine-scale features while preserving long-range dependencies. We further develop a physics-informed extension, PI-HAMNO, based on a multi-objective loss strategy that combines data fitting with strong- and weak-form physics constraints. The strong-form term penalizes the domain-integrated squared PDE residual in physical coordinates, while the weak-form term is constructed by multiplying the governing residual by finite-element test functions and evaluating the resulting element integrals using centroid-based tetrahedral quadrature. The framework is evaluated on non-periodic Allen-Cahn (AC), Cahn-Hilliard (CH), and Swift-Hohenberg (SH) equations defined on cubic domains. Across long-horizon rollout, data-limited training, out-of-distribution initial-condition shifts, and random-seed variations, HAMNO improves predictive accuracy over standard neural-operator baselines, while PI-HAMNO further enhances stability, physical consistency, and data efficiency. The implementation is publicly available at https://github.com/MBamdad/HAMNO .</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.11963v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.11963v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A deformable Cosserat framework lets standard softening plasticity models capture strain localization without changing the constitutive update or consistent tangent.</p>
-          <p><b>Engineering relevance:</b> It offers a mesh-robust, easy-to-implement way to predict shear bands and post-peak response in geotechnical and other localization-prone solids.</p>
-          <ul><li>Uses a macro-continuum Cauchy plasticity model with a micro-continuum director field.</li><li>Keeps dissipation in the macro-scale plasticity while the Cosserat micro-scale adds only linear elastic energetic terms.</li><li>Introduces an internal length that controls localization pattern selection and interaction, not artificial diffusion.</li></ul>
-          <p><b>Evidence signal:</b> Benchmarked on shallow foundation problems with Tresca and Matsuoka-Nakai plasticity, showing mesh-convergent load-displacement curves, dissipated energy, and shear-band patterns even for unstable post-peak responses.</p>
-          <p><b>Watch item:</b> The approach adds extra Cosserat DOFs and residual/tangent terms, so implementation still requires careful finite element integration and calibration of the internal length scale.</p>
-          <div class="tags"><span>#CosseratContinuum</span> <span>#StrainLocalization</span> <span>#SofteningPlasticity</span> <span>#FiniteElementMethod</span> <span>#Geomechanics</span></div>
+          <p><b>Key insight:</b> HAMNO combines local convolutions, global spectral mixing, and adaptive gating in a hierarchical neural operator to better learn nonlinear, multi-scale dynamical systems, while PI-HAMNO adds physics constraints for improved stability and fidelity.</p>
+          <p><b>Engineering relevance:</b> This is relevant for surrogate modeling of PDE-governed engineering systems because it targets accurate long-horizon prediction, data efficiency, and physical consistency on non-periodic domains.</p>
+          <ul><li>Hierarchical encoder-decoder neural operator with local convolutional and global spectral branches</li><li>Data-dependent gating to adaptively blend fine-scale and long-range information at each spatial location</li><li>Physics-informed extension using data loss plus strong-form and weak-form PDE residual penalties</li></ul>
+          <p><b>Evidence signal:</b> The models were tested on non-periodic Allen-Cahn, Cahn-Hilliard, and Swift-Hohenberg equations under long-rollout, limited-data, out-of-distribution initial conditions, and random-seed variability, where HAMNO outperformed baselines and PI-HAMNO improved stability and data efficiency.</p>
+          <p><b>Watch item:</b> The weak-form physics loss relies on centroid-based tetrahedral quadrature and finite-element test functions, so implementation details and mesh/test-function choices may affect accuracy and reproducibility.</p>
+          <div class="tags"><span>#NeuralOperator</span> <span>#PhysicsInformedLearning</span> <span>#PDESurrogates</span> <span>#MultiscaleModeling</span> <span>#ComputationalScience</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>66</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>61</strong></div>
         <p class="date">2026-06-08</p>
         <h2>Reduced integration with scaled boundary parametrization for virtual elements at finite strains</h2>
         <p class="authors">Njomza Pacolli, Bjorn Sauren, Jannick Kehls, Sven Klinkel, Stefanie Reese, Hagen Holthusen</p>
@@ -324,18 +324,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.09530v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.09530v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Reduced integration with a scaled boundary parametrization lets VEM integrate the weak form analytically with only one integration point per section, while preserving good accuracy at finite strains.</p>
-          <p><b>Engineering relevance:</b> This offers a potentially efficient stabilization strategy for large-deformation solid mechanics simulations, especially for hyperelastic and elasto-plastic problems on polygonal or nonstandard meshes.</p>
-          <ul><li>Taylor-expand constitutive quantities about the section center</li><li>Use scaled boundary parametrization to obtain analytical weak-form integration</li><li>Reduce quadrature to one point per section while replacing conventional VEM stabilization</li></ul>
-          <p><b>Evidence signal:</b> The method was evaluated with a nonlinear patch test and multiple large-deformation examples, including compression, hyperelastic anisotropy, and elasto-plastic notch loading.</p>
-          <p><b>Watch item:</b> The formulation did not pass the patch test with higher-order shape functions, and performance was better when the physical element closely matched the assumed parent element geometry.</p>
-          <div class="tags"><span>#VirtualElementMethod</span> <span>#FiniteStrain</span> <span>#ReducedIntegration</span> <span>#SolidMechanics</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> A reduced-integration virtual element formulation with scaled-boundary parametrization can cut each section to a single integration point while still capturing finite-strain nonlinear response reasonably well.</p>
+          <p><b>Engineering relevance:</b> This offers a potentially cheaper and simpler stabilization strategy for large-deformation solid mechanics analyses, especially when mesh quality and element distortion are important.</p>
+          <ul><li>Taylor-expand constitutive quantities about the sectional center.</li><li>Use scaled-boundary parametrization to enable analytical integration of the weak form.</li><li>Evaluate the formulation on finite-strain benchmarks including hyperelastic anisotropy and elasto-plasticity.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports several numerical examples, including a nonlinear patch test and an asymmetrically notched specimen, showing accurate response capture and inelasticity prediction.</p>
+          <p><b>Watch item:</b> The patch test was not satisfied for higher-order shape functions, and performance was better when physical elements closely matched the assumed parent elements.</p>
+          <div class="tags"><span>#VirtualElementMethod</span> <span>#FiniteStrain</span> <span>#ReducedIntegration</span> <span>#SolidMechanics</span> <span>#ConstitutiveModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>65</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>60</strong></div>
         <p class="date">2026-06-10</p>
         <h2>Cascading Smoothers for Multigrid</h2>
         <p class="authors">Robert I. Saye</p>
@@ -343,18 +343,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12577v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12577v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Cascading smoothers improve multigrid convergence by chaining optimised block-diagonal smoothing steps that progressively damp remaining error components.</p>
-          <p><b>Engineering relevance:</b> The method offers a practical, low-tuning way to make multigrid more robust and scalable for challenging PDE solvers in finite difference, finite element, and DG settings.</p>
-          <ul><li>Sequence of single-step block-diagonal smoothers applied in order</li><li>Each stage is tuned by Frobenius-norm minimisation of the error propagator</li><li>Supports additive (Jacobi-like) and multiplicative (Gauss-Seidel-like) variants</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports strong performance in multigrid V-cycles across Poisson, elliptic interface, Stokes, and multiphase problems, often matching or outperforming optimally damped classical smoothers.</p>
-          <p><b>Watch item:</b> Effectiveness depends on discrete solver choices and block structure, so implementation details and problem partitioning still matter.</p>
-          <div class="tags"><span>#Multigrid</span> <span>#Smoothers</span> <span>#PDEs</span> <span>#FiniteElementMethod</span> <span>#ParallelComputing</span></div>
+          <p><b>Key insight:</b> Cascading smoothers build a smoother as an ordered sequence of optimally tuned block-diagonal steps that strongly damp multigrid error and improve convergence without manual parameter tuning.</p>
+          <p><b>Engineering relevance:</b> This gives a robust, parallel-friendly multigrid smoother strategy that works across PDE discretizations and challenging meshes or coefficients in FEM/FDM/DG solvers.</p>
+          <ul><li>Sequence of single-step block-diagonal smoothers in a cascade</li><li>Optimize each step by minimizing the Frobenius norm of the resulting error propagator</li><li>Provide additive and multiplicative variants analogous to Jacobi and Gauss-Seidel</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports strong performance in V-cycle multigrid tests across Poisson, elliptic interface, Stokes, and multiphase problems, where cascading smoothers matched or outperformed optimally damped classical smoothers.</p>
+          <p><b>Watch item:</b> Performance depends on discrete solver choices and the best block structure may still need problem-aware configuration despite the absence of continuous parameter tuning.</p>
+          <div class="tags"><span>#Multigrid</span> <span>#NumericalLinearAlgebra</span> <span>#PDEs</span> <span>#FEM</span> <span>#HighPerformanceComputing</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>65</strong></div>
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>60</strong></div>
         <p class="date">2026-06-09</p>
         <h2>Surface Crevasse Evolution Observed Using Matched Field Processing and Source Relocation at Hansbreen, Svalbard</h2>
         <p class="authors">Wojciech Gajek, Ugo Nanni, Ali Gholami, William D. Harcourt, Danni M. Pearce, Louise Steffensen Schmidt</p>
@@ -362,18 +362,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.10992v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.10992v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A two-step seismic workflow combining matched field processing and source relocation can map glacier-surface crevasse opening with meter-scale precision and estimate propagation rates.</p>
-          <p><b>Engineering relevance:</b> The method improves cryoseismic source localization under sparse instrumentation, enabling better assessment of fracture evolution, meltwater routing, and brittle-to-viscous transition behavior in glaciers.</p>
-          <ul><li>Use matched field processing to detect surface icequakes and separate them from meltwater noise.</li><li>Relocate discrete arrivals to refine source positions and reveal crevasse opening episodes.</li><li>Estimate crevasse propagation rate and diffusion coefficients from the localized events.</li></ul>
-          <p><b>Evidence signal:</b> Applied to Hansbreen, Svalbard, the workflow identified surface icequakes and yielded diffusion coefficients of 0.47 to 0.55 m2/s from the relocated events.</p>
-          <p><b>Watch item:</b> Performance and localization accuracy may degrade in sparse or irregular seismic arrays, so the approach remains sensitive to network geometry and arrival-time quality.</p>
-          <div class="tags"><span>#Glaciology</span> <span>#Cryoseismology</span> <span>#FractureMechanics</span> <span>#MatchedFieldProcessing</span> <span>#SourceLocalization</span></div>
+          <p><b>Key insight:</b> A two-step seismic workflow combining matched field processing and source relocation can map crevasse opening at metre scale and quantify its slow propagation on Hansbreen glacier.</p>
+          <p><b>Engineering relevance:</b> The method provides a practical way to monitor fracture evolution and meltwater-related damage processes in glaciers, improving hazard and dynamics assessments under sparse sensor deployments.</p>
+          <ul><li>Use matched field processing to detect surface icequakes and distinguish them from meltwater noise with limited instrumentation.</li><li>Relocate discrete seismic arrivals to refine source positions at the ice surface.</li><li>Estimate crevasse propagation rates and diffusion coefficients from the relocated event sequence.</li></ul>
+          <p><b>Evidence signal:</b> Applied to Hansbreen, the workflow revealed ongoing crevasse opening episodes and yielded diffusion coefficients of 0.47 to 0.55 m2/s from the observed icequakes.</p>
+          <p><b>Watch item:</b> Performance may depend on source geometry and array sparsity, so localisation accuracy and rate estimates should be validated for other glacier settings before broad use.</p>
+          <div class="tags"><span>#FractureAndDamage</span> <span>#Glaciology</span> <span>#Cryoseismology</span> <span>#MatchedFieldProcessing</span> <span>#SourceLocalization</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>64</strong></div>
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>59</strong></div>
         <p class="date">2026-06-10</p>
         <h2>Intrinsic Ductility from Shear Amorphization: From Pure Metals to Multi-Principal-Element Alloys</h2>
         <p class="authors">Morgan R. Jones, Duane D. Johnson, Nicolas Argibay</p>
@@ -381,18 +381,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12750v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12750v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Intrinsic ductility in metals and alloys can be predicted by an amorphization-based fracture criterion, linking electronic structure and shear effects to ductile-to-brittle behavior.</p>
-          <p><b>Engineering relevance:</b> The framework enables rapid screening and design of strong, room-temperature ductile structural alloys, including multi-principal-element systems like Nb-Ta-V-Ti.</p>
-          <ul><li>Replace cleavage/dislocation-based fracture assumptions with activation energy density for amorphization.</li><li>Derive analytical structure-property relationships from valence charge distribution, band filling, and shear strain effects.</li><li>Use ab initio stiffness constants, lattice parameters, and binary interaction energies to build unified predictions.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports accurate predictions of intrinsic ductility and ductile-to-brittle transition temperatures, and phase diagrams for the Nb-Ta-V-Ti system align with observed high strength and room-temperature tensile ductility.</p>
-          <p><b>Watch item:</b> The approach depends on reliable ab initio inputs and tabulated material parameters, so prediction quality may degrade for poorly characterized alloys or complex microstructures.</p>
-          <div class="tags"><span>#FractureMechanics</span> <span>#IntrinsicDuctility</span> <span>#Amorphization</span> <span>#AlloyDesign</span> <span>#MaterialsModeling</span></div>
+          <p><b>Key insight:</b> Intrinsic ductility can be predicted by the energy needed to amorphize under shear, rather than by classical crack-cleavage or dislocation-based criteria.</p>
+          <p><b>Engineering relevance:</b> This offers a fast design rule for screening pure metals and multi-principal-element alloys for room-temperature ductility and ductile-to-brittle transition temperature.</p>
+          <ul><li>Derive structure-property relations that compress electronic structure, band filling, and shear effects into a single ductility framework.</li><li>Use analytical expressions with ab initio stiffness constants, lattice parameters, and binary interaction energies.</li><li>Apply the model to phase diagrams and alloy design, including the Nb-Ta-V-Ti system.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports agreement with predictions of intrinsic ductility and ductile-to-brittle transition temperatures, and shows phase diagrams for Nb-Ta-V-Ti that explain its strength and tensile ductility.</p>
+          <p><b>Watch item:</b> The framework depends on available ab initio inputs and tabulated materials data, so transferability to systems with sparse or uncertain property data may require caution.</p>
+          <div class="tags"><span>#FractureMechanics</span> <span>#IntrinsicDuctility</span> <span>#ShearAmorphization</span> <span>#AlloyDesign</span> <span>#MaterialsModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>62</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>57</strong></div>
         <p class="date">2026-06-10</p>
         <h2>A Decoupled Low-Order Conforming Mixed Finite Element Method for a Three-Dimensional Fourth-Order Singularly Perturbed Problem</h2>
         <p class="authors">Yuanchun Tang, Baiju Zhang, Zhimin Zhang</p>
@@ -400,12 +400,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.12176v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.12176v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A fourth-order 3D singularly perturbed problem is split into easier second-order subproblems and a robust Stokes-type mixed system using a generalized Helmholtz decomposition.</p>
-          <p><b>Engineering relevance:</b> This gives a practical, low-order finite element route for solving thin-structure or boundary-layer-dominated PDEs with stability that does not deteriorate as the perturbation parameter becomes small.</p>
-          <ul><li>Decompose the original fourth-order equation into two standard elliptic problems plus a curl-free constrained Stokes-type system.</li><li>Discretize the elliptic subproblems with standard linear finite elements.</li><li>Use the MINI element for the mixed system and add an L2 Lagrange-multiplier term to improve parameter-robustness.</li></ul>
-          <p><b>Evidence signal:</b> The paper reports a uniform error estimate of order h^{1/2} with respect to the perturbation parameter and supports the theory with numerical experiments.</p>
-          <p><b>Watch item:</b> The convergence rate is only first-half order, so fine meshes may still be needed for high-accuracy engineering predictions.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#SingularPerturbation</span> <span>#MixedMethods</span> <span>#ComputationalMechanics</span> <span>#NumericalPDEs</span></div>
+          <p><b>Key insight:</b> A fourth-order 3D singularly perturbed problem is decoupled into simpler second-order subproblems plus a Stokes-type system, enabling a robust low-order finite element treatment.</p>
+          <p><b>Engineering relevance:</b> The method offers a practical, parameter-robust discretization strategy for challenging thin-layer or boundary-layer dominated solid mechanics and PDE models in 3D.</p>
+          <ul><li>Use generalized Helmholtz decomposition to split the original fourth-order problem.</li><li>Solve two second-order elliptic problems with standard linear finite elements.</li><li>Handle the remaining curl-constrained Stokes-type system with the MINI element plus an added L2 Lagrange-multiplier term for robustness.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports a uniform error estimate of order h^{1/2} with respect to the perturbation parameter and states that numerical experiments support the theory.</p>
+          <p><b>Watch item:</b> The proved convergence rate is only h^{1/2}, so achieving high accuracy may require substantial mesh refinement despite the robustness.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#SingularPerturbation</span> <span>#MixedFEM</span> <span>#3DSimulation</span> <span>#ComputationalMechanics</span></div>
         </section>
       </article>
     </section>

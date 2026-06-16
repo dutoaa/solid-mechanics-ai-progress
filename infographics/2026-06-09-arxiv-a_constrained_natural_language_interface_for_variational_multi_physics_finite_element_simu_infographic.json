@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper shows that an LLM can be safely used as a constrained front end for finite element simulation, while all solver logic stays in deterministic, human-written FEniCS templates.",
-  "engineering_relevance": "This makes natural-language setup of multi-physics solid mechanics models more practical for engineers without letting generated code sit on the critical path.",
+  "key_insight": "A constrained LLM front end can safely translate natural language into finite-element simulation inputs while keeping solver code deterministic and human-written.",
+  "engineering_relevance": "This design lowers setup effort for multi-physics solid mechanics simulations without giving the model control over the numerical core, improving reliability for engineering workflows.",
   "method": [
-    "LLM parses prompts into structured JSON",
-    "LLM only handles non-catalog Gmsh geometry generation with retry feedback",
-    "A deterministic dispatcher selects fixed FEniCS/UFL templates for elasticity, hyperelasticity, elastoplasticity, thermo-mechanics, and phase-field fracture"
+    "LLM only parses prompts into structured JSON and generates Gmsh code for non-catalog geometries.",
+    "A deterministic dispatcher routes the validated specification to five fixed FEniCS/UFL templates.",
+    "Retry/validation logic repairs parser and geometry errors before simulation execution."
   ],
-  "evidence_signal": "On 15 parser prompts, final valid parses reached 100% with 97.1% field-extraction accuracy, and on 10 custom-geometry cases the real LLM-to-Gmsh path achieved 90% final success.",
-  "watch_item": "The approach depends on a carefully constrained template library and still showed one unrecovered invalid-geometry failure in custom geometry generation.",
+  "evidence_signal": "On a 15-prompt parsing benchmark, final valid parse rate reached 100% with 100% problem-class accuracy and 97.1% field-extraction accuracy; custom-geometry tests achieved 90% final success.",
+  "watch_item": "The approach still depends on prompt validation and can fail on invalid custom geometries, so it is not fully open-ended automation.",
   "hashtags": [
-    "#FiniteElement",
     "#FEniCS",
-    "#LargeLanguageModels",
+    "#FiniteElement",
     "#SolidMechanics",
+    "#LLMforScience",
     "#ComputationalEngineering"
   ],
   "paper_id": "2026-06-09-arxiv-a_constrained_natural_language_interface_for_variational_multi_physics_finite_element_simu",
   "paper_title": "A Constrained Natural-Language Interface for Variational Multi-Physics Finite Element Simulations in FEniCS",
   "paper_date": "2026-06-09",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-06-15T14:59:00",
+  "generated_at": "2026-06-16T13:24:31",
   "generator": "openai"
 }

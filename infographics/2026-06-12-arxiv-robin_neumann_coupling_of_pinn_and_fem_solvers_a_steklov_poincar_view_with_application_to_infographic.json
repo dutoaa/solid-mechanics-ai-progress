@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper reframes PINN–FEM coupling as a Robin–Neumann domain-decomposition problem and shows that a mode-matched interface impedance stabilizes the exchange while accounting for PINN training error.",
-  "engineering_relevance": "This enables meshless fluid or surrogate subdomains to couple robustly to FEM models in moving-boundary and contact problems without remeshing, which is valuable for FSI and multiphysics simulation.",
+  "key_insight": "Robin-Neumann coupling treats PINN and FEM as trace-to-flux operators, yielding a provably contracting interface scheme even when the PINN is only an approximate Steklov operator.",
+  "engineering_relevance": "This enables robust meshless–mesh-based coupling for fluid-structure interaction and contact problems, reducing remeshing needs while improving interface stability over standard Dirichlet-Neumann coupling.",
   "method": [
-    "Model each solver as a Steklov–Poincar\u0000e9 trace-to-flux operator at the interface.",
-    "Replace unstable Dirichlet–Neumann coupling with Robin–Neumann coupling using a closed-form interface impedance.",
-    "Use a Fourier-mode interface probe to estimate the PINN’s resolvable interface eigenvalues and diagnose spectral limits."
+    "Domain-decomposition view with Robin-Neumann interface conditions and closed-form impedance",
+    "PINN-specific contraction analysis using a perturbed Steklov-Poincaré operator",
+    "Fourier-mode interface probe to estimate resolvable Steklov eigenvalues and spectral cap"
   ],
-  "evidence_signal": "The abstract reports contraction predictions within 7% on 1D and 2D Poisson tests, eigenvalue recovery within 0.5%, and a Stokes/contact example where the reaction matches submerged weight to 0.4% under mesh refinement.",
-  "watch_item": "The warm-started PINN can drift off the Stokes manifold over long horizons, so long-time stability and spectral under-resolution remain practical concerns.",
+  "evidence_signal": "The abstract reports that predicted PINN-FEM contraction rates match measurements within 7% on 1D/2D Poisson tests, eigenvalue probing is accurate to within 0.5%, and the contact reaction matches submerged weight to 0.4% under refinement.",
+  "watch_item": "The warm-started PINN can drift off the Stokes manifold over long time horizons, and under-resolution may miss pre-impact squeeze-film effects.",
   "hashtags": [
     "#PINN",
     "#FEM",
-    "#FSI",
-    "#DomainDecomposition",
-    "#ContactMechanics"
+    "#FluidStructureInteraction",
+    "#ContactMechanics",
+    "#DomainDecomposition"
   ],
   "paper_id": "2026-06-12-arxiv-robin_neumann_coupling_of_pinn_and_fem_solvers_a_steklov_poincar_view_with_application_to",
   "paper_title": "Robin-Neumann Coupling of PINN and FEM Solvers: A Steklov-Poincaré View, with Application to Fluid-Structure Interaction with Contact",
   "paper_date": "2026-06-12",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-06-15T14:59:08",
+  "generated_at": "2026-06-16T13:25:23",
   "generator": "openai"
 }

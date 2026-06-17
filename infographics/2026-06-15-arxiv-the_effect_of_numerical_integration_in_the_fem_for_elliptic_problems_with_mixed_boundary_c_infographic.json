@@ -1,24 +1,24 @@
 {
-  "key_insight": "Quadrature accuracy in FEM is not a minor implementation detail: to preserve optimal convergence for mixed-boundary elliptic problems, volume and face integrals must meet specific precision thresholds tied to polynomial order p.",
-  "engineering_relevance": "For higher-order FEM solvers, this gives a practical rule for choosing integration schemes that avoids hidden accuracy loss and helps ensure reliable error control in mixed Dirichlet-Robin settings.",
+  "key_insight": "Finite element accuracy for mixed-boundary elliptic problems depends critically on quadrature precision: to preserve optimal convergence, volume and face integrals must be integrated accurately enough relative to polynomial order p.",
+  "engineering_relevance": "For practical FEM implementations, this gives a clear rule for choosing quadrature rules so mesh refinement delivers the expected H1 and L2 error rates without hidden loss of accuracy.",
   "method": [
-    "Analyzes p-th order FEM for elliptic elliptic problems with mixed boundary conditions.",
-    "Derives required algebraic precision for volume quadrature (≥ 2p-2 for H1, ≥ max{p,2p-2} for L2).",
-    "Derives required algebraic precision for face quadrature (≥ 2p-1) and checks sharpness with linear-element examples."
+    "Analyzed p-th order FEM for elliptic problems with mixed Dirichlet and Robin boundary conditions.",
+    "Derived minimum quadrature precision requirements for volume terms and boundary face terms.",
+    "Verified the theory with numerical experiments and sharpness examples for linear FEM."
   ],
-  "evidence_signal": "The paper supports its theory with numerical experiments and two sharpness examples showing that reduced quadrature can fail to preserve optimal L2 convergence for p=1.",
-  "watch_item": "Using quadrature below the stated precision thresholds can degrade convergence, especially on boundary face terms, so implementation must match the FEM order and boundary condition type.",
+  "evidence_signal": "The abstract reports optimal H1 convergence with volume precision at least 2p-2 and face precision at least 2p-1, and optimal L2 convergence under the stated precision thresholds, confirmed by numerical experiments.",
+  "watch_item": "Using under-integrated quadrature can break theoretical convergence rates, especially for low-order elements and boundary-face terms in mixed boundary settings.",
   "hashtags": [
     "#FEM",
-    "#NumericalIntegration",
     "#Quadrature",
     "#EllipticPDE",
-    "#H1Convergence"
+    "#MixedBoundaryConditions",
+    "#NumericalAnalysis"
   ],
   "paper_id": "2026-06-15-arxiv-the_effect_of_numerical_integration_in_the_fem_for_elliptic_problems_with_mixed_boundary_c",
   "paper_title": "The effect of numerical integration in the FEM for elliptic problems with mixed boundary conditions",
   "paper_date": "2026-06-15",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-06-16T13:25:01",
+  "generated_at": "2026-06-17T12:47:00",
   "generator": "openai"
 }

@@ -1,17 +1,17 @@
 {
-  "key_insight": "A two-stage finite element scheme decouples curvature-driven motion from mesh update so the constrained Helfrich flow preserves energy, volume, and surface area.",
-  "engineering_relevance": "This gives a practical simulation tool for evolving biological or membrane-like interfaces where geometric conservation and stable long-time behavior are essential.",
+  "key_insight": "A two-stage parametric finite element scheme can simultaneously enforce Helfrich-flow energy dissipation, exact volume/surface-area conservation, and good mesh quality for evolving curves and surfaces.",
+  "engineering_relevance": "This provides a practical structure-preserving discretization for membrane and interface simulations where geometric constraints and numerical stability are critical.",
   "method": [
-    "Compute normal velocity from a curvature evolution equation with soft volume/area constraints.",
-    "Update the mesh using the computed normal velocity plus a BGN-type tangential velocity for mesh quality.",
-    "Apply a time-weighted interface normal and area-correction multiplier to enforce exact volume and area conservation; solve the resulting nonlinear step with Newton iteration."
+    "Stage 1: solve a linearized curvature-evolution step to compute normal velocity with soft volume/area constraints.",
+    "Stage 2: update the mesh using the computed normal velocity plus a BGN-type tangential velocity.",
+    "Apply a time-weighted interface normal and an area-correction multiplier; solve the resulting nonlinear correction with Newton iteration."
   ],
-  "evidence_signal": "The paper reports numerical experiments on 2D curves and 3D surfaces, including nonsmooth initial data and nonzero spontaneous curvature, to verify accuracy and structure preservation.",
-  "watch_item": "The correction stage is nonlinear and requires Newton solves, so robustness and cost may depend on timestep choice and initialization.",
+  "evidence_signal": "The abstract reports numerical experiments on 2D curves and 3D surfaces, including nonsmooth initial data and nonzero spontaneous curvature, to validate accuracy and robustness.",
+  "watch_item": "The exact conservation step is nonlinear and depends on Newton solves, so robustness and cost may be sensitive to timestep choice and convergence behavior.",
   "hashtags": [
     "#FiniteElementMethod",
     "#HelfrichFlow",
-    "#GeometricPDE",
+    "#GeometryPreserving",
     "#StructurePreserving",
     "#ComputationalMechanics"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Geometric structure-preserving parametric finite element approximations for the constrained Helfrich flow",
   "paper_date": "2026-06-15",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-06-17T12:46:54",
+  "generated_at": "2026-06-18T12:18:57",
   "generator": "openai"
 }

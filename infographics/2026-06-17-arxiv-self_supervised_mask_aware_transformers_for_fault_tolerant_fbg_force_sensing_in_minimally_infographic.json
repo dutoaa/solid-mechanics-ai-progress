@@ -1,24 +1,24 @@
 {
-  "key_insight": "A self-supervised, mask-aware Transformer can learn to estimate forces from multi-channel FBG sensors while explicitly handling intermittent channel failures, avoiding the combinatorial explosion of model banks.",
-  "engineering_relevance": "This enables more robust force sensing for minimally invasive surgical robotics, where catheter-scale sensors must tolerate nonlinear deformation and unexpected fiber channel dropouts.",
+  "key_insight": "A self-supervised mask-aware Transformer can learn fault-tolerant force estimation from multi-channel FBG sensors by explicitly handling missing channels and degrading gracefully under fiber fractures.",
+  "engineering_relevance": "This enables safer, more practical minimally invasive surgical robotics by reducing calibration burden and maintaining force sensing when some optical channels fail.",
   "method": [
-    "Pretrain the Transformer by reconstructing masked sensor channels from unlabeled FBG streams.",
-    "Fine-tune with a balanced clean-and-corrupted-view loss plus a dynamic corruption curriculum to improve fault tolerance.",
-    "Add a heteroscedastic uncertainty head to predict per-axis confidence in a single forward pass."
+    "Pretrain the Transformer with masked-channel reconstruction on unlabeled sensor streams.",
+    "Fine-tune for force regression using both clean and corrupted views with a dynamic corruption curriculum.",
+    "Add a heteroscedastic uncertainty head to predict per-axis confidence in one forward pass."
   ],
-  "evidence_signal": "On an 8-channel FBG dataset, the model reached 0.0066 N RMSE in nominal conditions and 0.0126 N under severe 4-channel loss, outperforming a 255-model bank that reached 0.0154 N at 4-channel failure.",
-  "watch_item": "Performance depends on representative corruption patterns during training, so unseen failure modes or sensor-specific drift may still require additional calibration or adaptation.",
+  "evidence_signal": "On an 8-channel catheter-scale FBG dataset, the model achieved 0.0066 N RMSE nominally and 0.0126 N with severe 4-channel failure, outperforming a 255-model bank that reached 0.0154 N under 4-channel loss.",
+  "watch_item": "Performance likely depends on representative corruption patterns during pretraining and fine-tuning, so unseen failure modes or poor mask modeling could still reduce robustness.",
   "hashtags": [
     "#FBGSensing",
     "#SurgicalRobotics",
-    "#FaultTolerance",
-    "#Transformer",
-    "#SelfSupervisedLearning"
+    "#SelfSupervisedLearning",
+    "#Transformers",
+    "#FaultTolerantAI"
   ],
   "paper_id": "2026-06-17-arxiv-self_supervised_mask_aware_transformers_for_fault_tolerant_fbg_force_sensing_in_minimally",
   "paper_title": "Self-Supervised Mask-Aware Transformers for Fault-Tolerant FBG Force Sensing in Minimally Invasive Surgical Robotics",
   "paper_date": "2026-06-17",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-06-18T12:18:12",
+  "generated_at": "2026-06-19T12:41:48",
   "generator": "openai"
 }

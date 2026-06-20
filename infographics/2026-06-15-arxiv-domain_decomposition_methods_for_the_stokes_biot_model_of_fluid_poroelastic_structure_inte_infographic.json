@@ -1,17 +1,17 @@
 {
-  "key_insight": "The paper turns a coupled Stokes-Biot fluid–poroelastic problem into a scalable interface-only system using Lagrange multipliers and Schur complements, enabling parallel subdomain solves.",
-  "engineering_relevance": "This provides a practical domain decomposition framework for large-scale simulations of fluid–structure–porous media interaction in biomechanics and geomechanics.",
+  "key_insight": "A non-overlapping domain decomposition method turns the coupled Stokes-Biot fluid–poroelastic problem into a parallelizable interface solve with Lagrange multipliers and local subdomain solves.",
+  "engineering_relevance": "The method enables scalable simulation of fluid–structure interaction in porous media, which is important for biomechanics, geomechanics, and other mixed-flow/elasticity applications.",
   "method": [
-    "Non-overlapping decomposition into Stokes and Biot subdomains with Stokes-Stokes, Biot-Biot, and Stokes-Biot interfaces.",
-    "Enforce interface physics via Lagrange multipliers for velocity, displacement, and pressure continuity, including Beavers-Joseph-Saffman slip.",
-    "Reduce the global mixed finite element system to a GMRES-solved interface problem with local subdomain solves in parallel."
+    "Split the domain into Stokes and Biot subdomains with Stokes-Stokes, Biot-Biot, and Stokes-Biot interfaces.",
+    "Enforce interface physics weakly using Lagrange multipliers for displacement, pressure, and normal stress/velocity continuity.",
+    "Reduce the global system by Schur complement to an interface problem and solve it with GMRES plus parallel local subdomain solves."
   ],
-  "evidence_signal": "The abstract reports theoretical positive-definiteness and fields-of-value convergence analysis, supported by numerical experiments demonstrating solver performance.",
-  "watch_item": "Performance depends on stable mixed finite element discretizations and the quality of the interface formulation, so implementation details and preconditioning are likely critical.",
+  "evidence_signal": "The abstract reports stable mixed finite element discretization, positive definiteness of the interface operator, fields-of-value convergence analysis, and numerical experiments demonstrating performance.",
+  "watch_item": "Implementation is nontrivial because the method depends on carefully chosen stable mixed finite elements and multiple interface multipliers to preserve well-posedness and convergence.",
   "hashtags": [
-    "#StokesBiot",
-    "#DomainDecomposition",
     "#FiniteElementMethod",
+    "#DomainDecomposition",
+    "#StokesBiot",
     "#FluidStructureInteraction",
     "#GMRES"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Domain decomposition methods for the Stokes-Biot model of fluid-poroelastic structure interaction",
   "paper_date": "2026-06-15",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-06-19T12:41:57",
+  "generated_at": "2026-06-20T11:09:56",
   "generator": "openai"
 }

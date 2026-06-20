@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-06-19
+Generated: 2026-06-20
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Nonlinear Geotechnical Analysis Using a Polygonal Cell-Based Smoothed Finite Element Framework
@@ -115,15 +115,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.17889v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-dimensionality_controls_when_modularity_helps_in_continual_learning_infographic.json
 
-## 15. Machine Learning-Accelerated Time Integration of Plasticity Models
-
-- Date: 2026-06-12
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.14548v1
-- PDF: https://arxiv.org/pdf/2606.14548v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-12-arxiv-machine_learning_accelerated_time_integration_of_plasticity_models_infographic.json
-
-## 16. Acceleration methods for the planar 3D ILSA hydraulic fracturing model
+## 15. Acceleration methods for the planar 3D ILSA hydraulic fracturing model
 
 - Date: 2026-06-18
 - Category: Constitutive Modeling
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20025v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-acceleration_methods_for_the_planar_3d_ilsa_hydraulic_fracturing_model_infographic.json
 
-## 17. A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals
+## 16. A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals
 
 - Date: 2026-06-17
 - Category: FEM Surrogates
@@ -139,13 +131,21 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19556v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-a_hybrid_sharp_diffuse_interface_approach_to_accurately_model_melt_pool_dynamics_with_rapi_infographic.json
 
-## 18. CoarseSolvers for Exascale Solution of Poisson Problems
+## 17. CoarseSolvers for Exascale Solution of Poisson Problems
 
 - Date: 2026-06-18
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2606.20496v1
 - PDF: https://arxiv.org/pdf/2606.20496v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-coarsesolvers_for_exascale_solution_of_poisson_problems_infographic.json
+
+## 18. Hybrid ANN-SNN Pipeline with Local Plasticity
+
+- Date: 2026-06-18
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.20151v1
+- PDF: https://arxiv.org/pdf/2606.20151v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-hybrid_ann_snn_pipeline_with_local_plasticity_infographic.json
 
 ## 19. SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design
 

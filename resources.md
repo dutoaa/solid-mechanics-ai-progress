@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-06-21
+Generated: 2026-06-22
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Nonlinear Geotechnical Analysis Using a Polygonal Cell-Based Smoothed Finite Element Framework
@@ -59,15 +59,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.18177v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-a_minimizing_movement_framework_for_geometric_gradient_flows_with_admissible_tangential_mo_infographic.json
 
-## 8. First-Order Compatible-Strain Mixed Quadrilateral Finite Elements for 2D Nonlinear Elasticity
-
-- Date: 2026-06-14
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.15925v1
-- PDF: https://arxiv.org/pdf/2606.15925v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-14-arxiv-first_order_compatible_strain_mixed_quadrilateral_finite_elements_for_2d_nonlinear_elastic_infographic.json
-
-## 9. Compositionality Emerges in a Narrow Depth-Connectivity Regime: Architecture Constraints and Solution Manifolds
+## 8. Compositionality Emerges in a Narrow Depth-Connectivity Regime: Architecture Constraints and Solution Manifolds
 
 - Date: 2026-06-18
 - Category: Fracture and Damage
@@ -75,7 +67,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19941v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-compositionality_emerges_in_a_narrow_depth_connectivity_regime_architecture_constraints_an_infographic.json
 
-## 10. GrapNet: A Programmable Dynamic-Architecture Neural Graph Substrate
+## 9. GrapNet: A Programmable Dynamic-Architecture Neural Graph Substrate
 
 - Date: 2026-06-17
 - Category: AI Solid Mechanics
@@ -83,7 +75,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.18923v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-grapnet_a_programmable_dynamic_architecture_neural_graph_substrate_infographic.json
 
-## 11. PF-DIC: Phase field digital image correlation for integrated full-field displacement, strain, and damage measurements
+## 10. PF-DIC: Phase field digital image correlation for integrated full-field displacement, strain, and damage measurements
 
 - Date: 2026-06-15
 - Category: Fracture and Damage
@@ -91,7 +83,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.16850v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-pf_dic_phase_field_digital_image_correlation_for_integrated_full_field_displacement_strain_infographic.json
 
-## 12. GUMP-Net: An interpretable model-data-driven intelligent algorithm for multi-class pelvic segmentation
+## 11. GUMP-Net: An interpretable model-data-driven intelligent algorithm for multi-class pelvic segmentation
 
 - Date: 2026-06-17
 - Category: Fracture and Damage
@@ -99,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19215v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-gump_net_an_interpretable_model_data_driven_intelligent_algorithm_for_multi_class_pelvic_s_infographic.json
 
-## 13. Elastic Surface Instability as a Topological Phase Transition
+## 12. Elastic Surface Instability as a Topological Phase Transition
 
 - Date: 2026-06-16
 - Category: Fracture and Damage
@@ -107,15 +99,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.18542v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-elastic_surface_instability_as_a_topological_phase_transition_infographic.json
 
-## 14. Dimensionality Controls When Modularity Helps in Continual Learning
-
-- Date: 2026-06-16
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.17889v1
-- PDF: https://arxiv.org/pdf/2606.17889v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-dimensionality_controls_when_modularity_helps_in_continual_learning_infographic.json
-
-## 15. Acceleration methods for the planar 3D ILSA hydraulic fracturing model
+## 13. Acceleration methods for the planar 3D ILSA hydraulic fracturing model
 
 - Date: 2026-06-18
 - Category: Constitutive Modeling
@@ -123,7 +107,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20025v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-acceleration_methods_for_the_planar_3d_ilsa_hydraulic_fracturing_model_infographic.json
 
-## 16. A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals
+## 14. A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals
 
 - Date: 2026-06-17
 - Category: FEM Surrogates
@@ -131,7 +115,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19556v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-a_hybrid_sharp_diffuse_interface_approach_to_accurately_model_melt_pool_dynamics_with_rapi_infographic.json
 
-## 17. CoarseSolvers for Exascale Solution of Poisson Problems
+## 15. CoarseSolvers for Exascale Solution of Poisson Problems
 
 - Date: 2026-06-18
 - Category: FEM Surrogates
@@ -139,15 +123,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20496v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-coarsesolvers_for_exascale_solution_of_poisson_problems_infographic.json
 
-## 18. Hybrid ANN-SNN Pipeline with Local Plasticity
-
-- Date: 2026-06-18
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.20151v1
-- PDF: https://arxiv.org/pdf/2606.20151v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-hybrid_ann_snn_pipeline_with_local_plasticity_infographic.json
-
-## 19. SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design
+## 16. SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design
 
 - Date: 2026-06-18
 - Category: Topology Optimization
@@ -155,10 +131,34 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19758v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-sigma_skill_incidence_graphs_for_compositional_multi_agent_design_infographic.json
 
-## 20. Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies
+## 17. Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies
 
 - Date: 2026-06-15
 - Category: Topology Optimization
 - arXiv: https://arxiv.org/abs/2606.16792v1
 - PDF: https://arxiv.org/pdf/2606.16792v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-novel_insights_into_pareto_fronts_in_multiobjective_topology_optimization_and_a_comparativ_infographic.json
+
+## 18. Dimensionality Controls When Modularity Helps in Continual Learning
+
+- Date: 2026-06-16
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.17889v1
+- PDF: https://arxiv.org/pdf/2606.17889v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-dimensionality_controls_when_modularity_helps_in_continual_learning_infographic.json
+
+## 19. Phenotyping TPF via Self-Supervised Learning: A Label-Agnostic Framework with Expert Validation
+
+- Date: 2026-06-15
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2606.17295v1
+- PDF: https://arxiv.org/pdf/2606.17295v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-phenotyping_tpf_via_self_supervised_learning_a_label_agnostic_framework_with_expert_valida_infographic.json
+
+## 20. STORX: An Open-Source Object-Oriented Framework for Shape and Topology Optimization in MATLAB
+
+- Date: 2026-06-15
+- Category: Topology Optimization
+- arXiv: https://arxiv.org/abs/2606.17291v1
+- PDF: https://arxiv.org/pdf/2606.17291v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-storx_an_open_source_object_oriented_framework_for_shape_and_topology_optimization_in_matl_infographic.json

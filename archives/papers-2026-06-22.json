@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2606.20384v1"
       }
     ],
-    "score": 73,
+    "score": 78,
     "infographic": {
-      "key_insight": "A polygonal cell-based smoothed finite element framework can robustly handle nonlinear geotechnical problems with complex meshes, staged loading, and local failure while reducing sensitivity to mesh distortion.",
-      "engineering_relevance": "The method is directly useful for practical geotechnical design and analysis because it improves prediction of displacement, stress, plastic strain, bearing capacity, and slope safety in realistic soil-structure systems.",
+      "key_insight": "A polygonal cell-based smoothed finite element framework can robustly handle nonlinear geotechnical problems while reducing mesh sensitivity and improving geometric flexibility.",
+      "engineering_relevance": "This is useful for geotechnical design and analysis where complex boundaries, staged excavation, local failure, and mixed mesh quality are common.",
       "method": [
-        "Wachspress interpolation on polygonal cells",
-        "Cell-based strain smoothing with boundary integration over smoothing subcells",
-        "Incremental elasto-plastic updates with Mohr-Coulomb and Duncan-Chang models"
+        "Uses Wachspress interpolation on polygonal elements.",
+        "Applies cell-based strain smoothing with boundary integration over subcells.",
+        "Implements incremental elasto-plastic updates for Mohr-Coulomb and Duncan-Chang soil models in ABAQUS via UEL."
       ],
-      "evidence_signal": "The abstract reports verification on benchmark and engineering cases including a perforated plate, strip footing, dam, tunnel excavation, and slope stability, with accurate response predictions.",
-      "watch_item": "The approach requires a user element implementation in ABAQUS and careful handling of nonlinear constitutive updates and polygonal/hanging-node mesh generation.",
+      "evidence_signal": "The method was verified on benchmark and engineering cases including a perforated plate, strip footing, core rockfill dam, tunnel excavation, and slope stability, showing accurate displacement, stress, plastic strain, bearing capacity, and factor of safety predictions.",
+      "watch_item": "Performance depends on careful implementation of the UEL, smoothing subcell construction, and constitutive update stability for highly nonlinear or softening soil responses.",
       "hashtags": [
-        "#FiniteElementMethod",
-        "#GeotechnicalEngineering",
+        "#GeotechnicalFEM",
+        "#SmoothedFEM",
+        "#PolygonalElements",
         "#NonlinearAnalysis",
-        "#PolygonalMesh",
-        "#SmoothedFEM"
+        "#ABAQUSUEL"
       ],
       "paper_id": "2026-06-18-arxiv-nonlinear_geotechnical_analysis_using_a_polygonal_cell_based_smoothed_finite_element_frame",
       "paper_title": "Nonlinear Geotechnical Analysis Using a Polygonal Cell-Based Smoothed Finite Element Framework",
       "paper_date": "2026-06-18",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-22T14:29:20",
+      "generated_at": "2026-06-21T11:39:27",
       "generator": "openai"
     }
   },
@@ -75,29 +75,29 @@
         "url": "https://arxiv.org/pdf/2606.18628v1"
       }
     ],
-    "score": 62,
+    "score": 67,
     "infographic": {
-      "key_insight": "A self-supervised mask-aware Transformer can learn robust force estimation from multi-channel FBG sensors even when some channels are missing or fractured.",
-      "engineering_relevance": "This enables more fault-tolerant, calibration-light sensing for minimally invasive surgical robotics, where catheter-scale sensors must survive complex deformation and intermittent damage.",
+      "key_insight": "A self-supervised, mask-aware Transformer can learn force estimation from FBG sensors while explicitly handling missing channels and nonlinear cross-axis coupling.",
+      "engineering_relevance": "This enables more robust minimally invasive surgical robot sensing under fiber fractures and intermittent channel dropouts without requiring a separate model for every failure pattern.",
       "method": [
-        "Pretrain a Transformer with masked-channel reconstruction on unlabeled sensor streams.",
-        "Fine-tune for force regression using both clean and corrupted views plus a dynamic corruption curriculum.",
+        "Pretrain with masked-channel reconstruction on unlabeled sensor streams.",
+        "Fine-tune for force regression using clean and corrupted views plus a dynamic corruption curriculum.",
         "Add a heteroscedastic uncertainty head to predict per-axis confidence in one forward pass."
       ],
-      "evidence_signal": "On an 8-channel catheter-scale FBG dataset, the model achieved 0.0066 N RMSE nominally and 0.0126 N with severe 4-channel failures, outperforming a 255-model bank at 0.0154 N under 4-channel loss.",
-      "watch_item": "Performance depends on representative corruption patterns during self-supervised pretraining and curriculum design, so unseen failure modes may still require additional validation.",
+      "evidence_signal": "On an 8-channel catheter-scale FBG dataset, the model achieved 0.0066 N RMSE nominally and 0.0126 N with 4-channel failures, outperforming a 255-model bank (0.0154 N under 4-channel loss).",
+      "watch_item": "Performance depends on representative masked/corrupted training data, so unusual failure modes or sensor geometries may still require re-training or adaptation.",
       "hashtags": [
-        "#FiberBraggGrating",
+        "#FBGSensing",
         "#SurgicalRobotics",
-        "#SelfSupervisedLearning",
-        "#Transformer",
-        "#FaultTolerance"
+        "#FaultTolerance",
+        "#Transformers",
+        "#SelfSupervisedLearning"
       ],
       "paper_id": "2026-06-17-arxiv-self_supervised_mask_aware_transformers_for_fault_tolerant_fbg_force_sensing_in_minimally",
       "paper_title": "Self-Supervised Mask-Aware Transformers for Fault-Tolerant FBG Force Sensing in Minimally Invasive Surgical Robotics",
       "paper_date": "2026-06-17",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-22T14:29:22",
+      "generated_at": "2026-06-21T11:39:29",
       "generator": "openai"
     }
   },
@@ -126,29 +126,29 @@
         "url": "https://arxiv.org/pdf/2606.17390v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "A fully differentiable, GPU-accelerated FEM framework can simulate and invert complex finite-strain anisotropic plasticity models efficiently, enabling practical parameter identification from full-field data.",
-      "engineering_relevance": "This work speeds up nonlinear mechanics simulation and makes gradient-based calibration of advanced constitutive models feasible for high-throughput materials design and manufacturing.",
+      "key_insight": "A fully differentiable, GPU-accelerated FEM pipeline can simulate finite-strain anisotropic plasticity and recover constitutive parameters through fast, reliable gradients.",
+      "engineering_relevance": "This makes inverse material characterization practical for high-dimensional, data-rich solid mechanics problems, reducing reliance on manual derivations and slow finite-difference sensitivity analysis.",
       "method": [
-        "JAX-based FEM with end-to-end automatic differentiation",
-        "GPU parallelization of element assembly, sparse assembly, and sparse solves",
-        "Inverse characterization using topology-optimized specimens and displacement-field data"
+        "JAX-based finite element framework with automatic differentiation through constitutive update and solver steps",
+        "GPU parallelization of elemental evaluation, sparse assembly, and sparse linear solve",
+        "Inverse identification using full-field displacement data from topology-optimized heterogeneous specimens"
       ],
-      "evidence_signal": "On a 3 million-DOF forward problem, the method reached up to 9.4× speed-up over a 24-core CPU Abaqus baseline and accurately recovered anisotropic yield and hardening parameters across uniform and spatially varying cases.",
-      "watch_item": "Performance and robustness depend on GPU memory, sparse solver efficiency, and the quality/identifiability of the measured full-field data.",
+      "evidence_signal": "On a 3-million-DOF forward problem, the method reached up to 9.4× speed-up on a single NVIDIA H100 versus a 24-core CPU Abaqus baseline and accurately recovered anisotropic yield and hardening parameters.",
+      "watch_item": "Performance and robustness may depend on GPU memory, sparse-solver scalability, and careful treatment of complex constitutive models in differentiable implementations.",
       "hashtags": [
-        "#FiniteElementMethod",
-        "#DifferentiableSimulation",
+        "#DifferentiableFEM",
         "#GPUComputing",
-        "#InverseProblem",
+        "#InverseCharacterization",
+        "#ComputationalMechanics",
         "#ConstitutiveModeling"
       ],
       "paper_id": "2026-06-16-arxiv-a_differentiable_gpu_accelerated_finite_element_framework_for_inverse_characterization_of",
       "paper_title": "A Differentiable GPU-Accelerated Finite Element Framework for Inverse Characterization of Finite-Strain Anisotropic Plasticity",
       "paper_date": "2026-06-16",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-22T14:29:25",
+      "generated_at": "2026-06-21T11:39:31",
       "generator": "openai"
     }
   },
@@ -177,29 +177,29 @@
         "url": "https://arxiv.org/pdf/2606.20426v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "TaCauchy turns vision-based tactile simulation into a physics-grounded FEM pipeline that directly computes stress and traction on contact surfaces for realistic tactile supervision.",
-      "engineering_relevance": "It enables fast, scalable tactile simulation inside GPU robotics workflows like Isaac Sim, making it practical to generate accurate training signals for dexterous manipulation and reinforcement learning.",
+      "key_insight": "TaCauchy brings first-principles FEM stress computation into GPU robotics simulation, enabling physically grounded tactile supervision for vision-based tactile sensors.",
+      "engineering_relevance": "It gives robotics researchers a fast, extensible way to generate realistic tactile force and pressure fields for training and validating manipulation policies in Isaac Sim.",
       "method": [
-        "Built on UIPC to solve FEM contact mechanics in real time",
-        "Computes Cauchy stress from hyperelastic constitutive laws and projects it to surface pressure/traction",
-        "Adds automatic mesh generation, adaptive refinement, and plug-in sensor interfaces for GelSight Mini, DIGIT, and 9DTact"
+        "Uses the UIPC solver to compute Cauchy stress tensors from hyperelastic constitutive laws.",
+        "Projects stress onto contact surfaces to obtain traction forces and pressure maps.",
+        "Supports automatic mesh generation with geometry-aware adaptive refinement and modular sensor integration for GelSight Mini, DIGIT, and 9DTact."
       ],
-      "evidence_signal": "The framework reports 33.40 FPS for one environment, 555 FPS across 60 parallel environments, stress extraction under 1 ms, and strong physical agreement with real sensors (SSIM > 0.93 over 1.2556–4.7332 N).",
-      "watch_item": "Accuracy and stability likely depend on mesh quality, material modeling, and contact setup, so deployment may still require careful calibration for different sensors and objects.",
+      "evidence_signal": "The framework reports 33.40 FPS for a single environment, 555 FPS across 60 parallel environments, under 1 ms stress-extraction overhead, and SSIM above 0.93 in physical validation across 1.2556 N to 4.7332 N.",
+      "watch_item": "Results depend on mesh quality, constitutive model fidelity, and accurate sensor-to-simulation calibration, which may affect transfer to new materials or geometries.",
       "hashtags": [
         "#FEM",
         "#TactileSimulation",
-        "#RobotLearning",
+        "#Robotics",
         "#IsaacSim",
-        "#ContactMechanics"
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-06-18-arxiv-tacauchy_an_extensible_fem_framework_for_vision_based_tactile_simulation",
       "paper_title": "TaCauchy: An Extensible FEM Framework for Vision-Based Tactile Simulation",
       "paper_date": "2026-06-18",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-22T14:29:28",
+      "generated_at": "2026-06-21T11:39:34",
       "generator": "openai"
     }
   },
@@ -228,29 +228,29 @@
         "url": "https://arxiv.org/pdf/2606.19921v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "eCNNTO uses an element-wise residual CNN to predict near-optimal element densities from density histories, accelerating topology optimization while preserving spatial continuity.",
-      "engineering_relevance": "This can sharply reduce finite-element solves in high-resolution topology optimization, making practical design exploration faster across different loads, geometries, meshes, and dimensionalities.",
+      "key_insight": "eCNNTO uses an element-wise residual CNN to predict near-optimal densities from history, skipping most TO iterations while preserving spatial continuity.",
+      "engineering_relevance": "It can substantially accelerate density-based topology optimization for high-resolution 2D/3D designs across varying loads, boundaries, geometries, and mesh sizes.",
       "method": [
-        "Train a CNN per element using density-history sequences rather than early-iteration states.",
-        "Add residual connections to capture neighborhood spatial correlations and avoid disconnected features.",
-        "Use a small dataset and target the final stage of optimization to skip most TO iterations."
+        "Train an element-based CNN with residual connections to map density histories to element density updates.",
+        "Use final-stage density histories as training data instead of early-stage histories to improve efficiency and reduce dataset needs.",
+        "Leverage spatial correlations between neighboring elements to avoid disconnected optimized features."
       ],
-      "evidence_signal": "The abstract reports strong generalization across 2D and 3D examples, with up to 90% and 97% iteration reduction.",
-      "watch_item": "Performance depends on the quality and representativeness of the small training set, so out-of-distribution loading or geometry cases may still need careful validation.",
+      "evidence_signal": "The abstract reports validation on multiple 2D and 3D examples, with up to 90% iteration reduction in 2D and 97% in 3D.",
+      "watch_item": "Generalization is promising, but performance may depend on the representativeness of the small training set and careful handling of different domain/mesh configurations.",
       "hashtags": [
         "#TopologyOptimization",
         "#DeepLearning",
-        "#FiniteElementMethod",
         "#CNN",
+        "#FiniteElementMethod",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-06-18-arxiv-ecnnto_a_highly_generalizable_convnet_for_accelerating_topology_optimization",
       "paper_title": "eCNNTO: A Highly Generalizable ConvNet for Accelerating Topology Optimization",
       "paper_date": "2026-06-18",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-22T14:29:30",
+      "generated_at": "2026-06-21T11:39:36",
       "generator": "openai"
     }
   },
@@ -279,29 +279,29 @@
         "url": "https://arxiv.org/pdf/2606.17363v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "A non-overlapping domain decomposition method turns the coupled Stokes-Biot fluid–poroelastic system into a parallelizable interface problem solved efficiently with GMRES and Lagrange multipliers.",
-      "engineering_relevance": "This enables scalable simulation of fluid-structure interactions in porous media, relevant to biomechanics, geomechanics, and other multi-domain engineering systems.",
+      "key_insight": "A non-overlapping domain decomposition framework turns the coupled Stokes-Biot fluid–poroelastic problem into an interface system solved efficiently with Lagrange multipliers and GMRES.",
+      "engineering_relevance": "This enables parallel, scalable simulation of fluid–structure interaction in poroelastic media, which is important for biomedical, geomechanics, and multiphysics engineering applications.",
       "method": [
-        "Split the global Stokes-Biot model into Stokes and Biot subdomains with Stokes-Stokes, Biot-Biot, and Stokes-Biot interfaces.",
-        "Enforce interface physics weakly using Lagrange multipliers for velocity, displacement, pressure, and normal stress continuity.",
-        "Reduce the coupled PDE system via Schur complement to an interface operator and solve it with GMRES in parallel local subproblems."
+        "Split the domain into Stokes and Biot subdomains with Stokes-Stokes, Biot-Biot, and Stokes-Biot interfaces.",
+        "Enforce interface physics weakly using Lagrange multipliers for velocity, displacement, and pressure continuity/stress balance.",
+        "Reduce the global mixed FEM system via Schur complement to an interface problem and solve it with GMRES in parallel."
       ],
-      "evidence_signal": "The abstract reports numerical experiments and a fields-of-value analysis showing the interface operator is positive definite and GMRES convergence can be characterized.",
-      "watch_item": "Performance depends on the quality of the mixed finite element discretization and the cost of repeated local Stokes/Biot solves at each GMRES iteration.",
+      "evidence_signal": "The abstract reports numerical experiments and a field-of-value analysis showing the interface operator is positive definite and supporting GMRES convergence.",
+      "watch_item": "Performance depends on stable mixed finite element choices and accurate treatment of multiple interface multipliers, which can increase implementation complexity.",
       "hashtags": [
+        "#FluidStructureInteraction",
+        "#Poroelasticity",
         "#DomainDecomposition",
-        "#StokesBiot",
         "#FiniteElementMethod",
-        "#GMRES",
-        "#FluidStructureInteraction"
+        "#GMRES"
       ],
       "paper_id": "2026-06-15-arxiv-domain_decomposition_methods_for_the_stokes_biot_model_of_fluid_poroelastic_structure_inte",
       "paper_title": "Domain decomposition methods for the Stokes-Biot model of fluid-poroelastic structure interaction",
       "paper_date": "2026-06-15",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-22T14:29:33",
+      "generated_at": "2026-06-21T11:39:38",
       "generator": "openai"
     }
   },
@@ -330,29 +330,80 @@
         "url": "https://arxiv.org/pdf/2606.18177v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "A minimizing-movement discretization can decouple normal geometric evolution from tangential mesh motion, while preserving energy stability through admissible constraints that keep the identity map available as a comparator.",
-      "engineering_relevance": "The framework provides stable parametric finite element schemes for curvature-driven surface evolution, useful for robust simulation of mean curvature flow and surface diffusion with improved mesh quality control.",
+      "key_insight": "A minimizing-movement discretization can separate normal geometric evolution from tangential mesh motion, while using admissible constraints to preserve stability and recover classical curvature-flow schemes.",
+      "engineering_relevance": "This gives a robust finite-element framework for simulating curvature-driven interfaces with unconditional energy stability and controllable mesh quality, which is useful in solid mechanics and surface-evolution problems.",
       "method": [
-        "Use a time-stepping variational problem with a normal-dissipation metric plus surface Dirichlet energy.",
-        "Choose the metric to encode the flow: L2 for mean curvature flow, H-1 for surface diffusion.",
-        "Impose admissible weak tangential constraints so tangential motion can be selected independently of the geometric evolution."
+        "Use a time-stepping variational problem with a dissipation term for normal displacement plus surface Dirichlet energy.",
+        "Choose the geometric flow via the metric: L2 for mean curvature flow and H-1 for surface diffusion flow.",
+        "Select tangential motion independently through weak deformation constraints; admissibility requires the identity map to satisfy the constraint."
       ],
-      "evidence_signal": "The paper proves existence, uniqueness, and unconditional energy stability for the fully discrete schemes and reports numerical experiments comparing admissible and classical variants.",
-      "watch_item": "Practical performance depends on nondegeneracy assumptions and on how the tangential constraints are implemented without degrading mesh quality or solver robustness.",
+      "evidence_signal": "The abstract reports fully discrete schemes with existence and uniqueness under nondegeneracy assumptions, unconditional energy stability, and numerical experiments comparing admissible versus classical schemes.",
+      "watch_item": "Performance depends on admissibility and nondegeneracy conditions, so constraint design and mesh regularity must be handled carefully in implementation.",
       "hashtags": [
         "#FiniteElementMethod",
         "#GeometricFlows",
         "#MeanCurvatureFlow",
         "#SurfaceDiffusion",
-        "#EnergyStableSchemes"
+        "#EnergyStability"
       ],
       "paper_id": "2026-06-16-arxiv-a_minimizing_movement_framework_for_geometric_gradient_flows_with_admissible_tangential_mo",
       "paper_title": "A minimizing-movement framework for geometric gradient flows with admissible tangential motion",
       "paper_date": "2026-06-16",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-22T14:29:36",
+      "generated_at": "2026-06-21T11:39:40",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-14-arxiv-first_order_compatible_strain_mixed_quadrilateral_finite_elements_for_2d_nonlinear_elastic",
+    "arxiv_id": "2606.15925v1",
+    "date": "2026-06-14",
+    "title": "First-Order Compatible-Strain Mixed Quadrilateral Finite Elements for 2D Nonlinear Elasticity",
+    "authors": "Mohsen Jahanshahi, Damiano Pasini, Arash Yavari",
+    "abstract": "Compatible-strain mixed finite elements (CSMFEs) use the differential complex of nonlinear elasticity to construct discretizations that preserve the underlying topological structure. Existing CSMFEs have focused on simplicial meshes for compressible and incompressible nonlinear elasticity. In this paper, we develop compatible-strain mixed formulations for quadrilateral elements applicable to both compressible and incompressible solids. For general quadrilateral elements, the Piola transformation preserves vector fields tangent and normal to element edges only for special geometries, such as rectangles, parallelograms, and trapezoids, and therefore cannot be used to construct compatible shape functions. To overcome this limitation, the shape functions are computed directly in the physical space using numerical integration. Nedelec shape functions of the first kind are employed to interpolate the displacement gradient, and a new class of stress shape functions compatible with the displacement and displacement-gradient discretizations is introduced. The compressible formulation follows the framework previously developed for simplicial CSMFEs, whereas a new incompressible formulation employing element-level condensation of the pressure field is proposed, thereby avoiding additional global degrees of freedom. These developments extend the compatible-strain mixed finite element framework from simplicial to general quadrilateral meshes for both compressible and incompressible nonlinear elasticity. Numerical examples demonstrate that the proposed quadrilateral elements can solve problems that require second-order simplicial CSMFEs while using fewer degrees of freedom.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-06-14T17:03:30Z",
+    "updated": "2026-06-14T17:03:30Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15925v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15925v1"
+      }
+    ],
+    "score": 59,
+    "infographic": {
+      "key_insight": "The paper extends compatible-strain mixed finite elements from simplicial meshes to quadrilateral meshes by building shape functions directly in physical space, enabling structure-preserving 2D nonlinear elasticity for both compressible and incompressible solids.",
+      "engineering_relevance": "This gives solid-mechanics solvers a lower-DOF quadrilateral alternative that can achieve the accuracy of higher-order simplicial compatible-strain elements on practical mesh layouts.",
+      "method": [
+        "Uses Nedelec first-kind shape functions to interpolate the displacement gradient.",
+        "Constructs stress shape functions compatible with displacement and gradient discretizations.",
+        "Handles incompressibility by element-level pressure condensation, avoiding extra global pressure DOFs."
+      ],
+      "evidence_signal": "The abstract reports numerical examples showing the quadrilateral elements can solve problems that previously required second-order simplicial CSMFEs while using fewer degrees of freedom.",
+      "watch_item": "The approach relies on numerical integration in physical space because standard Piola-mapped compatible shape functions do not work on arbitrary quadrilaterals, so implementation may be more complex and geometry-sensitive.",
+      "hashtags": [
+        "#FiniteElements",
+        "#NonlinearElasticity",
+        "#QuadrilateralMesh",
+        "#MixedMethods",
+        "#ComputationalMechanics"
+      ],
+      "paper_id": "2026-06-14-arxiv-first_order_compatible_strain_mixed_quadrilateral_finite_elements_for_2d_nonlinear_elastic",
+      "paper_title": "First-Order Compatible-Strain Mixed Quadrilateral Finite Elements for 2D Nonlinear Elasticity",
+      "paper_date": "2026-06-14",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-06-21T11:39:42",
       "generator": "openai"
     }
   },
@@ -381,29 +432,29 @@
         "url": "https://arxiv.org/pdf/2606.19941v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "Compositional structure in trained networks appears only in a narrow, target-dependent sweet spot of depth and connectivity; outside it, optimization tends to produce fractured solutions.",
-      "engineering_relevance": "For AI systems in solid mechanics and fracture modeling, architecture choice matters as much as sparsity: the right pruning pattern and depth can determine whether the model learns reusable physical primitives or brittle shortcuts.",
+      "key_insight": "Compositionality in learned representations emerges only in a narrow sweet spot of network depth and connectivity, and otherwise gradient descent tends to converge to fractured solutions.",
+      "engineering_relevance": "For model design in computational science and engineering, this suggests that sparsity and depth must be tuned structurally—not just made smaller—to recover reusable, generalizable primitives.",
       "method": [
-        "Similarity-based pruning (SP) to recover compositional connectivity patterns",
-        "Heuristic depth predictor to estimate where compositionality is most likely to emerge",
+        "Similarity-based pruning (SP) to recover compositional connectivity",
+        "Heuristic depth predictor to estimate where compositionality is most likely to appear",
         "Theoretical analysis using compositional sparsity, volume-ratio arguments, and feature-interference bounds"
       ],
-      "evidence_signal": "The abstract reports empirical results showing compositionality only in specific sparse networks and at specific depths, with gradient descent otherwise converging to fractured solutions, supported by theoretical explanation.",
-      "watch_item": "The compositional regime is narrow and depends on which connections remain, so naive sparsity or depth scaling may fail even when overall model size looks appropriate.",
+      "evidence_signal": "The abstract reports empirical evaluation across different depths and sparsity/connectivity patterns, showing compositionality peaks only in specific target-dependent regimes.",
+      "watch_item": "Compositionality depends on which connections remain, so naive pruning or depth changes may fail even if overall sparsity seems appropriate.",
       "hashtags": [
-        "#FractureAndDamage",
-        "#Compositionality",
         "#NeuralNetworks",
-        "#Pruning",
-        "#SolidMechanics"
+        "#Sparsity",
+        "#Compositionality",
+        "#Optimization",
+        "#MachineLearningTheory"
       ],
       "paper_id": "2026-06-18-arxiv-compositionality_emerges_in_a_narrow_depth_connectivity_regime_architecture_constraints_an",
       "paper_title": "Compositionality Emerges in a Narrow Depth-Connectivity Regime: Architecture Constraints and Solution Manifolds",
       "paper_date": "2026-06-18",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-22T14:29:38",
+      "generated_at": "2026-06-21T11:39:44",
       "generator": "openai"
     }
   },
@@ -432,29 +483,29 @@
         "url": "https://arxiv.org/pdf/2606.18923v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "GrapNet treats the neural network itself as an editable graph program, so structural changes like adding, deleting, freezing, or rerouting relations become first-class operations.",
-      "engineering_relevance": "This makes neural models easier to inspect, modify, and deploy across different execution backends, which is valuable for engineering workflows that need controlled structure and reproducible behavior.",
+      "key_insight": "GrapNet treats the neural network itself as an editable graph program, so relations, frozen parts, routing, and execution backends can be changed structurally rather than by ad hoc weight surgery.",
+      "engineering_relevance": "This makes neural models more controllable and auditable for solid mechanics and other engineering workflows that need modular encoders, partial freezing, and topology-aware adaptation.",
       "method": [
-        "Child-owned graph nodes store trainable allocations aligned with outgoing relations.",
-        "Structural rules and execution policies are separated from the node core, enabling growth, freezing, grouping, routing, and dense lowering.",
-        "Conventional modules can feed into GrapNet through a vector-valued parent interface."
+        "Child-owned graph nodes store next-layer references plus a trainable allocation vector aligned to those references.",
+        "Structural operations can delete, freeze, grow, regroup, or route active relations without changing the node core.",
+        "The same substrate can interface with dense layers, CNNs, ResNets, attention blocks, and transformers through vector-valued parent inputs."
       ],
-      "evidence_signal": "In matched ten-seed studies, GrapNet improved seen-class accuracy on Split Fashion-MNIST by 12.08 points over a larger MLP+ER and improved a frozen-encoder Split CIFAR-10 head by 3.81 points, with reported statistical significance.",
-      "watch_item": "The approach depends on careful bookkeeping when topology changes, since deleting a relation must also update the corresponding allocation coordinate and execution view.",
+      "evidence_signal": "In matched ten-seed studies, GrapNet improved Split Fashion-MNIST seen-class accuracy by 12.08 points over a larger dense MLP+ER, and improved Split CIFAR-10 online head accuracy by 3.81 points with statistically significant p-values.",
+      "watch_item": "Because behavior depends on explicit structural edits and execution policies, correctness and reproducibility may be sensitive to implementation details when the graph topology changes.",
       "hashtags": [
         "#GraphNeuralNetworks",
-        "#ProgrammableAI",
         "#NeuralArchitecture",
-        "#ContinualLearning",
-        "#ModelEditing"
+        "#ProgrammableAI",
+        "#DynamicGraphs",
+        "#EngineeringAI"
       ],
       "paper_id": "2026-06-17-arxiv-grapnet_a_programmable_dynamic_architecture_neural_graph_substrate",
       "paper_title": "GrapNet: A Programmable Dynamic-Architecture Neural Graph Substrate",
       "paper_date": "2026-06-17",
       "paper_category": "AI Solid Mechanics",
-      "generated_at": "2026-06-22T14:29:41",
+      "generated_at": "2026-06-21T11:39:46",
       "generator": "openai"
     }
   },
@@ -485,17 +536,17 @@
         "url": "https://arxiv.org/pdf/2606.16850v1"
       }
     ],
-    "score": 51,
+    "score": 56,
     "infographic": {
-      "key_insight": "PF-DIC integrates phase-field fracture concepts into digital image correlation to measure displacement, strain, and damage in a unified, crack-aware framework.",
-      "engineering_relevance": "It enables more accurate full-field measurements near cracks and reduces manual masking effort, making it attractive for fracture testing, defect characterization, and structural health monitoring.",
+      "key_insight": "PF-DIC integrates phase-field crack tracking into digital image correlation to measure displacement, strain, and damage simultaneously from speckle images.",
+      "engineering_relevance": "It enables more accurate full-field measurements near cracks and reduces manual masking, improving fracture characterization and structural health monitoring.",
       "method": [
-        "Use a phase-field variable to represent complex crack growth and morphology directly from speckle images.",
-        "Embed damage into the DIC optimization so displacement and strain are solved with crack-aware constraints.",
-        "Implement the framework with a finite element formulation for experimental-image-based field recovery."
+        "Formulate DIC with a phase-field damage variable to represent complex crack morphologies.",
+        "Solve the coupled measurement problem with a finite element implementation.",
+        "Use the damage field to improve displacement accuracy near crack tips and identify critical cracks selectively."
       ],
-      "evidence_signal": "The abstract reports numerical examples showing that PF-DIC captures different crack types while improving displacement accuracy, especially near crack tips.",
-      "watch_item": "The method adds modeling and implementation complexity, so performance may depend on robust parameter selection and reliable phase-field calibration for real experiments.",
+      "evidence_signal": "The abstract reports numerical examples showing PF-DIC captures different crack types while improving displacement measurement accuracy.",
+      "watch_item": "Practical performance may depend on robust parameter calibration and solving complex coupled inverse problems for noisy experimental images.",
       "hashtags": [
         "#DigitalImageCorrelation",
         "#PhaseField",
@@ -507,7 +558,7 @@
       "paper_title": "PF-DIC: Phase field digital image correlation for integrated full-field displacement, strain, and damage measurements",
       "paper_date": "2026-06-15",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-22T14:29:44",
+      "generated_at": "2026-06-21T11:39:48",
       "generator": "openai"
     }
   },
@@ -536,29 +587,29 @@
         "url": "https://arxiv.org/pdf/2606.19215v1"
       }
     ],
-    "score": 50,
+    "score": 55,
     "infographic": {
-      "key_insight": "GUMP-Net combines object detection, anatomy-aware edge learning, and deep level-set evolution to deliver interpretable multi-class pelvic segmentation.",
-      "engineering_relevance": "It supports more reliable pelvic fracture planning and navigation by improving segmentation accuracy and robustness, especially when labeled data are limited.",
+      "key_insight": "GUMP-Net fuses an improved geodesic active contour model with deep neural networks to produce an interpretable, multi-class pelvic segmentation framework.",
+      "engineering_relevance": "The method can support more reliable pelvic fracture diagnosis, surgical planning, and navigation by improving segmentation accuracy, robustness, and consistency even with limited training data.",
       "method": [
-        "Automatic object detection initializes the level set.",
-        "An edge detector learns anatomy-aware boundary cues.",
-        "An iteration module performs deep level-set evolution for segmentation refinement."
+        "Object detection module initializes the level set automatically.",
+        "Edge detector module learns an anatomy-aware contour/edge function.",
+        "Iteration module performs deep level set evolution for final segmentation."
       ],
-      "evidence_signal": "The abstract reports extensive experiments on pelvic datasets and additional tests on an ankle dataset, with improved accuracy, robustness, and consistency versus state-of-the-art methods, especially in small-data settings.",
-      "watch_item": "Performance and interpretability may depend on quality of initialization and boundary learning, so generalization should be checked carefully across anatomies and imaging protocols.",
+      "evidence_signal": "Experiments on pelvic datasets show improved performance versus state-of-the-art methods, and additional tests on an ankle dataset suggest broader anatomical applicability.",
+      "watch_item": "Performance gains should be validated across diverse imaging protocols and centers, since the abstract does not report external multi-site generalization or runtime details.",
       "hashtags": [
-        "#MedicalImaging",
         "#PelvicSegmentation",
         "#DeepLearning",
         "#LevelSetMethods",
-        "#FracturePlanning"
+        "#MedicalImaging",
+        "#FractureAndDamage"
       ],
       "paper_id": "2026-06-17-arxiv-gump_net_an_interpretable_model_data_driven_intelligent_algorithm_for_multi_class_pelvic_s",
       "paper_title": "GUMP-Net: An interpretable model-data-driven intelligent algorithm for multi-class pelvic segmentation",
       "paper_date": "2026-06-17",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-22T14:29:46",
+      "generated_at": "2026-06-21T11:39:49",
       "generator": "openai"
     }
   },
@@ -588,287 +639,29 @@
         "url": "https://arxiv.org/pdf/2606.18542v1"
       }
     ],
-    "score": 49,
+    "score": 54,
     "infographic": {
-      "key_insight": "Surface wrinkling in a compressed hyperelastic solid can be reinterpreted as a topological phase transition, with mechanical stretch tuning a Dirac-like mass and triggering a change in winding number.",
-      "engineering_relevance": "This framework could enable predictive design of soft surfaces whose instability, localization, and patterning are programmed through geometry, loading, and material choice rather than treated as failure alone.",
+      "key_insight": "Elastic surface wrinkling in a compressed hyperelastic half-space is reinterpreted as a topological phase transition, where increasing compression tunes a Dirac mass and changes the winding number.",
+      "engineering_relevance": "This provides a new physics-based framework for predicting and potentially programming surface instabilities in soft materials and smart structures.",
       "method": [
-        "Generalized Stroh formalism with Lie-group metric evolution to capture finite-strain geometric frustration.",
-        "Map the surface impedance matrix to an effective one-dimensional Dirac Hamiltonian.",
-        "Use winding-number topology to identify the onset of wrinkles and the associated zero-energy edge state."
+        "Generalized Stroh formalism with Lie group metric evolution to model nonlinear geometric frustration.",
+        "Map the surface impedance matrix to an effective 1D Dirac Hamiltonian.",
+        "Track topology via winding number and the emergence of a zero-energy edge state at wrinkle onset."
       ],
-      "evidence_signal": "The abstract reports an analytical mapping for a semi-infinite hyperelastic half-space under finite compression, showing a quantized winding-number jump at the wrinkling onset.",
-      "watch_item": "The result is presented analytically for an idealized semi-infinite hyperelastic half-space, so validation under real material heterogeneity, finite thickness, and boundary imperfections will be important.",
+      "evidence_signal": "The abstract reports an analytical mapping and theoretical demonstration of a quantized winding-number jump at the onset of surface wrinkles, but no numerical dataset or experimental validation is described.",
+      "watch_item": "The result is theoretically elegant, but practical use will depend on how well the idealized half-space, finite-compression assumptions match real materials and boundary conditions.",
       "hashtags": [
-        "#SoftMatter",
         "#SolidMechanics",
         "#TopologicalPhysics",
+        "#SoftMatter",
         "#SurfaceInstability",
-        "#Hyperelasticity"
+        "#Elasticity"
       ],
       "paper_id": "2026-06-16-arxiv-elastic_surface_instability_as_a_topological_phase_transition",
       "paper_title": "Elastic Surface Instability as a Topological Phase Transition",
       "paper_date": "2026-06-16",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-22T14:29:49",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-18-arxiv-acceleration_methods_for_the_planar_3d_ilsa_hydraulic_fracturing_model",
-    "arxiv_id": "2606.20025v1",
-    "date": "2026-06-18",
-    "title": "Acceleration methods for the planar 3D ILSA hydraulic fracturing model",
-    "authors": "V. I. Shukalo, A. V. Valov, A. N. Baykin",
-    "abstract": "Planar 3D models of hydraulic fracturing provide a practical balance between models with restrictive geometric assumptions and fully 3D simulators, capturing fractures with arbitrary planar footprints at moderate computational cost. Nevertheless, applications such as treatment design optimization and mini-frac test interpretation require large ensembles of simulations, for which the cost of planar 3D models remains a significant bottleneck. This work presents acceleration strategies for the planar 3D Implicit Level Set Algorithm (ILSA) to reduce simulation runtime while preserving numerical accuracy. A unified planar 3D ILSA scheme that consolidates the nested loops of the elastohydrodynamic solver and the front tracking algorithm into a single iterative process is introduced. A matrix splitting approach is applied to the linearized elastohydrodynamic system, moving the dense part of the elasticity operator to the right-hand side and yielding a sparse system matrix that can be solved more efficiently. Anderson acceleration is incorporated into the solution of the elastohydrodynamic system to improve convergence under varying fracture geometry. Additionally, a predictor--corrector scheme is examined with the proposed methods to assess their combined effect. Each technique is evaluated individually and in combination on both the reference and unified planar 3D ILSA schemes across five benchmark cases. Numerical experiments demonstrate that the unified scheme alone delivers an average 2.5x speedup, reaching 5.7x for the sandglass geometry. The combined application of all techniques achieves an average 4x speedup and up to 11x for the sandglass case, with the relative discrepancy in fracture aperture below 5% compared with the reference scheme.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-06-18T09:57:09Z",
-    "updated": "2026-06-18T09:57:09Z",
-    "primary_category": "physics.geo-ph",
-    "categories": [
-      "physics.geo-ph",
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.20025v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.20025v1"
-      }
-    ],
-    "score": 47,
-    "infographic": {
-      "key_insight": "A unified planar 3D ILSA solver, combined with matrix splitting and Anderson acceleration, substantially reduces hydraulic-fracture simulation time while keeping fracture-aperture error low.",
-      "engineering_relevance": "These speedups make planar 3D hydraulic-fracture models more practical for design optimization and mini-frac interpretation, where many simulations are needed.",
-      "method": [
-        "Consolidate the elastohydrodynamic and front-tracking loops into one iterative unified planar 3D ILSA scheme.",
-        "Use matrix splitting to move the dense elasticity contribution to the right-hand side, leaving a sparse system to solve.",
-        "Apply Anderson acceleration, optionally with a predictor-corrector step, to improve convergence as fracture geometry evolves."
-      ],
-      "evidence_signal": "Across five benchmark cases, the unified scheme averaged 2.5× speedup, the full combination averaged 4×, and the sandglass case reached 11× speedup with fracture-aperture discrepancy below 5%.",
-      "watch_item": "The acceleration benefits may depend strongly on fracture geometry and solver coupling, so robustness should be checked case by case before deployment.",
-      "hashtags": [
-        "#HydraulicFracturing",
-        "#ComputationalMechanics",
-        "#LevelSetMethod",
-        "#AndersonAcceleration",
-        "#FractureModeling"
-      ],
-      "paper_id": "2026-06-18-arxiv-acceleration_methods_for_the_planar_3d_ilsa_hydraulic_fracturing_model",
-      "paper_title": "Acceleration methods for the planar 3D ILSA hydraulic fracturing model",
-      "paper_date": "2026-06-18",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-22T14:29:54",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-17-arxiv-a_hybrid_sharp_diffuse_interface_approach_to_accurately_model_melt_pool_dynamics_with_rapi",
-    "arxiv_id": "2606.19556v1",
-    "date": "2026-06-17",
-    "title": "A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals",
-    "authors": "Nils Much, Andreas Koch, Christoph Meier, Magdalena Schreter-Fleischhacker",
-    "abstract": "Predictive simulation of melt pool dynamics in laser-based processing of metals, e.g., laser beam welding or laser powder bed fusion additive manufacturing, requires accurate resolution of thermo-hydrodynamic interactions at the melt-gas interface. Here, evaporation-induced recoil pressure and temperature-dependent surface tension govern the flow. Because these mechanisms depend sensitively, often exponentially, on the interface temperature, reliable predictions demand highly accurate heat transfer models. Popular diffuse-interface formulations smear the extreme thermal gradients as typical for laser-metal interactions, leading to interface temperature errors that critically degrade the accuracy of interface force predictions and melt pool dynamics. We present a hybrid sharp-diffuse interface approach for high-fidelity modelling of melt pool thermo-hydrodynamics with rapid evaporation. The heat transfer problem is represented using a sharp-interface unfitted finite element (CutFEM) formulation, enabling accurate prediction of the temperature field. The multi-phase flow problem, characterized by large density ratios and complex interface dynamics, is accurately captured using a robust level-set-based one-fluid diffuse-interface finite element formulation. Consistent coupling is achieved by extending the sharp-interface temperature into a narrow interface region to evaluate temperature-dependent interface forces within the diffuse-interface flow framework. In practically relevant benchmarks, the sharp-interface thermal model exhibits second-order spatial convergence, enabling finite element sizes two orders of magnitude larger than the diffuse-interface approach for 1 accuracy. In a novel coupled thermo-hydrodynamic benchmark representative of laser-metal interactions, the hybrid approach is one order of magnitude more accurate than a purely diffuse-interface model on the same mesh. Robu",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-06-17T19:57:40Z",
-    "updated": "2026-06-17T19:57:40Z",
-    "primary_category": "cs.CE",
-    "categories": [
-      "cs.CE"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.19556v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.19556v1"
-      }
-    ],
-    "score": 47,
-    "infographic": {
-      "key_insight": "A hybrid model uses a sharp-interface thermal solver and a diffuse-interface flow solver to better capture laser-induced melt pool dynamics with rapid evaporation.",
-      "engineering_relevance": "This enables more accurate prediction of recoil pressure, surface tension-driven flow, and melt pool behavior in laser welding and laser powder bed fusion.",
-      "method": [
-        "Sharp-interface CutFEM for accurate heat transfer and temperature gradients",
-        "Level-set one-fluid diffuse-interface FEM for multiphase flow with large density ratios",
-        "Couples both by extending temperature to the interface region for force evaluation"
-      ],
-      "evidence_signal": "The abstract reports second-order spatial convergence for the thermal model and about one order-of-magnitude better accuracy than a purely diffuse-interface model on the same mesh.",
-      "watch_item": "The coupling depends on a consistent temperature extension near the interface, so implementation details may strongly affect stability and force accuracy.",
-      "hashtags": [
-        "#LaserProcessing",
-        "#MeltPoolDynamics",
-        "#CutFEM",
-        "#LevelSetMethod",
-        "#ThermoHydrodynamics"
-      ],
-      "paper_id": "2026-06-17-arxiv-a_hybrid_sharp_diffuse_interface_approach_to_accurately_model_melt_pool_dynamics_with_rapi",
-      "paper_title": "A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals",
-      "paper_date": "2026-06-17",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-22T14:30:11",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-18-arxiv-coarsesolvers_for_exascale_solution_of_poisson_problems",
-    "arxiv_id": "2606.20496v1",
-    "date": "2026-06-18",
-    "title": "CoarseSolvers for Exascale Solution of Poisson Problems",
-    "authors": "Thilina Ratnayaka, Paul Fischer, Luke Olson",
-    "abstract": "WepresentatwolevelSchwarzmethodasanalternativetoAlgebraicMultigridmethod(AMG) used as the last level (coarse) solver of the p-multigrid pMG preconditioner for pressure Poission equation resulting from Spectral/Finite element descretization of incompressible Navier-Stokes eqaution. Proposed Schwarz method consits of a local problem in the original pMG coarse space and a global coarse problem. Main contribution of the paper is a novel, structured and a non-nested coarse space for the global coarse problem. Structured nature of the proposed global coarse space enable communication-free interpolation between the original p-multgrid coarse space and the global coarse problem. We demonstrate the effectiveness of the proposed method compared to the state of the art AMG solver BoomerAMG by a series of experiments performed using Nek5000/RS, a suite of highly scalable incompressible Navier-Stokes solvers, on Summit/Frontier supercomputers at Oak Ridge Leadership Computing Facility.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-06-18T17:11:17Z",
-    "updated": "2026-06-18T17:11:17Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA",
-      "cs.DC",
-      "cs.MS"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.20496v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.20496v1"
-      }
-    ],
-    "score": 46,
-    "infographic": {
-      "key_insight": "A two-level Schwarz coarse solver with a structured, non-nested global coarse space can replace AMG as the coarse-level solver in p-multigrid for Poisson problems.",
-      "engineering_relevance": "This offers a scalable alternative for pressure Poisson solves in high-order incompressible CFD, targeting exascale performance on modern supercomputers.",
-      "method": [
-        "Local solve in the original p-multigrid coarse space",
-        "Global coarse problem built from a novel structured non-nested coarse space",
-        "Communication-free interpolation between local and global levels"
-      ],
-      "evidence_signal": "The method is evaluated against BoomerAMG using Nek5000/RS on Summit and Frontier, showing performance through a series of scalability experiments.",
-      "watch_item": "The structured coarse space may require careful implementation and integration with the existing p-multigrid hierarchy to preserve efficiency and robustness.",
-      "hashtags": [
-        "#PoissonSolvers",
-        "#SchwarzMethod",
-        "#Multigrid",
-        "#ExascaleComputing",
-        "#CFD"
-      ],
-      "paper_id": "2026-06-18-arxiv-coarsesolvers_for_exascale_solution_of_poisson_problems",
-      "paper_title": "CoarseSolvers for Exascale Solution of Poisson Problems",
-      "paper_date": "2026-06-18",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-22T14:30:14",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-18-arxiv-sigma_skill_incidence_graphs_for_compositional_multi_agent_design",
-    "arxiv_id": "2606.19758v1",
-    "date": "2026-06-18",
-    "title": "SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design",
-    "authors": "Kun Zeng, Yu Huo, Siyu Zhang, Yuecheng Zhuo, Yuquan Lu, Haoyue Liu",
-    "abstract": "Existing graph-based multi-agent system (MAS) designers mainly improve collaboration by optimizing communication topologies over predefined agents, roles, or groups. However, because each node remains a closed-set entity, these methods struggle to generalize to tasks that require unseen combinations of capabilities. We propose SIGMA, a skill-incidence graph framework that constructs agents as task-conditioned bundles of reusable skills. Given a task and a skill library, SIGMA predicts a skill-agent incidence matrix, composes agent node embeddings from selected skills, and decodes a communication topology over the constructed agents. During execution, skill-specific mailboxes route messages to the relevant assigned capabilities, making the incidence structure directly operational. Across six reasoning and coding benchmarks with three base LLMs, SIGMA achieves the best average performance and improves over CARD, the strongest non-compositional topology-based baseline, by 2.06, 2.36, and 1.75 points, respectively. It also shows stronger robustness to unseen skill libraries, with an average performance drop of only 0.96 points. These results suggest that compositional node construction is a complementary and important axis for multi-agent design beyond communication topology optimization. Code is available at https://anonymous.4open.science/r/SIGMA-2338/.",
-    "category": "Topology Optimization",
-    "source": "arXiv",
-    "published": "2026-06-18T03:41:16Z",
-    "updated": "2026-06-18T03:41:16Z",
-    "primary_category": "cs.MA",
-    "categories": [
-      "cs.MA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.19758v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.19758v1"
-      }
-    ],
-    "score": 44,
-    "infographic": {
-      "key_insight": "SIGMA shows that multi-agent performance improves not only by optimizing communication, but also by composing agents from reusable skills via a task-conditioned skill-incidence graph.",
-      "engineering_relevance": "For computational engineering workflows, this suggests a more flexible way to build task-specific agent teams that can generalize to new capability combinations without redesigning the whole system.",
-      "method": [
-        "Predict a skill-agent incidence matrix from the task and skill library.",
-        "Construct each agent embedding by composing selected skills.",
-        "Decode inter-agent communication topology and route messages through skill-specific mailboxes."
-      ],
-      "evidence_signal": "Across six reasoning and coding benchmarks with three base LLMs, SIGMA achieved the best average performance and outperformed CARD by 2.06, 2.36, and 1.75 points on the three base models, with only a 0.96-point average drop under unseen skill libraries.",
-      "watch_item": "The approach depends on the quality and coverage of the predefined skill library, so missing or poorly defined skills could limit compositional gains.",
-      "hashtags": [
-        "#MultiAgentSystems",
-        "#GraphLearning",
-        "#CompositionalAI",
-        "#LLMAgents",
-        "#TopologyOptimization"
-      ],
-      "paper_id": "2026-06-18-arxiv-sigma_skill_incidence_graphs_for_compositional_multi_agent_design",
-      "paper_title": "SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design",
-      "paper_date": "2026-06-18",
-      "paper_category": "Topology Optimization",
-      "generated_at": "2026-06-22T14:30:16",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-15-arxiv-novel_insights_into_pareto_fronts_in_multiobjective_topology_optimization_and_a_comparativ",
-    "arxiv_id": "2606.16792v1",
-    "date": "2026-06-15",
-    "title": "Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies",
-    "authors": "Tom De Weer, Ole Sigmund, Gabriele Eichfelder",
-    "abstract": "Topology optimization produces optimized structures by minimizing an objective function under a set of constraints. While considerable research has focused on improving and extending such single-objective formulations, design is usually a trade-off between conflicting criteria. This brings topology optimization into the realm of multiobjective optimization. Unfortunately, cross-fertilization has been limited despite the long coexistence of these two fields. This work aims to bridge this gap through three contributions. The first is a theoretical comparison of two common scalarization techniques, the weighted-sum and $\\varepsilon$-constraint method, to the more advanced Pascoletti-Serafini scalarization. The second contribution is a novel insight: the Pareto frontier in topology optimization contexts consists of pieces belonging to local fronts. This can cause disconnected and nonconvex fronts, in contrast to what is often seen in the literature. Finally, the third contribution is a numerical comparison of the scalarization methods, highlighting more uniform approximations obtained with the Pascoletti-Serafini scalarization and clustering observed for the weighted-sum scalarization. The paper contains a large number of bi-objective examples, including minimization of volume, compliance, maximum stress and dynamic compliance.",
-    "category": "Topology Optimization",
-    "source": "arXiv",
-    "published": "2026-06-15T14:36:26Z",
-    "updated": "2026-06-15T14:36:26Z",
-    "primary_category": "math.OC",
-    "categories": [
-      "math.OC"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.16792v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.16792v1"
-      }
-    ],
-    "score": 44,
-    "infographic": {
-      "key_insight": "In multiobjective topology optimization, the Pareto front can be disconnected and nonconvex because it is composed of pieces of local fronts, and scalarization choice strongly affects how well it is captured.",
-      "engineering_relevance": "For practical design trade-offs in structures, choosing a stronger scalarization method can yield more uniform and representative Pareto approximations across objectives such as compliance, stress, volume, and dynamic compliance.",
-      "method": [
-        "Compared weighted-sum, ε-constraint, and Pascoletti-Serafini scalarizations.",
-        "Developed theoretical comparisons of the three approaches for bi-objective topology optimization.",
-        "Ran multiple numerical bi-objective examples to assess front coverage and clustering behavior."
-      ],
-      "evidence_signal": "The abstract reports a large numerical study with many bi-objective topology optimization examples, showing more uniform Pareto approximations for Pascoletti-Serafini and clustering for weighted-sum.",
-      "watch_item": "Pareto fronts may be locally fragmented and nonconvex, so a single scalarization or coarse sampling can miss important design trade-offs.",
-      "hashtags": [
-        "#TopologyOptimization",
-        "#MultiobjectiveOptimization",
-        "#ParetoFront",
-        "#Scalarization",
-        "#ComputationalMechanics"
-      ],
-      "paper_id": "2026-06-15-arxiv-novel_insights_into_pareto_fronts_in_multiobjective_topology_optimization_and_a_comparativ",
-      "paper_title": "Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies",
-      "paper_date": "2026-06-15",
-      "paper_category": "Topology Optimization",
-      "generated_at": "2026-06-22T14:30:19",
+      "generated_at": "2026-06-21T11:39:51",
       "generator": "openai"
     }
   },
@@ -899,95 +692,95 @@
         "url": "https://arxiv.org/pdf/2606.17889v1"
       }
     ],
-    "score": 43,
+    "score": 53,
     "infographic": {
-      "key_insight": "Modularity only helps continual learning when the representation is sufficiently low-dimensional; in high-dimensional lazy regimes, modular and single-network models perform similarly.",
-      "engineering_relevance": "For compositional systems, the benefit of architectural modularity depends on representational regime, suggesting designers should tune initialization and capacity to encourage useful task subspaces rather than relying on hard separation alone.",
+      "key_insight": "Modularity only helps continual learning when representations are lower-dimensional and structured; in high-dimensional lazy regimes, modular and single-network models behave similarly.",
+      "engineering_relevance": "For sequential engineering AI systems, the benefit of task-specific modules depends on representational regime, so architectural modularity should be matched to initialization and capacity, not assumed universally beneficial.",
       "method": [
         "Sequential A-B-A continual learning setup",
-        "Compared a task-partitioned recurrent network against a single-network baseline",
-        "Manipulated weight scale to induce high- and low-dimensional representational regimes"
+        "Compared task-partitioned recurrent network vs single-network baseline",
+        "Induced high- and low-dimensional regimes by weight-scale manipulation"
       ],
-      "evidence_signal": "The abstract reports performance and internal geometry comparisons across similar, moderately dissimilar, and dissimilar tasks, showing modular subspaces overlap, align, or separate depending on task similarity in the rich regime.",
-      "watch_item": "The conclusions are tied to a specific sequential task setup and weight-scale-induced regime, so results may not transfer directly to other architectures or more complex real-world continual learning settings.",
+      "evidence_signal": "The abstract reports that both models perform similarly in the high-dimensional regime, while in the lower-dimensional regime the modular network learns task-specific subspaces that better separate or share structure according to task similarity.",
+      "watch_item": "The conclusions depend on the specific initialization-scale-induced regime and sequential task order, so gains from modularity may not transfer without careful tuning of representation dimensionality.",
       "hashtags": [
         "#ContinualLearning",
         "#Modularity",
-        "#NeuralNetworks",
         "#RepresentationLearning",
-        "#CompositionalAI"
+        "#NeuralNetworks",
+        "#ComputationalScience"
       ],
       "paper_id": "2026-06-16-arxiv-dimensionality_controls_when_modularity_helps_in_continual_learning",
       "paper_title": "Dimensionality Controls When Modularity Helps in Continual Learning",
       "paper_date": "2026-06-16",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-22T14:30:22",
+      "generated_at": "2026-06-21T11:39:53",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-06-15-arxiv-phenotyping_tpf_via_self_supervised_learning_a_label_agnostic_framework_with_expert_valida",
-    "arxiv_id": "2606.17295v1",
-    "date": "2026-06-15",
-    "title": "Phenotyping TPF via Self-Supervised Learning: A Label-Agnostic Framework with Expert Validation",
-    "authors": "Miral Elnakib, Muhammad Saad, Ahmad Al-Kabbany",
-    "abstract": "The full potential of artificial intelligence in tibial plateau fracture characterisation remains unrealised, constrained by a fundamental dependency on labelled datasets whose consistency cannot be guaranteed: conventional classification schemes such as Schatzker and AO/OTA suffer from inter-observer variability, causing supervised models to learn human disagreement rather than stable fracture morphology. We design, implement, and validate a label-agnostic framework that eliminates this constraint by learning fracture representations directly from imaging data without observer-assigned labels. A RadImageNet-pretrained ResNet-50 encoder is fine-tuned on 154 cleaned knee radiographs using the SimCLR contrastive objective, preceded by a data cleaning protocol and followed by UMAP dimensionality reduction and k-means clustering to discover four imaging-derived phenotypes. Phenotype validity is assessed through a blinded expert review protocol administered to two independent clinicians. The four phenotypes demonstrate robust stability (bootstrap ARI = 0.319 +/- 0.041), strong internal cohesion (silhouette = 0.511), and coherence ratings of 3-5/5 from both reviewers under blinded conditions; one phenotype was unanimously identified as exhibiting comminution -- a high-complexity feature isolated without any supervisory signal. Inter-partition comparison against Schatzker labels yields ARI = 0.013, confirming orthogonality to conventional classification boundaries. Notably, expert reviewers anchored to established classification vocabularies perceived imaging-derived groups as heterogeneous precisely where Schatzker alignment was lowest, suggesting that Schatzker-trained perception and label-agnostic embedding geometry measure orthogonal dimensions. These findings establish label-agnostic SSL phenotyping as a reproducible and clinically interpretable complement to conventional classification.",
-    "category": "Fracture and Damage",
+    "id": "2026-06-18-arxiv-acceleration_methods_for_the_planar_3d_ilsa_hydraulic_fracturing_model",
+    "arxiv_id": "2606.20025v1",
+    "date": "2026-06-18",
+    "title": "Acceleration methods for the planar 3D ILSA hydraulic fracturing model",
+    "authors": "V. I. Shukalo, A. V. Valov, A. N. Baykin",
+    "abstract": "Planar 3D models of hydraulic fracturing provide a practical balance between models with restrictive geometric assumptions and fully 3D simulators, capturing fractures with arbitrary planar footprints at moderate computational cost. Nevertheless, applications such as treatment design optimization and mini-frac test interpretation require large ensembles of simulations, for which the cost of planar 3D models remains a significant bottleneck. This work presents acceleration strategies for the planar 3D Implicit Level Set Algorithm (ILSA) to reduce simulation runtime while preserving numerical accuracy. A unified planar 3D ILSA scheme that consolidates the nested loops of the elastohydrodynamic solver and the front tracking algorithm into a single iterative process is introduced. A matrix splitting approach is applied to the linearized elastohydrodynamic system, moving the dense part of the elasticity operator to the right-hand side and yielding a sparse system matrix that can be solved more efficiently. Anderson acceleration is incorporated into the solution of the elastohydrodynamic system to improve convergence under varying fracture geometry. Additionally, a predictor--corrector scheme is examined with the proposed methods to assess their combined effect. Each technique is evaluated individually and in combination on both the reference and unified planar 3D ILSA schemes across five benchmark cases. Numerical experiments demonstrate that the unified scheme alone delivers an average 2.5x speedup, reaching 5.7x for the sandglass geometry. The combined application of all techniques achieves an average 4x speedup and up to 11x for the sandglass case, with the relative discrepancy in fracture aperture below 5% compared with the reference scheme.",
+    "category": "Constitutive Modeling",
     "source": "arXiv",
-    "published": "2026-06-15T21:04:31Z",
-    "updated": "2026-06-15T21:04:31Z",
-    "primary_category": "eess.IV",
+    "published": "2026-06-18T09:57:09Z",
+    "updated": "2026-06-18T09:57:09Z",
+    "primary_category": "physics.geo-ph",
     "categories": [
-      "eess.IV",
-      "cs.CV"
+      "physics.geo-ph",
+      "math.NA"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.17295v1"
+        "url": "https://arxiv.org/abs/2606.20025v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.17295v1"
+        "url": "https://arxiv.org/pdf/2606.20025v1"
       }
     ],
-    "score": 43,
+    "score": 52,
     "infographic": {
-      "key_insight": "A label-agnostic self-supervised learning pipeline can discover clinically meaningful tibial plateau fracture phenotypes directly from radiographs, avoiding dependence on inconsistent human labels.",
-      "engineering_relevance": "This provides a reproducible AI workflow for fracture morphology characterization that can complement conventional classification systems and support more robust downstream decision-making.",
+      "key_insight": "A unified planar 3D ILSA workflow, combined with matrix splitting and Anderson acceleration, significantly speeds up hydraulic fracture simulations without materially degrading accuracy.",
+      "engineering_relevance": "These acceleration strategies make planar 3D fracture models more practical for design optimization and mini-frac interpretation, where many repeated simulations are needed.",
       "method": [
-        "Fine-tuned a RadImageNet-pretrained ResNet-50 with SimCLR on 154 cleaned knee radiographs",
-        "Reduced embeddings with UMAP and clustered them with k-means to identify four imaging-derived phenotypes",
-        "Validated phenotype coherence through blinded review by two independent clinicians"
+        "Unify the elastohydrodynamic solve and front-tracking loops into one iterative planar 3D ILSA scheme.",
+        "Apply matrix splitting so the dense elasticity contribution is moved to the right-hand side, leaving a sparse linear system.",
+        "Use Anderson acceleration, with an optional predictor--corrector step, to improve convergence across changing fracture geometries."
       ],
-      "evidence_signal": "The four clusters showed moderate bootstrap stability (ARI = 0.319 ± 0.041), strong cohesion (silhouette = 0.511), low overlap with Schatzker labels (ARI = 0.013), and one phenotype was unanimously judged to show comminution.",
-      "watch_item": "The dataset is small and single-domain, so cluster stability and clinical generalization should be confirmed on larger, multi-center cohorts before deployment.",
+      "evidence_signal": "Across five benchmark cases, the unified scheme averaged 2.5x speedup, and the full combined method averaged 4x with up to 11x on the sandglass case while keeping aperture error below 5%.",
+      "watch_item": "The speedups are geometry-dependent, so implementation benefits may vary for other fracture shapes or solver settings.",
       "hashtags": [
-        "#SelfSupervisedLearning",
-        "#MedicalImagingAI",
-        "#FracturePhenotyping",
-        "#TibialPlateauFracture",
-        "#ComputationalEngineering"
+        "#HydraulicFracturing",
+        "#LevelSetMethod",
+        "#AndersonAcceleration",
+        "#ComputationalMechanics",
+        "#SparseLinearAlgebra"
       ],
-      "paper_id": "2026-06-15-arxiv-phenotyping_tpf_via_self_supervised_learning_a_label_agnostic_framework_with_expert_valida",
-      "paper_title": "Phenotyping TPF via Self-Supervised Learning: A Label-Agnostic Framework with Expert Validation",
-      "paper_date": "2026-06-15",
-      "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-22T14:30:25",
+      "paper_id": "2026-06-18-arxiv-acceleration_methods_for_the_planar_3d_ilsa_hydraulic_fracturing_model",
+      "paper_title": "Acceleration methods for the planar 3D ILSA hydraulic fracturing model",
+      "paper_date": "2026-06-18",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-06-21T11:39:55",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-06-15-arxiv-storx_an_open_source_object_oriented_framework_for_shape_and_topology_optimization_in_matl",
-    "arxiv_id": "2606.17291v1",
-    "date": "2026-06-15",
-    "title": "STORX: An Open-Source Object-Oriented Framework for Shape and Topology Optimization in MATLAB",
-    "authors": "Amir M. Mirzendehdel, Krishnan Suresh",
-    "abstract": "This paper presents STORX: Shape and Topology Optimization for Research and Experimentation, an open-source MATLAB-based educational framework for learning and teaching computational design optimization. STORX provides a platform for parametric and level-set shape optimization, as well as topology optimization methods including density, level-set, and topological sensitivity approaches such as evolutionary and Pareto-tracing methods. All modules follow a consistent object-oriented structure and integrate visualization, sensitivity analysis, and finite element routines, enabling users to explore the continuum between shape and topology optimization in a transparent and reproducible manner. The code is designed to complement graduate-level coursework and independent research by emphasizing modularity and extensibility through a clear separation of intent. Core software interfaces are defined via abstract base classes, enabling new objective functionals and design/manufacturing constraints to be implemented by adding derived classes without modifying the core code. The paper also describes the software architecture and demonstrates how the framework maps mathematical formulations directly to executable code through a series of illustrative problems.",
-    "category": "Topology Optimization",
+    "id": "2026-06-17-arxiv-a_hybrid_sharp_diffuse_interface_approach_to_accurately_model_melt_pool_dynamics_with_rapi",
+    "arxiv_id": "2606.19556v1",
+    "date": "2026-06-17",
+    "title": "A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals",
+    "authors": "Nils Much, Andreas Koch, Christoph Meier, Magdalena Schreter-Fleischhacker",
+    "abstract": "Predictive simulation of melt pool dynamics in laser-based processing of metals, e.g., laser beam welding or laser powder bed fusion additive manufacturing, requires accurate resolution of thermo-hydrodynamic interactions at the melt-gas interface. Here, evaporation-induced recoil pressure and temperature-dependent surface tension govern the flow. Because these mechanisms depend sensitively, often exponentially, on the interface temperature, reliable predictions demand highly accurate heat transfer models. Popular diffuse-interface formulations smear the extreme thermal gradients as typical for laser-metal interactions, leading to interface temperature errors that critically degrade the accuracy of interface force predictions and melt pool dynamics. We present a hybrid sharp-diffuse interface approach for high-fidelity modelling of melt pool thermo-hydrodynamics with rapid evaporation. The heat transfer problem is represented using a sharp-interface unfitted finite element (CutFEM) formulation, enabling accurate prediction of the temperature field. The multi-phase flow problem, characterized by large density ratios and complex interface dynamics, is accurately captured using a robust level-set-based one-fluid diffuse-interface finite element formulation. Consistent coupling is achieved by extending the sharp-interface temperature into a narrow interface region to evaluate temperature-dependent interface forces within the diffuse-interface flow framework. In practically relevant benchmarks, the sharp-interface thermal model exhibits second-order spatial convergence, enabling finite element sizes two orders of magnitude larger than the diffuse-interface approach for 1 accuracy. In a novel coupled thermo-hydrodynamic benchmark representative of laser-metal interactions, the hybrid approach is one order of magnitude more accurate than a purely diffuse-interface model on the same mesh. Robu",
+    "category": "FEM Surrogates",
     "source": "arXiv",
-    "published": "2026-06-15T20:58:58Z",
-    "updated": "2026-06-15T20:58:58Z",
+    "published": "2026-06-17T19:57:40Z",
+    "updated": "2026-06-17T19:57:40Z",
     "primary_category": "cs.CE",
     "categories": [
       "cs.CE"
@@ -995,36 +788,243 @@
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.17291v1"
+        "url": "https://arxiv.org/abs/2606.19556v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.17291v1"
+        "url": "https://arxiv.org/pdf/2606.19556v1"
       }
     ],
-    "score": 43,
+    "score": 52,
     "infographic": {
-      "key_insight": "STORX is a modular, open-source MATLAB framework that unifies shape and topology optimization methods in one object-oriented environment for learning, experimentation, and reproducible research.",
-      "engineering_relevance": "It helps engineers and researchers prototype optimization workflows faster by separating model intent from implementation while supporting both design optimization and visualization in a single codebase.",
+      "key_insight": "A hybrid sharp-diffuse interface method separates heat transfer and flow modeling to accurately capture rapid evaporation and temperature-driven forces in laser-metal melt pools.",
+      "engineering_relevance": "It improves prediction fidelity for laser beam welding and laser powder bed fusion by resolving critical interface temperatures that strongly affect recoil pressure, surface tension, and melt pool dynamics.",
       "method": [
-        "Abstract base classes define core interfaces for objectives, sensitivities, and constraints.",
-        "Supports parametric and level-set shape optimization plus density, level-set, and topological-sensitivity topology optimization.",
-        "Integrates finite element analysis, sensitivity computation, and visualization with extensible derived classes."
+        "Sharp-interface CutFEM for the thermal problem to resolve steep temperature gradients accurately.",
+        "Diffuse-interface level-set one-fluid FEM for multiphase flow with large density ratios and moving interfaces.",
+        "Couples both parts by extending the sharp temperature field into a narrow interface region for force evaluation."
       ],
-      "evidence_signal": "The abstract reports illustrative problems and software architecture demonstrations, but not a quantitative benchmark study or performance comparison.",
-      "watch_item": "Its MATLAB-centric, educational design may limit scalability and requires careful implementation to maintain consistency across new derived modules.",
+      "evidence_signal": "The abstract reports second-order spatial convergence for the sharp thermal model, two orders of magnitude larger mesh sizes for 1 accuracy versus diffuse methods, and about 10x better accuracy than a purely diffuse model on the same mesh in a coupled benchmark.",
+      "watch_item": "The approach adds coupling complexity and requires careful consistent transfer of sharp-interface temperature into the diffuse flow formulation.",
+      "hashtags": [
+        "#LaserProcessing",
+        "#MeltPoolDynamics",
+        "#CutFEM",
+        "#LevelSetMethods",
+        "#ThermoHydrodynamics"
+      ],
+      "paper_id": "2026-06-17-arxiv-a_hybrid_sharp_diffuse_interface_approach_to_accurately_model_melt_pool_dynamics_with_rapi",
+      "paper_title": "A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals",
+      "paper_date": "2026-06-17",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-06-21T11:39:57",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-18-arxiv-coarsesolvers_for_exascale_solution_of_poisson_problems",
+    "arxiv_id": "2606.20496v1",
+    "date": "2026-06-18",
+    "title": "CoarseSolvers for Exascale Solution of Poisson Problems",
+    "authors": "Thilina Ratnayaka, Paul Fischer, Luke Olson",
+    "abstract": "WepresentatwolevelSchwarzmethodasanalternativetoAlgebraicMultigridmethod(AMG) used as the last level (coarse) solver of the p-multigrid pMG preconditioner for pressure Poission equation resulting from Spectral/Finite element descretization of incompressible Navier-Stokes eqaution. Proposed Schwarz method consits of a local problem in the original pMG coarse space and a global coarse problem. Main contribution of the paper is a novel, structured and a non-nested coarse space for the global coarse problem. Structured nature of the proposed global coarse space enable communication-free interpolation between the original p-multgrid coarse space and the global coarse problem. We demonstrate the effectiveness of the proposed method compared to the state of the art AMG solver BoomerAMG by a series of experiments performed using Nek5000/RS, a suite of highly scalable incompressible Navier-Stokes solvers, on Summit/Frontier supercomputers at Oak Ridge Leadership Computing Facility.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-06-18T17:11:17Z",
+    "updated": "2026-06-18T17:11:17Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "cs.DC",
+      "cs.MS"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.20496v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.20496v1"
+      }
+    ],
+    "score": 51,
+    "infographic": {
+      "key_insight": "A two-level Schwarz coarse solver with a structured, non-nested global coarse space can replace AMG as the last-level solver in p-multigrid for Poisson problems.",
+      "engineering_relevance": "This offers a scalable path for pressure Poisson solves in incompressible Navier–Stokes simulations on exascale systems, reducing reliance on black-box AMG.",
+      "method": [
+        "Local solve in the original p-multigrid coarse space",
+        "Global coarse solve on a novel structured, non-nested coarse space",
+        "Communication-free interpolation between local and global levels"
+      ],
+      "evidence_signal": "The abstract reports comparative experiments against BoomerAMG using Nek5000/RS on Summit and Frontier, indicating evaluation on highly scalable HPC workloads.",
+      "watch_item": "Performance may depend on the quality of the structured coarse space and the cost of integrating it into existing p-multigrid/solver pipelines.",
+      "hashtags": [
+        "#FEM",
+        "#PoissonSolver",
+        "#Multigrid",
+        "#ExascaleHPC",
+        "#SchwarzMethod"
+      ],
+      "paper_id": "2026-06-18-arxiv-coarsesolvers_for_exascale_solution_of_poisson_problems",
+      "paper_title": "CoarseSolvers for Exascale Solution of Poisson Problems",
+      "paper_date": "2026-06-18",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-06-21T11:39:59",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-18-arxiv-hybrid_ann_snn_pipeline_with_local_plasticity",
+    "arxiv_id": "2606.20151v1",
+    "date": "2026-06-18",
+    "title": "Hybrid ANN-SNN Pipeline with Local Plasticity",
+    "authors": "Denis Larionov, Khairutin Shtanchaev, Mikhail Kiselev, Mikhail Korovin, Ivan Tugoy",
+    "abstract": "This work proposes a hybrid ANN-SNN pipeline that effectively leverages the rich embeddings of pretrained artificial neural networks (ANNs) to enable high-performance spiking neural networks (SNNs). The architecture couples a pretrained EfficientNet encoder with a CoLaNET spiking classifier. We convert the encoder's activations into spike trains via rate-coding and train the subsequent SNN classifier using local, biologically inspired learning rules, bypassing end-to-end gradient propagation. This approach achieves 99.09% accuracy on a 64-class ImageNet benchmark, demonstrating performance on par with conventional deep networks. The work presents a biologically plausible and efficient framework for adapting powerful pretrained encoders to downstream spiking neural network tasks.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-06-18T12:13:19Z",
+    "updated": "2026-06-18T12:13:19Z",
+    "primary_category": "cs.NE",
+    "categories": [
+      "cs.NE",
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.20151v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.20151v1"
+      }
+    ],
+    "score": 49,
+    "infographic": {
+      "key_insight": "A pretrained ANN encoder can be paired with a locally trained SNN classifier to deliver near state-of-the-art accuracy without end-to-end backpropagation.",
+      "engineering_relevance": "This hybrid ANN-SNN design offers a biologically plausible path to efficient downstream classification in computational modeling workflows where pretrained feature extractors are available.",
+      "method": [
+        "Use a pretrained EfficientNet as the feature encoder.",
+        "Convert encoder activations into spike trains using rate coding.",
+        "Train the CoLaNET spiking classifier with local plasticity rules instead of global gradients."
+      ],
+      "evidence_signal": "The pipeline achieved 99.09% accuracy on a 64-class ImageNet benchmark, indicating strong performance in evaluation from the abstract.",
+      "watch_item": "The approach depends on a pretrained encoder and rate-coding conversion, so performance and efficiency may be sensitive to encoding choices and task transferability.",
+      "hashtags": [
+        "#SpikingNeuralNetworks",
+        "#ANNtoSNN",
+        "#LocalPlasticity",
+        "#EfficientNet",
+        "#NeuromorphicAI"
+      ],
+      "paper_id": "2026-06-18-arxiv-hybrid_ann_snn_pipeline_with_local_plasticity",
+      "paper_title": "Hybrid ANN-SNN Pipeline with Local Plasticity",
+      "paper_date": "2026-06-18",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-06-21T11:40:01",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-18-arxiv-sigma_skill_incidence_graphs_for_compositional_multi_agent_design",
+    "arxiv_id": "2606.19758v1",
+    "date": "2026-06-18",
+    "title": "SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design",
+    "authors": "Kun Zeng, Yu Huo, Siyu Zhang, Yuecheng Zhuo, Yuquan Lu, Haoyue Liu",
+    "abstract": "Existing graph-based multi-agent system (MAS) designers mainly improve collaboration by optimizing communication topologies over predefined agents, roles, or groups. However, because each node remains a closed-set entity, these methods struggle to generalize to tasks that require unseen combinations of capabilities. We propose SIGMA, a skill-incidence graph framework that constructs agents as task-conditioned bundles of reusable skills. Given a task and a skill library, SIGMA predicts a skill-agent incidence matrix, composes agent node embeddings from selected skills, and decodes a communication topology over the constructed agents. During execution, skill-specific mailboxes route messages to the relevant assigned capabilities, making the incidence structure directly operational. Across six reasoning and coding benchmarks with three base LLMs, SIGMA achieves the best average performance and improves over CARD, the strongest non-compositional topology-based baseline, by 2.06, 2.36, and 1.75 points, respectively. It also shows stronger robustness to unseen skill libraries, with an average performance drop of only 0.96 points. These results suggest that compositional node construction is a complementary and important axis for multi-agent design beyond communication topology optimization. Code is available at https://anonymous.4open.science/r/SIGMA-2338/.",
+    "category": "Topology Optimization",
+    "source": "arXiv",
+    "published": "2026-06-18T03:41:16Z",
+    "updated": "2026-06-18T03:41:16Z",
+    "primary_category": "cs.MA",
+    "categories": [
+      "cs.MA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.19758v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.19758v1"
+      }
+    ],
+    "score": 49,
+    "infographic": {
+      "key_insight": "SIGMA improves multi-agent design by composing agents from reusable skills, not just by optimizing who talks to whom.",
+      "engineering_relevance": "For AI systems in engineering workflows, this compositional approach better supports tasks that need new skill combinations and more robust agent deployment.",
+      "method": [
+        "Build a skill library and predict a skill-agent incidence matrix for each task.",
+        "Compose agent embeddings from selected skills, then decode a communication topology over the constructed agents.",
+        "Use skill-specific mailboxes so messages are routed to the capabilities actually assigned to each agent."
+      ],
+      "evidence_signal": "Across six reasoning and coding benchmarks with three base LLMs, SIGMA achieved the best average performance and beat the strongest non-compositional baseline (CARD) by 2.06, 2.36, and 1.75 points, depending on the model, with only a 0.96-point average drop under unseen skill libraries.",
+      "watch_item": "Performance depends on the quality and coverage of the skill library, so incomplete or poorly defined skills could limit transfer to new tasks.",
+      "hashtags": [
+        "#MultiAgentSystems",
+        "#GraphOptimization",
+        "#CompositionalAI",
+        "#LLMAgents",
+        "#TopologyOptimization"
+      ],
+      "paper_id": "2026-06-18-arxiv-sigma_skill_incidence_graphs_for_compositional_multi_agent_design",
+      "paper_title": "SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design",
+      "paper_date": "2026-06-18",
+      "paper_category": "Topology Optimization",
+      "generated_at": "2026-06-21T11:40:02",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-15-arxiv-novel_insights_into_pareto_fronts_in_multiobjective_topology_optimization_and_a_comparativ",
+    "arxiv_id": "2606.16792v1",
+    "date": "2026-06-15",
+    "title": "Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies",
+    "authors": "Tom De Weer, Ole Sigmund, Gabriele Eichfelder",
+    "abstract": "Topology optimization produces optimized structures by minimizing an objective function under a set of constraints. While considerable research has focused on improving and extending such single-objective formulations, design is usually a trade-off between conflicting criteria. This brings topology optimization into the realm of multiobjective optimization. Unfortunately, cross-fertilization has been limited despite the long coexistence of these two fields. This work aims to bridge this gap through three contributions. The first is a theoretical comparison of two common scalarization techniques, the weighted-sum and $\\varepsilon$-constraint method, to the more advanced Pascoletti-Serafini scalarization. The second contribution is a novel insight: the Pareto frontier in topology optimization contexts consists of pieces belonging to local fronts. This can cause disconnected and nonconvex fronts, in contrast to what is often seen in the literature. Finally, the third contribution is a numerical comparison of the scalarization methods, highlighting more uniform approximations obtained with the Pascoletti-Serafini scalarization and clustering observed for the weighted-sum scalarization. The paper contains a large number of bi-objective examples, including minimization of volume, compliance, maximum stress and dynamic compliance.",
+    "category": "Topology Optimization",
+    "source": "arXiv",
+    "published": "2026-06-15T14:36:26Z",
+    "updated": "2026-06-15T14:36:26Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.16792v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.16792v1"
+      }
+    ],
+    "score": 49,
+    "infographic": {
+      "key_insight": "In multiobjective topology optimization, the Pareto front can be made of disconnected, nonconvex pieces from local fronts, and Pascoletti-Serafini scalarization gives a more uniform approximation than weighted sums or ε-constraint methods.",
+      "engineering_relevance": "This helps engineers generate more reliable trade-off designs when balancing objectives such as compliance, volume, stress, and dynamic compliance in structural optimization.",
+      "method": [
+        "Compared weighted-sum, ε-constraint, and Pascoletti-Serafini scalarization methods theoretically.",
+        "Showed that topology optimization Pareto fronts may be disconnected and locally structured, unlike the smooth fronts often assumed.",
+        "Performed numerical bi-objective studies across multiple structural objectives to assess front coverage and clustering behavior."
+      ],
+      "evidence_signal": "The abstract reports a broad numerical comparison on many bi-objective examples, with Pascoletti-Serafini producing more uniform front approximations and weighted sums showing clustering.",
+      "watch_item": "Scalarization results can miss parts of the true Pareto set, so front coverage and local optimality should be checked carefully before selecting a design.",
       "hashtags": [
         "#TopologyOptimization",
-        "#ShapeOptimization",
-        "#MATLAB",
-        "#OpenSourceSoftware",
-        "#ComputationalMechanics"
+        "#MultiobjectiveOptimization",
+        "#ParetoFront",
+        "#Scalarization",
+        "#StructuralDesign"
       ],
-      "paper_id": "2026-06-15-arxiv-storx_an_open_source_object_oriented_framework_for_shape_and_topology_optimization_in_matl",
-      "paper_title": "STORX: An Open-Source Object-Oriented Framework for Shape and Topology Optimization in MATLAB",
+      "paper_id": "2026-06-15-arxiv-novel_insights_into_pareto_fronts_in_multiobjective_topology_optimization_and_a_comparativ",
+      "paper_title": "Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies",
       "paper_date": "2026-06-15",
       "paper_category": "Topology Optimization",
-      "generated_at": "2026-06-22T14:30:28",
+      "generated_at": "2026-06-21T11:40:05",
       "generator": "openai"
     }
   }

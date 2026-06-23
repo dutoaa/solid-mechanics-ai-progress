@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI Solid Mechanics Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-06-22. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-06-23. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,121 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>73</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>96</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>One-Step Flow Matching for Generative Modeling of Path-Dependent Physical Fields</h2>
+        <p class="authors">Yijing Zhou, Jasmin Jelovica</p>
+        <p class="abstract">Physical simulations for intricate geometries with path-dependent constitutive models face difficulties due to the enormous computational cost they require. Recently, the emergence of generative AI models, which succeed in image and video synthesis tasks, has provided a promise to further improve simulations. Although U-Net-based denoising diffusion probabilistic models (DDPMs) have been adopted for elastic stress field generation, they typically require hundreds of sampling steps, and applications of generative models to path-dependent, e.g. plastic, stress fields remain very limited. In this work, we propose a novel flow matching (FM) model based on a transformer backbone for high-resolution path-dependent stress field generation with stochastic loading-unloading paths and geometry. The proposed model operates within the latent space of a variational autoencoder (VAE) and formulates the simulation of plastic fields as a video synthesis task, directly generating the stress fields across all time steps. Meanwhile, we design a non-Gaussian source distribution for flow matching, such that crossings among conditional transport paths are reduced during training. This enables our model to generate satisfactory samples in one step without relying on distillation. In addition, we introduce token-level loading embeddings and two auxiliary networks to further enhance the model performance in path-dependent simulation. The results demonstrate that, even with a limited training dataset, our model can accurately generate high-resolution path-dependent fields. It is much more computationally efficient than finite element analysis, providing a speedup of 6 to 7 times over FEM on CPUs and approximately two orders of magnitude speedup on consumer-grade GPUs.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.22752v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.22752v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A one-step flow-matching model in latent space can generate high-resolution path-dependent plastic stress fields from loading history and geometry.</p>
+          <p><b>Engineering relevance:</b> This offers a fast surrogate for finite element path-dependent simulations, reducing compute cost while preserving field fidelity for complex mechanics problems.</p>
+          <ul><li>Transformer-based flow matching model operating in VAE latent space</li><li>Treats plastic field prediction as video synthesis over all time steps</li><li>Adds non-Gaussian source distribution, token-level loading embeddings, and auxiliary networks</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports accurate high-resolution generation with limited training data and speedups of 6–7x over FEM on CPUs and about two orders of magnitude on consumer GPUs.</p>
+          <p><b>Watch item:</b> Performance may depend on the representativeness of the limited training set and on faithful encoding of complex loading paths and geometries.</p>
+          <div class="tags"><span>#FlowMatching</span> <span>#PhysicsAI</span> <span>#SolidMechanics</span> <span>#Plasticity</span> <span>#FEMSurrogates</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>87</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>Attention mechanism for scalable mesh-based neural surrogates of free-surface fluids</h2>
+        <p class="authors">Federico Lanteri, Massimiliano Cremonesi</p>
+        <p class="abstract">High-fidelity simulations of free-surface flows using Lagrangian methods such as the Particle Finite Element Method (PFEM) are computationally demanding due to continuous domain updates and repeated solution of the governing equations. This challenge is further amplified by non-Newtonian rheologies, where material nonlinearities increase computational cost. These limitations motivate the development of efficient surrogate models to approximate PFEM dynamics at reduced cost. While data-driven deep learning approaches are promising, a key challenge is designing models that operate on arbitrary and evolving geometries. We propose a self-attention-based neural surrogate for PFEM simulations of free-surface flows. The architecture leverages attention mechanisms to model node interactions and capture complex spatial dependencies, while preserving the PFEM mesh discretization. This provides a geometric and topological framework for remeshing and node redistribution, maintaining high-quality spatial discretization during rollouts, improving long-term stability, and enabling reconstruction of derived mechanical quantities via standard finite element operators. Two attention formulations are considered: a standard self-attention mechanism and a linear variant that reduces computational cost and improves scalability. The models are evaluated on two- and three-dimensional free-surface flow benchmarks with evolving geometries, varying material parameters, and non-Newtonian fluids. Results show accurate prediction of transient dynamics and final configurations, with significantly improved scalability. The mesh-based formulation also enables direct reconstruction of quantities such as stress fields. Overall, the framework provides an accurate and scalable surrogate strategy for PFEM simulations in engineering-scale applications.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.23251v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.23251v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A self-attention mesh surrogate can emulate PFEM free-surface fluid dynamics on evolving geometries while preserving mesh structure for stable long-horizon rollouts.</p>
+          <p><b>Engineering relevance:</b> This enables faster, scalable prediction of engineering free-surface flows, including non-Newtonian cases, with access to reconstructed fields like stress using finite-element operators.</p>
+          <ul><li>Use mesh-preserving self-attention to learn node-to-node interactions on PFEM discretizations.</li><li>Compare standard attention with a linear attention variant for lower cost and better scalability.</li><li>Support remeshing/node redistribution during rollout to maintain mesh quality and stability.</li></ul>
+          <p><b>Evidence signal:</b> The models were tested on 2D and 3D free-surface benchmarks with changing geometry and material parameters, and they accurately predicted transient behavior and final configurations.</p>
+          <p><b>Watch item:</b> Performance depends on high-quality PFEM data and robust remeshing/reconstruction pipelines; scaling to larger industrial cases may still expose stability or cost tradeoffs.</p>
+          <div class="tags"><span>#AIforMechanics</span> <span>#PFEM</span> <span>#NeuralSurrogates</span> <span>#AttentionMechanism</span> <span>#FreeSurfaceFlow</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>75</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>A matrix-free, differentiable PyTorch solver for phase-field fracture: Formulation, benchmarks, and inverse analysis</h2>
+        <p class="authors">Allamaprabhu Ani, Jean-François Molinari, Ghatu Subhash, Sathiskumar Anusuya Ponnusami</p>
+        <p class="abstract">A matrix-free, open-source PyTorch solver is presented for phase-field fracture on central processing units (CPUs) and graphics processing units (GPUs) without custom compiled extensions. In the explicit dynamic pathway, finite-element operations are formulated as element-wise tensor contractions with scatter-based accumulation, removing global sparse mechanics-stiffness assembly from the core time-stepping loop. Both Ambrosio-Tortorelli regularisations (AT1 and AT2), multiple energy decompositions (spectral, volumetric-deviatoric, and star-convex), and plane strain or plane stress assumptions are supported. The explicit mechanics kernels are compatible with PyTorch&#x27;s automatic differentiation engine (autograd), while the implicit, bound-constrained damage solve is wrapped in a custom backward rule. This rule implements implicit differentiation through the conjugate-gradient (CG) linear solve and keeps memory independent of the internal CG iteration count. The same implementation runs unmodified across macOS, Linux, and Windows, and has been run on meshes of order $10^6$ nodes on a single NVIDIA A100 GPU. The solver is compared against four dynamic fracture cases (straight crack propagation, shear-induced kinking, dynamic branching, and crack-hole interaction in perforated plates) and two quasi-static cases (single-edge notched tension and a notched-holed plate). As a differentiability demonstration, the scalar fracture energy $G_c$ is recovered from observed crack patterns using PyTorch gradients through the forward solve and limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) optimisation. Recovery of $G_c$ with relative error below $10^{-3}$ is achieved after three accepted L-BFGS states for glass and two for alumina. The implementation can be extended and combined with differentiable optimisation and machine-learning components.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.23458v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.23458v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper introduces a fully matrix-free, differentiable PyTorch phase-field fracture solver that runs on CPUs/GPUs without custom compiled code and supports inverse analysis through autograd.</p>
+          <p><b>Engineering relevance:</b> It enables scalable fracture simulation and parameter identification in a single open-source workflow, making physics-based damage modeling more accessible for research and ML-integrated engineering pipelines.</p>
+          <ul><li>Element-wise finite-element mechanics with scatter-based accumulation, avoiding global sparse stiffness assembly in explicit dynamics.</li><li>Support for AT1/AT2 phase-field models, multiple energy splits, and plane stress/strain options.</li><li>Custom backward rule for the implicit bound-constrained damage solve using implicit differentiation through CG.</li></ul>
+          <p><b>Evidence signal:</b> The solver was benchmarked on four dynamic and two quasi-static fracture cases, and recovered fracture energy $G_c$ with relative error below 10^-3 in only a few L-BFGS states.</p>
+          <p><b>Watch item:</b> Performance and robustness may depend on CG convergence and on the cost/accuracy tradeoff of implicit differentiation for the damage solve in large-scale problems.</p>
+          <div class="tags"><span>#PhaseFieldFracture</span> <span>#PyTorch</span> <span>#DifferentiableSimulation</span> <span>#ComputationalMechanics</span> <span>#InverseAnalysis</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>73</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>High performance construction materials fracture and high cycle fatigue assessment based on accelerated PF-CZM</h2>
+        <p class="authors">Jiaqi Li, Zhihua Xiong, Xuyao Liu, Hongyu Liu</p>
+        <p class="abstract">Given the widespread application of high-performance materials in cyclic loaded infrastructure, a thorough understanding of the fracture and high-cycle fatigue behavior of high-performance materials is of critical importance. However, these behaviors predominantly rely on experimental methods, which are often costly, time-consuming and limited in generalizability. To address these issues, this paper proposes the constitution and high-cycle fatigue of Ultra-High Performance Concrete (UHPC) and High Strength Steel (HSS) within the Phase-Field Cohesive Zone Model (PF-CZM) framework. A generic stress-based failure criterion for UHPC is derived from the biaxial tensile test results to calculate crack driving force. Furthermore, a fatigue degradation function and an acceleration algorithm are integrated into the PF-CZM framework to enable efficient high-cycle fatigue simulations. In the acceleration algorithm, the envelope load is used to approximate the real cyclic load to avoid the simulation of each cycle, and the three-stage fatigue process is simulated through adjusting the cyclic increment adaptively. The proposed model successfully captures mixed-mode fracture and high-cycle fatigue behavior of UHPC and HSS, with validation provided through relevant experimental comparisons.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.23468v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.23468v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper accelerates phase-field cohesive zone modeling to predict mixed-mode fracture and high-cycle fatigue of UHPC and HSS with reduced cycle-by-cycle simulation cost.</p>
+          <p><b>Engineering relevance:</b> This enables more practical durability assessment of high-performance infrastructure materials under repeated loading, supporting faster design and life prediction workflows.</p>
+          <ul><li>Derives a generic stress-based failure criterion for UHPC from biaxial tensile tests.</li><li>Adds a fatigue degradation law to the PF-CZM framework.</li><li>Uses an envelope-load acceleration scheme with adaptive cyclic increments to capture the three-stage fatigue process efficiently.</li></ul>
+          <p><b>Evidence signal:</b> The model is validated against relevant experimental comparisons and shown to reproduce mixed-mode fracture and high-cycle fatigue behavior of UHPC and HSS.</p>
+          <p><b>Watch item:</b> The accelerated cycle approximation may depend on calibration and may be less reliable outside the loading regimes and material conditions covered by the validation data.</p>
+          <div class="tags"><span>#PhaseFieldModeling</span> <span>#FractureMechanics</span> <span>#Fatigue</span> <span>#UHPC</span> <span>#HighStrengthSteel</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Composites and Metamaterials</span><span>arXiv</span><strong>70</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>Hierarchical Granular Metamaterials</h2>
+        <p class="authors">James Utama Surjadi, Bastien F. G. Aymon, Ayan Kumar, Lei Wu, Jet Lem, Ken N. Kamrin</p>
+        <p class="abstract">Granular materials dissipate energy efficiently through intergranular interactions, yet their disordered, dense nature precludes precise control and integration into lightweight systems. Architected materials offer tunable mechanical responses at low densities but tend to localize stress, limiting dissipation efficiency. Here, we introduce hierarchical granular metamaterials that reconcile these trade-offs through three levels of design: lightweight architected grains engineered with hollow elliptical inclusions, crystal-inspired grain packings, and functional gradients and defects within grain tessellations. These metamaterials exhibit simultaneous increases in impact energy absorption per unit mass and reductions in transmitted peak force at low densities, outperforming conventional architected materials. In situ nanomechanical experiments and nonlinear computational models reveal that enhanced lateral grain expansion drives recruitment of neighboring grains, amplifying plastic and frictional dissipation. Multiscale impact experiments confirm that these mechanisms persist across length scales, constituent materials, and dimensionalities. Beyond mechanical performance, we demonstrate that spatially programmable inter-grain contact networks enable deterministic routing of deformation, which extends to electrical transport pathways independently of packing geometry. By combining granular principles with architected material design, this work establishes a paradigm for multifunctional metamaterials whose contact topology, mechanical response, and transport properties can be programmed independently.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.22795v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.22795v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Hierarchical granular metamaterials use architected grains, ordered packings, and programmed defects to boost impact energy absorption while lowering transmitted peak force.</p>
+          <p><b>Engineering relevance:</b> The design offers a lightweight way to tune dissipation, stress routing, and even transport pathways independently for impact-resistant multifunctional components.</p>
+          <ul><li>Hollow elliptical inclusions create lightweight grains with stronger lateral expansion under load.</li><li>Crystal-inspired packings and engineered tessellations recruit neighboring grains to spread deformation.</li><li>Functional gradients and defects program contact networks for deterministic mechanical and electrical routing.</li></ul>
+          <p><b>Evidence signal:</b> In situ nanomechanical tests, nonlinear computational models, and multiscale impact experiments show higher energy absorption per mass and lower peak transmitted force across materials and length scales.</p>
+          <p><b>Watch item:</b> Performance depends on precisely controlled grain geometry and packing, so manufacturing variability could reduce the predicted dissipation and routing behavior.</p>
+          <div class="tags"><span>#Metamaterials</span> <span>#GranularMaterials</span> <span>#ImpactAbsorption</span> <span>#SolidMechanics</span> <span>#MultifunctionalMaterials</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>69</strong></div>
+        <p class="date">2026-06-19</p>
+        <h2>Comparative Evaluation of Machine Learning and Deep Learning Models for Wound-Rotor Synchronous Motor Performance Prediction</h2>
+        <p class="authors">Kıvanç Doğan, Ahmet Orhan</p>
+        <p class="abstract">Wound rotor synchronous motors have emerged as a strong alternative that eliminates dependence on REEs. However, WRSM design requires the simultaneous optimization of numerous geometric and electromagnetic parameters, and the high computational cost of conventional finite element analysis severely limits the rapid exploration of the large parameter space. Although there are machine-learning-based surrogate modeling studies in the literature, they generally compare only a limited number of models, exclude deep learning architectures, and do not provide a comprehensive benchmark specific to WRSM. In this study, the performance of a total of eight machine learning and deep learning models from four different algorithmic families was systematically compared for the prediction of WRSM torque and motor efficiency. On a dataset of 3351 samples generated using Latin Hypercube Sampling in the Motor-CAD simulation environment, each model was trained with 10 different random seed values and tuned via Optuna hyperparameter optimization. Different from the existing literature, this study jointly offers a broad model spectrum including recent deep learning architectures such as FT Transformer, a multi-seed reproducibility protocol, and a Pareto analysis of the computational cost-accuracy trade-off. The results revealed that neural-network-based models systematically outperform tree-based models. The FT-Transformer model achieved the highest single-model accuracy with R^2 = 0.9928, producing predictions in 0.33 milliseconds and thus obtaining several orders of magnitude speedup compared to FEA. Model performances were evaluated in a multidimensional manner using R^2, MAE, RMSE, and MAPE metrics.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.21230v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.21230v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A broad benchmark shows that neural-network and deep-learning surrogates predict wound-rotor synchronous motor torque and efficiency more accurately than tree-based models, with FT-Transformer performing best overall.</p>
+          <p><b>Engineering relevance:</b> This enables much faster WRSM design-space exploration than finite element analysis, helping engineers optimize performance without expensive repeated simulations.</p>
+          <ul><li>Generated 3,351 Motor-CAD samples using Latin Hypercube Sampling</li><li>Compared 8 models across 4 algorithmic families, including FT-Transformer</li><li>Used Optuna tuning and 10 random seeds for each model</li></ul>
+          <p><b>Evidence signal:</b> The study evaluated models on WRSM torque and efficiency using R², MAE, RMSE, and MAPE; FT-Transformer reached R² = 0.9928 and inference time of 0.33 ms.</p>
+          <p><b>Watch item:</b> Surrogate accuracy may not transfer well outside the sampled design space, so extrapolation to unseen WRSM geometries or operating conditions should be treated cautiously.</p>
+          <div class="tags"><span>#MachineLearning</span> <span>#DeepLearning</span> <span>#WoundRotorSynchronousMotor</span> <span>#SurrogateModeling</span> <span>#FiniteElementAnalysis</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>68</strong></div>
         <p class="date">2026-06-18</p>
         <h2>Nonlinear Geotechnical Analysis Using a Polygonal Cell-Based Smoothed Finite Element Framework</h2>
         <p class="authors">Mingjiao Yan, Yang Yang, Zongliang Zhang, Yinpeng Yin, Miao Zhang, Yijia Dong</p>
@@ -39,18 +153,189 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.20384v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.20384v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A polygonal cell-based smoothed finite element framework can robustly handle nonlinear geotechnical problems with complex meshes, staged loading, and local failure while reducing sensitivity to mesh distortion.</p>
-          <p><b>Engineering relevance:</b> The method is directly useful for practical geotechnical design and analysis because it improves prediction of displacement, stress, plastic strain, bearing capacity, and slope safety in realistic soil-structure systems.</p>
-          <ul><li>Wachspress interpolation on polygonal cells</li><li>Cell-based strain smoothing with boundary integration over smoothing subcells</li><li>Incremental elasto-plastic updates with Mohr-Coulomb and Duncan-Chang models</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports verification on benchmark and engineering cases including a perforated plate, strip footing, dam, tunnel excavation, and slope stability, with accurate response predictions.</p>
-          <p><b>Watch item:</b> The approach requires a user element implementation in ABAQUS and careful handling of nonlinear constitutive updates and polygonal/hanging-node mesh generation.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#GeotechnicalEngineering</span> <span>#NonlinearAnalysis</span> <span>#PolygonalMesh</span> <span>#SmoothedFEM</span></div>
+          <p><b>Key insight:</b> A polygonal cell-based smoothed FEM with Wachspress interpolation enables nonlinear geotechnical analysis on flexible polygonal and hybrid quadtree meshes without direct polygonal shape-function derivatives.</p>
+          <p><b>Engineering relevance:</b> The framework improves robustness for staged excavation, local failure, and mesh-sensitive geotechnical problems while preserving accurate prediction of displacement, stress, plastic strain, bearing capacity, and slope safety.</p>
+          <ul><li>Uses cell-based strain smoothing with boundary integration over polygonal subcells.</li><li>Implements incremental elasto-plastic updates for Mohr-Coulomb and Duncan-Chang constitutive models.</li><li>Integrated into ABAQUS via a user element to support standard polygonal and hanging-node quadtree meshes.</li></ul>
+          <p><b>Evidence signal:</b> Verified on benchmark and engineering cases including a perforated plate, strip footing, core rockfill dam, tunnel excavation, and slope stability, with reported accuracy and improved mesh flexibility/efficiency.</p>
+          <p><b>Watch item:</b> Accuracy and robustness depend on reliable user-element implementation and constitutive calibration, especially for highly nonlinear plasticity and complex staged construction.</p>
+          <div class="tags"><span>#FEM</span> <span>#GeotechnicalEngineering</span> <span>#NonlinearAnalysis</span> <span>#PolygonalMesh</span> <span>#ComputationalMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>62</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>65</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>A posteriori error bounds for finite element approximations of time-dependent mean field games</h2>
+        <p class="authors">Iain Smears, Harry Wells</p>
+        <p class="abstract">We present a posteriori error bounds for a general class of stabilized finite element approximations of time-dependent mean field games. We first show the equivalence between the norm of the error and the dual norm of the residual in the coupled Hamilton-Jacobi-Bellman and Kolmogorov-Fokker-Planck equations. We then derive a reliable and efficient a posteriori error estimator that is based on residual estimators, along with the temporal jump estimator, and an estimator for the stabilization terms in the numerical discretization. Finally, for stabilizations based on mass-lumping in time and affine-preserving spatial stabilizations, we show that the stabilization estimators can be bounded in terms of the residual and temporal jump estimators, thus yielding an improved reliable, locally computable, and locally efficient estimator.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.23613v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.23613v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper derives reliable a posteriori error bounds for stabilized finite element solutions of time-dependent mean field games by linking the error norm to the dual norm of the coupled PDE residual.</p>
+          <p><b>Engineering relevance:</b> This gives practitioners a practical way to certify and adaptively control FEM accuracy in coupled Hamilton-Jacobi-Bellman and Kolmogorov-Fokker-Planck simulations.</p>
+          <ul><li>Prove equivalence between the solution error norm and the dual residual norm for the coupled system.</li><li>Build a posteriori estimators from residual terms, temporal jump terms, and stabilization-term contributions.</li><li>Show that for mass-lumping in time and affine-preserving spatial stabilization, stabilization terms can be bounded by residual and jump estimators.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports analytical derivations of reliable, efficient, and locally computable estimators, rather than numerical benchmarks.</p>
+          <p><b>Watch item:</b> The improved estimator relies on specific stabilization choices, so its tightness and locality may not transfer directly to all stabilized FEM discretizations.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#APosterioriError</span> <span>#MeanFieldGames</span> <span>#AdaptiveMethods</span> <span>#NumericalPDEs</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>65</strong></div>
+        <p class="date">2026-06-21</p>
+        <h2>Glass-based physical models for tissue mechanics</h2>
+        <p class="authors">Gopika Madhu, Carolyn Delli-Santi, Jenna Efrein, Prannoy Suraneni, Landolf Rhode-Barbarigos, Vivek N. Prakash</p>
+        <p class="abstract">Techniques from glass art and fabrication provide a controllable physical platform for studying tissue mechanics in simple organisms. Here, we use glass-based physical models to investigate tissue deformation in the marine organism Trichoplax adhaerens. Previous studies have shown that the epithelial tissues in T. adhaerens undergo large deformations and form fracture holes under mechanical loading, exhibiting a ductile-to-brittle transition at fast loading rates. To model these behaviors in a tunable and experimentally accessible system, glass is shaped into tissue-like monolayers in a glass studio, heated to its specific process temperature, and subjected to controlled stretching. Rapid cooling arrests the deformed configurations, providing snapshots of tissue-like strain states under load. Under lateral and radial stretching, we quantify changes in the area and eccentricity of individual &quot;cells&quot; in the glass models, and found that eccentricity increases after stretching. We further use tensegrity-based models to quantify deformations in the cellular geometry of the glass tissues, enabling direct comparison between experiments and simulations. The model captures the principal experimental deformation patterns, but underestimates the magnitude of the observed eccentricity changes. Our results demonstrate that glass-based physical models provide an experimentally accessible platform for studying tissue-scale deformation and mechanical behavior, while supporting interdisciplinary approaches that connect methods in the arts and sciences.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.22281v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.22281v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Glass can be shaped and frozen to mimic tissue-like deformation, offering a controllable physical analog for studying how epithelial tissues stretch and fail.</p>
+          <p><b>Engineering relevance:</b> This provides an accessible experimental platform for probing deformation, ductile-to-brittle transitions, and geometry changes relevant to soft tissue mechanics and fracture behavior.</p>
+          <ul><li>Shape glass into tissue-like monolayers in a glass studio</li><li>Heat to the material’s process temperature and apply controlled lateral or radial stretching</li><li>Rapidly cool to arrest the deformed state for measurement and comparison with tensegrity-based simulations</li></ul>
+          <p><b>Evidence signal:</b> Experiments quantified changes in cell area and eccentricity under stretch, and the tensegrity model reproduced the main deformation trends but underpredicted the eccentricity increase.</p>
+          <p><b>Watch item:</b> Because the model underestimates the observed eccentricity changes, it should be treated as a qualitative-to-semiquantitative analog rather than a fully predictive tissue surrogate.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#FractureAndDamage</span> <span>#TissueMechanics</span> <span>#PhysicalModeling</span> <span>#GlassArtScience</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>62</strong></div>
+        <p class="date">2026-06-21</p>
+        <h2>Design and Development of a Neuromorphic Silicon Suite: PVT Sensing, Stochastic LIF Inference, On-Chip STDP Learning, and Crossbar Programming</h2>
+        <p class="authors">Poornima Kumaresan, Santhosh Sivasubramani</p>
+        <p class="abstract">Edge neuromorphic systems need compact, configurable hardware that combines probabilistic inference, local learning, and an interface to emerging analogue memory. We present four interface-compatible digital IP blocks implemented as standard-cell CMOS on the SkyWater 130 nm process: a process, voltage and temperature (PVT) sensor built from five selectable ring oscillators that also provides a jitter-based true-random-number generator and a frequency-bounds health monitor; a stochastic leaky integrate-and-fire (LIF) neuron with a configurable LFSR, a programmable activation table, and a refractory period; an on-chip spike-timing-dependent plasticity (STDP) controller with a programmable curve and reward-modulated, eligibility-trace, and anti-Hebbian modes; and a memristive-crossbar controller supporting forming, set, reset, read, and automated current-voltage sweep with current-compliance limiting and half-select biasing. All four blocks share a common serial peripheral interface (SPI) register file; the sensor also exposes a parallel readout. Each occupies a single tile at a 50 MHz target. The suite was verified with 99 cocotb tests at register-transfer and gate level (all passing) and taken through an open standard-cell flow, then submitted for tapeout via the Tiny Tapeout shared-silicon programme. Mapped to the open cell library, each block occupies a post-synthesis cell area of 9.3 to 10.6 thousand square micrometres, places at 61 to 70 per cent tile utilisation, meets the 50 MHz constraint with positive setup and hold margin after clock-tree synthesis, and draws an estimated 0.64 to 0.70 mW under a default switching-activity assumption. The contribution is a coherent, openly released set of building blocks unified by one register interface and one verification flow. All results are from simulation and the implementation flow; no fabricated silicon is reported.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.22635v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.22635v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper presents a unified, SPI-controlled neuromorphic silicon suite that combines PVT sensing, stochastic LIF inference, STDP learning, and memristor-crossbar programming in one open standard-cell implementation.</p>
+          <p><b>Engineering relevance:</b> It offers a compact, configurable hardware foundation for edge neuromorphic systems that need inference, learning, and analogue-memory interfacing on the same chip flow.</p>
+          <ul><li>Built four interface-compatible digital IP blocks in SkyWater 130 nm standard-cell CMOS.</li><li>Implemented a PVT sensor with selectable ring oscillators, jitter-based TRNG, and frequency-health monitoring.</li><li>Added a stochastic LIF neuron, programmable STDP controller, and crossbar controller with forming/set/reset/read and I-V sweep support.</li></ul>
+          <p><b>Evidence signal:</b> The suite was validated with 99 passing cocotb tests at RTL and gate level, then synthesized and clocked to meet 50 MHz with positive timing margins and estimated 0.64–0.70 mW power per block.</p>
+          <p><b>Watch item:</b> Results are based on simulation and the implementation flow only, so no fabricated silicon behavior or post-fabrication performance is yet demonstrated.</p>
+          <div class="tags"><span>#NeuromorphicHardware</span> <span>#EdgeAI</span> <span>#MixedSignalIC</span> <span>#OpenSilicon</span> <span>#MemristorCrossbar</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>61</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>High-Order Invariant-Domain Preserving Continuous Finite Elements via Graph-Poisson Convex Limiting</h2>
+        <p class="authors">Murtazo Nazarov</p>
+        <p class="abstract">We develop a high-order invariant-domain preserving continuous finite element method for nonlinear scalar conservation laws. The method combines a residual-viscosity high-order discretization with a low-order invariant-domain scheme constructed on a fine $\mathbb P_1$ submesh induced by the high-order nodal points. This separation avoids the restrictions caused by nonpositive lumped masses and overly wide high-order graph stencils. The high- and low-order updates are connected by a graph-Poisson flux reconstruction, which represents their difference as conservative antisymmetric graph fluxes. These fluxes are limited using convex limiting coefficients, followed by a capacity-based mass redistribution step that restores conservation while preserving the prescribed bounds whenever sufficient admissible capacity is available. Numerical experiments for smooth and nonsmooth scalar conservation laws demonstrate high-order accuracy in smooth regimes, robustness near discontinuities, and convergence to the entropy solution for challenging benchmarks.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.23397v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.23397v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper combines a high-order continuous FEM with a fine low-order invariant-domain scheme and graph-based convex limiting to preserve physical bounds for nonlinear scalar conservation laws.</p>
+          <p><b>Engineering relevance:</b> This offers a robust way to get high accuracy in smooth regions while preventing nonphysical oscillations near shocks, which is valuable for reliable transport and wave simulation codes.</p>
+          <ul><li>High-order residual-viscosity continuous FEM for the primary update.</li><li>Low-order invariant-domain scheme on a fine P1 submesh induced by nodal points.</li><li>Graph-Poisson flux reconstruction plus convex limiting and capacity-based mass redistribution to enforce conservation and bounds.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical experiments on smooth and nonsmooth scalar conservation laws showing high-order accuracy, robustness near discontinuities, and convergence to the entropy solution.</p>
+          <p><b>Watch item:</b> The capacity-based redistribution and flux limiting may add implementation complexity, especially in cases where admissible capacity is tight and conservation-preserving correction is difficult.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#InvariantDomain</span> <span>#FluxLimiting</span> <span>#ConservationLaws</span> <span>#ComputationalMechanics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>60</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>DT-GOL: Dual-Track Geometric Online Learning in Nonstationary Environment with Label Delay</h2>
+        <p class="authors">Yulin Wang, Yi He, Dianlong You, Di Wu</p>
+        <p class="abstract">Online learning is crucial for handling complex data streams in big data applications. Recent research has begun to focus on dynamic scenarios, i.e., non-stationary environments. However, a crucial yet often overlooked aspect is label latency, where new data may not receive labels in time due to the slow and expensive labeling process, thus hindering rapid adaptation to dynamic environments. To resolve this impasse, we propose Dual-Track Geometry Online Learning (DT-GOL), a novel framework that shifts from temporal compensation to spatial reasoning to bridge the supervised latency gap. By modeling the delay challenge as a semi-supervised task, we leverage real-time topological evolution of features as a reliable geometric surrogate for unobservable conceptual changes to achieve proactive supervised adaptation within the delay window. Unlike rigid self-training, we introduce a dynamic evidence calibration mechanism that distills geometric information into soft labels that perceive uncertainty, effectively mitigating the confirmation bias inherent in hard pseudo-labels. Furthermore, to resolve the stability-plasticity dilemma, we design a decoupled dual-track architecture in which a master learner serves as a stable anchor, updated strictly from delayed ground truth, while a transient branch leverages soft geometric knowledge for low-risk forward adaptation. Extensive experiments on real and synthetic datasets demonstrate that DT-GOL significantly outperforms existing state-of-the-art baseline methods, especially in scenarios with concept drift.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.22950v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.22950v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> DT-GOL handles concept drift with delayed labels by using real-time feature geometry as a surrogate signal and a dual-track learner to adapt before ground truth arrives.</p>
+          <p><b>Engineering relevance:</b> For nonstationary engineering data streams, it offers a practical way to maintain online predictive performance when labels are slow, costly, or intermittently unavailable.</p>
+          <ul><li>Models label delay as a semi-supervised online learning problem.</li><li>Uses dynamic geometric evidence to generate soft labels that reduce confirmation bias.</li><li>Separates learning into a stable master branch updated by delayed ground truth and a transient branch updated by soft geometric knowledge.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports extensive experiments on real and synthetic datasets, with DT-GOL outperforming state-of-the-art baselines, especially under concept drift.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of geometric surrogates; if feature topology does not track concept change well, early adaptation may become unreliable.</p>
+          <div class="tags"><span>#OnlineLearning</span> <span>#ConceptDrift</span> <span>#SemiSupervisedLearning</span> <span>#NonstationarySystems</span> <span>#MachineLearning</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>59</strong></div>
+        <p class="date">2026-06-20</p>
+        <h2>SamatNext v0.2-B: An Exploratory Study of RMS-Normalized Hybrid Decoders for Curriculum Retention in Small Code Models</h2>
+        <p class="authors">Samat Zharassov</p>
+        <p class="abstract">Standard autoregressive Transformer decoders can often exhibit substantial forgetting under sequential fine-tuning on shifting curriculum distributions. This technical report evaluates SamatNext v0.2-B, an experimental 356M-parameter hybrid sequence decoder that alternates Differential-Attention-style layers with DeltaNet-inspired simplified linear-state mixer layers using RMS normalization and output scale calibration. We study the model under a controlled staged Python code curriculum and compare it with a parameter-matched Transformer baseline. In this setting, SamatNext v0.2-B achieves a 100.0% pass rate on the controlled Stage 5 holdout while retaining 98.8% of adjacent Stage 3 semantic behavior and reaching 12.0% on the Stage 2E early syntax holdout. The strongest Transformer baseline reaches 97.6% on Stage 5 but retains only 6.0% of Stage 3 behavior. Both architectures remain weak on long-horizon early-stage retention, so the result should be interpreted as evidence of an altered retention/plasticity tradeoff in this controlled setting, not as a general solution to catastrophic forgetting. Code, model specifications, evaluation scripts, and result tables are provided for independent verification.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.22248v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.22248v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> SamatNext v0.2-B appears to improve curriculum retention by balancing plasticity and forgetting through a hybrid decoder design with RMS normalization and scale calibration.</p>
+          <p><b>Engineering relevance:</b> For sequential model adaptation in code and scientific workflows, the result suggests hybrid state-space/attention decoders may retain later-task performance better than standard Transformers under staged fine-tuning.</p>
+          <ul><li>356M-parameter hybrid decoder alternating Differential-Attention-style layers and DeltaNet-inspired linear-state mixer layers</li><li>Uses RMS normalization plus output scale calibration</li><li>Evaluated on a controlled staged Python code curriculum against a parameter-matched Transformer baseline</li></ul>
+          <p><b>Evidence signal:</b> On the controlled Stage 5 holdout, SamatNext v0.2-B reached 100.0% pass rate and retained 98.8% of Stage 3 behavior, compared with 97.6% and 6.0% for the strongest Transformer baseline.</p>
+          <p><b>Watch item:</b> The study is narrowly controlled and still shows weak long-horizon early-stage retention, so the retention gains should not be treated as a general cure for catastrophic forgetting.</p>
+          <div class="tags"><span>#HybridDecoders</span> <span>#CatastrophicForgetting</span> <span>#CurriculumLearning</span> <span>#StateSpaceModels</span> <span>#TransformerAlternative</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>59</strong></div>
+        <p class="date">2026-06-18</p>
+        <h2>Physics-Guided Dual-Stream Heterogeneous Graph Neural Network for Predicting Full-Field Structural Response of Stiffened Panels</h2>
+        <p class="authors">Yuecheng Cai, Jasmin Jelovica</p>
+        <p class="abstract">Iterative design and optimization of large, complex structures require fast and accurate prediction of stress, displacement, and other fields. Finite element analysis (FEA) is computationally expensive for this task. Existing neural network surrogates often struggle with varying topologies and complex boundary conditions. This study proposes the novel Dual-Stream Heterogeneous Graph Neural Network (DS-HGNN) for full-field stress and displacement prediction in thin-walled structures, demonstrated on box beams made of stiffened panels. DS-HGNN operates on panel-level heterogeneous graph representations and introduces physics-guided edge states initialized from edge types, spatial information, and boundary kinematics. These states are updated through dual-stream message passing that separates longitudinal and transverse structural information while allowing cross-stream exchange. Geometry and loading effects are incorporated through Feature-wise Linear Modulation (FiLM)-conditioned 1-D spectral convolutions, and physical fields are reconstructed using a spectral-bypass low-rank readout. The model is evaluated on stiffened panel datasets with different geometries, boundary kinematics, loading conditions, and material nonlinear responses. DS-HGNN achieves the lowest stress and displacement RMSE compared with six benchmark heterogeneous graph neural network models. It also reaches comparable accuracy to the strongest benchmark models using 19%-38% fewer training samples. A targeted evaluation further shows that DS-HGNN captures yield and post-yield stress features.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.20916v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.20916v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> DS-HGNN uses physics-guided heterogeneous graph message passing to predict full-field stress and displacement in stiffened panels accurately and efficiently.</p>
+          <p><b>Engineering relevance:</b> It enables fast surrogate analysis for complex thin-walled structures during design and optimization, reducing reliance on expensive finite element runs.</p>
+          <ul><li>Panel-level heterogeneous graph representation of the structure</li><li>Dual-stream message passing for longitudinal and transverse structural information with cross-stream exchange</li><li>FiLM-conditioned 1-D spectral convolutions plus a spectral-bypass low-rank readout for field reconstruction</li></ul>
+          <p><b>Evidence signal:</b> Across stiffened panel datasets with varied geometry, loading, boundary kinematics, and nonlinear material response, DS-HGNN achieved the lowest stress and displacement RMSE among six benchmark HGNN models and matched top benchmark accuracy with 19%-38% fewer training samples.</p>
+          <p><b>Watch item:</b> Performance may depend on accurate encoding of edge types, boundary kinematics, and training coverage of the geometry/loading space.</p>
+          <div class="tags"><span>#StructuralMechanics</span> <span>#FEMSurrogate</span> <span>#GraphNeuralNetworks</span> <span>#PhysicsGuidedAI</span> <span>#StressPrediction</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>58</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>RECALL: Recovery Experience Collection for Active Lifelong Learning in Vision-Language-Action Models</h2>
+        <p class="authors">Ulas Berk Karli, Tesca Fitzgerald</p>
+        <p class="abstract">Vision-Language-Action (VLA) models are commonly fine-tuned through passive imitation learning, where additional demonstrations are collected for tasks where the policy performs poorly. This approach incurs several downsides: it requires the robot to fail before data collection is triggered, provides little guidance about which states require supervision, and wastes demonstrator effort on redundant parts of the task where the policy already performs well. In this paper, we propose an active, continual learning paradigm for VLAs. We demonstrate that active, uncertainty-guided data collection leads to more efficient fine-tuning than when using passively-collected demonstrations. However, we also find that fine-tuning only on actively-collected recovery data leads to catastrophic forgetting. We evaluate techniques for continual learning, including replay-based data mixing and elastic weight consolidation, and identify tradeoffs between plasticity to uncertainty-guided recovery data and retention of previously learned behaviors. Overall, our work contributes an empirical study of active continual learning for autoregressive VLAs, establishing that uncertainty-guided recovery demonstrations can improve adaptation efficiency while also revealing open challenges when targeted new data is incorporated into large robot policies.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.23617v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.23617v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Uncertainty-guided recovery demonstrations make VLA fine-tuning more efficient than passive imitation, but targeted updates alone can cause catastrophic forgetting.</p>
+          <p><b>Engineering relevance:</b> For robotics and autonomy pipelines, active data collection can reduce wasted demonstration effort while improving adaptation to failure cases in vision-language-action policies.</p>
+          <ul><li>Use active, uncertainty-guided recovery data collection instead of waiting for full task failure</li><li>Fine-tune autoregressive VLA policies with newly collected recovery demonstrations</li><li>Compare continual-learning strategies such as replay-based mixing and elastic weight consolidation</li></ul>
+          <p><b>Evidence signal:</b> The paper reports that active recovery data improves adaptation efficiency over passive demonstrations, and that continual-learning methods are needed to preserve prior behaviors during fine-tuning.</p>
+          <p><b>Watch item:</b> Purely training on new recovery data risks catastrophic forgetting, so deployment needs a retention strategy such as replay or regularization.</p>
+          <div class="tags"><span>#VisionLanguageAction</span> <span>#ActiveLearning</span> <span>#ContinualLearning</span> <span>#RobotLearning</span> <span>#CatastrophicForgetting</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
+        <p class="date">2026-06-22</p>
+        <h2>Factored Sparse Approximate Inverse Preconditioning via Spectral Optimization</h2>
+        <p class="authors">Francesco Brarda, Tianshi Xu, Vassilis Kalantzis, Rui Peng Li, Yuanzhe Xi</p>
+        <p class="abstract">In this paper, we study value selection for fixed-pattern factorized sparse approximate inverse preconditioners. Given a prescribed sparsity pattern for a factor $G,$ we choose its admissible entries by optimizing spectral objectives of the congruent preconditioned operator $P(G)=GAG^T.$ This differs from classical sparse approximate inverse and FSAI constructions, which choose entries through algebraic Frobenius-residual criteria. For symmetric positive definite systems, the spectral target is a cluster near $+1.$ For symmetric indefinite systems, where congruence preserves inertia, we introduce a bimodal loss that drives positive and negative eigenvalues toward separated clusters near $+1$ and $-1,$ while penalizing eigenvalues near zero. To make these objectives practical for large sparse matrices, we derive projected Krylov support-gradients. Lanczos runs provide both a stochastic trace estimate of the spectral objective and a Ritz approximation to the exact gradient. We implement the resulting gradient through a detached Rayleigh surrogate: the Lanczos data are computed without gradient tracking and held fixed, while the backward pass differentiates only recomputed Rayleigh quotients with respect to the admissible entries of $G.$ This avoids differentiating through the Lanczos recurrence while returning a matrix-free gradient on the prescribed support. We also discuss a projected Kernel Polynomial Method rule as a finite polynomial comparison. Experiments on finite-element test problems show that spectral value selection improves fixed-support preconditioners, especially for symmetric indefinite saddle-point systems. We further demonstrate a graph neural network model for predicting admissible factor entries across related matrices.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.22742v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.22742v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper replaces algebraic residual fitting in fixed-pattern sparse approximate inverse preconditioners with spectral optimization of the congruence-transformed operator to cluster eigenvalues near ±1 and improve solver behavior.</p>
+          <p><b>Engineering relevance:</b> This can strengthen iterative finite-element solvers for large symmetric positive definite and especially symmetric indefinite saddle-point systems, where robust preconditioning is critical for scalable mechanics simulations.</p>
+          <ul><li>Choose admissible entries of a fixed sparse factor G by minimizing spectral objectives of P(G)=GAG^T</li><li>Use Lanczos-based projected Krylov support-gradients with a detached Rayleigh surrogate to obtain matrix-free gradients on the prescribed sparsity pattern</li><li>For indefinite systems, add a bimodal loss that separates positive and negative eigenvalues while penalizing near-zero modes</li></ul>
+          <p><b>Evidence signal:</b> Experiments on finite-element test problems show improved fixed-support preconditioners, with particularly strong gains for symmetric indefinite saddle-point systems, and the authors also demonstrate a graph neural network predictor for transferable factor entries.</p>
+          <p><b>Watch item:</b> The approach depends on Lanczos/Krylov approximations and a fixed sparsity pattern, so performance may be sensitive to spectral estimation quality and pattern choice.</p>
+          <div class="tags"><span>#SparsePreconditioning</span> <span>#FiniteElementMethods</span> <span>#SpectralOptimization</span> <span>#KrylovMethods</span> <span>#ComputationalMechanics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>57</strong></div>
         <p class="date">2026-06-17</p>
         <h2>Self-Supervised Mask-Aware Transformers for Fault-Tolerant FBG Force Sensing in Minimally Invasive Surgical Robotics</h2>
         <p class="authors">Peibo Sun, Shiyuan Dong, Shucheng Ye, Jianrong Cai, Yushan Liu, Hongen Liao</p>
@@ -58,37 +343,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.18628v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.18628v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A self-supervised mask-aware Transformer can learn robust force estimation from multi-channel FBG sensors even when some channels are missing or fractured.</p>
-          <p><b>Engineering relevance:</b> This enables more fault-tolerant, calibration-light sensing for minimally invasive surgical robotics, where catheter-scale sensors must survive complex deformation and intermittent damage.</p>
-          <ul><li>Pretrain a Transformer with masked-channel reconstruction on unlabeled sensor streams.</li><li>Fine-tune for force regression using both clean and corrupted views plus a dynamic corruption curriculum.</li><li>Add a heteroscedastic uncertainty head to predict per-axis confidence in one forward pass.</li></ul>
-          <p><b>Evidence signal:</b> On an 8-channel catheter-scale FBG dataset, the model achieved 0.0066 N RMSE nominally and 0.0126 N with severe 4-channel failures, outperforming a 255-model bank at 0.0154 N under 4-channel loss.</p>
-          <p><b>Watch item:</b> Performance depends on representative corruption patterns during self-supervised pretraining and curriculum design, so unseen failure modes may still require additional validation.</p>
-          <div class="tags"><span>#FiberBraggGrating</span> <span>#SurgicalRobotics</span> <span>#SelfSupervisedLearning</span> <span>#Transformer</span> <span>#FaultTolerance</span></div>
+          <p><b>Key insight:</b> A self-supervised, mask-aware Transformer can learn FBG force estimation that remains robust when sensor channels are missing or fractured.</p>
+          <p><b>Engineering relevance:</b> This enables more reliable force sensing for catheter-scale surgical robotics, where tight geometries make FBG channel dropouts and nonlinear cross-axis coupling hard to avoid.</p>
+          <ul><li>Pretrain the Transformer with masked-channel reconstruction on unlabeled sensor streams to learn channel relationships.</li><li>Fine-tune with a balanced clean-and-corrupted-view regression loss plus a dynamic corruption curriculum.</li><li>Add a heteroscedastic uncertainty head to predict per-axis confidence in one forward pass.</li></ul>
+          <p><b>Evidence signal:</b> On an 8-channel catheter-scale FBG dataset, the model reached 0.0066 N RMSE nominally and 0.0126 N under severe 4-channel loss, outperforming a 255-model bank (0.0154 N at 4-channel loss).</p>
+          <p><b>Watch item:</b> Performance depends on representative corruption patterns and careful training; unseen failure modes or different catheter/sensor layouts may require additional adaptation.</p>
+          <div class="tags"><span>#FBGSensing</span> <span>#SurgicalRobotics</span> <span>#SelfSupervisedLearning</span> <span>#Transformer</span> <span>#FaultTolerance</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>61</strong></div>
-        <p class="date">2026-06-16</p>
-        <h2>A Differentiable GPU-Accelerated Finite Element Framework for Inverse Characterization of Finite-Strain Anisotropic Plasticity</h2>
-        <p class="authors">Deepak Sharma, Itzel Salgado, Lu Huang, Hui-Ping Wang, Jian Cao</p>
-        <p class="abstract">We present a fully differentiable, GPU-accelerated finite element framework for forward simulation and inverse characterization of finite-strain anisotropic elastoplastic materials. Built on JAX, the framework exploits modern accelerator architectures by parallelizing the three major computational bottlenecks in nonlinear FEM: elemental weak-form and tangent-stiffness evaluation, global sparse matrix assembly, and sparse linear solution. For a large-scale forward problem with 3 million degrees of freedom, JAX-FEM on a single NVIDIA H100 GPU achieves up to 9.4$\times$ speed-up over a 24-core CPU Abaqus baseline. Automatic differentiation is applied through the constitutive update and solver workflow, providing consistent Jacobians for complex constitutive models without manual derivation and accurate gradients for PDE-constrained inverse analysis. Compared with finite differences, the JAX-AD gradients avoid step-size sensitivity and provide the required sensitivities at substantially lower computational cost. For inverse characterization, we combine information-rich, topology-optimized heterogeneous specimen geometries with full-field displacement data to identify complex constitutive models with many parameters that would otherwise require many conventional experiments to characterize. We demonstrate accurate recovery of anisotropic yield and hardening parameters in progressively challenging settings, including uniform and spatially varying material properties. The resulting AD-based formulation enables efficient optimization in high-dimensional parameter spaces where finite-difference approaches are computationally infeasible. These results establish differentiable, GPU-accelerated FEM as a practical high-throughput engine for simulation, characterization, and optimization workflows in advanced manufacturing.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.17390v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17390v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A fully differentiable, GPU-accelerated FEM framework can simulate and invert complex finite-strain anisotropic plasticity models efficiently, enabling practical parameter identification from full-field data.</p>
-          <p><b>Engineering relevance:</b> This work speeds up nonlinear mechanics simulation and makes gradient-based calibration of advanced constitutive models feasible for high-throughput materials design and manufacturing.</p>
-          <ul><li>JAX-based FEM with end-to-end automatic differentiation</li><li>GPU parallelization of element assembly, sparse assembly, and sparse solves</li><li>Inverse characterization using topology-optimized specimens and displacement-field data</li></ul>
-          <p><b>Evidence signal:</b> On a 3 million-DOF forward problem, the method reached up to 9.4× speed-up over a 24-core CPU Abaqus baseline and accurately recovered anisotropic yield and hardening parameters across uniform and spatially varying cases.</p>
-          <p><b>Watch item:</b> Performance and robustness depend on GPU memory, sparse solver efficiency, and the quality/identifiability of the measured full-field data.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#DifferentiableSimulation</span> <span>#GPUComputing</span> <span>#InverseProblem</span> <span>#ConstitutiveModeling</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>59</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>54</strong></div>
         <p class="date">2026-06-18</p>
         <h2>TaCauchy: An Extensible FEM Framework for Vision-Based Tactile Simulation</h2>
         <p class="authors">Hengfei Zhao, Yifan Xie, Junhao Gong, Yue Sun, Kai Zhu, Weihua He</p>
@@ -96,18 +362,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.20426v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.20426v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> TaCauchy turns vision-based tactile simulation into a physics-grounded FEM pipeline that directly computes stress and traction on contact surfaces for realistic tactile supervision.</p>
-          <p><b>Engineering relevance:</b> It enables fast, scalable tactile simulation inside GPU robotics workflows like Isaac Sim, making it practical to generate accurate training signals for dexterous manipulation and reinforcement learning.</p>
-          <ul><li>Built on UIPC to solve FEM contact mechanics in real time</li><li>Computes Cauchy stress from hyperelastic constitutive laws and projects it to surface pressure/traction</li><li>Adds automatic mesh generation, adaptive refinement, and plug-in sensor interfaces for GelSight Mini, DIGIT, and 9DTact</li></ul>
-          <p><b>Evidence signal:</b> The framework reports 33.40 FPS for one environment, 555 FPS across 60 parallel environments, stress extraction under 1 ms, and strong physical agreement with real sensors (SSIM &gt; 0.93 over 1.2556–4.7332 N).</p>
-          <p><b>Watch item:</b> Accuracy and stability likely depend on mesh quality, material modeling, and contact setup, so deployment may still require careful calibration for different sensors and objects.</p>
-          <div class="tags"><span>#FEM</span> <span>#TactileSimulation</span> <span>#RobotLearning</span> <span>#IsaacSim</span> <span>#ContactMechanics</span></div>
+          <p><b>Key insight:</b> TaCauchy brings physics-grounded tactile simulation into Isaac Sim by computing Cauchy stress and surface traction directly from FEM rather than learning an empirical proxy.</p>
+          <p><b>Engineering relevance:</b> It enables faster, more accurate vision-based tactile data generation for robot manipulation and reinforcement learning across multiple sensor types with minimal integration effort.</p>
+          <ul><li>UIPC-based FEM solver with hyperelastic constitutive laws</li><li>Direct Cauchy stress computation and projection to contact tractions/pressure</li><li>Automatic mesh generation plus modular sensor interface for GelSight Mini, DIGIT, and 9DTact</li></ul>
+          <p><b>Evidence signal:</b> The framework reports 33.40 FPS for a single environment, 555 FPS across 60 parallel environments, under 1 ms stress-extraction overhead, and SSIM above 0.93 in physical validation over 1.2556–4.7332 N.</p>
+          <p><b>Watch item:</b> Accuracy and speed may depend on mesh quality, contact modeling assumptions, and sensor-specific calibration when transferring to new geometries or materials.</p>
+          <div class="tags"><span>#FEM</span> <span>#TactileSimulation</span> <span>#Robotics</span> <span>#IsaacSim</span> <span>#StressField</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>59</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>54</strong></div>
         <p class="date">2026-06-18</p>
         <h2>eCNNTO: A Highly Generalizable ConvNet for Accelerating Topology Optimization</h2>
         <p class="authors">Shengbiao Lu, Xiaodong Wei</p>
@@ -115,297 +381,31 @@
         <div class="links"><a href="https://arxiv.org/abs/2606.19921v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.19921v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> eCNNTO uses an element-wise residual CNN to predict near-optimal element densities from density histories, accelerating topology optimization while preserving spatial continuity.</p>
-          <p><b>Engineering relevance:</b> This can sharply reduce finite-element solves in high-resolution topology optimization, making practical design exploration faster across different loads, geometries, meshes, and dimensionalities.</p>
-          <ul><li>Train a CNN per element using density-history sequences rather than early-iteration states.</li><li>Add residual connections to capture neighborhood spatial correlations and avoid disconnected features.</li><li>Use a small dataset and target the final stage of optimization to skip most TO iterations.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports strong generalization across 2D and 3D examples, with up to 90% and 97% iteration reduction.</p>
-          <p><b>Watch item:</b> Performance depends on the quality and representativeness of the small training set, so out-of-distribution loading or geometry cases may still need careful validation.</p>
-          <div class="tags"><span>#TopologyOptimization</span> <span>#DeepLearning</span> <span>#FiniteElementMethod</span> <span>#CNN</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> eCNNTO speeds up density-based topology optimization by using an element-wise residual CNN to predict near-optimal densities from density histories, preserving spatial coherence while skipping most expensive FE iterations.</p>
+          <p><b>Engineering relevance:</b> This offers a practical surrogate for faster high-resolution structural design across varied loads, geometries, mesh sizes, and 2D/3D settings.</p>
+          <ul><li>Element-based CNN with residual connections models neighboring-element spatial correlations.</li><li>Training uses final-stage density histories instead of early histories to improve efficiency and reduce data needs.</li><li>The network predicts element densities to bypass most topology optimization iterations.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports generalization across many test cases and iteration reductions of up to 90% in 2D and 97% in 3D.</p>
+          <p><b>Watch item:</b> As with any surrogate-driven TO method, performance may depend on the representativeness of the small training set and careful validation is needed for unseen design regimes.</p>
+          <div class="tags"><span>#TopologyOptimization</span> <span>#CNN</span> <span>#SurrogateModel</span> <span>#FiniteElementMethod</span> <span>#ComputationalMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>59</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>Domain decomposition methods for the Stokes-Biot model of fluid-poroelastic structure interaction</h2>
-        <p class="authors">Manraj Ghumman, Manu Jayadharan, Ivan Yotov</p>
-        <p class="abstract">We develop a non-overlapping domain decomposition method for the numerical solution of the Stokes-Biot model of fluid-poroelastic structure interaction in a mixed form. The model is based on a velocity-pressure formulation for the free fluid, a three-field stress-displacement-rotation formulation with weakly symmetric stress for the solid deformation, and a Darcy velocity-pressure formulation for the fluid in the poroelastic media. Mass conservation, balance of stress, and the Beavers-Joseph-Saffman slip with friction condition are imposed on the interface. The interface conditions are incorporated through Lagrange multipliers modeling the traces of the displacement and the Darcy pressure. The system is discretized using stable mixed finite element spaces for Stokes flow, elasticity, and Darcy flow. The domain is decomposed into a union of subdomains of either Stokes or Biot type with three types of interfaces: Stokes-Stokes, Biot-Biot, and Stokes-Biot. On the Stokes-Stokes interfaces, a normal stress Lagrange multiplier is introduced to impose weakly velocity continuity, while the Biot-Biot and Stokes-Biot interfaces are equipped with displacement and pressure Lagrange multipliers to impose weakly continuity of normal stress and normal velocity, respectively. The global problem is reduced via Schur complement to an interface problem for the Lagrange multipliers, which is solved by GMRES. Each iteration requires the solution of local Stokes or Biot problems, which can be performed in parallel. We show that the resulting interface operator is positive definite and analyze the convergence of the GMRES iteration through fields-of-value analysis. Numerical experiments are presented to illustrate the performance of the method.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.17363v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17363v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>53</strong></div>
+        <p class="date">2026-06-19</p>
+        <h2>Distributed-memory parallelization of B-spline based s-version of the finite element method via weighted graph abstraction</h2>
+        <p class="authors">Nozomi Magome, Naoki Morita, Shigeki Kaneko, Naoto Mitsume</p>
+        <p class="abstract">To extend the B-spline based s-version of the finite element method (BSFEM), which enables locally high-resolution analysis, to large-scale simulations, domain-decomposition-based parallel computation on distributed-memory systems is indispensable. However, the highly complex interactions induced by the spatial overlap of independent meshes make the construction of interprocessor communication structures extremely challenging, thereby posing a major obstacle to the application of conventional domain decomposition approaches. In this study, we propose a method that mathematically generalizes and simplifies the complex connectivity arising from the physical overlap of meshes as a weighted graph. By reducing the problem to graph theory, we successfully construct a domain-decomposition-based parallelization algorithm for BSFEM and SFEM-based methods with complex mesh structures in distributed-memory environments. To demonstrate the effectiveness of the proposed framework, numerical verification is performed using the three-dimensional steady Poisson equation, confirming the realization of parallel computation in a distributed-memory environment. Furthermore, we demonstrate that assigning weights to graph nodes effectively distributes localized computational loads and substantially reduces the total computational time. The graph-theoretic approach established in this study not only enables the parallelization of BSFEM and SFEM-based methods, but also provides a general theoretical foundation for designing parallelization strategies for other methods with complex communication structures.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2606.21142v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.21142v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A non-overlapping domain decomposition method turns the coupled Stokes-Biot fluid–poroelastic system into a parallelizable interface problem solved efficiently with GMRES and Lagrange multipliers.</p>
-          <p><b>Engineering relevance:</b> This enables scalable simulation of fluid-structure interactions in porous media, relevant to biomechanics, geomechanics, and other multi-domain engineering systems.</p>
-          <ul><li>Split the global Stokes-Biot model into Stokes and Biot subdomains with Stokes-Stokes, Biot-Biot, and Stokes-Biot interfaces.</li><li>Enforce interface physics weakly using Lagrange multipliers for velocity, displacement, pressure, and normal stress continuity.</li><li>Reduce the coupled PDE system via Schur complement to an interface operator and solve it with GMRES in parallel local subproblems.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical experiments and a fields-of-value analysis showing the interface operator is positive definite and GMRES convergence can be characterized.</p>
-          <p><b>Watch item:</b> Performance depends on the quality of the mixed finite element discretization and the cost of repeated local Stokes/Biot solves at each GMRES iteration.</p>
-          <div class="tags"><span>#DomainDecomposition</span> <span>#StokesBiot</span> <span>#FiniteElementMethod</span> <span>#GMRES</span> <span>#FluidStructureInteraction</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>55</strong></div>
-        <p class="date">2026-06-16</p>
-        <h2>A minimizing-movement framework for geometric gradient flows with admissible tangential motion</h2>
-        <p class="authors">Xiaoxiao Liu, Quan Zhao</p>
-        <p class="abstract">We develop a minimizing-movement framework for parametric finite element approximations of geometric gradient flows with admissible tangential motion. At each time step, the discrete variational problem combines a metric dissipation term for the normal displacement with a surface Dirichlet energy. The metric determines the normal geometric evolution: the $L^2(Γ)$ metric gives mean curvature flow, while the $H^{-1}(Γ)$ metric gives surface diffusion flow. Tangential velocity is selected independently through weak constraints on the deformation map. The central structural condition is admissibility, namely, that the identity map satisfies the constraint. This condition keeps the identity map available as a comparison function and yields the natural stability estimate. The framework recovers the classical Barrett--Garcke--Nürnberg (BGN) scheme from the unconstrained formulation and the dual minimal-deformation-rate (MDR) scheme from the MDR constraint. We further introduce two new admissible variants: an admissible BGN scheme and a relaxed MDR scheme. For the resulting fully discrete schemes, we prove existence and uniqueness under natural nondegeneracy assumptions and establish unconditional energy stability. Numerical experiments compare the admissible and classical schemes and illustrate their stability properties and mesh-quality behavior.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.18177v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.18177v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A minimizing-movement discretization can decouple normal geometric evolution from tangential mesh motion, while preserving energy stability through admissible constraints that keep the identity map available as a comparator.</p>
-          <p><b>Engineering relevance:</b> The framework provides stable parametric finite element schemes for curvature-driven surface evolution, useful for robust simulation of mean curvature flow and surface diffusion with improved mesh quality control.</p>
-          <ul><li>Use a time-stepping variational problem with a normal-dissipation metric plus surface Dirichlet energy.</li><li>Choose the metric to encode the flow: L2 for mean curvature flow, H-1 for surface diffusion.</li><li>Impose admissible weak tangential constraints so tangential motion can be selected independently of the geometric evolution.</li></ul>
-          <p><b>Evidence signal:</b> The paper proves existence, uniqueness, and unconditional energy stability for the fully discrete schemes and reports numerical experiments comparing admissible and classical variants.</p>
-          <p><b>Watch item:</b> Practical performance depends on nondegeneracy assumptions and on how the tangential constraints are implemented without degrading mesh quality or solver robustness.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#GeometricFlows</span> <span>#MeanCurvatureFlow</span> <span>#SurfaceDiffusion</span> <span>#EnergyStableSchemes</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>52</strong></div>
-        <p class="date">2026-06-18</p>
-        <h2>Compositionality Emerges in a Narrow Depth-Connectivity Regime: Architecture Constraints and Solution Manifolds</h2>
-        <p class="authors">Dat H. Do, Rushi Shah, Duc V. Le, Dianbo Liu</p>
-        <p class="abstract">Compositionality is believed to be the foundation for generalization, enabling models to reuse meaningful primitives in novel combinations. Yet, models trained with standard gradient-based optimization rarely, and often only weakly, exhibit compositional internal structure, and it remains unclear how or why such compositionality forms. In this work, we show that compositionality emerges in a narrow connectivity-depth sweet spot. Along the connectivity axis, compositionality only appears in some specifically sparse networks, heavily depends on which connections remain rather than on weights&#x27; sparsity alone. Along the depth axis, compositionality emerges within a narrow, target-dependent regime, peaking at specific depths, while both shallower and deeper networks fail. When either the depth or connectivity condition is violated, gradient descent silently converges to fractured solutions rather than compositional ones. To discover and exploit this emergence, we introduce (i) similarity-based pruning (SP) to recover compositional connectivity and (ii) a heuristic depth predictor to estimate where compositionality is most likely to appear. Finally, we support these empirical findings with a theoretical framework based on compositional sparsity, volume-ratio arguments, and feature-interference bounds, explaining why compositional solutions are reachable only in a narrow depth-connectivity regime.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.19941v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.19941v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Compositional structure in trained networks appears only in a narrow, target-dependent sweet spot of depth and connectivity; outside it, optimization tends to produce fractured solutions.</p>
-          <p><b>Engineering relevance:</b> For AI systems in solid mechanics and fracture modeling, architecture choice matters as much as sparsity: the right pruning pattern and depth can determine whether the model learns reusable physical primitives or brittle shortcuts.</p>
-          <ul><li>Similarity-based pruning (SP) to recover compositional connectivity patterns</li><li>Heuristic depth predictor to estimate where compositionality is most likely to emerge</li><li>Theoretical analysis using compositional sparsity, volume-ratio arguments, and feature-interference bounds</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports empirical results showing compositionality only in specific sparse networks and at specific depths, with gradient descent otherwise converging to fractured solutions, supported by theoretical explanation.</p>
-          <p><b>Watch item:</b> The compositional regime is narrow and depends on which connections remain, so naive sparsity or depth scaling may fail even when overall model size looks appropriate.</p>
-          <div class="tags"><span>#FractureAndDamage</span> <span>#Compositionality</span> <span>#NeuralNetworks</span> <span>#Pruning</span> <span>#SolidMechanics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>52</strong></div>
-        <p class="date">2026-06-17</p>
-        <h2>GrapNet: A Programmable Dynamic-Architecture Neural Graph Substrate</h2>
-        <p class="authors">Zirong Li</p>
-        <p class="abstract">Programmability is a missing first-class interface in fixed-tensor neural networks: editing a relation, freezing a subgraph, auditing a local function, or changing the execution backend should be an operation on the neural program rather than ad-hoc parameter surgery. GrapNet studies this graph-as-network setting. The graph is the architecture and executable program, not an input data graph. Each compute node owns its next-layer child references and a trainable allocation vector aligned with those references; deleting a relation physically removes both the child reference and the corresponding allocation coordinate. Structural rules and execution policies live outside the node core, so the same child-owned graph can be grown, frozen, structurally edited, grouped into trainable family blocks, routed by attention over active relations, or lowered to dense snapshots after topology stabilizes. GrapNet composes with conventional modules through a vector-valued parent interface: dense layers, CNN encoders, ResNet feature extractors, attention blocks, and transformer representations can all feed one sensory GrapNode per coordinate. The evaluation is organized as a programmability stress suite rather than as a new replay benchmark. In a matched ten-seed Split Fashion-MNIST study, a plastic GrapNet+ER head reaches 63.16 percent seen-class accuracy versus 51.08 percent for a parameter-larger dense MLP+ER under the same seen-class loss and replay memory, with paired delta 12.08 points and p=1.3e-5. On Split CIFAR-10 with a frozen ImageNet ResNet-18 encoder, the same substrate improves the online head over MLP-256 by 3.81 points, with p=0.0026. These results support GrapNet as an editable neural graph substrate whose core value is structural programmability with faithful execution views.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.18923v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.18923v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> GrapNet treats the neural network itself as an editable graph program, so structural changes like adding, deleting, freezing, or rerouting relations become first-class operations.</p>
-          <p><b>Engineering relevance:</b> This makes neural models easier to inspect, modify, and deploy across different execution backends, which is valuable for engineering workflows that need controlled structure and reproducible behavior.</p>
-          <ul><li>Child-owned graph nodes store trainable allocations aligned with outgoing relations.</li><li>Structural rules and execution policies are separated from the node core, enabling growth, freezing, grouping, routing, and dense lowering.</li><li>Conventional modules can feed into GrapNet through a vector-valued parent interface.</li></ul>
-          <p><b>Evidence signal:</b> In matched ten-seed studies, GrapNet improved seen-class accuracy on Split Fashion-MNIST by 12.08 points over a larger MLP+ER and improved a frozen-encoder Split CIFAR-10 head by 3.81 points, with reported statistical significance.</p>
-          <p><b>Watch item:</b> The approach depends on careful bookkeeping when topology changes, since deleting a relation must also update the corresponding allocation coordinate and execution view.</p>
-          <div class="tags"><span>#GraphNeuralNetworks</span> <span>#ProgrammableAI</span> <span>#NeuralArchitecture</span> <span>#ContinualLearning</span> <span>#ModelEditing</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>51</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>PF-DIC: Phase field digital image correlation for integrated full-field displacement, strain, and damage measurements</h2>
-        <p class="authors">Dingxiang Zhu, Ye Lu</p>
-        <p class="abstract">This work presents a novel digital image correlation (DIC) framework for full-field measurements of displacement, strain, and damage, based on a phase field (PF) approach. The idea is to take advantage of the ability of the PF method to track complex crack morphologies and to provide a natural way in DIC to perform damage and crack measurements from experimental speckle images, in addition to displacement and strain fields. Moreover, incorporating the damage variable into DIC can improve the displacement accuracy near the crack tip, and can avoid the need of user-defined masks when dealing with cracked samples, which is advantageous when cracks become complex and the manual application of masks becomes challenging. The theoretical formulation of the proposed framework, namely PF-DIC, was presented in detail in the paper, along with a finite element implementation. Numerical examples have demonstrated the capability of the proposed PF-DIC in terms of capturing different types of cracks while improving the measurement accuracy of displacement fields. Additionally, it is shown that the PF-DIC can be easily adapted to selectively identify critical cracks under specific loading conditions or mechanisms for damage assessment and diagnostic purposes. The proposed DIC framework offers a powerful and automatic damage measurement technique and paves the way for the unification of PF simulations and experimental measurements of fracture and opens numerous opportunities in science and engineering, e.g., materials defect characterization and structural health monitoring.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.16850v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16850v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PF-DIC integrates phase-field fracture concepts into digital image correlation to measure displacement, strain, and damage in a unified, crack-aware framework.</p>
-          <p><b>Engineering relevance:</b> It enables more accurate full-field measurements near cracks and reduces manual masking effort, making it attractive for fracture testing, defect characterization, and structural health monitoring.</p>
-          <ul><li>Use a phase-field variable to represent complex crack growth and morphology directly from speckle images.</li><li>Embed damage into the DIC optimization so displacement and strain are solved with crack-aware constraints.</li><li>Implement the framework with a finite element formulation for experimental-image-based field recovery.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical examples showing that PF-DIC captures different crack types while improving displacement accuracy, especially near crack tips.</p>
-          <p><b>Watch item:</b> The method adds modeling and implementation complexity, so performance may depend on robust parameter selection and reliable phase-field calibration for real experiments.</p>
-          <div class="tags"><span>#DigitalImageCorrelation</span> <span>#PhaseField</span> <span>#FractureMechanics</span> <span>#DamageDetection</span> <span>#StructuralHealthMonitoring</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>50</strong></div>
-        <p class="date">2026-06-17</p>
-        <h2>GUMP-Net: An interpretable model-data-driven intelligent algorithm for multi-class pelvic segmentation</h2>
-        <p class="authors">Liheng Wang, Yinghui Zhang, Licheng Zhang, Hailin Xu, Qiyong Cao, Chong Chen</p>
-        <p class="abstract">Pelvic segmentation is one of the most important and fundamental research problems in precise and intelligent diagnosis and treatment, as well as surgical planning and navigation for pelvic fractures. By combining an improved geodesic active contour model with deep neural networks, we propose GUMP-Net, an interpretable model-data-driven intelligent algorithm for multi-class pelvic segmentation, in which three network modules are designed to constitute the overall segmentation framework together: the object detection module for automatic level set initialization, the edge detector module for learning an anatomy-aware edge detector function and the iteration module for deep level set evolution. Leveraging the advantages of level set representation and deep learning, GUMP-Net shows more accurate, robust and consistent segmentation performance, especially in small training data situation, compared to the state-of-the-art methods. Extensive experiments on pelvic datasets demonstrate the rationality and effectiveness of the proposed algorithm. Further experiments extended to ankle dataset indicate broader applications to other anatomies. The proposed algorithm not only provides an efficient segmentation method for complex fracture reduction, but also gives an interpretable geometric perspective for understanding deep learning segmentation.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.19215v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.19215v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> GUMP-Net combines object detection, anatomy-aware edge learning, and deep level-set evolution to deliver interpretable multi-class pelvic segmentation.</p>
-          <p><b>Engineering relevance:</b> It supports more reliable pelvic fracture planning and navigation by improving segmentation accuracy and robustness, especially when labeled data are limited.</p>
-          <ul><li>Automatic object detection initializes the level set.</li><li>An edge detector learns anatomy-aware boundary cues.</li><li>An iteration module performs deep level-set evolution for segmentation refinement.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports extensive experiments on pelvic datasets and additional tests on an ankle dataset, with improved accuracy, robustness, and consistency versus state-of-the-art methods, especially in small-data settings.</p>
-          <p><b>Watch item:</b> Performance and interpretability may depend on quality of initialization and boundary learning, so generalization should be checked carefully across anatomies and imaging protocols.</p>
-          <div class="tags"><span>#MedicalImaging</span> <span>#PelvicSegmentation</span> <span>#DeepLearning</span> <span>#LevelSetMethods</span> <span>#FracturePlanning</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>49</strong></div>
-        <p class="date">2026-06-16</p>
-        <h2>Elastic Surface Instability as a Topological Phase Transition</h2>
-        <p class="authors">Yu-Xin Xie</p>
-        <p class="abstract">The macroscopic instability of soft materials undergoing extreme deformations is traditionally viewed as a pure structural or mechanical failure. Driven by the quest to uncover universal principles across disparate physical systems, we bridge two vibrant yet seemingly disconnected research frontiers: macroscopic finite-strain solid mechanics and quantum-like topological physics. Here, we demonstrate that the classical elastic surface instability of a deformed hyperelastic manifold is not merely a mechanical bifurcation, but fundamentally a topological phase transition. By incorporating Lie group metric evolution into a generalized Stroh formalism, we map the highly nonlinear geometric frustration onto an algebraic surface impedance matrix $\mathbf{H}$. For a semi-infinite hyperelastic half-space under finite compression, we analytically map the system to a one-dimensional Dirac Hamiltonian, where the macroscopic mechanical stretch acts as a tunable knob for the Dirac mass. We reveal that the onset of surface wrinkles marks a topological transition from a trivial to a non-trivial phase characterized by a quantized step in the winding number, naturally giving rise to a robust, macroscopically localized zero-energy edge state. This fundamental linkage unifies macroscopic symmetry breaking with the topological paradigm, opening a new theoretical pathway for programmable smart soft matter.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.18542v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.18542v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Surface wrinkling in a compressed hyperelastic solid can be reinterpreted as a topological phase transition, with mechanical stretch tuning a Dirac-like mass and triggering a change in winding number.</p>
-          <p><b>Engineering relevance:</b> This framework could enable predictive design of soft surfaces whose instability, localization, and patterning are programmed through geometry, loading, and material choice rather than treated as failure alone.</p>
-          <ul><li>Generalized Stroh formalism with Lie-group metric evolution to capture finite-strain geometric frustration.</li><li>Map the surface impedance matrix to an effective one-dimensional Dirac Hamiltonian.</li><li>Use winding-number topology to identify the onset of wrinkles and the associated zero-energy edge state.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports an analytical mapping for a semi-infinite hyperelastic half-space under finite compression, showing a quantized winding-number jump at the wrinkling onset.</p>
-          <p><b>Watch item:</b> The result is presented analytically for an idealized semi-infinite hyperelastic half-space, so validation under real material heterogeneity, finite thickness, and boundary imperfections will be important.</p>
-          <div class="tags"><span>#SoftMatter</span> <span>#SolidMechanics</span> <span>#TopologicalPhysics</span> <span>#SurfaceInstability</span> <span>#Hyperelasticity</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>47</strong></div>
-        <p class="date">2026-06-18</p>
-        <h2>Acceleration methods for the planar 3D ILSA hydraulic fracturing model</h2>
-        <p class="authors">V. I. Shukalo, A. V. Valov, A. N. Baykin</p>
-        <p class="abstract">Planar 3D models of hydraulic fracturing provide a practical balance between models with restrictive geometric assumptions and fully 3D simulators, capturing fractures with arbitrary planar footprints at moderate computational cost. Nevertheless, applications such as treatment design optimization and mini-frac test interpretation require large ensembles of simulations, for which the cost of planar 3D models remains a significant bottleneck. This work presents acceleration strategies for the planar 3D Implicit Level Set Algorithm (ILSA) to reduce simulation runtime while preserving numerical accuracy. A unified planar 3D ILSA scheme that consolidates the nested loops of the elastohydrodynamic solver and the front tracking algorithm into a single iterative process is introduced. A matrix splitting approach is applied to the linearized elastohydrodynamic system, moving the dense part of the elasticity operator to the right-hand side and yielding a sparse system matrix that can be solved more efficiently. Anderson acceleration is incorporated into the solution of the elastohydrodynamic system to improve convergence under varying fracture geometry. Additionally, a predictor--corrector scheme is examined with the proposed methods to assess their combined effect. Each technique is evaluated individually and in combination on both the reference and unified planar 3D ILSA schemes across five benchmark cases. Numerical experiments demonstrate that the unified scheme alone delivers an average 2.5x speedup, reaching 5.7x for the sandglass geometry. The combined application of all techniques achieves an average 4x speedup and up to 11x for the sandglass case, with the relative discrepancy in fracture aperture below 5% compared with the reference scheme.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.20025v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.20025v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A unified planar 3D ILSA solver, combined with matrix splitting and Anderson acceleration, substantially reduces hydraulic-fracture simulation time while keeping fracture-aperture error low.</p>
-          <p><b>Engineering relevance:</b> These speedups make planar 3D hydraulic-fracture models more practical for design optimization and mini-frac interpretation, where many simulations are needed.</p>
-          <ul><li>Consolidate the elastohydrodynamic and front-tracking loops into one iterative unified planar 3D ILSA scheme.</li><li>Use matrix splitting to move the dense elasticity contribution to the right-hand side, leaving a sparse system to solve.</li><li>Apply Anderson acceleration, optionally with a predictor-corrector step, to improve convergence as fracture geometry evolves.</li></ul>
-          <p><b>Evidence signal:</b> Across five benchmark cases, the unified scheme averaged 2.5× speedup, the full combination averaged 4×, and the sandglass case reached 11× speedup with fracture-aperture discrepancy below 5%.</p>
-          <p><b>Watch item:</b> The acceleration benefits may depend strongly on fracture geometry and solver coupling, so robustness should be checked case by case before deployment.</p>
-          <div class="tags"><span>#HydraulicFracturing</span> <span>#ComputationalMechanics</span> <span>#LevelSetMethod</span> <span>#AndersonAcceleration</span> <span>#FractureModeling</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>47</strong></div>
-        <p class="date">2026-06-17</p>
-        <h2>A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals</h2>
-        <p class="authors">Nils Much, Andreas Koch, Christoph Meier, Magdalena Schreter-Fleischhacker</p>
-        <p class="abstract">Predictive simulation of melt pool dynamics in laser-based processing of metals, e.g., laser beam welding or laser powder bed fusion additive manufacturing, requires accurate resolution of thermo-hydrodynamic interactions at the melt-gas interface. Here, evaporation-induced recoil pressure and temperature-dependent surface tension govern the flow. Because these mechanisms depend sensitively, often exponentially, on the interface temperature, reliable predictions demand highly accurate heat transfer models. Popular diffuse-interface formulations smear the extreme thermal gradients as typical for laser-metal interactions, leading to interface temperature errors that critically degrade the accuracy of interface force predictions and melt pool dynamics. We present a hybrid sharp-diffuse interface approach for high-fidelity modelling of melt pool thermo-hydrodynamics with rapid evaporation. The heat transfer problem is represented using a sharp-interface unfitted finite element (CutFEM) formulation, enabling accurate prediction of the temperature field. The multi-phase flow problem, characterized by large density ratios and complex interface dynamics, is accurately captured using a robust level-set-based one-fluid diffuse-interface finite element formulation. Consistent coupling is achieved by extending the sharp-interface temperature into a narrow interface region to evaluate temperature-dependent interface forces within the diffuse-interface flow framework. In practically relevant benchmarks, the sharp-interface thermal model exhibits second-order spatial convergence, enabling finite element sizes two orders of magnitude larger than the diffuse-interface approach for 1 accuracy. In a novel coupled thermo-hydrodynamic benchmark representative of laser-metal interactions, the hybrid approach is one order of magnitude more accurate than a purely diffuse-interface model on the same mesh. Robu</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.19556v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.19556v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A hybrid model uses a sharp-interface thermal solver and a diffuse-interface flow solver to better capture laser-induced melt pool dynamics with rapid evaporation.</p>
-          <p><b>Engineering relevance:</b> This enables more accurate prediction of recoil pressure, surface tension-driven flow, and melt pool behavior in laser welding and laser powder bed fusion.</p>
-          <ul><li>Sharp-interface CutFEM for accurate heat transfer and temperature gradients</li><li>Level-set one-fluid diffuse-interface FEM for multiphase flow with large density ratios</li><li>Couples both by extending temperature to the interface region for force evaluation</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports second-order spatial convergence for the thermal model and about one order-of-magnitude better accuracy than a purely diffuse-interface model on the same mesh.</p>
-          <p><b>Watch item:</b> The coupling depends on a consistent temperature extension near the interface, so implementation details may strongly affect stability and force accuracy.</p>
-          <div class="tags"><span>#LaserProcessing</span> <span>#MeltPoolDynamics</span> <span>#CutFEM</span> <span>#LevelSetMethod</span> <span>#ThermoHydrodynamics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>46</strong></div>
-        <p class="date">2026-06-18</p>
-        <h2>CoarseSolvers for Exascale Solution of Poisson Problems</h2>
-        <p class="authors">Thilina Ratnayaka, Paul Fischer, Luke Olson</p>
-        <p class="abstract">WepresentatwolevelSchwarzmethodasanalternativetoAlgebraicMultigridmethod(AMG) used as the last level (coarse) solver of the p-multigrid pMG preconditioner for pressure Poission equation resulting from Spectral/Finite element descretization of incompressible Navier-Stokes eqaution. Proposed Schwarz method consits of a local problem in the original pMG coarse space and a global coarse problem. Main contribution of the paper is a novel, structured and a non-nested coarse space for the global coarse problem. Structured nature of the proposed global coarse space enable communication-free interpolation between the original p-multgrid coarse space and the global coarse problem. We demonstrate the effectiveness of the proposed method compared to the state of the art AMG solver BoomerAMG by a series of experiments performed using Nek5000/RS, a suite of highly scalable incompressible Navier-Stokes solvers, on Summit/Frontier supercomputers at Oak Ridge Leadership Computing Facility.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.20496v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.20496v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A two-level Schwarz coarse solver with a structured, non-nested global coarse space can replace AMG as the coarse-level solver in p-multigrid for Poisson problems.</p>
-          <p><b>Engineering relevance:</b> This offers a scalable alternative for pressure Poisson solves in high-order incompressible CFD, targeting exascale performance on modern supercomputers.</p>
-          <ul><li>Local solve in the original p-multigrid coarse space</li><li>Global coarse problem built from a novel structured non-nested coarse space</li><li>Communication-free interpolation between local and global levels</li></ul>
-          <p><b>Evidence signal:</b> The method is evaluated against BoomerAMG using Nek5000/RS on Summit and Frontier, showing performance through a series of scalability experiments.</p>
-          <p><b>Watch item:</b> The structured coarse space may require careful implementation and integration with the existing p-multigrid hierarchy to preserve efficiency and robustness.</p>
-          <div class="tags"><span>#PoissonSolvers</span> <span>#SchwarzMethod</span> <span>#Multigrid</span> <span>#ExascaleComputing</span> <span>#CFD</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>44</strong></div>
-        <p class="date">2026-06-18</p>
-        <h2>SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design</h2>
-        <p class="authors">Kun Zeng, Yu Huo, Siyu Zhang, Yuecheng Zhuo, Yuquan Lu, Haoyue Liu</p>
-        <p class="abstract">Existing graph-based multi-agent system (MAS) designers mainly improve collaboration by optimizing communication topologies over predefined agents, roles, or groups. However, because each node remains a closed-set entity, these methods struggle to generalize to tasks that require unseen combinations of capabilities. We propose SIGMA, a skill-incidence graph framework that constructs agents as task-conditioned bundles of reusable skills. Given a task and a skill library, SIGMA predicts a skill-agent incidence matrix, composes agent node embeddings from selected skills, and decodes a communication topology over the constructed agents. During execution, skill-specific mailboxes route messages to the relevant assigned capabilities, making the incidence structure directly operational. Across six reasoning and coding benchmarks with three base LLMs, SIGMA achieves the best average performance and improves over CARD, the strongest non-compositional topology-based baseline, by 2.06, 2.36, and 1.75 points, respectively. It also shows stronger robustness to unseen skill libraries, with an average performance drop of only 0.96 points. These results suggest that compositional node construction is a complementary and important axis for multi-agent design beyond communication topology optimization. Code is available at https://anonymous.4open.science/r/SIGMA-2338/.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.19758v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.19758v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> SIGMA shows that multi-agent performance improves not only by optimizing communication, but also by composing agents from reusable skills via a task-conditioned skill-incidence graph.</p>
-          <p><b>Engineering relevance:</b> For computational engineering workflows, this suggests a more flexible way to build task-specific agent teams that can generalize to new capability combinations without redesigning the whole system.</p>
-          <ul><li>Predict a skill-agent incidence matrix from the task and skill library.</li><li>Construct each agent embedding by composing selected skills.</li><li>Decode inter-agent communication topology and route messages through skill-specific mailboxes.</li></ul>
-          <p><b>Evidence signal:</b> Across six reasoning and coding benchmarks with three base LLMs, SIGMA achieved the best average performance and outperformed CARD by 2.06, 2.36, and 1.75 points on the three base models, with only a 0.96-point average drop under unseen skill libraries.</p>
-          <p><b>Watch item:</b> The approach depends on the quality and coverage of the predefined skill library, so missing or poorly defined skills could limit compositional gains.</p>
-          <div class="tags"><span>#MultiAgentSystems</span> <span>#GraphLearning</span> <span>#CompositionalAI</span> <span>#LLMAgents</span> <span>#TopologyOptimization</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>44</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies</h2>
-        <p class="authors">Tom De Weer, Ole Sigmund, Gabriele Eichfelder</p>
-        <p class="abstract">Topology optimization produces optimized structures by minimizing an objective function under a set of constraints. While considerable research has focused on improving and extending such single-objective formulations, design is usually a trade-off between conflicting criteria. This brings topology optimization into the realm of multiobjective optimization. Unfortunately, cross-fertilization has been limited despite the long coexistence of these two fields. This work aims to bridge this gap through three contributions. The first is a theoretical comparison of two common scalarization techniques, the weighted-sum and $\varepsilon$-constraint method, to the more advanced Pascoletti-Serafini scalarization. The second contribution is a novel insight: the Pareto frontier in topology optimization contexts consists of pieces belonging to local fronts. This can cause disconnected and nonconvex fronts, in contrast to what is often seen in the literature. Finally, the third contribution is a numerical comparison of the scalarization methods, highlighting more uniform approximations obtained with the Pascoletti-Serafini scalarization and clustering observed for the weighted-sum scalarization. The paper contains a large number of bi-objective examples, including minimization of volume, compliance, maximum stress and dynamic compliance.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.16792v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.16792v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> In multiobjective topology optimization, the Pareto front can be disconnected and nonconvex because it is composed of pieces of local fronts, and scalarization choice strongly affects how well it is captured.</p>
-          <p><b>Engineering relevance:</b> For practical design trade-offs in structures, choosing a stronger scalarization method can yield more uniform and representative Pareto approximations across objectives such as compliance, stress, volume, and dynamic compliance.</p>
-          <ul><li>Compared weighted-sum, ε-constraint, and Pascoletti-Serafini scalarizations.</li><li>Developed theoretical comparisons of the three approaches for bi-objective topology optimization.</li><li>Ran multiple numerical bi-objective examples to assess front coverage and clustering behavior.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a large numerical study with many bi-objective topology optimization examples, showing more uniform Pareto approximations for Pascoletti-Serafini and clustering for weighted-sum.</p>
-          <p><b>Watch item:</b> Pareto fronts may be locally fragmented and nonconvex, so a single scalarization or coarse sampling can miss important design trade-offs.</p>
-          <div class="tags"><span>#TopologyOptimization</span> <span>#MultiobjectiveOptimization</span> <span>#ParetoFront</span> <span>#Scalarization</span> <span>#ComputationalMechanics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>43</strong></div>
-        <p class="date">2026-06-16</p>
-        <h2>Dimensionality Controls When Modularity Helps in Continual Learning</h2>
-        <p class="authors">Kathrin Korte, Christian Medeiros Adriano, Joachim Winther Pedersen, Eleni Nisioti, Sebastian Risi</p>
-        <p class="abstract">Compositional learning systems must balance plasticity, the ability to acquire new knowledge, with stability, the preservation of previously learned components, especially when tasks share structure and risk interference. We study how modular architecture, task similarity, and representational dimensionality jointly shape compositional continual learning in a sequential A-B-A paradigm, comparing a task-partitioned recurrent network to a single-network baseline while inducing high- and low-dimensional regimes via weight-scale manipulations. In a high-dimensional &quot;lazy&quot; regime, both architectures achieve similar performance and internal geometry, suggesting that explicit modular structure has little impact when representations are weakly constrained. In a lower-dimensional &quot;rich&quot; regime, modularity becomes decisive: the modular network develops graded task-specific subspaces that overlap for similar tasks, partially align for moderately dissimilar tasks, and separate for dissimilar tasks, yielding a more compositional and interpretable organization than the single network. These findings identify the representational regime induced by initialization scale, which co-varies with representational dimensionality, as a key factor governing when compositional, modular structure is functionally beneficial in continual learning, and support viewing safety and robustness as problems of adaptive allocation of representational subspaces rather than fixed separation versus sharing.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.17889v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17889v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Modularity only helps continual learning when the representation is sufficiently low-dimensional; in high-dimensional lazy regimes, modular and single-network models perform similarly.</p>
-          <p><b>Engineering relevance:</b> For compositional systems, the benefit of architectural modularity depends on representational regime, suggesting designers should tune initialization and capacity to encourage useful task subspaces rather than relying on hard separation alone.</p>
-          <ul><li>Sequential A-B-A continual learning setup</li><li>Compared a task-partitioned recurrent network against a single-network baseline</li><li>Manipulated weight scale to induce high- and low-dimensional representational regimes</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports performance and internal geometry comparisons across similar, moderately dissimilar, and dissimilar tasks, showing modular subspaces overlap, align, or separate depending on task similarity in the rich regime.</p>
-          <p><b>Watch item:</b> The conclusions are tied to a specific sequential task setup and weight-scale-induced regime, so results may not transfer directly to other architectures or more complex real-world continual learning settings.</p>
-          <div class="tags"><span>#ContinualLearning</span> <span>#Modularity</span> <span>#NeuralNetworks</span> <span>#RepresentationLearning</span> <span>#CompositionalAI</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>43</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>Phenotyping TPF via Self-Supervised Learning: A Label-Agnostic Framework with Expert Validation</h2>
-        <p class="authors">Miral Elnakib, Muhammad Saad, Ahmad Al-Kabbany</p>
-        <p class="abstract">The full potential of artificial intelligence in tibial plateau fracture characterisation remains unrealised, constrained by a fundamental dependency on labelled datasets whose consistency cannot be guaranteed: conventional classification schemes such as Schatzker and AO/OTA suffer from inter-observer variability, causing supervised models to learn human disagreement rather than stable fracture morphology. We design, implement, and validate a label-agnostic framework that eliminates this constraint by learning fracture representations directly from imaging data without observer-assigned labels. A RadImageNet-pretrained ResNet-50 encoder is fine-tuned on 154 cleaned knee radiographs using the SimCLR contrastive objective, preceded by a data cleaning protocol and followed by UMAP dimensionality reduction and k-means clustering to discover four imaging-derived phenotypes. Phenotype validity is assessed through a blinded expert review protocol administered to two independent clinicians. The four phenotypes demonstrate robust stability (bootstrap ARI = 0.319 +/- 0.041), strong internal cohesion (silhouette = 0.511), and coherence ratings of 3-5/5 from both reviewers under blinded conditions; one phenotype was unanimously identified as exhibiting comminution -- a high-complexity feature isolated without any supervisory signal. Inter-partition comparison against Schatzker labels yields ARI = 0.013, confirming orthogonality to conventional classification boundaries. Notably, expert reviewers anchored to established classification vocabularies perceived imaging-derived groups as heterogeneous precisely where Schatzker alignment was lowest, suggesting that Schatzker-trained perception and label-agnostic embedding geometry measure orthogonal dimensions. These findings establish label-agnostic SSL phenotyping as a reproducible and clinically interpretable complement to conventional classification.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.17295v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17295v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A label-agnostic self-supervised learning pipeline can discover clinically meaningful tibial plateau fracture phenotypes directly from radiographs, avoiding dependence on inconsistent human labels.</p>
-          <p><b>Engineering relevance:</b> This provides a reproducible AI workflow for fracture morphology characterization that can complement conventional classification systems and support more robust downstream decision-making.</p>
-          <ul><li>Fine-tuned a RadImageNet-pretrained ResNet-50 with SimCLR on 154 cleaned knee radiographs</li><li>Reduced embeddings with UMAP and clustered them with k-means to identify four imaging-derived phenotypes</li><li>Validated phenotype coherence through blinded review by two independent clinicians</li></ul>
-          <p><b>Evidence signal:</b> The four clusters showed moderate bootstrap stability (ARI = 0.319 ± 0.041), strong cohesion (silhouette = 0.511), low overlap with Schatzker labels (ARI = 0.013), and one phenotype was unanimously judged to show comminution.</p>
-          <p><b>Watch item:</b> The dataset is small and single-domain, so cluster stability and clinical generalization should be confirmed on larger, multi-center cohorts before deployment.</p>
-          <div class="tags"><span>#SelfSupervisedLearning</span> <span>#MedicalImagingAI</span> <span>#FracturePhenotyping</span> <span>#TibialPlateauFracture</span> <span>#ComputationalEngineering</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>43</strong></div>
-        <p class="date">2026-06-15</p>
-        <h2>STORX: An Open-Source Object-Oriented Framework for Shape and Topology Optimization in MATLAB</h2>
-        <p class="authors">Amir M. Mirzendehdel, Krishnan Suresh</p>
-        <p class="abstract">This paper presents STORX: Shape and Topology Optimization for Research and Experimentation, an open-source MATLAB-based educational framework for learning and teaching computational design optimization. STORX provides a platform for parametric and level-set shape optimization, as well as topology optimization methods including density, level-set, and topological sensitivity approaches such as evolutionary and Pareto-tracing methods. All modules follow a consistent object-oriented structure and integrate visualization, sensitivity analysis, and finite element routines, enabling users to explore the continuum between shape and topology optimization in a transparent and reproducible manner. The code is designed to complement graduate-level coursework and independent research by emphasizing modularity and extensibility through a clear separation of intent. Core software interfaces are defined via abstract base classes, enabling new objective functionals and design/manufacturing constraints to be implemented by adding derived classes without modifying the core code. The paper also describes the software architecture and demonstrates how the framework maps mathematical formulations directly to executable code through a series of illustrative problems.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2606.17291v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2606.17291v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> STORX is a modular, open-source MATLAB framework that unifies shape and topology optimization methods in one object-oriented environment for learning, experimentation, and reproducible research.</p>
-          <p><b>Engineering relevance:</b> It helps engineers and researchers prototype optimization workflows faster by separating model intent from implementation while supporting both design optimization and visualization in a single codebase.</p>
-          <ul><li>Abstract base classes define core interfaces for objectives, sensitivities, and constraints.</li><li>Supports parametric and level-set shape optimization plus density, level-set, and topological-sensitivity topology optimization.</li><li>Integrates finite element analysis, sensitivity computation, and visualization with extensible derived classes.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports illustrative problems and software architecture demonstrations, but not a quantitative benchmark study or performance comparison.</p>
-          <p><b>Watch item:</b> Its MATLAB-centric, educational design may limit scalability and requires careful implementation to maintain consistency across new derived modules.</p>
-          <div class="tags"><span>#TopologyOptimization</span> <span>#ShapeOptimization</span> <span>#MATLAB</span> <span>#OpenSourceSoftware</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> A weighted-graph abstraction turns the complicated mesh-overlap communication pattern in B-spline s-version FEM into a tractable domain-decomposition problem for distributed-memory parallelization.</p>
+          <p><b>Engineering relevance:</b> This makes locally refined BSFEM/SFEM practical for large-scale solid mechanics and multiphysics simulations on clusters by simplifying communication design and balancing workload.</p>
+          <ul><li>Model overlapping mesh interactions as a weighted graph.</li><li>Use graph partitioning to build distributed-memory domain decomposition and communication structures.</li><li>Assign node weights to better balance localized computational loads.</li></ul>
+          <p><b>Evidence signal:</b> The approach was validated on a 3D steady Poisson problem, demonstrating distributed-memory parallel computation and reduced total runtime with weighted load balancing.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of the graph model and partitioning strategy, so irregular overlap patterns may still create communication overhead or load imbalance.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#BSpline</span> <span>#GraphPartitioning</span> <span>#DistributedMemory</span> <span>#ScientificComputing</span></div>
         </section>
       </article>
     </section>

@@ -1,9 +1,57 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-06-22
+Generated: 2026-06-23
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
-## 1. Nonlinear Geotechnical Analysis Using a Polygonal Cell-Based Smoothed Finite Element Framework
+## 1. One-Step Flow Matching for Generative Modeling of Path-Dependent Physical Fields
+
+- Date: 2026-06-22
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.22752v1
+- PDF: https://arxiv.org/pdf/2606.22752v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-one_step_flow_matching_for_generative_modeling_of_path_dependent_physical_fields_infographic.json
+
+## 2. Attention mechanism for scalable mesh-based neural surrogates of free-surface fluids
+
+- Date: 2026-06-22
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.23251v1
+- PDF: https://arxiv.org/pdf/2606.23251v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-attention_mechanism_for_scalable_mesh_based_neural_surrogates_of_free_surface_fluids_infographic.json
+
+## 3. A matrix-free, differentiable PyTorch solver for phase-field fracture: Formulation, benchmarks, and inverse analysis
+
+- Date: 2026-06-22
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2606.23458v1
+- PDF: https://arxiv.org/pdf/2606.23458v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-a_matrix_free_differentiable_pytorch_solver_for_phase_field_fracture_formulation_benchmark_infographic.json
+
+## 4. High performance construction materials fracture and high cycle fatigue assessment based on accelerated PF-CZM
+
+- Date: 2026-06-22
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2606.23468v1
+- PDF: https://arxiv.org/pdf/2606.23468v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-high_performance_construction_materials_fracture_and_high_cycle_fatigue_assessment_based_o_infographic.json
+
+## 5. Hierarchical Granular Metamaterials
+
+- Date: 2026-06-22
+- Category: Composites and Metamaterials
+- arXiv: https://arxiv.org/abs/2606.22795v1
+- PDF: https://arxiv.org/pdf/2606.22795v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-hierarchical_granular_metamaterials_infographic.json
+
+## 6. Comparative Evaluation of Machine Learning and Deep Learning Models for Wound-Rotor Synchronous Motor Performance Prediction
+
+- Date: 2026-06-19
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.21230v1
+- PDF: https://arxiv.org/pdf/2606.21230v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-19-arxiv-comparative_evaluation_of_machine_learning_and_deep_learning_models_for_wound_rotor_synchr_infographic.json
+
+## 7. Nonlinear Geotechnical Analysis Using a Polygonal Cell-Based Smoothed Finite Element Framework
 
 - Date: 2026-06-18
 - Category: FEM Surrogates
@@ -11,7 +59,79 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20384v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-nonlinear_geotechnical_analysis_using_a_polygonal_cell_based_smoothed_finite_element_frame_infographic.json
 
-## 2. Self-Supervised Mask-Aware Transformers for Fault-Tolerant FBG Force Sensing in Minimally Invasive Surgical Robotics
+## 8. A posteriori error bounds for finite element approximations of time-dependent mean field games
+
+- Date: 2026-06-22
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.23613v1
+- PDF: https://arxiv.org/pdf/2606.23613v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-a_posteriori_error_bounds_for_finite_element_approximations_of_time_dependent_mean_field_g_infographic.json
+
+## 9. Glass-based physical models for tissue mechanics
+
+- Date: 2026-06-21
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2606.22281v1
+- PDF: https://arxiv.org/pdf/2606.22281v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-21-arxiv-glass_based_physical_models_for_tissue_mechanics_infographic.json
+
+## 10. Design and Development of a Neuromorphic Silicon Suite: PVT Sensing, Stochastic LIF Inference, On-Chip STDP Learning, and Crossbar Programming
+
+- Date: 2026-06-21
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.22635v1
+- PDF: https://arxiv.org/pdf/2606.22635v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-21-arxiv-design_and_development_of_a_neuromorphic_silicon_suite_pvt_sensing_stochastic_lif_inferenc_infographic.json
+
+## 11. High-Order Invariant-Domain Preserving Continuous Finite Elements via Graph-Poisson Convex Limiting
+
+- Date: 2026-06-22
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.23397v1
+- PDF: https://arxiv.org/pdf/2606.23397v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-high_order_invariant_domain_preserving_continuous_finite_elements_via_graph_poisson_convex_infographic.json
+
+## 12. DT-GOL: Dual-Track Geometric Online Learning in Nonstationary Environment with Label Delay
+
+- Date: 2026-06-22
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.22950v1
+- PDF: https://arxiv.org/pdf/2606.22950v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-dt_gol_dual_track_geometric_online_learning_in_nonstationary_environment_with_label_delay_infographic.json
+
+## 13. SamatNext v0.2-B: An Exploratory Study of RMS-Normalized Hybrid Decoders for Curriculum Retention in Small Code Models
+
+- Date: 2026-06-20
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.22248v1
+- PDF: https://arxiv.org/pdf/2606.22248v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-20-arxiv-samatnext_v0_2_b_an_exploratory_study_of_rms_normalized_hybrid_decoders_for_curriculum_ret_infographic.json
+
+## 14. Physics-Guided Dual-Stream Heterogeneous Graph Neural Network for Predicting Full-Field Structural Response of Stiffened Panels
+
+- Date: 2026-06-18
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.20916v1
+- PDF: https://arxiv.org/pdf/2606.20916v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-physics_guided_dual_stream_heterogeneous_graph_neural_network_for_predicting_full_field_st_infographic.json
+
+## 15. RECALL: Recovery Experience Collection for Active Lifelong Learning in Vision-Language-Action Models
+
+- Date: 2026-06-22
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2606.23617v1
+- PDF: https://arxiv.org/pdf/2606.23617v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-recall_recovery_experience_collection_for_active_lifelong_learning_in_vision_language_acti_infographic.json
+
+## 16. Factored Sparse Approximate Inverse Preconditioning via Spectral Optimization
+
+- Date: 2026-06-22
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2606.22742v1
+- PDF: https://arxiv.org/pdf/2606.22742v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-22-arxiv-factored_sparse_approximate_inverse_preconditioning_via_spectral_optimization_infographic.json
+
+## 17. Self-Supervised Mask-Aware Transformers for Fault-Tolerant FBG Force Sensing in Minimally Invasive Surgical Robotics
 
 - Date: 2026-06-17
 - Category: Fracture and Damage
@@ -19,15 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.18628v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-self_supervised_mask_aware_transformers_for_fault_tolerant_fbg_force_sensing_in_minimally_infographic.json
 
-## 3. A Differentiable GPU-Accelerated Finite Element Framework for Inverse Characterization of Finite-Strain Anisotropic Plasticity
-
-- Date: 2026-06-16
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.17390v1
-- PDF: https://arxiv.org/pdf/2606.17390v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-a_differentiable_gpu_accelerated_finite_element_framework_for_inverse_characterization_of_infographic.json
-
-## 4. TaCauchy: An Extensible FEM Framework for Vision-Based Tactile Simulation
+## 18. TaCauchy: An Extensible FEM Framework for Vision-Based Tactile Simulation
 
 - Date: 2026-06-18
 - Category: FEM Surrogates
@@ -35,7 +147,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20426v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-tacauchy_an_extensible_fem_framework_for_vision_based_tactile_simulation_infographic.json
 
-## 5. eCNNTO: A Highly Generalizable ConvNet for Accelerating Topology Optimization
+## 19. eCNNTO: A Highly Generalizable ConvNet for Accelerating Topology Optimization
 
 - Date: 2026-06-18
 - Category: FEM Surrogates
@@ -43,122 +155,10 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19921v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-ecnnto_a_highly_generalizable_convnet_for_accelerating_topology_optimization_infographic.json
 
-## 6. Domain decomposition methods for the Stokes-Biot model of fluid-poroelastic structure interaction
+## 20. Distributed-memory parallelization of B-spline based s-version of the finite element method via weighted graph abstraction
 
-- Date: 2026-06-15
+- Date: 2026-06-19
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.17363v1
-- PDF: https://arxiv.org/pdf/2606.17363v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-domain_decomposition_methods_for_the_stokes_biot_model_of_fluid_poroelastic_structure_inte_infographic.json
-
-## 7. A minimizing-movement framework for geometric gradient flows with admissible tangential motion
-
-- Date: 2026-06-16
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.18177v1
-- PDF: https://arxiv.org/pdf/2606.18177v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-a_minimizing_movement_framework_for_geometric_gradient_flows_with_admissible_tangential_mo_infographic.json
-
-## 8. Compositionality Emerges in a Narrow Depth-Connectivity Regime: Architecture Constraints and Solution Manifolds
-
-- Date: 2026-06-18
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2606.19941v1
-- PDF: https://arxiv.org/pdf/2606.19941v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-compositionality_emerges_in_a_narrow_depth_connectivity_regime_architecture_constraints_an_infographic.json
-
-## 9. GrapNet: A Programmable Dynamic-Architecture Neural Graph Substrate
-
-- Date: 2026-06-17
-- Category: AI Solid Mechanics
-- arXiv: https://arxiv.org/abs/2606.18923v1
-- PDF: https://arxiv.org/pdf/2606.18923v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-grapnet_a_programmable_dynamic_architecture_neural_graph_substrate_infographic.json
-
-## 10. PF-DIC: Phase field digital image correlation for integrated full-field displacement, strain, and damage measurements
-
-- Date: 2026-06-15
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2606.16850v1
-- PDF: https://arxiv.org/pdf/2606.16850v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-pf_dic_phase_field_digital_image_correlation_for_integrated_full_field_displacement_strain_infographic.json
-
-## 11. GUMP-Net: An interpretable model-data-driven intelligent algorithm for multi-class pelvic segmentation
-
-- Date: 2026-06-17
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2606.19215v1
-- PDF: https://arxiv.org/pdf/2606.19215v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-gump_net_an_interpretable_model_data_driven_intelligent_algorithm_for_multi_class_pelvic_s_infographic.json
-
-## 12. Elastic Surface Instability as a Topological Phase Transition
-
-- Date: 2026-06-16
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2606.18542v1
-- PDF: https://arxiv.org/pdf/2606.18542v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-elastic_surface_instability_as_a_topological_phase_transition_infographic.json
-
-## 13. Acceleration methods for the planar 3D ILSA hydraulic fracturing model
-
-- Date: 2026-06-18
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.20025v1
-- PDF: https://arxiv.org/pdf/2606.20025v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-acceleration_methods_for_the_planar_3d_ilsa_hydraulic_fracturing_model_infographic.json
-
-## 14. A hybrid sharp-diffuse interface approach to accurately model melt pool dynamics with rapid evaporation in laser-based processing of metals
-
-- Date: 2026-06-17
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.19556v1
-- PDF: https://arxiv.org/pdf/2606.19556v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-17-arxiv-a_hybrid_sharp_diffuse_interface_approach_to_accurately_model_melt_pool_dynamics_with_rapi_infographic.json
-
-## 15. CoarseSolvers for Exascale Solution of Poisson Problems
-
-- Date: 2026-06-18
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.20496v1
-- PDF: https://arxiv.org/pdf/2606.20496v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-coarsesolvers_for_exascale_solution_of_poisson_problems_infographic.json
-
-## 16. SIGMA: Skill-Incidence Graphs for Compositional Multi-Agent Design
-
-- Date: 2026-06-18
-- Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2606.19758v1
-- PDF: https://arxiv.org/pdf/2606.19758v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-18-arxiv-sigma_skill_incidence_graphs_for_compositional_multi_agent_design_infographic.json
-
-## 17. Novel insights into Pareto fronts in multiobjective topology optimization and a comparative study of scalarization strategies
-
-- Date: 2026-06-15
-- Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2606.16792v1
-- PDF: https://arxiv.org/pdf/2606.16792v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-novel_insights_into_pareto_fronts_in_multiobjective_topology_optimization_and_a_comparativ_infographic.json
-
-## 18. Dimensionality Controls When Modularity Helps in Continual Learning
-
-- Date: 2026-06-16
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2606.17889v1
-- PDF: https://arxiv.org/pdf/2606.17889v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-16-arxiv-dimensionality_controls_when_modularity_helps_in_continual_learning_infographic.json
-
-## 19. Phenotyping TPF via Self-Supervised Learning: A Label-Agnostic Framework with Expert Validation
-
-- Date: 2026-06-15
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2606.17295v1
-- PDF: https://arxiv.org/pdf/2606.17295v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-phenotyping_tpf_via_self_supervised_learning_a_label_agnostic_framework_with_expert_valida_infographic.json
-
-## 20. STORX: An Open-Source Object-Oriented Framework for Shape and Topology Optimization in MATLAB
-
-- Date: 2026-06-15
-- Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2606.17291v1
-- PDF: https://arxiv.org/pdf/2606.17291v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-15-arxiv-storx_an_open_source_object_oriented_framework_for_shape_and_topology_optimization_in_matl_infographic.json
+- arXiv: https://arxiv.org/abs/2606.21142v1
+- PDF: https://arxiv.org/pdf/2606.21142v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-19-arxiv-distributed_memory_parallelization_of_b_spline_based_s_version_of_the_finite_element_metho_infographic.json

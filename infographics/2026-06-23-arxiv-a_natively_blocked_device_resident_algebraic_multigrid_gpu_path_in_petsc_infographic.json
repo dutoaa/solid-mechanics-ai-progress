@@ -1,0 +1,24 @@
+{
+  "key_insight": "Keeping smoothed-aggregation AMG fully device-resident in a native blocked matrix format removes scalar-format overhead and improves GPU performance for elasticity problems with rectangular block structure.",
+  "engineering_relevance": "This enables faster and more memory-efficient multigrid solves for large finite-element elasticity systems on multi-GPU A100 platforms, especially when coarse-operator recomputation is repeated across solves.",
+  "method": [
+    "Added a portable Kokkos-backed blocked matrix type in PETSc with rectangular-block kernels.",
+    "Kept AMG setup, Galerkin recompute, and V-cycle operations in blocked form without expanding to scalars.",
+    "Implemented blocked off-process prolongator gather via PetscSF and blocked COO assembly for dense rectangular blocks."
+  ],
+  "evidence_signal": "On 3D elasticity problems up to 128^3 grid points, the blocked format fit in GPU memory where cuSPARSE did not, and achieved up to 1.24x faster V-cycles, 1.42x faster SpMV, and 2.27x faster coarse-operator recomputation at 64 GPUs.",
+  "watch_item": "The approach depends on specialized blocked kernels and rectangular block support, so portability and performance may vary across GPU libraries and problem block layouts.",
+  "hashtags": [
+    "#GPUAMG",
+    "#PETSc",
+    "#AlgebraicMultigrid",
+    "#SolidMechanics",
+    "#Kokkos"
+  ],
+  "paper_id": "2026-06-23-arxiv-a_natively_blocked_device_resident_algebraic_multigrid_gpu_path_in_petsc",
+  "paper_title": "A Natively Blocked, Device-Resident Algebraic Multigrid GPU Path in PETSc",
+  "paper_date": "2026-06-23",
+  "paper_category": "Constitutive Modeling",
+  "generated_at": "2026-06-24T11:40:30",
+  "generator": "openai"
+}

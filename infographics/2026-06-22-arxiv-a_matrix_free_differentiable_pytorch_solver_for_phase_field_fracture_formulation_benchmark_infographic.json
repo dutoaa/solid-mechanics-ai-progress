@@ -1,24 +1,24 @@
 {
-  "key_insight": "A fully differentiable, matrix-free PyTorch phase-field fracture solver can run on CPUs and GPUs without custom compiled extensions while supporting both forward simulation and inverse material identification.",
-  "engineering_relevance": "It enables scalable fracture simulation and parameter calibration inside modern ML/optimization workflows, making damage mechanics more accessible for large meshes and cross-platform deployment.",
+  "key_insight": "A fully differentiable, matrix-free PyTorch phase-field fracture solver can run on CPUs and GPUs without custom compiled extensions while supporting both forward simulation and inverse parameter identification.",
+  "engineering_relevance": "This enables scalable fracture simulation and gradient-based calibration for solid mechanics workflows, with direct compatibility for optimization and machine-learning pipelines.",
   "method": [
-    "Element-level finite-element operations are expressed as tensor contractions with scatter-based accumulation, avoiding global sparse stiffness assembly in the explicit dynamic loop.",
-    "The solver supports AT1/AT2 regularizations, spectral/volumetric-deviatoric/star-convex energy splits, and plane strain or plane stress options.",
-    "A custom backward rule uses implicit differentiation through the CG solve for the bound-constrained damage problem, keeping memory use independent of CG iterations."
+    "Element-wise finite-element tensor contractions with scatter-based accumulation replace global sparse stiffness assembly in explicit dynamics.",
+    "Supports AT1/AT2 phase-field formulations, multiple energy splits, and plane strain/plane stress settings.",
+    "Uses PyTorch autograd for explicit kernels and a custom implicit backward rule for the bound-constrained damage solve via CG-based differentiation."
   ],
-  "evidence_signal": "The authors benchmarked four dynamic and two quasi-static fracture cases, reported operation on meshes of about 10^6 nodes on a single NVIDIA A100 GPU, and recovered Gc with relative error below 10^-3 in inverse tests.",
-  "watch_item": "Performance and accuracy will still depend on the CG tolerance, damage-solve conditioning, and GPU memory bandwidth despite the matrix-free design.",
+  "evidence_signal": "The solver was benchmarked on four dynamic and two quasi-static fracture cases and recovered fracture energy $G_c$ with relative error below 10^-3 in a few L-BFGS steps for glass and alumina.",
+  "watch_item": "Performance and scalability depend on careful GPU memory management and CG convergence in the implicit damage solve, especially for very large meshes.",
   "hashtags": [
     "#PhaseFieldFracture",
     "#PyTorch",
-    "#DifferentiableMechanics",
-    "#GPUComputing",
-    "#InverseAnalysis"
+    "#DifferentiableSimulation",
+    "#ComputationalMechanics",
+    "#InverseProblems"
   ],
   "paper_id": "2026-06-22-arxiv-a_matrix_free_differentiable_pytorch_solver_for_phase_field_fracture_formulation_benchmark",
   "paper_title": "A matrix-free, differentiable PyTorch solver for phase-field fracture: Formulation, benchmarks, and inverse analysis",
   "paper_date": "2026-06-22",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-06-24T11:40:00",
+  "generated_at": "2026-06-25T11:33:50",
   "generator": "openai"
 }

@@ -1,13 +1,13 @@
 {
-  "key_insight": "Instead of protecting LLM weights directly, the paper protects monosemantic SAE features to better preserve prior knowledge during continual learning.",
-  "engineering_relevance": "This suggests a more selective and memory-efficient way to reduce catastrophic forgetting in large models, which is important for deploying adaptive AI systems in evolving engineering workflows.",
+  "key_insight": "The paper argues that protecting LLM knowledge works better in sparse activation-feature space than in weight space, because SAE features isolate concepts more cleanly than individual weights.",
+  "engineering_relevance": "For continual learning in large models, this offers a more selective and memory-efficient regularization strategy that reduces catastrophic forgetting without storing past-task data.",
   "method": [
-    "Use a pretrained Sparse Autoencoder to map activations into a sparse, interpretable feature space.",
-    "Build a compact mask from current-task data and regularize only the protected SAE features during later training.",
-    "Frame the approach as constrained optimization, with EWC emerging as a special case of one-sided weight-space protection."
+    "Use pretrained Sparse Autoencoders to map activations into a monosemantic feature basis.",
+    "Build a compact feature mask from current-task data to identify important concepts to protect.",
+    "Regularize updates in activation space, with EWC emerging as a special weight-space case under one-sided penalties."
   ],
-  "evidence_signal": "On TRACE and MedCL, the method outperformed prior non-task-specific continual learning approaches, including traditional weight-space regularization such as EWC.",
-  "watch_item": "The approach depends on having a useful pretrained SAE feature dictionary and a reliable mask construction step, which may add setup complexity and sensitivity to representation quality.",
+  "evidence_signal": "On TRACE and MedCL, the approach outperforms standard weight-space regularization such as EWC and is the strongest among methods that do not add task-specific architectural components.",
+  "watch_item": "Performance depends on a quality SAE basis and mask construction, so weak feature dictionaries or shifting activations could reduce selectivity and protection.",
   "hashtags": [
     "#ContinualLearning",
     "#LLM",
@@ -19,6 +19,6 @@
   "paper_title": "From Weights to Features: SAE-Guided Activation Regularization for LLM Continual Learning",
   "paper_date": "2026-06-25",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-06-26T11:40:01",
+  "generated_at": "2026-06-27T10:53:43",
   "generator": "openai"
 }

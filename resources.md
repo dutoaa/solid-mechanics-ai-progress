@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-06-27
+Generated: 2026-06-28
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. A hybrid IFENN solver for generalizable modeling of phase-field fracture initiation and propagation

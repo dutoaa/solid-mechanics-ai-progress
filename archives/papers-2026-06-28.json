@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2606.27177v1"
       }
     ],
-    "score": 93,
+    "score": 98,
     "infographic": {
-      "key_insight": "A hybrid IFENN framework can learn phase-field fracture initiation and propagation on one benchmark geometry and generalize to unseen geometries by combining FEM with specialized neural surrogates for the coupled field.",
-      "engineering_relevance": "This provides a faster offline-training route for fracture simulations while preserving physics-based accuracy, making phase-field fracture modeling more practical for complex engineering structures.",
+      "key_insight": "A hybrid IFENN model can learn phase-field fracture initiation and crack growth with a once-trained neural surrogate coupled to FEM, enabling generalizable predictions across new geometries.",
+      "engineering_relevance": "This offers a lower-cost path to simulate fracture evolution in solid mechanics while preserving physics-based equilibrium and improving applicability beyond the training case.",
       "method": [
-        "FEM solves mechanical equilibrium in the coupled mechanics problem.",
-        "DeepOKAN models the phase-field diffusion equation during crack initiation.",
-        "A CNN is used for the propagation stage, with artificial far-field boundary conditions to improve extrapolation."
+        "FEM handles mechanical equilibrium in the coupled solver.",
+        "DeepOKAN predicts phase-field diffusion during crack initiation; CNN handles propagation.",
+        "Both networks are trained once on a benchmark geometry using physics-informed sampling from the fracture process zone."
       ],
-      "evidence_signal": "The paper reports physics-informed training on only a small number of increments and strategically sampled Gauss points, then evaluates the approach on both the training benchmark and unseen geometries.",
-      "watch_item": "Generalization depends on careful handling of far-field extrapolation, so the artificial boundary conditions and training-point selection may be important to reproduce robustly.",
+      "evidence_signal": "The abstract reports accurate and flexible performance on both the training geometry and unseen geometries, using only a small number of training increments and strategically sampled Gauss points.",
+      "watch_item": "Extrapolation in far-field regions requires artificial boundary conditions, so deployment must carefully enforce near-zero phase-field behavior away from the crack tip.",
       "hashtags": [
         "#PhaseFieldFracture",
         "#ComputationalMechanics",
         "#PhysicsInformedML",
-        "#FiniteElementMethod",
-        "#FractureModeling"
+        "#HybridFEMNN",
+        "#FractureSimulation"
       ],
       "paper_id": "2026-06-25-arxiv-a_hybrid_ifenn_solver_for_generalizable_modeling_of_phase_field_fracture_initiation_and_pr",
       "paper_title": "A hybrid IFENN solver for generalizable modeling of phase-field fracture initiation and propagation",
       "paper_date": "2026-06-25",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-28T11:00:05",
+      "generated_at": "2026-06-27T10:53:38",
       "generator": "openai"
     }
   },
@@ -77,29 +77,29 @@
         "url": "https://arxiv.org/pdf/2606.22752v1"
       }
     ],
-    "score": 71,
+    "score": 76,
     "infographic": {
-      "key_insight": "A transformer-based flow matching model can generate path-dependent plastic stress fields in one step by operating in a VAE latent space and treating the time evolution as video synthesis.",
-      "engineering_relevance": "This offers a fast surrogate for costly FEM simulations of nonlinear, geometry-dependent loading paths, especially for high-resolution studies where repeated time stepping is expensive.",
+      "key_insight": "A transformer-based flow matching model can generate high-resolution path-dependent plastic stress fields in one step by treating the full loading history as a video in latent space.",
+      "engineering_relevance": "This offers a fast surrogate for finite element analysis of complex geometries and history-dependent constitutive response, enabling much cheaper simulation workflows.",
       "method": [
-        "FM model with transformer backbone in latent VAE space",
-        "Generates full stress-field trajectories across all time steps as a video-like sequence",
-        "Uses non-Gaussian source distribution, token-level loading embeddings, and auxiliary networks to reduce path crossings and improve conditioning"
+        "VAE latent-space generation of full stress-field trajectories",
+        "Transformer flow matching with a non-Gaussian source distribution to reduce path crossings",
+        "Token-level loading embeddings plus two auxiliary networks for better path-dependent conditioning"
       ],
-      "evidence_signal": "The abstract reports accurate high-resolution generation from a limited dataset and speedups of 6–7× over CPU FEM and about two orders of magnitude on consumer GPUs.",
-      "watch_item": "Performance may depend on careful training of the latent representation, loading embeddings, and non-Gaussian transport design, so generalization to unseen material laws or loading regimes should be validated.",
+      "evidence_signal": "The abstract reports accurate high-resolution generation with limited training data and a speedup of 6–7× on CPUs and about two orders of magnitude on consumer GPUs versus FEM.",
+      "watch_item": "Performance depends on representative training paths and geometries, so extrapolation to unseen loading histories or constitutive regimes may be unreliable.",
       "hashtags": [
+        "#FEMSurrogates",
         "#FlowMatching",
         "#PhysicsAI",
-        "#ComputationalMechanics",
-        "#FEMSurrogate",
-        "#Plasticity"
+        "#Plasticity",
+        "#GenerativeModeling"
       ],
       "paper_id": "2026-06-22-arxiv-one_step_flow_matching_for_generative_modeling_of_path_dependent_physical_fields",
       "paper_title": "One-Step Flow Matching for Generative Modeling of Path-Dependent Physical Fields",
       "paper_date": "2026-06-22",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-28T11:00:08",
+      "generated_at": "2026-06-27T10:53:41",
       "generator": "openai"
     }
   },
@@ -129,29 +129,29 @@
         "url": "https://arxiv.org/pdf/2606.26629v1"
       }
     ],
-    "score": 70,
+    "score": 75,
     "infographic": {
-      "key_insight": "Instead of protecting individual weights, the paper protects learned concepts in activation space using Sparse Autoencoder (SAE) features, which better preserves knowledge during continual learning in LLMs.",
-      "engineering_relevance": "For continual fine-tuning of large models, feature-level regularization offers a more selective and memory-efficient alternative to weight-space methods like EWC, improving stability without storing past data.",
+      "key_insight": "The paper argues that protecting LLM knowledge works better in sparse activation-feature space than in weight space, because SAE features isolate concepts more cleanly than individual weights.",
+      "engineering_relevance": "For continual learning in large models, this offers a more selective and memory-efficient regularization strategy that reduces catastrophic forgetting without storing past-task data.",
       "method": [
-        "Use pretrained SAEs as a monosemantic feature dictionary for the model’s activations.",
-        "Build a compact task-specific feature mask from current-task data and retain only the mask for later training.",
-        "Apply an activation-space regularizer that balances stability and plasticity; EWC emerges as a special weight-space special case."
+        "Use pretrained Sparse Autoencoders to map activations into a monosemantic feature basis.",
+        "Build a compact feature mask from current-task data to identify important concepts to protect.",
+        "Regularize updates in activation space, with EWC emerging as a special weight-space case under one-sided penalties."
       ],
-      "evidence_signal": "On TRACE and MedCL continual learning benchmarks, the method outperforms non-architectural baselines, including EWC, and the abstract reports that SAE features separate task-relevant representations far better than the weight basis.",
-      "watch_item": "The approach depends on a good pretrained SAE and a reliable feature mask, so performance may be sensitive to SAE quality and mask construction.",
+      "evidence_signal": "On TRACE and MedCL, the approach outperforms standard weight-space regularization such as EWC and is the strongest among methods that do not add task-specific architectural components.",
+      "watch_item": "Performance depends on a quality SAE basis and mask construction, so weak feature dictionaries or shifting activations could reduce selectivity and protection.",
       "hashtags": [
         "#ContinualLearning",
         "#LLM",
         "#SparseAutoencoder",
         "#CatastrophicForgetting",
-        "#Regularization"
+        "#ActivationRegularization"
       ],
       "paper_id": "2026-06-25-arxiv-from_weights_to_features_sae_guided_activation_regularization_for_llm_continual_learning",
       "paper_title": "From Weights to Features: SAE-Guided Activation Regularization for LLM Continual Learning",
       "paper_date": "2026-06-25",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-28T11:00:10",
+      "generated_at": "2026-06-27T10:53:43",
       "generator": "openai"
     }
   },
@@ -180,29 +180,29 @@
         "url": "https://arxiv.org/pdf/2606.27347v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "A fully open-weight multilingual pipeline can turn unstructured news text into signed, temporal political-elite knowledge graphs with high extraction accuracy.",
-      "engineering_relevance": "The framework shows how scalable entity-resolution and constrained relation extraction can automate large, cross-lingual network mapping from raw text, enabling reproducible computational social science at scale.",
+      "key_insight": "The paper presents an open-weight multilingual pipeline that turns news text into signed, temporal political-elite knowledge graphs by jointly extracting entities and directed relations across languages.",
+      "engineering_relevance": "It offers a scalable, reproducible alternative to manual coding and proprietary LLM APIs for building structured relational datasets from large unstructured corpora.",
       "method": [
-        "Span-based NER detects entities in multilingual news corpora.",
-        "A three-stage linking cascade resolves mentions to Wikidata identifiers.",
-        "An ontology-constrained mixture-of-experts model with guided decoding extracts directed, signed relations and builds temporal knowledge graphs."
+        "Span-based NER identifies person and organization mentions in multilingual news.",
+        "A three-stage linking cascade resolves mentions to language-independent Wikidata IDs.",
+        "An ontology-constrained mixture-of-experts model with guided decoding extracts directed, signed relations."
       ],
-      "evidence_signal": "A spot-check against a 3,491-relation gold standard reported 68.2% strict correctness and 93.7% lenient textual correctness.",
-      "watch_item": "Performance depends on robust entity linking and ontology coverage, so extraction errors can propagate into the final signed network.",
+      "evidence_signal": "Against a 3,491-relation gold standard, the pipeline achieved 68.2% strict and 93.7% lenient textual correctness, with case studies in Austria and Poland matching known political developments.",
+      "watch_item": "Entity resolution and relation extraction remain sensitive to cross-lingual ambiguity and ontology coverage, so performance may drop in noisier corpora or underrepresented languages.",
       "hashtags": [
+        "#ComputationalSocialScience",
+        "#EntityRelationExtraction",
         "#MultilingualNLP",
         "#KnowledgeGraphs",
-        "#EntityRelationExtraction",
-        "#PoliticalNetworks",
         "#OpenScience"
       ],
       "paper_id": "2026-06-25-arxiv-mapping_political_elite_networks_in_europe_with_a_multilingual_joint_entity_relation_extra",
       "paper_title": "Mapping Political-Elite Networks in Europe with a Multilingual Joint Entity-Relation Extraction Pipeline",
       "paper_date": "2026-06-25",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-28T11:00:12",
+      "generated_at": "2026-06-27T10:53:45",
       "generator": "openai"
     }
   },
@@ -231,29 +231,29 @@
         "url": "https://arxiv.org/pdf/2606.24752v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "Scaling up GPT-style language models delays plasticity loss, but does not eliminate it, and the loss still appears after enough training.",
-      "engineering_relevance": "For continual learning systems, simply increasing model size is not a complete solution; training strategy and adaptation mechanisms still matter for long-term robustness.",
+      "key_insight": "Scaling up GPT-style language models delays, but does not eliminate, plasticity loss during long training, even in multilingual and stationary settings.",
+      "engineering_relevance": "For continual-learning and adaptive NLP systems, parameter scale alone is not a sufficient safeguard against eventual degradation in the ability to learn new information.",
       "method": [
-        "Train GPT-style Transformer LLMs from 5M to 314M non-embedding parameters",
-        "Use a multilingual continual learning setup with a held-out Vietnamese probing task",
-        "Compare plasticity under both continual and stationary multilingual training"
+        "Train GPT-style Transformer models from 5M to 314M non-embedding parameters",
+        "Use a multilingual continual-learning setup with a held-out Vietnamese probing task",
+        "Compare plasticity under both abrupt task shifts and stationary multilingual training"
       ],
-      "evidence_signal": "The abstract reports deteriorating performance on a held-out Vietnamese probing task, with plasticity loss appearing across all tested model sizes and following a sublinear scaling law.",
-      "watch_item": "Parameter scaling may postpone observable plasticity loss, but larger models alone are unlikely to prevent eventual adaptation failure in long training runs.",
+      "evidence_signal": "The abstract reports a measurable deterioration on the held-out Vietnamese probe across model sizes, with onset following a sublinear scaling law.",
+      "watch_item": "Larger models may postpone plasticity loss, but relying only on scale can still leave long-running deployments vulnerable to adaptation failure over time.",
       "hashtags": [
+        "#LargeLanguageModels",
         "#ContinualLearning",
         "#PlasticityLoss",
         "#Transformers",
-        "#LargeLanguageModels",
         "#ScalingLaw"
       ],
       "paper_id": "2026-06-23-arxiv-can_scale_save_us_from_plasticity_loss_in_large_language_models",
       "paper_title": "Can Scale Save Us From Plasticity Loss in Large Language Models?",
       "paper_date": "2026-06-23",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-28T11:00:15",
+      "generated_at": "2026-06-27T10:53:48",
       "generator": "openai"
     }
   },
@@ -284,29 +284,29 @@
         "url": "https://arxiv.org/pdf/2606.26272v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "Droplet fusion and droplet shape recovery are both capillary-driven, but viscoelasticity makes them fundamentally different relaxation processes by introducing a competing stress-relaxation timescale.",
-      "engineering_relevance": "For biomolecular condensates and soft matter design, purely viscous models can mispredict fusion kinetics and relaxation, so viscoelastic constitutive modeling is important for accurate dynamics.",
+      "key_insight": "Droplet fusion and shape recovery are both capillary-driven, but viscoelastic stress relaxation makes them fundamentally different relaxation processes with distinct timescales and stages.",
+      "engineering_relevance": "For biomolecular condensates and soft-matter systems, purely viscous models can mispredict recovery and coalescence, so design and interpretation should account for Deborah-number-dependent viscoelastic effects and external-fluid dissipation.",
       "method": [
         "Analytical small-deformation theory for shape recovery",
-        "Axisymmetric finite-element simulations using the Oldroyd-B model",
-        "Systematic comparison of Newtonian vs viscoelastic droplets under matched conditions"
+        "Axisymmetric finite-element simulations using the Oldroyd-B constitutive model",
+        "Comparison of Newtonian and viscoelastic droplets under matched conditions"
       ],
-      "evidence_signal": "The study evaluates theory and simulations against relaxation and fusion dynamics, including comparison with a stretched-exponential empirical formula, and reports clear deviations in viscoelastic regimes.",
-      "watch_item": "Oldroyd-B and stretched-exponential fits may be inadequate when real condensates have more complex rheology, interfacial effects, or additional external-fluid dissipation.",
+      "evidence_signal": "The study combines theory and simulation to show single- or multi-exponential shape recovery, multistage fusion dynamics, and deviations from stretched-exponential fits in viscoelastic regimes.",
+      "watch_item": "Oldroyd-B modeling and stretched-exponential fits may not capture all material behaviors, especially when strong heterogeneity or non-Oldroyd viscoelasticity is present.",
       "hashtags": [
         "#Viscoelasticity",
         "#DropletFusion",
+        "#ShapeRecovery",
         "#OldroydB",
-        "#SoftMatter",
-        "#BiomolecularCondensates"
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-06-24-arxiv-droplet_fusion_as_a_relaxation_process_comparison_with_shape_recovery_of_newtonian_and_vis",
       "paper_title": "Droplet Fusion as a Relaxation Process: Comparison with Shape Recovery of Newtonian and Viscoelastic Droplets",
       "paper_date": "2026-06-24",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-28T11:00:18",
+      "generated_at": "2026-06-27T10:53:50",
       "generator": "openai"
     }
   },
@@ -336,29 +336,29 @@
         "url": "https://arxiv.org/pdf/2606.25604v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "A 16-bead quasi-2D colloidal cluster under uniaxial tension shows elastic, plastic, and soft-mode deformation before fracturing at about 10% strain, and a simplified spring-mass model captures this behavior.",
-      "engineering_relevance": "The work provides a tractable mechanical model for predicting how small bonded particulate assemblies deform and fail under load, which is useful for designing soft matter, granular, and microstructured materials.",
+      "key_insight": "A 16-bead quasi-2D colloidal cluster under uniaxial tension shows elastic, plastic, and soft-mode deformation, and a simplified spring-mass model captures its fracture behavior near 10% strain.",
+      "engineering_relevance": "The study provides a minimal mechanics model for predicting how small bonded particulate assemblies deform and fail under tensile loading.",
       "method": [
-        "Clamp both ends of a ribbon-shaped colloidal cluster with multiple optical tweezers.",
-        "Measure stress, strain, and particle rearrangements with video microscopy and particle tracking during tensile loading.",
-        "Fit the response with a breakable spring-mass frame model using Monte Carlo simulations and a reduced 7-DOF theory."
+        "Clamp a ribbon-shaped colloidal cluster with optical tweezers and stretch it along the long axis.",
+        "Track particle motion by video microscopy to extract stress, strain, and configuration evolution.",
+        "Compare experiments with canonical Monte Carlo simulations and a reduced 7-DOF theoretical model."
       ],
-      "evidence_signal": "Experimental stress-strain curves and particle-configuration distributions were reproduced by both the full simulation and the simplified theoretical model, with good agreement in elastic and soft-mode regimes.",
-      "watch_item": "The simplified model shows minor discrepancies in the plastic regime, so localized rearrangements and bond-breaking details may need more detailed modeling for predictive use.",
+      "evidence_signal": "Experimental stress-strain curves and configuration distributions were reproduced well by both the full 32-DOF simulations and the simplified 7-DOF model, especially in elastic and soft-mode regimes.",
+      "watch_item": "The simplified model shows minor discrepancies in the plastic regime, so quantitative use there may require additional calibration.",
       "hashtags": [
-        "#Colloids",
         "#FractureMechanics",
+        "#Colloids",
         "#SoftMatter",
-        "#FiniteDeformation",
-        "#MonteCarloModeling"
+        "#MechanicsModeling",
+        "#OpticalTweezers"
       ],
       "paper_id": "2026-06-24-arxiv-mechanical_response_of_quasi_two_dimensional_colloidal_clusters_under_uniaxial_tension",
       "paper_title": "Mechanical response of quasi-two-dimensional colloidal clusters under uniaxial tension",
       "paper_date": "2026-06-24",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-28T11:00:20",
+      "generated_at": "2026-06-27T10:53:52",
       "generator": "openai"
     }
   },
@@ -388,21 +388,21 @@
         "url": "https://arxiv.org/pdf/2606.23251v1"
       }
     ],
-    "score": 62,
+    "score": 67,
     "infographic": {
-      "key_insight": "A mesh-preserving self-attention surrogate can emulate PFEM free-surface fluid dynamics on evolving geometries while staying scalable.",
-      "engineering_relevance": "This enables faster engineering simulation of complex free-surface and non-Newtonian flows without sacrificing the ability to reconstruct finite-element quantities like stress.",
+      "key_insight": "A self-attention neural surrogate can learn PFEM free-surface fluid dynamics directly on evolving meshes, enabling accurate, geometry-aware rollouts at much lower cost.",
+      "engineering_relevance": "This offers a scalable way to replace repeated high-fidelity PFEM solves in engineering problems with moving boundaries, nonlinear materials, and long-horizon predictions.",
       "method": [
-        "Uses a PFEM mesh as the model’s geometric/topological backbone.",
-        "Applies self-attention to capture interactions between mesh nodes over time.",
-        "Includes a linear attention variant to reduce cost and improve scalability."
+        "Preserve PFEM mesh discretization and use attention to model node-to-node interactions on arbitrary evolving geometries.",
+        "Compare standard self-attention with a linear attention variant to reduce computational cost and improve scalability.",
+        "Use the mesh-based output to reconstruct derived quantities such as stress fields with finite element operators."
       ],
-      "evidence_signal": "The models were evaluated on 2D and 3D free-surface benchmarks with changing geometry and material parameters, and they accurately reproduced transient dynamics and final states.",
-      "watch_item": "As with any surrogate for evolving meshes, robustness during long rollouts and remeshing quality remain important implementation concerns.",
+      "evidence_signal": "The models are evaluated on 2D and 3D free-surface flow benchmarks with evolving geometries, varying material parameters, and non-Newtonian fluids, showing accurate transient and final-state predictions.",
+      "watch_item": "Performance depends on robust remeshing and node redistribution during rollouts, which may be challenging for highly complex or highly deforming flows.",
       "hashtags": [
-        "#PFEM",
-        "#NeuralSurrogate",
-        "#SelfAttention",
+        "#FEMSurrogates",
+        "#PhysicsML",
+        "#AttentionMechanisms",
         "#FreeSurfaceFlow",
         "#ComputationalMechanics"
       ],
@@ -410,7 +410,7 @@
       "paper_title": "Attention mechanism for scalable mesh-based neural surrogates of free-surface fluids",
       "paper_date": "2026-06-22",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-28T11:00:23",
+      "generated_at": "2026-06-27T10:53:55",
       "generator": "openai"
     }
   },
@@ -440,29 +440,29 @@
         "url": "https://arxiv.org/pdf/2606.25434v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "CPTabKAN turns EEG features into physiology-guided concepts and learns useful concept interactions, improving mild cognitive impairment detection while remaining interpretable.",
-      "engineering_relevance": "The method offers a scalable, clinically oriented tabular-learning pipeline that preserves domain structure and exposes which EEG concepts drive decisions.",
+      "key_insight": "CPTabKAN combines physiologically grouped EEG concepts with polynomial interaction modeling to improve interpretable mild cognitive impairment detection.",
+      "engineering_relevance": "The method offers a clinically usable, high-accuracy tabular learning workflow that preserves domain structure while exposing which EEG concepts drive decisions.",
       "method": [
         "Map 1,379 EEG-derived features into 10 physiologically motivated concept groups.",
-        "Apply degree-2 polynomial expansion to capture first- and second-order concept interactions.",
-        "Use a Fourier-parameterized TabKAN classifier for nonlinear decision boundaries and concept weighting."
+        "Apply degree-2 polynomial expansion to capture first- and second-order cross-concept interactions.",
+        "Use a Fourier-parameterized Kolmogorov-Arnold tabular classifier for nonlinear classification and concept weighting."
       ],
-      "evidence_signal": "On the Study of Osteoporotic Fractures cohort (372 subjects), CPTabKAN-Second Order achieved a weighted F1-score of 0.9038 under 10-fold cross-validation, outperforming GradientBoosting by 5.65 percentage points.",
-      "watch_item": "Results come from a single cohort and EEG/PSG feature pipeline, so external validation and implementation robustness across sites, sensors, and preprocessing choices remain important.",
+      "evidence_signal": "On the Study of Osteoporotic Fractures cohort (372 subjects), CPTabKAN-Second Order achieved a weighted F1-score of 0.9038 under 10-fold cross-validation, outperforming GradientBoosting by 5.65 points.",
+      "watch_item": "The reported gains depend on cross-validation and cohort-specific EEG features, so external validation on independent clinical datasets is still needed.",
       "hashtags": [
         "#EEG",
         "#MCI",
         "#InterpretableAI",
         "#TabularLearning",
-        "#MedicalML"
+        "#HealthcareAI"
       ],
       "paper_id": "2026-06-24-arxiv-interpretable_concept_guided_polynomial_tabular_kolmogorov_arnold_network_for_eeg_based_mi",
       "paper_title": "Interpretable Concept-Guided Polynomial Tabular Kolmogorov-Arnold Network for EEG-Based Mild Cognitive Impairment Detection",
       "paper_date": "2026-06-24",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-28T11:00:25",
+      "generated_at": "2026-06-27T10:53:57",
       "generator": "openai"
     }
   },
@@ -491,29 +491,29 @@
         "url": "https://arxiv.org/pdf/2606.25385v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "Acoustoelastic Imaging (AEI) reconstructs internal stress fields directly from shear-wave propagation, turning stress mapping into an inverse wave problem rather than a constitutive-model-based inference.",
-      "engineering_relevance": "This enables non-destructive, high-resolution stress imaging in heterogeneous solids and soft tissues, with potential impact on structural health monitoring and biomedical elastography.",
+      "key_insight": "Acoustoelastic Imaging reconstructs internal stress fields directly from shear wave propagation, turning stress imaging into a physics-informed inverse wave problem.",
+      "engineering_relevance": "This provides a non-destructive way to map stress magnitude and principal directions in heterogeneous solids without requiring explicit constitutive models or material calibration.",
       "method": [
-        "Uses the acoustoelastic effect: pre-stress alters local shear-wave dynamics.",
-        "Performs full shear waveform inversion with physics-informed learning.",
-        "Recovers wave-equation coefficients from full-field measurements to estimate stress magnitude and principal directions without explicit material calibration."
+        "Measure full-field shear waveforms in the stressed material.",
+        "Use full waveform inversion with physics-informed learning to recover wave-equation coefficients.",
+        "Convert recovered coefficients into stress magnitude and principal directions."
       ],
-      "evidence_signal": "The abstract reports numerical simulations and ultrasound shear wave elastography experiments demonstrating sub-wavelength resolution below 0.28λ and accurate reconstruction of nonuniform stress fields.",
-      "watch_item": "Performance may depend on measurement quality, wave-field coverage, and the validity of the acoustoelastic assumptions in strongly heterogeneous or highly nonlinear materials.",
+      "evidence_signal": "The abstract reports numerical simulations and ultrasound shear wave elastography experiments with sub-wavelength spatial resolution below 0.28λ and accurate reconstruction of nonuniform stress fields.",
+      "watch_item": "Performance may depend on the quality and coverage of shear-wave measurements, and real materials or tissues could introduce noise, heterogeneity, or model mismatch that complicate inversion.",
       "hashtags": [
-        "#AcoustoelasticImaging",
         "#StressImaging",
+        "#Acoustoelasticity",
         "#ShearWaves",
-        "#PhysicsInformedLearning",
-        "#StructuralHealthMonitoring"
+        "#InverseProblems",
+        "#PhysicsInformedML"
       ],
       "paper_id": "2026-06-24-arxiv-direct_stress_imaging_from_shear_wave_propagation",
       "paper_title": "Direct stress imaging from shear wave propagation",
       "paper_date": "2026-06-24",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-28T11:00:28",
+      "generated_at": "2026-06-27T10:53:59",
       "generator": "openai"
     }
   },
@@ -542,29 +542,29 @@
         "url": "https://arxiv.org/pdf/2606.26019v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "Random solid-solution and local chemical order in WTaCrV change radiation response: they create more primary defects than an average-atom model, yet they better preserve mechanical strength under irradiation.",
-      "engineering_relevance": "For nuclear structural materials, nanoscale chemical disorder can improve irradiation tolerance by limiting radiation-induced softening and maintaining flow stress.",
+      "key_insight": "Chemical disorder and local chemical order in WTaCrV change how irradiation damage forms, but both can better preserve strength than a homogenized average-atom model.",
+      "engineering_relevance": "For reactor structural alloys, controlling nanoscale chemistry may be as important as composition for improving resistance to radiation damage and mechanical degradation.",
       "method": [
-        "Built three atomistic representations of WTaCrV: average-atom (AA), random solid-solution (RSS), and local chemical order (LCO).",
-        "Ran collision-cascade simulations with newly developed interatomic potentials to compare defect production and mechanical degradation.",
-        "Evaluated how point defects, lattice distortion, and deformation twins interact under irradiation."
+        "Atomistic simulations compared three configurations: Average-Atom (AA), random solid-solution (RSS), and local chemical order (LCO).",
+        "New interatomic potentials were used to run collision cascade and deformation analyses.",
+        "Primary radiation defects and post-irradiation mechanical response were evaluated across the three models."
       ],
-      "evidence_signal": "The simulations show Frenkel pair counts follow NRSS > NLCO > NAA at the same dose, while irradiation strongly degrades AA but has limited impact on strength and flow stress in RSS and LCO.",
-      "watch_item": "Results depend on the fidelity of the new interatomic potentials and the idealized atomistic models, so transfer to real microstructures and irradiation conditions should be validated.",
+      "evidence_signal": "Collision cascades showed Frenkel-pair production ranked NRSS > NLCO > NAA at the same dose, while irradiation strongly degraded the AA model but had limited impact on strength and flow stress in RSS and LCO.",
+      "watch_item": "The conclusions depend on atomistic potentials and modeled nanoscale structures, so transferability to real irradiated microstructures and experimental conditions should be validated.",
       "hashtags": [
         "#RefractoryHEA",
         "#RadiationDamage",
-        "#CollisionCascade",
         "#AtomisticSimulation",
+        "#MechanicalDegradation",
         "#NuclearMaterials"
       ],
       "paper_id": "2026-06-24-arxiv-primary_damage_and_mechanical_degradation_of_wtacrv_refractory_high_entropy_alloy_effects",
       "paper_title": "Primary damage and mechanical degradation of WTaCrV refractory high-entropy alloy: effects of solid-solution and chemical ordering",
       "paper_date": "2026-06-24",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-28T11:00:30",
+      "generated_at": "2026-06-27T10:54:01",
       "generator": "openai"
     }
   },
@@ -593,29 +593,29 @@
         "url": "https://arxiv.org/pdf/2606.26333v1"
       }
     ],
-    "score": 56,
+    "score": 61,
     "infographic": {
-      "key_insight": "Mesh-RL speeds up reinforcement learning by decomposing the state space into overlapping subgrids and enforcing boundary-consistent value updates so reward information propagates farther and faster.",
-      "engineering_relevance": "The method offers a FEM-inspired way to improve sample efficiency and stability in sparse-reward control problems without changing the reward structure or adding explicit planning.",
+      "key_insight": "Mesh-RL speeds up sparse-reward reinforcement learning by decomposing the environment into overlapping subgrids and propagating value information through boundary-consistent local updates.",
+      "engineering_relevance": "The method brings finite-element-style domain decomposition ideas into reinforcement learning, offering a principled way to improve sample efficiency and long-range credit assignment in large spatial problems.",
       "method": [
-        "Partition the environment into overlapping subgrids like a mesh.",
-        "Apply localized temporal-difference updates with boundary consistency across subgrids.",
-        "Use mesh resolution to balance exploration and long-range credit assignment."
+        "Partition the state space into overlapping mesh subgrids.",
+        "Apply boundary-consistent temporal-difference updates across subgrid interfaces.",
+        "Use localized learning to maintain globally coherent value propagation without changing rewards or Bellman updates."
       ],
-      "evidence_signal": "The abstract reports evaluations on hazard-dense grid worlds across Q-learning, SARSA, and Dyna-Q, with consistent gains in convergence speed, cumulative reward, and learning stability.",
-      "watch_item": "Performance may depend on how the domain is partitioned, since overly coarse or poorly chosen mesh resolutions could limit the benefit or add implementation complexity.",
+      "evidence_signal": "The abstract reports evaluations on hazard-dense grid-worlds with varying geometries and mesh resolutions, showing faster convergence, higher cumulative reward, and improved stability across Q-learning, SARSA, and Dyna-Q.",
+      "watch_item": "Performance may depend on choosing an appropriate mesh resolution and overlap, since overly coarse or poorly matched decompositions could weaken exploration or boundary consistency.",
       "hashtags": [
         "#ReinforcementLearning",
-        "#FiniteElementMethod",
+        "#MeshRL",
         "#DomainDecomposition",
-        "#SparseReward",
-        "#ScientificComputing"
+        "#SparseRewards",
+        "#FiniteElementMethods"
       ],
       "paper_id": "2026-06-24-arxiv-mesh_rl_coupled_subgrid_reinforcement_learning",
       "paper_title": "Mesh-RL: Coupled subgrid reinforcement learning",
       "paper_date": "2026-06-24",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-28T11:00:33",
+      "generated_at": "2026-06-27T10:54:03",
       "generator": "openai"
     }
   },
@@ -644,29 +644,29 @@
         "url": "https://arxiv.org/pdf/2606.26782v1"
       }
     ],
-    "score": 54,
+    "score": 59,
     "infographic": {
-      "key_insight": "Hydrogen trapping around a screw dislocation in bcc iron is strongly configuration-dependent, and a thermodynamic weighting of core states and sites reduces a high-dimensional problem to a tractable model.",
-      "engineering_relevance": "The results provide a physically grounded basis for predicting hydrogen embrittlement and for embedding hydrogen-dislocation interactions into mesoscale plasticity models.",
+      "key_insight": "A thermodynamic, multiscale treatment of hydrogen trapping around bcc iron screw dislocations shows that a few energetically relevant core/site configurations dominate the interaction landscape.",
+      "engineering_relevance": "The results provide a simplified but physically grounded basis for predicting hydrogen embrittlement and incorporating hydrogen-dislocation interactions into plasticity models.",
       "method": [
-        "Molecular simulations with a neural-network interatomic potential for bcc Fe",
-        "Systematic sampling of easy-core and hard-core dislocation structures, site types, and hydrogen concentrations",
-        "Thermodynamic framework to rank trapping configurations and assess elastic dipole validity"
+        "Molecular simulations with a neural-network interatomic potential for bcc Fe–H.",
+        "Systematic exploration of easy-core and hard-core screw dislocation structures, trapping site types, and hydrogen concentrations.",
+        "Thermodynamic weighting of binding energies plus assessment of an elastic dipole approximation."
       ],
-      "evidence_signal": "The simulation-based energetics show good agreement with the limited density-functional-theory data available in the literature.",
-      "watch_item": "The simplified elastic-dipole description is only valid within a limited domain, so model use outside that range may miss core-specific trapping effects.",
+      "evidence_signal": "The framework is benchmarked against the limited available density functional theory data and used to rationalize experimental hydrogen solubility limits.",
+      "watch_item": "The simplified elastic dipole description is only valid within a limited regime, so core structure and site-specific trapping must be checked before using it in larger-scale models.",
       "hashtags": [
         "#HydrogenEmbrittlement",
         "#Dislocations",
         "#BCCIron",
-        "#AtomisticSimulation",
+        "#MolecularSimulation",
         "#ConstitutiveModeling"
       ],
       "paper_id": "2026-06-25-arxiv-hydrogen_segregation_around_a_straight_screw_dislocation_in_bcc_iron",
       "paper_title": "Hydrogen segregation around a straight screw dislocation in bcc iron",
       "paper_date": "2026-06-25",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-28T11:00:35",
+      "generated_at": "2026-06-27T10:54:06",
       "generator": "openai"
     }
   },
@@ -696,29 +696,29 @@
         "url": "https://arxiv.org/pdf/2606.24500v1"
       }
     ],
-    "score": 51,
+    "score": 56,
     "infographic": {
-      "key_insight": "The paper builds certified reachable sets for nonlinear reaction–diffusion PDEs by chaining FEM discretization, POD reduction, and set-based reachability with explicit uniform error bounds at each step.",
-      "engineering_relevance": "This provides a practical safety-analysis workflow for PDE-driven systems with parameter uncertainty, enabling conservative state envelopes for design, control, and verification.",
+      "key_insight": "The paper turns nonlinear reaction--diffusion PDE reachability into a certifiable pipeline by combining FEM discretization, POD reduction, and set-based analysis with explicit uniform error bounds.",
+      "engineering_relevance": "This gives engineers a practical way to over-approximate all possible PDE states under uncertainty, which is useful for safety verification and robust design of diffusion-driven systems.",
       "method": [
         "Discretize the PDE with FEM to obtain a finite-dimensional surrogate.",
-        "Apply POD to derive a reduced-order model for tractable reachability analysis.",
-        "Propagate set-based reachability on the ROM and combine error bounds to over-approximate the original PDE reachable set."
+        "Apply POD to build a reduced-order model from the FEM system.",
+        "Run reachability analysis on the ROM and add provable error bounds to recover a certified over-approximation of the original PDE reachable set."
       ],
-      "evidence_signal": "The abstract reports an illustrative validation on the Allen–Cahn equation and a logistic growth PDE, showing the framework on representative nonlinear reaction–diffusion examples.",
-      "watch_item": "The guarantee depends on the quality of FEM/POD approximation and the assumptions used to keep the error bounds uniform over the parameter set, which may be conservative in practice.",
+      "evidence_signal": "The abstract reports explicit trajectory-error bounds between the PDE, FEM model, and ROM, and demonstrates the framework on the Allen--Cahn and logistic growth PDEs.",
+      "watch_item": "The guarantees depend on the quality of the FEM/POD approximations and may become costly or conservative for strongly nonlinear dynamics or high-dimensional parameter sets.",
       "hashtags": [
+        "#FEM",
+        "#POD",
         "#ReachabilityAnalysis",
         "#PDEs",
-        "#FEM",
-        "#ModelReduction",
-        "#CertifiedBounds"
+        "#ModelReduction"
       ],
       "paper_id": "2026-06-23-arxiv-certified_reachable_sets_for_nonlinear_reaction_diffusion_systems",
       "paper_title": "Certified Reachable Sets for Nonlinear Reaction--Diffusion Systems",
       "paper_date": "2026-06-23",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-28T11:00:38",
+      "generated_at": "2026-06-27T10:54:08",
       "generator": "openai"
     }
   },
@@ -747,29 +747,29 @@
         "url": "https://arxiv.org/pdf/2606.24396v1"
       }
     ],
-    "score": 51,
+    "score": 56,
     "infographic": {
-      "key_insight": "H-Res adapts large Transformer memories by steering activations on the manifold, changing the effective energy landscape without altering frozen weights or adding prompt tokens.",
-      "engineering_relevance": "This offers a lower-overhead adaptation route for associative retrieval systems, preserving stability while improving task-specific performance in structured domains.",
+      "key_insight": "H-Res adapts frozen Transformer memories by steering activations on the manifold, shaping the residual energy landscape instead of changing weights or adding prompt tokens.",
+      "engineering_relevance": "This offers a low-overhead, stability-preserving adaptation strategy for large associative models, useful for scalable deployment in structured scientific and engineering domains.",
       "method": [
-        "Learns a state-dependent vector field that guides token trajectories toward task-specific attractors.",
-        "Formulates adaptation as a control problem on the activation manifold rather than direct synaptic updates.",
-        "Keeps the foundation model’s sequence length and global equilibrium unchanged."
+        "Learns a state-dependent vector field that controls token trajectories in activation space.",
+        "Modulates the effective energy landscape while keeping the base model’s global equilibrium intact.",
+        "Avoids sequence-length growth and direct synaptic modification."
       ],
-      "evidence_signal": "The abstract reports 26% better performance than global weight modification on associative retrieval tasks and claims scalability to structured-domain benchmarks.",
-      "watch_item": "Manifold steering may require careful training and control design to ensure the learned vector field remains stable and does not distort retrieval behavior under distribution shift.",
+      "evidence_signal": "The abstract reports 26% better performance than global weight modification on associative retrieval tasks and scalable results on structured-domain benchmarks.",
+      "watch_item": "The method may require careful control-design and validation to ensure the learned steering field remains stable and does not unintentionally distort retrieval behavior.",
       "hashtags": [
-        "#Transformers",
+        "#TransformerAdaptation",
         "#AssociativeMemory",
-        "#EnergyLandscape",
-        "#ModelAdaptation",
-        "#NeuralDynamics"
+        "#ResidualSteering",
+        "#NeuralODE",
+        "#EfficientAI"
       ],
       "paper_id": "2026-06-23-arxiv-parallel_manifold_steering_efficient_adaptation_of_large_associative_memories_via_residual",
       "paper_title": "Parallel Manifold Steering: Efficient Adaptation of Large Associative Memories via Residual Energy Shaping",
       "paper_date": "2026-06-23",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-06-28T11:00:40",
+      "generated_at": "2026-06-27T10:54:10",
       "generator": "openai"
     }
   },
@@ -798,29 +798,29 @@
         "url": "https://arxiv.org/pdf/2606.25934v1"
       }
     ],
-    "score": 50,
+    "score": 55,
     "infographic": {
-      "key_insight": "The paper proves optimal H1-norm error estimates for first- and second-order A-stable backward difference full discretizations of Willmore flow on closed surfaces.",
-      "engineering_relevance": "It provides theoretical reliability guarantees for surface finite element simulations of curvature-driven interface evolution, which is important for high-fidelity geometric PDE solvers.",
+      "key_insight": "The paper proves optimal-order H^1 error estimates for first- and second-order A-stable backward difference full discretizations of Willmore flow on closed surfaces.",
+      "engineering_relevance": "This gives a rigorous accuracy guarantee for evolving-surface finite element simulations of curvature-driven surface dynamics.",
       "method": [
-        "Evolve a coupled second-order system for Willmore flow using surface finite elements of polynomial degree at least two.",
-        "Discretize time with backward difference methods of order 1 or 2 that are A-stable.",
-        "Prove stability and convergence via energy estimates, Dahlquist G-stability, and Nevanlinna-Odeh multiplier techniques."
+        "Discretize the coupled Willmore-flow evolution system with evolving surface finite elements of degree at least 2 in space.",
+        "Use backward difference methods of order 1 or 2 in time with A-stability.",
+        "Prove stability via energy estimates, G-stability, and Nevanlinna–Odeh multiplier techniques."
       ],
-      "evidence_signal": "The abstract reports a convergence analysis with optimal-order H1 error estimates and numerical experiments that illustrate and complement the theory.",
-      "watch_item": "The guarantees rely on higher-order spatial elements and careful stability assumptions, so implementation must preserve the coupled structure and regularity requirements.",
+      "evidence_signal": "The abstract reports both theoretical convergence analysis and numerical experiments that illustrate and complement the error estimates.",
+      "watch_item": "The guarantees rely on polynomial degree at least two and on the specific stability structure of the coupled system, so lower-order or different discretizations may not inherit the same accuracy bounds.",
       "hashtags": [
         "#WillmoreFlow",
         "#FiniteElementMethod",
-        "#GStability",
-        "#AStableBDF",
-        "#GeometricPDE"
+        "#ErrorEstimates",
+        "#AStable",
+        "#SurfaceEvolution"
       ],
       "paper_id": "2026-06-24-arxiv-error_estimates_for_a_stable_backward_difference_full_discretizations_of_willmore_flow_of",
       "paper_title": "Error estimates for $A$-stable backward difference full discretizations of Willmore flow of closed surfaces",
       "paper_date": "2026-06-24",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-28T11:00:42",
+      "generated_at": "2026-06-27T10:54:12",
       "generator": "openai"
     }
   },
@@ -849,29 +849,29 @@
         "url": "https://arxiv.org/pdf/2606.24517v1"
       }
     ],
-    "score": 50,
+    "score": 55,
     "infographic": {
-      "key_insight": "The paper shows that a steady-state 2D induction heating model can be rigorously solved and approximated with finite elements even when the source term is only weakly integrable, and that a bound-preserving heat solver relaxes mesh and domain restrictions.",
-      "engineering_relevance": "This provides a more reliable numerical foundation for simulating induction heating processes in manufacturing and thermal design, especially when standard FEM assumptions are too restrictive.",
+      "key_insight": "The paper shows that a steady 2D induction heating model is well-posed and that finite element convergence can be guaranteed, with a bound-preserving heat solver relaxing mesh and domain restrictions.",
+      "engineering_relevance": "This provides a more reliable simulation pathway for induction heating applications where source terms are only weakly integrable and standard FEM may be fragile.",
       "method": [
-        "Establish the weak formulation using a priori regularity for the coupled PDEs.",
-        "Prove convergence of standard Galerkin FEM on convex domains with suitable meshes.",
-        "Apply a bound-preserving method (BPM) to the heat equation to obtain convergence under weaker domain/mesh assumptions."
+        "Justify the natural weak formulation using a priori regularity for the coupled PDEs.",
+        "Prove convergence of standard Galerkin FEM on convex domains with suitable mesh conditions.",
+        "Apply a bound-preserving method to the heat equation to obtain convergence under weaker geometric and mesh assumptions."
       ],
-      "evidence_signal": "The abstract reports several numerical experiments that confirm the theory and demonstrate improved performance of the bound-preserving method over standard FEM.",
-      "watch_item": "The strongest convergence guarantees still depend on domain geometry and mesh conditions, so practical implementation must check these assumptions carefully.",
+      "evidence_signal": "The abstract reports theoretical convergence proofs supported by numerical experiments that confirm the analysis and highlight the BPM advantage.",
+      "watch_item": "The improved convergence guarantees still depend on problem- and mesh-specific conditions, so careful discretization and domain handling remain important.",
       "hashtags": [
         "#FiniteElementMethod",
         "#InductionHeating",
         "#ComputationalMechanics",
-        "#PDEAnalysis",
-        "#NumericalMethods"
+        "#NumericalAnalysis",
+        "#BoundPreservingMethod"
       ],
       "paper_id": "2026-06-23-arxiv-analysis_and_approximation_of_a_two_dimensional_induction_heating_problem",
       "paper_title": "Analysis and approximation of a two-dimensional induction heating problem",
       "paper_date": "2026-06-23",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-28T11:00:45",
+      "generated_at": "2026-06-27T10:54:14",
       "generator": "openai"
     }
   },
@@ -900,29 +900,29 @@
         "url": "https://arxiv.org/pdf/2606.23458v1"
       }
     ],
-    "score": 50,
+    "score": 55,
     "infographic": {
-      "key_insight": "The paper shows that phase-field fracture can be solved end-to-end in PyTorch with matrix-free mechanics and differentiable implicit damage updates, enabling GPU-ready simulation and inverse analysis without custom compiled code.",
-      "engineering_relevance": "This makes high-fidelity fracture simulation easier to integrate with optimization and machine-learning workflows while remaining portable across CPU and GPU platforms.",
+      "key_insight": "The paper introduces a fully differentiable, matrix-free PyTorch phase-field fracture solver that runs on CPUs/GPUs and supports both forward simulation and inverse parameter identification.",
+      "engineering_relevance": "It enables scalable fracture analysis and gradient-based calibration without custom compiled extensions, making fracture simulation easier to integrate with optimization and machine-learning workflows.",
       "method": [
-        "Element-wise tensor contractions and scatter accumulation replace global sparse stiffness assembly in the explicit dynamics loop.",
-        "An implicit, bound-constrained damage solve is differentiated via a custom backward rule using implicit differentiation through conjugate gradient iterations.",
-        "Supports AT1/AT2 regularization, multiple energy splits, and plane strain/plane stress settings."
+        "Element-wise finite-element tensor contractions with scatter-based accumulation replace global sparse stiffness assembly in explicit dynamics.",
+        "Supports AT1/AT2 regularizations, multiple energy splits, and plane strain/plane stress options.",
+        "Uses autograd for explicit mechanics and a custom implicit-differentiation backward rule for the bound-constrained damage solve via CG."
       ],
-      "evidence_signal": "The solver was benchmarked on four dynamic and two quasi-static fracture cases and used for inverse recovery of fracture energy, achieving relative error below 10^-3 within a few accepted L-BFGS states.",
-      "watch_item": "Performance and accuracy may depend on CG convergence, mesh size, and the chosen fracture decomposition, so robustness should be checked case by case.",
+      "evidence_signal": "The solver was benchmarked on four dynamic and two quasi-static fracture cases and recovered fracture energy Gc to below 10^-3 relative error in inverse analysis.",
+      "watch_item": "Performance and robustness may depend on CG convergence and GPU memory/throughput when scaling to very large meshes or tightly constrained inverse problems.",
       "hashtags": [
         "#PhaseFieldFracture",
         "#PyTorch",
         "#DifferentiableSimulation",
-        "#GPUComputing",
+        "#ComputationalMechanics",
         "#InverseAnalysis"
       ],
       "paper_id": "2026-06-22-arxiv-a_matrix_free_differentiable_pytorch_solver_for_phase_field_fracture_formulation_benchmark",
       "paper_title": "A matrix-free, differentiable PyTorch solver for phase-field fracture: Formulation, benchmarks, and inverse analysis",
       "paper_date": "2026-06-22",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-28T11:00:48",
+      "generated_at": "2026-06-27T10:54:17",
       "generator": "openai"
     }
   },
@@ -951,29 +951,29 @@
         "url": "https://arxiv.org/pdf/2606.23468v1"
       }
     ],
-    "score": 48,
+    "score": 53,
     "infographic": {
-      "key_insight": "The paper accelerates phase-field cohesive zone modeling to simulate mixed-mode fracture and high-cycle fatigue of UHPC and HSS efficiently, without resolving every load cycle.",
-      "engineering_relevance": "It offers a practical computational tool for assessing durability and crack growth in cyclic-loaded infrastructure made from high-performance materials.",
+      "key_insight": "The paper accelerates phase-field cohesive zone modeling to predict mixed-mode fracture and high-cycle fatigue in UHPC and high-strength steel using load-envelope cycling and adaptive fatigue degradation.",
+      "engineering_relevance": "It offers a more practical simulation route for designing cyclic-loaded infrastructure with high-performance materials, reducing reliance on costly and time-consuming fatigue testing.",
       "method": [
-        "Derive a generic stress-based failure criterion for UHPC from biaxial tensile tests.",
-        "Embed a fatigue degradation function into the PF-CZM framework.",
-        "Use an envelope-load acceleration scheme with adaptive cyclic increments to capture the three-stage fatigue process."
+        "Derives a generic stress-based failure criterion for UHPC from biaxial tensile tests.",
+        "Integrates a fatigue degradation function into the PF-CZM framework.",
+        "Uses an acceleration algorithm with envelope loading and adaptive cyclic increments to simulate three fatigue stages efficiently."
       ],
-      "evidence_signal": "The model is validated against relevant experimental comparisons and is reported to reproduce both mixed-mode fracture and high-cycle fatigue behavior of UHPC and HSS.",
-      "watch_item": "Accuracy may depend on the chosen failure criterion, fatigue degradation law, and adaptive acceleration settings, so calibration to material-specific test data is important.",
+      "evidence_signal": "The model is validated against relevant experimental comparisons and is reported to capture both mixed-mode fracture and high-cycle fatigue behavior of UHPC and HSS.",
+      "watch_item": "Because the acceleration relies on envelope-load approximation and adaptive cycle stepping, accuracy may depend on how well these simplifications represent the true loading history.",
       "hashtags": [
         "#PhaseFieldModeling",
-        "#CohesiveZoneModel",
         "#FatigueFracture",
+        "#CohesiveZoneModel",
         "#UHPC",
-        "#HighCycleFatigue"
+        "#HighStrengthSteel"
       ],
       "paper_id": "2026-06-22-arxiv-high_performance_construction_materials_fracture_and_high_cycle_fatigue_assessment_based_o",
       "paper_title": "High performance construction materials fracture and high cycle fatigue assessment based on accelerated PF-CZM",
       "paper_date": "2026-06-22",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-06-28T11:00:50",
+      "generated_at": "2026-06-27T10:54:18",
       "generator": "openai"
     }
   },
@@ -1004,17 +1004,17 @@
         "url": "https://arxiv.org/pdf/2606.26239v1"
       }
     ],
-    "score": 47,
+    "score": 52,
     "infographic": {
-      "key_insight": "Zero-field phonon Hall viscosity provides a symmetry-sensitive fingerprint of altermagnetism, distinguishing it from ferromagnets and conventional antiferromagnets.",
-      "engineering_relevance": "This suggests a magneto-acoustic route to detect broken symmetries and topological electronic structure in insulating altermagnets using strain-response measurements.",
+      "key_insight": "Zero-field phonon Hall viscosity can act as a symmetry-sensitive fingerprint of altermagnetism, clearly separating it from ferromagnets and conventional antiferromagnets.",
+      "engineering_relevance": "This suggests a practical magneto-acoustic route to detect broken symmetries and topological features in insulating altermagnets through strain-response measurements.",
       "method": [
-        "Derive the Hall viscosity tensor for altermagnets and identify the tensor components that separate magnetic phases.",
-        "Compute Hall viscosity microscopically in d-wave and g-wave altermagnet models.",
-        "Relate strong viscosity features to strain-space Berry curvature, gapped Dirac points, and Lifshitz transitions."
+        "Formulated the Hall viscosity tensor for phonons in altermagnets.",
+        "Computed Hall viscosity microscopically for d-wave and g-wave altermagnet models.",
+        "Connected strong viscosity signatures to gapped Dirac points and Lifshitz transitions via strain-space Berry curvature."
       ],
-      "evidence_signal": "The abstract reports theoretical calculation results showing that specific Hall-viscosity tensor elements uniquely distinguish magnetic classes and vary strongly with spectrum features.",
-      "watch_item": "Experimental interpretation may be challenging because the signal depends sensitively on electronic structure details and on clean magneto-acoustic measurement conditions.",
+      "evidence_signal": "The abstract reports analytical and microscopic model calculations showing that specific Hall-viscosity tensor components unambiguously distinguish magnetic classes and are highly sensitive to electronic spectral features.",
+      "watch_item": "Experimental use may be limited by the need to resolve subtle magneto-acoustic signals and by material-specific sensitivity to band-structure details.",
       "hashtags": [
         "#Altermagnetism",
         "#HallViscosity",
@@ -1026,7 +1026,7 @@
       "paper_title": "Anomalous Hall viscosity of altermagnets",
       "paper_date": "2026-06-24",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-06-28T11:00:53",
+      "generated_at": "2026-06-27T10:54:20",
       "generator": "openai"
     }
   }

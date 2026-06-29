@@ -1,24 +1,24 @@
 {
-  "key_insight": "Instead of protecting individual weights, the paper protects learned concepts in activation space using Sparse Autoencoder (SAE) features, which better preserves knowledge during continual learning in LLMs.",
-  "engineering_relevance": "For continual fine-tuning of large models, feature-level regularization offers a more selective and memory-efficient alternative to weight-space methods like EWC, improving stability without storing past data.",
+  "key_insight": "Protecting knowledge in LLM continual learning works better in sparse activation feature space than in raw weight space, because SAE features isolate task-relevant information more cleanly.",
+  "engineering_relevance": "The method offers a memory-efficient, no-replay alternative to weight regularization for continual adaptation of large language models while reducing catastrophic forgetting.",
   "method": [
-    "Use pretrained SAEs as a monosemantic feature dictionary for the model’s activations.",
-    "Build a compact task-specific feature mask from current-task data and retain only the mask for later training.",
-    "Apply an activation-space regularizer that balances stability and plasticity; EWC emerges as a special weight-space special case."
+    "Use pretrained sparse autoencoders (SAEs) to build a monosemantic feature dictionary.",
+    "Construct a compact task-specific SAE feature mask from current-task data only.",
+    "Regularize activations in feature space to balance stability and plasticity, with EWC emerging as a special weight-space case."
   ],
-  "evidence_signal": "On TRACE and MedCL continual learning benchmarks, the method outperforms non-architectural baselines, including EWC, and the abstract reports that SAE features separate task-relevant representations far better than the weight basis.",
-  "watch_item": "The approach depends on a good pretrained SAE and a reliable feature mask, so performance may be sensitive to SAE quality and mask construction.",
+  "evidence_signal": "On TRACE and MedCL continual learning benchmarks, the method outperforms traditional weight-space regularization such as EWC and is strongest among non-task-specific architectures.",
+  "watch_item": "Performance depends on the quality and availability of pretrained SAEs and on how well the feature mask captures task-relevant concepts.",
   "hashtags": [
     "#ContinualLearning",
     "#LLM",
     "#SparseAutoencoder",
     "#CatastrophicForgetting",
-    "#Regularization"
+    "#ActivationRegularization"
   ],
   "paper_id": "2026-06-25-arxiv-from_weights_to_features_sae_guided_activation_regularization_for_llm_continual_learning",
   "paper_title": "From Weights to Features: SAE-Guided Activation Regularization for LLM Continual Learning",
   "paper_date": "2026-06-25",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-06-28T11:00:10",
+  "generated_at": "2026-06-29T12:59:33",
   "generator": "openai"
 }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "FORA protects existing capabilities during fine-tuning by blocking updates in activation directions that those capabilities actually use, rather than relying only on weight-space geometry.",
-  "engineering_relevance": "This gives a more targeted way to adapt large models while reducing catastrophic capability loss, useful when preserving prior skills matters as much as learning a new task.",
+  "key_insight": "FORA preserves an existing capability by blocking updates along function-space directions the model actually uses, rather than relying only on weight-space geometry.",
+  "engineering_relevance": "This offers a more targeted fine-tuning strategy for large models in engineering workflows where retaining prior skills while adding new ones is critical.",
   "method": [
-    "Estimate per-layer activation principal directions from label-free calibration inputs.",
-    "Build a function-space projector to remove capability-relevant input directions, paired with a weight-space SVD projector.",
-    "Use an orthogonal residual update with a narrow spectral channel for controlled plasticity, and extend the same idea to PEFT."
+    "Estimate per-layer activation principal directions from label-free calibration data.",
+    "Build a right projector that removes capability-relevant input directions and pair it with a left weight-space projector.",
+    "Use a two-branch update: a constrained high-capacity path plus a narrow spectral channel for controlled adaptation; extend to LoRA-style PEFT."
   ],
-  "evidence_signal": "Across three Qwen3-1.7B settings, including translation-preservation and math-preservation tasks, FORA consistently improved capability retention over weight-space projection and standard regularization, with only a small new-task trade-off in the math-preservation case.",
-  "watch_item": "Performance depends on representative calibration inputs, so poor calibration coverage could weaken the estimated capability subspace and reduce protection quality.",
+  "evidence_signal": "On Qwen3-1.7B across three transfer settings, including COGS and GSM8K with capability preservation targets, FORA improved preservation over weight-space projection and standard regularization, with only a small new-task trade-off in one math-preservation case.",
+  "watch_item": "The method depends on representative calibration inputs and may reduce new-task performance when the preserved capability and target task strongly conflict.",
   "hashtags": [
     "#FineTuning",
-    "#LLMAlignment",
     "#FunctionSpace",
     "#CapabilityPreservation",
+    "#LLMAlignment",
     "#ParameterEfficientTuning"
   ],
   "paper_id": "2026-06-30-arxiv-fora_from_weight_space_to_function_space_protection_in_capability_preserving_fine_tuning",
   "paper_title": "Fora: From Weight-Space to Function-Space Protection in Capability-Preserving Fine-Tuning",
   "paper_date": "2026-06-30",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-07-01T11:53:45",
+  "generated_at": "2026-07-02T11:28:26",
   "generator": "openai"
 }

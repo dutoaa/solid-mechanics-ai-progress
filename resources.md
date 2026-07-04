@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-07-03
+Generated: 2026-07-04
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. A Unified CutFEM Formulation for Finite-Strain Elasticity: Energy Minimisation and Corner Singularities

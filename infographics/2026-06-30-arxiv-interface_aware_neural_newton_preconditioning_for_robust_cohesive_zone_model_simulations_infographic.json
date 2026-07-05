@@ -1,13 +1,13 @@
 {
-  "key_insight": "IA-NNP learns interface-aware Newton preconditioning to improve convergence on difficult cohesive-zone increments without changing the underlying CZM solution set.",
-  "engineering_relevance": "It helps implicit fracture and delamination simulations recover from softening-induced solver failures while preserving the original traction–separation physics.",
+  "key_insight": "IA-NNP learns how to stabilize difficult cohesive-zone Newton solves by correcting only active interface variables, improving convergence without changing the underlying CZM solution set.",
+  "engineering_relevance": "This can make implicit fracture and delamination simulations more robust in aerospace composite structures, reducing failed increments, step cuts, and branch-convergence errors.",
   "method": [
-    "Transforms manual Newton modification into a learned, state-dependent interface correction.",
-    "Uses interface graph features from opening, traction, tangent, damage/history, mixity, residuals, and neighbors.",
-    "Provides two modes: IA-NNP-Init for initial-guess lifting and IA-NNP-NL for nonlinear right preconditioning."
+    "Interface-aware neural preconditioning for active cohesive interfaces",
+    "Two modes: learned initial-guess lifting and iteration-level nonlinear right preconditioning",
+    "Confidence-gated, bounded correction with root-equivalence to preserve the original CZM model"
   ],
-  "evidence_signal": "Benchmarks on horizontal, circular, two-interface, and active-front cases show better difficult-increment convergence, branch recovery, and fewer failures than standard Newton and manual NR modification.",
-  "watch_item": "The correction is bounded and confidence-gated, so performance depends on reliable gating and careful integration with the original nonlinear solver.",
+  "evidence_signal": "Benchmarks on horizontal, circular, two-interface, and active-front cases show better difficult-increment convergence, branch recovery, and fewer failures than standard Newton and manual modification.",
+  "watch_item": "The method depends on trained, interface-specific features and still relies on the original Newton solve, so robustness outside the benchmarked cohesive settings may require careful validation.",
   "hashtags": [
     "#FractureMechanics",
     "#CohesiveZoneModel",
@@ -19,6 +19,6 @@
   "paper_title": "Interface-Aware Neural Newton Preconditioning for Robust Cohesive Zone Model Simulations",
   "paper_date": "2026-06-30",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-07-02T11:28:07",
+  "generated_at": "2026-07-05T11:00:25",
   "generator": "openai"
 }

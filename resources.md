@@ -1,9 +1,49 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-07-06
+Generated: 2026-07-07
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
-## 1. A Unified CutFEM Formulation for Finite-Strain Elasticity: Energy Minimisation and Corner Singularities
+## 1. CertMix: Certified, Data-Efficient Metamaterial Design by Affine Mixing of Aligned Neural-Implicit Weight Spaces
+
+- Date: 2026-07-05
+- Category: Topology Optimization
+- arXiv: https://arxiv.org/abs/2607.04123v1
+- PDF: https://arxiv.org/pdf/2607.04123v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-05-arxiv-certmix_certified_data_efficient_metamaterial_design_by_affine_mixing_of_aligned_neural_im_infographic.json
+
+## 2. Generalizable turbulence closures across bluff-body shapes by PINN-based solver-agnostic training
+
+- Date: 2026-07-05
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2607.04491v1
+- PDF: https://arxiv.org/pdf/2607.04491v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-05-arxiv-generalizable_turbulence_closures_across_bluff_body_shapes_by_pinn_based_solver_agnostic_t_infographic.json
+
+## 3. Phase-field modeling of elastically driven abnormal grain growth
+
+- Date: 2026-07-06
+- Category: AI Solid Mechanics
+- arXiv: https://arxiv.org/abs/2607.05298v1
+- PDF: https://arxiv.org/pdf/2607.05298v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-phase_field_modeling_of_elastically_driven_abnormal_grain_growth_infographic.json
+
+## 4. Accelerating Multi-scale Simulations of Nuclear Components via PCYS Interpolation Tables
+
+- Date: 2026-07-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.04556v1
+- PDF: https://arxiv.org/pdf/2607.04556v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-accelerating_multi_scale_simulations_of_nuclear_components_via_pcys_interpolation_tables_infographic.json
+
+## 5. Physics-Based Simulation of Contact-Induced Facial Wrinkling
+
+- Date: 2026-07-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.04768v1
+- PDF: https://arxiv.org/pdf/2607.04768v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-physics_based_simulation_of_contact_induced_facial_wrinkling_infographic.json
+
+## 6. A Unified CutFEM Formulation for Finite-Strain Elasticity: Energy Minimisation and Corner Singularities
 
 - Date: 2026-07-02
 - Category: FEM Surrogates
@@ -11,7 +51,31 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.02334v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-a_unified_cutfem_formulation_for_finite_strain_elasticity_energy_minimisation_and_corner_s_infographic.json
 
-## 2. Strengthening and interface-mediated plastic co-deformation in an ultrafine Cr-Ni eutectic: A nanomechanical investigation
+## 7. Runaway electron induced explosions of graphite; modeling versus controlled DIII-D experiments
+
+- Date: 2026-07-04
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2607.03914v1
+- PDF: https://arxiv.org/pdf/2607.03914v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-04-arxiv-runaway_electron_induced_explosions_of_graphite_modeling_versus_controlled_diii_d_experime_infographic.json
+
+## 8. Learning Only What Valid Adapters Can Express: Subspace-Constrained Adaptation Against Fine-Tuning Poisoning
+
+- Date: 2026-07-06
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2607.05300v1
+- PDF: https://arxiv.org/pdf/2607.05300v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-learning_only_what_valid_adapters_can_express_subspace_constrained_adaptation_against_fine_infographic.json
+
+## 9. SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects
+
+- Date: 2026-07-05
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.04234v1
+- PDF: https://arxiv.org/pdf/2607.04234v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-05-arxiv-softvtbench_a_safety_aware_visuo_tactile_benchmark_for_physically_constrained_robotic_mani_infographic.json
+
+## 10. Strengthening and interface-mediated plastic co-deformation in an ultrafine Cr-Ni eutectic: A nanomechanical investigation
 
 - Date: 2026-07-01
 - Category: Fracture and Damage
@@ -19,7 +83,23 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.00906v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-01-arxiv-strengthening_and_interface_mediated_plastic_co_deformation_in_an_ultrafine_cr_ni_eutectic_infographic.json
 
-## 3. TO-Master: an LLM-agent framework for automated topology optimization
+## 11. Modeling Fatigue-Induced Anisotropic Quasi-Brittle Damage Based on the Endurance Surface Concept
+
+- Date: 2026-07-06
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2607.04818v1
+- PDF: https://arxiv.org/pdf/2607.04818v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-modeling_fatigue_induced_anisotropic_quasi_brittle_damage_based_on_the_endurance_surface_c_infographic.json
+
+## 12. Pointwise Error Estimates for Numerical Physics-Informed Neural Networks
+
+- Date: 2026-07-03
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2607.03431v1
+- PDF: https://arxiv.org/pdf/2607.03431v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-03-arxiv-pointwise_error_estimates_for_numerical_physics_informed_neural_networks_infographic.json
+
+## 13. TO-Master: an LLM-agent framework for automated topology optimization
 
 - Date: 2026-07-02
 - Category: FEM Surrogates
@@ -27,7 +107,47 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.01812v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-to_master_an_llm_agent_framework_for_automated_topology_optimization_infographic.json
 
-## 4. WarpagePINN: Thermal Warpage Prediction in Advanced Packaging via a Two-Stage Physics-Informed Neural Networks
+## 14. A dual--continuum phase-field model for hydraulic fracturing: Viscosity-dominated regime and fluid lag
+
+- Date: 2026-07-04
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2607.03776v1
+- PDF: https://arxiv.org/pdf/2607.03776v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-04-arxiv-a_dual_continuum_phase_field_model_for_hydraulic_fracturing_viscosity_dominated_regime_and_infographic.json
+
+## 15. A Body-of-Revolution Human Model for RF Sensing with Measurement-Driven Calibration for Indoor Environments
+
+- Date: 2026-07-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.05053v1
+- PDF: https://arxiv.org/pdf/2607.05053v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-a_body_of_revolution_human_model_for_rf_sensing_with_measurement_driven_calibration_for_in_infographic.json
+
+## 16. On the validity of using idealised sample geometries for interpreting mechanical tests of very soft tissues
+
+- Date: 2026-07-03
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2607.03079v1
+- PDF: https://arxiv.org/pdf/2607.03079v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-03-arxiv-on_the_validity_of_using_idealised_sample_geometries_for_interpreting_mechanical_tests_of_infographic.json
+
+## 17. PDEFlow: Autonomous Agentic PDE Pipelines for Neural Operator Learning and Solver-Free Inference
+
+- Date: 2026-07-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.05134v1
+- PDF: https://arxiv.org/pdf/2607.05134v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-pdeflow_autonomous_agentic_pde_pipelines_for_neural_operator_learning_and_solver_free_infe_infographic.json
+
+## 18. Guaranteed Lower Eigenvalue Bounds for Spectral Galerkin Methods with Application to Schrödinger Operators
+
+- Date: 2026-07-05
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.04247v1
+- PDF: https://arxiv.org/pdf/2607.04247v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-05-arxiv-guaranteed_lower_eigenvalue_bounds_for_spectral_galerkin_methods_with_application_to_schr_infographic.json
+
+## 19. WarpagePINN: Thermal Warpage Prediction in Advanced Packaging via a Two-Stage Physics-Informed Neural Networks
 
 - Date: 2026-07-01
 - Category: Physics-Informed ML
@@ -35,130 +155,10 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.00364v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-01-arxiv-warpagepinn_thermal_warpage_prediction_in_advanced_packaging_via_a_two_stage_physics_infor_infographic.json
 
-## 5. Hybrid Unet-Transformer Model for Generating Stress and Strain Fields from Composite Geometrics
+## 20. Coalesced Matrix-Free Geometric Multigrid on Persistent Cell-Wise Storage
 
-- Date: 2026-06-30
+- Date: 2026-07-03
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.31068v1
-- PDF: https://arxiv.org/pdf/2606.31068v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-30-arxiv-hybrid_unet_transformer_model_for_generating_stress_and_strain_fields_from_composite_geome_infographic.json
-
-## 6. Verification of a sequential thermo-poroelasticity formulation in PFLOTRAN
-
-- Date: 2026-07-01
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2607.01156v1
-- PDF: https://arxiv.org/pdf/2607.01156v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-01-arxiv-verification_of_a_sequential_thermo_poroelasticity_formulation_in_pflotran_infographic.json
-
-## 7. Low-regularity finite element elasticity complexes with hybridizable stresses on tetrahedral Alfeld splits
-
-- Date: 2026-07-02
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2607.01933v1
-- PDF: https://arxiv.org/pdf/2607.01933v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-low_regularity_finite_element_elasticity_complexes_with_hybridizable_stresses_on_tetrahedr_infographic.json
-
-## 8. Unconditional Optimal Error Estimates and Energy Stability for a Linearly Implicit Mass-Lumped Projection Finite Element Method for the Harmonic Map Flow
-
-- Date: 2026-07-02
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.02179v1
-- PDF: https://arxiv.org/pdf/2607.02179v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-unconditional_optimal_error_estimates_and_energy_stability_for_a_linearly_implicit_mass_lu_infographic.json
-
-## 9. Topology optimized plasmonic metasurfaces for optical trapping of nanoparticles
-
-- Date: 2026-07-02
-- Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2607.02352v1
-- PDF: https://arxiv.org/pdf/2607.02352v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-topology_optimized_plasmonic_metasurfaces_for_optical_trapping_of_nanoparticles_infographic.json
-
-## 10. Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
-
-- Date: 2026-07-02
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2607.02283v1
-- PDF: https://arxiv.org/pdf/2607.02283v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-dendritic_in_context_learning_in_a_single_layer_spiking_neural_network_infographic.json
-
-## 11. Lagrangian evaluation of polymeric stress in viscoelastic fluids
-
-- Date: 2026-07-01
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2607.01380v1
-- PDF: https://arxiv.org/pdf/2607.01380v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-01-arxiv-lagrangian_evaluation_of_polymeric_stress_in_viscoelastic_fluids_infographic.json
-
-## 12. A Variational Nonlocal Phase-Field Model for Dynamic Fracture in Elastic Solids
-
-- Date: 2026-07-02
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2607.01881v1
-- PDF: https://arxiv.org/pdf/2607.01881v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-a_variational_nonlocal_phase_field_model_for_dynamic_fracture_in_elastic_solids_infographic.json
-
-## 13. WST, the Wide-field Spectroscopic Telescope: Telescope structure FE analyses
-
-- Date: 2026-07-01
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.01134v1
-- PDF: https://arxiv.org/pdf/2607.01134v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-01-arxiv-wst_the_wide_field_spectroscopic_telescope_telescope_structure_fe_analyses_infographic.json
-
-## 14. Atomic Cluster Expansion Potentials for Screw Dislocations in BCC Refractory Metals
-
-- Date: 2026-07-01
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2607.00717v1
-- PDF: https://arxiv.org/pdf/2607.00717v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-01-arxiv-atomic_cluster_expansion_potentials_for_screw_dislocations_in_bcc_refractory_metals_infographic.json
-
-## 15. Direct numerical simulations of turbulent drag reduction via piezoelectric actuation
-
-- Date: 2026-07-02
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.02398v1
-- PDF: https://arxiv.org/pdf/2607.02398v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-direct_numerical_simulations_of_turbulent_drag_reduction_via_piezoelectric_actuation_infographic.json
-
-## 16. Coalesced Matrix-Free Finite Elements in Cell-Wise Storage
-
-- Date: 2026-07-02
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.02335v1
-- PDF: https://arxiv.org/pdf/2607.02335v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-coalesced_matrix_free_finite_elements_in_cell_wise_storage_infographic.json
-
-## 17. Determining stress-based bending mode limits for the Vera C. Rubin Observatory M1M3 active mirror system
-
-- Date: 2026-06-30
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.31849v1
-- PDF: https://arxiv.org/pdf/2606.31849v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-30-arxiv-determining_stress_based_bending_mode_limits_for_the_vera_c_rubin_observatory_m1m3_active_infographic.json
-
-## 18. Temperature Field Reconstruction of Tungsten Monoblock Divertor on EAST using Physics-aware Neural Operator Transformer
-
-- Date: 2026-06-30
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2606.31574v1
-- PDF: https://arxiv.org/pdf/2606.31574v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-30-arxiv-temperature_field_reconstruction_of_tungsten_monoblock_divertor_on_east_using_physics_awar_infographic.json
-
-## 19. Interface-Aware Neural Newton Preconditioning for Robust Cohesive Zone Model Simulations
-
-- Date: 2026-06-30
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2606.31921v2
-- PDF: https://arxiv.org/pdf/2606.31921v2
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-06-30-arxiv-interface_aware_neural_newton_preconditioning_for_robust_cohesive_zone_model_simulations_infographic.json
-
-## 20. Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes
-
-- Date: 2026-07-02
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.01591v1
-- PDF: https://arxiv.org/pdf/2607.01591v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-02-arxiv-verification_and_performance_assessment_of_nudeal_a_gpu_accelerated_deterministic_transpor_infographic.json
+- arXiv: https://arxiv.org/abs/2607.03413v1
+- PDF: https://arxiv.org/pdf/2607.03413v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-03-arxiv-coalesced_matrix_free_geometric_multigrid_on_persistent_cell_wise_storage_infographic.json

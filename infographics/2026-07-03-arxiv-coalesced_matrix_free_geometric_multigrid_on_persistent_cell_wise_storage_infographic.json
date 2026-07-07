@@ -1,0 +1,24 @@
+{
+  "key_insight": "A geometric multigrid V-cycle can be run entirely on redundant cell-wise vectors, avoiding global assembly while remaining algebraically equivalent to classical constrained multigrid.",
+  "engineering_relevance": "This simplifies adaptive high-order FEM implementations and enables high-throughput GPU solvers for large-scale elliptic problems with local refinement.",
+  "method": [
+    "Use persistent cell-wise storage so no assembled global vector is formed on any level.",
+    "Apply plain tensor-product transfer operators directly to the unassembled residual to reproduce constrained restriction automatically.",
+    "Replace explicit edge/interior operator splitting with masked point-Jacobi smoothing on each cell."
+  ],
+  "evidence_signal": "For the Laplace operator, the method shows grid-independent convergence and up to 1.1 GDoF/s per V-cycle on a single GPU in double precision.",
+  "watch_item": "The approach relies on careful implementation of cell-wise storage and masking; performance and correctness may be sensitive to memory layout and GPU kernel efficiency.",
+  "hashtags": [
+    "#FiniteElements",
+    "#Multigrid",
+    "#GPUComputing",
+    "#AdaptiveMeshRefinement",
+    "#MatrixFree"
+  ],
+  "paper_id": "2026-07-03-arxiv-coalesced_matrix_free_geometric_multigrid_on_persistent_cell_wise_storage",
+  "paper_title": "Coalesced Matrix-Free Geometric Multigrid on Persistent Cell-Wise Storage",
+  "paper_date": "2026-07-03",
+  "paper_category": "FEM Surrogates",
+  "generated_at": "2026-07-07T11:39:51",
+  "generator": "openai"
+}

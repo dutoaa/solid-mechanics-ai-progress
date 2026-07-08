@@ -1,24 +1,24 @@
 {
-  "key_insight": "Constrain adaptation to a trusted low-dimensional subspace learned from existing adapters, and you can preserve useful task learning while sharply limiting how much a poisoned objective can be expressed.",
-  "engineering_relevance": "This offers a practical robustness mechanism for fine-tuning deployed models: keep adaptability for covered tasks, but reduce susceptibility to label inversion and backdoor poisoning when the adapter pool is trusted.",
+  "key_insight": "Constrain adaptation to a trusted low-dimensional adapter subspace so fine-tuning can learn useful task changes while making poisoned or out-of-distribution updates hard to fit.",
+  "engineering_relevance": "This offers a practical robustness mechanism for parameter-efficient fine-tuning in safety-critical models, trading some flexibility for stronger resistance to targeted corruption and backdoors.",
   "method": [
-    "Estimate a shared subspace from 196 public LoRA adapters on flan-t5-large.",
+    "Build a shared subspace from 196 trusted public LoRA adapters on flan-t5-large.",
     "Restrict gradient-based adaptation to 128 coordinates in that subspace instead of full LoRA updates.",
-    "Compare clean fine-tuning, targeted label inversion, and adaptive backdoor attacks under the constrained and unconstrained settings."
+    "Compare clean-task performance, label-inversion poisoning, and adaptive backdoor attacks against standard LoRA fine-tuning."
   ],
-  "evidence_signal": "Across the evaluated tasks, the constrained learner matched full LoRA on clean data, retained 62-96% exact match under label inversion on covered tasks, and cut adaptation loss by about 120x between clean and corrupted data.",
-  "watch_item": "The defense depends on the trustworthiness and coverage of the adapter pool, and it weakens when the desired target behavior is far from the pool's learned directions.",
+  "evidence_signal": "On the evaluated tasks, the constrained learner matched clean LoRA performance, kept 62–96% exact match under targeted label inversion where LoRA dropped to 3–26%, separated clean from corrupted data by about 120× in adaptation loss, and blocked an adaptive backdoor attack at 8% success versus 100% for LoRA on one task.",
+  "watch_item": "The protection depends on trusting the adapter pool and can weaken when the target behavior lies outside the pool's covered directions, where unconstrained fine-tuning may perform better.",
   "hashtags": [
-    "#RobustFineTuning",
-    "#ParameterEfficientAdaptation",
-    "#BackdoorDefense",
+    "#FineTuningSecurity",
     "#LoRA",
-    "#TrustedSubspace"
+    "#RobustAdaptation",
+    "#AdversarialML",
+    "#ParameterEfficientLearning"
   ],
   "paper_id": "2026-07-06-arxiv-learning_only_what_valid_adapters_can_express_subspace_constrained_adaptation_against_fine",
   "paper_title": "Learning Only What Valid Adapters Can Express: Subspace-Constrained Adaptation Against Fine-Tuning Poisoning",
   "paper_date": "2026-07-06",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-07-07T11:39:20",
+  "generated_at": "2026-07-08T10:56:06",
   "generator": "openai"
 }

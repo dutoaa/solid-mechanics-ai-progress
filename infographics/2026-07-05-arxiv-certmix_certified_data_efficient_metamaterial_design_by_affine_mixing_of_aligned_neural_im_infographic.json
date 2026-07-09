@@ -1,17 +1,17 @@
 {
-  "key_insight": "CertMix makes metamaterial design data-efficient and certifiable by linearly mixing aligned neural-implicit weight spaces to match target elastic properties.",
-  "engineering_relevance": "It enables fast inverse design of periodic mechanical metamaterials with guaranteed error bounds, reducing reliance on expensive topology optimization.",
+  "key_insight": "CertMix turns metamaterial design into a small affine-mixing problem in an aligned neural-implicit weight space, enabling certified target matching from very few exemplars.",
+  "engineering_relevance": "This offers a fast, data-efficient way to design mechanical metamaterials with guaranteed property-error bounds, reducing reliance on expensive per-target topology optimization.",
   "method": [
-    "Overfit a shared-anchor SIREN signed-distance field to each exemplar unit cell so weights become aligned and comparable.",
-    "Solve a small constrained affine-mixing problem in weight space using a differentiable periodic homogenizer in the loop.",
-    "Use a trust region plus split-conformal calibration to keep blends valid and certify property-matching error."
+    "Encode each exemplar unit cell as a small periodic SIREN signed-distance field overfit from a shared anchor so weights are aligned and comparable.",
+    "Mix exemplar weights affinely; use a differentiable periodic homogenizer to predict elastic properties and solve for coefficients.",
+    "Apply a trust region plus split-conformal calibration to keep blends valid and certify the achieved-property mismatch."
   ],
-  "evidence_signal": "With as few as 50 exemplars, CertMix reached scaled property error of 10^-4, about 2-3 orders of magnitude better than conditional generative baselines trained on 1000 cells, and was 57× faster than per-target topology optimization.",
-  "watch_item": "Performance depends on the quality of aligned exemplar embeddings and the trust-region/calibration setup, so out-of-distribution geometry or poor anchor alignment may weaken guarantees.",
+  "evidence_signal": "With as few as 50 exemplars, the method reaches scaled property error of 10^-4, outperforms conditional generative baselines trained on 1000 cells by 2–3 orders of magnitude, and is 57× faster than per-target topology optimization.",
+  "watch_item": "The approach depends on the quality of the exemplar set and on maintaining the linearity-mismatch trust region; extrapolation beyond valid mixing regimes can still produce invalid blends.",
   "hashtags": [
-    "#MetamaterialDesign",
     "#TopologyOptimization",
-    "#NeuralImplicitFields",
+    "#Metamaterials",
+    "#NeuralImplicit",
     "#CertifiedAI",
     "#ComputationalMechanics"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "CertMix: Certified, Data-Efficient Metamaterial Design by Affine Mixing of Aligned Neural-Implicit Weight Spaces",
   "paper_date": "2026-07-05",
   "paper_category": "Topology Optimization",
-  "generated_at": "2026-07-08T10:55:37",
+  "generated_at": "2026-07-09T11:47:45",
   "generator": "openai"
 }

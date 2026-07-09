@@ -1,24 +1,24 @@
 {
-  "key_insight": "A fully variational CutFEM formulation for finite-strain elasticity can be built entirely from an augmented energy functional, making the method model-independent and compatible with automatic differentiation.",
-  "engineering_relevance": "This gives a robust unfitted-solid mechanics workflow that weakly enforces boundary conditions, handles complex geometries without remeshing, and preserves optimal convergence and conditioning.",
+  "key_insight": "The paper introduces a fully variational CutFEM for finite-strain elasticity where the total energy, weak boundary enforcement, and ghost stabilization generate the residual and tangent consistently via automatic differentiation.",
+  "engineering_relevance": "It enables robust unfitted finite-strain simulations on complex geometries with cut-independent conditioning and reusable hyperelastic model definitions, which is valuable for practical solid mechanics workflows.",
   "method": [
-    "Augment the hyperelastic bulk energy with Nitsche boundary terms and ghost-penalty stabilization.",
-    "Derive residuals and the symmetrized tangent by successive variation of the energy functional.",
-    "Use automatic differentiation to obtain the first Piola–Kirchhoff stress and elasticity tensor directly from the scalar energy density."
+    "Augmented energy = bulk hyperelastic energy + Nitsche boundary terms + ghost-penalty stabilization",
+    "Residual and symmetrised tangent are obtained by successive variations; AD computes stress and elasticity tensors from the scalar energy density",
+    "Cut-independent coercivity/continuity and an O(h^-2) condition bound support quasi-optimal Newton solves"
   ],
-  "evidence_signal": "The abstract reports optimal h-convergence for linear, quadratic, and cubic elements on a smooth benchmark, plus cut-independent coercivity and an O(h^-2) condition-number bound.",
-  "watch_item": "Accuracy can still be limited by corner singularities at mixed Dirichlet–Neumann junctions unless local mesh refinement is used.",
+  "evidence_signal": "The abstract reports optimal h-convergence for linear, quadratic, and cubic elements on a smooth test case, and shows that corner singularities cap convergence until local refinement restores the optimal rate.",
+  "watch_item": "Accuracy can still be limited by mixed Dirichlet–Neumann corner singularities, so mesh refinement near junctions is important in practice.",
   "hashtags": [
     "#CutFEM",
     "#FiniteStrain",
-    "#Hyperelasticity",
     "#AutomaticDifferentiation",
-    "#ComputationalMechanics"
+    "#Hyperelasticity",
+    "#FiniteElementMethods"
   ],
   "paper_id": "2026-07-02-arxiv-a_unified_cutfem_formulation_for_finite_strain_elasticity_energy_minimisation_and_corner_s",
   "paper_title": "A Unified CutFEM Formulation for Finite-Strain Elasticity: Energy Minimisation and Corner Singularities",
   "paper_date": "2026-07-02",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-07-08T10:55:58",
+  "generated_at": "2026-07-09T11:48:24",
   "generator": "openai"
 }

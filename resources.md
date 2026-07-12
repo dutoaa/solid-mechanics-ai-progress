@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-07-11
+Generated: 2026-07-12
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. A Physics-Informed Neural Network Framework for Elastodynamic Wave Propagation in Bimaterial Systems
@@ -27,15 +27,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.05749v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-07-arxiv-towards_joint_optimization_of_stellarator_coils_and_support_structures_infographic.json
 
-## 4. HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization
-
-- Date: 2026-07-08
-- Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2607.07233v1
-- PDF: https://arxiv.org/pdf/2607.07233v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-hpg_diff_hierarchical_physics_guided_diffusion_with_differentiable_connectivity_constraint_infographic.json
-
-## 5. A locking free mixed FEM based on a pure pseudostress based formulation for the elasticity eigenproblem
+## 4. A locking free mixed FEM based on a pure pseudostress based formulation for the elasticity eigenproblem
 
 - Date: 2026-07-08
 - Category: FEM Surrogates
@@ -43,7 +35,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.06890v2
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-a_locking_free_mixed_fem_based_on_a_pure_pseudostress_based_formulation_for_the_elasticity_infographic.json
 
-## 6. Neural Operator-enabled Topology-informed Evolutionary Strategy for PDE-Constrained Optimization
+## 5. Neural Operator-enabled Topology-informed Evolutionary Strategy for PDE-Constrained Optimization
 
 - Date: 2026-07-08
 - Category: Topology Optimization
@@ -51,7 +43,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.07682v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-neural_operator_enabled_topology_informed_evolutionary_strategy_for_pde_constrained_optimi_infographic.json
 
-## 7. Soft Robotic Exogloves for Dexterous Mobility -- Towards Personalized Rehabilitation
+## 6. Soft Robotic Exogloves for Dexterous Mobility -- Towards Personalized Rehabilitation
 
 - Date: 2026-07-08
 - Category: FEM Surrogates
@@ -59,15 +51,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.07968v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-soft_robotic_exogloves_for_dexterous_mobility_towards_personalized_rehabilitation_infographic.json
 
-## 8. CertMix: Certified, Data-Efficient Metamaterial Design by Affine Mixing of Aligned Neural-Implicit Weight Spaces
+## 7. HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2607.04123v1
-- PDF: https://arxiv.org/pdf/2607.04123v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-05-arxiv-certmix_certified_data_efficient_metamaterial_design_by_affine_mixing_of_aligned_neural_im_infographic.json
+- arXiv: https://arxiv.org/abs/2607.07233v1
+- PDF: https://arxiv.org/pdf/2607.07233v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-hpg_diff_hierarchical_physics_guided_diffusion_with_differentiable_connectivity_constraint_infographic.json
 
-## 9. A black-box, multilevel algebraic preconditioning framework for conforming finite elements
+## 8. A black-box, multilevel algebraic preconditioning framework for conforming finite elements
 
 - Date: 2026-07-08
 - Category: FEM Surrogates
@@ -75,7 +67,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.07485v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-a_black_box_multilevel_algebraic_preconditioning_framework_for_conforming_finite_elements_infographic.json
 
-## 10. From Application-Layer Simulation to Native Meta-Architecture: Structural Tension as an Endogenous Driver for Heterogeneous AI Evolution
+## 9. From Application-Layer Simulation to Native Meta-Architecture: Structural Tension as an Endogenous Driver for Heterogeneous AI Evolution
 
 - Date: 2026-07-07
 - Category: Constitutive Modeling
@@ -83,7 +75,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.06269v2
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-07-arxiv-from_application_layer_simulation_to_native_meta_architecture_structural_tension_as_an_end_infographic.json
 
-## 11. Solving Hamiltonian Constraint Equation with Physics-Informed Neural Networks
+## 10. Solving Hamiltonian Constraint Equation with Physics-Informed Neural Networks
 
 - Date: 2026-07-07
 - Category: Physics-Informed ML
@@ -91,7 +83,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.06002v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-07-arxiv-solving_hamiltonian_constraint_equation_with_physics_informed_neural_networks_infographic.json
 
-## 12. An optimal control approach for neural network architecture adaptation with a posteriori error estimation
+## 11. An optimal control approach for neural network architecture adaptation with a posteriori error estimation
 
 - Date: 2026-07-08
 - Category: FEM Surrogates
@@ -99,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.07637v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-an_optimal_control_approach_for_neural_network_architecture_adaptation_with_a_posteriori_e_infographic.json
 
-## 13. Generalizable turbulence closures across bluff-body shapes by PINN-based solver-agnostic training
+## 12. Generalizable turbulence closures across bluff-body shapes by PINN-based solver-agnostic training
 
 - Date: 2026-07-05
 - Category: Physics-Informed ML
@@ -107,7 +99,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.04491v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-05-arxiv-generalizable_turbulence_closures_across_bluff_body_shapes_by_pinn_based_solver_agnostic_t_infographic.json
 
-## 14. Machine learning pipeline for identifying tracks of muons and hadrons at GRAPES-3 muon telescope
+## 13. Machine learning pipeline for identifying tracks of muons and hadrons at GRAPES-3 muon telescope
 
 - Date: 2026-07-08
 - Category: AI Solid Mechanics
@@ -115,7 +107,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.07263v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-machine_learning_pipeline_for_identifying_tracks_of_muons_and_hadrons_at_grapes_3_muon_tel_infographic.json
 
-## 15. Phase-field modeling of elastically driven abnormal grain growth
+## 14. Phase-field modeling of elastically driven abnormal grain growth
 
 - Date: 2026-07-06
 - Category: AI Solid Mechanics
@@ -123,7 +115,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.05298v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-phase_field_modeling_of_elastically_driven_abnormal_grain_growth_infographic.json
 
-## 16. Accelerating Multi-scale Simulations of Nuclear Components via PCYS Interpolation Tables
+## 15. Accelerating Multi-scale Simulations of Nuclear Components via PCYS Interpolation Tables
 
 - Date: 2026-07-06
 - Category: FEM Surrogates
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.04556v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-accelerating_multi_scale_simulations_of_nuclear_components_via_pcys_interpolation_tables_infographic.json
 
-## 17. SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects
+## 16. SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects
 
 - Date: 2026-07-05
 - Category: FEM Surrogates
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.04234v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-05-arxiv-softvtbench_a_safety_aware_visuo_tactile_benchmark_for_physically_constrained_robotic_mani_infographic.json
 
-## 18. A Puck-informed mode-resolved phase-field fatigue framework for unidirectional composites
+## 17. A Puck-informed mode-resolved phase-field fatigue framework for unidirectional composites
 
 - Date: 2026-07-08
 - Category: Fracture and Damage
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.07977v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-a_puck_informed_mode_resolved_phase_field_fatigue_framework_for_unidirectional_composites_infographic.json
 
-## 19. Towards Soft Robotic Exogloves for Musculoskeletal Manipulation to Reduce Pain and Spasticity
+## 18. Towards Soft Robotic Exogloves for Musculoskeletal Manipulation to Reduce Pain and Spasticity
 
 - Date: 2026-07-08
 - Category: FEM Surrogates
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.07958v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-08-arxiv-towards_soft_robotic_exogloves_for_musculoskeletal_manipulation_to_reduce_pain_and_spastic_infographic.json
 
-## 20. Physics-Based Simulation of Contact-Induced Facial Wrinkling
+## 19. Physics-Based Simulation of Contact-Induced Facial Wrinkling
 
 - Date: 2026-07-06
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2607.04768v1
 - PDF: https://arxiv.org/pdf/2607.04768v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-06-arxiv-physics_based_simulation_of_contact_induced_facial_wrinkling_infographic.json
+
+## 20. An Iterative Method for Transient Finite Element Simulations of Non-Linear Eddy Current Problems
+
+- Date: 2026-07-09
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.08432v1
+- PDF: https://arxiv.org/pdf/2607.08432v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-09-arxiv-an_iterative_method_for_transient_finite_element_simulations_of_non_linear_eddy_current_pr_infographic.json

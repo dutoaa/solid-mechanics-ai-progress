@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI Solid Mechanics Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-07-11. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-07-12. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,7 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>98</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>93</strong></div>
         <p class="date">2026-07-07</p>
         <h2>A Physics-Informed Neural Network Framework for Elastodynamic Wave Propagation in Bimaterial Systems</h2>
         <p class="authors">Sonal Ankush Chibire, Jenn-Terng Gau, Bo Zhang</p>
@@ -39,18 +39,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.06479v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.06479v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A physics-informed neural network can learn transient elastodynamic wave propagation across a bimaterial interface and act as a continuous surrogate for stress, strain, and displacement fields.</p>
-          <p><b>Engineering relevance:</b> This enables fast, physics-consistent prediction of impact-wave behavior in heterogeneous solids such as Split Hopkinson Pressure Bar specimens, reducing reliance on repeated high-cost finite-element simulations.</p>
-          <ul><li>Encode axisymmetric linear elasticity, initial/boundary conditions, and interface continuity into the PINN loss.</li><li>Train and validate with high-fidelity ANSYS Explicit Dynamics simulations as supplementary constraints.</li><li>Test interpolation in time and generalization to modified material properties and additional bimaterial combinations.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports close agreement with finite-element solutions for wave transmission/reflection, displacement histories, face-averaged responses, and dominant stress/strain evolution, plus successful predictions at unseen time instants.</p>
-          <p><b>Watch item:</b> Performance may depend on careful loss balancing and the availability of sufficiently accurate FEM/experimental constraints, especially near sharp wave fronts and interface discontinuities.</p>
-          <div class="tags"><span>#PhysicsInformedML</span> <span>#PINN</span> <span>#Elastodynamics</span> <span>#SolidMechanics</span> <span>#SurrogateModeling</span></div>
+          <p><b>Key insight:</b> A physics-informed neural network can learn transient elastodynamic wave propagation in a bimaterial solid while enforcing elasticity, interface, and boundary physics, enabling accurate surrogate predictions of reflection and transmission.</p>
+          <p><b>Engineering relevance:</b> This offers a fast, physics-consistent alternative to repeated finite-element simulations for impact and high-rate solid mechanics problems such as Split Hopkinson Pressure Bar analysis.</p>
+          <ul><li>PINN trained on axisymmetric linear elastodynamics with initial, boundary, and interface conditions embedded in the loss.</li><li>Validated and supplemented with high-fidelity ANSYS Explicit Dynamics finite-element data.</li><li>Used as a continuous surrogate to predict unseen time instants and modified material properties.</li></ul>
+          <p><b>Evidence signal:</b> The model matched finite-element results for axial/radial displacements, face-averaged responses, and dominant stress/strain evolution, with mesh-sensitivity studies supporting numerical robustness.</p>
+          <p><b>Watch item:</b> Performance may depend on careful loss balancing and validation when generalizing to new material pairs or more complex geometries.</p>
+          <div class="tags"><span>#PhysicsInformedML</span> <span>#PINN</span> <span>#Elastodynamics</span> <span>#SolidMechanics</span> <span>#FiniteElementAnalysis</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>79</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>74</strong></div>
         <p class="date">2026-07-08</p>
         <h2>Physics-Audited Agentic Discovery in Scientific Machine Learning</h2>
         <p class="authors">Diab W. Abueidda, Bilal Ahmed, Panos Pantidis, Mostafa E. Mobasher</p>
@@ -58,18 +58,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07379v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07379v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PA-SciML makes agentic scientific machine learning verification-first by auditing candidate surrogates against explicit physics checks, not just error metrics.</p>
-          <p><b>Engineering relevance:</b> For solid mechanics surrogate modeling, this helps ensure discovered models respect boundary conditions, scaling, superposition, and causality before they are trusted in design or simulation workflows.</p>
-          <ul><li>Fix the evaluator before search and define machine-checkable physics requirements.</li><li>Check each trained candidate directly on predicted outputs, while separately probing input/load-history spans for high-violation cases.</li><li>Optionally run advisory numerical probes and isolate one modeling change at a time to track which edits improve score.</li></ul>
-          <p><b>Evidence signal:</b> In the reported elasticity example, the selected model had lower validation error than the error-only baseline, and in elastodynamics an error-only baseline with similar mean error failed a causality check while the PA-SciML model passed.</p>
-          <p><b>Watch item:</b> Physics audits are only as strong as the chosen checks and search ranges, so incomplete requirements could still miss important failure modes.</p>
-          <div class="tags"><span>#ScientificMachineLearning</span> <span>#ComputationalMechanics</span> <span>#PhysicsInformedAI</span> <span>#SurrogateModeling</span> <span>#AgenticAI</span></div>
+          <p><b>Key insight:</b> PA-SciML adds a verification-first, physics-audited workflow so agentic SciML models are accepted only when their predicted fields satisfy explicit mechanics checks, not just low error.</p>
+          <p><b>Engineering relevance:</b> This helps computational solid mechanics teams trust surrogate models for design and simulation because the workflow can catch boundary-condition, scaling, and causality violations that standard error metrics miss.</p>
+          <ul><li>Fix the evaluator before search and derive machine-checkable physics requirements.</li><li>Test each candidate surrogate directly on outputs and search for high-violation cases over prescribed input or load-history ranges.</li><li>Optionally use advisory numerical probes before training and isolate one modeling change at a time to track which edits improve score.</li></ul>
+          <p><b>Evidence signal:</b> In the reported examples, the static elasticity surrogate beat the error-only baseline on validation error while both passed linear-elastic checks, and in transient elastodynamics an error-only baseline with similar mean error failed a causality check whereas the selected surrogate passed.</p>
+          <p><b>Watch item:</b> Verification quality depends on how complete and stringent the chosen physics checks and violation searches are, so weak or incomplete audits could still miss important failure modes.</p>
+          <div class="tags"><span>#ScientificMachineLearning</span> <span>#SolidMechanics</span> <span>#PhysicsInformedAI</span> <span>#SurrogateModeling</span> <span>#LLMAgents</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>70</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>65</strong></div>
         <p class="date">2026-07-07</p>
         <h2>Towards joint optimization of stellarator coils and support structures</h2>
         <p class="authors">Lanke Fu, Alan A. Kaptanoglu</p>
@@ -77,37 +77,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.05749v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.05749v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Integrating differentiable finite element analysis into stellarator coil optimization lets engineers co-design coil geometry and support clamps to improve both magnetic performance and structural safety.</p>
-          <p><b>Engineering relevance:</b> This reduces the trial-and-error burden of placing supports by hand, enabling faster, more manufacturable fusion magnet designs with lower coil stress.</p>
-          <ul><li>Built an open-source tool, coil-fem, that adds differentiable structural mechanics to the coil optimization loop.</li><li>Jointly optimized coil shape and support clamp locations with a stress penalty term.</li><li>Balanced magnetic field error against structural rigidity in one integrated workflow.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a resulting coil set with 2.4× lower RMS von Mises stress and similar field error versus an unoptimized baseline.</p>
-          <p><b>Watch item:</b> Results are shown on a design case from the abstract, so practical gains may depend on model fidelity, material assumptions, and how well the differentiable FEA matches real hardware.</p>
-          <div class="tags"><span>#FusionEnergy</span> <span>#Stellarators</span> <span>#DifferentiableFEA</span> <span>#StructuralMechanics</span> <span>#Optimization</span></div>
+          <p><b>Key insight:</b> The paper integrates differentiable finite element support-structure modeling into stellarator coil optimization, enabling simultaneous improvement of magnetic performance and mechanical stress.</p>
+          <p><b>Engineering relevance:</b> This makes stellarator coil design less trial-and-error by co-optimizing coil shape and clamp placement for better field accuracy, lower stress, and more practical manufacturability.</p>
+          <ul><li>Open-source tool &quot;coil-fem&quot; couples stellarator coil optimization with differentiable structural mechanics.</li><li>Support structure effects are included directly in the optimization loop via differentiable FEA.</li><li>A penalty term is used to balance field error against RMS von Mises stress in the coil body.</li></ul>
+          <p><b>Evidence signal:</b> In the reported demonstration, the optimized coil set achieved 2.4× lower RMS von Mises stress while maintaining similar magnetic field error to the unoptimized baseline.</p>
+          <p><b>Watch item:</b> Results are shown for a specific optimization setup, so performance may depend on geometry, material assumptions, and how accurately the differentiable FEA captures real support-contact behavior.</p>
+          <div class="tags"><span>#Stellarator</span> <span>#FusionEnergy</span> <span>#DifferentiableFEA</span> <span>#StructuralOptimization</span> <span>#ComputationalMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>69</strong></div>
-        <p class="date">2026-07-08</p>
-        <h2>HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization</h2>
-        <p class="authors">Jinbo Yang, Mingyue Yuan, Boyuan Zhang, Yoshifumi Kitamura, Shikai Jing</p>
-        <p class="abstract">Deep generative models offer a promising paradigm for topology optimization, enabling rapid design exploration. However, these approaches lack intrinsic physics guidance, often leading to poor generalizability across unseen boundary conditions and the formation of floating material artifacts. To address these limitations, we propose Hierarchical Physics-Guided Diffusion (HPG-Diff), a novel diffusion framework that enforces physics consistency through two synergistic mechanisms. First, we introduce a hierarchical physics-guided strategy that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability. Second, we propose a floating material suppression loss as a differentiable connectivity constraint inspired by thermal conduction to improve topological connectivity. By simulating a virtual heat propagation process from load positions, this mechanism explicitly penalizes floating material during training. Quantitative evaluations demonstrate that HPG-Diff achieves average compliance errors of 0.87% (in-distribution) and 5.29% (out-of-distribution), while reducing floating material ratios to 2.90% and 2.44%, respectively. Furthermore, case studies on a 3:1 rectangular domain, including cantilever and bridge benchmarks, provide preliminary evidence that lightweight LoRA fine-tuning with a small dataset can support the adaptation of HPG-Diff to rectangular non-square domains.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.07233v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07233v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> HPG-Diff combines diffusion-based topology optimization with physics-guided denoising and a differentiable connectivity penalty to produce more physically plausible structures.</p>
-          <p><b>Engineering relevance:</b> The method improves generalization to unseen load/boundary conditions while reducing disconnected floating material, making it more practical for real structural design workflows.</p>
-          <ul><li>Hierarchically inject precomputed physics features into the diffusion denoising process.</li><li>Use a floating-material suppression loss based on virtual heat propagation from load points.</li><li>Optionally adapt to new rectangular domains with lightweight LoRA fine-tuning.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports average compliance errors of 0.87% in-distribution and 5.29% out-of-distribution, with floating material ratios reduced to 2.90% and 2.44%.</p>
-          <p><b>Watch item:</b> The connectivity constraint and physics-feature alignment add training complexity, and the reported rectangular-domain adaptation is only preliminary.</p>
-          <div class="tags"><span>#TopologyOptimization</span> <span>#DiffusionModels</span> <span>#PhysicsGuidedAI</span> <span>#ComputationalMechanics</span> <span>#StructuralDesign</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>69</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>64</strong></div>
         <p class="date">2026-07-08</p>
         <h2>A locking free mixed FEM based on a pure pseudostress based formulation for the elasticity eigenproblem</h2>
         <p class="authors">Arbaz Khan, Felipe Lepe, Jesus Vellojin</p>
@@ -115,18 +96,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.06890v2" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.06890v2" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A locking-free mixed finite element formulation solves elasticity eigenproblems using only the pseudostress tensor, avoiding any symmetry enforcement and recovering displacement by postprocessing.</p>
-          <p><b>Engineering relevance:</b> This provides a robust route for accurate solid mechanics eigenanalysis in 2D and 3D, especially when standard displacement-based FEM suffers from locking.</p>
-          <ul><li>Formulate the elasticity eigenproblem purely in terms of pseudostress.</li><li>Discretize with tensor-valued H(bdiv) mixed finite elements based on standard element families.</li><li>Prove convergence, a priori error bounds, and a posteriori reliability/efficiency under non-compact operator theory.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports theoretical convergence and error estimates, plus numerical tests across different geometries and physical configurations to validate the method.</p>
-          <p><b>Watch item:</b> Because displacement is recovered through postprocessing, implementation must carefully preserve stability and accuracy in the tensor-based mixed discretization.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#SolidMechanics</span> <span>#Pseudostress</span> <span>#EigenvalueProblem</span> <span>#LockingFree</span></div>
+          <p><b>Key insight:</b> A locking-free mixed finite element formulation solves elasticity eigenproblems using only the pseudostress tensor, avoiding any symmetry enforcement while still enabling displacement recovery by postprocessing.</p>
+          <p><b>Engineering relevance:</b> This offers a robust and scalable route for accurate vibration and stability analysis of elastic structures, especially in regimes where standard FEM can suffer from locking.</p>
+          <ul><li>Mixed FEM built on tensor-valued H(div) finite elements for the pseudostress field</li><li>Eigenproblem analyzed with non-compact operator theory to prove convergence and a priori error bounds</li><li>A posteriori error estimator developed with proven reliability and efficiency</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports theoretical convergence/error analysis and numerical tests across different geometries and physical settings to validate the method.</p>
+          <p><b>Watch item:</b> The approach depends on a postprocessed displacement recovery step and specialized mixed tensor elements, so implementation and mesh/space choice may affect practicality.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#SolidMechanics</span> <span>#EigenvalueProblem</span> <span>#LockingFree</span> <span>#MixedMethods</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>68</strong></div>
+        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>63</strong></div>
         <p class="date">2026-07-08</p>
         <h2>Neural Operator-enabled Topology-informed Evolutionary Strategy for PDE-Constrained Optimization</h2>
         <p class="authors">Xiangming Huang, Guannan Zhang, Lu Lu, Raphaël Pestourie</p>
@@ -134,18 +115,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07682v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07682v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> NOTES combines a DeepONet neural operator with CMA-ES to optimize PDE-constrained designs in a much smaller latent space, making inverse design more efficient and transferable.</p>
-          <p><b>Engineering relevance:</b> The approach offers a practical route to robust topology optimization for fields like nanophotonics and structural mechanics when direct high-dimensional search is too expensive.</p>
-          <ul><li>Learn a topology-aware latent representation with a DeepONet-based neural operator</li><li>Run CMA-ES in the compact latent space instead of the full design space</li><li>Use the PDE solver only for physics evaluation, enabling transfer to unseen operating conditions</li></ul>
-          <p><b>Evidence signal:</b> In the abstract, NOTES reduces the design dimension from 256 to 25 and is reported to achieve over 95 percent efficiency for nanophotonic beam deflection, with structural designs reaching compliance down to 246.</p>
-          <p><b>Watch item:</b> Performance depends on the quality of the learned latent prior and the cost of training the neural operator, so transferability may weaken if the operating regime is far outside the training distribution.</p>
-          <div class="tags"><span>#TopologyOptimization</span> <span>#NeuralOperators</span> <span>#CMAES</span> <span>#InverseDesign</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> NOTES combines a DeepONet neural operator with CMA-ES to optimize PDE-constrained designs in a much smaller latent space while preserving topology-aware priors and transferability.</p>
+          <p><b>Engineering relevance:</b> This enables faster, more robust inverse design for complex physics problems such as nanophotonics and structural optimization, where direct high-dimensional search is expensive.</p>
+          <ul><li>Train a DeepONet-based neural operator to learn a compact topology-informed latent representation.</li><li>Run CMA-ES in the latent space instead of the full design space.</li><li>Decode candidate solutions and evaluate them with the governing PDE solver for physics-based feedback.</li></ul>
+          <p><b>Evidence signal:</b> In the abstract, NOTES reduces the design space from 256 to 25 variables and reports over 95% efficiency on nanophotonic beam-deflector design, while also achieving compliance down to 246 in structural optimization.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of the learned latent representation and the training data distribution, so transfer to new physics or extreme conditions may still require retraining or careful validation.</p>
+          <div class="tags"><span>#TopologyOptimization</span> <span>#NeuralOperators</span> <span>#CMAES</span> <span>#InverseDesign</span> <span>#PDEConstrainedOptimization</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>65</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>60</strong></div>
         <p class="date">2026-07-08</p>
         <h2>Soft Robotic Exogloves for Dexterous Mobility -- Towards Personalized Rehabilitation</h2>
         <p class="authors">Paul Dela Cruz, Mostafa Mo. Massoud, Jacqueline Libby</p>
@@ -153,37 +134,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07968v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07968v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Personalizing a soft robotic exoglove with hand scans and finite-element modeling improves actuator-to-finger alignment and targeted joint mobility for dexterous rehabilitation.</p>
-          <p><b>Engineering relevance:</b> The work shows how anatomy-aware design and pHRI simulation can guide soft actuator optimization for safer, more effective hand-assist devices.</p>
-          <ul><li>Topological hand scans used to tailor glove geometry and fabricate silicone mold-cast exogloves.</li><li>FEA evaluated actuator bending and contact forces against a personalized biomechanical finger model.</li><li>Pneumatic experiments tested static and dynamic pressure control for MCP and PIP joint flexion.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports successful scan-based fit, simulation of contact forces and joint mobilization, and pressure-controlled actuation that accurately flexed the user’s MCP and PIP joints.</p>
-          <p><b>Watch item:</b> Results suggest some non-ideal proximal phalanx compression, so clinical use will need careful tuning of pressure, alignment, and strain-limiting design.</p>
-          <div class="tags"><span>#SoftRobotics</span> <span>#Exoglove</span> <span>#FiniteElementAnalysis</span> <span>#RehabilitationEngineering</span> <span>#PersonalizedModeling</span></div>
+          <p><b>Key insight:</b> Personalizing a soft robotic exoglove to a user’s hand geometry improves fit and helps target finger joint motion for dexterous rehabilitation.</p>
+          <p><b>Engineering relevance:</b> The work shows how anatomically informed design, FEA, and pressure control can be combined to optimize soft wearable actuators for hand therapy and assistance.</p>
+          <ul><li>Topological hand scans were used to tailor the exoglove geometry and fabricate silicone molds.</li><li>Finite element analysis modeled actuator bending and physical human-robot interaction against a personalized finger model.</li><li>Pneumatic experiments tested static and dynamic pressure-based flexion of MCP and PIP joints.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that scans enabled precise anatomical tailoring, simulations captured contact forces and joint mobilization, and tests showed accurate targeted movement of MCP and PIP joints.</p>
+          <p><b>Watch item:</b> Performance may still depend on managing non-ideal compression and actuator-to-finger misalignment, especially across different hand anatomies and stiffness levels.</p>
+          <div class="tags"><span>#SoftRobotics</span> <span>#Exoglove</span> <span>#FiniteElementAnalysis</span> <span>#RehabilitationEngineering</span> <span>#HumanRobotInteraction</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>65</strong></div>
-        <p class="date">2026-07-05</p>
-        <h2>CertMix: Certified, Data-Efficient Metamaterial Design by Affine Mixing of Aligned Neural-Implicit Weight Spaces</h2>
-        <p class="authors">Yifan Wang</p>
-        <p class="abstract">Inverse design of mechanical metamaterials seeks a periodic unit cell whose homogenized elastic properties meet a prescribed target, but current learning-based methods are data-hungry, mostly interpolative, and provide no guarantee that the generated design satisfies the specification. We introduce CertMix, a data-efficient framework that represents each exemplar unit cell as a small periodic neural implicit field, specifically a SIREN signed-distance decoder overfit from a shared anchor, so that exemplar weight vectors become aligned and directly comparable. The key observation is that, in this aligned weight space, the homogenized elasticity tensor is approximately linear in the mixing coefficients. Targeted design therefore reduces to a small constrained affine-mixing problem solved with a differentiable periodic homogenizer in the loop. Negative coefficients enable extrapolation beyond the exemplar range, a linearity-mismatch trust region keeps blends valid, and split-conformal calibration converts the mismatch signal into a distribution-free certificate on achieved-property error. From as few as 50 exemplars, CertMix attains a scaled property error of $10^{-4}$, roughly two to three orders of magnitude below conditional generative baselines trained on 1000 cells. It remains accurate far outside the exemplar range, is $57\times$ faster than per-target topology optimization while avoiding checkerboards and enclosed voids, and extends to spatially graded fields, 3D triply periodic surfaces, and a certified running-shoe midsole application.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.04123v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.04123v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>59</strong></div>
+        <p class="date">2026-07-08</p>
+        <h2>HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization</h2>
+        <p class="authors">Jinbo Yang, Mingyue Yuan, Boyuan Zhang, Yoshifumi Kitamura, Shikai Jing</p>
+        <p class="abstract">Deep generative models offer a promising paradigm for topology optimization, enabling rapid design exploration. However, these approaches lack intrinsic physics guidance, often leading to poor generalizability across unseen boundary conditions and the formation of floating material artifacts. To address these limitations, we propose Hierarchical Physics-Guided Diffusion (HPG-Diff), a novel diffusion framework that enforces physics consistency through two synergistic mechanisms. First, we introduce a hierarchical physics-guided strategy that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability. Second, we propose a floating material suppression loss as a differentiable connectivity constraint inspired by thermal conduction to improve topological connectivity. By simulating a virtual heat propagation process from load positions, this mechanism explicitly penalizes floating material during training. Quantitative evaluations demonstrate that HPG-Diff achieves average compliance errors of 0.87% (in-distribution) and 5.29% (out-of-distribution), while reducing floating material ratios to 2.90% and 2.44%, respectively. Furthermore, case studies on a 3:1 rectangular domain, including cantilever and bridge benchmarks, provide preliminary evidence that lightweight LoRA fine-tuning with a small dataset can support the adaptation of HPG-Diff to rectangular non-square domains.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.07233v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07233v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> CertMix aligns exemplar metamaterial designs in a shared neural-implicit weight space, making effective elasticity nearly linear in mixing coefficients so target properties can be reached by certified affine mixing rather than expensive per-target optimization.</p>
-          <p><b>Engineering relevance:</b> This enables data-efficient inverse design of mechanical metamaterials with property guarantees, supporting fast synthesis of periodic unit cells for applications like graded structures, 3D TPMS, and wearable midsoles.</p>
-          <ul><li>Overfit a small SIREN signed-distance decoder from a shared anchor for each exemplar so weight vectors are aligned and comparable.</li><li>Solve a constrained affine-mixing problem in the aligned weight space with a differentiable periodic homogenizer in the loop.</li><li>Use linearity-mismatch trust regions and split-conformal calibration to keep blends valid and certify property-error bounds.</li></ul>
-          <p><b>Evidence signal:</b> From only 50 exemplars, the method reaches a scaled property error of 1e-4, about 2-3 orders of magnitude better than conditional generative baselines trained on 1000 cells, and is 57x faster than per-target topology optimization.</p>
-          <p><b>Watch item:</b> Performance depends on how well the linearity-mismatch trust region and conformal calibration match the true design space, so extrapolation beyond exemplar coverage still needs careful validation.</p>
-          <div class="tags"><span>#TopologyOptimization</span> <span>#Metamaterials</span> <span>#NeuralImplicit</span> <span>#CertifiedAI</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> HPG-Diff combines hierarchical physics-guided diffusion with a differentiable connectivity penalty to generate topology designs that are both more physically consistent and less prone to floating material.</p>
+          <p><b>Engineering relevance:</b> It improves robustness for topology optimization under unseen boundary conditions, which is important for practical lightweight structural design workflows.</p>
+          <ul><li>Aligns multi-level precomputed physics features with the diffusion denoising process</li><li>Uses a virtual heat-propagation-based floating material suppression loss to enforce connectivity</li><li>Supports adaptation to new rectangular domains with lightweight LoRA fine-tuning</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports average compliance errors of 0.87% in-distribution and 5.29% out-of-distribution, with floating material ratios reduced to 2.90% and 2.44%, respectively.</p>
+          <p><b>Watch item:</b> The approach depends on precomputed physics features and a differentiable surrogate connectivity constraint, so performance may be sensitive to feature quality and transfer to more complex geometries.</p>
+          <div class="tags"><span>#TopologyOptimization</span> <span>#DiffusionModels</span> <span>#ComputationalMechanics</span> <span>#PhysicsGuidedAI</span> <span>#StructuralDesign</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>63</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
         <p class="date">2026-07-08</p>
         <h2>A black-box, multilevel algebraic preconditioning framework for conforming finite elements</h2>
         <p class="authors">O. A. Krzysik, B. S. Southworth, G. A. Wimmer</p>
@@ -191,18 +172,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07485v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07485v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Conforming finite-element SPD systems can be preconditioned in a black-box way by exploiting local Gram/energy structure to build multilevel algebraic preconditioners.</p>
-          <p><b>Engineering relevance:</b> This provides a practical AMG-style solver path for difficult solid-mechanics and PDE systems where classical AMG can stall or converge very slowly.</p>
-          <ul><li>Show that a local Gram representation exists exactly when a local SPSD splitting exists on the chosen DoF cover.</li><li>Build interpolation from local spectral problems derived from the Gram factor G, then coarsen with A_c = G_c^T G_c using G_c = G P.</li><li>Apply the framework to conforming FEM by extracting element-local factors from assembled element energies, enabling black-box use on H^1, H(div), and H^2 problems.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports robustness on multiple hard test cases, including problems where classical AMG needed more than 10^5 iterations, and notes 2–5 orders of magnitude smaller errors than some competing AMG methods at the same residual tolerance.</p>
-          <p><b>Watch item:</b> The approach depends on constructing suitable local Gram factors / SPSD splittings from element blocks, which may require careful implementation and factor extraction for some discretizations.</p>
-          <div class="tags"><span>#FiniteElements</span> <span>#AlgebraicMultigrid</span> <span>#Preconditioning</span> <span>#SolidMechanics</span> <span>#SciComp</span></div>
+          <p><b>Key insight:</b> Conforming finite-element matrices can be treated as locally Gram-representable SPD systems, enabling a black-box multilevel algebraic preconditioner built from element-wise SPSD energy splits and coarse Gram operators.</p>
+          <p><b>Engineering relevance:</b> This gives a practical AMG-like route for difficult solid-mechanics and PDE discretizations, especially when standard AMG struggles with high-order, anisotropic, or vector-valued FEM systems.</p>
+          <ul><li>Define a cover of degrees of freedom and check for a local Gram/SPSD splitting of the SPD matrix.</li><li>Build local spectral problems from the Gram factors to construct interpolation P.</li><li>Form coarse operators via Galerkin coarsening with G_c = G P and A_c = G_c^T G_c.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports strong robustness on multiple challenging FEM test cases, including grad-div in H(div), hyperdiffusion in H^2, and linear elasticity, where classical AMG needed more than 10^5 iterations and LS-AMG-DD often achieved 2–5 orders of magnitude smaller errors at the same residual tolerance.</p>
+          <p><b>Watch item:</b> The approach depends on obtaining suitable local Gram factors for element blocks, so practical setup and factorization choices may affect robustness and implementation cost.</p>
+          <div class="tags"><span>#FiniteElements</span> <span>#AMG</span> <span>#Preconditioning</span> <span>#SolidMechanics</span> <span>#MultilevelMethods</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>62</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>57</strong></div>
         <p class="date">2026-07-07</p>
         <h2>From Application-Layer Simulation to Native Meta-Architecture: Structural Tension as an Endogenous Driver for Heterogeneous AI Evolution</h2>
         <p class="authors">Heting Mao</p>
@@ -210,18 +191,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.06269v2" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.06269v2" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper argues that LLMs can evolve from prompt-level cognitive simulation to a native meta-architecture by using structural tension, offline recurrent self-processing, and inference-time plasticity to drive internally consistent, path-dependent topological change.</p>
-          <p><b>Engineering relevance:</b> This reframes AI architecture as a governed constitutive system where memory, adaptation, and self-organization are handled at inference time without changing pretrained weights.</p>
-          <ul><li>Define structural tension as an endogenous loss from conflict between new input and existing manifold topology</li><li>Run an offline recurrent loop to maintain a resting potential and resolve internal conflicts without external prompts</li><li>Apply inference-time plasticity with governance invariants: auditability, reversibility, and topological continuity</li></ul>
-          <p><b>Evidence signal:</b> The abstract describes a theoretical framework with operational definitions, reconfiguration operators, falsification criteria, and a worked example, but does not report empirical benchmarks or dataset-based evaluation.</p>
-          <p><b>Watch item:</b> The main implementation risk is ensuring that inference-time topology changes remain auditable and reversible while avoiding uncontrolled drift or hidden state accumulation.</p>
-          <div class="tags"><span>#AIArchitecture</span> <span>#ConstitutiveModeling</span> <span>#InferenceTimePlasticity</span> <span>#GovernedAI</span> <span>#StructuralIntelligence</span></div>
+          <p><b>Key insight:</b> The paper proposes that “structural tension” can act like an endogenous mechanics-inspired driver for AI systems to self-organize, moving higher-order cognition from prompt-level simulation into native inference-time meta-architecture.</p>
+          <p><b>Engineering relevance:</b> For computational engineers, the framework reframes LLM control as a constitutive modeling problem: stabilize internal consistency, manage state through offline recurrent processing, and allow governed topology changes without retraining.</p>
+          <ul><li>Define structural tension as a loss from conflict between new inputs and the model’s existing manifold topology.</li><li>Use an offline recurrent loop to let the system self-process conflicts in a sandboxed resting state.</li><li>Enable inference-time plasticity with reversible, auditable topology reconfiguration under governance invariants.</li></ul>
+          <p><b>Evidence signal:</b> The abstract presents a theoretical framework with operational definitions, reconfiguration operators, falsification criteria, and a worked example, but does not report empirical datasets or benchmark results.</p>
+          <p><b>Watch item:</b> A key concern is that inference-time topology changes may be difficult to implement safely while preserving auditability, reversibility, and continuity constraints in real deployments.</p>
+          <div class="tags"><span>#AIArchitecture</span> <span>#ConstitutiveModeling</span> <span>#InferenceTimePlasticity</span> <span>#LLMGovernance</span> <span>#StructuralIntelligence</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>62</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>57</strong></div>
         <p class="date">2026-07-07</p>
         <h2>Solving Hamiltonian Constraint Equation with Physics-Informed Neural Networks</h2>
         <p class="authors">Yu-Chen Zhou, Hao Ma, Zhoujian Cao, Tailin Wu, Hong-Bo Jin, Xuefeng Feng</p>
@@ -229,18 +210,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.06002v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.06002v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper shows that physics-informed neural networks can solve the highly nonlinear Hamiltonian constraint equation for binary black hole initial data when augmented with targeted training techniques.</p>
-          <p><b>Engineering relevance:</b> This could provide a flexible and scalable alternative to traditional numerical relativity solvers for generating initial conditions in gravitational-wave and black-hole simulations.</p>
-          <ul><li>Train a PINN to satisfy the Hamiltonian constraint PDE directly</li><li>Add new techniques to stabilize convergence on a difficult nonlinear elliptic problem</li><li>Validate the PINN solution against established traditional NR results</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports successful solutions for generic binary black hole systems with high accuracy and robustness, verified by comparison to traditional methods.</p>
-          <p><b>Watch item:</b> The approach is demonstrated on the Hamiltonian constraint equation, so extending it to broader NR settings and maintaining stability across all BBH configurations may still require careful tuning.</p>
-          <div class="tags"><span>#PhysicsInformedNN</span> <span>#NumericalRelativity</span> <span>#GravitationalWaves</span> <span>#BlackHolePhysics</span> <span>#ScientificML</span></div>
+          <p><b>Key insight:</b> The paper shows that physics-informed neural networks can solve the highly nonlinear Hamiltonian constraint equation for binary black hole initial data in numerical relativity.</p>
+          <p><b>Engineering relevance:</b> This suggests a new data-driven route to generate accurate initial conditions for gravitational-wave source modeling, potentially complementing traditional finite difference, spectral, and finite element solvers.</p>
+          <ul><li>Formulate the Hamiltonian constraint as a PINN optimization problem.</li><li>Introduce new training techniques to handle the stiffness and nonlinearity of the elliptic PDE.</li><li>Validate the approach on generic binary black hole systems against traditional numerical results.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports successful solution of the Hamiltonian constraint equation with high accuracy and robustness, with validation against standard methods.</p>
+          <p><b>Watch item:</b> The approach targets a difficult nonlinear elliptic PDE, so training stability and generalization across broader black hole configurations may still require careful tuning.</p>
+          <div class="tags"><span>#PhysicsInformedML</span> <span>#PINN</span> <span>#NumericalRelativity</span> <span>#BinaryBlackHole</span> <span>#GravitationalWaves</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>61</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>56</strong></div>
         <p class="date">2026-07-08</p>
         <h2>An optimal control approach for neural network architecture adaptation with a posteriori error estimation</h2>
         <p class="authors">C G Krishnanunni, Thomas Scott, Tan Bui-Thanh</p>
@@ -248,18 +229,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07637v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07637v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Neural network depth is adapted by treating training as an optimal control problem and placing new layers where a posteriori error estimates are largest.</p>
-          <p><b>Engineering relevance:</b> This gives a principled, finite-element-inspired way to build surrogate models that better capture complex nonlinear behavior with fewer wasted layers.</p>
-          <ul><li>Formulate weights and biases as piecewise-linear functions over depth in a continuous-time network model.</li><li>Use dual weighted residual error estimation to compute interval-wise contributions to the total approximation error.</li><li>Insert new layers at the locations of maximum estimated error to refine architecture adaptively.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports successful tests on scientific datasets, including the observable-to-parameter map for Navier–Stokes, with improved generalization over existing adaptation methods.</p>
-          <p><b>Watch item:</b> The method depends on accurate and computable error indicators, so implementation cost and estimator reliability may limit practical use on large or highly non-smooth problems.</p>
-          <div class="tags"><span>#NeuralNetworks</span> <span>#OptimalControl</span> <span>#ErrorEstimation</span> <span>#SurrogateModeling</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> Neural network depth is adapted by treating training as an optimal control problem and inserting new layers where a posteriori error is estimated to be largest.</p>
+          <p><b>Engineering relevance:</b> This provides a principled, FEM-inspired way to refine surrogate models for scientific computing problems when accuracy needs to improve without blindly increasing network size.</p>
+          <ul><li>Formulate NN training as a continuous-time optimal control problem with layer-wise weights and biases.</li><li>Derive dual-weighted a posteriori error bounds that decompose approximation error across depth intervals.</li><li>Insert new layers at locations of maximum estimated error to guide architecture refinement.</li></ul>
+          <p><b>Evidence signal:</b> The method was tested on scientific datasets, including learning the observable-to-parameter map for the Navier-Stokes equation, and the abstract reports improved generalization versus existing adaptation methods.</p>
+          <p><b>Watch item:</b> The approach adds estimator and optimization complexity, so its effectiveness depends on accurate error localization and a stable implementation of the depth-adaptation loop.</p>
+          <div class="tags"><span>#NeuralNetworks</span> <span>#OptimalControl</span> <span>#APosterioriError</span> <span>#ScientificMachineLearning</span> <span>#FEMSurrogates</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>60</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>55</strong></div>
         <p class="date">2026-07-05</p>
         <h2>Generalizable turbulence closures across bluff-body shapes by PINN-based solver-agnostic training</h2>
         <p class="authors">Zhen Zhang, Theo Käufer, Louise Ronglan, Michael S. Triantafyllou, George Em Karniadakis</p>
@@ -267,18 +248,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.04491v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.04491v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PINN-based, solver-agnostic training can learn turbulence closures that generalize across bluff-body shapes without embedding a CFD solver in the optimization loop.</p>
-          <p><b>Engineering relevance:</b> This offers a faster, more portable way to develop and screen RANS closures for practical flow prediction, including cases where DNS is unavailable and only sparse PIV data exist.</p>
-          <ul><li>Train closures inside a PINN by enforcing the RANS residual via automatic differentiation, avoiding mesh dependence and solver adjoints.</li><li>Test four closure families: three Reynolds-stress tensor models with realizability constraints and one direct force model for \u2212\u2207\u22c5\u03c4.</li><li>Improve stability with input-gradient smoothing and a Lipschitz constraint before deploying the frozen closures in a finite-element solver.</li></ul>
-          <p><b>Evidence signal:</b> The models were trained on six 2D bluff-body wakes at Re = 10^4 and evaluated with in-sample tests plus strict leave-one-shape-out validation; the force model achieved the best out-of-sample performance, with about 8.5% LOSO drag error.</p>
-          <p><b>Watch item:</b> Although the approach is solver-agnostic at training time, the learned closure still must remain stable when coupled to a downstream RANS solver and may be sensitive to the chosen stability regularization.</p>
+          <p><b>Key insight:</b> Training turbulence closures inside a PINN makes them solver-agnostic and mesh-free, enabling fast discovery of generalizable models across bluff-body shapes.</p>
+          <p><b>Engineering relevance:</b> This offers a practical path to robust RANS closures that transfer across geometries and can be trained quickly on limited CFD or PIV data.</p>
+          <ul><li>Impose the RANS residual through automatic differentiation in a physics-informed neural network.</li><li>Train four closure forms: tensor-basis stress models, a non-local kinetic-energy-transport model, a learned length-scale variant, and a direct Reynolds-force model.</li><li>Stabilize deployment with input-gradient smoothing and a Lipschitz constraint, then test in a finite-element solver under leave-one-shape-out validation.</li></ul>
+          <p><b>Evidence signal:</b> Across six 2D bluff-body wakes at Re = 10^4, all closures improved over steady SST k-ω, and the direct-force model achieved the best out-of-sample performance with about 8.5% LOSO drag error.</p>
+          <p><b>Watch item:</b> Because the closure is trained without a coupled forward solve, final performance still depends on solver stability and careful deployment in the target CFD code.</p>
           <div class="tags"><span>#PhysicsInformedML</span> <span>#TurbulenceModeling</span> <span>#RANS</span> <span>#PINN</span> <span>#ComputationalFluidDynamics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>59</strong></div>
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>54</strong></div>
         <p class="date">2026-07-08</p>
         <h2>Machine learning pipeline for identifying tracks of muons and hadrons at GRAPES-3 muon telescope</h2>
         <p class="authors">Mansi Talwar, Sambit Sarkar, Pravata K. Mohanty</p>
@@ -286,18 +267,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07263v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07263v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A machine-learning pipeline can separate muon and hadron tracks in the GRAPES-3 muon telescope to improve reconstruction of cosmic-ray shower particles.</p>
-          <p><b>Engineering relevance:</b> Better muon/hadron discrimination reduces background noise and helps estimate primary cosmic-ray properties more reliably in large detector systems.</p>
-          <ul><li>Simulated proton showers with CORSIKA and Geant4 to generate detector-hit signatures for muons and hadrons.</li><li>Trained single-particle classifiers including decision trees, random forests, neural networks, and XGBoost.</li><li>Built a graph neural network with edge convolutions for multiparticle node-level classification, then used a Dynamic Reduction Network for particle-count regression.</li></ul>
+          <p><b>Key insight:</b> A machine learning pipeline can separate muon and hadron tracks in the GRAPES-3 muon telescope, improving particle identification in cosmic-ray air-shower events.</p>
+          <p><b>Engineering relevance:</b> Accurate muon-versus-hadron classification helps reduce detector background and improves estimation of primary cosmic-ray properties from GRAPES-3 measurements.</p>
+          <ul><li>Simulated CORSIKA proton showers were passed through a Geant4 detector model to generate labeled detector-hit data.</li><li>Single-particle classifiers were tested, including decision trees, random forests, neural networks, and XGBoost.</li><li>For multiparticle events, a graph neural network with edge convolution classified detector hits, followed by a Dynamic Reduction Network for particle-count regression.</li></ul>
           <p><b>Evidence signal:</b> On single-particle classification, XGBoost achieved the best reported accuracy at 88.7% on the simulated dataset.</p>
-          <p><b>Watch item:</b> Results are based on simulated showers, so performance may change when the pipeline is applied to real detector data and overlapping events.</p>
-          <div class="tags"><span>#MuonDetection</span> <span>#GraphNeuralNetworks</span> <span>#CosmicRays</span> <span>#ParticleClassification</span> <span>#Geant4</span></div>
+          <p><b>Watch item:</b> Results are based on simulated proton showers and detector modeling, so performance may differ on real mixed-composition data and in operational noise conditions.</p>
+          <div class="tags"><span>#MuonDetection</span> <span>#GraphNeuralNetworks</span> <span>#XGBoost</span> <span>#CosmicRays</span> <span>#DetectorPhysics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>59</strong></div>
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>54</strong></div>
         <p class="date">2026-07-06</p>
         <h2>Phase-field modeling of elastically driven abnormal grain growth</h2>
         <p class="authors">Yazhuo Liu, Yin Zhang, Kunqing Ding, Yichen Yang, Alejandro Barrios, Xavier Maeder</p>
@@ -305,18 +286,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.05298v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.05298v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Elastic energy reduction can drive abnormal grain growth in ultrafine-grained Ni thin films, selectively favoring grains with in-plane &lt;100&gt; orientation aligned to the loading direction under cyclic elastic loading.</p>
-          <p><b>Engineering relevance:</b> This suggests grain stability in thin-film and microstructured metals can be compromised even without plasticity or high temperatures, which matters for reliability under repeated service loads.</p>
-          <ul><li>Phase-field simulations of grain evolution under cyclic elastic loading</li><li>Micromechanical analysis linking stress state, grain geometry, and elastic anisotropy</li><li>Comparison across systems with varying elastic anisotropy to generalize the mechanism</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports simulation-based evidence that the AGG pathway depends on local geometry and stress states and is consistent with elastic-energy minimization as the driving force.</p>
-          <p><b>Watch item:</b> The mechanism is established through modeling and micromechanical analysis, so experimental validation across material systems and loading conditions is still needed before broad design use.</p>
-          <div class="tags"><span>#PhaseFieldModeling</span> <span>#SolidMechanics</span> <span>#GrainGrowth</span> <span>#ElasticAnisotropy</span> <span>#MaterialsReliability</span></div>
+          <p><b>Key insight:</b> Elastic energy reduction can drive abnormal grain growth in ultrafine-grained Ni, selectively favoring grains with in-plane &lt;100&gt; orientation under cyclic elastic loading.</p>
+          <p><b>Engineering relevance:</b> This suggests that even without plastic deformation or high temperatures, elastic anisotropy and loading conditions can trigger grain coarsening in grain-refined metals, affecting long-term microstructural stability.</p>
+          <ul><li>Phase-field simulations of grain evolution under cyclic elastic loading</li><li>Micromechanical analysis of local stress states and grain geometry</li><li>Extension to materials with different elastic anisotropy</li></ul>
+          <p><b>Evidence signal:</b> Simulation results show AGG kinetics and indicate that local grain geometry and stress state govern the growth pathway, supporting elastic-energy-driven selective growth.</p>
+          <p><b>Watch item:</b> The framework is mechanism-focused and should be validated experimentally across material systems and loading histories before being used for design decisions.</p>
+          <div class="tags"><span>#PhaseField</span> <span>#GrainGrowth</span> <span>#SolidMechanics</span> <span>#ElasticAnisotropy</span> <span>#MaterialsModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-07-06</p>
         <h2>Accelerating Multi-scale Simulations of Nuclear Components via PCYS Interpolation Tables</h2>
         <p class="authors">Fabrizio Aguzzi, Martin S. Armoa, Cesar I. Pairetti, Cesar M. Venier, Alejandro E. Albanesi</p>
@@ -324,18 +305,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.04556v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.04556v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A static 5D PCYS interpolation table, periodically re-linearized, can approximate VPSC-based irradiation-driven viscoplastic behavior accurately enough to accelerate FEM simulations of zirconium reactor components.</p>
-          <p><b>Engineering relevance:</b> This enables faster multi-scale structural analysis of spacer grids and fuel cladding in Code_Aster, making long-term reactor component assessments more tractable for engineering-scale studies.</p>
-          <ul><li>Built a 5D interpolation-table surrogate for instantaneous viscoplastic response</li><li>Coupled periodic recalibration with first-order Taylor linearization to track radiation-induced microstructural drift</li><li>Benchmarked the surrogate in FEM against full VPSC-FEM simulations under continuous high-dose irradiation</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports that relative errors stayed below 1% for representative deformation paths, while structural spacer-grid simulations showed meaningful computational savings.</p>
-          <p><b>Watch item:</b> The approach depends on periodic recalibration and a precomputed database, so accuracy may degrade if irradiation paths or loading conditions move outside the calibrated surrogate range.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#CrystalPlasticity</span> <span>#NuclearMaterials</span> <span>#SurrogateModeling</span> <span>#MultiScaleSimulation</span></div>
+          <p><b>Key insight:</b> A PCYS interpolation-table surrogate can replace expensive VPSC micro-scale calculations in FEM while still tracking irradiation-driven anisotropic deformation with high fidelity.</p>
+          <p><b>Engineering relevance:</b> This enables faster, engineering-scale prediction of zirconium alloy component swelling and creep in nuclear reactor internals, supporting safer design and lifespan assessment.</p>
+          <ul><li>Implemented a 5D interpolation-table surrogate in Code_Aster to emulate instantaneous viscoplastic response.</li><li>Used periodic recalibration plus first-order Taylor linearization to follow microstructural drift from irradiation.</li><li>Benchmarked the surrogate against VPSC-FEM under continuous high-dose irradiation and spacer-grid structural simulations.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports relative errors below 1% for representative deformation paths and meaningful computational savings in a spacer-grid domain study.</p>
+          <p><b>Watch item:</b> Accuracy depends on the validity of the interpolation domain and recalibration scheme, so extrapolation beyond trained irradiation/deformation states may be unreliable.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#CrystalPlasticity</span> <span>#NuclearEngineering</span> <span>#SurrogateModeling</span> <span>#MultiscaleSimulation</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-07-05</p>
         <h2>SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects</h2>
         <p class="authors">Bowen Jing, Mingxin Wang, Ruiyang Hao, Chenchen Ge, Hanwen Shen, Junjie He</p>
@@ -343,18 +324,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.04234v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.04234v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> SoftVTBench shows that deformable-object manipulation must be judged not only by task completion but also by whether the robot stays physically safe throughout execution.</p>
-          <p><b>Engineering relevance:</b> The benchmark gives robotics and solid-mechanics researchers a reproducible way to evaluate visuo-tactile policies under realistic deformation, slip, and drop constraints.</p>
-          <ul><li>Builds a safety-aware benchmark in Isaac Sim with FEM-simulated deformable objects</li><li>Uses multi-view RGB, RGB tactile marker motion, proprioception, and language instructions</li><li>Defines Goal Success and stricter Safety Success using hidden FEM state thresholds</li></ul>
-          <p><b>Evidence signal:</b> Abstract results indicate that success-only evaluation overstates performance, and adding tactile sensing improved Safety Success from 21.4% to 35.6% on object-centric deformable tasks.</p>
-          <p><b>Watch item:</b> Safety scores depend on calibrated object-specific deformation thresholds and privileged FEM state access, so results may be sensitive to simulation fidelity and threshold choice.</p>
-          <div class="tags"><span>#Robotics</span> <span>#DeformableObjects</span> <span>#FiniteElementMethod</span> <span>#TactileSensing</span> <span>#Benchmarking</span></div>
+          <p><b>Key insight:</b> SoftVTBench shows that deformable-object manipulation should be judged not only by task success, but also by physical safety metrics like no-drop stability and bounded deformation.</p>
+          <p><b>Engineering relevance:</b> This benchmark helps robotic manipulation researchers evaluate policies for real-world soft material handling where excessive deformation or slipping can cause damage or failure.</p>
+          <ul><li>Built in Isaac Sim with FEM-simulated deformable objects and multi-modal inputs: multi-view RGB, RGB tactile marker motion, proprioception, and language instructions.</li><li>Defined four matched task suites across deformable/rigid objects and object/spatial variation axes.</li><li>Introduced two evaluation metrics: Goal Success and Safety Success, with safety requiring no drop and peak deformation below an object-specific threshold from hidden FEM states.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that success-only evaluation overstates performance, and adding tactile sensing raises Safety Success from 21.4% to 35.6% on object-centric deformable tasks while keeping Goal Success comparable.</p>
+          <p><b>Watch item:</b> Safety labels depend on privileged FEM states and calibrated deformation thresholds, so benchmark results may not transfer directly to hardware without careful real-world threshold mapping.</p>
+          <div class="tags"><span>#RobotManipulation</span> <span>#DeformableObjects</span> <span>#VisuoTactile</span> <span>#FiniteElementMethod</span> <span>#Benchmarking</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>57</strong></div>
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>52</strong></div>
         <p class="date">2026-07-08</p>
         <h2>A Puck-informed mode-resolved phase-field fatigue framework for unidirectional composites</h2>
         <p class="authors">Aamir Dean</p>
@@ -362,18 +343,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07977v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07977v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A Puck-informed phase-field fatigue model with separate fibre-dominated and matrix/inter-fibre channels can identify the active damage mode in unidirectional composites while capturing crack evolution and stiffness loss.</p>
-          <p><b>Engineering relevance:</b> The framework helps predict mode-specific fatigue damage across fibre angles and geometries, supporting more reliable composite design without re-tuning for each case.</p>
-          <ul><li>Uses two scalar phase-field damage channels: one for fibre-dominated fatigue and one for matrix/inter-fibre fatigue.</li><li>Assigns each channel its own fatigue history variable, threshold, and fracture-resistance degradation law.</li><li>Implements the model in Abaqus/Standard via a compact UMAT-UEL with one orthotropic constitutive law plus two phase-field layers.</li></ul>
-          <p><b>Evidence signal:</b> Verified with one-element tests, parameter sweeps, and centred-notch/open-hole tension simulations at 0°, 45°, and 90° under monotonic and cyclic loading, reproducing the expected crack modes and life ordering.</p>
-          <p><b>Watch item:</b> The study is a numerical verification rather than a calibrated experimental life-prediction claim, so transferability to new materials or loading regimes still needs validation.</p>
-          <div class="tags"><span>#CompositeFatigue</span> <span>#PhaseField</span> <span>#FractureMechanics</span> <span>#DamageModeling</span> <span>#Abaqus</span></div>
+          <p><b>Key insight:</b> The paper introduces a mode-resolved phase-field fatigue model that separates fibre-dominated and matrix/inter-fibre damage, allowing the active fracture mechanism in unidirectional composites to be identified rather than lumped into one damage variable.</p>
+          <p><b>Engineering relevance:</b> This gives composite designers a more physically interpretable way to simulate fatigue crack growth, stiffness loss, and orientation-dependent failure across 0°, 45°, and 90° loading cases.</p>
+          <ul><li>Puck-informed split into two fatigue channels: fibre-dominated and matrix/inter-fibre</li><li>Each channel uses its own fatigue history, threshold, and fracture-resistance degradation law</li><li>Implemented in Abaqus/Standard with a compact UMAT-UEL architecture and two scalar phase fields</li></ul>
+          <p><b>Evidence signal:</b> The framework was checked with one-element tests, parameter sweeps, and centred-notch/open-hole tension simulations, reproducing expected crack modes and fatigue-life ordering across orientations and geometries.</p>
+          <p><b>Watch item:</b> The study is a numerical verification rather than an experimentally calibrated life-prediction model, so predictive accuracy for new materials or load spectra still needs validation.</p>
+          <div class="tags"><span>#PhaseField</span> <span>#CompositeFatigue</span> <span>#FractureMechanics</span> <span>#DamageModeling</span> <span>#Abaqus</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>57</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>52</strong></div>
         <p class="date">2026-07-08</p>
         <h2>Towards Soft Robotic Exogloves for Musculoskeletal Manipulation to Reduce Pain and Spasticity</h2>
         <p class="authors">Antonia Salluce, Maeryn Erdheim, Gailen Davis, Lauren H. Sullivan, Max-William Kanz, Jacqueline Libby</p>
@@ -381,18 +362,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.07958v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.07958v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A personalized soft robotic exoglove can combine mobility assistance with massage-like compression to help reduce hand spasticity and pain.</p>
-          <p><b>Engineering relevance:</b> This work shows how finite element analysis and custom soft actuator design can be used to fit complex hand anatomy while targeting both force delivery and comfort.</p>
-          <ul><li>Designed dorsal, ventral, and palmar soft pneumatic actuators tailored to hand topology and kinematics.</li><li>Used finite element modeling at 100 and 200 kPa to assess stress and guide geometry optimization before fabrication.</li><li>Fabricated and assembled actuators into a wearable exoglove, then performed initial pilot-user testing.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports successful conformal contact, compression fit for a hyperflexed finger, stereolithography fabrication of a palmar actuator, and wearable validation with a pilot user.</p>
-          <p><b>Watch item:</b> The results are preliminary and based on early prototype and pilot testing, so clinical effectiveness and long-term durability remain unproven.</p>
-          <div class="tags"><span>#SoftRobotics</span> <span>#Exoglove</span> <span>#FiniteElementAnalysis</span> <span>#Biomechanics</span> <span>#AssistiveDevices</span></div>
+          <p><b>Key insight:</b> The paper develops a personalized soft robotic exoglove that combines mobility assistance with massage-like compression to help reduce hand pain and spasticity.</p>
+          <p><b>Engineering relevance:</b> By tailoring pneumatic actuators to hand topology and kinematics, the design aims to improve conformability, force delivery, and usability for patients with hyperflexed or spastic fingers.</p>
+          <ul><li>Designed multiple soft pneumatic actuators for dorsal, ventral, and palmar hand regions.</li><li>Used finite element modeling at 100 and 200 kPa to assess stress and optimize geometries before fabrication.</li><li>Fabricated and assembled the actuators into an exoglove, then performed pilot user testing for fit and comfort.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports successful conformal contact, compression-ready miniaturization, stereolithographic fabrication, and a pilot user wearing the assembled glove to validate initial comfort and effectiveness.</p>
+          <p><b>Watch item:</b> Results are preliminary and based on prototype validation, so broader clinical effectiveness, durability, and safety under repeated use remain to be demonstrated.</p>
+          <div class="tags"><span>#SoftRobotics</span> <span>#Exoglove</span> <span>#FiniteElementAnalysis</span> <span>#AssistiveDevices</span> <span>#Biomechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>57</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>52</strong></div>
         <p class="date">2026-07-06</p>
         <h2>Physics-Based Simulation of Contact-Induced Facial Wrinkling</h2>
         <p class="authors">Juan Sebastian Montes Maestre, Ladislav Kavan, Edmond Boyer, Ryan Goldade, Stelian Coros, Bernhard Thomaszewski</p>
@@ -400,12 +381,31 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.04768v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.04768v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper shows that contact-induced facial wrinkles can be simulated realistically by combining viscoelastic skin mechanics, high-order solid-shell FEM, and anatomically inspired ligament constraints.</p>
-          <p><b>Engineering relevance:</b> This provides a physically grounded way to predict fine-scale facial deformation under contact, useful for animation, virtual avatars, and digital human simulation.</p>
-          <ul><li>Model skin as a viscoelastic layered material with time-dependent relaxation.</li><li>Use high-order prismatic solid-shell finite elements to capture through-thickness stresses and high-frequency wrinkling.</li><li>Introduce continuum-based skin ligaments to encode heterogeneous attachments and mobility constraints.</li></ul>
-          <p><b>Evidence signal:</b> The method is evaluated on synthetic examples and compared against real-world footage, showing temporally coherent and visually realistic wrinkle patterns during transient contact.</p>
-          <p><b>Watch item:</b> The approach likely requires careful calibration of viscoelastic and ligament parameters, and high-order FEM may be computationally demanding for practical use.</p>
-          <div class="tags"><span>#ComputationalMechanics</span> <span>#FiniteElementMethod</span> <span>#FacialSimulation</span> <span>#WrinkleModeling</span> <span>#SolidMechanics</span></div>
+          <p><b>Key insight:</b> The paper simulates facial wrinkling during contact by combining viscoelastic skin mechanics, high-order solid-shell FEM, and continuum ligament attachments to capture realistic fine-scale patterns.</p>
+          <p><b>Engineering relevance:</b> This enables more anatomically faithful and temporally coherent facial contact simulation for graphics, animation, and biomechanical analysis.</p>
+          <ul><li>Model skin as a viscoelastic layered material with time-dependent relaxation.</li><li>Use high-order prismatic solid-shell finite elements to resolve through-thickness stress and wrinkle modes.</li><li>Introduce continuum skin ligaments to represent heterogeneous attachments and mobility constraints.</li></ul>
+          <p><b>Evidence signal:</b> The method was evaluated on synthetic examples and compared against real-world footage, with reported temporally coherent and visually realistic wrinkle patterns during transient contact.</p>
+          <p><b>Watch item:</b> The approach likely depends on careful calibration of skin and ligament parameters, which may limit robustness across subjects and facial regions.</p>
+          <div class="tags"><span>#FEM</span> <span>#Biomechanics</span> <span>#SkinSimulation</span> <span>#WrinkleModeling</span> <span>#ComputationalMechanics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>51</strong></div>
+        <p class="date">2026-07-09</p>
+        <h2>An Iterative Method for Transient Finite Element Simulations of Non-Linear Eddy Current Problems</h2>
+        <p class="authors">Karl Hollaus, Haik Silm</p>
+        <p class="abstract">A method is presented to carry out a transient simulation of eddy current problems with nonlinear materials. Coils are voltage-driven. The magnetic field due to currents in coils are considered by their Biot-Savart-fields. The magnetic vector potential is used in the finite element formulation. The time stepping method is based on implicit Euler. The arising nonlinear equation system is split into two parts, the common finite element system and a circuit equation. Each part is solved separately by Newton&#x27;s method. Additionally, a line search is used to solve the nonlinear field equations. Inrush currents and average magnetic flux densities through cross sections of laminates of a nonlinear benchmark problem consisting of a laminated iron core inserted in a cylindrical coil are studied. All details of the numerical benchmark are given to evaluate the presented results. Numerical data describing the performance of the presented method are provided.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.08432v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.08432v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper proposes a partitioned iterative FEM approach for transient nonlinear eddy-current simulation, solving the field and circuit components separately with Newton iterations and line search.</p>
+          <p><b>Engineering relevance:</b> This enables more robust and practical simulation of voltage-driven coil systems with nonlinear magnetic materials, such as laminated iron-core devices under transient excitation.</p>
+          <ul><li>Implicit Euler time stepping for transient magnetic vector-potential FEM</li><li>Split nonlinear system into a common FE field solve and a coupled circuit equation</li><li>Newton’s method applied to each part, with line search for the field nonlinearity</li></ul>
+          <p><b>Evidence signal:</b> The authors validate the method on a nonlinear benchmark with a laminated iron core in a cylindrical coil, reporting inrush currents, average flux densities, and numerical performance data.</p>
+          <p><b>Watch item:</b> Accuracy and convergence depend on the nonlinear solver coupling and line-search behavior, so implementation details may strongly affect robustness.</p>
+          <div class="tags"><span>#FEM</span> <span>#EddyCurrents</span> <span>#NonlinearMaterials</span> <span>#TransientSimulation</span> <span>#ComputationalElectromagnetics</span></div>
         </section>
       </article>
     </section>

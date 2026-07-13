@@ -1,24 +1,24 @@
 {
-  "key_insight": "Conforming finite-element matrices can be treated as locally Gram-representable SPD systems, enabling a black-box multilevel algebraic preconditioner built from element-wise SPSD energy splits and coarse Gram operators.",
-  "engineering_relevance": "This gives a practical AMG-like route for difficult solid-mechanics and PDE discretizations, especially when standard AMG struggles with high-order, anisotropic, or vector-valued FEM systems.",
+  "key_insight": "Conforming finite-element matrices can be cast in a local Gram/SPSD form, enabling a black-box multilevel algebraic preconditioner (LS-AMG-DD) built directly from element-wise energy structure.",
+  "engineering_relevance": "This offers a practical preconditioning route for difficult SPD finite-element systems in H(div), H^2, and vector H^1 settings without requiring problem-specific AMG tuning.",
   "method": [
-    "Define a cover of degrees of freedom and check for a local Gram/SPSD splitting of the SPD matrix.",
+    "Identify a cover of degrees of freedom and verify a local SPSD splitting of the stiffness matrix.",
     "Build local spectral problems from the Gram factors to construct interpolation P.",
-    "Form coarse operators via Galerkin coarsening with G_c = G P and A_c = G_c^T G_c."
+    "Form coarse operators algebraically via Galerkin coarsening with G_c = GP and A_c = G_c^T G_c."
   ],
-  "evidence_signal": "The abstract reports strong robustness on multiple challenging FEM test cases, including grad-div in H(div), hyperdiffusion in H^2, and linear elasticity, where classical AMG needed more than 10^5 iterations and LS-AMG-DD often achieved 2–5 orders of magnitude smaller errors at the same residual tolerance.",
-  "watch_item": "The approach depends on obtaining suitable local Gram factors for element blocks, so practical setup and factorization choices may affect robustness and implementation cost.",
+  "evidence_signal": "The abstract reports numerical tests where LS-AMG-DD outperformed classical AMG on challenging problems, including cases where classical AMG needed more than 10^5 iterations and some comparisons showed 2–5 orders of magnitude smaller errors at the same residual tolerance.",
+  "watch_item": "The approach depends on obtaining a valid local Gram/SPSD factorization on the chosen cover, so implementation may be sensitive to how local factors are constructed for each finite-element block.",
   "hashtags": [
     "#FiniteElements",
-    "#AMG",
     "#Preconditioning",
-    "#SolidMechanics",
-    "#MultilevelMethods"
+    "#Multigrid",
+    "#SparseLinearAlgebra",
+    "#SolidMechanics"
   ],
   "paper_id": "2026-07-08-arxiv-a_black_box_multilevel_algebraic_preconditioning_framework_for_conforming_finite_elements",
   "paper_title": "A black-box, multilevel algebraic preconditioning framework for conforming finite elements",
   "paper_date": "2026-07-08",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-07-12T10:19:34",
+  "generated_at": "2026-07-13T11:54:24",
   "generator": "openai"
 }

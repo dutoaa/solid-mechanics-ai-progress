@@ -1,24 +1,24 @@
 {
-  "key_insight": "A PFEM mesh adaptation strategy preserves sharp multiphase interfaces by forcing interface edges into the Delaunay triangulation, reducing mesh-driven topology errors.",
-  "engineering_relevance": "This decouples phase-change and interface evolution from user mesh resolution, enabling more reliable multiphase simulation with fewer nodes and better geometric fidelity.",
+  "key_insight": "A PFEM mesh-adaptation strategy preserves sharp multiphase interfaces by forcing interface segments into the Delaunay triangulation, decoupling topology changes from mesh resolution.",
+  "engineering_relevance": "This enables robust, fully Lagrangian simulation of many immiscible phases with sharper geometry and less mesh-driven artificial diffusion, which is valuable for multiphase CFD and interface dynamics.",
   "method": [
-    "Fully Lagrangian PFEM for arbitrary immiscible phases",
-    "Assign a node-empty disk to each interface segment to guarantee Delaunay edge inclusion",
-    "Use dynamic mesh adaptation instead of constrained triangulation to preserve topology"
+    "Assign a node-empty disk to each interface segment so it becomes part of the Delaunay mesh.",
+    "Adapt the mesh dynamically while keeping the discretized interface sharp without classical constrained triangulation.",
+    "Allow sub-grid physical models to control topological changes instead of the user-defined element size."
   ],
-  "evidence_signal": "The method is validated on standard multiphase benchmarks and a challenging 16-phase Rayleigh-Taylor case, matching references while keeping a very low node count.",
-  "watch_item": "Robustness may depend on careful implementation of the node-empty disk and remeshing logic, especially for highly dynamic interfaces and complex phase interactions.",
+  "evidence_signal": "The framework is validated on standard multiphase benchmarks and a challenging 16-phase Rayleigh-Taylor case, matching references while using a very low node count.",
+  "watch_item": "The approach likely requires careful implementation of the interface-based mesh update and sub-grid topology model to remain robust as phase count and interface complexity increase.",
   "hashtags": [
     "#PFEM",
-    "#MultiphaseFlow",
     "#MeshAdaptation",
-    "#DelaunayTriangulation",
+    "#MultiphaseFlow",
+    "#InterfaceTracking",
     "#ComputationalMechanics"
   ],
   "paper_id": "2026-07-10-arxiv-topology_preserving_mesh_adaptation_for_sharp_interface_multiphase_pfem",
   "paper_title": "Topology-Preserving Mesh Adaptation for Sharp-Interface Multiphase PFEM",
   "paper_date": "2026-07-10",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-07-13T11:54:05",
+  "generated_at": "2026-07-14T10:38:57",
   "generator": "openai"
 }

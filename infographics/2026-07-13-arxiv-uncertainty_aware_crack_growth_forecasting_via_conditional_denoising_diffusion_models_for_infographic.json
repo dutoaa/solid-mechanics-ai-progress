@@ -1,13 +1,13 @@
 {
-  "key_insight": "A physics-informed conditional DDPM can forecast phase-field fracture evolution with built-in uncertainty maps, while staying stable over long autoregressive rollouts.",
-  "engineering_relevance": "This enables faster-than-FEM crack growth prediction with localized confidence estimates, helping engineers assess branching, tip motion, and failure risk in near-real time.",
+  "key_insight": "A conditional denoising diffusion model can forecast brittle crack growth in phase-field fracture while preserving temporal coherence and providing localized uncertainty estimates.",
+  "engineering_relevance": "This offers a faster surrogate to high-fidelity fracture FEM for long-horizon crack evolution prediction, with uncertainty information useful for damage monitoring and design decisions.",
   "method": [
-    "Conditioned diffusion model on rolling damage history plus kinematic proxies: phase-field velocity and gradient magnitude.",
-    "Generated full-field spatiotemporal fracture forecasts for multiple loading regimes and energy decomposition settings.",
-    "Used ensemble variance from stochastic re-sampling for uncertainty quantification without changing the trained model."
+    "Conditional DDPM trained on rolling damage histories",
+    "Uses phase-field velocity and gradient magnitude as kinematic proxies",
+    "Autoregressive re-sampling enables stochastic multi-step rollout and uncertainty quantification"
   ],
-  "evidence_signal": "The model achieved 0.12 px mean crack-tip error, Dice = 0.929 ± 0.010 over 50-step closed-loop rollout, and 90% precision for high-error detection from high-σ pixels.",
-  "watch_item": "Inference is still costly for deployment, at about 3.6 s per step on an H100 GPU, so real-time use may require further acceleration or surrogate optimization.",
+  "evidence_signal": "Across held-out regimes, the model achieved 0.12 px mean crack-tip error, Dice = 0.929 ± 0.010 over 50-step rollout, and high-uncertainty pixels identified high-error predictions with 90% precision.",
+  "watch_item": "Inference is still relatively expensive versus deterministic surrogates and performance depends on the quality and representativeness of the fracture training data.",
   "hashtags": [
     "#FractureMechanics",
     "#PhaseField",
@@ -19,6 +19,6 @@
   "paper_title": "Uncertainty-Aware Crack Growth Forecasting via Conditional Denoising Diffusion Models for Phase-Field Fracture",
   "paper_date": "2026-07-13",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-07-15T10:42:48",
+  "generated_at": "2026-07-16T10:50:38",
   "generator": "openai"
 }

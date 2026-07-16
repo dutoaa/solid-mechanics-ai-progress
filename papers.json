@@ -1,15 +1,15 @@
 [
   {
-    "id": "2026-07-14-arxiv-decoupling_strain_rate_sensitivity_and_deformation_length_scale_effects_in_neutron_irradia",
-    "arxiv_id": "2607.12960v1",
-    "date": "2026-07-14",
-    "title": "Decoupling Strain-Rate Sensitivity and Deformation Length Scale Effects in Neutron-Irradiated Tungsten: A Coupled Nano-Indentation, HR-EBSD and Crystal Plasticity Study",
-    "authors": "Prashil S. Joshi, Bethany Jim, Chris Hardie, Angus Wilkinson, David EJ Armstrong, Suchandrima Das",
-    "abstract": "Plastic deformation during strain-rate-controlled spherical nanoindentation is governed by the coupled evolution of constitutive strain-rate sensitivity and deformation length scale, making the intrinsic influence of strain rate difficult to isolate experimentally. This coupling is investigated in unirradiated and neutron-irradiated single-crystal tungsten using spherical nanoindentation, atomic force microscopy, high-resolution electron backscatter diffraction (HR-EBSD), and crystal plasticity finite element (CPFE) modeling. Nanoindentation experiments were performed at strain rates from 3.2e-5 to 3.2e-3 per second. AFM and HR-EBSD quantified surface pile-up, residual lattice strain, and geometrically necessary dislocation (GND) distributions. A strain-gradient CPFE framework incorporating thermally activated slip, GND hardening, irradiation-induced obstacle hardening, and strain-dependent softening was calibrated using a single experimental condition and validated across all remaining strain rates without further parameter adjustment. The validated model was then used to independently vary strain rate and indentation depth. Simulations show that strain rate primarily controls the stress required for thermally activated plastic flow, whereas indentation depth governs plastic-zone evolution, pile-up, and GND accumulation. Irradiation increases obstacle strength and promotes deformation localization while remaining consistent with a common thermally activated mechanism. The framework also predicts the compression response of a polycrystalline cube, demonstrating transferability across loading conditions and length scales, providing a robust basis for constitutive modeling of irradiation-hardened materials under transient loading.",
-    "category": "Constitutive Modeling",
+    "id": "2026-07-15-arxiv-physics_informed_residual_deep_learning_for_constitutive_modeling_of_hot_deformation_and_d",
+    "arxiv_id": "2607.13467v1",
+    "date": "2026-07-15",
+    "title": "Physics-Informed Residual Deep Learning for Constitutive Modeling of Hot Deformation and Dynamic Recrystallization in a Mo-Rich $α+β$ Titanium Alloy",
+    "authors": "Prashil S. Joshi, Diksha Mahadule, Rajesh K. Khatirkar",
+    "abstract": "Accurate constitutive modeling of hot deformation behavior is essential for designing thermomechanical processes in advanced structural alloys. Conventional Arrhenius-type and empirical models do not adequately capture the combined effects of strain hardening, dynamic recovery (DRV), and dynamic recrystallization (DRX) across broad processing conditions. In this study, two Stacked Residual Physics-Informed Neural Networks (STAR-PINNs) were developed to simulate the hot deformation response of a Mo-rich $α+β$ titanium alloy (Ti-6Al-4Mo-1V-0.1Si). The Enhanced STAR-PINN incorporated thermomechanical constitutive constraints, while the DRX-Aware STAR-PINN employed a dual-output architecture to account for recrystallization kinetics. Both models used a shared residual encoder trained on experimental flow stress data collected at temperatures from 800 to 1050 degrees C and strain rates between 0.01 and 10 per second. Physics-informed constraints, including thermal softening, strain-rate sensitivity, strain hardening, and post-peak softening, were enforced through automatic differentiation. The DRX-Aware model further integrated JMAK-Avrami regularization, DRX saturation constraints, and Arrhenius-based consistency with tunable parameters, directly linking the predicted DRX fraction to stress output via latent-feature fusion. The DRX-Aware STAR-PINN achieved RMSE = 11.69 MPa, MAE = 4.83 MPa, R^2 = 0.9850, and a cross-validated RMSE of 12.47 +/- 0.26 MPa. This model accurately reproduced temperature-dependent flow curves, DRX kinetics, and Zener-Hollomon relationships, while maintaining physically consistent constitutive behavior. These results demonstrate that physics-informed deep learning provides a robust and interpretable framework for constitutive modeling, offering a practical approach for advanced process modeling of titanium alloys.",
+    "category": "Physics-Informed ML",
     "source": "arXiv",
-    "published": "2026-07-14T16:57:43Z",
-    "updated": "2026-07-14T16:57:43Z",
+    "published": "2026-07-15T05:55:22Z",
+    "updated": "2026-07-15T05:55:22Z",
     "primary_category": "cond-mat.mtrl-sci",
     "categories": [
       "cond-mat.mtrl-sci"
@@ -17,36 +17,296 @@
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.12960v1"
+        "url": "https://arxiv.org/abs/2607.13467v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.12960v1"
+        "url": "https://arxiv.org/pdf/2607.13467v1"
       }
     ],
-    "score": 105,
+    "score": 108,
     "infographic": {
-      "key_insight": "In neutron-irradiated tungsten, strain rate and indentation length scale affect nanoindentation response in different ways: strain rate mainly changes flow stress, while depth controls plastic-zone growth, pile-up, and GND buildup.",
-      "engineering_relevance": "A calibrated strain-gradient crystal plasticity model can predict irradiation-hardened tungsten behavior across loading rates and length scales, supporting more reliable constitutive models for transient service conditions.",
+      "key_insight": "Physics-informed residual neural networks can model hot deformation and dynamic recrystallization in titanium alloys more accurately and more physically consistently than conventional constitutive fits.",
+      "engineering_relevance": "This enables better prediction of flow stress during thermomechanical processing, supporting improved process design for advanced Ti alloys.",
+      "method": [
+        "Built two stacked residual physics-informed neural networks (STAR-PINNs) using a shared residual encoder.",
+        "Enforced constitutive physics with automatic differentiation: strain hardening, strain-rate sensitivity, thermal softening, and post-peak softening.",
+        "Added a DRX-aware dual-output design with JMAK-Avrami regularization, DRX saturation constraints, and stress–DRX latent-feature fusion."
+      ],
+      "evidence_signal": "Trained on experimental flow-stress data from 800–1050 °C and 0.01–10 s^-1, and the DRX-aware model achieved RMSE 11.69 MPa, MAE 4.83 MPa, R^2 = 0.9850, with cross-validated RMSE 12.47 ± 0.26 MPa.",
+      "watch_item": "Performance depends on the quality and coverage of experimental hot-compression data, so extrapolation outside the tested temperature/strain-rate range may be unreliable.",
+      "hashtags": [
+        "#PhysicsInformedML",
+        "#ConstitutiveModeling",
+        "#TitaniumAlloys",
+        "#DynamicRecrystallization",
+        "#SolidMechanics"
+      ],
+      "paper_id": "2026-07-15-arxiv-physics_informed_residual_deep_learning_for_constitutive_modeling_of_hot_deformation_and_d",
+      "paper_title": "Physics-Informed Residual Deep Learning for Constitutive Modeling of Hot Deformation and Dynamic Recrystallization in a Mo-Rich $α+β$ Titanium Alloy",
+      "paper_date": "2026-07-15",
+      "paper_category": "Physics-Informed ML",
+      "generated_at": "2026-07-16T10:50:16",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-14-arxiv-decoupling_strain_rate_sensitivity_and_deformation_length_scale_effects_in_neutron_irradia",
+    "arxiv_id": "2607.12960v2",
+    "date": "2026-07-14",
+    "title": "Decoupling Strain-Rate Sensitivity and Deformation Length Scale Effects in Neutron-Irradiated Tungsten: A Coupled Nano-Indentation, HR-EBSD and Crystal Plasticity Study",
+    "authors": "Prashil S. Joshi, Bethany Jim, Chris Hardie, Angus Wilkinson, David EJ Armstrong, Suchandrima Das",
+    "abstract": "Plastic deformation during strain-rate-controlled spherical nanoindentation is governed by the coupled evolution of constitutive strain-rate sensitivity and deformation length scale, making the intrinsic influence of strain rate difficult to isolate experimentally. This coupling is investigated in unirradiated and neutron-irradiated single-crystal tungsten using spherical nanoindentation, atomic force microscopy, high-resolution electron backscatter diffraction (HR-EBSD), and crystal plasticity finite element (CPFE) modeling. Nanoindentation experiments were performed at strain rates from 3.2e-5 to 3.2e-3 per second. AFM and HR-EBSD quantified surface pile-up, residual lattice strain, and geometrically necessary dislocation (GND) distributions. A strain-gradient CPFE framework incorporating thermally activated slip, GND hardening, irradiation-induced obstacle hardening, and strain-dependent softening was calibrated using a single experimental condition and validated across all remaining strain rates without further parameter adjustment. The validated model was then used to independently vary strain rate and indentation depth. Simulations show that strain rate primarily controls the stress required for thermally activated plastic flow, whereas indentation depth governs plastic-zone evolution, pile-up, and GND accumulation. Irradiation increases obstacle strength and promotes deformation localization while remaining consistent with a common thermally activated mechanism. The framework also predicts the compression response of a polycrystalline cube, demonstrating transferability across loading conditions and length scales, providing a robust basis for constitutive modeling of irradiation-hardened materials under transient loading.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-14T16:57:43Z",
+    "updated": "2026-07-15T07:23:06Z",
+    "primary_category": "cond-mat.mtrl-sci",
+    "categories": [
+      "cond-mat.mtrl-sci"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.12960v2"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.12960v2"
+      }
+    ],
+    "score": 100,
+    "infographic": {
+      "key_insight": "In neutron-irradiated tungsten, strain rate and deformation length scale affect nanoindentation response through different mechanisms: strain rate mainly changes thermally activated flow stress, while indentation depth controls plastic-zone size, pile-up, and GND buildup.",
+      "engineering_relevance": "A calibrated strain-gradient crystal plasticity model can predict irradiation-hardened tungsten behavior across strain rates and loading geometries, supporting design for transient, high-radiation service conditions.",
       "method": [
         "Spherical nanoindentation on unirradiated and neutron-irradiated single-crystal tungsten over 3.2e-5 to 3.2e-3 s^-1",
-        "AFM and HR-EBSD measurements of pile-up, residual lattice strain, and GND distributions",
-        "Strain-gradient CPFE with thermally activated slip, GND hardening, irradiation obstacle hardening, and strain-dependent softening"
+        "AFM and HR-EBSD measured pile-up, residual lattice strain, and GND distributions",
+        "CPFE model coupled thermally activated slip, GND hardening, irradiation obstacle hardening, and strain-dependent softening"
       ],
-      "evidence_signal": "The model was calibrated using one experimental condition and then validated across all remaining strain rates without further parameter adjustment, while also reproducing polycrystal cube compression behavior.",
-      "watch_item": "The framework is calibrated on nanoindentation data and may require rechecking before use on different irradiation states, temperatures, or loading histories.",
+      "evidence_signal": "A single calibrated experimental condition was sufficient for the model to validate across all other strain rates and to reproduce independent depth and polycrystal compression trends.",
+      "watch_item": "Transferability is promising, but the model still depends on accurate calibration of irradiation hardening and gradient parameters, which may vary with dose, temperature, and microstructure.",
       "hashtags": [
         "#CrystalPlasticity",
         "#Nanoindentation",
-        "#IrradiationDamage",
+        "#RadiationDamage",
         "#Tungsten",
-        "#GNDs"
+        "#ConstitutiveModeling"
       ],
       "paper_id": "2026-07-14-arxiv-decoupling_strain_rate_sensitivity_and_deformation_length_scale_effects_in_neutron_irradia",
       "paper_title": "Decoupling Strain-Rate Sensitivity and Deformation Length Scale Effects in Neutron-Irradiated Tungsten: A Coupled Nano-Indentation, HR-EBSD and Crystal Plasticity Study",
       "paper_date": "2026-07-14",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:42:46",
+      "generated_at": "2026-07-16T10:50:21",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-14-arxiv-modeling_damage_and_fracture_in_additively_manufactured_polymeric_triply_periodic_minimal",
+    "arxiv_id": "2607.13238v1",
+    "date": "2026-07-14",
+    "title": "Modeling damage and fracture in additively manufactured polymeric triply periodic minimal surface lattices",
+    "authors": "Abhishek Gupta, Aditya Konale, Ke Ma, Keven Alkhoury, Pradeep Guduru, Yuri Bazilevs",
+    "abstract": "Architected triply periodic minimal surface (TPMS) lattices offer superior specific energy absorption, toughness, fatigue strength, and tunability. While recent advancements have established rate-dependent viscoplastic constitutive models to capture the complex nonlinear deformation response of additively manufactured polymeric TPMS structures, predicting fracture and the resulting structural failure remains a significant challenge. We address this by performing systematic experiments on unit cells and lattices of various sizes under tension, compression, and non-monotonic loading. The experiments inform the development of a new constitutive model that captures the damage and fracture behavior of polymeric TPMS lattices. We first implement a high-fidelity viscoplastic deformation constitutive model from Ma et al. (2026) into finite element software Abaqus/Explicit via a user material subroutine. We then propose a damage initiation criterion for amorphous polymers based on stored elastic energy and equivalent plastic strain. The damage model is implemented in Abaqus using gradient-damage framework following Konale and Srivastava(2025). The damage model and numerical simulation capability are quantitatively and qualitatively validated using experimental results for a unit cell under non-monotonic loading and lattices under tension. The proposed damage model and simulation capability enable in silico design of architected polymer structures.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-07-14T19:59:13Z",
+    "updated": "2026-07-14T19:59:13Z",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13238v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13238v1"
+      }
+    ],
+    "score": 94,
+    "infographic": {
+      "key_insight": "A viscoplastic finite-element damage model can predict fracture initiation and failure in additively manufactured polymer TPMS lattices using stored elastic energy and equivalent plastic strain.",
+      "engineering_relevance": "This enables more reliable in silico design of lightweight architected polymer lattices for energy absorption, toughness, and load-bearing applications.",
+      "method": [
+        "Built on a high-fidelity rate-dependent viscoplastic constitutive model implemented in Abaqus/Explicit via UMAT.",
+        "Introduced a damage initiation criterion for amorphous polymers based on stored elastic energy and equivalent plastic strain.",
+        "Implemented fracture evolution with a gradient-damage framework and validated it against experiments."
+      ],
+      "evidence_signal": "The model was quantitatively and qualitatively validated against experiments on a unit cell under non-monotonic loading and on lattices under tension.",
+      "watch_item": "The approach depends on calibrated material parameters and specialized Abaqus implementations, so transferability to other polymers, print conditions, or TPMS geometries may require revalidation.",
+      "hashtags": [
+        "#FractureMechanics",
+        "#DamageModeling",
+        "#TPMS",
+        "#AdditiveManufacturing",
+        "#ComputationalMechanics"
+      ],
+      "paper_id": "2026-07-14-arxiv-modeling_damage_and_fracture_in_additively_manufactured_polymeric_triply_periodic_minimal",
+      "paper_title": "Modeling damage and fracture in additively manufactured polymeric triply periodic minimal surface lattices",
+      "paper_date": "2026-07-14",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-07-16T10:50:25",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-15-arxiv-an_order_one_lower_bound_on_the_error_of_scalable_generalized_multiscale_finite_element_sp",
+    "arxiv_id": "2607.13888v1",
+    "date": "2026-07-15",
+    "title": "An Order-One Lower Bound on the Error of Scalable Generalized Multiscale Finite Element Space Constructions",
+    "authors": "Changqing Ye",
+    "abstract": "Several coefficient-adapted methods provide optimal-order approximation for elliptic equations with rough coefficients. Prominent examples include localized orthogonal decomposition, multiscale spectral GFEM, and constraint energy-minimizing GMsFEM. Their proven accuracy, however, is obtained by allowing the localization radius or the local spectral dimension to grow as the coarse scale \\(H\\) tends to zero. Classical MsFEM has an FEM-like local construction, but its available analysis does not give a coefficient-uniform \\(\\bigO(H)\\) energy estimate over the full bounded-contrast measurable coefficient class. Motivated by this gap, we formalize an FEM-like notion of structural scalability. A chosen spatially local basis has uniformly bounded overlap, hence \\(\\bigO(1)\\) stiffness entries per row, and every anchored local span uses coefficient information from only \\(\\bigO(1)\\) coarse-element layers. We prove that no deterministic construction satisfying fixed bounds on the support radius, coefficient-information radius, and local multiplicity can converge uniformly over the coefficient class. In fact, its worst-case \\(L^2\\)-to-energy Galerkin error remains bounded below by a positive constant independent of \\(H\\). The lower bound is established using a fixed finite family of smooth periodic coefficients and smooth right-hand sides. The proof combines coefficients that coincide on local patches, a finite-dimensional approximation lower bound for corrector fields, a positive-density mesh argument, and strong periodic corrector convergence. Thus uniform optimal accuracy requires at least one local construction parameter to grow or requires coefficient information beyond the fixed-visibility model.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-15T14:34:28Z",
+    "updated": "2026-07-15T14:34:28Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13888v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13888v1"
+      }
+    ],
+    "score": 81,
+    "infographic": {
+      "key_insight": "Any deterministic FEM-like multiscale space with fixed locality and fixed coefficient visibility cannot achieve uniform convergence on rough-coefficient elliptic problems; its worst-case Galerkin error stays bounded away from zero as H→0.",
+      "engineering_relevance": "This sets a hard scalability limit for local multiscale surrogates in computational mechanics, showing that guaranteed accuracy on heterogeneous materials requires expanding the stencil, spectral dimension, or coefficient access.",
+      "method": [
+        "Define structural scalability via bounded overlap and O(1) coarse-layer coefficient access",
+        "Prove a uniform lower bound using a finite family of periodic coefficients and smooth right-hand sides",
+        "Combine patch-matching, corrector approximation limits, positive-density mesh arguments, and periodic corrector convergence"
+      ],
+      "evidence_signal": "The abstract reports a rigorous worst-case L2-to-energy error lower bound that remains a positive constant independent of H, based on analytical proof rather than numerical experiments.",
+      "watch_item": "The result is a worst-case impossibility theorem for deterministic local constructions, so practical methods may still work well on restricted coefficient classes or with nonlocal/adaptive enrichment.",
+      "hashtags": [
+        "#MultiscaleFEM",
+        "#GMsFEM",
+        "#NumericalAnalysis",
+        "#HeterogeneousMaterials",
+        "#ErrorBounds"
+      ],
+      "paper_id": "2026-07-15-arxiv-an_order_one_lower_bound_on_the_error_of_scalable_generalized_multiscale_finite_element_sp",
+      "paper_title": "An Order-One Lower Bound on the Error of Scalable Generalized Multiscale Finite Element Space Constructions",
+      "paper_date": "2026-07-15",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-16T10:50:29",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-15-arxiv-microscopic_constitutive_theory_of_stress_overshoot_yielding_and_strain_hardening_in_amorp",
+    "arxiv_id": "2607.13734v1",
+    "date": "2026-07-15",
+    "title": "Microscopic constitutive theory of stress overshoot, yielding, and strain hardening in amorphous materials",
+    "authors": "Ankit Singh, Valeriy V. Ginzburg, Alessio Zaccone",
+    "abstract": "We develop a microscopic constitutive theory for the nonlinear deformation of metallic and polymer glasses based on nonaffine elasticity coupled to irreversible many-body relaxation. The theory predicts the full stress--strain response, from linear elasticity through stress overshoot and yielding to steady plastic flow. We show that stress overshoot originates from the competition between a nonaffine elastic instability induced by strain-driven loss of mechanical connectivity at the atomic/molecular level, and viscous dissipation associated with structural relaxation. For polymer glasses, finite chain extensibility naturally accounts for strain hardening at large deformation. The stretched-exponential relaxation exponent is obtained independently from stress or modulus relaxation measurements and provides the primary dynamical input to the theory. Using a small set of physically meaningful parameters, the model quantitatively reproduces experimental stress--strain curves for metallic glasses, polycarbonate, PMMA, and epoxy resins over a broad range of strain rates. These results establish a unified microscopic framework linking relaxation dynamics, yielding, plastic flow, and strain hardening in amorphous solids.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-15T11:47:06Z",
+    "updated": "2026-07-15T11:47:06Z",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft",
+      "cond-mat.dis-nn",
+      "cond-mat.mtrl-sci",
+      "physics.app-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13734v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13734v1"
+      }
+    ],
+    "score": 81,
+    "infographic": {
+      "key_insight": "A microscopic constitutive model couples nonaffine elasticity with irreversible relaxation to explain stress overshoot, yielding, steady flow, and polymer strain hardening in amorphous solids.",
+      "engineering_relevance": "It offers a unified, physically grounded way to predict nonlinear stress--strain response of metallic and polymer glasses across wide strain rates with few parameters.",
+      "method": [
+        "Model nonaffine elastic response with strain-induced loss of mechanical connectivity.",
+        "Couple elasticity to stretched-exponential many-body relaxation to capture viscous dissipation and yielding.",
+        "Include finite chain extensibility to reproduce polymer strain hardening at large deformation."
+      ],
+      "evidence_signal": "The abstract reports quantitative agreement with experimental stress--strain curves for metallic glasses, polycarbonate, PMMA, and epoxy resins over a broad range of strain rates.",
+      "watch_item": "Parameter identification depends on independently measured relaxation exponents and the model may be sensitive to material-specific calibration outside the tested glass classes.",
+      "hashtags": [
+        "#SolidMechanics",
+        "#ConstitutiveModeling",
+        "#AmorphousMaterials",
+        "#Yielding",
+        "#StrainHardening"
+      ],
+      "paper_id": "2026-07-15-arxiv-microscopic_constitutive_theory_of_stress_overshoot_yielding_and_strain_hardening_in_amorp",
+      "paper_title": "Microscopic constitutive theory of stress overshoot, yielding, and strain hardening in amorphous materials",
+      "paper_date": "2026-07-15",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-07-16T10:50:31",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-14-arxiv-towards_end_to_end_optimization_in_multimaterial_3d_printing",
+    "arxiv_id": "2607.13174v1",
+    "date": "2026-07-14",
+    "title": "Towards end-to-end optimization in multimaterial 3D printing",
+    "authors": "Xue-Ling Luo, Steven Yang, Jingye Tan, Robert F. Shepherd, Noy Cohen, Nikolaos Bouklas",
+    "abstract": "Multimaterial 3D printing enables the fabrication of functionally graded components, but optimizing their spatial material distribution alongside structural topology remains a formidable challenge due to high-dimensional design spaces and complex constitutive modeling. This paper presents an end-to-end computational framework integrating sparsified physics-augmented neural networks with finite-element-based topology optimization. By extracting closed-form, composition-aware hyperelastic constitutive laws from experimental data, this approach facilitates exact symbolic differentiation via the adjoint state method implemented with FEniCSx, efficiently circumventing the bottlenecks of applying neural network constitutive models. This pipeline is deployed on soft robotic gripper applications, demonstrating continuous composition optimization for highly anisotropic contact responses, and the concurrent optimization of macroscopic topology and material distribution under non-failure stretch constraints. This methodology could replace laborious empirical prototyping, establishing interpretable machine-learning models as practical, robust design primitives for advanced multimaterial additive manufacturing.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-14T18:23:26Z",
+    "updated": "2026-07-14T18:23:26Z",
+    "primary_category": "physics.comp-ph",
+    "categories": [
+      "physics.comp-ph",
+      "cs.CE",
+      "cs.RO"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13174v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13174v1"
+      }
+    ],
+    "score": 74,
+    "infographic": {
+      "key_insight": "The paper couples sparsified physics-augmented neural constitutive models with FEM topology optimization to jointly optimize material composition and structure in multimaterial 3D printing end-to-end.",
+      "engineering_relevance": "This enables interpretable, data-driven design of soft robotic and graded-material components while reducing reliance on trial-and-error prototyping.",
+      "method": [
+        "Fit composition-aware hyperelastic laws from experimental data using sparsified physics-augmented neural networks.",
+        "Use closed-form symbolic constitutive expressions to enable exact adjoint differentiation in FEniCSx.",
+        "Perform concurrent optimization of topology and spatial material distribution under stretch/non-failure constraints."
+      ],
+      "evidence_signal": "The abstract reports deployment on soft robotic gripper cases, including continuous composition optimization for anisotropic contact behavior and joint topology-material optimization.",
+      "watch_item": "The workflow depends on high-quality experimental training data and careful integration of learned constitutive laws with adjoint/FEM solvers to preserve stability and differentiability.",
+      "hashtags": [
+        "#Multimaterial3DPrinting",
+        "#TopologyOptimization",
+        "#SoftRobotics",
+        "#ConstitutiveModeling",
+        "#PhysicsInformedML"
+      ],
+      "paper_id": "2026-07-14-arxiv-towards_end_to_end_optimization_in_multimaterial_3d_printing",
+      "paper_title": "Towards end-to-end optimization in multimaterial 3D printing",
+      "paper_date": "2026-07-14",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-07-16T10:50:36",
       "generator": "openai"
     }
   },
@@ -75,17 +335,17 @@
         "url": "https://arxiv.org/pdf/2607.11971v1"
       }
     ],
-    "score": 77,
+    "score": 72,
     "infographic": {
-      "key_insight": "A physics-informed conditional DDPM can forecast phase-field fracture evolution with built-in uncertainty maps, while staying stable over long autoregressive rollouts.",
-      "engineering_relevance": "This enables faster-than-FEM crack growth prediction with localized confidence estimates, helping engineers assess branching, tip motion, and failure risk in near-real time.",
+      "key_insight": "A conditional denoising diffusion model can forecast brittle crack growth in phase-field fracture while preserving temporal coherence and providing localized uncertainty estimates.",
+      "engineering_relevance": "This offers a faster surrogate to high-fidelity fracture FEM for long-horizon crack evolution prediction, with uncertainty information useful for damage monitoring and design decisions.",
       "method": [
-        "Conditioned diffusion model on rolling damage history plus kinematic proxies: phase-field velocity and gradient magnitude.",
-        "Generated full-field spatiotemporal fracture forecasts for multiple loading regimes and energy decomposition settings.",
-        "Used ensemble variance from stochastic re-sampling for uncertainty quantification without changing the trained model."
+        "Conditional DDPM trained on rolling damage histories",
+        "Uses phase-field velocity and gradient magnitude as kinematic proxies",
+        "Autoregressive re-sampling enables stochastic multi-step rollout and uncertainty quantification"
       ],
-      "evidence_signal": "The model achieved 0.12 px mean crack-tip error, Dice = 0.929 ± 0.010 over 50-step closed-loop rollout, and 90% precision for high-error detection from high-σ pixels.",
-      "watch_item": "Inference is still costly for deployment, at about 3.6 s per step on an H100 GPU, so real-time use may require further acceleration or surrogate optimization.",
+      "evidence_signal": "Across held-out regimes, the model achieved 0.12 px mean crack-tip error, Dice = 0.929 ± 0.010 over 50-step rollout, and high-uncertainty pixels identified high-error predictions with 90% precision.",
+      "watch_item": "Inference is still relatively expensive versus deterministic surrogates and performance depends on the quality and representativeness of the fracture training data.",
       "hashtags": [
         "#FractureMechanics",
         "#PhaseField",
@@ -97,7 +357,7 @@
       "paper_title": "Uncertainty-Aware Crack Growth Forecasting via Conditional Denoising Diffusion Models for Phase-Field Fracture",
       "paper_date": "2026-07-13",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-15T10:42:48",
+      "generated_at": "2026-07-16T10:50:38",
       "generator": "openai"
     }
   },
@@ -126,29 +386,29 @@
         "url": "https://arxiv.org/pdf/2607.10401v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "The paper extends a greedy data-driven solver (GO-ADM) to nonlinear beam structures and adds a penalty-based thermomechanical consistency check for better discrete stress-strain solutions.",
-      "engineering_relevance": "It offers a way to analyze geometrically exact beams without fitting ad-hoc constitutive laws, which is useful when experimental material data are available but models are uncertain.",
+      "key_insight": "The paper extends a greedy optimization + alternating direction data-driven solver (GO-ADM) to nonlinear beam structures and adds a penalty-based consistency check to produce thermomechanically consistent stress-strain fields.",
+      "engineering_relevance": "This enables beam analysis that can leverage experimental or artificial constitutive data directly, reducing reliance on fitted material models in nonlinear structural mechanics.",
       "method": [
-        "Initialize the data-driven solve using a conventional finite element analysis to generate stress-strain data.",
-        "Combine greedy optimization with alternating direction method (GO-ADM) for the discrete data-driven search.",
-        "Enforce thermomechanical consistency weakly with a penalty term when needed."
+        "Use director-based, geometrically exact beam kinematics for nonlinear beam analysis.",
+        "Initialize the data-driven solve from a conventional finite element solution to build constitutive datasets.",
+        "Enforce thermomechanical consistency weakly with a penalty term within the discrete solution."
       ],
-      "evidence_signal": "Numerical tests on single- and multi-member beam structures show that the penalty term produces thermomechanically consistent fields and GO-ADM more closely approaches the globally optimal solution than standard ADM.",
-      "watch_item": "The approach depends on the quality and representativeness of the initial or artificial dataset, so poor data may limit solution accuracy.",
+      "evidence_signal": "Across single- and multi-member numerical examples, the penalty term produced thermomechanically consistent fields and GO-ADM generally approximated the global optimum better than standard ADM.",
+      "watch_item": "The approach depends on the quality and representativeness of the initial dataset, so poor or biased constitutive data could limit accuracy or convergence.",
       "hashtags": [
         "#DataDrivenMechanics",
         "#NonlinearBeams",
-        "#FiniteElementMethod",
-        "#Optimization",
-        "#ComputationalMechanics"
+        "#StructuralMechanics",
+        "#FiniteElementAnalysis",
+        "#ConstitutiveModeling"
       ],
       "paper_id": "2026-07-11-arxiv-a_data_driven_solving_strategy_based_on_a_greedy_optimization_algorithm_for_the_analysis_o",
       "paper_title": "A data-driven solving strategy based on a greedy optimization algorithm for the analysis of nonlinear beam structures",
       "paper_date": "2026-07-11",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:42:51",
+      "generated_at": "2026-07-16T10:50:41",
       "generator": "openai"
     }
   },
@@ -177,29 +437,80 @@
         "url": "https://arxiv.org/pdf/2607.12309v1"
       }
     ],
-    "score": 74,
+    "score": 69,
     "infographic": {
-      "key_insight": "The paper reformulates fractured poroelasticity with a total-pressure variable and uses a time-decoupled flow-then-mechanics scheme to achieve locking-free, energy-stable simulation.",
-      "engineering_relevance": "This enables more efficient and robust multiphysics analysis of porous solids with fractures, which is important for geomechanics, subsurface flow, and fracture-driven deformation problems.",
+      "key_insight": "A fracture-aware poroelastic model can be made locking-free and computationally cheaper by reformulating it with total pressure and solving flow before mechanics after the first time step.",
+      "engineering_relevance": "This enables more stable and efficient simulation of coupled fluid–solid behavior in fractured porous media, which is important for reservoir engineering, geomechanics, and subsurface design.",
       "method": [
-        "Introduce a four-field mixed-dimensional Biot formulation: displacement, total pressure, matrix pressure, and fracture pressure.",
-        "Use a decoupled time-stepping strategy: fully coupled at the first step, then solve flow first and mechanics second.",
-        "Add a stabilization term in the mechanical equation and discretize with Taylor–Hood for mechanics plus Lagrange elements for pressures."
+        "Reformulate the mixed-dimensional Biot/fracture system into a four-field model: displacement, total pressure, matrix pressure, and fracture pressure.",
+        "Use a time-decoupled strategy: fully coupled solve at the initial step, then sequential flow-then-mechanics solves thereafter.",
+        "Add a stabilization term in the mechanics equation; discretize with Taylor–Hood elements for displacement/total pressure and Lagrange elements for pressures."
       ],
-      "evidence_signal": "The abstract reports energy stability and error estimates for both semi-discrete and fully discrete schemes, and numerical experiments are used to support the theory.",
-      "watch_item": "The added stabilization and initial fully coupled step may increase implementation complexity and parameter sensitivity in practical codes.",
+      "evidence_signal": "The abstract reports theoretical energy stability, error estimates, and numerical experiments supporting the semi-discrete and fully discrete decoupled scheme.",
+      "watch_item": "The stabilization introduces parameter-dependent assumptions, so practical robustness may depend on mesh choice and model coefficients.",
       "hashtags": [
-        "#Poroelasticity",
-        "#FractureMechanics",
-        "#MixedDimensionalModeling",
+        "#Poromechanics",
+        "#FractureModeling",
+        "#MixedDimensional",
         "#FiniteElementMethod",
-        "#Geomechanics"
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-14-arxiv-a_time_decoupling_scheme_for_mixed_dimensional_poroelastic_models_with_fractures",
       "paper_title": "A time-decoupling scheme for mixed-dimensional poroelastic models with fractures",
       "paper_date": "2026-07-14",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:42:54",
+      "generated_at": "2026-07-16T10:50:44",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-14-arxiv-a_linear_fully_decoupled_and_unconditionally_energy_stable_sav_fem_for_the_cahn_hilliard_n",
+    "arxiv_id": "2607.13253v1",
+    "date": "2026-07-14",
+    "title": "A linear, fully decoupled, and unconditionally energy-stable SAV-FEM for the Cahn--Hilliard--Navier--Stokes model",
+    "authors": "Jinting Yang, Nianyu Yi, Peimeng Yin",
+    "abstract": "In this paper, we develop a linear, fully decoupled, and unconditionally energy-stable fully discrete finite element scheme for the Cahn--Hilliard--Navier--Stokes (CHNS) system by employing the scalar auxiliary variable (SAV) approach. Unlike existing SAV-based formulations that typically introduce multiple auxiliary variables or additional techniques to handle different nonlinearities, we introduce only one scalar auxiliary variable together with a novel update of the auxiliary variable to reformulate all nonlinear terms arising from the Cahn--Hilliard and Navier--Stokes equations, yielding an equivalent reformulation of the original CHNS system. An implicit--explicit (IMEX) Euler scheme is applied for temporal discretization, where the linear terms are treated implicitly and the nonlinear terms explicitly, while a finite element method is adopted for spatial discretization. The resulting fully discrete scheme can be efficiently decomposed into two linear subproblems and one scalar quadratic algebraic equation, which significantly simplifies the implementation. Furthermore, we prove that the proposed scheme satisfies an unconditional discrete energy dissipation law and establish its stability with respect to several relevant norms. Optimal-order $L^2$ error estimates are also derived for the fully discrete finite element approximation. Finally, a series of numerical experiments are presented to verify the theoretical results and demonstrate the efficiency of the proposed method.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-14T20:36:09Z",
+    "updated": "2026-07-14T20:36:09Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13253v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13253v1"
+      }
+    ],
+    "score": 68,
+    "infographic": {
+      "key_insight": "A fully decoupled SAV-finite element formulation makes the CHNS system linear, efficiently solvable, and unconditionally energy-stable while preserving accuracy.",
+      "engineering_relevance": "This provides a practical and robust time-marching scheme for simulating coupled multiphase fluid flows with interface dynamics in engineering applications.",
+      "method": [
+        "Use a single scalar auxiliary variable to reformulate all nonlinear CHNS terms.",
+        "Apply IMEX Euler in time with implicit linear terms and explicit nonlinear terms.",
+        "Discretize in space with finite elements, yielding two linear subproblems plus one scalar quadratic equation."
+      ],
+      "evidence_signal": "The abstract reports unconditional discrete energy dissipation, stability in several norms, and optimal-order L2 error estimates, all verified by numerical experiments.",
+      "watch_item": "Although the scheme is linear and decoupled, it still requires solving a scalar quadratic equation and careful finite-element implementation to preserve the stated stability properties.",
+      "hashtags": [
+        "#CahnHilliard",
+        "#NavierStokes",
+        "#FiniteElementMethod",
+        "#EnergyStable",
+        "#SAV"
+      ],
+      "paper_id": "2026-07-14-arxiv-a_linear_fully_decoupled_and_unconditionally_energy_stable_sav_fem_for_the_cahn_hilliard_n",
+      "paper_title": "A linear, fully decoupled, and unconditionally energy-stable SAV-FEM for the Cahn--Hilliard--Navier--Stokes model",
+      "paper_date": "2026-07-14",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-16T10:50:46",
       "generator": "openai"
     }
   },
@@ -228,29 +539,83 @@
         "url": "https://arxiv.org/pdf/2607.12823v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Everyday human-AI interaction can function as a repeated neuroplastic training loop that may strengthen reactive habits—or, if consciously observed at the critical moment, weaken them instead.",
-      "engineering_relevance": "This reframes AI tool use as a controllable interaction environment, suggesting interface and workflow designs that can reduce frustration-driven behavior while preserving normal user tasks.",
+      "key_insight": "Everyday human-AI interaction can act as a neuroplastic training loop, where the usual re-prompt cycle may reinforce reactive habits unless a brief observational pause interrupts it.",
+      "engineering_relevance": "The paper frames human-AI systems as behavior-shaping environments, suggesting interface and workflow designs that can reduce frustration-driven spirals and support more adaptive user responses.",
       "method": [
-        "Identify the iterative request–response–appraise–revise loop as a high-frequency contact event.",
-        "Insert a brief regulatory gap after disappointment where the user observes the reaction instead of immediately re-prompting.",
-        "Use either a user-guided practice with existing tools or an agent-assisted mode that lightly prompts observation."
+        "Model the interaction loop as request → result → appraisal → revision.",
+        "Insert a brief “regulatory gap” where the user observes the reactive response instead of immediately re-prompting.",
+        "Offer two application modes: user-guided observation without tool changes, and agent-assisted observation with light configuration."
       ],
-      "evidence_signal": "The abstract is conceptual and illustrative, using generative image prompting as an example rather than reporting quantitative experimental results.",
-      "watch_item": "The framework relies on users recognizing the pre-cognitive gap in real time, which may be difficult to implement consistently without careful UX support or training.",
+      "evidence_signal": "The abstract presents the framework qualitatively and illustrates it with generative image prompting, comparing observed versus unobserved sessions rather than reporting quantitative evaluation.",
+      "watch_item": "The approach depends on users noticing and sustaining the pre-cognitive pause, which may be difficult to implement consistently without careful interface design.",
       "hashtags": [
         "#HumanAIInteraction",
         "#Neuroplasticity",
-        "#AgenticAI",
-        "#BehavioralDesign",
-        "#CognitiveEngineering"
+        "#AgenticSystems",
+        "#UserExperience",
+        "#CognitiveModeling"
       ],
       "paper_id": "2026-07-14-arxiv-human_ai_agent_interaction_as_a_neuroplastic_training_environment",
       "paper_title": "Human-AI Agent Interaction as a Neuroplastic Training Environment",
       "paper_date": "2026-07-14",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:42:57",
+      "generated_at": "2026-07-16T10:50:50",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-12-arxiv-when_is_the_combined_load_identifiable_from_a_stress_intensity_profile_a_coupled_forward_i",
+    "arxiv_id": "2607.13074v1",
+    "date": "2026-07-12",
+    "title": "When is the combined load identifiable from a stress-intensity profile? A coupled forward-inverse study on SIFBench finite-element data",
+    "authors": "Giansalvo Cirrincione, Filippo Grassia",
+    "abstract": "This work studies the inverse problem of recovering the relative magnitudes of the tension, bending, and bearing loads acting on a crack from its stress-intensity-factor profile along the crack front, using the public SIFBench finite-element data. The central claim is not forensic load recovery on field cases, but a rigorous characterization of when the combined load is identifiable at all, together with an estimator that returns calibrated uncertainty precisely in the regimes where it is not. For a known geometry the forward map from loads to profile is exactly linear, and identifiability reduces to a single geometric question: whether the three elementary load profiles are linearly independent as functions along the front. When they are nearly dependent, many different load combinations produce almost the same profile and the inverse problem is illposed; the analysis shows that the degree of ill-posedness is controlled by an intrinsic stability margin, not by the conditioning number alone. A single crack-front operator serves both as a structured forward surrogate and as the differentiable map required by a simplex-constrained, set-valued inverse estimator. On the SIFBench corner-crack scenario the empirical behaviour matches the theory: the typical geometry is well posed while a sizable minority is genuinely ill-posed, so a point estimate is reliable on the majority and provably uninformative on the rest. Validation is on controlled synthetic noise; no real fracture cases are used or claimed.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-07-12T20:04:39Z",
+    "updated": "2026-07-12T20:04:39Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "cond-mat.mtrl-sci",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13074v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13074v1"
+      }
+    ],
+    "score": 66,
+    "infographic": {
+      "key_insight": "A combined tension–bending–bearing load is identifiable from a crack-front stress-intensity profile only when the three elementary load profiles are sufficiently linearly independent along the crack front.",
+      "engineering_relevance": "This gives fracture engineers a principled test for when load reconstruction from SIF data is reliable, and when an uncertainty-aware inverse estimate is the safer output.",
+      "method": [
+        "Built a linear forward operator mapping load magnitudes to the crack-front SIF profile.",
+        "Analyzed identifiability via linear dependence of the three elementary load profiles and an intrinsic stability margin.",
+        "Used a simplex-constrained, set-valued inverse estimator that returns calibrated uncertainty in ill-posed regimes."
+      ],
+      "evidence_signal": "On the SIFBench corner-crack finite-element data, the typical geometry was well posed while a substantial minority was genuinely ill posed, with validation performed under controlled synthetic noise.",
+      "watch_item": "The approach depends on known geometry and synthetic-noise evaluation, so real-world performance may degrade if geometry, boundary conditions, or noise characteristics differ.",
+      "hashtags": [
+        "#FractureMechanics",
+        "#StressIntensityFactor",
+        "#InverseProblems",
+        "#FiniteElementAnalysis",
+        "#UncertaintyQuantification"
+      ],
+      "paper_id": "2026-07-12-arxiv-when_is_the_combined_load_identifiable_from_a_stress_intensity_profile_a_coupled_forward_i",
+      "paper_title": "When is the combined load identifiable from a stress-intensity profile? A coupled forward-inverse study on SIFBench finite-element data",
+      "paper_date": "2026-07-12",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-07-16T10:50:53",
       "generator": "openai"
     }
   },
@@ -281,29 +646,131 @@
         "url": "https://arxiv.org/pdf/2607.11650v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "3M Command strips work by using a highly extensible adhesive that carries load while attached, then greatly lowers release force as it stretches and progressively debonds under peeling.",
-      "engineering_relevance": "The paper gives a fracture-mechanics design rule showing that load capacity can far exceed removal force when bonded length is large relative to adhesive thickness, helping optimize removable adhesives for strong hold and clean release.",
+      "key_insight": "3M Command strips exploit a large geometric advantage: they carry high load in service, but release with much smaller force because stretch-induced debonding localizes fracture and lowers the energy needed for crack growth.",
+      "engineering_relevance": "The paper provides a design rule for stretch-release adhesives: increasing bonded length relative to adhesive thickness boosts load capacity far more than it increases removal force, enabling strong yet removable mounting systems.",
       "method": [
-        "Derived analytical energy-release-rate expressions for interfacial cracks under loading and release.",
-        "Validated the theory with finite-element J-integral calculations.",
-        "Mapped alternating crack paths and failure envelopes for competing interfacial toughnesses."
+        "Derived analytical energy release-rate expressions for interfacial cracks under load-bearing and release conditions.",
+        "Validated the fracture-mechanics model against finite-element J-integral calculations.",
+        "Analyzed alternating crack propagation between backing and substrate interfaces and mapped failure envelopes for competing interfacial toughnesses."
       ],
-      "evidence_signal": "The analytical results were checked against finite-element J-integral evaluations, and parametric studies were used to generate predictive failure envelopes.",
-      "watch_item": "The linear scaling and crack-path predictions depend on idealized geometry and material assumptions, so real products may deviate due to viscoelasticity, rate effects, or surface variability.",
+      "evidence_signal": "The abstract reports explicit analytical solutions and finite-element J-integral validation, with parametric studies used to predict release forces and unstable crack propagation.",
+      "watch_item": "The predictions depend on idealized hyperelastic and interfacial fracture assumptions, so real products may deviate due to viscoelasticity, rate effects, aging, or surface variability.",
       "hashtags": [
         "#FractureMechanics",
         "#Adhesives",
-        "#FiniteElements",
-        "#InterfacialCrack",
-        "#SoftMaterials"
+        "#FiniteElementAnalysis",
+        "#EnergyReleaseRate",
+        "#DamageTolerance"
       ],
       "paper_id": "2026-07-13-arxiv-how_do_3m_command_strips_work_a_fracture_mechanics_approach",
       "paper_title": "How do 3M Command strips work? A fracture mechanics approach",
       "paper_date": "2026-07-13",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-15T10:42:59",
+      "generated_at": "2026-07-16T10:50:56",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-15-arxiv-error_analysis_of_a_fully_discrete_implicit_scheme_with_wg_fem_for_parabolic_singularly_pe",
+    "arxiv_id": "2607.13611v1",
+    "date": "2026-07-15",
+    "title": "Error Analysis of a Fully-Discrete Implicit $θ$-Scheme with WG-FEM for Parabolic Singularly Perturbed Boundary Turning Point Problems",
+    "authors": "Aayushman Raina, Srinivasan Natesan",
+    "abstract": "In this article, we introduce a weak Galerkin finite element method (WG-FEM) for a class of parabolic singularly perturbed boundary turning point problems (SPBTPPs). The proposed numerical scheme employs an implicit $θ$-scheme for temporal discretization over a uniform mesh and applies WG-FEM spatial discretization on a layer-adapted Shishkin mesh. Rigorous stability estimates are established for both the semi-discrete and fully-discrete formulations. Furthermore, we derive error estimates in the energy norm and prove that the convergence of the scheme is uniform with respect to the perturbation parameter. Numerical tests are conducted to verify the theoretical findings and illustrate the efficiency of the proposed method. In addition, the theoretical framework developed in this work lays the foundation for future extensions to higher-dimensional problems using ADI-type operator splitting WG-FEM schemes.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-15T08:59:03Z",
+    "updated": "2026-07-15T08:59:03Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13611v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13611v1"
+      }
+    ],
+    "score": 63,
+    "infographic": {
+      "key_insight": "A fully discrete implicit θ-scheme combined with WG-FEM on a Shishkin mesh yields parameter-uniform stability and error control for parabolic singularly perturbed boundary turning point problems.",
+      "engineering_relevance": "The method provides a robust numerical tool for stiff transient PDEs with sharp boundary/interior layers, helping engineers obtain reliable simulations without losing accuracy as perturbation parameters become small.",
+      "method": [
+        "Implicit θ-scheme for time discretization on a uniform temporal mesh",
+        "Weak Galerkin FEM for spatial discretization on a layer-adapted Shishkin mesh",
+        "Energy-norm error analysis with uniform convergence proofs"
+      ],
+      "evidence_signal": "The abstract reports rigorous stability and error estimates for both semi-discrete and fully discrete cases, and numerical tests confirm the theoretical convergence behavior.",
+      "watch_item": "Implementation quality may depend on careful Shishkin mesh design and parameter choice, since layer resolution is critical for preserving uniform accuracy.",
+      "hashtags": [
+        "#WeakGalerkinFEM",
+        "#ShishkinMesh",
+        "#SingularPerturbation",
+        "#ErrorAnalysis",
+        "#ParabolicPDE"
+      ],
+      "paper_id": "2026-07-15-arxiv-error_analysis_of_a_fully_discrete_implicit_scheme_with_wg_fem_for_parabolic_singularly_pe",
+      "paper_title": "Error Analysis of a Fully-Discrete Implicit $θ$-Scheme with WG-FEM for Parabolic Singularly Perturbed Boundary Turning Point Problems",
+      "paper_date": "2026-07-15",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-16T10:51:00",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-15-arxiv-local_redundancy_an_information_theoretic_measure_of_plasticity_from_synthetic_memorizatio",
+    "arxiv_id": "2607.13432v1",
+    "date": "2026-07-15",
+    "title": "Local Redundancy: An Information-Theoretic Measure of Plasticity from Synthetic Memorization",
+    "authors": "Jiaxuan Cheng",
+    "abstract": "Plasticity -- a neural network's ability to adapt to new tasks -- is critical for continual and transfer learning. Existing measures, such as effective rank, dead neuron fraction, and weight norm, lack theoretical grounding and correlate poorly with performance on new tasks. We introduce local redundancy, an information-theoretic measure derived from universal compression theory. We define local redundancy as the worst-case redundancy of a local model family -- parameters in an infinitesimal neighborhood along gradient directions -- and show this is a principled measure of plasticity. Although local redundancy is intractable to compute exactly, we prove that the expected squared gradient norm on a synthetic memorization task provides an efficiently computable lower bound. Experiments on continual image classification and time series transfer learning demonstrate that local redundancy predicts downstream performance better than existing measures and enables pretraining checkpoint selection where validation loss plateaus.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-15T04:31:20Z",
+    "updated": "2026-07-15T04:31:20Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13432v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13432v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "Local redundancy is a theoretically grounded information-theoretic measure of neural-network plasticity, and it can be approximated by the expected squared gradient norm on a synthetic memorization task.",
+      "engineering_relevance": "For model selection in continual and transfer learning, this offers a more reliable checkpoint/plasticity indicator than common heuristics like effective rank, dead neuron fraction, or weight norm.",
+      "method": [
+        "Define plasticity via the worst-case redundancy of a local model family around gradient-direction perturbations.",
+        "Use universal compression theory to formalize local redundancy as an information-theoretic quantity.",
+        "Derive the expected squared gradient norm on a synthetic memorization task as a computable lower bound."
+      ],
+      "evidence_signal": "Across continual image classification and time-series transfer learning, the proposed measure predicts downstream performance better than existing metrics and can select pretraining checkpoints even when validation loss has plateaued.",
+      "watch_item": "Exact local redundancy is intractable, so the practical proxy depends on the synthetic memorization setup and gradient estimates, which may add computation and sensitivity to task design.",
+      "hashtags": [
+        "#Plasticity",
+        "#ContinualLearning",
+        "#TransferLearning",
+        "#InformationTheory",
+        "#NeuralNetworks"
+      ],
+      "paper_id": "2026-07-15-arxiv-local_redundancy_an_information_theoretic_measure_of_plasticity_from_synthetic_memorizatio",
+      "paper_title": "Local Redundancy: An Information-Theoretic Measure of Plasticity from Synthetic Memorization",
+      "paper_date": "2026-07-15",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-07-16T10:51:04",
       "generator": "openai"
     }
   },
@@ -332,17 +799,17 @@
         "url": "https://arxiv.org/pdf/2607.12674v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "Two-dimensional dodecagonal quasicrystals store cyclic-shear memory through nested, reversible phason-like tile rearrangements that act as bistable hysterons.",
-      "engineering_relevance": "This work suggests a route to design materials with programmable mechanical memory by exploiting quasicrystal-specific switching units rather than relying on amorphous disorder.",
+      "key_insight": "Two-dimensional quasicrystals can store and retrieve cyclic-shear memory through hierarchical, nested hysteresis loops generated by reversible phason-like tile-switching events.",
+      "engineering_relevance": "This identifies a microscopic bistable mechanism for mechanical memory in a nonperiodic solid, informing constitutive models for cyclic loading and adaptive metamaterials.",
       "method": [
-        "Athermal quasistatic shear simulations of 2D dodecagonal quasicrystals",
-        "Cyclic loading with varying amplitudes to probe return-point memory",
-        "Microscopic tracking of reversible plastic events and tile rearrangements"
+        "Athermal quasistatic shear simulations on 2D dodecagonal quasicrystals",
+        "Cyclic shear with varying amplitudes to probe loop-return point memory",
+        "Resolution of local reversible plastic events and comparison with a periodic approximant"
       ],
-      "evidence_signal": "The abstract reports hierarchical nested hysteresis loops below yield, persistent shear bands above yield, and a contrast with a periodic approximant that lacks the bistable rearrangements.",
-      "watch_item": "The memory mechanism is demonstrated in idealized simulation conditions, so experimental realization and robustness under finite temperature or defects remain to be verified.",
+      "evidence_signal": "The abstract reports persistent shear bands above yielding, nested hysteresis loops below yielding, and localized tile-switch hysterons as the recovered memory units.",
+      "watch_item": "The memory mechanism is demonstrated in idealized simulations, so translation to real materials will depend on whether phason dynamics and bistable rearrangements remain accessible experimentally.",
       "hashtags": [
         "#Quasicrystals",
         "#MechanicalMemory",
@@ -354,680 +821,218 @@
       "paper_title": "How Quasicrystals Remember: Hierarchical Memory Under Cyclic Shear",
       "paper_date": "2026-07-14",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:43:02",
+      "generated_at": "2026-07-16T10:51:07",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-07-08-arxiv-grefem_multimodal_llms_as_zero_shot_semantic_assistants_for_physics_guided_3d_mesh_refinem",
-    "arxiv_id": "2607.08798v1",
-    "date": "2026-07-08",
-    "title": "GReFEM: Multimodal LLMs as Zero-Shot Semantic Assistants for Physics-Guided 3D Mesh Refinement",
-    "authors": "Kartik Bali, Mahish K. Guru, Christian J Cyron, Roland Aydin",
-    "abstract": "Adaptive volumetric finite element meshing is a critical step in computer-aided engineering and analysis that dictates the computational budget of a given problem. It traditionally requires iterative PDE solvers or heavily supervised, data-driven surrogates trained on large-scale simulation data. While Multimodal Large Language Models (MLLMs) excel in 2D visual tasks, their zero-shot capability to semantically ground regions based on geometric understanding and physics remains an open question. Overall, this study explores a significant question: can the high-level semantic understanding of off-the-shelf MLLMs serve as a viable, zero-shot geometric proxy for finite element mesh refinement? To investigate this, we introduce GReFEM (Geometric Reasoning Enhanced Multimodal LLMs for Finite Element Meshing), a framework that utilizes MLLMs to visually localize stress-critical regions based on physics-guided textual prompts. To bridge the gap between 2D MLLM pre-training and 3D geometries, we introduce orthoViews, a view-selection module that maximizes the observability of key geometric features. We conduct an in-depth empirical evaluation across diverse CAD geometries, loading cases, and SOTA MLLMs, comparing them against a tuned geometric heuristic under a strict, matched refinement budget. Our findings reveal that MLLMs demonstrate robust zero-shot capacity to accurately follow complex spatial-physical instructions, isolating stress-relevant features with higher precision than blind heuristics. By mapping both the successes and current limitations of MLLMs in physical grounding, this study defines the frontier of foundation models as semantic assistants in automated simulation workflows.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-08T14:46:54Z",
-    "updated": "2026-07-08T14:46:54Z",
-    "primary_category": "cs.GR",
-    "categories": [
-      "cs.GR",
-      "cs.CV"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.08798v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.08798v1"
-      }
-    ],
-    "score": 63,
-    "infographic": {
-      "key_insight": "Off-the-shelf multimodal LLMs can zero-shot identify stress-critical 3D regions from physics-guided prompts, making them a plausible semantic proxy for mesh refinement.",
-      "engineering_relevance": "This could reduce reliance on iterative PDE-based adaptivity or large supervised surrogates, helping target FEM refinement more efficiently under a fixed compute budget.",
-      "method": [
-        "Uses multimodal LLMs as zero-shot visual semantic assistants for mesh refinement",
-        "Adds orthoViews to select 2D viewpoints that better expose important 3D geometric features",
-        "Compares against a tuned geometric heuristic under matched refinement budgets"
-      ],
-      "evidence_signal": "The abstract reports an empirical study across diverse CAD geometries, loading cases, and SOTA MLLMs, with results showing higher precision than blind heuristics at identifying stress-relevant features.",
-      "watch_item": "Performance still depends on robust view selection and 2D-to-3D grounding, so the approach may be less reliable for occluded or ambiguous geometries.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#MeshRefinement",
-        "#MultimodalLLM",
-        "#ComputationalMechanics",
-        "#PhysicsGuidedAI"
-      ],
-      "paper_id": "2026-07-08-arxiv-grefem_multimodal_llms_as_zero_shot_semantic_assistants_for_physics_guided_3d_mesh_refinem",
-      "paper_title": "GReFEM: Multimodal LLMs as Zero-Shot Semantic Assistants for Physics-Guided 3D Mesh Refinement",
-      "paper_date": "2026-07-08",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-15T10:43:04",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-13-arxiv-tidal_deformation_and_strain_accumulation_of_solid_compact_stars",
-    "arxiv_id": "2607.11780v1",
-    "date": "2026-07-13",
-    "title": "Tidal deformation and strain accumulation of solid compact stars",
-    "authors": "Hongxiang Shen, Yong Gao, Hong-Bo Li, Ren-Xin Xu",
-    "abstract": "The tidal deformability of compact stars encodes the equation of state of dense matter, and gravitational-wave observations such as GW170817 have begun to constrain it under the assumption of a fluid interior. Yet whether the interior of pulsar-like compact stars is fluid or solid remains largely untested, despite the distinct tidal responses the two states predict. In this work, based on the strangeon-star model, we develop a framework for modeling tidal deformation in solid compact stars. Adopting a shear modulus of $μ= 10^{34}\\,\\mathrm{erg}\\,\\mathrm{cm}^{-3}$, we find a relative difference of approximately $40\\%$ in tidal deformability between solid and fluid strangeon stars of $1.4\\,M_\\odot$, corresponding to a $\\sim 10\\%$ deviation from the universal I--Love relation. We further model the accumulation of internal strain during binary inspiral and find that it peaks near the stellar center. When the gravitational-wave frequency reaches several hundred $\\rm Hz$, large-scale fracturing occurs and can release up to $\\sim 10^{46}\\,\\mathrm{erg}$ of elastic energy, sufficient to power short $γ$-ray-burst precursors. This solid-to-fluid transition alters the tidal response and imprints on the waveform and phase of the emitted gravitational radiation. Combined with the precursor electromagnetic emission, these gravitational-wave signatures offer a multi-messenger avenue to test the solid nature of pulsar-like compact stars.",
-    "category": "AI Solid Mechanics",
-    "source": "arXiv",
-    "published": "2026-07-13T16:35:48Z",
-    "updated": "2026-07-13T16:35:48Z",
-    "primary_category": "astro-ph.HE",
-    "categories": [
-      "astro-ph.HE",
-      "gr-qc",
-      "hep-ph",
-      "nucl-th"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.11780v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.11780v1"
-      }
-    ],
-    "score": 62,
-    "infographic": {
-      "key_insight": "Solid compact stars can deform tidally very differently from fluid stars, producing measurable changes in gravitational-wave signals and strain-driven fracturing during inspiral.",
-      "engineering_relevance": "This work suggests gravitational-wave and precursor electromagnetic observations could be used to test whether pulsar-like compact stars have solid interiors, informing dense-matter models and compact-object mechanics.",
-      "method": [
-        "Model tidal deformation of strangeon stars with a solid-elastic interior.",
-        "Use a shear modulus of μ = 10^34 erg cm^-3 to compare solid vs. fluid tidal deformability.",
-        "Simulate strain accumulation during binary inspiral and identify fracture onset and released elastic energy."
-      ],
-      "evidence_signal": "For a 1.4 M⊙ star, the model predicts about 40% difference in tidal deformability between solid and fluid cases, roughly a 10% deviation from the universal I–Love relation, with elastic-energy release up to ~10^46 erg at several hundred Hz.",
-      "watch_item": "The conclusions depend on the strangeon-star assumption and chosen shear modulus, so applicability to real compact stars remains model-dependent until observations constrain the interior state.",
-      "hashtags": [
-        "#SolidMechanics",
-        "#CompactStars",
-        "#TidalDeformability",
-        "#GravitationalWaves",
-        "#MultiMessengerAstrophysics"
-      ],
-      "paper_id": "2026-07-13-arxiv-tidal_deformation_and_strain_accumulation_of_solid_compact_stars",
-      "paper_title": "Tidal deformation and strain accumulation of solid compact stars",
-      "paper_date": "2026-07-13",
-      "paper_category": "AI Solid Mechanics",
-      "generated_at": "2026-07-15T10:43:07",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-14-arxiv-a_posteriori_error_analysis_for_the_navier_stokes_equations_with_non_smooth_data",
-    "arxiv_id": "2607.13014v1",
-    "date": "2026-07-14",
-    "title": "A posteriori error analysis for the Navier-Stokes equations with non-smooth data",
-    "authors": "María Gabriela Armentano, Mauricio Mendiluce",
-    "abstract": "We study the stationary Navier-Stokes equations with Dirichlet boundary data in L2, a setting in which the limited regularity of the solution prevents the direct application of standard a posteriori error estimation techniques. To address this issue, we introduce a regularized formulation that yields a well-posed approximation of the original problem and admits a conforming finite element discretization. Using Taylor-Hood P2P1 elements, we construct a residual-based a posteriori error estimator and establish its reliability and efficiency under suitable smallness assumptions on the data. We derive computable upper and lower bounds in an appropriate norm that relate the estimator to the error between the exact solution of the original Navier-Stokes problem and its finite element approximation, showing that the estimator accurately reflects the finite element error. These results provide a rigorous foundation for the analysis and implementation of adaptive finite element methods for incompressible flows with low-regularity Dirichlet boundary data.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-14T17:55:34Z",
-    "updated": "2026-07-14T17:55:34Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.13014v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.13014v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "A regularized Navier–Stokes formulation makes a posteriori error estimation possible even when Dirichlet data is only in L2 and the solution has limited smoothness.",
-      "engineering_relevance": "This gives a rigorous error indicator for adaptive finite element simulation of incompressible flows with low-regularity boundary conditions, improving reliability of mesh refinement.",
-      "method": [
-        "Introduce a regularized, well-posed approximation of the stationary Navier–Stokes problem.",
-        "Discretize with conforming Taylor–Hood P2/P1 finite elements.",
-        "Build a residual-based a posteriori estimator and prove reliability and efficiency under small-data assumptions."
-      ],
-      "evidence_signal": "The abstract reports computable upper and lower bounds that link the estimator to the true error between the exact solution and the finite element approximation.",
-      "watch_item": "The reliability and efficiency results depend on suitable smallness assumptions on the data, so the method may be restricted outside that regime.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#NavierStokes",
-        "#AposterioriError",
-        "#AdaptiveMethods",
-        "#ComputationalMechanics"
-      ],
-      "paper_id": "2026-07-14-arxiv-a_posteriori_error_analysis_for_the_navier_stokes_equations_with_non_smooth_data",
-      "paper_title": "A posteriori error analysis for the Navier-Stokes equations with non-smooth data",
-      "paper_date": "2026-07-14",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-15T10:43:09",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-14-arxiv-a_least_squares_weak_galerkin_finite_element_method_for_fokker_planck_type_equations",
-    "arxiv_id": "2607.12803v1",
-    "date": "2026-07-14",
-    "title": "A Least Squares Weak Galerkin Finite Element Method for Fokker-Planck Type Equations",
-    "authors": "Chunmei Wang, Shangyou Zhang",
-    "abstract": "This paper presents a least squares weak Galerkin (LS-WG) finite element method for a class of second order elliptic equations of Fokker-Planck type. To address the numerical challenges arising from non-smooth diffusion tensors, the proposed method utilizes a least-squares formulation that yields a symmetric positive definite (SPD) discrete system. The numerical scheme is designed by employing locally constructed weak second order partial derivatives and the weak divergence commonly used within the weak Galerkin framework. A rigorous theoretical foundation is provided, establishing the uniqueness of the discrete solution and deriving optimal-order error estimates in a discrete energy norm. Finally, extensive numerical experiments are reported to validate the theoretical findings and demonstrate the robustness and performance of the numerical scheme.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-14T14:17:35Z",
-    "updated": "2026-07-14T14:17:35Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.12803v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.12803v1"
-      }
-    ],
-    "score": 60,
-    "infographic": {
-      "key_insight": "The paper turns a Fokker-Planck-type elliptic PDE into a symmetric positive definite least-squares weak Galerkin system, enabling stable finite element solves even with non-smooth diffusion tensors.",
-      "engineering_relevance": "This is relevant for robust PDE simulation workflows where solver stability, mesh-based discretization flexibility, and provable error control matter.",
-      "method": [
-        "Uses a least-squares formulation within the weak Galerkin framework.",
-        "Constructs locally defined weak second-order partial derivatives and weak divergence operators.",
-        "Proves uniqueness and optimal-order error estimates in a discrete energy norm."
-      ],
-      "evidence_signal": "The abstract reports extensive numerical experiments that validate the theory and demonstrate robustness and performance.",
-      "watch_item": "The method’s practicality may depend on careful implementation of the weak operators and on the cost of assembling and solving the resulting SPD system.",
-      "hashtags": [
-        "#WeakGalerkin",
-        "#FiniteElementMethod",
-        "#LeastSquares",
-        "#FokkerPlanck",
-        "#NumericalPDEs"
-      ],
-      "paper_id": "2026-07-14-arxiv-a_least_squares_weak_galerkin_finite_element_method_for_fokker_planck_type_equations",
-      "paper_title": "A Least Squares Weak Galerkin Finite Element Method for Fokker-Planck Type Equations",
-      "paper_date": "2026-07-14",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-15T10:43:12",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-13-arxiv-broken_space_additive_schwarz_mass_inverse_approximations_and_block_preconditioning",
-    "arxiv_id": "2607.12138v1",
-    "date": "2026-07-13",
-    "title": "Broken-space Additive Schwarz Mass Inverse Approximations and (Block) Preconditioning",
-    "authors": "Oliver A. Krzysik, Ben S. Southworth, Golo A. Wimmer",
-    "abstract": "Finite-element mass matrix solves and approximate inverses arise often in explicit time integration as well as Schur-complement-based block preconditioning. A diagonal approximation of the mass matrix is cheap and widely used, but can be a poor approximation, particularly for high-order elements. This paper introduces a broken-space additive Schwarz (BRAS) mass inverse approximation, formed by applying exact element-local inverse mass matrices on the broken finite-element space and averaging the result back to the conforming space. The construction uses the same element matrices and local-to-global maps as standard mass assembly, has the same element-adjacency sparsity graph as the conforming mass matrix, and is symmetric positive definite for any conforming space, mesh geometry, and polynomial basis. We prove spectral bounds for the preconditioned mass matrix, and wide-ranging numerical experiments for \\(H^1\\), \\(H(\\operatorname{curl})\\), and \\(H(\\operatorname{div})\\) finite elements on two- and three-dimensional simplicial meshes show that BRAS reduces spectral condition numbers, Krylov iterations, and solve times relative to diagonal preconditioning. For preconditioned conjugate gradient (CG), BRAS yields a 1.1--4.7$\\times$ speedup over diagonal/Jacobi preconditioning across all cases tested over finite-element orders $p\\in[1,4]$. Further, theory and numerical experiments show that in the block-preconditioning case, BRAS can improve Schur-complement approximations and reduce outer solve times. On mixed Poisson and biharmonic systems, BRAS yields a 1.5--3$\\times$ speedup in time-to-solution over a standard diagonal-based preconditioning approach.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-13T20:40:43Z",
-    "updated": "2026-07-13T20:40:43Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.12138v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.12138v1"
-      }
-    ],
-    "score": 60,
-    "infographic": {
-      "key_insight": "The paper replaces crude diagonal mass-matrix inverses with a broken-space additive Schwarz (BRAS) approximation that is still local and sparse, but much closer to the true inverse.",
-      "engineering_relevance": "BRAS can speed up explicit time integration and block preconditioners for finite-element systems, especially for higher-order elements where diagonal/Jacobi mass approximations are weak.",
-      "method": [
-        "Apply exact element-local inverse mass matrices on the broken finite-element space.",
-        "Average the broken-space result back to the conforming space to form a symmetric positive definite approximation.",
-        "Reuse standard mass-assembly data structures: element matrices, local-to-global maps, and element-adjacency sparsity."
-      ],
-      "evidence_signal": "Across H1, H(curl), and H(div) elements on 2D/3D simplicial meshes with polynomial orders p=1 to 4, BRAS reduced condition numbers, CG iterations, and solve times, giving 1.1–4.7× speedups over diagonal/Jacobi preconditioning and 1.5–3× faster time-to-solution in mixed Poisson and biharmonic block solves.",
-      "watch_item": "Performance depends on assembling and applying local element inverses efficiently, so benefits may be smaller if the element-local cost or implementation overhead is high.",
-      "hashtags": [
-        "#FiniteElements",
-        "#Preconditioning",
-        "#AdditiveSchwarz",
-        "#MassMatrix",
-        "#ComputationalMechanics"
-      ],
-      "paper_id": "2026-07-13-arxiv-broken_space_additive_schwarz_mass_inverse_approximations_and_block_preconditioning",
-      "paper_title": "Broken-space Additive Schwarz Mass Inverse Approximations and (Block) Preconditioning",
-      "paper_date": "2026-07-13",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-15T10:43:14",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-14-arxiv-domain_incremental_remote_sensing_change_detection_via_difference_guided_adaptation_and_fr",
-    "arxiv_id": "2607.12934v1",
-    "date": "2026-07-14",
-    "title": "Domain-Incremental Remote Sensing Change Detection via Difference-Guided Adaptation and Frequency-Decoupled Distillation",
-    "authors": "Daifeng Peng, Yaning Li, Haiyan Guan",
-    "abstract": "Remote sensing change detection (RSCD) models are prone to catastrophic forgetting when incrementally adapted to new domains. Existing domain-incremental learning (DIL) methods mainly preserve image-level representations but often overlook bitemporal discrepancy cues, which are critical for robust change detection under domain shifts. To address this limitation, we propose DG-FDD, a domain-incremental change detection framework that integrates Difference-Guided Adaptation and Frequency-Decoupled Distillation. Specifically, the Difference-Guided Dynamic Adapter (DGDA) models bitemporal feature discrepancies to promote change-aware feature adaptation and reduce domain-specific interference. Meanwhile, the Frequency-Decoupled Knowledge Distillation strategy with Cross-domain Synthesis (FDKD-CS) separates structural information from domain style in the frequency domain, enabling stable knowledge transfer without historical data. Extensive experiments on three public high-resolution RSCD datasets under two- and three-domain incremental protocols demonstrate that DG-FDD effectively mitigates catastrophic forgetting. Compared with independently trained single-task models, DG-FDD records mean relative changes in F1 and IoU of only -0.23% and -0.45%, respectively, across six two-domain sequences, and -0.69% and -1.31%, respectively, across the three evaluated three-domain sequences. These results indicate a favorable stability-plasticity balance between historical knowledge retention and new-domain adaptation in continual cross-domain change detection.",
+    "id": "2026-07-15-arxiv-visual_place_recognition_using_rate_encoded_spiking_neural_networks_with_discrete_stdp_lea",
+    "arxiv_id": "2607.13584v1",
+    "date": "2026-07-15",
+    "title": "Visual Place Recognition Using Rate-Encoded Spiking Neural Networks with Discrete STDP Learning",
+    "authors": "Altzi Tsanko, Oikonomou Katerina Maria, Antonios Gasteratos",
+    "abstract": "Spiking Neural Networks (SNNs) trained through unsupervised Spike-Timing-Dependent Plasticity (STDP) have been explored as solutions to visual loop closure problems, driven by the prospect of efficient on-device inference on neuromorphic devices. State-of-the-art STDP-based models deliver high classification accuracy but fail to reach the high Recall at 100% Precision (R@100P) needed for reliable autonomous navigation. We present a discrete, tensor-native implementation of the STDP-based SNN-VPR pipeline using PyTorch with snnTorch and evaluate it on a 100-place Nordland dataset using 15 independently-trained networks. The contribution of three decisions in the implementation is investigated. First, we show how to perform neuron assignment with a closed-form, deterministic tensor pipeline and show that it provides significantly higher R@100P than a standard argmax procedure. However, some of this gain comes from implementation differences compared to prior continuous-time models, which we measure independently. Second, ablation in isolation shows that state reset after each query helps improve R@100P regardless of the way neurons are assigned. Third, velocity-compensated sliding window aggregation over k consecutive frames reaches R@100P = 100.00% at k = 5 for constant-velocity traversal and an additional 0.20 ms latency. Taken together, these findings show the impact of inference stage design decisions in STDP-based SNN-VPR on recall precision, although the separate contribution of each mechanism and implementation differences is only partially disentangled and needs further examination.",
     "category": "Constitutive Modeling",
     "source": "arXiv",
-    "published": "2026-07-14T16:07:21Z",
-    "updated": "2026-07-14T16:07:21Z",
-    "primary_category": "cs.CV",
+    "published": "2026-07-15T08:25:42Z",
+    "updated": "2026-07-15T08:25:42Z",
+    "primary_category": "cs.NE",
     "categories": [
-      "cs.CV"
+      "cs.NE",
+      "cs.CV",
+      "cs.RO"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.12934v1"
+        "url": "https://arxiv.org/abs/2607.13584v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.12934v1"
+        "url": "https://arxiv.org/pdf/2607.13584v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "Discrete, tensor-native STDP inference choices can materially improve visual place recognition, with neuron assignment, reset, and frame aggregation jointly driving recall at perfect precision.",
+      "engineering_relevance": "For autonomous navigation, the paper highlights that low-level inference design decisions in spiking neural networks can be as important as the learning rule itself for reliable loop-closure performance.",
+      "method": [
+        "Implemented a discrete PyTorch/snnTorch STDP-based SNN-VPR pipeline.",
+        "Compared deterministic closed-form neuron assignment against standard argmax assignment.",
+        "Ablated query-wise state reset and velocity-compensated sliding-window aggregation over k frames."
+      ],
+      "evidence_signal": "On the 100-place Nordland dataset with 15 independently trained networks, the approach reached R@100P = 100.00% at k = 5 for constant-velocity traversal, with only 0.20 ms added latency.",
+      "watch_item": "Some of the reported gain is confounded by implementation differences from prior continuous-time models, so the exact contribution of each mechanism is not fully isolated.",
+      "hashtags": [
+        "#SpikingNeuralNetworks",
+        "#STDP",
+        "#VisualPlaceRecognition",
+        "#NeuromorphicComputing",
+        "#AutonomousNavigation"
+      ],
+      "paper_id": "2026-07-15-arxiv-visual_place_recognition_using_rate_encoded_spiking_neural_networks_with_discrete_stdp_lea",
+      "paper_title": "Visual Place Recognition Using Rate-Encoded Spiking Neural Networks with Discrete STDP Learning",
+      "paper_date": "2026-07-15",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-07-16T10:51:09",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-15-arxiv-influence_of_magnetospheric_plasma_environment_on_surface_charging_of_the_lunar_south_pole",
+    "arxiv_id": "2607.13510v1",
+    "date": "2026-07-15",
+    "title": "Influence of Magnetospheric Plasma Environment on Surface Charging of the Lunar South Pole",
+    "authors": "Yaqi Xiao, Xiaoman Wang, Ronghui Quan",
+    "abstract": "The lunar south pole is a key candidate region for future lunar exploration and base construction, but its charging characteristics under real topographic conditions and dynamic plasma environments remain insufficiently understood. A high-fidelity terrain model of the lunar south pole spanning 86°S-90°S was constructed from optimized LRO/LOLA elevation data. Surface charging evolution over half a lunar orbital cycle was then simulated with a finite element-BP neural network scheme, using lunar-phase-dependent plasma inputs encompassing plasma parameters of solar wind and diverse Earth magnetospheric zones. The results show that south polar topography strongly regulates surface charging. Higher potentials appear on windward terrains, whereas lower potentials occur in shielded leeward regions, leading to enhanced local electric fields at the tops of uplands and crater floor-wall boundaries. Significant potential differences between the crests and the middle of the downstream walls of various craters indicate that these regions are highly terrain-sensitive. When the Moon passes through Earth's magnetosphere, surface potential and electric field are roughly symmetric around 0° lunar phase. From the solar wind to the plasma sheet, surface potential generally decreases while electric field magnitude rises. Only in the narrow magnetotail lobe adjacent to the plasma sheet does the potential temporarily increase and the electric field weaken. In the plasma sheet, the surface potential can decrease to approximately -1000 V, and the domain's peak electric field reaches about 5 V/m. These findings provide references for landing site selection, rover path planning, and electrostatic protection of lunar surface equipment.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-15T07:03:05Z",
+    "updated": "2026-07-15T07:03:05Z",
+    "primary_category": "physics.space-ph",
+    "categories": [
+      "physics.space-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13510v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13510v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "Lunar south-pole surface charging is strongly controlled by both local terrain shielding and the surrounding plasma environment, producing large potential and electric-field variations across craters and uplands.",
+      "engineering_relevance": "These charging maps can guide safe landing-site selection, rover route planning, and electrostatic protection design for lunar infrastructure and surface hardware.",
+      "method": [
+        "Built a high-fidelity lunar south-pole terrain model from optimized LRO/LOLA elevation data (86°S–90°S).",
+        "Simulated charging over half a lunar orbital cycle with a finite element–BP neural network approach.",
+        "Used lunar-phase-dependent plasma inputs spanning solar wind and multiple Earth magnetospheric regions."
+      ],
+      "evidence_signal": "The simulations show potential decreases toward about -1000 V in the plasma sheet and peak electric fields of roughly 5 V/m, with strong terrain-dependent differences across crater rims and walls.",
+      "watch_item": "The results are simulation-based and depend on the fidelity of terrain reconstruction and plasma boundary inputs, so local predictions may require in situ validation.",
+      "hashtags": [
+        "#LunarSouthPole",
+        "#SurfaceCharging",
+        "#FiniteElementMethod",
+        "#PlasmaEnvironment",
+        "#SpaceSystemsEngineering"
+      ],
+      "paper_id": "2026-07-15-arxiv-influence_of_magnetospheric_plasma_environment_on_surface_charging_of_the_lunar_south_pole",
+      "paper_title": "Influence of Magnetospheric Plasma Environment on Surface Charging of the Lunar South Pole",
+      "paper_date": "2026-07-15",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-16T10:51:12",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-15-arxiv-contact_resolved_deployment_of_the_contour_neurovascular_system_in_patient_specific_intrac",
+    "arxiv_id": "2607.13972v1",
+    "date": "2026-07-15",
+    "title": "Contact-resolved deployment of the Contour Neurovascular System in patient-specific intracranial aneurysms",
+    "authors": "Ratnadeep Pramanik, Fina Gießler, Martin Frank, Ivo Steinbrecher, Matthias Mayr, Sylvia Saalfeld",
+    "abstract": "While intrasaccular flow disruptors are widely used to treat wide-neck intracranial aneurysms, state-of-the-art patient-specific computational models routinely neglect the deployment mechanics by prescribing a pre-seated geometry. This shortcut oversimplifies the true physics and misrepresents the Contour Neurovascular System (CNS), whose critical biomechanical features, such as neck coverage, wall apposition, and migration resistance, are highly path-dependent. To resolve this limitation, we present a contact-resolved finite-element framework that explicitly computes the structural mechanics of implant deployment within patient-specific vascular environments. The device is discretized as a dual-layer interwoven Nitinol braid using geometrically exact beams, while the vascular wall is represented as a deformable hyperelastic shell. Non-linear frictional contact formulations govern complex wire-wire and wire-wall interactions under a staged release protocol. Evaluating three anatomical phenotypes reveals that the final equilibrium morphology is highly sensitive to tangential slip resistance and vertical release depth. Frictionless assumptions permit excessive post-contact sliding, whereas near-stick conditions enhance anchoring but restrict local compliance. Crucially, conventional geometric fast placement fails to capture these critical contact interactions and wall-supported mechanical equilibrium. This deployment-resolved framework establishes a biomechanically grounded foundation for downstream hemodynamics, fluid-structure interaction, and mechanobiological thrombus-formation modeling.",
+    "category": "AI Solid Mechanics",
+    "source": "arXiv",
+    "published": "2026-07-15T15:57:07Z",
+    "updated": "2026-07-15T15:57:07Z",
+    "primary_category": "physics.comp-ph",
+    "categories": [
+      "physics.comp-ph",
+      "physics.app-ph",
+      "physics.bio-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.13972v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.13972v1"
       }
     ],
     "score": 59,
     "infographic": {
-      "key_insight": "DG-FDD improves domain-incremental remote sensing change detection by explicitly adapting to bitemporal feature differences and distilling knowledge in the frequency domain to reduce forgetting.",
-      "engineering_relevance": "The method offers a practical continual-learning strategy for deploying change-detection models across new sensing domains while preserving prior performance without storing historical data.",
+      "key_insight": "A contact-resolved finite-element model shows that Contour Neurovascular System deployment is path-dependent, with final implant shape strongly governed by wire-wire and wire-wall contact mechanics.",
+      "engineering_relevance": "Accurately simulating aneurysm implant deployment can improve predictions of neck coverage, wall apposition, and migration resistance for patient-specific treatment planning.",
       "method": [
-        "Difference-Guided Dynamic Adapter (DGDA) learns change-aware feature adaptation from bitemporal discrepancies.",
-        "Frequency-Decoupled Knowledge Distillation with Cross-domain Synthesis (FDKD-CS) separates structural content from domain style in the frequency domain.",
-        "Designed for domain-incremental RSCD to balance plasticity for new domains and stability for old domains."
+        "Model the CNS as a dual-layer interwoven Nitinol braid using geometrically exact beam elements.",
+        "Represent the aneurysm vessel wall as a deformable hyperelastic shell.",
+        "Apply non-linear frictional contact with staged release to capture deployment, sliding, and anchoring."
       ],
-      "evidence_signal": "Across six two-domain sequences and three three-domain sequences, DG-FDD kept mean relative changes near zero, with F1/IoU drops of only -0.23%/-0.45% and -0.69%/-1.31%, respectively, versus single-task models.",
-      "watch_item": "Performance may depend on the quality of frequency-domain separation and adapter tuning, so robustness across sensors, resolutions, and strongly shifted domains still needs careful validation.",
+      "evidence_signal": "The framework was evaluated on three anatomical phenotypes, showing strong sensitivity of equilibrium morphology to tangential slip resistance and release depth.",
+      "watch_item": "Results may depend strongly on friction/contact parameter calibration, so near-stick or frictionless assumptions can misrepresent real deployment behavior.",
       "hashtags": [
-        "#RemoteSensing",
-        "#ChangeDetection",
-        "#ContinualLearning",
-        "#DomainAdaptation",
-        "#KnowledgeDistillation"
+        "#SolidMechanics",
+        "#FiniteElementMethod",
+        "#ContactMechanics",
+        "#Nitinol",
+        "#AneurysmTreatment"
       ],
-      "paper_id": "2026-07-14-arxiv-domain_incremental_remote_sensing_change_detection_via_difference_guided_adaptation_and_fr",
-      "paper_title": "Domain-Incremental Remote Sensing Change Detection via Difference-Guided Adaptation and Frequency-Decoupled Distillation",
-      "paper_date": "2026-07-14",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:43:17",
+      "paper_id": "2026-07-15-arxiv-contact_resolved_deployment_of_the_contour_neurovascular_system_in_patient_specific_intrac",
+      "paper_title": "Contact-resolved deployment of the Contour Neurovascular System in patient-specific intracranial aneurysms",
+      "paper_date": "2026-07-15",
+      "paper_category": "AI Solid Mechanics",
+      "generated_at": "2026-07-16T10:51:14",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-07-12-arxiv-a_four_field_auxiliary_reformulation_of_a_cahn_hilliard_time_step_analysis_and_conforming",
-    "arxiv_id": "2607.10724v1",
-    "date": "2026-07-12",
-    "title": "A four-field auxiliary reformulation of a Cahn-Hilliard time step: Analysis and conforming finite element discretization",
-    "authors": "Marvin Fritz",
-    "abstract": "We propose a four-field auxiliary reformulation of a time-discrete Cahn-Hilliard step. The construction is motivated by the scalar trace structure underlying two-dimensional Rafetseder-Zulehner decompositions and represents the scalar quantity $-Δc$ in the form $2p+div\\,u$ through an auxiliary scalar field $p$ and an auxiliary vector field $u$. The resulting auxiliary problem is a mixed second-order Stokes/elasticity-type system, while the evolution equation for the phase field retains its standard mass-conserving gradient-flow structure. We derive a continuous four-field formulation that is equivalent to the classical convex-splitting mixed time step. We also state a conforming finite element discretization and prove one-step spatial estimates for the phase-field variables together with a stable auxiliary block estimate containing an explicit weak-Laplacian recovery defect. The numerical experiments verify the expected phase-field convergence in a manufactured setting, mass conservation, energy decay, and projected consistency of the auxiliary block.",
-    "category": "Constitutive Modeling",
+    "id": "2026-07-14-arxiv-tensor_network_finite_elements_for_analytic_operator_equations",
+    "arxiv_id": "2607.13129v1",
+    "date": "2026-07-14",
+    "title": "Tensor-Network Finite Elements for Analytic Operator Equations",
+    "authors": "Abhijatmedhi Chotrattanapituk, Michael J. Landry, Chu-Liang Fu, Mingda Li",
+    "abstract": "Operator equations (OEs) underpin quantitative modeling across science and engineering. Finite-element (FE) methods discretize continuous OEs into finite-dimensional algebraic systems, whereas tensor networks (TNs) provide flexible variational representations of correlated discrete systems. Here, we develop a framework that connects FE with TN for analytic OEs. The power of this method comes from its ability to convert highly non-linear partial differential equations into linear matrix equations. In particular, we show that FE discretization induces a hierarchy of multilinear interaction tensors, through which differential, integral, nonlinear, memory, and delay equations can be expressed within a common algebraic structure. The resulting systems are reformulated as weighted-residual optimization problems over TN degrees of freedom. Matrix-product-state calculations for one-dimensional linear and nonlinear diffusion reproduce conventional solutions with controlled error while preserving continuity and Neumann boundary conditions. The framework provides a common variational language for analytic OEs and establishes a direct connection between FE numerical formalism and TN variational algorithms, offering a general foundation for TN-based and quantum-inspired approaches to solving OEs.",
+    "category": "FEM Surrogates",
     "source": "arXiv",
-    "published": "2026-07-12T12:02:23Z",
-    "updated": "2026-07-12T12:02:23Z",
+    "published": "2026-07-14T18:00:00Z",
+    "updated": "2026-07-14T18:00:00Z",
     "primary_category": "math.NA",
     "categories": [
       "math.NA",
-      "math.AP"
+      "cond-mat.other",
+      "hep-lat",
+      "physics.comp-ph"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.10724v1"
+        "url": "https://arxiv.org/abs/2607.13129v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.10724v1"
-      }
-    ],
-    "score": 59,
-    "infographic": {
-      "key_insight": "The paper reformulates a time-discrete Cahn–Hilliard step into an equivalent four-field system by representing the weak Laplacian of the phase field through auxiliary scalar and vector fields.",
-      "engineering_relevance": "This provides a conforming mixed finite element route that preserves mass conservation and energy decay while improving the analytical and numerical handling of the Cahn–Hilliard update.",
-      "method": [
-        "Introduce auxiliary fields p and u so that -Δc is represented as 2p + div u.",
-        "Derive a continuous four-field formulation equivalent to the standard convex-splitting mixed time step.",
-        "State a conforming finite element discretization and prove one-step spatial estimates plus a stable auxiliary block estimate."
-      ],
-      "evidence_signal": "The abstract reports manufactured-solution convergence tests along with verification of mass conservation, energy decay, and projected consistency of the auxiliary block.",
-      "watch_item": "The auxiliary block includes an explicit weak-Laplacian recovery defect, so practical accuracy may depend on how this term is controlled in implementation.",
-      "hashtags": [
-        "#CahnHilliard",
-        "#MixedFEM",
-        "#PhaseField",
-        "#ConstitutiveModeling",
-        "#ComputationalMechanics"
-      ],
-      "paper_id": "2026-07-12-arxiv-a_four_field_auxiliary_reformulation_of_a_cahn_hilliard_time_step_analysis_and_conforming",
-      "paper_title": "A four-field auxiliary reformulation of a Cahn-Hilliard time step: Analysis and conforming finite element discretization",
-      "paper_date": "2026-07-12",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:43:22",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-08-arxiv-physics_audited_agentic_discovery_in_scientific_machine_learning",
-    "arxiv_id": "2607.07379v1",
-    "date": "2026-07-08",
-    "title": "Physics-Audited Agentic Discovery in Scientific Machine Learning",
-    "authors": "Diab W. Abueidda, Bilal Ahmed, Panos Pantidis, Mostafa E. Mobasher",
-    "abstract": "In agentic scientific machine learning (SciML), large language model (LLM) agents can discover surrogate models and select one by an automated score, typically an error metric. A low error, however, does not establish that the predicted fields satisfy the physics that matter for mechanics, such as boundary conditions, superposition, stiffness scaling, or causality. We introduce Physics-Audited Agentic SciML (PA-SciML), a verification-first workflow for agentic SciML discovery. The workflow fixes a scoring evaluator before search, derives reviewable machine-checkable physics requirements, checks each trained candidate on its outputs, and separately searches prescribed input ranges or measured load-history spans for high-violation cases without reference solution fields. A surrogate is reported as verified only under the stated checks. When enabled, the workflow also adds advisory numerical probes before training and tests one modeling change at a time to record which isolated edits are associated with score gains before reuse. In the reported computational-solid-mechanics numerical examples, the static elasticity run selects a surrogate with lower validation error than the error-only baseline while both selected models pass the common linear-elastic checks. In the transient elastodynamics run, an error-only baseline with similar mean error fails a stricter causality check by responding to future parts of the loading history, while the selected surrogate passes the stated checks. The main distinction is per-candidate physics evidence on predicted fields, not a richer aggregate score.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-07-08T13:10:35Z",
-    "updated": "2026-07-08T13:10:35Z",
-    "primary_category": "cs.AI",
-    "categories": [
-      "cs.AI",
-      "cs.LG"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.07379v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.07379v1"
-      }
-    ],
-    "score": 59,
-    "infographic": {
-      "key_insight": "PA-SciML adds a verification-first, physics-audited workflow to agentic SciML so model selection is based on checkable mechanics requirements, not just low prediction error.",
-      "engineering_relevance": "For solid mechanics surrogate modeling, this helps ensure trained models respect boundary conditions, scaling, superposition, and causality before they are trusted in design or simulation workflows.",
-      "method": [
-        "Fix the scoring evaluator before search.",
-        "Derive machine-checkable physics requirements and audit each candidate on predicted outputs.",
-        "Search for high-violation cases over prescribed inputs or load histories without using reference fields."
-      ],
-      "evidence_signal": "In the reported examples, the selected elastic surrogate achieved lower validation error than an error-only baseline and passed the common checks, while in transient elastodynamics an error-only baseline with similar mean error failed a stricter causality check.",
-      "watch_item": "Physics verification is only as strong as the chosen checks and coverage of the input/load-history search, so omitted failure modes may still slip through.",
-      "hashtags": [
-        "#ScientificML",
-        "#SolidMechanics",
-        "#PhysicsInformedML",
-        "#ModelVerification",
-        "#AgenticAI"
-      ],
-      "paper_id": "2026-07-08-arxiv-physics_audited_agentic_discovery_in_scientific_machine_learning",
-      "paper_title": "Physics-Audited Agentic Discovery in Scientific Machine Learning",
-      "paper_date": "2026-07-08",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:43:24",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-09-arxiv-impedance_guided_programmable_transmission_of_localized_deformation_in_modular_soft_metama",
-    "arxiv_id": "2607.08966v1",
-    "date": "2026-07-09",
-    "title": "Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials",
-    "authors": "Weiyun Xu, Daewon Hong, Zhi Zhao, Rahul Dev Kundu, Xiaojia Shelly Zhang",
-    "abstract": "Soft metamaterials provide a promising platform for robotics, biomedical devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft metamaterials, achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families, allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics. Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft gripping, and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability of these soft modules can embed electric logic signals, enabling energy-efficient and low-latency information processing through compliant-switch-controlled mechanical LED displays and wearable finger-motion-sensing controllers. Our method provides fundamental insights into localized deformation transmission in modular soft metamaterials and establishes a scalable route toward embodied-intelligence material systems, particularly for soft-metamaterial-centric actuation, sensing, and collective computing.",
-    "category": "Composites and Metamaterials",
-    "source": "arXiv",
-    "published": "2026-07-09T22:04:01Z",
-    "updated": "2026-07-09T22:04:01Z",
-    "primary_category": "cs.CE",
-    "categories": [
-      "cs.CE",
-      "cs.RO",
-      "math.OC"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.08966v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.08966v1"
+        "url": "https://arxiv.org/pdf/2607.13129v1"
       }
     ],
     "score": 58,
     "infographic": {
-      "key_insight": "An impedance-guided design framework lets modular soft metamaterials transmit localized deformation in programmable ways, enabling end-to-end and long-range mechanical behavior that intuition-based design cannot reliably achieve.",
-      "engineering_relevance": "This provides a scalable route to soft robotic, biomedical, sensing, and embodied-computing systems where deformation can be routed, amplified, or blocked across reconfigurable assemblies.",
+      "key_insight": "The paper shows that finite-element discretization can be reformulated as a tensor-network variational problem, turning many analytic operator equations into linear matrix equations with a shared algebraic structure.",
+      "engineering_relevance": "This creates a general surrogate framework for solving differential, nonlinear, memory, and delay equations while preserving key FE properties like continuity and Neumann boundary conditions.",
       "method": [
-        "Build a nonlinear model with position-dependent interactions to capture transmission through modular assemblies.",
-        "Introduce mechanical impedance as the design criterion for regulating deformation transfer at the unit-cell level.",
-        "Optimize unit-cell topology to create homogeneous or heterogeneous module families with custom transmission behavior."
+        "Discretize analytic operator equations with finite elements to generate multilinear interaction tensors.",
+        "Recast the resulting system as a weighted-residual optimization over tensor-network degrees of freedom.",
+        "Use matrix-product-state solvers to approximate 1D linear and nonlinear diffusion problems."
       ],
-      "evidence_signal": "The abstract reports physically realized demonstrations of obstacle-bypassing assemblies, defect-tolerant gripping, and embodied signal-processing devices, including mechanical LED displays and wearable motion controllers.",
-      "watch_item": "Performance likely depends on precise module topology, assembly conditions, and nonlinear calibration, so robustness to manufacturing variability and repeated reassembly should be verified.",
+      "evidence_signal": "The abstract reports that matrix-product-state calculations for one-dimensional linear and nonlinear diffusion reproduce conventional solutions with controlled error.",
+      "watch_item": "The demonstrated results are for 1D diffusion examples, so broader accuracy, scalability, and implementation cost in higher-dimensional or strongly nonlinear problems still need validation.",
       "hashtags": [
-        "#SoftMetamaterials",
-        "#MechanicalImpedance",
-        "#ProgrammableMatter",
-        "#SoftRobotics",
-        "#EmbodiedIntelligence"
+        "#FiniteElementMethod",
+        "#TensorNetworks",
+        "#OperatorEquations",
+        "#ScientificComputing",
+        "#SurrogateModeling"
       ],
-      "paper_id": "2026-07-09-arxiv-impedance_guided_programmable_transmission_of_localized_deformation_in_modular_soft_metama",
-      "paper_title": "Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials",
-      "paper_date": "2026-07-09",
-      "paper_category": "Composites and Metamaterials",
-      "generated_at": "2026-07-15T10:43:26",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-14-arxiv-tunable_signal_penetration_and_response_plateaus_in_bistable_mechanical_media",
-    "arxiv_id": "2607.12405v1",
-    "date": "2026-07-14",
-    "title": "Tunable Signal Penetration and Response Plateaus in Bistable Mechanical Media",
-    "authors": "Sven Pattloch, Joachim Dzubiella",
-    "abstract": "Dynamically processing mechanical signals is crucial for soft robotics and mechanosensing, where classical viscoelastic materials lack intrinsic tunability. We show that internal bistability actively controls the response and signal attenuation in mechanical (meta)materials. In our model, bistable elements switch discretely with a predefined timescale between states distinguished by potential energy $ε$, equilibrium length $Δl$, and spring constant $Δk$. The system is simulated via microscopic Brownian dynamics coupled to Poisson switching with rate $ν$, and described macroscopically by a nonlinear continuum field theory. Crucially, the model yields closed-form analytical solutions for the linear response and spatial penetration depth, revealing two phenomena: a universal screening mechanism (akin to the electrostatic 'skin effect') reducing spatial signal penetration when the driving frequency exceeds the internal relaxation rate, and a frequency-insensitive response plateau from timescale separation. The screening length is controlled primarily by the conformational length change $Δl$, while the attenuation regime and plateau are tuneable via the switching rate $ν$. A systematic parameter study exposes a fundamental design trade-off: larger $Δl$ strengthens dissipation but raises the energy barrier for state transitions, eventually causing state-locking where damping vanishes. Optimal attenuation thus requires a compromise between pronounced bistability and a surmountable barrier. Due to its analytical tractability, our framework provides explicit design rules for fine-tuning the adaptive response of bistable media. It applies to diverse experimental systems-from biopolymers to synthetic catch bonds and metamaterials-enabling the predictive engineering of intelligent soft matter for frequency-selective signal processing.",
-    "category": "Composites and Metamaterials",
-    "source": "arXiv",
-    "published": "2026-07-14T06:24:41Z",
-    "updated": "2026-07-14T06:24:41Z",
-    "primary_category": "cond-mat.soft",
-    "categories": [
-      "cond-mat.soft"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.12405v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.12405v1"
-      }
-    ],
-    "score": 54,
-    "infographic": {
-      "key_insight": "Bistable internal switching can be tuned to either screen mechanical signals with depth and frequency dependence or create a response plateau, enabling active control of wave-like attenuation in soft media.",
-      "engineering_relevance": "The results give design rules for frequency-selective damping in soft robotics, mechanosensing, and metamaterials by adjusting the switching rate ν and conformational jump Δl.",
-      "method": [
-        "Brownian dynamics of bistable elements with Poisson switching between states",
-        "Nonlinear continuum field theory for macroscopic response and penetration depth",
-        "Closed-form linear-response solutions to map frequency, screening, and plateau behavior"
-      ],
-      "evidence_signal": "The abstract reports a systematic parameter study and analytical solutions showing that attenuation, penetration depth, and plateau behavior depend on ν and Δl, with a trade-off between stronger dissipation and state-locking.",
-      "watch_item": "Large Δl can increase the energy barrier enough to lock the bistable states, eliminating damping and limiting practical tunability.",
-      "hashtags": [
-        "#Metamaterials",
-        "#Bistability",
-        "#SoftRobotics",
-        "#SignalAttenuation",
-        "#Mechanosensing"
-      ],
-      "paper_id": "2026-07-14-arxiv-tunable_signal_penetration_and_response_plateaus_in_bistable_mechanical_media",
-      "paper_title": "Tunable Signal Penetration and Response Plateaus in Bistable Mechanical Media",
+      "paper_id": "2026-07-14-arxiv-tensor_network_finite_elements_for_analytic_operator_equations",
+      "paper_title": "Tensor-Network Finite Elements for Analytic Operator Equations",
       "paper_date": "2026-07-14",
-      "paper_category": "Composites and Metamaterials",
-      "generated_at": "2026-07-15T10:43:29",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-13-arxiv-a_quantitative_model_for_the_emergent_population_dynamics_of_the_melanoma_mitf_rheostat",
-    "arxiv_id": "2607.11820v1",
-    "date": "2026-07-13",
-    "title": "A quantitative model for the emergent population dynamics of the melanoma MITF rheostat",
-    "authors": "Keith L. Chambers, Richard M. White, Colin R. Goding, Helen M. Byrne",
-    "abstract": "Cancer progression is driven by the ability of cells with identical driver mutations to adopt biologically distinct adaptive phenotypes. Yet the population dynamics implied by intratumour phenotypic heterogeneity is poorly understood. Melanoma, a highly aggressive skin cancer, represents an excellent model to explore phenotype-switching, in part because phenotypic identity is conferred by melanocyte-associated transcription factor (MITF) activity. Here we develop and analyse a multiscale phenotype-structured PDE model for melanoma cell populations in the epidermis, progressing from subcellular MITF dynamics to well-mixed and radially resolved population models. Numerical solutions revealed that the model admits three distinct and stable long-term population behaviours: a slow-growing melanoma of proliferative cells and non-cycling, differentiated cells without invasive potential; a faster-propagating melanoma with an invasive core; and a rapidly growing melanoma with oscillatory core dynamics. More broadly, the analysis also highlights that phenotype reversibility by individual cells does not imply reversibility of phenotype distributions at the population scale. Hence, properties at the single-cell level (e.g., reversibility of invasive capacity) must be extrapolated with caution to populations with coupled cell dynamics. These findings further the understanding of melanoma population dynamics and cell plasticity more generally.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-07-13T17:13:44Z",
-    "updated": "2026-07-13T17:13:44Z",
-    "primary_category": "q-bio.CB",
-    "categories": [
-      "q-bio.CB"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.11820v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.11820v1"
-      }
-    ],
-    "score": 54,
-    "infographic": {
-      "key_insight": "A multiscale PDE model shows that reversible single-cell MITF switching can produce three distinct, stable melanoma population regimes with different growth and invasion behaviors.",
-      "engineering_relevance": "The work provides a predictive framework for coupling cell-state dynamics to population-scale behavior, which is useful for modeling heterogeneous, adaptive biological systems and treatment response.",
-      "method": [
-        "Built a phenotype-structured PDE model spanning subcellular MITF dynamics to population-level melanoma behavior",
-        "Analyzed both well-mixed and radially resolved tumor growth formulations",
-        "Used numerical simulations to identify stable long-term population regimes"
-      ],
-      "evidence_signal": "The abstract reports numerical solution outcomes, revealing three stable long-term behaviors: slow-growing non-invasive tumors, faster-growing invasive-core tumors, and rapidly growing tumors with oscillatory cores.",
-      "watch_item": "Single-cell phenotype reversibility should not be assumed to translate directly to reversible population-level distributions because coupled cell dynamics can change emergent behavior.",
-      "hashtags": [
-        "#PhenotypeSwitching",
-        "#MelanomaModeling",
-        "#MultiscaleModeling",
-        "#PDE",
-        "#CellPlasticity"
-      ],
-      "paper_id": "2026-07-13-arxiv-a_quantitative_model_for_the_emergent_population_dynamics_of_the_melanoma_mitf_rheostat",
-      "paper_title": "A quantitative model for the emergent population dynamics of the melanoma MITF rheostat",
-      "paper_date": "2026-07-13",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:43:31",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-10-arxiv-shear_unfreezing_explains_yielding_plasticity_and_neck_initiation_of_glassy_polymers",
-    "arxiv_id": "2607.09160v1",
-    "date": "2026-07-10",
-    "title": "Shear Unfreezing Explains Yielding, Plasticity and Neck Initiation of Glassy Polymers",
-    "authors": "Peihan Lyu, Zhaoyu Ding, Masao Doi, Xingkun Man",
-    "abstract": "Yielding, plasticity, and necking are central to the mechanical performance of materials, yet a concise unified physical picture of how these nonlinear responses arise remains lacking. We develop a minimal theory for glassy polymers based on a classical volume-dependent relaxation time following the Doolittle equation, and derive the constitutive relation using the Onsager variational principle. Surprisingly, this simple theory explains yielding, plasticity, and neck initiation under constant strain rate loading via a shear unfreezing mechanism: as the sample is stretched, volume-increasing activated molecular mobility drives shear deformation from an initially frozen state to an unfrozen state. The theory yields an analytical expression for the yielding stress as a function of strain rate and temperature. It also predicts a phase diagram for necking initiation in the same parameter space, providing a mechanism beyond the classical Considère criterion. Our results establish a unified framework for nonlinear tensile behavior in glassy materials.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-07-10T07:26:03Z",
-    "updated": "2026-07-10T07:26:03Z",
-    "primary_category": "cond-mat.soft",
-    "categories": [
-      "cond-mat.soft"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.09160v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.09160v1"
-      }
-    ],
-    "score": 54,
-    "infographic": {
-      "key_insight": "Glassy polymers yield and neck because stretching increases free volume, which “unfreezes” shear mobility and transitions the material from frozen to plastic flow.",
-      "engineering_relevance": "The model gives a compact constitutive law that can predict yielding stress and neck-initiation conditions versus strain rate and temperature for polymer design and process planning.",
-      "method": [
-        "Start from a Doolittle-type relaxation time that depends on volume/free volume.",
-        "Derive the constitutive relation with the Onsager variational principle.",
-        "Use the theory to obtain analytical yielding stress and a necking phase diagram under constant strain-rate loading."
-      ],
-      "evidence_signal": "The abstract reports analytical predictions for yielding stress and a phase diagram for neck-initiation, but does not describe experimental validation or numerical benchmarking.",
-      "watch_item": "The framework is minimal and physically motivated, but its practical accuracy will depend on how well the assumed volume-dependent relaxation time captures real polymer-specific behavior.",
-      "hashtags": [
-        "#GlassyPolymers",
-        "#Yielding",
-        "#Necking",
-        "#ConstitutiveModeling",
-        "#Plasticity"
-      ],
-      "paper_id": "2026-07-10-arxiv-shear_unfreezing_explains_yielding_plasticity_and_neck_initiation_of_glassy_polymers",
-      "paper_title": "Shear Unfreezing Explains Yielding, Plasticity and Neck Initiation of Glassy Polymers",
-      "paper_date": "2026-07-10",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:43:33",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-13-arxiv-unified_gradient_projection_language_balanced_continual_learning_for_multilingual_low_reso",
-    "arxiv_id": "2607.11163v1",
-    "date": "2026-07-13",
-    "title": "Unified Gradient Projection: Language-Balanced Continual Learning for Multilingual Low-Resource ASR",
-    "authors": "Ziang Ren, Guodong Lin, Yuchen Ai, Kaize Tan, Wei-Qiang Zhang",
-    "abstract": "Large-scale pretrained ASR models such as Whisper exhibit strong multilingual capabilities. However, fine-tuning on low-resource languages often causes catastrophic forgetting. Although continual learning mitigates this issue, existing methods struggle to regulate cross-task interference in multilingual settings, where dominant languages bias optimization. We propose Unified Gradient Projection (UGP), which constrains parameter updates using reference gradients from language-balanced replay in a unified projection space. By equalizing per-language contributions in the projection, UGP reduces dominant-language bias and improves cross-lingual stability. We further show that combining gradient-level projection with data-level replay yields complementary gains in stability and plasticity. Across diverse low-resource language groups and model scales, UGP enables effective adaptation while substantially mitigating forgetting. On Whisper-large-v3, it achieves near-zero average forgetting.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-07-13T06:57:02Z",
-    "updated": "2026-07-13T06:57:02Z",
-    "primary_category": "cs.CL",
-    "categories": [
-      "cs.CL",
-      "cs.SD",
-      "eess.AS"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.11163v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.11163v1"
-      }
-    ],
-    "score": 53,
-    "infographic": {
-      "key_insight": "Unified Gradient Projection (UGP) reduces catastrophic forgetting in multilingual low-resource ASR by projecting updates into a language-balanced gradient space that limits dominant-language bias.",
-      "engineering_relevance": "For continual adaptation of pretrained speech models, UGP offers a practical way to improve stability and preserve prior-language performance while still learning new low-resource languages.",
-      "method": [
-        "Build reference gradients from language-balanced replay data.",
-        "Project parameter updates in a unified space to equalize per-language contributions.",
-        "Combine gradient-level projection with data replay for complementary stability and plasticity gains."
-      ],
-      "evidence_signal": "The abstract reports evaluation across diverse low-resource language groups and model scales, with Whisper-large-v3 achieving near-zero average forgetting.",
-      "watch_item": "UGP depends on well-constructed language-balanced replay and projection overhead may complicate training and scaling in resource-constrained deployments.",
-      "hashtags": [
-        "#ContinualLearning",
-        "#ASR",
-        "#MultilingualAI",
-        "#LowResourceLanguages",
-        "#GradientProjection"
-      ],
-      "paper_id": "2026-07-13-arxiv-unified_gradient_projection_language_balanced_continual_learning_for_multilingual_low_reso",
-      "paper_title": "Unified Gradient Projection: Language-Balanced Continual Learning for Multilingual Low-Resource ASR",
-      "paper_date": "2026-07-13",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-15T10:43:35",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-16T10:51:19",
       "generator": "openai"
     }
   }

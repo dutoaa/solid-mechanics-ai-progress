@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-07-17
+Generated: 2026-07-18
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Physics-Informed Residual Deep Learning for Constitutive Modeling of Hot Deformation and Dynamic Recrystallization in a Mo-Rich $α+β$ Titanium Alloy
@@ -123,7 +123,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.13174v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-14-arxiv-towards_end_to_end_optimization_in_multimaterial_3d_printing_infographic.json
 
-## 16. Structure-preserving Lagrange-multiplier methods for mean curvature flow and their error bounds
+## 16. Optimal complexity of adaptive FEM for second-order linear elliptic PDEs driven by non-residual estimators, Part I: Symmetric PDEs
+
+- Date: 2026-07-16
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.14820v1
+- PDF: https://arxiv.org/pdf/2607.14820v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-16-arxiv-optimal_complexity_of_adaptive_fem_for_second_order_linear_elliptic_pdes_driven_by_non_res_infographic.json
+
+## 17. Structure-preserving Lagrange-multiplier methods for mean curvature flow and their error bounds
 
 - Date: 2026-07-16
 - Category: FEM Surrogates
@@ -131,7 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.14787v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-16-arxiv-structure_preserving_lagrange_multiplier_methods_for_mean_curvature_flow_and_their_error_b_infographic.json
 
-## 17. Neural operators solve inverse problems for constitutive model discovery
+## 18. Neural operators solve inverse problems for constitutive model discovery
 
 - Date: 2026-07-16
 - Category: Constitutive Modeling
@@ -139,7 +147,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.15049v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-16-arxiv-neural_operators_solve_inverse_problems_for_constitutive_model_discovery_infographic.json
 
-## 18. A Unified Conceptual Framework for Gravitational Instabilities: From Latent System State to Failure
+## 19. A Unified Conceptual Framework for Gravitational Instabilities: From Latent System State to Failure
 
 - Date: 2026-07-16
 - Category: Fracture and Damage
@@ -147,18 +155,10 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.14831v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-16-arxiv-a_unified_conceptual_framework_for_gravitational_instabilities_from_latent_system_state_to_infographic.json
 
-## 19. A structure-preserving Numerical Method for the Compressible Resistive-Hall-MHD System
+## 20. A structure-preserving Numerical Method for the Compressible Resistive-Hall-MHD System
 
 - Date: 2026-07-15
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2607.14286v1
 - PDF: https://arxiv.org/pdf/2607.14286v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-15-arxiv-a_structure_preserving_numerical_method_for_the_compressible_resistive_hall_mhd_system_infographic.json
-
-## 20. Uncertainty-Aware Crack Growth Forecasting via Conditional Denoising Diffusion Models for Phase-Field Fracture
-
-- Date: 2026-07-13
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2607.11971v1
-- PDF: https://arxiv.org/pdf/2607.11971v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-13-arxiv-uncertainty_aware_crack_growth_forecasting_via_conditional_denoising_diffusion_models_for_infographic.json

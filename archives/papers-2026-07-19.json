@@ -24,18 +24,17 @@
         "url": "https://arxiv.org/pdf/2607.13467v1"
       }
     ],
-    "score": 93,
+    "score": 98,
     "infographic": {
-      "key_insight": "A physics-informed residual deep learning model can accurately capture hot deformation and dynamic recrystallization behavior in a Mo-rich titanium alloy while staying consistent with constitutive mechanics.",
-      "engineering_relevance": "This enables more reliable constitutive laws for thermomechanical process design and optimization of titanium alloy forging and forming.",
+      "key_insight": "A DRX-aware physics-informed neural network can model hot deformation in a Mo-rich Ti alloy while preserving constitutive physics and recrystallization behavior.",
+      "engineering_relevance": "This enables more reliable process design and simulation for thermomechanical forming of titanium alloys across wide temperature and strain-rate ranges.",
       "method": [
-        "Trained stacked residual physics-informed neural networks (STAR-PINNs) on experimental flow-stress data.",
-        "Enforced thermomechanical constraints such as thermal softening, strain-rate sensitivity, strain hardening, and post-peak softening via automatic differentiation.",
-        "Extended the model with DRX-aware dual outputs using JMAK-Avrami regularization and DRX saturation constraints.",
-        "Linked predicted recrystallization fraction to stress through latent-feature fusion for physically consistent response prediction."
+        "Trained stacked residual physics-informed neural networks on experimental flow-stress curves from 800–1050 °C and 0.01–10 s⁻¹.",
+        "Embedded constitutive constraints such as strain hardening, thermal softening, strain-rate sensitivity, and post-peak softening via automatic differentiation.",
+        "Added a dual-output DRX-aware architecture with JMAK-Avrami regularization, DRX saturation, and Arrhenius consistency to link recrystallization fraction to stress."
       ],
-      "evidence_signal": "The DRX-aware model achieved RMSE = 11.69 MPa, MAE = 4.83 MPa, R² = 0.9850, and cross-validated RMSE = 12.47 ± 0.26 MPa across temperatures of 800–1050 °C and strain rates of 0.01–10 s⁻¹.",
-      "watch_item": "The approach depends on carefully tuned physics constraints and high-quality experimental calibration, so transfer to other alloys or processing windows may require retraining and revalidation.",
+      "evidence_signal": "The DRX-aware model reported RMSE = 11.69 MPa, MAE = 4.83 MPa, R² = 0.9850, and cross-validated RMSE = 12.47 ± 0.26 MPa, while reproducing flow curves, DRX kinetics, and Zener–Hollomon trends.",
+      "watch_item": "The approach depends on careful tuning of physics-loss terms and may be sensitive when extrapolating beyond the tested temperature and strain-rate envelope.",
       "hashtags": [
         "#PhysicsInformedML",
         "#ConstitutiveModeling",
@@ -47,7 +46,7 @@
       "paper_title": "Physics-Informed Residual Deep Learning for Constitutive Modeling of Hot Deformation and Dynamic Recrystallization in a Mo-Rich $α+β$ Titanium Alloy",
       "paper_date": "2026-07-15",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-07-19T10:19:45",
+      "generated_at": "2026-07-18T10:11:50",
       "generator": "openai"
     }
   },
@@ -76,17 +75,17 @@
         "url": "https://arxiv.org/pdf/2607.12960v3"
       }
     ],
-    "score": 85,
+    "score": 90,
     "infographic": {
-      "key_insight": "Strain rate and indentation length scale affect nanoindentation differently: strain rate sets the thermally activated flow stress, while indentation depth controls plastic-zone growth, pile-up, and GND buildup.",
-      "engineering_relevance": "A calibrated strain-gradient crystal plasticity model can predict irradiated tungsten response across strain rates and length scales, supporting constitutive design for transient and radiation-damaged components.",
+      "key_insight": "In neutron-irradiated tungsten, strain rate and indentation depth affect plasticity through different mechanisms: strain rate sets thermally activated flow stress, while depth controls plastic-zone size, pile-up, and GND buildup.",
+      "engineering_relevance": "The calibrated strain-gradient crystal plasticity model can predict irradiation-hardened tungsten response across strain rates and loading scales, supporting constitutive design for transient and extreme environments.",
       "method": [
-        "Spherical nanoindentation on unirradiated and neutron-irradiated single-crystal tungsten over 3.2e-5 to 3.2e-3 s^-1.",
-        "AFM and HR-EBSD to measure pile-up, residual lattice strain, and GND distributions.",
-        "Strain-gradient CPFE with thermally activated slip, GND hardening, irradiation obstacle hardening, and strain-dependent softening; calibrated once and validated across conditions."
+        "Spherical nanoindentation on unirradiated and neutron-irradiated single-crystal tungsten across 3.2e-5 to 3.2e-3 s^-1",
+        "AFM and HR-EBSD measurements of pile-up, residual strain, and GND distributions",
+        "Strain-gradient CPFE model with thermally activated slip, GND hardening, irradiation obstacle hardening, and strain-dependent softening"
       ],
-      "evidence_signal": "The model was fit to a single experimental condition and then validated against all other strain rates, while independently varying strain rate and indentation depth in simulation.",
-      "watch_item": "The constitutive law is calibrated for this specific material/state, so transfer to other irradiation levels, temperatures, or microstructures may require re-parameterization.",
+      "evidence_signal": "A single calibrated model condition was validated across all remaining strain rates without re-tuning and then used to independently vary strain rate and indentation depth in simulation.",
+      "watch_item": "Transferability is demonstrated for the studied tungsten conditions, but the model still depends on calibration against one experimental state and may need retuning for different irradiation states or temperatures.",
       "hashtags": [
         "#ConstitutiveModeling",
         "#Nanoindentation",
@@ -98,7 +97,7 @@
       "paper_title": "Decoupling Strain-Rate Sensitivity and Deformation Length Scale Effects in Neutron-Irradiated Tungsten: A Coupled Nano-Indentation, HR-EBSD and Crystal Plasticity Study",
       "paper_date": "2026-07-14",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:19:48",
+      "generated_at": "2026-07-18T10:11:53",
       "generator": "openai"
     }
   },
@@ -127,29 +126,29 @@
         "url": "https://arxiv.org/pdf/2607.13238v1"
       }
     ],
-    "score": 79,
+    "score": 84,
     "infographic": {
-      "key_insight": "A viscoplastic plus gradient-damage constitutive framework can capture both nonlinear deformation and fracture in additively manufactured polymer TPMS lattices.",
-      "engineering_relevance": "This enables more reliable in silico design of lightweight lattice structures with improved prediction of failure under tension, compression, and cyclic/non-monotonic loading.",
+      "key_insight": "A viscoplastic-damage finite element model can predict fracture in 3D-printed polymer TPMS lattices by coupling stored elastic energy and plastic strain to damage initiation.",
+      "engineering_relevance": "This enables more reliable in silico design of lightweight lattice structures with improved toughness and failure prediction under tension, compression, and non-monotonic loading.",
       "method": [
-        "Implemented a high-fidelity rate-dependent viscoplastic model in Abaqus/Explicit via UMAT.",
-        "Added a damage initiation criterion based on stored elastic energy and equivalent plastic strain.",
-        "Coupled damage evolution using a gradient-damage framework and validated it against experiments."
+        "Implemented a high-fidelity rate-dependent viscoplastic constitutive model in Abaqus/Explicit via UMAT.",
+        "Added a damage initiation criterion for amorphous polymers based on stored elastic energy and equivalent plastic strain.",
+        "Used a gradient-damage framework to simulate fracture evolution and structural failure."
       ],
-      "evidence_signal": "The model was validated qualitatively and quantitatively against experiments on a unit cell under non-monotonic loading and lattices under tension.",
-      "watch_item": "The framework is validated on specific TPMS geometries and loading cases, so broader generalization and parameter transferability may require further testing.",
+      "evidence_signal": "The model was validated against experimental results for a unit cell under non-monotonic loading and for lattices under tension, showing quantitative and qualitative agreement.",
+      "watch_item": "The approach depends on careful calibration of damage parameters and may be sensitive to mesh regularization and constitutive assumptions for different polymer materials.",
       "hashtags": [
         "#FractureMechanics",
         "#DamageModeling",
         "#TPMS",
         "#AdditiveManufacturing",
-        "#PolymerMechanics"
+        "#FiniteElementAnalysis"
       ],
       "paper_id": "2026-07-14-arxiv-modeling_damage_and_fracture_in_additively_manufactured_polymeric_triply_periodic_minimal",
       "paper_title": "Modeling damage and fracture in additively manufactured polymeric triply periodic minimal surface lattices",
       "paper_date": "2026-07-14",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-19T10:19:50",
+      "generated_at": "2026-07-18T10:11:56",
       "generator": "openai"
     }
   },
@@ -178,29 +177,29 @@
         "url": "https://arxiv.org/pdf/2607.14944v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "A reduced-basis hybrid TBNN/UDE framework can learn frame-invariant viscoelastic constitutive laws from shear-flow data and transfer them to more complex flows, including extensional and benchmark CFD cases.",
-      "engineering_relevance": "This provides a path to data-efficient digital twins for viscoelastic fluids that can be embedded directly in finite-volume solvers for computational rheology and CFD.",
+      "key_insight": "A reduced-basis hybrid TBNN-UDE framework can learn frame-invariant viscoelastic constitutive laws from shear data and still generalize to more complex flow regimes.",
+      "engineering_relevance": "This enables more transferable digital-twin constitutive models that can be embedded directly into CFD solvers for predictive simulation of complex polymeric and viscoelastic fluids.",
       "method": [
-        "Combine Tensor Basis Neural Networks with Universal Differential Equations to learn constitutive response.",
-        "Use a reduced-dimensional tensor basis to improve physical consistency and numerical stability.",
-        "Embed the learned model into an open-source finite-volume solver for runtime stress prediction."
+        "Train on synthetic oscillatory-shear datasets generated from established viscoelastic models",
+        "Use a reduced-dimensional tensor basis to improve physical consistency and numerical stability",
+        "Embed the UDE in an open-source finite-volume solver for runtime constitutive evaluation"
       ],
-      "evidence_signal": "The models were trained on synthetic oscillatory-shear datasets from established viscoelastic laws and then evaluated under extrapolation to unseen extensional flows, 2D/3D benchmark problems, and higher Deborah numbers.",
-      "watch_item": "Performance drops as extrapolation increases, so models trained only on shear data may need additional stress information or broader training coverage for reliable deployment.",
+      "evidence_signal": "The models were evaluated under extrapolation to unseen extensional, 2D, and 3D benchmark flows, including sudden contraction and cross-slot cases, with improved fidelity when first normal stress difference information was included.",
+      "watch_item": "Performance degrades as extrapolation increases, so deployment to flows far from the training regime may require additional observables or retraining.",
       "hashtags": [
         "#ComputationalRheology",
-        "#ViscoelasticFlow",
         "#MachineLearning",
         "#ConstitutiveModeling",
+        "#ViscoelasticFlow",
         "#DigitalTwin"
       ],
       "paper_id": "2026-07-16-arxiv-harnessing_machine_learning_for_hybrid_constitutive_modelling_of_viscoelastic_fluid_flows",
       "paper_title": "Harnessing Machine Learning for Hybrid Constitutive Modelling of Viscoelastic Fluid Flows in Computational Rheology",
       "paper_date": "2026-07-16",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:19:53",
+      "generated_at": "2026-07-18T10:11:59",
       "generator": "openai"
     }
   },
@@ -229,29 +228,29 @@
         "url": "https://arxiv.org/pdf/2607.14397v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "The paper unifies multiple effective shear-modulus models for hard-magnetic soft materials and couples the best-performing one with joint material-structural optimization to predict and design field-driven deformation.",
-      "engineering_relevance": "It enables more reliable design of soft robotic and adaptive structures by simultaneously tuning density, magnetic particle content, and magnetization direction.",
+      "key_insight": "A unified constitutive and optimization framework enables predictive design of hard-magnetic soft materials by coupling effective shear-modulus modeling with joint control of density, particle loading, and magnetization direction.",
+      "engineering_relevance": "This provides a practical route to design soft robotic and adaptive structures with prescribed field-driven deformation while accounting for material–structure interactions.",
       "method": [
-        "Built a unified effective shear-modulus framework combining seven modulus relations with three strain-energy density functions (21 constitutive models).",
-        "Compared model predictions for actuation problems to identify which constitutive choices matter most.",
-        "Developed a joint optimization method for structural density, particle volume fraction, and remanent magnetization direction across multiple load cases."
+        "Unified seven effective shear-modulus relations with three strain-energy densities to form 21 constitutive models.",
+        "Selected a representative model using experimental stress–strain data, with the Mooney relation giving the best overall agreement.",
+        "Applied joint optimization over structural density, magnetic particle volume fraction, and remanent magnetization direction for multiple actuation cases."
       ],
-      "evidence_signal": "The authors evaluated the constitutive models against experimental stress-strain data and found the Mooney relation gave the best overall agreement.",
-      "watch_item": "Accuracy can depend strongly on how magnetic material overlaps with highly deforming regions, so model selection and mesh/design coupling should be handled carefully.",
+      "evidence_signal": "The abstract reports comparison against experimental stress–strain data and shows the framework across rotational, translational, and restorative examples with single- and multi-load-case formulations.",
+      "watch_item": "Predicted actuation can be sensitive when magnetic material overlaps highly deforming regions, so model choice and geometric coupling need careful validation.",
       "hashtags": [
         "#SoftRobotics",
         "#MagneticMaterials",
-        "#TopologyOptimization",
         "#ConstitutiveModeling",
-        "#StructuralOptimization"
+        "#TopologyOptimization",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-15-arxiv-model_informed_joint_material_structural_optimization_of_hard_magnetic_soft_materials",
       "paper_title": "Model-Informed Joint Material-Structural Optimization of Hard-Magnetic Soft Materials",
       "paper_date": "2026-07-15",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:19:56",
+      "generated_at": "2026-07-18T10:12:01",
       "generator": "openai"
     }
   },
@@ -281,29 +280,29 @@
         "url": "https://arxiv.org/pdf/2607.14994v1"
       }
     ],
-    "score": 67,
+    "score": 72,
     "infographic": {
-      "key_insight": "A linearized Long’s plasticity model analytically derives Basquin’s fatigue law for amorphous polymers, predicting a universal exponent m = 3.",
-      "engineering_relevance": "The result provides a mechanistic way to estimate fatigue life from stress amplitude, supporting durability design for polymer components under cyclic loading.",
+      "key_insight": "A linearized Long’s plasticity model predicts Basquin-type fatigue behavior in amorphous polymers and yields a universal exponent m = 3.",
+      "engineering_relevance": "This provides a mechanistic way to estimate fatigue life from stress amplitude, helping durability design for polymer components under cyclic loading.",
       "method": [
         "Linearize Long’s plasticity model for cyclic loading.",
-        "Derive the SN-curve form N = AS^-m from the model.",
-        "Obtain the prefactor A and show m = 3 in this framework."
+        "Derive the SN-curve form N = A S^(-m) from the model.",
+        "Compute the prefactor A and compare predictions with experiments."
       ],
-      "evidence_signal": "The theory is checked against experimental fatigue data for three amorphous polymers: PS, PMMA, and PVC.",
-      "watch_item": "The m = 3 result comes from a simplified linearized model, so applicability may depend on material state, loading conditions, and deviations from ideal amorphous behavior.",
+      "evidence_signal": "The theory is reported to successfully describe experimental fatigue data for three amorphous polymers: PS, PMMA, and PVC.",
+      "watch_item": "The derivation is based on a linearized constitutive framework, so accuracy may degrade outside the assumed loading regime or for polymers with different histories and temperature/frequency effects.",
       "hashtags": [
-        "#FatigueModeling",
+        "#Fatigue",
         "#AmorphousPolymers",
         "#BasquinLaw",
-        "#SolidMechanics",
-        "#ConstitutiveModeling"
+        "#ConstitutiveModeling",
+        "#SolidMechanics"
       ],
       "paper_id": "2026-07-16-arxiv-modeling_the_fatigue_behavior_of_amorphous_polymers",
       "paper_title": "Modeling the Fatigue Behavior of Amorphous Polymers",
       "paper_date": "2026-07-16",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:19:59",
+      "generated_at": "2026-07-18T10:12:04",
       "generator": "openai"
     }
   },
@@ -332,29 +331,29 @@
         "url": "https://arxiv.org/pdf/2607.13888v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "Any FEM-like multiscale basis with fixed locality and fixed coefficient access cannot achieve uniformly vanishing error on rough-coefficient elliptic problems; its worst-case energy error stays O(1) as H→0.",
-      "engineering_relevance": "This gives a sharp negative design rule for scalable multiscale solvers: to get uniform accuracy, you must enlarge the stencil/patch size, increase local spectral dimension, or access more global coefficient information.",
+      "key_insight": "Any deterministic, fixed-radius, fixed-complexity local multiscale basis construction cannot achieve uniform convergence for all bounded-contrast coefficients; its worst-case Galerkin error stays O(1) as H→0.",
+      "engineering_relevance": "This shows that scalable FEM-like multiscale surrogates need either expanding localization/spectral richness or richer coefficient access to guarantee robust accuracy on rough-media PDEs.",
       "method": [
-        "Defines scalability by bounded overlap, fixed support radius, and fixed coefficient-information radius.",
-        "Proves an order-one lower bound for deterministic constructions under these fixed local constraints.",
-        "Uses periodic coefficient counterexamples, corrector approximation lower bounds, and mesh-density arguments."
+        "Defines a structural scalability model with bounded overlap and O(1) local coefficient visibility.",
+        "Proves a lower bound by comparing local patches with identical coefficients but different global correctors.",
+        "Uses periodic coefficient families, finite-dimensional approximation bounds, and mesh-density arguments to show the error floor does not vanish."
       ],
-      "evidence_signal": "The paper proves the result analytically using a fixed finite family of smooth periodic coefficients and smooth right-hand sides, rather than a numerical benchmark.",
-      "watch_item": "The impossibility result targets deterministic, fixed-locality constructions, so practical methods may still work if they adapt patch size, basis richness, or coefficient visibility with H.",
+      "evidence_signal": "The result is theoretical and worst-case: a fixed finite family of smooth periodic coefficients and smooth right-hand sides is used to prove a positive, H-independent lower bound on L2-to-energy Galerkin error.",
+      "watch_item": "The impossibility result targets deterministic local constructions under fixed support and information radii, so practical methods may still work well outside this worst-case setting or by relaxing the locality constraints.",
       "hashtags": [
-        "#FiniteElementMethod",
-        "#MultiscaleMethods",
+        "#MultiscaleFEM",
         "#GMsFEM",
-        "#ErrorAnalysis",
-        "#ComputationalMechanics"
+        "#FiniteElementMethods",
+        "#PDEs",
+        "#ScientificComputing"
       ],
       "paper_id": "2026-07-15-arxiv-an_order_one_lower_bound_on_the_error_of_scalable_generalized_multiscale_finite_element_sp",
       "paper_title": "An Order-One Lower Bound on the Error of Scalable Generalized Multiscale Finite Element Space Constructions",
       "paper_date": "2026-07-15",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:01",
+      "generated_at": "2026-07-18T10:12:07",
       "generator": "openai"
     }
   },
@@ -386,20 +385,20 @@
         "url": "https://arxiv.org/pdf/2607.13734v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "A microscopic constitutive model links nonaffine elasticity and structural relaxation to explain stress overshoot, yielding, steady flow, and polymer strain hardening in amorphous solids.",
-      "engineering_relevance": "The framework offers a physically grounded way to predict full stress--strain curves for metallic and polymer glasses across strain rates using a small number of measurable parameters.",
+      "key_insight": "A unified microscopic constitutive model links nonaffine elasticity and structural relaxation to explain stress overshoot, yielding, steady plastic flow, and polymer strain hardening in amorphous solids.",
+      "engineering_relevance": "The theory offers a physically grounded way to predict full stress--strain curves for metallic and polymer glasses across strain rates using a small set of measurable parameters.",
       "method": [
-        "Nonaffine elastic response is coupled to irreversible many-body relaxation.",
-        "Stress overshoot arises from competition between mechanical connectivity loss and viscous dissipation.",
-        "Polymer chain extensibility is included to capture strain hardening at large deformation."
+        "Combines nonaffine elastic response with irreversible many-body relaxation.",
+        "Uses stretched-exponential relaxation as the main dynamical input from modulus or stress relaxation data.",
+        "Includes finite chain extensibility to capture strain hardening in polymer glasses."
       ],
-      "evidence_signal": "The model quantitatively reproduces experimental stress--strain data for metallic glasses, polycarbonate, PMMA, and epoxy resins over a broad range of strain rates.",
-      "watch_item": "Accuracy depends on independently measured relaxation exponents and material parameters, so transferability may be limited if these inputs are not available or if the loading path differs strongly from the calibration cases.",
+      "evidence_signal": "The model quantitatively reproduces experimental stress--strain curves for metallic glasses, polycarbonate, PMMA, and epoxy resins over a broad range of strain rates.",
+      "watch_item": "Applicability may depend on having reliable relaxation measurements and may be less direct for materials outside the tested amorphous glass classes.",
       "hashtags": [
-        "#AmorphousSolids",
         "#ConstitutiveModeling",
+        "#AmorphousMaterials",
         "#StressOvershoot",
         "#Yielding",
         "#StrainHardening"
@@ -408,7 +407,7 @@
       "paper_title": "Microscopic constitutive theory of stress overshoot, yielding, and strain hardening in amorphous materials",
       "paper_date": "2026-07-15",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:20:04",
+      "generated_at": "2026-07-18T10:12:09",
       "generator": "openai"
     }
   },
@@ -438,21 +437,21 @@
         "url": "https://arxiv.org/pdf/2607.14652v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "Trajectory-aware flow matching learns topology generation along physics-informed optimization paths, improving structural feasibility without slow iterative sampling at inference.",
-      "engineering_relevance": "It enables faster conditional topology optimization for FEM-based design studies, making it easier to explore multiple candidate structures under varying loads, constraints, and volume fractions.",
+      "key_insight": "FMTO replaces slow diffusion-style sampling with flow matching, and adding trajectory-aware BESO states makes generated topologies more physically consistent and stable.",
+      "engineering_relevance": "This enables faster conditional topology design exploration with fewer inference steps while better preserving compliance, volume fraction, and topology fidelity.",
       "method": [
-        "Baseline linear FMTO interpolates between Gaussian noise and a BESO topology.",
-        "Trajectory-aware FMTO builds the flow path from volume-fraction-indexed BESO intermediate states.",
-        "A path–velocity mismatch analysis guides the choice of moderate trajectory weighting."
+        "Train a flow-matching generator from a Gaussian field to a target topology.",
+        "Use BESO-based intermediate states to define a physics-guided trajectory and target velocity field.",
+        "Tune trajectory weight to balance guidance strength against over-constraint during transport."
       ],
-      "evidence_signal": "Across numerical examples, the method produced diverse topologies with better compliance-related performance, volume-fraction satisfaction, and topology fidelity, while using far fewer sampling steps than a diffusion baseline.",
-      "watch_item": "Too much trajectory guidance can over-constrain the learned transport, so trajectory weight and anchor density need careful tuning.",
+      "evidence_signal": "Abstract reports improved compliance-related performance, volume-fraction satisfaction, and topology fidelity versus a diffusion baseline, with substantially fewer sampling steps and strong results under limited training data.",
+      "watch_item": "Excessive trajectory guidance can over-constrain the learned flow, so the path design and weighting need careful tuning.",
       "hashtags": [
-        "#TopologyOptimisation",
+        "#TopologyOptimization",
         "#FlowMatching",
-        "#FiniteElementMethod",
+        "#FiniteElementMethods",
         "#GenerativeDesign",
         "#ComputationalMechanics"
       ],
@@ -460,7 +459,7 @@
       "paper_title": "Trajectory-Aware Flow Matching for Topology Optimisation",
       "paper_date": "2026-07-16",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:06",
+      "generated_at": "2026-07-18T10:12:12",
       "generator": "openai"
     }
   },
@@ -489,29 +488,29 @@
         "url": "https://arxiv.org/pdf/2607.15063v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "An adaptive multiscale P-IMPES scheme updates coarse multiscale spaces only when saturation-driven permeability changes are significant, preserving physics while reducing unnecessary recomputation.",
-      "engineering_relevance": "The method enables accurate, locally conservative two-phase flow simulation in high-contrast porous media, which is useful for reservoir and subsurface transport modeling.",
+      "key_insight": "The paper introduces an adaptive multiscale two-phase flow solver that preserves physical conservation while updating coarse-scale spaces only when saturation-driven permeability changes become significant.",
+      "engineering_relevance": "It enables accurate and efficient simulation of fluid displacement in high-contrast porous media, which is important for reservoir engineering, groundwater modeling, and subsurface transport prediction.",
       "method": [
-        "Couples physics-preserving implicit-pressure explicit-saturation (P-IMPES) with mixed constraint energy minimizing GMsFEM.",
-        "Monitors mobility-weighted coefficient changes and regenerates multiscale basis functions only when a tolerance is exceeded.",
-        "Applies local postprocessing to recover fine-grid mass conservation and preserve phase-wise physical constraints."
+        "Couples a physics-preserving P-IMPES scheme with the mixed constraint energy minimizing generalized multiscale finite element method.",
+        "Monitors changes in mobility-weighted permeability and regenerates multiscale basis functions only when a tolerance is exceeded.",
+        "Uses local postprocessing to recover fine-grid mass conservation and improve phase-consistent fluxes."
       ],
-      "evidence_signal": "The abstract reports theoretical guarantees plus numerical experiments on multiple high-contrast permeability fields showing that smaller adaptive tolerances improve saturation accuracy while avoiding unnecessary multiscale updates.",
-      "watch_item": "Performance depends on selecting an appropriate adaptive tolerance and CFL condition; overly aggressive updating or violation of bounds can reduce stability and efficiency.",
+      "evidence_signal": "The abstract reports numerical experiments on multiple high-contrast permeability fields, showing that smaller adaptive tolerances improve saturation accuracy while reducing unnecessary multiscale updates.",
+      "watch_item": "Performance depends on a prescribed update tolerance and a CFL condition, so overly aggressive coarsening or large time steps may degrade stability or accuracy.",
       "hashtags": [
         "#MultiscaleMethods",
         "#TwoPhaseFlow",
         "#PorousMedia",
-        "#AdaptiveAlgorithms",
-        "#FiniteElementMethods"
+        "#AdaptiveFEM",
+        "#PhysicsPreserving"
       ],
       "paper_id": "2026-07-16-arxiv-an_adaptive_and_physics_preserving_multiscale_method_for_two_phase_flow_simulations_in_hig",
       "paper_title": "An Adaptive and Physics-Preserving Multiscale Method for Two-Phase Flow Simulations in High-Contrast Heterogeneous Porous Media",
       "paper_date": "2026-07-16",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:08",
+      "generated_at": "2026-07-18T10:12:14",
       "generator": "openai"
     }
   },
@@ -542,29 +541,29 @@
         "url": "https://arxiv.org/pdf/2607.14321v1"
       }
     ],
-    "score": 62,
+    "score": 67,
     "infographic": {
-      "key_insight": "A recurrent neural network can emulate laminated-core hysteresis and eddy-current behavior accurately enough to replace expensive reference material calculations inside finite element simulations.",
-      "engineering_relevance": "This enables far faster and more practical magnetodynamic FEM analyses of electrical machines without restricting the model to simple saturation-only behavior.",
+      "key_insight": "A recurrent neural network can act as a fast surrogate for hysteresis and eddy-current behavior in laminated ferromagnetic cores, preserving accuracy while greatly reducing finite-element simulation cost.",
+      "engineering_relevance": "This enables more practical magnetodynamic design of electrical machines by making detailed core physics feasible in routine finite-element workflows.",
       "method": [
-        "Train an RNN surrogate on artificially generated magnetic field sequences representative of machine operating conditions.",
-        "Embed the surrogate in 2D magnetodynamic finite element simulations using a magnetic vector potential formulation.",
-        "Compare its predictions against a reference laminated-core model and an anhysteretic baseline."
+        "Train an RNN on diverse synthetic magnetic field sequences representative of machine operating conditions",
+        "Embed the surrogate material model into 2D magnetodynamic FEM with magnetic vector potential",
+        "Compare against a reference laminated-core model and an anhysteretic baseline"
       ],
-      "evidence_signal": "The abstract reports excellent agreement with the reference laminated-core model while keeping computational cost to about twice that of an anhysteretic simulation.",
-      "watch_item": "The surrogate must be trained on sufficiently diverse field histories to generalize reliably across different FEM simulations and operating regimes.",
+      "evidence_signal": "The abstract reports excellent agreement with the reference laminated-core model, with total computational cost reduced to about twice that of an anhysteretic simulation.",
+      "watch_item": "Generalization depends on training coverage, so sequences outside the synthetic dataset or materially different laminations may require retraining or validation.",
       "hashtags": [
-        "#FiniteElementMethod",
-        "#MagneticHysteresis",
+        "#FEM",
+        "#MachineLearning",
+        "#Hysteresis",
         "#EddyCurrents",
-        "#NeuralNetworkSurrogate",
-        "#ElectricalMachines"
+        "#Electromagnetics"
       ],
       "paper_id": "2026-07-15-arxiv-accounting_for_hysteresis_and_eddy_currents_in_finite_element_simulations_of_ferromagnetic",
       "paper_title": "Accounting for Hysteresis and Eddy Currents in Finite Element Simulations of Ferromagnetic Laminated Cores using a Recurrent Neural Network",
       "paper_date": "2026-07-15",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:11",
+      "generated_at": "2026-07-18T10:12:16",
       "generator": "openai"
     }
   },
@@ -593,29 +592,29 @@
         "url": "https://arxiv.org/pdf/2607.15024v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "The paper establishes the first convergence theory for fully discrete least-squares splitting schemes for the 2D Monge-Ampère equation using finite elements, showing that the iterative method converges locally and its limit achieves optimal-order H2-type accuracy.",
-      "engineering_relevance": "This provides a rigorous FEM foundation for solving fully nonlinear PDEs in computational mechanics and geometry, with practical support for C1, C0-interior penalty, and DG discretizations.",
+      "key_insight": "A fully discrete least-squares splitting method for the 2D Monge-Ampère equation is proven to converge for finite element discretizations, with optimal-order accuracy in an $H^2$-type norm under suitable assumptions.",
+      "engineering_relevance": "This gives a practical, theoretically justified finite element framework for solving nonlinear Monge-Ampère problems in computational mechanics and PDE-based geometry applications.",
       "method": [
-        "Reconstruct the Hessian with finite elements and enforce the determinant constraint through a local projection step.",
-        "Combine the splitting iteration with a discrete Miranda-Talenti estimate to prove local convergence.",
-        "Analyze convergence for Argyris, C0-interior penalty, and DG schemes, including lower-order cases under smallness assumptions."
+        "Reconstruct the Hessian with a finite element operator.",
+        "Enforce the determinant constraint through a local projection step.",
+        "Combine the scheme with discrete Miranda-Talenti and approximation estimates to prove convergence."
       ],
-      "evidence_signal": "The abstract reports proven optimal-order convergence and numerical experiments that confirm the theoretical rates across the supported discretizations.",
-      "watch_item": "The convergence guarantees are local and some quadratic C0-interior penalty and DG cases require sufficiently small H3 seminorms of the exact solution.",
+      "evidence_signal": "The paper reports numerical experiments that confirm the theoretical convergence rates for the analyzed discretizations.",
+      "watch_item": "Convergence depends on smooth solutions and assumptions such as a discrete Miranda-Talenti estimate; some lower-order $C^0$-IP/DG cases require sufficiently small $|u|_{H^3(\\Omega)}$.",
       "hashtags": [
-        "#MongeAmpere",
         "#FiniteElementMethod",
+        "#MongeAmpere",
         "#LeastSquares",
-        "#DGMethods",
-        "#C1Elements"
+        "#ConvergenceAnalysis",
+        "#NumericalPDE"
       ],
       "paper_id": "2026-07-16-arxiv-fully_discrete_least_squares_splitting_scheme_for_the_monge_amp_re_equation_finite_element",
       "paper_title": "Fully discrete least-squares splitting scheme for the Monge-Ampère equation: finite element analysis and convergence",
       "paper_date": "2026-07-16",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:14",
+      "generated_at": "2026-07-18T10:12:19",
       "generator": "openai"
     }
   },
@@ -644,29 +643,29 @@
         "url": "https://arxiv.org/pdf/2607.14658v1"
       }
     ],
-    "score": 60,
+    "score": 65,
     "infographic": {
-      "key_insight": "TopoAgent replaces brittle linear multimodal reasoning with a self-evolving DAG of isolated atomic tasks, improving robustness for scientific problem solving.",
-      "engineering_relevance": "This is relevant to solid mechanics workflows because fracture, damage, and multiphysics analysis often require decomposed, dependency-aware reasoning over complex visual and textual evidence.",
+      "key_insight": "TopoAgent turns multimodal scientific reasoning from a fragile linear workflow into a self-evolving DAG of isolated sub-tasks, improving robustness against context noise and planning errors.",
+      "engineering_relevance": "For fracture and damage research, this offers a more reliable agentic framework for breaking complex inspection, simulation, or reasoning tasks into traceable, dependency-aware steps.",
       "method": [
-        "Front-end decomposer fractures a complex query into visually grounded atoms.",
-        "Atoms are arranged in a DAG to enforce strict context isolation and dependency-aware execution.",
-        "Adaptive atomic fission splits bottleneck nodes into finer sub-atoms when tool limits are exceeded."
+        "Front-end decomposer fractures a complex query into visually grounded atomic units.",
+        "Atoms are organized into a directed acyclic graph to enforce dependency-aware execution and strict context isolation.",
+        "Adaptive atomic fission splits bottleneck nodes at runtime when a tool cannot handle the current granularity."
       ],
       "evidence_signal": "The abstract reports extensive evaluation across mathematics, physics, and chemistry benchmarks, where TopoAgent outperforms state-of-the-art linear agent frameworks.",
-      "watch_item": "Performance depends on reliable atom decomposition and DAG management, so incorrect splitting or dependency design could still propagate errors.",
+      "watch_item": "Performance depends on correct decomposition and graph management, and runtime atomic splitting may add implementation complexity and overhead.",
       "hashtags": [
-        "#TopoAgent",
-        "#MultimodalReasoning",
-        "#ScientificAI",
+        "#MultimodalAI",
+        "#ScientificReasoning",
         "#AgenticAI",
-        "#DAG"
+        "#DAG",
+        "#RobustPlanning"
       ],
       "paper_id": "2026-07-16-arxiv-topoagent_a_self_evolving_topological_agent_for_multimodal_scientific_reasoning",
       "paper_title": "TopoAgent: A Self-Evolving Topological Agent for Multimodal Scientific Reasoning",
       "paper_date": "2026-07-16",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-19T10:20:16",
+      "generated_at": "2026-07-18T10:12:21",
       "generator": "openai"
     }
   },
@@ -697,29 +696,29 @@
         "url": "https://arxiv.org/pdf/2607.14594v1"
       }
     ],
-    "score": 60,
+    "score": 65,
     "infographic": {
-      "key_insight": "A hybrid material point method can accurately reproduce large bending deformations of highly flexible slender structures, including cross-section changes and contact-driven instability.",
-      "engineering_relevance": "This provides a practical simulation tool for designing and predicting the behavior of soft robots, deployable structures, tubes, and tape springs under real bending loads.",
+      "key_insight": "A hybrid material point method can accurately reproduce bending of highly flexible slender structures by capturing the coupling between cross-sectional deformation and global curvature.",
+      "engineering_relevance": "This provides a practical simulation tool for predicting large-deformation behavior in tubes, tape springs, soft robots, and deployable structures under bending and contact.",
       "method": [
         "Built a hybrid-MPM framework combining Lagrangian finite elements with Eulerian finite differences.",
-        "Modeled canonical three-point bending tests for elastic tubes and tape springs.",
-        "Captured coupled lengthwise bending and cross-sectional deformation, including Brazier-type effects."
+        "Simulated experimental three-point bending tests for elastic tubes and tape springs.",
+        "Compared numerical predictions with desktop experiments and classical bending theory."
       ],
-      "evidence_signal": "The simulations were validated against desktop experiments and classical theory, with the abstract reporting excellent agreement.",
-      "watch_item": "The framework targets complex contact and large deformation, so accuracy may depend on careful contact modeling and parameter calibration.",
+      "evidence_signal": "The abstract reports excellent agreement between simulations, experiments, and classical theory for canonical bending cases.",
+      "watch_item": "Performance may depend on careful treatment of complex contact mechanics and calibration for specific slender-structure geometries.",
       "hashtags": [
         "#SolidMechanics",
+        "#ComputationalMechanics",
         "#MaterialPointMethod",
-        "#BendingElasticity",
-        "#ContactMechanics",
+        "#BendingInstability",
         "#SoftRobotics"
       ],
       "paper_id": "2026-07-16-arxiv-numerical_and_experimental_framework_for_bending_elasticity_of_highly_flexible_slender_str",
       "paper_title": "Numerical and experimental framework for bending elasticity of highly flexible slender structures",
       "paper_date": "2026-07-16",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:20:18",
+      "generated_at": "2026-07-18T10:12:23",
       "generator": "openai"
     }
   },
@@ -750,29 +749,29 @@
         "url": "https://arxiv.org/pdf/2607.13174v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "The paper couples sparse physics-augmented neural constitutive models with FEM topology optimization to jointly optimize material composition and structure in multimaterial 3D printing.",
-      "engineering_relevance": "This enables end-to-end design of soft robotic and other graded components with composition-aware hyperelastic behavior, reducing reliance on manual prototyping.",
+      "key_insight": "The paper shows that sparse, physics-augmented neural networks can be turned into closed-form constitutive laws, enabling end-to-end optimization of both material composition and structural topology in multimaterial 3D printing.",
+      "engineering_relevance": "This provides a practical route to design soft robotic and graded-material parts without relying on slow trial-and-error prototyping, while keeping gradients exact for optimization.",
       "method": [
-        "Extract closed-form, composition-aware hyperelastic laws from experimental data using sparsified physics-augmented neural networks.",
-        "Use exact symbolic differentiation and the adjoint method in FEniCSx to drive finite-element topology optimization.",
-        "Optimize material distribution and macroscopic topology simultaneously under stretch/non-failure constraints."
+        "Fit experimental data with sparsified physics-augmented neural networks to learn composition-aware hyperelastic behavior.",
+        "Extract symbolic constitutive laws so the model can be differentiated exactly in an adjoint/FEniCSx finite-element workflow.",
+        "Couple material-distribution optimization with topology optimization under stretch and contact-performance constraints."
       ],
-      "evidence_signal": "The framework is demonstrated on soft robotic gripper cases, including continuous composition optimization for anisotropic contact response and concurrent topology/material optimization.",
-      "watch_item": "The approach depends on accurate constitutive identification and a well-integrated adjoint/FEniCSx pipeline, so model mismatch or implementation complexity could limit robustness.",
+      "evidence_signal": "The abstract reports application to soft robotic grippers and concurrent optimization of anisotropic contact response, topology, and material distribution under non-failure stretch constraints.",
+      "watch_item": "The approach depends on high-quality experimental data and careful symbolic model extraction; if the learned constitutive law is poorly identified, optimization may become unreliable.",
       "hashtags": [
         "#Multimaterial3DPrinting",
         "#TopologyOptimization",
         "#ConstitutiveModeling",
-        "#SoftRobotics",
-        "#PhysicsInformedML"
+        "#PhysicsInformedML",
+        "#SoftRobotics"
       ],
       "paper_id": "2026-07-14-arxiv-towards_end_to_end_optimization_in_multimaterial_3d_printing",
       "paper_title": "Towards end-to-end optimization in multimaterial 3D printing",
       "paper_date": "2026-07-14",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:20:21",
+      "generated_at": "2026-07-18T10:12:26",
       "generator": "openai"
     }
   },
@@ -801,29 +800,29 @@
         "url": "https://arxiv.org/pdf/2607.14820v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "This paper proves that adaptive FEM can achieve optimal complexity even when driven by non-residual a posteriori estimators and coupled with an iterative linear solver.",
-      "engineering_relevance": "It supports reliable, efficient mesh-and-solver adaptivity for symmetric elliptic PDE simulations, including common practical estimators such as Zienkiewicz–Zhu and equilibrated flux methods.",
+      "key_insight": "The paper proves that adaptive FEM can achieve optimal complexity even when driven by non-residual error estimators, provided the estimator and iterative solver satisfy abstract assumptions.",
+      "engineering_relevance": "This supports practical, efficient simulation workflows for symmetric elliptic PDEs by allowing adaptive mesh refinement and algebraic solves to converge robustly without relying on residual-based indicators.",
       "method": [
-        "Abstractly model the a-posteriori estimator and iterative solver.",
-        "Analyze the standard adaptive loop for mesh refinement plus algebraic solves.",
+        "Formulate adaptive FEM with coupled mesh refinement and iterative linear solving.",
+        "Assume abstract properties for the a-posteriori estimator and solver.",
         "Prove unconditional full R-linear convergence, and optimal complexity for sufficiently small adaptivity parameters."
       ],
-      "evidence_signal": "The result is theoretical: the paper establishes convergence and optimality guarantees under abstract assumptions, measured against nonlinear approximation classes and overall computation cost.",
-      "watch_item": "Optimal complexity is only guaranteed for sufficiently small adaptivity parameters, so parameter choice and estimator assumptions matter in practice.",
+      "evidence_signal": "The abstract reports theoretical convergence and complexity guarantees, measured against standard nonlinear approximation classes and total computational cost, but does not mention numerical experiments.",
+      "watch_item": "The optimality guarantee depends on sufficiently small user-chosen adaptivity parameters and on abstract estimator/solver assumptions, so implementation must verify these conditions carefully.",
       "hashtags": [
         "#AdaptiveFEM",
-        "#FiniteElementMethod",
-        "#AposterioriErrorEstimation",
+        "#AposterioriError",
         "#EllipticPDE",
+        "#FiniteElementMethod",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-16-arxiv-optimal_complexity_of_adaptive_fem_for_second_order_linear_elliptic_pdes_driven_by_non_res",
       "paper_title": "Optimal complexity of adaptive FEM for second-order linear elliptic PDEs driven by non-residual estimators, Part I: Symmetric PDEs",
       "paper_date": "2026-07-16",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:23",
+      "generated_at": "2026-07-18T10:12:28",
       "generator": "openai"
     }
   },
@@ -852,29 +851,29 @@
         "url": "https://arxiv.org/pdf/2607.14787v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "A Lagrange-multiplier correction can enforce area-decaying, structure-preserving mean curvature flow while retaining optimal finite-element accuracy.",
-      "engineering_relevance": "This gives a stable, high-order moving-surface FEM framework for geometry evolution problems where preserving physical dissipation and mesh quality matters.",
+      "key_insight": "A structure-preserving finite element formulation with Lagrange multipliers keeps mean curvature flow area-decreasing while maintaining optimal convergence.",
+      "engineering_relevance": "This gives engineers a stable, high-order tool for simulating evolving surfaces with controlled geometric dissipation, useful in interface motion and shape evolution problems.",
       "method": [
-        "Evolving surface FEM based on Huisken-style equations for the normal vector and mean curvature.",
-        "Fully discrete time stepping with linearly implicit BDF for geometric variables and implicit Adams updates for nodal positions.",
-        "Optional minimal-deformation-rate tangential velocities plus a discrete Lagrange multiplier solved by simplified Newton iteration."
+        "Evolving surface finite element method for closed-surface mean curvature flow",
+        "Uses Lagrange multipliers to enforce energy/area-decreasing structure",
+        "Time integration via linearly implicit BDF for geometry variables and implicit Adams updates for nodal positions"
       ],
-      "evidence_signal": "The paper proves local well-posedness and optimal error bounds of order h^k + τ^q, and numerical tests on sphere mean-curvature flow match the predicted convergence rates with only small overhead.",
-      "watch_item": "The strongest error guarantees rely on higher regularity assumptions, so performance may depend on smoothness of the evolving surface and robust nonlinear solves.",
+      "evidence_signal": "The abstract reports optimal-order error bounds of O(h^k+τ^q) for k≥2 and q=2–5, and numerical tests on a sphere confirm the predicted convergence rates with small overhead.",
+      "watch_item": "The guarantees rely on sufficient regularity assumptions, so performance may be less predictable for rough geometries or strongly under-resolved meshes.",
       "hashtags": [
         "#FiniteElementMethod",
         "#MeanCurvatureFlow",
-        "#MovingMesh",
         "#StructurePreserving",
-        "#NumericalPDEs"
+        "#LagrangeMultiplier",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-16-arxiv-structure_preserving_lagrange_multiplier_methods_for_mean_curvature_flow_and_their_error_b",
       "paper_title": "Structure-preserving Lagrange-multiplier methods for mean curvature flow and their error bounds",
       "paper_date": "2026-07-16",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:26",
+      "generated_at": "2026-07-18T10:12:30",
       "generator": "openai"
     }
   },
@@ -904,29 +903,29 @@
         "url": "https://arxiv.org/pdf/2607.15049v1"
       }
     ],
-    "score": 57,
+    "score": 62,
     "infographic": {
-      "key_insight": "Neural operators can directly infer physically admissible constitutive laws from full-field displacement and force data, replacing slow inverse optimization with a single learned forward pass.",
-      "engineering_relevance": "This enables near-instant material characterization from experiments, which could accelerate calibration, model discovery, and digital twin workflows in solid mechanics.",
+      "key_insight": "Physics-Augmented Neural Operators and Constitutive Artificial Neural Operators learn a direct map from measured displacement/force data to hyperelastic constitutive functions, enabling fast material model discovery without iterative calibration.",
+      "engineering_relevance": "This offers near-instantaneous, data-driven constitutive identification for solid mechanics workflows, with built-in physical admissibility and improved robustness to noise, missing data, and mesh changes.",
       "method": [
-        "Physics-Augmented Neural Operators (PANO) and Constitutive Artificial Neural Operators (CANO).",
-        "Encode displacement fields with Laplacian eigenfunctions for discretization-independent, noise-robust input representations.",
-        "Map infinite-dimensional measurements to hyperelastic strain-energy density functions constrained by physics."
+        "Encode full-field displacements with Laplacian eigenfunctions for discretization-independent input representation.",
+        "Train neural operators on simulated displacement–reaction-force tuples to infer strain-energy density functions.",
+        "Constrain outputs to physically admissible hyperelastic models via physics augmentation or constitutive parameterization."
       ],
-      "evidence_signal": "The models were trained on simulated displacement-force tuples across different material models and evaluated on unseen, noisy, missing-data, varying-discretization, and different-geometry cases.",
-      "watch_item": "Performance depends on training with representative simulated constitutive behavior, so extrapolation to highly novel materials or experimental conditions may still be limited.",
+      "evidence_signal": "The abstract reports testing on unseen, noisy, incomplete, differently discretized, and differently sized geometries to assess generalization.",
+      "watch_item": "Performance depends on the representativeness of the simulated training set, so extrapolation to material behaviors or loading regimes not seen in training may be unreliable.",
       "hashtags": [
         "#NeuralOperators",
         "#ConstitutiveModeling",
         "#SolidMechanics",
-        "#InverseProblems",
-        "#PhysicsInformedAI"
+        "#PhysicsInformedAI",
+        "#MaterialCharacterization"
       ],
       "paper_id": "2026-07-16-arxiv-neural_operators_solve_inverse_problems_for_constitutive_model_discovery",
       "paper_title": "Neural operators solve inverse problems for constitutive model discovery",
       "paper_date": "2026-07-16",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-19T10:20:28",
+      "generated_at": "2026-07-18T10:12:33",
       "generator": "openai"
     }
   },
@@ -955,29 +954,29 @@
         "url": "https://arxiv.org/pdf/2607.14831v1"
       }
     ],
-    "score": 57,
+    "score": 62,
     "infographic": {
-      "key_insight": "Gravitational instabilities can be understood as the progressive evolution of a hidden system state, where damage accumulation, stress redistribution, and external forcing jointly drive the system toward failure.",
-      "engineering_relevance": "The framework gives engineers and hazard analysts a unified way to connect physical mechanisms, monitoring data, and forecasting models for earlier and more robust instability assessment.",
+      "key_insight": "Gravitational instabilities are best viewed as a latent system state that evolves through damage accumulation, stress redistribution, and external forcing until catastrophic failure occurs.",
+      "engineering_relevance": "This framework helps engineers connect mechanics, monitoring, and forecasting by focusing on reconstructing proximity to failure rather than searching for one-size-fits-all precursors.",
       "method": [
-        "Model instability as a latent state that evolves over time",
+        "Treat instability as progressive state evolution",
         "Link internal damage and stress changes with external forcing",
-        "Infer proximity to failure from incomplete, indirect observations"
+        "Infer hidden system state from incomplete observations"
       ],
-      "evidence_signal": "The abstract is conceptual rather than data-driven, so it argues for a common framework across hazards instead of reporting a specific experimental or validation dataset.",
-      "watch_item": "Its usefulness depends on how well the latent state can be inferred from sparse observations, which may be difficult in real field settings.",
+      "evidence_signal": "The abstract presents a conceptual synthesis across geomechanics, fracture mechanics, statistical physics, and data-driven sciences rather than a specific dataset or quantitative evaluation.",
+      "watch_item": "The framework is conceptual, so practical forecasting still depends on reliable sensing, model calibration, and the ability to infer hidden states from sparse and noisy measurements.",
       "hashtags": [
         "#GravitationalInstability",
-        "#DamageMechanics",
         "#FractureMechanics",
+        "#DamageEvolution",
         "#EarlyWarning",
-        "#HazardModeling"
+        "#HazardAssessment"
       ],
       "paper_id": "2026-07-16-arxiv-a_unified_conceptual_framework_for_gravitational_instabilities_from_latent_system_state_to",
       "paper_title": "A Unified Conceptual Framework for Gravitational Instabilities: From Latent System State to Failure",
       "paper_date": "2026-07-16",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-19T10:20:31",
+      "generated_at": "2026-07-18T10:12:35",
       "generator": "openai"
     }
   },
@@ -1008,29 +1007,29 @@
         "url": "https://arxiv.org/pdf/2607.14286v1"
       }
     ],
-    "score": 57,
+    "score": 62,
     "infographic": {
-      "key_insight": "The paper develops a structure-preserving split scheme for compressible resistive Hall-MHD that separately handles fluid and magnetic dynamics while maintaining key physical invariants.",
-      "engineering_relevance": "It offers a robust numerical tool for simulating plasma and magnetically dominated flows with better stability, conservation, and divergence control than standard methods.",
+      "key_insight": "A split, structure-preserving finite element scheme can simulate compressible resistive Hall-MHD while keeping key physical invariants and the magnetic divergence constraint intact.",
+      "engineering_relevance": "This enables more reliable multiphysics simulations for plasma and electromagnetic-flow applications where stability, conservation, and constraint preservation are critical.",
       "method": [
-        "Split the PDEs into hydrodynamic Euler and magnetic Lorentz/induction subproblems.",
-        "Use continuous Lagrange elements with SSP-RK for the fluid part and curl-conforming finite elements with Crank-Nicolson for the magnetic part.",
-        "Add high-order artificial resistivity to improve nonlinear conditioning and Newton solver invertibility."
+        "Split the PDEs into a hydrodynamic Euler part and a magnetic Lorentz/induction part.",
+        "Use continuous Lagrange elements for the fluid equations and curl-conforming finite elements for the magnetic field.",
+        "Advance the fluid with SSP-RK and the magnetic subsystem with Crank–Nicholson solved by Newton's method, with artificial resistivity to aid conditioning."
       ],
-      "evidence_signal": "The method is validated on benchmark tests including a smooth whistler wave, the Orszag-Tang vortex, and magnetic reconnection, showing robustness and accuracy.",
-      "watch_item": "The magnetic solve relies on Newton iterations and may need artificial resistivity tuning to ensure good conditioning and reliable convergence.",
+      "evidence_signal": "The method is validated on multiple challenging benchmarks: a smooth whistler wave, the Orszag-Tang vortex, and a magnetic reconnection test.",
+      "watch_item": "The magnetic solve depends on a nonlinear Newton iteration, so robustness and Jacobian conditioning can become sensitive without the added artificial resistivity.",
       "hashtags": [
-        "#MHD",
+        "#HallMHD",
         "#FiniteElementMethod",
         "#StructurePreserving",
-        "#HallMHD",
+        "#PlasmaSimulation",
         "#NumericalMethods"
       ],
       "paper_id": "2026-07-15-arxiv-a_structure_preserving_numerical_method_for_the_compressible_resistive_hall_mhd_system",
       "paper_title": "A structure-preserving Numerical Method for the Compressible Resistive-Hall-MHD System",
       "paper_date": "2026-07-15",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-19T10:20:33",
+      "generated_at": "2026-07-18T10:12:38",
       "generator": "openai"
     }
   }

@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI Solid Mechanics Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-07-21. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-07-22. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,26 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>87</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>83</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>An interaction potential method for passive and active dynamics of hyperelastic materials</h2>
+        <p class="authors">Francesco De Vita, Filippo Caruso Lombardi, Roberto Verzicco, Francesco Viola</p>
+        <p class="abstract">Simulating active biological tissues, such as the myocardium, requires constitutive models that are both physically faithful and computationally efficient. The most common approach relies on finite element methods that accurately discretize the underlying continuum hyperelastic problem which, in turn, require global nonlinear solve at each time step. On the other hand, fast, interaction-potential methods replace the continuum with a network of independent links approximating the mechanical response. We propose an interaction potential formulation for simulating active biological tissues that bridges this gap. The method recasts continuum hyperelastic constitutive laws in terms of tetrahedral edge strain. Unlike classical mass-spring models, the proposed formulation does not approximate the tissue as independent spring elements but preserves the energetic coupling between adjacent edges. Passive tissue mechanics is described by hyperelastic constitutive laws, while active contraction is incorporated through the active-strain multiplicative decomposition. Within the edge-based formulation, the active strain is incorporated through a time-dependent activated reference configuration. We further introduce a strategy for enforcing the material incompressibility constraint while avoiding volumetric locking. The resulting method can be interpreted as an edge-strain representation of a constant-strain tetrahedral continuum element, providing a bridge between continuum mechanics and discrete interaction potential solvers. Numerical tests demonstrate the capability of the method to effectively simulate different hyperelastic constitutive laws and to properly preserve the energy balance equation. Finally, the proposed method is applied to the active deformation of a realistic ventricle, reproducing longitudinal shortening and wall-thickening values consistent with the literature.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.19227v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19227v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The paper reformulates hyperelastic tissue mechanics as an edge-strain interaction potential, enabling fast simulations that retain continuum energetic coupling and support active contraction.</p>
+          <p><b>Engineering relevance:</b> This offers a computationally efficient alternative to global nonlinear finite element solves for simulating active soft tissues such as the myocardium.</p>
+          <ul><li>Map hyperelastic constitutive laws to tetrahedral edge strains.</li><li>Use an edge-based formulation that preserves coupling between neighboring edges, unlike independent spring models.</li><li>Introduce active strain via a time-dependent activated reference configuration and enforce incompressibility without volumetric locking.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical tests across multiple hyperelastic laws, checks energy balance preservation, and validates the approach on a realistic ventricle with literature-consistent shortening and wall thickening.</p>
+          <p><b>Watch item:</b> As with any reduced interaction-potential discretization, accuracy and stability may depend on how well the tetrahedral edge representation captures complex geometry, near-incompressibility, and active loading details.</p>
+          <div class="tags"><span>#ComputationalMechanics</span> <span>#Hyperelasticity</span> <span>#ActiveMatter</span> <span>#FiniteElements</span> <span>#Biomechanics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>82</strong></div>
         <p class="date">2026-07-20</p>
         <h2>Hybrid-Dimensional Biot Problem with an Optimization Based Domain Decomposition Approach</h2>
         <p class="authors">Francesca Marcon, Stefano Scialò</p>
@@ -39,18 +58,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.17885v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17885v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A hybrid-dimensional Biot solver combines XFEM, Lagrange multipliers, and optimization-based domain decomposition to handle discontinuous flow and deformation across fractures in nonconforming mixed-dimensional meshes.</p>
-          <p><b>Engineering relevance:</b> The approach is relevant for realistic fractured porous media simulations in geomechanics, where accurate fracture-scale coupling of pressure and displacement is critical.</p>
-          <ul><li>Use XFEM on a 3D mesh that can arbitrarily intersect fractures to represent discontinuous displacement and pressure fields.</li><li>Formulate mechanics as a saddle-point problem with Lagrange multipliers enforcing displacement continuity across fractures.</li><li>Apply fixed-stress splitting to decouple flow and mechanics, and solve the mixed-dimensional pressure subproblem with Conjugate Gradient at each iteration.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports that the fixed-stress scheme combined with the CG solver is highly effective for this class of mixed-dimensional coupled problems.</p>
-          <p><b>Watch item:</b> Performance depends on robust implementation of the nonconforming XFEM and domain-decomposition machinery, especially for complex fracture geometries and saddle-point stability.</p>
-          <div class="tags"><span>#XFEM</span> <span>#Biot</span> <span>#FracturedMedia</span> <span>#FiniteElementMethod</span> <span>#DomainDecomposition</span></div>
+          <p><b>Key insight:</b> The paper combines XFEM, Lagrange multipliers, and optimization-based domain decomposition to efficiently solve coupled flow-mechanics in fractured porous media with mixed-dimensional interfaces.</p>
+          <p><b>Engineering relevance:</b> This provides a practical numerical framework for simulating fracture-driven transport and deformation in reservoir, geomechanics, and subsurface engineering problems.</p>
+          <ul><li>Use XFEM on non-conforming 3D meshes to allow arbitrary fracture intersections and discontinuous displacement/pressure fields.</li><li>Formulate mechanics as a saddle-point problem with Lagrange multipliers enforcing displacement continuity across fractures.</li><li>Apply fixed-stress splitting to decouple flow and mechanics, then solve the mixed-dimensional pressure subproblem with Conjugate Gradient.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports that the fixed-stress scheme combined with the CG solver is highly effective for this class of mixed-dimensional fracture problems.</p>
+          <p><b>Watch item:</b> The approach relies on careful XFEM and domain-decomposition implementation, and solver performance may depend on fracture complexity and conditioning of the mixed-dimensional system.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#XFEM</span> <span>#BiotPoroelasticity</span> <span>#FractureMechanics</span> <span>#DomainDecomposition</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>84</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>81</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>Spatially resolved in-situ characterisation of competing martensitic transformation pathways during nanoscratch in 316H Stainless Steel</h2>
+        <p class="authors">A. Kareer, R. W. Kerr, D. Craven, A. V. Davydok, C. Krywka, D. M. Collins</p>
+        <p class="abstract">Localised surface deformation beneath frictional contacts generates a tribolayer whose microstructure and properties differ from the bulk. In austenitic stainless steels, this tribolayer forms through two competing martensitic transformation pathways. Here, these pathways are isolated in 316H stainless steel using in-situ synchrotron X-ray nanodiffractometry combined with nanoscratch testing, which together yield spatial maps of the evolving strain field beneath a single sliding asperity. Finite element modelling interprets the resulting distribution of martensitic phases, revealing a pressure driven pathway selection where hydrostatic compression ahead of the contact suppresses $α&#x27;$ formation and favours the $γ\rightarrow \varepsilon$ transformation, while lateral sliding relieves this constraint and introduces a shear strain driving $\varepsilon \rightarrow α&#x27;$ , producing an overall sequential $γ\rightarrow \varepsilon \rightarrow α&#x27;$ pathway in the tribolayer. Where hydrostatic constraint persists, $\varepsilon$-martensite is retained; where material piles up and is unconstrained above the surface, the transformation proceeds directly to $α&#x27;$. The $γ$-austenite adjacent to $α&#x27;$- martensite shows elevated dislocation density, indicating that $α&#x27;$ formation is accommodated by plastic deformation in the surrounding matrix. This distinction could explain differences in galling performance among iron-based and cobalt-based hardfacing alloys, where the $\varepsilon$-martensite forming cobalt alloys offer superior galling resistance. The methodology presented resolves transient microstructural states inaccessible to static measurements of macroscale, multiple asperity contacts, establishing a route to mechanistic insight across tribological phenomena more broadly.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.19239v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19239v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Under a nanoscratch contact in 316H stainless steel, the martensitic transformation pathway depends on local stress state: hydrostatic compression favors γ→ε, while shear relief enables ε→α′, producing a sequential γ→ε→α′ tribolayer.</p>
+          <p><b>Engineering relevance:</b> These spatially resolved insights explain how frictional loading alters near-surface microstructure and can help guide alloy design for improved wear and galling resistance.</p>
+          <ul><li>In-situ synchrotron X-ray nanodiffractometry during nanoscratch testing</li><li>Spatial mapping of strain and phase evolution beneath a single sliding asperity</li><li>Finite element modeling to interpret stress-driven phase selection</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports spatial maps of evolving strain and phase distributions that reveal distinct martensitic pathways and correlate them with local constraint conditions.</p>
+          <p><b>Watch item:</b> The results come from a single-asperity nanoscratch setup, so direct transfer to multi-asperity, real-service tribological contacts should be done cautiously.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#Tribology</span> <span>#Martensite</span> <span>#FiniteElementModeling</span> <span>#SynchrotronXray</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>79</strong></div>
         <p class="date">2026-07-19</p>
         <h2>FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method</h2>
         <p class="authors">Yipin Sun, Yizheng Wang, Yuzhou Lin, Baiyang Zheng, Xiaoying Zhuang, Timon Rabczuk</p>
@@ -58,37 +96,75 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.17318v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17318v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> FEVessel enables mesh-independent 3D pressure-vessel analysis by pretrained, label-free finite element learning, achieving accurate predictions even on degenerate meshes.</p>
-          <p><b>Engineering relevance:</b> It reduces repeated solve cost and avoids manual mesh repair, making industrial pressure-vessel simulation faster and more robust across changing materials, geometries, and loads.</p>
-          <ul><li>Encodes each vessel as a point cloud with coordinate, material, and load channels.</li><li>Pretrains a Transolver on total potential energy instead of FEM-generated labels.</li><li>Uses the prediction as a warm start for iterative algebraic multigrid solving.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports 1.35% relative displacement error, 2.07% strain error, a 9.2× wall-clock speedup, and sub-3.66% error on inverted/sliver meshes.</p>
-          <p><b>Watch item:</b> Performance still depends on the quality of the pretrained operator and careful integration with the downstream solver, especially when transferring to very sparse point densities or new vessel regimes.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#PressureVessels</span> <span>#PhysicsInformedAI</span> <span>#MeshIndependent</span> <span>#SurrogateModel</span></div>
+          <p><b>Key insight:</b> FEVessel extends pretrained finite-element surrogates to 3D pressure vessels by learning from physics-based energy instead of FEM labels, enabling mesh-independent prediction and solver warm-starting.</p>
+          <p><b>Engineering relevance:</b> It can reduce analysis cost and manual mesh repair for industrial pressure-vessel simulation while remaining robust across materials, geometries, loads, and degraded meshes.</p>
+          <ul><li>Encode each vessel as a point cloud with coordinate, material, and load channels.</li><li>Pretrain a Transolver on total potential energy rather than labeled FEM displacements/stresses.</li><li>Use the prediction to warm-start iterative solvers such as AMG.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports 1.35% displacement error, 2.07% strain error, 18 AMG iterations vs 195, a 9.2× wall-clock speedup, and &lt;3.66% error on inverted/sliver meshes.</p>
+          <p><b>Watch item:</b> Performance is reported for a specific pressure-vessel setting, so generalization to other solid mechanics problems and production-grade integration should be validated.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#PhysicsAI</span> <span>#PressureVessel</span> <span>#NeuralOperator</span> <span>#ComputationalMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>83</strong></div>
-        <p class="date">2026-07-15</p>
-        <h2>Physics-Informed Residual Deep Learning for Constitutive Modeling of Hot Deformation and Dynamic Recrystallization in a Mo-Rich $α+β$ Titanium Alloy</h2>
-        <p class="authors">Prashil S. Joshi, Diksha Mahadule, Rajesh K. Khatirkar</p>
-        <p class="abstract">Accurate constitutive modeling of hot deformation behavior is essential for designing thermomechanical processes in advanced structural alloys. Conventional Arrhenius-type and empirical models do not adequately capture the combined effects of strain hardening, dynamic recovery (DRV), and dynamic recrystallization (DRX) across broad processing conditions. In this study, two Stacked Residual Physics-Informed Neural Networks (STAR-PINNs) were developed to simulate the hot deformation response of a Mo-rich $α+β$ titanium alloy (Ti-6Al-4Mo-1V-0.1Si). The Enhanced STAR-PINN incorporated thermomechanical constitutive constraints, while the DRX-Aware STAR-PINN employed a dual-output architecture to account for recrystallization kinetics. Both models used a shared residual encoder trained on experimental flow stress data collected at temperatures from 800 to 1050 degrees C and strain rates between 0.01 and 10 per second. Physics-informed constraints, including thermal softening, strain-rate sensitivity, strain hardening, and post-peak softening, were enforced through automatic differentiation. The DRX-Aware model further integrated JMAK-Avrami regularization, DRX saturation constraints, and Arrhenius-based consistency with tunable parameters, directly linking the predicted DRX fraction to stress output via latent-feature fusion. The DRX-Aware STAR-PINN achieved RMSE = 11.69 MPa, MAE = 4.83 MPa, R^2 = 0.9850, and a cross-validated RMSE of 12.47 +/- 0.26 MPa. This model accurately reproduced temperature-dependent flow curves, DRX kinetics, and Zener-Hollomon relationships, while maintaining physically consistent constitutive behavior. These results demonstrate that physics-informed deep learning provides a robust and interpretable framework for constitutive modeling, offering a practical approach for advanced process modeling of titanium alloys.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.13467v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.13467v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>75</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>Efficient strain-space hyperreduction in large-deformation solid mechanics</h2>
+        <p class="authors">Erik Faust, Lisa Scheunemann</p>
+        <p class="abstract">Strain-space model order reduction (MOR) techniques have recently been shown to achieve exceptional performance in terms of the tradeoff between runtime and accuracy achieved in computational homogenisation problems. In this article, we generalise such techniques to problems in large-deformation solid mechanics beyond the context of computational homogenisation. Arbitrary-valued, parameterised Dirichlet boundary conditions are satisfied by construction using a lifting with boundary-consistent fields computed offline. This allows us to pose a version of the Empirical Cubature Method (ECM) [24,25] in strain space and generalise the Empirically Corrected Cluster Cubature (E3C) [46,48,49] as well as Empirical Material Sampling and Linearisation (EMSL) [17] beyond computational homogenisation problems. The strain-space versions of EMSL, ECM, and E3C are compared against each other and a standard displacement-space formulation of Energy Conserving Weighting and Sampling (ECSW) [15]. On two hyperelastic example problems with parameterised material behaviour and deformation, the strain-space methods outperform the displacement-space alternative in the tradeoff between runtime and accuracy. E3C and EMSL in particular facilitate 10,000 and 100,000-fold speedups, respectively, while retaining high levels of accuracy. EMSL is shown to be the method of choice when online and offline runtime budgets are very limited, while E3C yields exceptional levels of accuracy when slightly more runtime is acceptable.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.19330v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19330v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A physics-informed residual neural network can accurately model hot deformation and DRX in a Mo-rich titanium alloy while preserving constitutive consistency.</p>
-          <p><b>Engineering relevance:</b> This provides a practical surrogate for thermomechanical process design and optimization in titanium alloy forming, where flow stress and recrystallization behavior strongly affect manufacturability.</p>
-          <ul><li>Stacked residual PINN with a shared encoder trained on experimental flow-stress curves</li><li>Enhanced model enforces thermomechanical constraints such as strain hardening, DRV, thermal softening, and post-peak softening</li><li>DRX-aware variant adds dual outputs plus JMAK-Avrami, DRX saturation, and Arrhenius-based regularization</li></ul>
-          <p><b>Evidence signal:</b> The DRX-aware STAR-PINN achieved RMSE 11.69 MPa, MAE 4.83 MPa, R2 0.9850, and cross-validated RMSE 12.47 ± 0.26 MPa on data spanning 800–1050 °C and 0.01–10 s^-1.</p>
-          <p><b>Watch item:</b> The model’s reliability may depend on how well the training data covers extreme temperatures, strain rates, and DRX regimes outside the experimental envelope.</p>
-          <div class="tags"><span>#PhysicsInformedML</span> <span>#ConstitutiveModeling</span> <span>#TitaniumAlloys</span> <span>#DynamicRecrystallization</span> <span>#DeepLearning</span></div>
+          <p><b>Key insight:</b> Strain-space hyperreduction can extend efficient reduced-order simulation to large-deformation solid mechanics, delivering much better runtime-accuracy tradeoffs than displacement-space sampling methods.</p>
+          <p><b>Engineering relevance:</b> This enables fast, accurate nonlinear solid mechanics simulations with parameterized loads and material behavior, which is useful for design, optimization, and digital-twin workflows.</p>
+          <ul><li>Use boundary-consistent lifting fields offline to satisfy arbitrary parameterized Dirichlet conditions by construction.</li><li>Form ECM, E3C, and EMSL directly in strain space rather than displacement space.</li><li>Compare strain-space hyperreduction against standard ECSW on large-deformation hyperelastic test problems.</li></ul>
+          <p><b>Evidence signal:</b> On two hyperelastic benchmark problems with parameterized material behavior and deformation, the strain-space methods outperformed displacement-space ECSW; EMSL achieved about 100,000x speedup and E3C about 10,000x while maintaining high accuracy.</p>
+          <p><b>Watch item:</b> The approach relies on offline-computed lifting fields and reduced strain-space sampling, so setup cost and robustness of the offline stage may be important in practice.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#ModelOrderReduction</span> <span>#Hyperreduction</span> <span>#FiniteElements</span> <span>#ComputationalMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>77</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>74</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>Image Editing Models are Numerical Solvers</h2>
+        <p class="authors">Ulysse Mizrahi</p>
+        <p class="abstract">We investigate whether a pretrained generative image-editing model can provide a common interface for numerical simulation. Physical inputs and solutions are rendered as images, while scalar quantities such as material properties, diffusivity, and loading parameters enter through lightweight adapters. Using established numerical and analytic solvers for supervision, we apply the same architecture and training protocol to heterogeneous elliptic equations, forced heat and Burgers evolution, complex Ginzburg-Landau dynamics, two-dimensional Navier-Stokes prediction, potential flow, elasticity, eikonal travel time, phase-field fracture, and entropic optimal transport. The results show that a pretrained image model can represent diverse static and time-dependent physical mappings, including unstable and shock-like behavior, when each task is expressed through a suitable visual encoding. This work is a capability study rather than an attempt to surpass specialized solvers. It also identifies fundamental constraints: image and latent representations complicate numerical range selection and direct enforcement of governing equations or invariants, while a failed Kuramoto-Sivashinsky experiment indicates that representation errors prevent meaningful long-horizon simulation of chaotic systems.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.18787v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18787v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A pretrained image-editing model can act as a general numerical solver when physical states and parameters are encoded as images and lightweight adapters.</p>
+          <p><b>Engineering relevance:</b> This suggests a single vision-based framework could prototype or approximate many physics problems—from diffusion and fluids to elasticity and fracture—using the same training recipe.</p>
+          <ul><li>Render inputs/solutions as images.</li><li>Inject scalar parameters through lightweight adapters.</li><li>Train on supervision from established numerical or analytic solvers across many PDEs and physics tasks.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports successful modeling of heterogeneous static and time-dependent systems, including unstable and shock-like behavior, while also noting a failed Kuramoto-Sivashinsky long-horizon case.</p>
+          <p><b>Watch item:</b> Image/latent representations make it harder to control numerical range and enforce governing laws or invariants directly, which can limit reliability on chaotic dynamics.</p>
+          <div class="tags"><span>#ComputationalScience</span> <span>#NumericalSimulation</span> <span>#PhysicsInformedAI</span> <span>#ImageModels</span> <span>#AIforPDEs</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>73</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>Thermal and electrical conductivity of a refractory high-entropy alloy after high-pressure torsion: Electron versus phonon contributions</h2>
+        <p class="authors">Jacqueline Hidalgo-Jimenez, Payam Edalati, Md Amirul Islam, Makoto Arita, Bidyut Baran Saha, Kaveh Edalati</p>
+        <p class="abstract">The equiatomic refractory high-entropy alloy TiZrHfNbTa was processed by high-pressure torsion (HPT) to investigate the effect of nanostructuring and defect engineering on thermal and electrical transport properties. Severe plastic deformation (SPD) via the HPT treatment induces substantial accumulation of dislocations, grain refinement to the nanometer level (average: 40 nm), and partial transformation from the BCC phase to the omega phase. While hardness increases to a steady state with processing, the specific heat capacity exhibits a non-monotonic behavior: it decreases at low strains due to the suppression of low-frequency vibrational modes by dislocations, then partially recovers at high strains due to anharmonic vibrations at newly formed high-angle grain boundaries. Thermal conductivity decreases at low strains but shows a slight recovery at high strains, whereas electrical conductivity decreases monotonically to a steady state without recovery. Analysis using the Wiedemann-Franz law reveals that the electronic contribution dominates thermal transport, while the phononic contribution (limited by the scattering of phonons on defects) is only 11 to 23%, depending on the degree of straining. The contrasting evolution of thermal and electrical conductivity is ascribed to the transition from dislocation-dominated vibrations at low strains to grain boundary-dominated vibrations at high strains, which affects phonons and electrons with different efficiencies.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.19123v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19123v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> High-pressure torsion nanostructures the TiZrHfNbTa refractory alloy and suppresses both thermal and electrical transport, with electrons dominating heat conduction while phonons contribute only a minor share.</p>
+          <p><b>Engineering relevance:</b> Severe plastic deformation can be used to tune transport and mechanical properties in refractory high-entropy alloys, which is useful for extreme-environment structural and thermal management applications.</p>
+          <ul><li>High-pressure torsion (HPT) applied to equiatomic TiZrHfNbTa</li><li>Measured hardness, specific heat capacity, thermal conductivity, and electrical conductivity versus strain</li><li>Interpreted transport using phase analysis, nanograin/dislocation effects, and the Wiedemann-Franz law</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports nanograin refinement to about 40 nm, partial BCC-to-omega transformation, and a phonon contribution of only 11–23% to thermal transport depending on strain level.</p>
+          <p><b>Watch item:</b> The observed trends are specific to HPT-induced defect structures in this alloy, so the same transport response may not generalize to other processing routes or compositions.</p>
+          <div class="tags"><span>#HighEntropyAlloy</span> <span>#HighPressureTorsion</span> <span>#ThermalConductivity</span> <span>#ElectricalConductivity</span> <span>#SeverePlasticDeformation</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>72</strong></div>
         <p class="date">2026-07-19</p>
         <h2>A Lowest-Order Robust Mixed Finite Element Method with a Third-Order Tensor Variable for Strain Gradient Elasticity</h2>
         <p class="authors">Xuehai Huang, Zheqian Tang</p>
@@ -96,18 +172,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.17134v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17134v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper introduces a lowest-order mixed finite element method for strain gradient elasticity that uses a physically meaningful third-order double-stress variable to achieve robust, parameter-stable discretization.</p>
-          <p><b>Engineering relevance:</b> It provides an efficient way to simulate gradient-enhanced solid mechanics without high-order bubble enrichment or Nitsche treatment, making it attractive for practical multiscale and boundary-layer problems.</p>
-          <ul><li>Model the double stress as a third-order tensor primary unknown, \u03a6 = i^2 grad σ(u).</li><li>Approximate \u03a6 with an S\u2297R^d-valued lowest-order Raviart–Thomas-type element and displacement with vector-valued Crouzeix–Raviart.</li><li>Add local quadratic post-processing and a hybridized formulation to improve usability and implementation.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports parameter-robust stability, first-order convergence for fixed parameters, and a uniform O(i^{1/2}+h) error bound, supported by numerical experiments in 2D and 3D.</p>
-          <p><b>Watch item:</b> The method targets lowest-order accuracy, so practical performance may still depend on mesh resolution near boundary layers and on implementing the tensor-valued mixed/hybrid formulation correctly.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#SolidMechanics</span> <span>#StrainGradientElasticity</span> <span>#MixedMethods</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> The paper introduces a lowest-order mixed finite element method for strain gradient elasticity that uses the physically meaningful third-order double stress tensor as a primary variable, enabling robust discretization without bubble enrichment or Nitsche treatment.</p>
+          <p><b>Engineering relevance:</b> It offers a practical, parameter-robust solver for solid mechanics problems with strong gradient effects, with reliable accuracy across small strain-gradient length scales and large Lamé parameters.</p>
+          <ul><li>Represent double stress with an $\mathbb{S}\otimes\mathbb{R}^d$-valued Raviart--Thomas-type element.</li><li>Approximate displacement with vector-valued linear Crouzeix--Raviart elements.</li><li>Add local quadratic post-processing and a hybridized formulation for improved practicality.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports parameter-robust stability, first-order convergence for fixed parameters, and a uniform $\mathcal{O}(\iota^{1/2}+h)$ error bound, supported by 2D and 3D numerical experiments.</p>
+          <p><b>Watch item:</b> Performance depends on mixed-element implementation details and the boundary-layer regime may still require sufficiently fine meshes to resolve sharp gradients.</p>
+          <div class="tags"><span>#FiniteElementMethod</span> <span>#StrainGradientElasticity</span> <span>#MixedMethods</span> <span>#SolidMechanics</span> <span>#NumericalAnalysis</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>75</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>70</strong></div>
         <p class="date">2026-07-20</p>
         <h2>Contact-based inverse analysis for nonlinear material identification in spatially heterogeneous solids</h2>
         <p class="authors">Bartłomiej Łazorczyk, Roger A. Sauer</p>
@@ -115,37 +191,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.18156v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18156v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A contact-based FEMU framework can recover spatially varying nonlinear material properties in solids by matching measured displacements and contact responses.</p>
-          <p><b>Engineering relevance:</b> This enables non-destructive characterization of heterogeneous soft materials and thin structures, with direct relevance to biomechanics, indentation testing, and inverse material identification.</p>
-          <ul><li>Uses isogeometric finite element model updating with contact mechanics under large quasi-static deformations.</li><li>Represents unknown material fields with low-order Lagrange interpolation independent of the analysis mesh.</li><li>Minimizes a least-squares mismatch via trust-region reflective optimization, aided by analytical derivatives and material continuation.</li></ul>
-          <p><b>Evidence signal:</b> The method was validated on three synthetic numerical case studies: a Canham shell strip, a Koiter shell model of the human abdominal wall, and a Neo-Hookean block indentation problem.</p>
-          <p><b>Watch item:</b> The approach relies on high-quality full-field displacement data and contact force information in some boundary-condition settings, so measurement noise and identifiability can limit performance.</p>
-          <div class="tags"><span>#FEMU</span> <span>#InverseMethods</span> <span>#ContactMechanics</span> <span>#IsogeometricAnalysis</span> <span>#NonlinearMaterials</span></div>
+          <p><b>Key insight:</b> A contact-driven FEMU framework can identify spatially varying nonlinear material properties from surface displacement data and contact reactions in large-deformation solids.</p>
+          <p><b>Engineering relevance:</b> This enables non-destructive characterization of heterogeneous soft materials and thin shells for biomechanics, contact testing, and material calibration.</p>
+          <ul><li>Isogeometric FEMU for hyperelastic 3D solids and shells under quasi-static contact</li><li>Material fields parameterized with low-order Lagrange interpolation, independent of the analysis mesh</li><li>Trust-region reflective least-squares optimization with analytical derivatives and material continuation</li></ul>
+          <p><b>Evidence signal:</b> Validated on three synthetic contact problems: a Canham shell strip, an abdominal-wall shell model, and a Neo-Hookean block, showing reconstruction of inhomogeneous material fields.</p>
+          <p><b>Watch item:</b> Accuracy depends on quality and coverage of displacement/contact measurements, and the local optimizer may be sensitive to initial guesses and identifiability issues.</p>
+          <div class="tags"><span>#FEMU</span> <span>#InverseMethods</span> <span>#ContactMechanics</span> <span>#IsogeometricAnalysis</span> <span>#MaterialIdentification</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>75</strong></div>
-        <p class="date">2026-07-14</p>
-        <h2>Decoupling Strain-Rate Sensitivity and Deformation Length Scale Effects in Neutron-Irradiated Tungsten: A Coupled Nano-Indentation, HR-EBSD and Crystal Plasticity Study</h2>
-        <p class="authors">Prashil S. Joshi, Bethany Jim, Chris Hardie, Angus Wilkinson, David EJ Armstrong, Suchandrima Das</p>
-        <p class="abstract">Plastic deformation during strain-rate-controlled spherical nanoindentation is governed by the coupled evolution of constitutive strain-rate sensitivity and deformation length scale, making the intrinsic influence of strain rate difficult to isolate experimentally. This coupling is investigated in unirradiated and neutron-irradiated single-crystal tungsten using spherical nanoindentation, atomic force microscopy, high-resolution electron backscatter diffraction (HR-EBSD), and crystal plasticity finite element (CPFE) modeling. Nanoindentation experiments were performed at strain rates from 3.2e-5 to 3.2e-3 per second. AFM and HR-EBSD quantified surface pile-up, residual lattice strain, and geometrically necessary dislocation (GND) distributions. A strain-gradient CPFE framework incorporating thermally activated slip, GND hardening, irradiation-induced obstacle hardening, and strain-dependent softening was calibrated using a single experimental condition and validated across all remaining strain rates without further parameter adjustment. The validated model was then used to independently vary strain rate and indentation depth. Simulations show that strain rate primarily controls the stress required for thermally activated plastic flow, whereas indentation depth governs plastic-zone evolution, pile-up, and GND accumulation. Irradiation increases obstacle strength and promotes deformation localization while remaining consistent with a common thermally activated mechanism. The framework also predicts the compression response of a polycrystalline cube, demonstrating transferability across loading conditions and length scales, providing a robust basis for constitutive modeling of irradiation-hardened materials under transient loading.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.12960v3" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.12960v3" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Strain rate and deformation length scale affect indentation plasticity in tungsten in different ways: rate mainly changes flow stress, while depth controls plastic-zone growth, pile-up, and GND buildup.</p>
-          <p><b>Engineering relevance:</b> This separation enables more reliable constitutive models for neutron-damaged tungsten under transient loading, improving prediction of irradiation hardening and localized deformation.</p>
-          <ul><li>Spherical nanoindentation on unirradiated and neutron-irradiated single-crystal tungsten across 3.2e-5 to 3.2e-3 s^-1</li><li>AFM and HR-EBSD measured pile-up, residual lattice strain, and GND distributions</li><li>Strain-gradient CPFE with thermally activated slip, GND hardening, irradiation obstacle hardening, and softening</li></ul>
-          <p><b>Evidence signal:</b> A CPFE model calibrated with one experimental condition reproduced the remaining strain-rate cases without further tuning and was also used to separate strain-rate and indentation-depth effects.</p>
-          <p><b>Watch item:</b> The framework is calibrated on a specific tungsten indentation dataset, so transfer to other irradiation states, temperatures, or loading geometries should be revalidated.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#ConstitutiveModeling</span> <span>#Nanoindentation</span> <span>#IrradiationEffects</span> <span>#CrystalPlasticity</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>73</strong></div>
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>68</strong></div>
         <p class="date">2026-07-20</p>
         <h2>Defect configuration, not nitrogen content, governs the mechanical integrity of nitrogen-doped graphene: a molecular dynamics study</h2>
         <p class="authors">Indranil Rudra, Jahid Emon, A. K. M. Monjur Morshed</p>
@@ -153,18 +210,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.18129v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18129v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Mechanical integrity in nitrogen-doped graphene is controlled by the defect configuration and vacancy content, not by nitrogen content alone.</p>
-          <p><b>Engineering relevance:</b> Designing defect-tolerant graphene requires prioritizing vacancy-free nitrogen configurations and controlling how multiple defects are arranged relative to loading.</p>
-          <ul><li>Molecular dynamics simulations of uniaxial tension on graphene with size-matched defects</li><li>Compared graphitic-nitrogen, void, and pyridinic-nitrogen clusters to isolate chemistry vs. vacancy effects</li><li>Studied combined defect pairs under different orientations and separations relative to the load</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports that graphitic nitrogen changes strength by less than 1%, while a void reduces ultimate strength by about 23% and a pyridinic cluster by about 30%, with defect interactions persisting to roughly 80 Å.</p>
-          <p><b>Watch item:</b> Results are simulation-based and may depend on the chosen defect models, loading conditions, and nanoscale assumptions rather than direct experimental validation.</p>
-          <div class="tags"><span>#Graphene</span> <span>#NitrogenDoping</span> <span>#MolecularDynamics</span> <span>#FractureMechanics</span> <span>#DefectEngineering</span></div>
+          <p><b>Key insight:</b> Mechanical failure in nitrogen-doped graphene is governed by defect configuration and vacancy content, not by nitrogen content alone.</p>
+          <p><b>Engineering relevance:</b> Defect-aware design of graphene should prioritize vacancy suppression and defect placement/orientation to preserve strength and fracture resistance.</p>
+          <ul><li>Molecular dynamics uniaxial tension simulations</li><li>Compared three size-matched defect types: graphitic-N cluster, bare void, pyridinic-N cluster</li><li>Studied coupled void–nitrogen defects under different load orientations and separations</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports quantified strength changes: graphitic-N cluster &lt;1% reduction, void ~23% reduction, and pyridinic-N cluster ~30% reduction, with interaction effects persisting to about 80 Å.</p>
+          <p><b>Watch item:</b> Results come from atomistic simulations, so transfer to experiments may depend on temperature, strain rate, defect chemistry, and synthesis-specific disorder.</p>
+          <div class="tags"><span>#Graphene</span> <span>#MolecularDynamics</span> <span>#DefectEngineering</span> <span>#FractureMechanics</span> <span>#NitrogenDoping</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>70</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>65</strong></div>
         <p class="date">2026-07-19</p>
         <h2>To win, a model must thin: Capillary thinning as a benchmark complex flow for constitutive models of viscoelastic polymer solutions</h2>
         <p class="authors">Ranganathan Prabhakar, Joseph P. Connell</p>
@@ -172,18 +229,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.17197v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17197v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Capillary thinning is not just a way to measure one relaxation time; it is a benchmark complex flow that reveals how constitutive models capture coupled geometry–microstructure dynamics in viscoelastic polymer solutions.</p>
-          <p><b>Engineering relevance:</b> The Pipkin-diagram framework helps engineers compare polymer solutions and devices using universal thinning behavior, improving model selection for extensional-flow applications such as spraying, coating, and filament breakup.</p>
-          <ul><li>Recast capillary-breakup rheometry output as a self-selected elastic strain rate via an elastic Weissenberg number Wi_e.</li><li>Organize results in an elastocapillary Pipkin diagram with Wi_e versus a geometry-controlled Deborah number.</li><li>Use a mid-filament stress balance and scaling analysis to collapse families of thinning curves onto a master curve, then test constitutive models such as C2D2 and FENE-P.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports that the framework organizes data spanning decades in molecular weight and concentration across multiple devices, and that C2D2 matches the observed plateau behavior while classical FENE-P does not.</p>
-          <p><b>Watch item:</b> The approach relies on careful interpretation of geometry-dependent onset and initial prestretch, so experimental protocol and device details can strongly affect the inferred benchmark behavior.</p>
-          <div class="tags"><span>#Viscoelasticity</span> <span>#CapillaryThinning</span> <span>#ConstitutiveModels</span> <span>#PolymerRheology</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> Capillary thinning is not just a way to measure one relaxation time; it is a benchmark complex flow that reveals how polymer conformation, geometry, and protocol jointly control viscoelastic response.</p>
+          <p><b>Engineering relevance:</b> A Pipkin-diagram view of capillary thinning can help engineers compare constitutive models and build more reliable master curves for extension-dominated polymer flows.</p>
+          <ul><li>Recast capillary-breakup rheometry output as a self-selected elastic strain rate using an elastic Weissenberg number Wi_e.</li><li>Organize results in an elastocapillary Pipkin diagram: Wi_e versus a geometry-controlled Deborah number.</li><li>Use mid-filament stress balance and scaling analysis to collapse family curves onto a master curve; compare C2D2 against FENE-P.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports a model/data collapse spanning decades in molecular weight and concentration across multiple devices, with C2D2 capturing trends that the classical FENE-P model cannot.</p>
+          <p><b>Watch item:</b> The framework depends on geometry-controlled and onset-referenced parameters, so careful experimental alignment and estimation of initial prestretch are important for consistent use.</p>
+          <div class="tags"><span>#Viscoelasticity</span> <span>#PolymerRheology</span> <span>#CapillaryThinning</span> <span>#ConstitutiveModeling</span> <span>#Rheology</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>70</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>65</strong></div>
         <p class="date">2026-07-18</p>
         <h2>A Research Prototype for Closed-Loop Generative Design of Customized Foot Orthoses via Semantic-Physics Alignment</h2>
         <p class="authors">Rui Wang, Byungwon Min, Suxing Liu</p>
@@ -191,37 +248,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.16631v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.16631v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> TANS-FO closes the gap between clinical text prescriptions and manufacturable foot-orthosis geometry by pairing a text-aligned generative model with a real-time biomechanical surrogate.</p>
-          <p><b>Engineering relevance:</b> It demonstrates a closed-loop design workflow for customized orthoses that can rapidly generate lattice insoles and estimate plantar stress without running full finite element analysis.</p>
-          <ul><li>Cross-attention maps clinical-text embeddings into a continuous lattice-density field for orthosis generation.</li><li>A GNN surrogate predicts plantar stress in real time as a substitute for Abaqus-based FEA.</li><li>The pipeline is built on the PicoFoot-5K anthropometric database and supports manufacturing-ready outputs within minutes.</li></ul>
-          <p><b>Evidence signal:</b> On the Male 18-40 cohort, the surrogate matched the Abaqus reference with R^2 = 0.94 and the system reported a 34.7% peak-pressure reduction versus parametric CAD, with 0.42 mm fit error.</p>
-          <p><b>Watch item:</b> The comfort outcome is only a small exploratory observation (n = 12, short follow-up, no control group), so it should not be interpreted as clinical efficacy.</p>
-          <div class="tags"><span>#ComputationalMechanics</span> <span>#FEMSurrogates</span> <span>#GenerativeDesign</span> <span>#Biomechanics</span> <span>#MedicalAI</span></div>
+          <p><b>Key insight:</b> TANS-FO closes the gap between clinical text and orthosis geometry by using a text-aligned generative model plus a real-time biomechanical surrogate to automate customized foot orthosis design.</p>
+          <p><b>Engineering relevance:</b> The work demonstrates a fast, modular design-to-validation pipeline for patient-specific lattice insoles, reducing reliance on manual CAD and expensive finite-element iteration.</p>
+          <ul><li>Text-Aligned Neural Surrogate maps clinical prescriptions to continuous lattice-density fields via cross-attention.</li><li>Graph Neural Network surrogate predicts plantar stress in real time as a replacement for FEA.</li><li>Closed-loop pipeline generates manufacturing-ready orthoses and checks biomechanical response within minutes.</li></ul>
+          <p><b>Evidence signal:</b> On the PicoFoot-5K dataset, the GNN surrogate matched Abaqus with R² = 0.94, and the full pipeline reported 34.7% peak-pressure reduction versus parametric CAD with 0.42 mm fit error; the small VAS study (n=12) is preliminary only.</p>
+          <p><b>Watch item:</b> The prototype is not a clinically validated therapy, and the observational comfort results lack a control group and should not be interpreted as proof of efficacy.</p>
+          <div class="tags"><span>#FEMSurrogates</span> <span>#GenerativeDesign</span> <span>#Biomechanics</span> <span>#DigitalHealth</span> <span>#GraphNeuralNetworks</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>69</strong></div>
-        <p class="date">2026-07-14</p>
-        <h2>Modeling damage and fracture in additively manufactured polymeric triply periodic minimal surface lattices</h2>
-        <p class="authors">Abhishek Gupta, Aditya Konale, Ke Ma, Keven Alkhoury, Pradeep Guduru, Yuri Bazilevs</p>
-        <p class="abstract">Architected triply periodic minimal surface (TPMS) lattices offer superior specific energy absorption, toughness, fatigue strength, and tunability. While recent advancements have established rate-dependent viscoplastic constitutive models to capture the complex nonlinear deformation response of additively manufactured polymeric TPMS structures, predicting fracture and the resulting structural failure remains a significant challenge. We address this by performing systematic experiments on unit cells and lattices of various sizes under tension, compression, and non-monotonic loading. The experiments inform the development of a new constitutive model that captures the damage and fracture behavior of polymeric TPMS lattices. We first implement a high-fidelity viscoplastic deformation constitutive model from Ma et al. (2026) into finite element software Abaqus/Explicit via a user material subroutine. We then propose a damage initiation criterion for amorphous polymers based on stored elastic energy and equivalent plastic strain. The damage model is implemented in Abaqus using gradient-damage framework following Konale and Srivastava(2025). The damage model and numerical simulation capability are quantitatively and qualitatively validated using experimental results for a unit cell under non-monotonic loading and lattices under tension. The proposed damage model and simulation capability enable in silico design of architected polymer structures.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.13238v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.13238v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A new damage-and-fracture constitutive model enables finite-element prediction of failure in additively manufactured polymeric TPMS lattices under complex loading.</p>
-          <p><b>Engineering relevance:</b> The framework improves the ability to design architected polymer lattices with better reliability, energy absorption, and failure resistance before fabrication.</p>
-          <ul><li>Implemented a high-fidelity viscoplastic constitutive model in Abaqus/Explicit via user material subroutine.</li><li>Introduced a damage initiation criterion for amorphous polymers based on stored elastic energy and equivalent plastic strain.</li><li>Used a gradient-damage formulation to simulate fracture and validate against experiments.</li></ul>
-          <p><b>Evidence signal:</b> The model was validated against systematic experiments on TPMS unit cells and lattices under tension, compression, and non-monotonic loading, including quantitative and qualitative agreement for a unit cell and tensile lattice tests.</p>
-          <p><b>Watch item:</b> The approach depends on calibrated material parameters and user-subroutine implementation in Abaqus, so transferability to other polymers, print processes, or loading rates may require revalidation.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#FractureMechanics</span> <span>#DamageModeling</span> <span>#TPMSLattices</span> <span>#AdditiveManufacturing</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>68</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>63</strong></div>
         <p class="date">2026-07-20</p>
         <h2>TypiCore: A Hybrid Active Query Strategy for Class-Incremental Learning on Time Series</h2>
         <p class="authors">Gabor Szucs, Samuel Jacsev, Marcell Nemeth, Davide Dalle Pezze, Gian Antonio Susto</p>
@@ -229,107 +267,50 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.17632v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17632v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> TypiCore improves class-incremental learning on time series by alternating typicality- and diversity-based queries to build better memory buffers under limited label budgets.</p>
-          <p><b>Engineering relevance:</b> This is relevant for industrial and biomedical monitoring systems where labeled streams are expensive but models must adapt continuously to new operating conditions.</p>
-          <ul><li>Systematically compares multiple query strategies with rehearsal-based continual learning methods for multivariate time series.</li><li>Proposes TypiCore, a hybrid active query policy that switches between typicality and diversity across active-learning cycles.</li><li>Evaluates plasticity, stability, and label efficiency on the TSCIL benchmark across four datasets.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports statistically significant improvements over all baselines and performance that matches or surpasses fully supervised continual learning on multiple datasets using only a fraction of available labels.</p>
-          <p><b>Watch item:</b> Performance may depend on careful buffer management and the chosen active-learning cycle schedule, so gains may not transfer unchanged to all streaming settings.</p>
-          <div class="tags"><span>#ContinualLearning</span> <span>#ActiveLearning</span> <span>#TimeSeries</span> <span>#MachineLearning</span> <span>#IndustrialAI</span></div>
+          <p><b>Key insight:</b> TypiCore improves class-incremental learning on time series by alternately selecting typical and diverse samples to build a more representative memory buffer under limited label budgets.</p>
+          <p><b>Engineering relevance:</b> For industrial and healthcare monitoring systems, this reduces annotation cost while helping models adapt to new operating conditions without losing performance on earlier classes.</p>
+          <ul><li>Active class-incremental learning for multivariate time series</li><li>Hybrid query strategy: typicality-based selection + diversity-based selection across cycles</li><li>Rehearsal-based continual learning with a fixed annotation budget</li></ul>
+          <p><b>Evidence signal:</b> The method was evaluated on the TSCIL benchmark and four benchmark datasets, where it showed statistically significant gains over baselines and sometimes matched or exceeded fully supervised continual learning with far fewer labels.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of the selected memory buffer, so results may be sensitive to dataset shift, budget size, and the choice of rehearsal setup.</p>
+          <div class="tags"><span>#ContinualLearning</span> <span>#ActiveLearning</span> <span>#TimeSeries</span> <span>#ClassIncrementalLearning</span> <span>#TypiCore</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>65</strong></div>
-        <p class="date">2026-07-19</p>
-        <h2>Eigenmode analysis of a half-mode uniplanar metamaterial-inspired substrate integrated waveguide</h2>
-        <p class="authors">Maria-Thaleia Passia, Kyriakos Katsaros-Gkouskos, Traianos V. Yioultsis</p>
-        <p class="abstract">In this work, we systematically analyze the propagation characteristics of a new half-mode uniplanar substrate integrated waveguide (SIW) based on complementary split-ring resonators (CSRR), using a finite element method (FEM) eigenmode solver. The proposed half-mode CSRR SIW has a simpler fabrication than the SIW, since the via are substituted by CSRRs, and is more compact than the existing full uniplanar CSRR SIW, since its transverse size is reduced almost by half. To gain insight into the propagation characteristics of the proposed half-mode CSRR SIW and guide its synthesis process, we solve an eigenvalue problem that determines the complex propagation constant of the supported modes. By calculating the dispersion diagrams of the dominant mode, with all loss mechanisms included, we demonstrate that the half-mode uniplanar CSRR SIW retains the performance of the existing full CSRR SIW.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17403v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17403v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>62</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>Space-time tensor-product finite element methods for parabolic problems</h2>
+        <p class="authors">Richard Löscher, Michael Reichelt, Olaf Steinbach</p>
+        <p class="abstract">We study space-time Galerkin--Petrov formulations for parabolic evolution problems and their relation to classical implicit time-stepping schemes. Although such schemes are stable in the usual time-stepping sense, their interpretation as space-time operator equations may lead to conditional stability, with constants depending on the relation between temporal and spatial mesh sizes. We revisit this phenomenon for the continuous Galerkin method of Aziz and Monk, which yields the Crank--Nicolson scheme in the lowest-order case, and provide a detailed space-time error analysis for solutions of both high and low regularity. In particular, the space-time framework allows us to analyze the deteriorated behaviour of classical time-stepping methods for nonsmooth initial data. By applying integration by parts in time, we derive an adjoint space-time formulation that incorporates the initial condition in a natural variational way. In the lowest-order case, this formulation leads to a Rannacher-type smoothing of the initial data. The theoretical results are complemented by numerical experiments.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.19107v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19107v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A half-mode CSRR-based SIW can cut transverse size by nearly 50% while preserving the dominant-mode propagation behavior of the full uniplanar CSRR SIW.</p>
-          <p><b>Engineering relevance:</b> This offers a simpler, more compact waveguide platform for planar microwave components where reduced footprint and fabrication simplicity matter.</p>
-          <ul><li>Solved a FEM eigenvalue problem for the complex propagation constant of supported modes.</li><li>Computed dispersion diagrams of the dominant mode.</li><li>Included all loss mechanisms in the modal analysis.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports dispersion-diagram results from FEM eigenmode analysis showing that the half-mode structure retains the performance of the existing full CSRR SIW.</p>
-          <p><b>Watch item:</b> Results are based on eigenmode/dispersion analysis, so practical fabrication tolerances and measurement validation may still be needed before deployment.</p>
-          <div class="tags"><span>#FEM</span> <span>#EigenmodeAnalysis</span> <span>#SIW</span> <span>#Metamaterials</span> <span>#MicrowaveEngineering</span></div>
+          <p><b>Key insight:</b> Space-time finite element formulations reveal how classical implicit time-stepping schemes can become conditionally stable when viewed as coupled space-time operator equations, especially for nonsmooth initial data.</p>
+          <p><b>Engineering relevance:</b> This gives engineers a more reliable error-analysis framework for parabolic simulations, helping choose discretizations that remain accurate and stable across challenging mesh and regularity regimes.</p>
+          <ul><li>Space-time Galerkin–Petrov formulation for parabolic evolution problems</li><li>Revisit the continuous Galerkin method of Aziz and Monk, including the Crank–Nicolson case</li><li>Derive an adjoint space-time formulation via integration by parts in time to handle initial conditions variationally</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports detailed space-time error analysis for both high- and low-regularity solutions, and confirms the theory with numerical experiments.</p>
+          <p><b>Watch item:</b> Stability and accuracy may deteriorate unless temporal and spatial mesh sizes are balanced appropriately, and low-regularity data may require smoothing or special treatment.</p>
+          <div class="tags"><span>#FiniteElements</span> <span>#SpaceTimeMethods</span> <span>#ParabolicPDE</span> <span>#CrankNicolson</span> <span>#NumericalAnalysis</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>64</strong></div>
-        <p class="date">2026-07-20</p>
-        <h2>Plastic smoothing of rough surfaces</h2>
-        <p class="authors">B. N. J. Persson</p>
-        <p class="abstract">When two metal blocks are squeezed together the stresses in the asperity contact regions are usually so large that the asperities deform plastically, at least at short length scales. Many tribology properties of contacts, such as the contact stiffness and the electric and thermal contact resistance, and the fluid flow at interfaces, depend on the surface topography and are hence modified by the plastic flow. Here I present a new way to obtain an effective power spectra of plastically deformed surfaces to be used in the Persson contact mechanics theory. I also present results for the surface height topography obtained using the plastically modified power spectra, and compare to the experimental results of Yusof and Ripin, who studied the influence of plastic flow on the topography for a smooth steel surface squeezed against a rough steel surface. Finally, I discuss why some surfaces after plastic deformation have similar Gaussian roughness as before plastic deformation, only with smaller roughness amplitude, while other surfaces shows very skewed roughness after plastic deformation.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.18208v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18208v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>60</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>Uncertainty quantification in mechanics: A unified Bayesian perspective</h2>
+        <p class="authors">Sascha Ranftl, Malte Rolf, Gerhard A. Holzapfel, Ellen Kuhl</p>
+        <p class="abstract">Uncertainty quantification (UQ) is essential to experimental mechanics, but has become particularly relevant in computational mechanics, manifesting in two fundamental problem types: forward and inverse problems. The former addresses how input uncertainties propagate to the quantities of interest, whereas the latter aims to infer unknown parameters from experimental observations or simulations. Since efficient propagation typically requires a prohibitive number of evaluations to compute marginal output distributions, the development of fast, data-driven surrogate models becomes necessary. Thus, we can distinguish between two inverse tasks: (i) the identification and calibration of input uncertainties, and (ii) the construction of surrogates, a methodology collectively referred to as surrogate-based UQ. Building on probabilistic reasoning and the concept of partial belief, we demonstrate that Bayesian probability theory provides a unified theoretical framework for addressing both problem types. We further show that Bayesian inference allows for the seamless incorporation of essential subproblems, including model selection for identifying the most probable model specifications and experimental design for optimizing data collection by identifying experiments or simulations that maximize expected information gain about parameters, among others such as connections to sensitivity analysis or the use of special priors like random fields. While this theoretical framework is presented for general mechanical problems, particular emphasis is placed on biomechanics, where variability and uncertainty is especially pronounced due to inherent biological heterogeneity, patient-specific variability, and noisy data.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.18734v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18734v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Plastic deformation of asperities can be modeled by transforming the surface power spectrum, enabling updated contact-mechanics predictions for rough metal surfaces after squeezing.</p>
-          <p><b>Engineering relevance:</b> This matters for predicting contact stiffness, electrical/thermal contact resistance, and interfacial fluid flow in metal contacts where roughness evolves plastically.</p>
-          <ul><li>Derive an effective power spectrum for plastically deformed surfaces.</li><li>Use the modified spectrum within Persson contact mechanics theory.</li><li>Compare predicted height topography with experimental steel-on-steel data.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports comparison of the model’s predicted topography against experiments by Yusof and Ripin on a smooth steel surface pressed against a rough steel surface.</p>
-          <p><b>Watch item:</b> The approach may depend on how well the plasticity-modified spectrum represents different materials and surface classes, especially cases that become strongly skewed after deformation.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#Tribology</span> <span>#PlasticDeformation</span> <span>#SurfaceRoughness</span> <span>#ContactMechanics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>63</strong></div>
-        <p class="date">2026-07-16</p>
-        <h2>Robust Silicone Pour Casting and Sensor Embedding Procedures for Soft Robotic Actuators</h2>
-        <p class="authors">Harshit Thakker, Paul Dela Cruz, Mostafa Mo. Massoud, Jacqueline Libby</p>
-        <p class="abstract">Soft robots are well-suited for applications such as rehabilitation and surgery that require adaptable and safe interaction with their environment. However, the challenges of reproducible and scalable fabrication of soft robots limit their real-world deployment. Various fabrication methods have been introduced, but many are labor-intensive and prone to human error. Therefore, traditional two-part pour casting remains an attractive option. This paper presents procedures for robust, repeatable, and scalable fabrication of soft pneumatic actuators using two-part pour casting. The presented methods prevent internal cavity clogging and ensure air-tight sealing. Additionally, a robust sensor embedding procedure for thin-film flex sensors is presented, which allows for accurate and repeatable data acquisition. Finite Element Modeling (FEM) of the soft actuator is performed to analyze stress and deformation from internal pressure loadings. Pneumatic actuation experiments with PID pressure control are performed. Automated image processing is used to calibrate the embedded flex sensor to bending angle measurements. Staircase and sinusoidal profile actuation experiments validate the performance of the fabricated actuator. Angle response experiments for the staircase input show repeatable performance, and the sinusoidal input shows a small amount of hysteresis consistent with viscoelastic response to pneumatic actuation of soft actuators. Simulated and real-world bending angles show comparable response. These methods provide a repeatable and robust fabrication procedure, validated across two operators and 24 successful fabrications, along with benchmark simulations and experimental testing. These benchmarks will enable more widespread adoption of soft robotics.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.15422v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.15422v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A repeatable two-part silicone pour-casting workflow can produce soft pneumatic actuators with reliable internal cavities and embedded flex sensing.</p>
-          <p><b>Engineering relevance:</b> The procedures improve manufacturability and calibration of soft robotic actuators, making them more practical for scalable deployment in rehabilitation and surgical systems.</p>
-          <ul><li>Robust pour-casting steps to prevent cavity clogging and ensure airtight sealing.</li><li>Sensor embedding procedure for thin-film flex sensors in the actuator body.</li><li>FEM plus PID-controlled pneumatic experiments to compare simulated and physical bending response.</li></ul>
-          <p><b>Evidence signal:</b> The paper validates the workflow across two operators and 24 successful fabrications, with staircase and sinusoidal tests showing repeatable actuation and close agreement between simulated and measured bending angles.</p>
-          <p><b>Watch item:</b> Viscoelastic effects introduce some hysteresis under dynamic sinusoidal actuation, so calibration may need to be maintained across material batches and operating conditions.</p>
-          <div class="tags"><span>#SoftRobotics</span> <span>#FiniteElementModeling</span> <span>#PneumaticActuation</span> <span>#SiliconeCasting</span> <span>#SensorEmbedding</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>62</strong></div>
-        <p class="date">2026-07-17</p>
-        <h2>A family of mixed-mixed strongly conservative finite element methods for Biot&#x27;s model of consolidation</h2>
-        <p class="authors">Qingguo Hong, Johannes Kraus, Maria Lymbery</p>
-        <p class="abstract">We consider a four-field formulation of Biot&#x27;s quasi-static model of consolidation with the (effective) elastic stress, the solid displacement, the fluid flux and the fluid pressure as unknown physical quantities of interest. The weak form of this system composed of the momentum and mass balance equations complemented by the stress-strain relation and Darcy&#x27;s law yields a two-fold perturbed saddle-point problem. Its well-posedness is proven for a natural choice of inifinite-dimensional Hilbert spaces, where the displacement-flux pair is sought in a novel Hilbert space. Next, based on recent works on $H(\rm div \, \rm div)$-conforming finite elements, we propose a family of mixed-mixed finite element methods that preserve the angular momentum as well as the fluid mass balance pointwise, i.e., in a strong sense. We prove the well-posedness of the arising discrete problem and establish optimal a priori error estimates for the related family of fully conservative mixed-mixed finite element methods.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.16418v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.16418v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper develops a four-field mixed formulation for Biot consolidation that conserves angular momentum and fluid mass pointwise using strongly conservative finite elements.</p>
-          <p><b>Engineering relevance:</b> This enables more physically faithful and stable poromechanics simulations for soil, rock, and geotechnical consolidation problems.</p>
-          <ul><li>Formulate Biot’s quasi-static consolidation with stress, displacement, flux, and pressure as unknowns.</li><li>Prove well-posedness in suitable Hilbert spaces, including a novel space for the displacement-flux pair.</li><li>Design H(div div)-conforming mixed-mixed finite elements that enforce strong local conservation.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports theoretical validation through well-posedness proofs and optimal a priori error estimates for the discrete method.</p>
-          <p><b>Watch item:</b> The approach relies on specialized H(div div)-conforming elements and a novel function-space setting, which may increase implementation complexity.</p>
-          <div class="tags"><span>#BiotModel</span> <span>#FiniteElements</span> <span>#Poromechanics</span> <span>#MixedMethods</span> <span>#Conservation</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>61</strong></div>
-        <p class="date">2026-07-17</p>
-        <h2>Subgrain-resolved Analysis of Degradation in Cu Metallization via Scanning 3DXRD and Thermomechanical Modeling</h2>
-        <p class="authors">Nikhil Prabhu, Laura Neumann, Michael Reisinger, James A. D. Ball, Cedric Corley-Wiciak, Manuel Petersmann</p>
-        <p class="abstract">Metallization layers play a key role in the performance and reliability of modern power semiconductor devices. During short-circuit events, rapid heating of power metallization layers induces thermomechanical incompatibility stresses, which may contribute to material degradation and impact device performance. In this work, potential degradation hotspots associated with thermomechanical loading in Cu power metallization are investigated using a combined experimental--computational approach. Scanning three-dimensional X-ray diffraction measurements are coupled with thermomechanical crystal plasticity simulations to probe the evolution of grain-resolved plastic deformation during rapid cyclic loading. This integrated approach provides insight into the microstructural processes governing degradation hotspot formation, laying the groundwork for future microstructure-informed, physics-based reliability assessment of Cu metallization.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.16108v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.16108v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Scanning 3DXRD combined with crystal plasticity reveals how rapid thermomechanical cycling in Cu metallization concentrates grain-resolved plasticity into potential degradation hotspots.</p>
-          <p><b>Engineering relevance:</b> The study helps explain and predict reliability risks in power semiconductor metallization during short-circuit events, supporting microstructure-informed lifetime assessment.</p>
-          <ul><li>Performed scanning 3D X-ray diffraction to measure grain-resolved deformation in Cu metallization.</li><li>Coupled the measurements with thermomechanical crystal plasticity simulations.</li><li>Tracked plastic deformation evolution under rapid cyclic loading to identify hotspot formation mechanisms.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a combined experimental-computational analysis of grain-resolved plastic deformation evolution under rapid cyclic loading, rather than a single global failure metric.</p>
-          <p><b>Watch item:</b> The approach is highly data- and microstructure-dependent, so transferring the results to other metallization geometries or loading histories may require careful calibration and validation.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#CrystalPlasticity</span> <span>#3DXRD</span> <span>#PowerElectronics</span> <span>#ReliabilityEngineering</span></div>
+          <p><b>Key insight:</b> Bayesian probability unifies forward and inverse uncertainty quantification in mechanics, enabling both parameter inference and surrogate construction under one framework.</p>
+          <p><b>Engineering relevance:</b> For solid mechanics and biomechanics, this provides a principled way to manage experimental variability, calibrate models, and make predictions with quantified uncertainty.</p>
+          <ul><li>Treat forward UQ as uncertainty propagation from inputs to outputs.</li><li>Treat inverse UQ as Bayesian parameter identification/calibration from measurements.</li><li>Use surrogate models, model selection, and experimental design to reduce the cost of inference and prediction.</li></ul>
+          <p><b>Evidence signal:</b> The abstract is a conceptual/theoretical synthesis rather than a new benchmark study, and it argues that surrogates are needed because direct uncertainty propagation can require too many model evaluations.</p>
+          <p><b>Watch item:</b> Bayesian workflows can be computationally demanding and their results depend on prior choices, surrogate fidelity, and data quality.</p>
+          <div class="tags"><span>#UncertaintyQuantification</span> <span>#BayesianInference</span> <span>#ComputationalMechanics</span> <span>#FEMSurrogates</span> <span>#Biomechanics</span></div>
         </section>
       </article>
     
@@ -337,75 +318,94 @@
       <article class="paper">
         <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>60</strong></div>
         <p class="date">2026-07-19</p>
-        <h2>Raviart--Thomas Elements with Geometric Correction for Distorted Quadrilateral Meshes</h2>
-        <p class="authors">So-Hsiang Chou</p>
-        <p class="abstract">Mixed finite element methods based on Raviart--Thomas spaces are widely used for the numerical approximation of second--order elliptic problems in flux form. On quadrilateral meshes, however, the bilinear mapping from the reference element introduces a spatially varying Jacobian, which may violate the inclusion property $\mathrm{div}\,V_h \subset W_h$ for the standard Raviart--Thomas spaces. In this paper we propose a simple modification of the classical Raviart--Thomas elements on quadrilateral meshes. The modification consists of adding geometrically motivated correction terms to the local basis functions in order to compensate for the geometric distortion introduced by the bilinear mapping. The resulting spaces retain the same dimension and degrees of freedom as the classical Raviart--Thomas elements while restoring the compatibility property. We present a general framework for constructing such modified spaces and illustrate the approach by developing modified versions of the lowest order and next--to--lowest order Raviart--Thomas elements. Theoretical analysis establishes optimal approximation properties under the standard shape--regularity assumption for quadrilateral meshes. Numerical experiments on distorted meshes confirm the predicted convergence rates and show that the modified elements yield consistently improved accuracy over the classical Raviart--Thomas formulation as the geometric distortion increases.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17285v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17285v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <h2>Eigenmode analysis of a half-mode uniplanar metamaterial-inspired substrate integrated waveguide</h2>
+        <p class="authors">Maria-Thaleia Passia, Kyriakos Katsaros-Gkouskos, Traianos V. Yioultsis</p>
+        <p class="abstract">In this work, we systematically analyze the propagation characteristics of a new half-mode uniplanar substrate integrated waveguide (SIW) based on complementary split-ring resonators (CSRR), using a finite element method (FEM) eigenmode solver. The proposed half-mode CSRR SIW has a simpler fabrication than the SIW, since the via are substituted by CSRRs, and is more compact than the existing full uniplanar CSRR SIW, since its transverse size is reduced almost by half. To gain insight into the propagation characteristics of the proposed half-mode CSRR SIW and guide its synthesis process, we solve an eigenvalue problem that determines the complex propagation constant of the supported modes. By calculating the dispersion diagrams of the dominant mode, with all loss mechanisms included, we demonstrate that the half-mode uniplanar CSRR SIW retains the performance of the existing full CSRR SIW.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.17403v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17403v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Geometric correction terms can restore the Raviart–Thomas div-conformity lost on distorted quadrilateral meshes while preserving the original element size and degrees of freedom.</p>
-          <p><b>Engineering relevance:</b> This improves mixed finite element flux simulations on practical non-ideal meshes, giving more reliable accuracy for elliptic problems in engineering workflows.</p>
-          <ul><li>Modify local Raviart–Thomas basis functions with geometry-aware correction terms.</li><li>Compensate for bilinear-mapping distortion on quadrilateral elements.</li><li>Apply the framework to lowest- and next-to-lowest-order RT elements without changing DOFs.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports optimal approximation theory plus numerical experiments on distorted meshes showing the modified elements converge as predicted and outperform classical RT as distortion grows.</p>
-          <p><b>Watch item:</b> The benefit depends on quadrilateral mesh shape-regularity and on implementing the correction terms consistently with the geometric mapping.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#RaviartThomas</span> <span>#MixedMethods</span> <span>#MeshDistortion</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> A half-mode CSRR-based substrate integrated waveguide can preserve the propagation behavior of the full uniplanar design while cutting transverse size nearly in half.</p>
+          <p><b>Engineering relevance:</b> The design offers a simpler, more compact waveguide topology that could improve manufacturability and integration in microwave and RF systems.</p>
+          <ul><li>Used a finite element method (FEM) eigenmode solver to analyze the waveguide.</li><li>Solved an eigenvalue problem to obtain complex propagation constants of supported modes.</li><li>Computed dispersion diagrams for the dominant mode with all loss mechanisms included.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports comparative dispersion analysis showing that the half-mode CSRR SIW retains the performance of the existing full CSRR SIW.</p>
+          <p><b>Watch item:</b> Results are based on eigenmode simulation, so practical performance still needs validation under fabrication tolerances and real measurement conditions.</p>
+          <div class="tags"><span>#FEM</span> <span>#EigenmodeAnalysis</span> <span>#Metamaterials</span> <span>#SIW</span> <span>#RFEngineering</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>59</strong></div>
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>59</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>The Butterfly Defect Effect in Cylindrical Shell Buckling: Non-localized Interactions of Localized Imperfections</h2>
+        <p class="authors">Uba K. Ubamanyu, Antoine Blond, John W. Hutchinson, Pedro M. Reis</p>
+        <p class="abstract">We investigate the buckling of axially compressed cylindrical shells containing localized defects, focusing on interactions among multiple defects and between them and the shell edges. Using high-fidelity finite-element simulations, we first characterize the parameter space of single-dimple sensitivity, defect-edge coupling, and pairwise defect-defect interactions. Building on this deterministic baseline, we run stochastic simulations of shells with randomly distributed imperfections whose amplitudes are sampled from a log-normal distribution. Post-buckling deformations form non-axisymmetric, butterfly-shaped patterns whose `wings&#x27; reach far across the shell surface. This spatial extent induces unavoidable interactions with neighboring defects and the clamped edges, so that buckling is not necessarily initiated by the deepest defect. A larger defect population raises the likelihood of an extreme defect, producing a statistical size effect: as the mean number of defects grows, the mean knockdown factor decreases asymptotically and its variability decays exponentially. The butterfly defect effect qualitatively explains the scatter in historical experimental data by correlating the knockdown factor with the cylinder length-to-thickness ratio ($H/t$) rather than the radius-to-thickness ratio ($R/t$) alone, thereby establishing $H$ as a key parameter for stability alongside $R$ and $t$. Nonetheless, the knockdown factors obtained here remain well above those reported in historical experiments, indicating that the localized Gaussian dimple, though nearly the worst-case imperfection for spherical shells, is not so for cylinders.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.19245v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19245v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Localized shell defects interact over long distances through butterfly-shaped post-buckling deformation, so the deepest defect does not always trigger buckling.</p>
+          <p><b>Engineering relevance:</b> Cylinder stability design must account for defect populations and shell length-to-thickness ratio H/t, not just the largest imperfection or R/t alone.</p>
+          <ul><li>High-fidelity finite-element simulations of axially compressed cylindrical shells with single, paired, and edge-near localized defects</li><li>Stochastic simulations with randomly distributed defect amplitudes sampled from a log-normal distribution</li><li>Parameter mapping of defect sensitivity, defect-edge coupling, and defect-defect interactions</li></ul>
+          <p><b>Evidence signal:</b> The simulations show a statistical size effect: as the mean number of defects increases, the mean knockdown factor decreases and its variability decays exponentially.</p>
+          <p><b>Watch item:</b> The study’s knockdown factors remain above historical experimental values, so the Gaussian dimple model may still underpredict the severity of real cylindrical-shell imperfections.</p>
+          <div class="tags"><span>#ShellBuckling</span> <span>#SolidMechanics</span> <span>#FiniteElementAnalysis</span> <span>#StructuralStability</span> <span>#ImperfectionSensitivity</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>59</strong></div>
+        <p class="date">2026-07-21</p>
+        <h2>Bayesian Sequential Quantum Amplitude Estimation for Rare-Event Structural Failure Probability</h2>
+        <p class="authors">Alireza Tabarraei</p>
+        <p class="abstract">Structural reliability analysis often requires estimating small failure probabilities under uncertainty, a task for which direct Monte Carlo simulation becomes inefficient because failure observations are scarce. Quantum amplitude estimation offers a potential quadratic improvement in query complexity for bounded expectation estimation, but practical iterative formulations require reliable inference from finite, amplified measurement data. This paper develops a Bayesian sequential formulation of iterative quantum amplitude estimation for rare-event structural failure probability estimation. Structural failure is represented as a binary indicator over a finite stochastic ensemble and encoded through a lookup-table oracle, allowing the failure probability to be treated as a quantum amplitude. Measurement outcomes collected at different Grover depths are assimilated through Bayesian updating over the amplitude angle, yielding posterior estimates, credible intervals, and uncertainty-aware convergence diagnostics. The framework is evaluated on stochastic finite-element benchmark problems, including a one-dimensional bar and an L-bracket with stress concentration. The results show that amplitude amplification converts rare failure events into measurable success probabilities, enabling substantially lower estimation errors than direct Monte Carlo simulation under the same idealized oracle-query budget. The Bayesian formulation achieves point-estimation accuracy comparable to maximum-likelihood IQAE while additionally providing posterior uncertainty quantification, credible intervals, and transparent convergence assessment. The study demonstrates Bayesian IQAE as a statistically interpretable proof-of-concept for quantum-assisted rare-event reliability analysis, while relying on idealized oracle access.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.18996v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18996v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A Bayesian sequential version of iterative quantum amplitude estimation can turn rare structural failures into measurable quantum amplitudes and estimate failure probability with uncertainty bounds.</p>
+          <p><b>Engineering relevance:</b> This offers a potentially faster, statistically interpretable route for structural reliability analysis when failure events are too rare for efficient direct Monte Carlo simulation.</p>
+          <ul><li>Encode failure as a binary lookup-table oracle over a stochastic ensemble.</li><li>Run iterative quantum amplitude estimation at multiple Grover depths.</li><li>Use Bayesian updating on the amplitude angle to produce posterior estimates and credible intervals.</li></ul>
+          <p><b>Evidence signal:</b> Evaluated on stochastic finite-element benchmarks (a 1D bar and an L-bracket), where the method reduced estimation error versus direct Monte Carlo under the same idealized oracle-query budget and matched maximum-likelihood IQAE accuracy.</p>
+          <p><b>Watch item:</b> The approach depends on idealized oracle access, so practical benefit will hinge on realistic quantum hardware, oracle construction cost, and noise tolerance.</p>
+          <div class="tags"><span>#QuantumComputing</span> <span>#StructuralReliability</span> <span>#RareEvents</span> <span>#BayesianInference</span> <span>#FiniteElementAnalysis</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>AI Solid Mechanics</span><span>arXiv</span><strong>59</strong></div>
         <p class="date">2026-07-20</p>
-        <h2>PRIME: Plasticity Recovery in Multi-Agent Environments for UAV-Assisted Emergency Communication Networks</h2>
-        <p class="authors">Wen Qiu, Zhiqiang He, Wei Zhao, Hiroshi Masui</p>
-        <p class="abstract">Most reinforcement learning controllers for these networks assume stationary conditions, and the few that handle change react to the external environment while leaving the network&#x27;s internal state unexamined. We show that sustained non-stationarity damages this internal state directly: as objectives shift, neurons progressively fall dormant and the shared policy loses the capacity to learn. The obvious remedy, resetting dormant neurons, is unsafe under shared-parameter multi-agent training: many neurons that appear inactive are still receiving strong training gradients, and whether a neuron appears dormant depends on which agent&#x27;s observations it processes. PRIME (Plasticity Recovery In Multi-agent Environments) therefore verifies both directions before intervening. Extending the bidirectional Silent Neuron framework to cooperative multi-agent reinforcement learning, it aggregates activation and gradient statistics over the full team batch, reads the backward signal from the gradient the training loss has already deposited , not from a hand-crafted proxy, and reinitializes only neurons that are simultaneously activation-dormant and gradient-silent. Useful representations are preserved while learning capacity is restored. On a phase-switching UAV emergency communication simulator, PRIME improves interquartile mean return by 24.9\% over MAPPO and holds dormant neuron fractions at 10--20\% versus 40--45\%; ablations attribute the gains to the gradient signal and team-level aggregation rather than to the specific reset operator. A dynamic regret bound shows that the perturbation cost scales with the small silent-subspace dimension rather than the full parameter count.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17922v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17922v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <h2>Plastic smoothing of rough surfaces</h2>
+        <p class="authors">B. N. J. Persson</p>
+        <p class="abstract">When two metal blocks are squeezed together the stresses in the asperity contact regions are usually so large that the asperities deform plastically, at least at short length scales. Many tribology properties of contacts, such as the contact stiffness and the electric and thermal contact resistance, and the fluid flow at interfaces, depend on the surface topography and are hence modified by the plastic flow. Here I present a new way to obtain an effective power spectra of plastically deformed surfaces to be used in the Persson contact mechanics theory. I also present results for the surface height topography obtained using the plastically modified power spectra, and compare to the experimental results of Yusof and Ripin, who studied the influence of plastic flow on the topography for a smooth steel surface squeezed against a rough steel surface. Finally, I discuss why some surfaces after plastic deformation have similar Gaussian roughness as before plastic deformation, only with smaller roughness amplitude, while other surfaces shows very skewed roughness after plastic deformation.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.18208v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18208v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PRIME restores learning capacity in non-stationary multi-agent UAV communication by reinitializing only neurons that are both activation-dormant and gradient-silent.</p>
-          <p><b>Engineering relevance:</b> This helps keep shared-policy multi-agent controllers adaptable during shifting emergency-network conditions without disrupting still-useful representations.</p>
-          <ul><li>Extends the bidirectional Silent Neuron idea to cooperative MARL.</li><li>Aggregates activation and gradient statistics across the full team batch.</li><li>Resets only neurons that are both dormant and receive no meaningful training gradient.</li></ul>
-          <p><b>Evidence signal:</b> On a phase-switching UAV emergency communication simulator, PRIME improved interquartile mean return by 24.9% over MAPPO and reduced dormant neuron fractions to 10–20% from 40–45%.</p>
-          <p><b>Watch item:</b> Because the method depends on team-level activation and gradient statistics, implementation quality and threshold choices may affect when neurons are reset.</p>
-          <div class="tags"><span>#MultiAgentRL</span> <span>#UAVNetworks</span> <span>#PlasticityRecovery</span> <span>#NeuralReset</span> <span>#EmergencyCommunications</span></div>
+          <p><b>Key insight:</b> Plastic deformation can be incorporated into contact mechanics by replacing the original surface roughness with an effective power spectrum for plastically modified surfaces.</p>
+          <p><b>Engineering relevance:</b> This matters for predicting contact stiffness, electric and thermal contact resistance, and interfacial fluid flow in metal contacts where asperities yield plastically.</p>
+          <ul><li>Derive an effective power spectrum for plastically deformed rough surfaces.</li><li>Use the modified spectrum within Persson contact mechanics theory to compute surface height topography.</li><li>Compare predicted topography against experiments on steel-on-steel squeezing.</li></ul>
+          <p><b>Evidence signal:</b> The paper evaluates the approach by comparing the predicted plastically modified roughness topography with experimental results from Yusof and Ripin.</p>
+          <p><b>Watch item:</b> Plastic smoothing may not preserve Gaussian roughness: some surfaces retain a Gaussian-like form with reduced amplitude, while others become strongly skewed after deformation.</p>
+          <div class="tags"><span>#ContactMechanics</span> <span>#Plasticity</span> <span>#SurfaceRoughness</span> <span>#Tribology</span> <span>#SolidMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>59</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
         <p class="date">2026-07-16</p>
-        <h2>Harnessing Machine Learning for Hybrid Constitutive Modelling of Viscoelastic Fluid Flows in Computational Rheology</h2>
-        <p class="authors">J. L. Cummings, C. Fernandes, F. Dong, M. A. Alves, M. S. N. Oliveira</p>
-        <p class="abstract">Recent advances in data-driven modelling have highlighted the potential of hybrid approaches which combine Tensor Basis Neural Networks (TBNN) with Universal Differential Equations (UDE) to discover frame-invariant, non-linear viscoelastic constitutive models. These hybrid models enable the creation of digital twins for complex viscoelastic fluids, offering direct transferability to computational fluid dynamics simulations. In this work, we introduce a reduced dimensional tensor basis formulation that enhances both the physical consistency of the learned representations with respect to the training data and the numerical stability of subsequent simulations. The UDE architecture is embedded into an open-source finite volume solver in which the constitutive response is generated dynamically at runtime based on local fluid flow conditions. Training on synthetic datasets generated using a range of well established viscoelastic models in oscillatory shear flows alone, the performance of the resulting UDEs is evaluated under extrapolation to unseen conditions and flow-types. These include deploying the UDEs in viscometric extensional flows as well as 2D and 3D benchmark flows, such as the 4:1 sudden contraction and cross-slot, providing a quantitative analysis of their capabilities, limitations and failure modes. The proposed reduced-basis framework enables data-efficient discovery of frame-invariant constitutive models that generalise beyond their training regime, capturing key flow features such as the onset and growth of flow-induced elastic instabilities in strong extensional flows even though trained solely on shear data. Quantitative accuracy decreases as extrapolation increases, but incorporating first normal stress difference information further improves quantitative accuracy and extends predictive fidelity to higher Deborah numbers.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.14944v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.14944v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <h2>Robust Silicone Pour Casting and Sensor Embedding Procedures for Soft Robotic Actuators</h2>
+        <p class="authors">Harshit Thakker, Paul Dela Cruz, Mostafa Mo. Massoud, Jacqueline Libby</p>
+        <p class="abstract">Soft robots are well-suited for applications such as rehabilitation and surgery that require adaptable and safe interaction with their environment. However, the challenges of reproducible and scalable fabrication of soft robots limit their real-world deployment. Various fabrication methods have been introduced, but many are labor-intensive and prone to human error. Therefore, traditional two-part pour casting remains an attractive option. This paper presents procedures for robust, repeatable, and scalable fabrication of soft pneumatic actuators using two-part pour casting. The presented methods prevent internal cavity clogging and ensure air-tight sealing. Additionally, a robust sensor embedding procedure for thin-film flex sensors is presented, which allows for accurate and repeatable data acquisition. Finite Element Modeling (FEM) of the soft actuator is performed to analyze stress and deformation from internal pressure loadings. Pneumatic actuation experiments with PID pressure control are performed. Automated image processing is used to calibrate the embedded flex sensor to bending angle measurements. Staircase and sinusoidal profile actuation experiments validate the performance of the fabricated actuator. Angle response experiments for the staircase input show repeatable performance, and the sinusoidal input shows a small amount of hysteresis consistent with viscoelastic response to pneumatic actuation of soft actuators. Simulated and real-world bending angles show comparable response. These methods provide a repeatable and robust fabrication procedure, validated across two operators and 24 successful fabrications, along with benchmark simulations and experimental testing. These benchmarks will enable more widespread adoption of soft robotics.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.15422v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.15422v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A reduced-basis hybrid TBNN-UDE framework can learn frame-invariant viscoelastic constitutive laws from shear data and still generalize to more complex flow conditions.</p>
-          <p><b>Engineering relevance:</b> This enables more data-efficient digital twins for computational rheology, with constitutive models that can be embedded directly in CFD solvers for predicting viscoelastic flow behavior.</p>
-          <ul><li>Train hybrid Tensor Basis Neural Network + Universal Differential Equation models on synthetic shear-flow data.</li><li>Use a reduced tensor-basis formulation to improve physical consistency and numerical stability.</li><li>Embed the learned constitutive law into an open-source finite volume solver for runtime evaluation in CFD.</li></ul>
-          <p><b>Evidence signal:</b> The models were trained only on oscillatory shear datasets generated from established viscoelastic laws and then evaluated by extrapolation to extensional flows and 2D/3D benchmarks such as sudden contraction and cross-slot cases.</p>
-          <p><b>Watch item:</b> Performance degrades as the test flows move farther from the training regime, so extrapolation to strong 3D and high-Deborah-number conditions remains a key risk.</p>
-          <div class="tags"><span>#ComputationalRheology</span> <span>#MachineLearning</span> <span>#ConstitutiveModeling</span> <span>#ViscoelasticFlow</span> <span>#DigitalTwin</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>58</strong></div>
-        <p class="date">2026-07-17</p>
-        <h2>Constrained Hebbian Learning Supports Efficient Representational Allocation under Structural Constraints</h2>
-        <p class="authors">Patrick Inoue, Florian Röhrbein, Andreas Knoblauch</p>
-        <p class="abstract">Introduction: Biological systems face anatomical and metabolic constraints, including costly synaptic maintenance and limited connectivity. These constraints favor neural codes that compress behaviorally relevant information into low-redundancy patterns. We test whether an excitatory competitive Hebbian rule can support synaptic resource allocation under such constraints and whether the resulting representations occupy a more favorable cost-performance regime than reference learning rules. Methods: Representational cost is quantified using mutual-information-based measures derived from the Variational Information Bottleneck. Experiments use fixed audiovisual embeddings from three audiovisual benchmarks (AVE, Kinetics-Sounds, VGGSound100) to isolate downstream associative plasticity. Hebbian learning is compared with Dense Difference Target Propagation (DDTP) and backpropagation (BP) under matched sparsity and architectural constraints. Results: Hebbian learning achieves lower task-information cost (CTI) than sparse BP and DDTP in the main compressed comparisons, while reaching CTI values comparable to shallow BP with nonnegative weights. Rather than uniformly improving classification performance, Hebbian learning shifts the trade-off between task-relevant information and representational cost, yielding lower CTI at comparable functional performance in several settings. Discussion: The results indicate a cost-performance trade-off rather than uniform accuracy gains. For a given level of task-relevant information, Hebbian representations retain less input information while preserving functional performance, although accuracy is slightly reduced on some datasets. These findings support interpreting Hebbian learning as a mechanism for synaptic resource allocation rather than as a general strategy for maximizing audiovisual classification accuracy.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.16027v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.16027v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Constrained Hebbian learning reallocates limited synaptic resources to produce lower-cost representations that preserve task-relevant information under structural sparsity constraints.</p>
-          <p><b>Engineering relevance:</b> For resource-limited AI and neuromorphic systems, this suggests a practical learning rule for efficiency-aware representation design rather than maximizing raw accuracy alone.</p>
-          <ul><li>Compared an excitatory competitive Hebbian rule against sparse backpropagation and DDTP.</li><li>Used fixed audiovisual embeddings from AVE, Kinetics-Sounds, and VGGSound100 to isolate associative plasticity.</li><li>Evaluated representational cost with mutual-information-based CTI metrics from the Variational Information Bottleneck.</li></ul>
-          <p><b>Evidence signal:</b> Across three audiovisual benchmarks, Hebbian learning achieved lower task-information cost than sparse BP and DDTP in the main compressed comparisons, while maintaining comparable functional performance in several settings.</p>
-          <p><b>Watch item:</b> The approach can slightly reduce classification accuracy on some datasets, so its benefit depends on whether cost-efficiency is prioritized over peak performance.</p>
-          <div class="tags"><span>#HebbianLearning</span> <span>#RepresentationLearning</span> <span>#InformationBottleneck</span> <span>#NeuromorphicAI</span> <span>#EfficientLearning</span></div>
+          <p><b>Key insight:</b> A repeatable two-part pour-casting workflow and sensor embedding method enable robust fabrication of soft pneumatic actuators with reliable bending response.</p>
+          <p><b>Engineering relevance:</b> This gives soft robotics researchers and manufacturers a practical, scalable route to build airtight actuators and integrate sensing for control and validation.</p>
+          <ul><li>Use two-part pour casting with procedures that prevent cavity clogging and improve airtight sealing.</li><li>Embed thin-film flex sensors using a repeatable placement and encapsulation workflow.</li><li>Validate the actuator with FEM, PID pressure-controlled actuation, and automated image-based angle calibration.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports repeatable tests across two operators and 24 successful fabrications, with staircase and sinusoidal experiments showing comparable simulated and measured bending behavior.</p>
+          <p><b>Watch item:</b> Thin-film flex sensing and pneumatic soft actuators can still show viscoelastic hysteresis, so calibration and operator consistency remain important.</p>
+          <div class="tags"><span>#SoftRobotics</span> <span>#FiniteElementModeling</span> <span>#PneumaticActuation</span> <span>#SensorEmbedding</span> <span>#AdditiveManufacturing</span></div>
         </section>
       </article>
     </section>

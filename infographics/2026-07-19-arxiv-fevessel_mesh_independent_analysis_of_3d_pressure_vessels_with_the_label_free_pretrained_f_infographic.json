@@ -1,24 +1,24 @@
 {
-  "key_insight": "FEVessel extends pretrained finite-element surrogates to 3D pressure vessels by learning from physics-based energy instead of FEM labels, enabling mesh-independent prediction and solver warm-starting.",
-  "engineering_relevance": "It can reduce analysis cost and manual mesh repair for industrial pressure-vessel simulation while remaining robust across materials, geometries, loads, and degraded meshes.",
+  "key_insight": "FEVessel learns a mesh-independent 3D pressure-vessel surrogate without FEM labels, then uses its prediction to accelerate iterative finite element solves.",
+  "engineering_relevance": "It offers a practical way to analyze pressure vessels across changing materials, geometries, loads, and even degenerate meshes while reducing solve time and manual mesh repair.",
   "method": [
-    "Encode each vessel as a point cloud with coordinate, material, and load channels.",
-    "Pretrain a Transolver on total potential energy rather than labeled FEM displacements/stresses.",
-    "Use the prediction to warm-start iterative solvers such as AMG."
+    "Represents each vessel as a point cloud with coordinate, material, and load features.",
+    "Pretrains a Transolver operator on total potential energy instead of supervised FEM displacement labels.",
+    "Uses the pretrained prediction as a warm start for algebraic multigrid/iterative FEM solvers."
   ],
-  "evidence_signal": "The abstract reports 1.35% displacement error, 2.07% strain error, 18 AMG iterations vs 195, a 9.2× wall-clock speedup, and <3.66% error on inverted/sliver meshes.",
-  "watch_item": "Performance is reported for a specific pressure-vessel setting, so generalization to other solid mechanics problems and production-grade integration should be validated.",
+  "evidence_signal": "The model reports 1.35% relative displacement error, 2.07% strain error, a drop from 195 to 18 AMG iterations, and a 9.2× wall-clock speedup at 10^-3 tolerance, while staying below 3.66% error on inverted/sliver meshes.",
+  "watch_item": "Performance depends on the quality of the energy-based pretraining and point-cloud representation, so transfer to new vessel families or extreme loading regimes may still need careful validation.",
   "hashtags": [
     "#FiniteElementMethod",
-    "#PhysicsAI",
     "#PressureVessel",
-    "#NeuralOperator",
+    "#NeuralOperators",
+    "#MeshIndependent",
     "#ComputationalMechanics"
   ],
   "paper_id": "2026-07-19-arxiv-fevessel_mesh_independent_analysis_of_3d_pressure_vessels_with_the_label_free_pretrained_f",
   "paper_title": "FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method",
   "paper_date": "2026-07-19",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-07-22T11:00:00",
+  "generated_at": "2026-07-23T11:02:28",
   "generator": "openai"
 }

@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-07-24
+Generated: 2026-07-25
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling
@@ -75,7 +75,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.19239v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-21-arxiv-spatially_resolved_in_situ_characterisation_of_competing_martensitic_transformation_pathwa_infographic.json
 
-## 10. FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method
+## 10. Matrix-free phase-field modeling of fracture in micromechanical testing simulations of inelastic materials
+
+- Date: 2026-07-23
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2607.21150v1
+- PDF: https://arxiv.org/pdf/2607.21150v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-23-arxiv-matrix_free_phase_field_modeling_of_fracture_in_micromechanical_testing_simulations_of_ine_infographic.json
+
+## 11. FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method
 
 - Date: 2026-07-19
 - Category: FEM Surrogates
@@ -83,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.17318v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-19-arxiv-fevessel_mesh_independent_analysis_of_3d_pressure_vessels_with_the_label_free_pretrained_f_infographic.json
 
-## 11. Mixed finite element discretization of intrinsic geometrically exact beams for explicit multibody dynamics
+## 12. Mixed finite element discretization of intrinsic geometrically exact beams for explicit multibody dynamics
 
 - Date: 2026-07-22
 - Category: FEM Surrogates
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.20245v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-22-arxiv-mixed_finite_element_discretization_of_intrinsic_geometrically_exact_beams_for_explicit_mu_infographic.json
 
-## 12. Wavenumber-explicit stability and preasymptotic error analysis of UPML finite element method for obstacle scattering problems
+## 13. Wavenumber-explicit stability and preasymptotic error analysis of UPML finite element method for obstacle scattering problems
 
 - Date: 2026-07-22
 - Category: FEM Surrogates
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.20331v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-22-arxiv-wavenumber_explicit_stability_and_preasymptotic_error_analysis_of_upml_finite_element_meth_infographic.json
 
-## 13. Thickness-dependent crack suppression and wrinkle formation in freestanding BaTiO3 membranes
+## 14. Thickness-dependent crack suppression and wrinkle formation in freestanding BaTiO3 membranes
 
 - Date: 2026-07-22
 - Category: Fracture and Damage
@@ -107,21 +115,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.20054v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-22-arxiv-thickness_dependent_crack_suppression_and_wrinkle_formation_in_freestanding_batio3_membran_infographic.json
 
-## 14. 3D Uncertainty Quantification for the Photo-Acoustic Tomography
+## 15. 3D Uncertainty Quantification for the Photo-Acoustic Tomography
 
 - Date: 2026-07-23
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2607.21373v1
 - PDF: https://arxiv.org/pdf/2607.21373v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-23-arxiv-3d_uncertainty_quantification_for_the_photo_acoustic_tomography_infographic.json
-
-## 15. Matrix-free phase-field modeling of fracture in micromechanical testing simulations of inelastic materials
-
-- Date: 2026-07-23
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2607.21150v1
-- PDF: https://arxiv.org/pdf/2607.21150v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-23-arxiv-matrix_free_phase_field_modeling_of_fracture_in_micromechanical_testing_simulations_of_ine_infographic.json
 
 ## 16. Efficient strain-space hyperreduction in large-deformation solid mechanics
 

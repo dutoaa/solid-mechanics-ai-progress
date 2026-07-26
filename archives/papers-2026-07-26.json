@@ -25,29 +25,29 @@
         "url": "https://arxiv.org/pdf/2607.20339v1"
       }
     ],
-    "score": 88,
+    "score": 93,
     "infographic": {
-      "key_insight": "The paper introduces physics-augmented neural networks that learn uncertainty-aware hyperelastic constitutive laws as lower, mean, upper, and fuzzy response bounds while enforcing mechanics constraints.",
-      "engineering_relevance": "This gives solid mechanics simulations a compact, distribution-free way to quantify aleatoric uncertainty in stress-strain behavior and propagate it into finite element analyses.",
+      "key_insight": "The paper introduces iPANNs and fPANNs to learn physics-consistent lower, mean, and upper hyperelastic constitutive responses that bound noisy stress data and represent uncertainty explicitly.",
+      "engineering_relevance": "This provides a compact, distribution-free way to quantify and propagate aleatoric uncertainty in constitutive laws for more reliable mechanics and finite element simulations.",
       "method": [
-        "iPANN learns sparse lower, mean, and upper free-energy branches; stresses are obtained by automatic differentiation to bound noisy observations.",
-        "fPANN converts the interval model into a fuzzy-set representation using alpha-cut interpolation for nested admissible responses.",
-        "A two-stage transfer-learning strategy first fits a sparse mean model, then fine-tunes bound branches with smoothed L0 regularization and mechanistic constraints."
+        "Learn sparse free-energy density branches with a physics-augmented neural network and obtain stress via automatic differentiation.",
+        "Use a two-stage transfer-learning process: fit a sparse mean model first, then fine-tune lower and upper bound branches.",
+        "Embed iPANN bounds into a fuzzy-set formulation via alpha-cut interpolation to produce nested admissible responses."
       ],
-      "evidence_signal": "The models were tested on synthetic isotropic hyperelastic data with heteroscedastic noise, shifted noise means, and varying noise magnitudes, and the learned bounds enclosed noisy stress data while generalizing to the test set.",
-      "watch_item": "Because the approach depends on constrained training and sparse branch fitting, performance and interpretability may be sensitive to the quality of the initial mean model and to hyperparameter choices.",
+      "evidence_signal": "The models were tested on synthetic isotropic hyperelastic data with heteroscedastic noise, random realizations, shifted noise means, and varying noise magnitudes, and the learned bounds enclosed noisy stress observations while generalizing to the test set.",
+      "watch_item": "Performance depends on the quality of the assumed physics constraints and the two-stage training setup, so overly sparse or misspecified energy forms may limit robustness.",
       "hashtags": [
-        "#SolidMechanics",
         "#ConstitutiveModeling",
         "#UncertaintyQuantification",
         "#PhysicsInformedNN",
+        "#Hyperelasticity",
         "#FiniteElementAnalysis"
       ],
       "paper_id": "2026-07-22-arxiv-interval_and_fuzzy_physics_augmented_neural_networks_ipann_and_fpann_for_uncertainty_quant",
       "paper_title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling",
       "paper_date": "2026-07-22",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-26T10:36:31",
+      "generated_at": "2026-07-25T10:21:14",
       "generator": "openai"
     }
   },
@@ -77,29 +77,29 @@
         "url": "https://arxiv.org/pdf/2607.21164v1"
       }
     ],
-    "score": 78,
+    "score": 83,
     "infographic": {
-      "key_insight": "A mixed discrete Cosserat rod model can be derived rigorously from a low-order mixed Petrov–Galerkin FEM, yielding a two-node rigid-body chain with compliant inter-node forces and moments.",
-      "engineering_relevance": "This gives a robust, lock-free rod discretization that is attractive for soft robotics and other slender-structure simulations needing efficient coupling between kinematics and internal forces.",
+      "key_insight": "A mixed Petrov–Galerkin Cosserat rod FEM with linear kinematics and midpoint/trapezoidal quadrature can be recast as a two-node discrete rod with compliant force/moment couplings and no locking.",
+      "engineering_relevance": "The formulation offers a robust, graphically intuitive rod model for soft robotics and slender-structure simulation while preserving FEM accuracy and convergence.",
       "method": [
-        "Represent the rod as rigid nodes connected by elastic interactions between adjacent pairs",
-        "Compute dilatation, shear, torsion, and curvature from relative node kinematics",
-        "Use compliance-form constitutive laws with independent stress degrees of freedom; midpoint/trapezoidal quadrature recovers the mixed FEM structure"
+        "Represent the rod as rigid-body nodes connected by elastic interactions.",
+        "Compute dilatation, shear, torsion, and curvature from relative node kinematics.",
+        "Use compliance-based constitutive laws with independent stress DOFs and mixed FEM quadrature (midpoint/trapezoidal)."
       ],
-      "evidence_signal": "Three numerical examples—varying cross sections, tendon-driven actuation, and coupled longitudinal-torsional dynamics—show accuracy, robustness, and convergence.",
-      "watch_item": "The method depends on consistent midpoint/trapezoidal integration and careful handling of pairwise couplings to preserve the mixed FEM benefits.",
+      "evidence_signal": "The abstract reports three numerical examples—varying cross sections, tendon-driven actuation, and coupled longitudinal-torsional dynamics—showing accuracy, robustness, and convergence.",
+      "watch_item": "Because the discrete model comes from a specific mixed FEM setup and quadrature choice, implementation must preserve the coupling and integration scheme to retain the no-locking behavior.",
       "hashtags": [
         "#CosseratRod",
         "#FiniteElementMethod",
         "#SoftRobotics",
-        "#MixedFormulation",
-        "#ComputationalMechanics"
+        "#ComputationalMechanics",
+        "#MixedFormulation"
       ],
       "paper_id": "2026-07-23-arxiv-a_mixed_discrete_cosserat_rod_formulation",
       "paper_title": "A Mixed Discrete Cosserat Rod Formulation",
       "paper_date": "2026-07-23",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-26T10:36:34",
+      "generated_at": "2026-07-25T10:21:17",
       "generator": "openai"
     }
   },
@@ -129,29 +129,29 @@
         "url": "https://arxiv.org/pdf/2607.20378v1"
       }
     ],
-    "score": 72,
+    "score": 77,
     "infographic": {
-      "key_insight": "PG-KINN improves physics-informed PDE solving by pairing a KAN trial space with a Petrov-Galerkin weak form, reducing derivative burden and improving accuracy/conditioning over strong-form and energy-form approaches.",
-      "engineering_relevance": "This makes the method especially useful for solid mechanics problems with nonlinear constitutive behavior, singularities, complex geometries, and inverse parameter identification.",
+      "key_insight": "PG-KINN couples a KAN trial space with a Petrov-Galerkin weak form, using compactly supported polynomial test functions to improve accuracy, stability, and interpretability for forward and inverse PDEs.",
+      "engineering_relevance": "This gives computational mechanics a more robust physics-informed learning framework for challenging solid-mechanics problems where MLP-based PINNs struggle with spectral bias, high derivatives, and difficult inverse identification.",
       "method": [
-        "KAN as the trial network with learnable spline activations",
-        "Independent compactly supported piecewise-polynomial test functions",
-        "Gauss-Legendre quadrature with integration by parts for element-wise weak residuals"
+        "KAN as the trial-function approximator with learnable spline activations",
+        "Independent piecewise-polynomial test space in a Petrov-Galerkin weak form",
+        "Gauss-Legendre quadrature after integration by parts to reduce derivative order"
       ],
-      "evidence_signal": "The abstract reports consistent gains over MLP baselines and state-of-the-art KAN-based strong/energy/inverse methods across benchmarks including crack singularities, stress concentration, hyperelasticity, inverse media identification, and complex geometries.",
-      "watch_item": "Performance depends on a correct Petrov-Galerkin setup and quadrature/test-space design, which may add implementation complexity and sensitivity to basis choices.",
+      "evidence_signal": "The abstract reports consistent outperformance over MLP baselines and prior KAN-based strong-form, energy-form, and inverse (PIKAN) methods across crack singularities, stress concentration, Neo-Hookean hyperelasticity, inverse heterogeneous media, and complex geometries.",
+      "watch_item": "Performance depends on careful construction of localized test functions and numerical quadrature; the added weak-form machinery may increase implementation complexity versus standard strong-form PINNs.",
       "hashtags": [
-        "#PhysicsInformedAI",
+        "#PhysicsInformedML",
         "#SolidMechanics",
         "#PetrovGalerkin",
-        "#KAN",
-        "#PDEs"
+        "#KolmogorovArnoldNetworks",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-22-arxiv-pg_kinn_a_physics_informed_petrov_galerkin_kolmogorov_arnold_network_for_solving_forward_a",
       "paper_title": "PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs",
       "paper_date": "2026-07-22",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-26T10:36:37",
+      "generated_at": "2026-07-25T10:21:20",
       "generator": "openai"
     }
   },
@@ -180,29 +180,29 @@
         "url": "https://arxiv.org/pdf/2607.21242v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "The paper combines semi-smooth Newton solving, POD-based reduction, and neural-network corrections to build a faster reduced-order solver for nonlinear parametric variational inequalities.",
-      "engineering_relevance": "This enables efficient simulation of challenging mechanics problems such as obstacle contact and frictional contact while retaining accuracy and lowering online computational cost.",
+      "key_insight": "The paper combines semi-smooth Newton solvers with POD, neural-network corrections, and hyper-reduction to efficiently solve nonlinear parametric variational inequalities in mechanics.",
+      "engineering_relevance": "This enables faster surrogate simulation of obstacle and frictional contact problems while preserving mixed primal-dual physics and complementarity constraints.",
       "method": [
-        "Mixed primal-dual formulation with projection-based complementarity conditions solved by semi-smooth Newton iterations.",
-        "POD reduction of both primal and dual snapshot spaces, then a neural network learns corrections in truncated coordinates to form a nonlinear manifold.",
-        "Sparse cubature hyper-reduction with greedy nonnegative least squares accelerates residual evaluation in the online phase."
+        "Build POD reduced bases from primal and dual snapshots for linear reduced-order models.",
+        "Augment truncated POD coordinates with two feedforward neural networks to form a nonlinear manifold approximation.",
+        "Apply sparse cubature hyper-reduction via greedy nonnegative least squares to cut residual-evaluation cost online."
       ],
-      "evidence_signal": "The framework is tested on a 2D obstacle problem and a 3D frictional contact problem, with comparisons against full-order, linear reduced, neural-augmented reduced, and hyper-reduced models showing accurate approximations and substantial speedups.",
-      "watch_item": "Performance depends on how well the learned manifold and hyper-reduction remain compatible; inaccurate training snapshots or cubature selection could degrade robustness.",
+      "evidence_signal": "The approach is validated on a 2D obstacle problem and a 3D frictional contact problem, comparing full-order, linear reduced, neural-augmented, and hyper-reduced variants.",
+      "watch_item": "Performance depends on the quality of snapshot coverage and on careful coupling between hyper-reduction and the learned nonlinear manifold.",
       "hashtags": [
+        "#SolidMechanics",
         "#ModelOrderReduction",
-        "#ComputationalMechanics",
-        "#NonlinearSolvers",
-        "#NeuralNetworks",
-        "#HyperReduction"
+        "#NeuralSurrogates",
+        "#SemiSmoothNewton",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-23-arxiv-a_hyper_reduced_neural_network_augmented_semi_smooth_newton_method_for_nonlinear_parametri",
       "paper_title": "A Hyper-Reduced Neural Network-Augmented Semi-smooth Newton Method for Nonlinear Parametric Variational Inequalities",
       "paper_date": "2026-07-23",
       "paper_category": "AI Solid Mechanics",
-      "generated_at": "2026-07-26T10:36:40",
+      "generated_at": "2026-07-25T10:21:22",
       "generator": "openai"
     }
   },
@@ -231,29 +231,29 @@
         "url": "https://arxiv.org/pdf/2607.20224v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "A Bayesian finite element model reconstructs steady vascular velocity and pressure fields from sparse noisy measurements while quantifying uncertainty and enforcing physics.",
-      "engineering_relevance": "This enables more reliable clinical flow diagnostics by estimating pressure drop, flow rates, and wall shear stress from under-resolved patient-specific data.",
+      "key_insight": "A Bayesian finite element model reconstructs steady blood-flow velocity and pressure from sparse noisy measurements while explicitly quantifying uncertainty.",
+      "engineering_relevance": "This enables clinically useful flow-field estimation and derived metrics like pressure drop, flow rate, and wall shear stress without requiring offline training data.",
       "method": [
-        "Represent velocity and pressure with Taylor-Hood finite element basis functions.",
-        "Use maximum-entropy physics-informed priors plus a noise-based likelihood to form the posterior.",
-        "Compute the MAP via sparse nonlinear least squares, eliminating pressure analytically and using a Laplace approximation for uncertainty."
+        "Represent velocity and pressure with Taylor-Hood finite elements.",
+        "Use maximum-entropy physics-informed priors plus a noise likelihood to form a posterior.",
+        "Compute MAP via sparse nonlinear least squares; eliminate pressure analytically and use Laplace approximation for uncertainty."
       ],
-      "evidence_signal": "On patient-specific cerebral aneurysm, aortic aneurysm, and aortic coarctation cases, the method outperformed tricubic interpolation and matched PINN-level reconstruction accuracy while improving wall shear stress estimates.",
-      "watch_item": "The approach relies on steady-flow assumptions and a Laplace approximation, so strongly nonlinear or highly unsteady flows may require additional modeling care.",
+      "evidence_signal": "Evaluated on patient-specific cerebral aneurysm, aortic aneurysm, and aortic coarctation geometries, with reconstructions more accurate than tricubic interpolation and comparable to a PINN, and wall shear stress recovered more accurately than both.",
+      "watch_item": "The approach targets steady 3D flows and depends on solver quality, mesh/basis choice, and the assumed noise model for reliable uncertainty estimates.",
       "hashtags": [
         "#PhysicsInformedML",
         "#BayesianInference",
         "#FiniteElementMethod",
-        "#UncertaintyQuantification",
-        "#BiomedicalFlow"
+        "#ComputationalHemodynamics",
+        "#UncertaintyQuantification"
       ],
       "paper_id": "2026-07-22-arxiv-bayesian_finite_element_regression_for_vascular_flow_reconstruction_with_quantified_uncert",
       "paper_title": "Bayesian finite element regression for vascular flow reconstruction with quantified uncertainty",
       "paper_date": "2026-07-22",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-07-26T10:36:42",
+      "generated_at": "2026-07-25T10:21:24",
       "generator": "openai"
     }
   },
@@ -282,29 +282,29 @@
         "url": "https://arxiv.org/pdf/2607.19227v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "The paper turns hyperelastic continuum mechanics into an edge-strain interaction-potential formulation that supports both passive and active tissue dynamics without relying on a full finite-element global nonlinear solve.",
-      "engineering_relevance": "This provides a faster, discrete solver framework for simulating biologically realistic active soft tissues such as the myocardium while retaining continuum-level energetic consistency.",
+      "key_insight": "A tetrahedral edge-strain interaction-potential formulation can reproduce hyperelastic passive response and active contraction while preserving continuum energetic coupling.",
+      "engineering_relevance": "It offers a faster alternative to finite-element nonlinear solves for simulating active soft tissues such as myocardium, with better suitability for large-scale dynamic problems.",
       "method": [
-        "Recast hyperelastic constitutive laws using tetrahedral edge strain rather than independent mass-spring links.",
-        "Embed active contraction via active-strain multiplicative decomposition expressed as a time-dependent activated reference configuration.",
-        "Add an incompressibility treatment designed to avoid volumetric locking while preserving the energy balance."
+        "Recasts hyperelastic constitutive laws into tetrahedral edge strains rather than independent springs.",
+        "Implements active strain via a time-dependent activated reference configuration.",
+        "Adds an incompressibility treatment designed to avoid volumetric locking while retaining a continuum interpretation."
       ],
-      "evidence_signal": "The abstract reports numerical tests across multiple hyperelastic laws and a realistic ventricle case, showing correct energy balance and physiologically consistent longitudinal shortening and wall thickening.",
-      "watch_item": "Performance and accuracy still depend on how well the edge-based discretization and incompressibility strategy generalize across mesh quality, material law choice, and highly nonlinear loading.",
+      "evidence_signal": "The method is validated on multiple hyperelastic laws and a realistic ventricle case, showing preserved energy balance and literature-consistent longitudinal shortening and wall thickening.",
+      "watch_item": "Accuracy and robustness will depend on how well the edge-based incompressibility and active-strain updates are implemented for highly nonlinear or near-incompressible regimes.",
       "hashtags": [
         "#SolidMechanics",
         "#Hyperelasticity",
         "#ActiveMatter",
         "#ComputationalMechanics",
-        "#Biomechanics"
+        "#FiniteElements"
       ],
       "paper_id": "2026-07-21-arxiv-an_interaction_potential_method_for_passive_and_active_dynamics_of_hyperelastic_materials",
       "paper_title": "An interaction potential method for passive and active dynamics of hyperelastic materials",
       "paper_date": "2026-07-21",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-26T10:36:45",
+      "generated_at": "2026-07-25T10:21:26",
       "generator": "openai"
     }
   },
@@ -333,29 +333,29 @@
         "url": "https://arxiv.org/pdf/2607.17885v1"
       }
     ],
-    "score": 62,
+    "score": 67,
     "infographic": {
-      "key_insight": "A hybrid-dimensional Biot formulation is solved on non-conforming fracture meshes by combining XFEM, Lagrange multipliers, and optimization-based domain decomposition to handle discontinuities in both displacement and pressure.",
-      "engineering_relevance": "This offers a practical way to model coupled flow and deformation in fractured porous media without requiring mesh conformity to fractures, which is valuable for subsurface engineering and geomechanics.",
+      "key_insight": "The paper couples XFEM and an optimization-based mixed-dimensional domain decomposition method to solve hybrid-dimensional Biot fracture problems with discontinuous displacement and pressure fields.",
+      "engineering_relevance": "It enables more realistic and robust simulation of flow-mechanics interactions in fractured porous media, even when fractures cut arbitrarily through the 3D mesh.",
       "method": [
-        "XFEM allows 3D mesh elements to intersect fractures arbitrarily while representing displacement and pressure jumps.",
-        "Lagrange multipliers enforce displacement continuity and provide fracture traction/stress.",
-        "Fixed-stress splitting decouples flow and mechanics, and the mixed-dimensional pressure solve is accelerated with Conjugate Gradient."
+        "XFEM on the 3D mesh allows displacement and pressure discontinuities across fractures.",
+        "A saddle-point mechanics formulation uses Lagrange multipliers to enforce displacement continuity and recover fracture tractions.",
+        "Fixed-stress splitting decouples flow and mechanics, while the mixed-dimensional pressure subproblem is solved with CG."
       ],
-      "evidence_signal": "The abstract reports that the fixed-stress scheme combined with the CG solver is highly effective for this class of mixed-dimensional Biot problems, though no specific numerical benchmarks are given in the abstract.",
-      "watch_item": "Implementation is nontrivial because it requires robust handling of XFEM discontinuities, Lagrange multiplier constraints, and optimization-based coupling on mixed-dimensional geometries.",
+      "evidence_signal": "The abstract reports that the combined fixed-stress and CG strategy is highly effective for this class of mixed-dimensional coupled problems.",
+      "watch_item": "Implementation may be challenging because the method requires stable coupling of nonconforming XFEM discretization, Lagrange multipliers, and mixed-dimensional optimization-based solvers.",
       "hashtags": [
-        "#FEM",
         "#XFEM",
-        "#BiotPoroelasticity",
+        "#BiotProblem",
         "#FracturedMedia",
-        "#DomainDecomposition"
+        "#DomainDecomposition",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-20-arxiv-hybrid_dimensional_biot_problem_with_an_optimization_based_domain_decomposition_approach",
       "paper_title": "Hybrid-Dimensional Biot Problem with an Optimization Based Domain Decomposition Approach",
       "paper_date": "2026-07-20",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-26T10:36:48",
+      "generated_at": "2026-07-25T10:21:29",
       "generator": "openai"
     }
   },
@@ -385,29 +385,29 @@
         "url": "https://arxiv.org/pdf/2607.20332v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "The paper develops a shape-optimization framework for thermoelastic structures when material properties vary with temperature, enabling sensitivity-based design of optimal domains.",
-      "engineering_relevance": "This is relevant for designing lightweight or high-performance components in thermal environments, where coupling between heat and deformation changes the optimal geometry.",
+      "key_insight": "The paper extends shape optimization to thermoelasticity with temperature-dependent material properties and derives a shape derivative for domain-integral functionals.",
+      "engineering_relevance": "It provides a computational framework for designing structures under coupled thermal-mechanical effects, relevant to lightweighting, compliance control, and stress-constrained design.",
       "method": [
-        "Prove existence of the shape derivative for thermoelasticity with temperature-dependent parameters.",
-        "Derive generic domain-integral expressions for objective functionals.",
-        "Solve the coupled boundary-value problems with finite elements and update shapes using a level-set method."
+        "Derive existence of the shape derivative for thermoelastic PDE-constrained optimization.",
+        "Formulate generic domain-integral objective functionals for shape optimization.",
+        "Solve the coupled boundary value problems with finite elements and represent shapes with a level set method."
       ],
-      "evidence_signal": "The abstract reports numerical results for two benchmark optimization settings: compliance minimization under a volume constraint and volume minimization under an $L^2$-norm von Mises stress constraint.",
-      "watch_item": "Practical performance depends on accurate coupling of temperature-dependent constitutive laws with mesh-based level-set updates, which can be numerically delicate.",
+      "evidence_signal": "The abstract reports numerical results for two benchmark optimization settings: compliance minimization with a volume constraint and volume minimization with an $L^2$ von Mises stress constraint.",
+      "watch_item": "The formulation depends on accurate temperature-dependent material laws and can be sensitive to numerical resolution in the coupled FEM/level-set optimization loop.",
       "hashtags": [
-        "#Thermoelasticity",
         "#ShapeOptimization",
+        "#Thermoelasticity",
         "#FiniteElementMethod",
         "#LevelSetMethod",
-        "#ConstitutiveModeling"
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-22-arxiv-shape_optimization_for_thermoelasticity_with_temperature_dependent_material_parameters",
       "paper_title": "Shape optimization for thermoelasticity with temperature-dependent material parameters",
       "paper_date": "2026-07-22",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-26T10:36:50",
+      "generated_at": "2026-07-25T10:21:31",
       "generator": "openai"
     }
   },
@@ -436,286 +436,29 @@
         "url": "https://arxiv.org/pdf/2607.19239v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "During nanoscratch of 316H stainless steel, the local stress state selects a sequential martensitic path of γ → ε → α′, with hydrostatic compression favoring ε and shear enabling ε → α′.",
-      "engineering_relevance": "The results show how contact pressure and sliding govern tribolayer formation and galling-related surface hardening, which is directly relevant to wear-resistant alloy design and tribological modeling.",
+      "key_insight": "During nanoscratch of 316H stainless steel, the martensitic transformation follows a pressure- and shear-controlled sequence of γ-austenite → ε-martensite → α′-martensite, with hydrostatic constraint favoring ε and sliding shear promoting α′.",
+      "engineering_relevance": "This reveals how local contact mechanics govern tribolayer formation and galling behavior, helping guide alloy and surface design for improved wear resistance.",
       "method": [
-        "In-situ synchrotron X-ray nanodiffractometry during nanoscratch",
-        "Finite element modeling of the subsurface strain/stress field",
-        "Spatial mapping of martensite phase evolution beneath a single asperity"
+        "In-situ synchrotron X-ray nanodiffractometry during nanoscratch testing",
+        "Spatial mapping of evolving strain and martensite phase distribution beneath a single sliding asperity",
+        "Finite element modeling to interpret stress states and pathway selection"
       ],
-      "evidence_signal": "The abstract reports spatially resolved experimental maps combined with FEM interpretation, linking phase distributions to local hydrostatic compression and shear during scratching.",
-      "watch_item": "The findings come from a single-asperity nanoscratch geometry, so direct transfer to multi-asperity or real-service tribological contacts may require additional validation.",
+      "evidence_signal": "The abstract reports spatially resolved in-situ measurements combined with FEM that distinguish competing martensitic pathways and link phase selection to local hydrostatic pressure and shear strain.",
+      "watch_item": "The conclusions are based on a single-asperity nanoscratch experiment, so translation to real multi-asperity service contacts and larger-scale tribolayers may require additional validation.",
       "hashtags": [
-        "#Tribology",
         "#Martensite",
-        "#NanoScratch",
+        "#Tribology",
+        "#InSituXray",
         "#FiniteElementModeling",
-        "#SynchrotronXray"
+        "#StainlessSteel"
       ],
       "paper_id": "2026-07-21-arxiv-spatially_resolved_in_situ_characterisation_of_competing_martensitic_transformation_pathwa",
       "paper_title": "Spatially resolved in-situ characterisation of competing martensitic transformation pathways during nanoscratch in 316H Stainless Steel",
       "paper_date": "2026-07-21",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-26T10:36:53",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-19-arxiv-fevessel_mesh_independent_analysis_of_3d_pressure_vessels_with_the_label_free_pretrained_f",
-    "arxiv_id": "2607.17318v1",
-    "date": "2026-07-19",
-    "title": "FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method",
-    "authors": "Yipin Sun, Yizheng Wang, Yuzhou Lin, Baiyang Zheng, Xiaoying Zhuang, Timon Rabczuk",
-    "abstract": "Pressure vessel analysis in the chemical, nuclear, and new-energy industries requires solving the same elasticity problem across many materials, geometries, and loads, where mesh quality and repeated solving govern both accuracy and cost. The finite element method (FEM) cannot amortise this repeated cost and fails on degenerate meshes, while the neural operators meant to replace it still need labelled data that FEM must generate. This paper proposes FEVessel, an adaptation of the Pretrained Finite Element Method (PFEM) to three-dimensional (3D) pressure vessels, and validates four capabilities across the two limitations above. FEVessel i) encodes each vessel as a point cloud with coordinate, material, and load channels, ii) pretrains a Transolver operator on the total potential energy instead of FEM labels, and iii) warm-starts iterative solvers with its prediction. A single model generalises across material, geometry, and boundary conditions at a $1.35\\%$ relative displacement error, and its $2.07\\%$ strain error is about $4.7$ times lower than that of a supervised Fourier neural operator ($9.72\\%$), whose structured grid cannot preserve the through-thickness strain. Its warm start cuts algebraic multigrid iterations from $195$ to $18$, a $9.2\\times$ end-to-end wall-clock speedup at the $10^{-3}$ engineering tolerance. The model transfers across mesh resolutions without retraining, holding about $3\\%$ error at only $30\\%$ of the training point density. On inverted and sliver meshes where FEM fails, the error remains below $3.66\\%$. To our knowledge, this is the first systematic study of mesh-independent solution on industrially relevant 3D pressure vessels with degenerate meshes. Because training needs no labels, FEVessel works exactly where FEM cannot supply any, removing manual mesh repair from the analysis pipeline.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-19T16:01:34Z",
-    "updated": "2026-07-19T16:01:34Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.17318v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.17318v1"
-      }
-    ],
-    "score": 59,
-    "infographic": {
-      "key_insight": "FEVessel learns a mesh-independent 3D pressure-vessel solver without FEM labels by pretraining on total potential energy, then uses its prediction to accelerate iterative FEM solves.",
-      "engineering_relevance": "It enables fast, robust stress/displacement analysis across varying materials, geometries, loads, and even degenerate meshes where standard FEM becomes unreliable or fails.",
-      "method": [
-        "Represents each vessel as a point cloud with coordinate, material, and load channels.",
-        "Pretrains a Transolver operator on total potential energy instead of supervised FEM displacement labels.",
-        "Uses the learned prediction as a warm start for algebraic multigrid solving."
-      ],
-      "evidence_signal": "The abstract reports 1.35% relative displacement error, 2.07% strain error, a 9.2× wall-clock speedup, and below-3.66% error on inverted/sliver meshes.",
-      "watch_item": "Performance and speedup may depend on the quality of point-cloud sampling and solver setup, so deployment still needs careful mesh and tolerance choices.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#SolidMechanics",
-        "#NeuralOperators",
-        "#PhysicsInformedAI",
-        "#PressureVessels"
-      ],
-      "paper_id": "2026-07-19-arxiv-fevessel_mesh_independent_analysis_of_3d_pressure_vessels_with_the_label_free_pretrained_f",
-      "paper_title": "FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method",
-      "paper_date": "2026-07-19",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-26T10:36:55",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-22-arxiv-mixed_finite_element_discretization_of_intrinsic_geometrically_exact_beams_for_explicit_mu",
-    "arxiv_id": "2607.20245v1",
-    "date": "2026-07-22",
-    "title": "Mixed finite element discretization of intrinsic geometrically exact beams for explicit multibody dynamics",
-    "authors": "Andrea Brugnoli, Philipp L. Kinon, Francesco Sanfedino, Peter Betsch, Olivier A. Bauchau",
-    "abstract": "The Reissner-Simo and Hodges models are two equivalent continuous descriptions of finite-strain beam dynamics. The Reissner-Simo formulation uses displacements and rotations, while the Hodges formulation is intrinsic and avoids both variables. Although equivalent in theory, the two approaches behave differently after discretization and offer distinct numerical advantages. In this work, we develop a structure-preserving discretization of the intrinsic formulation. Because the intrinsic equations involve linear differential operators, both kinematic and dynamic boundary conditions can be imposed naturally using mixed finite elements. The resulting formulation also enables multibody systems to be assembled without algebraic constraints, avoiding the stiff differential-algebraic equations typically introduced by kinematic constraints. We demonstrate the approach on different examples, also showing that closed kinematic loops can be modeled without algebraic constraints. The resulting interconnected systems retain a port-Hamiltonian structure,with all nonlinearities confined to the interconnection operator. This structure allows exact energy preservation when combined with implicit midpoint time integration. Furthermore the scheme appear to require less Newton iterations compared to existing energy preserving scheme.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-22T15:05:41Z",
-    "updated": "2026-07-22T15:05:41Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA",
-      "physics.comp-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.20245v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.20245v1"
-      }
-    ],
-    "score": 57,
-    "infographic": {
-      "key_insight": "A structure-preserving mixed finite element discretization of the intrinsic Hodges beam formulation enables explicit multibody dynamics without algebraic constraints while retaining exact energy behavior under suitable time integration.",
-      "engineering_relevance": "This offers a cleaner and potentially more efficient way to simulate flexible beams and closed-loop multibody systems, especially when avoiding stiff DAE constraint enforcement is important.",
-      "method": [
-        "Use the intrinsic beam equations with mixed finite elements so both kinematic and dynamic boundary conditions are imposed naturally.",
-        "Formulate interconnections without algebraic constraints, preserving a port-Hamiltonian structure for assembled multibody systems.",
-        "Combine the discretization with implicit midpoint integration to achieve exact energy preservation."
-      ],
-      "evidence_signal": "The abstract reports demonstrations on multiple examples, including closed kinematic loops, and notes fewer Newton iterations than existing energy-preserving schemes.",
-      "watch_item": "Performance and robustness may depend on careful implementation of the mixed formulation and implicit midpoint solver, especially for large interconnected systems.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#BeamDynamics",
-        "#MultibodyDynamics",
-        "#PortHamiltonian",
-        "#StructurePreserving"
-      ],
-      "paper_id": "2026-07-22-arxiv-mixed_finite_element_discretization_of_intrinsic_geometrically_exact_beams_for_explicit_mu",
-      "paper_title": "Mixed finite element discretization of intrinsic geometrically exact beams for explicit multibody dynamics",
-      "paper_date": "2026-07-22",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-26T10:36:58",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-22-arxiv-wavenumber_explicit_stability_and_preasymptotic_error_analysis_of_upml_finite_element_meth",
-    "arxiv_id": "2607.20331v1",
-    "date": "2026-07-22",
-    "title": "Wavenumber-explicit stability and preasymptotic error analysis of UPML finite element method for obstacle scattering problems",
-    "authors": "Yuhao Wang, Weiying Zheng",
-    "abstract": "This paper develops a wavenumber-explicit stability and preasymptotic error analysis for finite element approximation of the two-dimensional Helmholtz scattering problem with a uniaxial perfectly matched layer (UPML) truncation. The analysis is based on direct estimates of the stretched Green kernel associated with the Cartesian complex coordinate transformation. We establish explicit stability for the truncated UPML problem. In particular, we prove that the inf-sup constant of the truncated UPML formulation is $μ_L = O(k^{-1})$ in a natural $k$-weighted $H^1$ norm. As a consequence, we also obtain an exponential decay estimate for the PML truncation error. Based on this stability estimate, we formulate a linear continuous interior penalty finite element method (CIP-FEM) on the truncated UPML domain. A key ingredient of the analysis is to establish a piecewise $H^{1+s}$-regularity result (for any $0<s<1$), which accounts for coefficient jumps across PML interfaces and singularities induced by Cartesian corner geometries. This fractional regularity is sufficient to derive wavenumber-explicit preasymptotic error estimates. Numerical experiments confirm the theoretical predictions and illustrate the effectiveness of the UPML CIP-FEM in the high-frequency regime.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-22T16:18:44Z",
-    "updated": "2026-07-22T16:18:44Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.20331v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.20331v1"
-      }
-    ],
-    "score": 56,
-    "infographic": {
-      "key_insight": "A UPML-truncated CIP-FEM for 2D Helmholtz obstacle scattering is shown to be stable and accurate with explicit wavenumber dependence, including preasymptotic error control.",
-      "engineering_relevance": "The result provides a practical high-frequency scattering solver with provable performance and reduced truncation error for finite element simulations.",
-      "method": [
-        "Derive wavenumber-explicit stability using stretched Green kernel estimates for the Cartesian complex-coordinate PML.",
-        "Prove the truncated UPML inf-sup constant scales like O(k^-1) in a k-weighted H1 norm and the PML truncation error decays exponentially.",
-        "Establish piecewise H^{1+s} regularity to support preasymptotic error bounds for the CIP-FEM."
-      ],
-      "evidence_signal": "The paper reports theoretical stability/error bounds and numerical experiments that confirm the predictions in the high-frequency regime.",
-      "watch_item": "Accuracy depends on handling coefficient jumps and corner singularities in the PML domain, which can affect mesh design and implementation.",
-      "hashtags": [
-        "#Helmholtz",
-        "#FiniteElementMethod",
-        "#UPML",
-        "#CIPFEM",
-        "#WaveScattering"
-      ],
-      "paper_id": "2026-07-22-arxiv-wavenumber_explicit_stability_and_preasymptotic_error_analysis_of_upml_finite_element_meth",
-      "paper_title": "Wavenumber-explicit stability and preasymptotic error analysis of UPML finite element method for obstacle scattering problems",
-      "paper_date": "2026-07-22",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-26T10:37:00",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-22-arxiv-thickness_dependent_crack_suppression_and_wrinkle_formation_in_freestanding_batio3_membran",
-    "arxiv_id": "2607.20054v1",
-    "date": "2026-07-22",
-    "title": "Thickness-dependent crack suppression and wrinkle formation in freestanding BaTiO3 membranes",
-    "authors": "Rajesh Mandal, Ajay Kumar, Nini Pryds",
-    "abstract": "Freestanding ferroelectric oxide membranes offer a promising route toward silicon-integrated low-power electronic and memory devices, but reproducible membrane quality remains challenging, particularly in ultrathin BaTiO3 (BTO), where cracking and wrinkling hinder integration. Here, we show that crack and wrinkle formation in released BaTiO3 membranes can be tuned by jointly controlling oxide thickness and polymer support thickness. Reducing the BaTiO3 thickness from 15 nm to 5 nm suppresses large-area, optically visible cracking across the analysed regions, but promotes dense nanoscale wrinkling, revealing a trade-off between fracture mitigation and morphological instability. In 10 nm BaTiO3 membranes, polymer support thickness further modulates wrinkling, with an intermediate thickness reducing wrinkle density. Piezoresponse force microscopy reveals time-dependent evolution of written contrast after release, indicating that apparent ferroelectric response is influenced by polarization switching, post-release morphology, interfacial contact, charge screening, and strain relaxation. These results establish processing guidelines for integrating freestanding ferroelectrics into future devices.",
-    "category": "Fracture and Damage",
-    "source": "arXiv",
-    "published": "2026-07-22T11:54:19Z",
-    "updated": "2026-07-22T11:54:19Z",
-    "primary_category": "cond-mat.mtrl-sci",
-    "categories": [
-      "cond-mat.mtrl-sci"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.20054v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.20054v1"
-      }
-    ],
-    "score": 56,
-    "infographic": {
-      "key_insight": "Thinning freestanding BaTiO3 membranes suppresses visible cracking but shifts failure toward dense nanoscale wrinkling, with polymer support thickness further tuning wrinkle density.",
-      "engineering_relevance": "The results provide thickness-selection guidelines for integrating freestanding ferroelectric oxide membranes into silicon-compatible low-power electronic and memory devices.",
-      "method": [
-        "Release BaTiO3 membranes with varied oxide thickness (15 nm to 5 nm).",
-        "Adjust polymer support thickness during release.",
-        "Assess crack/wrinkle morphology and ferroelectric contrast with optical inspection and piezoresponse force microscopy."
-      ],
-      "evidence_signal": "Abstract reports that reducing BaTiO3 thickness eliminates large-area cracks in analyzed regions, while 10 nm membranes show support-thickness-dependent wrinkle changes and time-evolving PFM contrast after release.",
-      "watch_item": "Suppressing cracks does not guarantee stable device behavior, because ultrathin membranes may still develop dense wrinkling and time-dependent PFM signals influenced by morphology, screening, and strain relaxation.",
-      "hashtags": [
-        "#FractureAndDamage",
-        "#BaTiO3",
-        "#Ferroelectrics",
-        "#Wrinkling",
-        "#ThinFilms"
-      ],
-      "paper_id": "2026-07-22-arxiv-thickness_dependent_crack_suppression_and_wrinkle_formation_in_freestanding_batio3_membran",
-      "paper_title": "Thickness-dependent crack suppression and wrinkle formation in freestanding BaTiO3 membranes",
-      "paper_date": "2026-07-22",
-      "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-26T10:37:03",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-23-arxiv-3d_uncertainty_quantification_for_the_photo_acoustic_tomography",
-    "arxiv_id": "2607.21373v1",
-    "date": "2026-07-23",
-    "title": "3D Uncertainty Quantification for the Photo-Acoustic Tomography",
-    "authors": "Babak Maboudi Afkham, Amal Mohammed A Alghami, Hassan Yazdanian, Tanja Tarvainen",
-    "abstract": "Photoacoustic tomography (PAT) is a promising modality for high-resolution biomedical imaging, motivating the need for reliable uncertainty quantification (UQ) of reconstructed images. Bayesian approaches provide a rigorous framework for UQ but remain computationally challenging for realistic three-dimensional PAT and are sensitive to numerical approximations in the governing wave equation. We develop a finite-element Bayesian UQ framework for PAT that accommodates complex computational domains and detector geometries while enabling large-scale three-dimensional inference. The proposed methodology reformulates the randomize-then-optimize (RTO) sampling strategy as a matrix-free algorithm that generates independent posterior samples using only forward and adjoint wave propagations. Particular attention is given to constructing an adjoint discretization that forms an exact transpose pair with the discrete forward operator while remaining consistent with the continuous PAT adjoint, enabling efficient least-squares solvers within the sampling procedure. We investigate the influence of temporal discretization, artificial boundary conditions, and adjoint consistency on posterior uncertainty and identify discretization strategies that avoid numerical artifacts. The framework is validated against exact posterior statistics, existing Bayesian PAT methods, and Hamiltonian Monte Carlo using the No-U-Turn Sampler (NUTS), and is demonstrated on a three-dimensional problem with approximately $2\\times 10^5$ unknowns on a general finite-element domain. To the best of our knowledge, this is the first large-scale Bayesian PAT study on general three-dimensional finite-element geometries, and the methodology extends naturally to a broad class of linear PDE-constrained inverse problems.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-23T14:38:00Z",
-    "updated": "2026-07-23T14:38:00Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA",
-      "math.ST"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.21373v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.21373v1"
-      }
-    ],
-    "score": 55,
-    "infographic": {
-      "key_insight": "The paper presents a matrix-free finite-element Bayesian uncertainty quantification framework for 3D photoacoustic tomography that enables scalable posterior sampling with accurate adjoint-consistent wave discretization.",
-      "engineering_relevance": "It provides a practical route to quantify reconstruction uncertainty in realistic 3D PAT geometries, which is important for biomedical imaging reliability and for extending Bayesian inverse methods to other PDE-constrained problems.",
-      "method": [
-        "Reformulate randomize-then-optimize (RTO) as a matrix-free sampler using forward and adjoint wave solves.",
-        "Construct an adjoint discretization that is an exact transpose of the discrete forward operator and remains consistent with the continuous adjoint.",
-        "Study temporal discretization and artificial boundary conditions to avoid numerical artifacts in posterior uncertainty."
-      ],
-      "evidence_signal": "The approach is validated against exact posterior statistics, existing Bayesian PAT methods, and NUTS, and demonstrated on a 3D finite-element case with about 2×10^5 unknowns.",
-      "watch_item": "Performance and posterior accuracy depend on careful adjoint consistency and discretization choices, so mismatched forward/adjoint implementations or boundary treatments can introduce artifacts.",
-      "hashtags": [
-        "#PhotoacousticTomography",
-        "#BayesianUQ",
-        "#FiniteElementMethod",
-        "#InverseProblems",
-        "#UncertaintyQuantification"
-      ],
-      "paper_id": "2026-07-23-arxiv-3d_uncertainty_quantification_for_the_photo_acoustic_tomography",
-      "paper_title": "3D Uncertainty Quantification for the Photo-Acoustic Tomography",
-      "paper_date": "2026-07-23",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-26T10:37:05",
+      "generated_at": "2026-07-25T10:21:33",
       "generator": "openai"
     }
   },
@@ -746,29 +489,286 @@
         "url": "https://arxiv.org/pdf/2607.21150v1"
       }
     ],
-    "score": 55,
+    "score": 65,
     "infographic": {
-      "key_insight": "A matrix-free, high-order phase-field fracture solver can efficiently capture steep crack-damage gradients while coupling visco-elasto-plasticity and fracture at micromechanical scales.",
-      "engineering_relevance": "This enables more scalable and GPU-ready fracture simulations for inelastic materials, improving predictive micromechanical testing of particle-matrix composites and similar solids.",
+      "key_insight": "A matrix-free, high-order phase-field fracture solver on GPUs can efficiently capture steep crack-damage gradients while coupling visco-elastoplastic inelasticity and fracture at homogenized length scales.",
+      "engineering_relevance": "This enables scalable micromechanical testing simulations of damaged inelastic materials with improved performance on modern HPC systems, supporting more realistic fracture prediction in complex microstructures.",
       "method": [
         "Implemented the Peric & Dettmer visco-elastoplastic constitutive framework in an open-source solid mechanics library.",
         "Used matrix-free operators with high-order finite elements and p-multigrid preconditioning on GPUs.",
-        "Introduced a rheological fracture element assembled in series to separate inelastic and fracture effects at homogenization scales."
+        "Added a rheological fracture element in series to separate inelastic and fracture effects at the homogenization scale."
       ],
-      "evidence_signal": "The approach was evaluated through tensile and compressive simulations of synthetic particle-matrix microstructures on an El Capitan prototype, reproducing characteristic inelastic responses and crack propagation patterns.",
-      "watch_item": "High-order matrix-free phase-field models can be computationally efficient, but they still require careful calibration of length scales, constitutive parameters, and solver/preconditioner robustness for complex microstructures.",
+      "evidence_signal": "The abstract reports numerical tensile and compressive simulations on synthetic particle-matrix microstructures that reproduce characteristic inelastic responses and crack propagation patterns.",
+      "watch_item": "Performance and robustness may depend on high-order discretization, GPU/multigrid tuning, and careful calibration of the coupled rheological fracture model.",
       "hashtags": [
-        "#FractureMechanics",
-        "#PhaseFieldModeling",
+        "#PhaseFieldFracture",
         "#MatrixFreeMethods",
-        "#GPUComputing",
-        "#SolidMechanics"
+        "#FiniteElements",
+        "#GPUHPC",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-23-arxiv-matrix_free_phase_field_modeling_of_fracture_in_micromechanical_testing_simulations_of_ine",
       "paper_title": "Matrix-free phase-field modeling of fracture in micromechanical testing simulations of inelastic materials",
       "paper_date": "2026-07-23",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-26T10:37:08",
+      "generated_at": "2026-07-25T10:21:36",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-19-arxiv-fevessel_mesh_independent_analysis_of_3d_pressure_vessels_with_the_label_free_pretrained_f",
+    "arxiv_id": "2607.17318v1",
+    "date": "2026-07-19",
+    "title": "FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method",
+    "authors": "Yipin Sun, Yizheng Wang, Yuzhou Lin, Baiyang Zheng, Xiaoying Zhuang, Timon Rabczuk",
+    "abstract": "Pressure vessel analysis in the chemical, nuclear, and new-energy industries requires solving the same elasticity problem across many materials, geometries, and loads, where mesh quality and repeated solving govern both accuracy and cost. The finite element method (FEM) cannot amortise this repeated cost and fails on degenerate meshes, while the neural operators meant to replace it still need labelled data that FEM must generate. This paper proposes FEVessel, an adaptation of the Pretrained Finite Element Method (PFEM) to three-dimensional (3D) pressure vessels, and validates four capabilities across the two limitations above. FEVessel i) encodes each vessel as a point cloud with coordinate, material, and load channels, ii) pretrains a Transolver operator on the total potential energy instead of FEM labels, and iii) warm-starts iterative solvers with its prediction. A single model generalises across material, geometry, and boundary conditions at a $1.35\\%$ relative displacement error, and its $2.07\\%$ strain error is about $4.7$ times lower than that of a supervised Fourier neural operator ($9.72\\%$), whose structured grid cannot preserve the through-thickness strain. Its warm start cuts algebraic multigrid iterations from $195$ to $18$, a $9.2\\times$ end-to-end wall-clock speedup at the $10^{-3}$ engineering tolerance. The model transfers across mesh resolutions without retraining, holding about $3\\%$ error at only $30\\%$ of the training point density. On inverted and sliver meshes where FEM fails, the error remains below $3.66\\%$. To our knowledge, this is the first systematic study of mesh-independent solution on industrially relevant 3D pressure vessels with degenerate meshes. Because training needs no labels, FEVessel works exactly where FEM cannot supply any, removing manual mesh repair from the analysis pipeline.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-19T16:01:34Z",
+    "updated": "2026-07-19T16:01:34Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.17318v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.17318v1"
+      }
+    ],
+    "score": 64,
+    "infographic": {
+      "key_insight": "FEVessel adapts a label-free pretrained finite element framework to 3D pressure vessels, enabling mesh-independent elasticity prediction and solver warm-starting without FEM-generated labels.",
+      "engineering_relevance": "It can cut simulation cost and avoid mesh-repair bottlenecks for industrial pressure-vessel analysis across varying materials, geometries, loads, and poor-quality meshes.",
+      "method": [
+        "Encode each vessel as a point cloud with coordinate, material, and load channels.",
+        "Pretrain a Transolver on total potential energy instead of supervised FEM labels.",
+        "Use the prediction to warm-start algebraic multigrid iterative solves."
+      ],
+      "evidence_signal": "The model reports 1.35% relative displacement error, 2.07% strain error, and a 9.2× wall-clock speedup with AMG iterations reduced from 195 to 18 at 10^-3 tolerance.",
+      "watch_item": "Results are promising but still depend on careful solver integration and point-cloud representation choices, especially when transferring across mesh densities or highly degenerate elements.",
+      "hashtags": [
+        "#FiniteElementMethod",
+        "#PressureVessels",
+        "#PhysicsInformedAI",
+        "#NeuralOperators",
+        "#ComputationalMechanics"
+      ],
+      "paper_id": "2026-07-19-arxiv-fevessel_mesh_independent_analysis_of_3d_pressure_vessels_with_the_label_free_pretrained_f",
+      "paper_title": "FEVessel: Mesh-Independent Analysis of 3D Pressure Vessels with the Label-Free Pretrained Finite Element Method",
+      "paper_date": "2026-07-19",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-25T10:21:38",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-mixed_finite_element_discretization_of_intrinsic_geometrically_exact_beams_for_explicit_mu",
+    "arxiv_id": "2607.20245v1",
+    "date": "2026-07-22",
+    "title": "Mixed finite element discretization of intrinsic geometrically exact beams for explicit multibody dynamics",
+    "authors": "Andrea Brugnoli, Philipp L. Kinon, Francesco Sanfedino, Peter Betsch, Olivier A. Bauchau",
+    "abstract": "The Reissner-Simo and Hodges models are two equivalent continuous descriptions of finite-strain beam dynamics. The Reissner-Simo formulation uses displacements and rotations, while the Hodges formulation is intrinsic and avoids both variables. Although equivalent in theory, the two approaches behave differently after discretization and offer distinct numerical advantages. In this work, we develop a structure-preserving discretization of the intrinsic formulation. Because the intrinsic equations involve linear differential operators, both kinematic and dynamic boundary conditions can be imposed naturally using mixed finite elements. The resulting formulation also enables multibody systems to be assembled without algebraic constraints, avoiding the stiff differential-algebraic equations typically introduced by kinematic constraints. We demonstrate the approach on different examples, also showing that closed kinematic loops can be modeled without algebraic constraints. The resulting interconnected systems retain a port-Hamiltonian structure,with all nonlinearities confined to the interconnection operator. This structure allows exact energy preservation when combined with implicit midpoint time integration. Furthermore the scheme appear to require less Newton iterations compared to existing energy preserving scheme.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-22T15:05:41Z",
+    "updated": "2026-07-22T15:05:41Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20245v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20245v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "A mixed finite element discretization of the intrinsic Hodges beam formulation preserves structure while enabling natural boundary conditions and constraint-free multibody assembly.",
+      "engineering_relevance": "This offers a numerically robust route for explicit multibody beam dynamics that avoids stiff algebraic constraints and can preserve energy in time integration.",
+      "method": [
+        "Formulate beams in intrinsic variables using the Hodges description, which leads to linear differential operators.",
+        "Apply mixed finite elements so both kinematic and dynamic boundary conditions are imposed naturally.",
+        "Assemble multibody systems through port-Hamiltonian interconnections instead of algebraic kinematic constraints."
+      ],
+      "evidence_signal": "The abstract reports demonstrations on multiple examples, including closed kinematic loops, and notes exact energy preservation with implicit midpoint integration plus fewer Newton iterations than prior energy-preserving schemes.",
+      "watch_item": "The approach still depends on careful mixed-element formulation and time-integration choices, so implementation complexity and stability must be validated case by case.",
+      "hashtags": [
+        "#FiniteElementMethod",
+        "#BeamDynamics",
+        "#MultibodyDynamics",
+        "#StructurePreserving",
+        "#PortHamiltonian"
+      ],
+      "paper_id": "2026-07-22-arxiv-mixed_finite_element_discretization_of_intrinsic_geometrically_exact_beams_for_explicit_mu",
+      "paper_title": "Mixed finite element discretization of intrinsic geometrically exact beams for explicit multibody dynamics",
+      "paper_date": "2026-07-22",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-25T10:21:40",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-wavenumber_explicit_stability_and_preasymptotic_error_analysis_of_upml_finite_element_meth",
+    "arxiv_id": "2607.20331v1",
+    "date": "2026-07-22",
+    "title": "Wavenumber-explicit stability and preasymptotic error analysis of UPML finite element method for obstacle scattering problems",
+    "authors": "Yuhao Wang, Weiying Zheng",
+    "abstract": "This paper develops a wavenumber-explicit stability and preasymptotic error analysis for finite element approximation of the two-dimensional Helmholtz scattering problem with a uniaxial perfectly matched layer (UPML) truncation. The analysis is based on direct estimates of the stretched Green kernel associated with the Cartesian complex coordinate transformation. We establish explicit stability for the truncated UPML problem. In particular, we prove that the inf-sup constant of the truncated UPML formulation is $μ_L = O(k^{-1})$ in a natural $k$-weighted $H^1$ norm. As a consequence, we also obtain an exponential decay estimate for the PML truncation error. Based on this stability estimate, we formulate a linear continuous interior penalty finite element method (CIP-FEM) on the truncated UPML domain. A key ingredient of the analysis is to establish a piecewise $H^{1+s}$-regularity result (for any $0<s<1$), which accounts for coefficient jumps across PML interfaces and singularities induced by Cartesian corner geometries. This fractional regularity is sufficient to derive wavenumber-explicit preasymptotic error estimates. Numerical experiments confirm the theoretical predictions and illustrate the effectiveness of the UPML CIP-FEM in the high-frequency regime.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-22T16:18:44Z",
+    "updated": "2026-07-22T16:18:44Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20331v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20331v1"
+      }
+    ],
+    "score": 61,
+    "infographic": {
+      "key_insight": "The paper proves wavenumber-explicit stability and preasymptotic error bounds for a UPML-truncated finite element model of 2D Helmholtz obstacle scattering, with inf-sup stability scaling like O(k^-1).",
+      "engineering_relevance": "This gives a rigorous basis for using UPML CIP-FEM to simulate high-frequency wave scattering with predictable accuracy and controlled truncation error.",
+      "method": [
+        "Derive direct estimates for the stretched Green kernel under Cartesian complex coordinate stretching",
+        "Prove explicit stability for the truncated UPML problem and exponential decay of PML truncation error",
+        "Combine piecewise H^(1+s) regularity with CIP-FEM to obtain wavenumber-explicit preasymptotic FEM error estimates"
+      ],
+      "evidence_signal": "The abstract reports theoretical stability/error analysis and numerical experiments that confirm the predictions and show effectiveness in the high-frequency regime.",
+      "watch_item": "The analysis relies on fractional regularity across PML interfaces and corner geometries, so implementation must handle coefficient jumps and singularities carefully.",
+      "hashtags": [
+        "#Helmholtz",
+        "#UPML",
+        "#CIPFEM",
+        "#WaveScattering",
+        "#FiniteElementMethod"
+      ],
+      "paper_id": "2026-07-22-arxiv-wavenumber_explicit_stability_and_preasymptotic_error_analysis_of_upml_finite_element_meth",
+      "paper_title": "Wavenumber-explicit stability and preasymptotic error analysis of UPML finite element method for obstacle scattering problems",
+      "paper_date": "2026-07-22",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-25T10:21:42",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-22-arxiv-thickness_dependent_crack_suppression_and_wrinkle_formation_in_freestanding_batio3_membran",
+    "arxiv_id": "2607.20054v1",
+    "date": "2026-07-22",
+    "title": "Thickness-dependent crack suppression and wrinkle formation in freestanding BaTiO3 membranes",
+    "authors": "Rajesh Mandal, Ajay Kumar, Nini Pryds",
+    "abstract": "Freestanding ferroelectric oxide membranes offer a promising route toward silicon-integrated low-power electronic and memory devices, but reproducible membrane quality remains challenging, particularly in ultrathin BaTiO3 (BTO), where cracking and wrinkling hinder integration. Here, we show that crack and wrinkle formation in released BaTiO3 membranes can be tuned by jointly controlling oxide thickness and polymer support thickness. Reducing the BaTiO3 thickness from 15 nm to 5 nm suppresses large-area, optically visible cracking across the analysed regions, but promotes dense nanoscale wrinkling, revealing a trade-off between fracture mitigation and morphological instability. In 10 nm BaTiO3 membranes, polymer support thickness further modulates wrinkling, with an intermediate thickness reducing wrinkle density. Piezoresponse force microscopy reveals time-dependent evolution of written contrast after release, indicating that apparent ferroelectric response is influenced by polarization switching, post-release morphology, interfacial contact, charge screening, and strain relaxation. These results establish processing guidelines for integrating freestanding ferroelectrics into future devices.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-07-22T11:54:19Z",
+    "updated": "2026-07-22T11:54:19Z",
+    "primary_category": "cond-mat.mtrl-sci",
+    "categories": [
+      "cond-mat.mtrl-sci"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.20054v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.20054v1"
+      }
+    ],
+    "score": 61,
+    "infographic": {
+      "key_insight": "Making BaTiO3 membranes thinner suppresses visible cracking, but the thinnest films trade cracking for dense nanoscale wrinkling, so thickness controls a fracture–morphology balance.",
+      "engineering_relevance": "The results provide practical thickness-selection guidelines for integrating freestanding ferroelectric oxide membranes into silicon-compatible low-power electronic and memory devices.",
+      "method": [
+        "Varied BaTiO3 membrane thickness from 15 nm to 5 nm after release.",
+        "Adjusted polymer support thickness for 10 nm membranes to tune wrinkling.",
+        "Used piezoresponse force microscopy to track post-release ferroelectric contrast evolution."
+      ],
+      "evidence_signal": "The abstract reports that 5 nm BaTiO3 suppresses large-area visible cracking, while 10 nm membranes show polymer-thickness-dependent wrinkle density and time-dependent PFM contrast after release.",
+      "watch_item": "Apparent ferroelectric performance may be confounded by morphology changes, charge screening, interfacial contact, and strain relaxation after release.",
+      "hashtags": [
+        "#BaTiO3",
+        "#FreestandingMembranes",
+        "#FractureMechanics",
+        "#Wrinkling",
+        "#Ferroelectrics"
+      ],
+      "paper_id": "2026-07-22-arxiv-thickness_dependent_crack_suppression_and_wrinkle_formation_in_freestanding_batio3_membran",
+      "paper_title": "Thickness-dependent crack suppression and wrinkle formation in freestanding BaTiO3 membranes",
+      "paper_date": "2026-07-22",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-07-25T10:21:45",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-23-arxiv-3d_uncertainty_quantification_for_the_photo_acoustic_tomography",
+    "arxiv_id": "2607.21373v1",
+    "date": "2026-07-23",
+    "title": "3D Uncertainty Quantification for the Photo-Acoustic Tomography",
+    "authors": "Babak Maboudi Afkham, Amal Mohammed A Alghami, Hassan Yazdanian, Tanja Tarvainen",
+    "abstract": "Photoacoustic tomography (PAT) is a promising modality for high-resolution biomedical imaging, motivating the need for reliable uncertainty quantification (UQ) of reconstructed images. Bayesian approaches provide a rigorous framework for UQ but remain computationally challenging for realistic three-dimensional PAT and are sensitive to numerical approximations in the governing wave equation. We develop a finite-element Bayesian UQ framework for PAT that accommodates complex computational domains and detector geometries while enabling large-scale three-dimensional inference. The proposed methodology reformulates the randomize-then-optimize (RTO) sampling strategy as a matrix-free algorithm that generates independent posterior samples using only forward and adjoint wave propagations. Particular attention is given to constructing an adjoint discretization that forms an exact transpose pair with the discrete forward operator while remaining consistent with the continuous PAT adjoint, enabling efficient least-squares solvers within the sampling procedure. We investigate the influence of temporal discretization, artificial boundary conditions, and adjoint consistency on posterior uncertainty and identify discretization strategies that avoid numerical artifacts. The framework is validated against exact posterior statistics, existing Bayesian PAT methods, and Hamiltonian Monte Carlo using the No-U-Turn Sampler (NUTS), and is demonstrated on a three-dimensional problem with approximately $2\\times 10^5$ unknowns on a general finite-element domain. To the best of our knowledge, this is the first large-scale Bayesian PAT study on general three-dimensional finite-element geometries, and the methodology extends naturally to a broad class of linear PDE-constrained inverse problems.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-23T14:38:00Z",
+    "updated": "2026-07-23T14:38:00Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "math.ST"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.21373v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.21373v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "A matrix-free finite-element Bayesian UQ framework enables scalable 3D photoacoustic tomography by generating posterior samples with only forward and adjoint wave solves.",
+      "engineering_relevance": "The method supports realistic detector geometries and complex 3D domains, making uncertainty estimates more practical for biomedical imaging and other PDE-constrained inverse problems.",
+      "method": [
+        "Reformulate randomize-then-optimize (RTO) sampling as a matrix-free algorithm.",
+        "Use an adjoint discretization that is an exact transpose of the discrete forward operator and consistent with the continuous adjoint.",
+        "Study temporal discretization and boundary-condition choices to avoid numerical artifacts in posterior uncertainty."
+      ],
+      "evidence_signal": "The framework is benchmarked against exact posterior statistics, existing Bayesian PAT methods, and NUTS, and demonstrated on a 3D finite-element case with about 2×10^5 unknowns.",
+      "watch_item": "Posterior quality is sensitive to discretization, so adjoint consistency, time stepping, and artificial boundary conditions must be chosen carefully to avoid biased uncertainty.",
+      "hashtags": [
+        "#UncertaintyQuantification",
+        "#PhotoacousticTomography",
+        "#FiniteElementMethods",
+        "#BayesianInference",
+        "#InverseProblems"
+      ],
+      "paper_id": "2026-07-23-arxiv-3d_uncertainty_quantification_for_the_photo_acoustic_tomography",
+      "paper_title": "3D Uncertainty Quantification for the Photo-Acoustic Tomography",
+      "paper_date": "2026-07-23",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-25T10:21:47",
       "generator": "openai"
     }
   },
@@ -797,29 +797,29 @@
         "url": "https://arxiv.org/pdf/2607.19330v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "Strain-space hyperreduction extends EMSL, ECM, and E3C to large-deformation solid mechanics with boundary conditions enforced by construction, improving runtime-accuracy tradeoffs over displacement-space ECSW.",
-      "engineering_relevance": "This enables much faster nonlinear solid simulations for parameterized materials and deformations, supporting reduced-order analysis and design workflows with minimal loss of accuracy.",
+      "key_insight": "Strain-space hyperreduction extends EMSL, ECM, and E3C to large-deformation solid mechanics, enabling much faster reduced models without sacrificing accuracy.",
+      "engineering_relevance": "This gives engineers a practical way to simulate nonlinear solids with parameterized loads and materials far more efficiently than standard displacement-space ECSW.",
       "method": [
-        "Build boundary-consistent lifting fields offline to satisfy arbitrary Dirichlet conditions.",
-        "Formulate Empirical Cubature Method, E3C, and EMSL directly in strain space.",
-        "Compare strain-space hyperreduction methods against displacement-space ECSW on hyperelastic benchmarks."
+        "Use boundary-consistent offline lifting to enforce arbitrary Dirichlet boundary conditions by construction.",
+        "Form hyperreduction directly in strain space with strain-space EMSL, ECM, and E3C.",
+        "Compare against standard displacement-space ECSW on hyperelastic test cases."
       ],
-      "evidence_signal": "On two hyperelastic test problems, the strain-space methods outperformed displacement-space ECSW; EMSL reached about 100,000× speedup and E3C about 10,000× speedup while maintaining high accuracy.",
-      "watch_item": "Offline basis construction and cubature selection add preprocessing cost, so the best method depends on whether the application can afford more offline work or needs the fastest online evaluation.",
+      "evidence_signal": "On two hyperelastic examples with parameterized material behavior and deformation, the strain-space methods outperformed displacement-space ECSW, with E3C achieving about 10,000x speedup and EMSL about 100,000x while maintaining high accuracy.",
+      "watch_item": "The approach still requires offline preprocessing and careful selection of the reduced strain basis and sampling strategy to balance setup cost, runtime, and accuracy.",
       "hashtags": [
         "#SolidMechanics",
         "#ModelOrderReduction",
         "#Hyperreduction",
-        "#FiniteElements",
+        "#FiniteElementMethods",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-21-arxiv-efficient_strain_space_hyperreduction_in_large_deformation_solid_mechanics",
       "paper_title": "Efficient strain-space hyperreduction in large-deformation solid mechanics",
       "paper_date": "2026-07-21",
       "paper_category": "AI Solid Mechanics",
-      "generated_at": "2026-07-26T10:37:11",
+      "generated_at": "2026-07-25T10:21:49",
       "generator": "openai"
     }
   },
@@ -848,29 +848,29 @@
         "url": "https://arxiv.org/pdf/2607.18787v1"
       }
     ],
-    "score": 54,
+    "score": 59,
     "infographic": {
-      "key_insight": "A pretrained image-editing model can act as a shared numerical-simulation interface when physical fields and parameters are encoded visually and learned through lightweight adapters.",
-      "engineering_relevance": "This suggests a single vision-based model could emulate a wide range of solid mechanics and PDE solvers, from elasticity and fracture to transport and flow, with a unified training recipe.",
+      "key_insight": "A pretrained image-editing model can act as a general-purpose numerical solver when physical states and parameters are encoded as images and lightweight adapters.",
+      "engineering_relevance": "This suggests a single vision-based framework could prototype a wide range of PDE and mechanics problems, from diffusion and fluids to elasticity and fracture.",
       "method": [
-        "Render states and solutions as images; inject scalar parameters via lightweight adapters.",
-        "Supervise the model with established numerical or analytic solvers across many PDEs and constitutive problems.",
-        "Use the same pretrained architecture for static, time-dependent, and shock-like dynamics."
+        "Render inputs, outputs, and fields as images.",
+        "Inject scalar parameters through lightweight adapters.",
+        "Train the same image model with supervision from established numerical/analytic solvers across many PDE tasks."
       ],
-      "evidence_signal": "The abstract reports successful application to heterogeneous elliptic, evolution, flow, fracture, and transport problems, with a failed Kuramoto-Sivashinsky case highlighting a limit on chaotic long-horizon simulation.",
-      "watch_item": "Image/latent representations make numerical range selection and enforcement of governing equations or invariants difficult, which can limit physical fidelity.",
+      "evidence_signal": "The abstract reports successful evaluation on heterogeneous problems including elliptic equations, heat/Burgers dynamics, Navier-Stokes, elasticity, eikonal, fracture, and optimal transport, with a failed Kuramoto-Sivashinsky long-horizon test highlighting limits.",
+      "watch_item": "Visual encodings can hinder range selection and exact enforcement of equations or invariants, which may break down on chaotic or long-time simulations.",
       "hashtags": [
         "#ComputationalScience",
-        "#SolidMechanics",
+        "#NumericalMethods",
         "#PDEs",
-        "#PhysicsInformedML",
-        "#ImageModels"
+        "#PhysicsInformedAI",
+        "#MachineLearningForEngineering"
       ],
       "paper_id": "2026-07-21-arxiv-image_editing_models_are_numerical_solvers",
       "paper_title": "Image Editing Models are Numerical Solvers",
       "paper_date": "2026-07-21",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-26T10:37:13",
+      "generated_at": "2026-07-25T10:21:52",
       "generator": "openai"
     }
   },
@@ -899,29 +899,29 @@
         "url": "https://arxiv.org/pdf/2607.19123v1"
       }
     ],
-    "score": 53,
+    "score": 58,
     "infographic": {
-      "key_insight": "High-pressure torsion turns TiZrHfNbTa into a nanostructured, defect-rich alloy where electrons carry most heat, while phonon transport is strongly suppressed by dislocations and grain boundaries.",
-      "engineering_relevance": "The results show how severe plastic deformation can tune thermal and electrical transport in refractory HEAs, which is useful for designing robust materials for high-temperature and energy-related applications.",
+      "key_insight": "High-pressure torsion transforms TiZrHfNbTa into a nanostructured, defect-rich alloy where electrons dominate heat transport and phonon scattering controls the smaller, strain-dependent thermal response.",
+      "engineering_relevance": "Severe plastic deformation can be used to tune refractory high-entropy alloys for applications needing controlled thermal/electrical transport alongside high hardness and strength.",
       "method": [
-        "Equiatomic TiZrHfNbTa was processed by high-pressure torsion (HPT).",
-        "Microstructure evolution included dislocation accumulation, ~40 nm grains, and partial BCC-to-omega transformation.",
-        "Thermal/electrical transport was interpreted with the Wiedemann-Franz law to separate electron and phonon contributions."
+        "HPT severe plastic deformation of equiatomic TiZrHfNbTa",
+        "Nanostructure/defect engineering via dislocation accumulation, grain refinement (~40 nm), and partial BCC-to-omega transformation",
+        "Thermal and electrical transport analyzed with Wiedemann-Franz separation of electron vs phonon contributions"
       ],
-      "evidence_signal": "The abstract reports a non-monotonic specific heat and thermal conductivity response with strain, while electrical conductivity decreases monotonically to a steady state; phonons contribute only about 11–23% of thermal transport.",
-      "watch_item": "The transport interpretation depends on assumptions in the Wiedemann-Franz separation, so phase heterogeneity and defect evolution should be considered when generalizing to other HEAs or processing routes.",
+      "evidence_signal": "The abstract reports hardness reaching a steady state, specific heat showing non-monotonic strain dependence, thermal conductivity decreasing then slightly recovering, and electrical conductivity decreasing monotonically after HPT.",
+      "watch_item": "The phonon/electron partition relies on model-based interpretation (Wiedemann-Franz), so deviations from ideal assumptions or microstructural inhomogeneity could affect the quantitative split.",
       "hashtags": [
-        "#HighEntropyAlloy",
+        "#HighEntropyAlloys",
         "#HighPressureTorsion",
         "#ThermalConductivity",
         "#ElectricalConductivity",
-        "#Nanostructuring"
+        "#SolidMechanics"
       ],
       "paper_id": "2026-07-21-arxiv-thermal_and_electrical_conductivity_of_a_refractory_high_entropy_alloy_after_high_pressure",
       "paper_title": "Thermal and electrical conductivity of a refractory high-entropy alloy after high-pressure torsion: Electron versus phonon contributions",
       "paper_date": "2026-07-21",
       "paper_category": "AI Solid Mechanics",
-      "generated_at": "2026-07-26T10:37:16",
+      "generated_at": "2026-07-25T10:21:55",
       "generator": "openai"
     }
   },
@@ -951,29 +951,29 @@
         "url": "https://arxiv.org/pdf/2607.20915v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "A fast plastic phenotype shift after environmental change creates internal genetic stress, and slower genotypic evolution relaxes this stress in a Le Chatelier-like way that drives genetic assimilation.",
-      "engineering_relevance": "The work offers a timescale-separated constitutive-style framework for predicting how adaptive response rates depend on phenotypic variability and restoring forces in evolving systems.",
+      "key_insight": "The paper shows that phenotypic plasticity can be modeled as a fast response and genetic assimilation as a slow relaxation process, unified by timescale separation in the Price equation and analogous to Le Chatelier’s principle.",
+      "engineering_relevance": "This offers a physically interpretable framework for predicting how systems with coupled fast and slow variables relax after perturbation, which is useful for constitutive modeling of adaptive response laws.",
       "method": [
-        "Bridge the continuous-time Price equation with timescale separation.",
-        "Model sudden environmental change as a rapid phenotypic displacement versus a slow genotypic state.",
-        "Interpret genetic assimilation as relaxation of self-generated internal stress."
+        "Bridges the continuous-time Price equation with timescale separation.",
+        "Models a sudden environmental change as a fast plastic phenotype shift followed by slow genotypic evolution.",
+        "Interprets genetic assimilation as relaxation of self-generated genetic stress through genotype–phenotype coupling."
       ],
-      "evidence_signal": "The paper is presented as a theoretical derivation from the abstract, with predictions about how restoring force and clonal phenotypic fluctuations control the assimilation timescale.",
-      "watch_item": "The framework is idealized and may be sensitive to assumptions of separable timescales and cost-free, perfectly adaptive plasticity.",
+      "evidence_signal": "The abstract presents a theoretical derivation and qualitative predictions, including that weaker restoring forces imply longer assimilation times and that perfectly adaptive plasticity leads to divergent relaxation time.",
+      "watch_item": "The framework is theoretical and relies on idealized timescale-separation assumptions, so real systems may deviate when plasticity and genetic change are not cleanly separable.",
       "hashtags": [
+        "#ConstitutiveModeling",
+        "#EvolutionaryDynamics",
         "#PriceEquation",
         "#PhenotypicPlasticity",
-        "#GeneticAssimilation",
-        "#TimescaleSeparation",
-        "#EvolutionaryDynamics"
+        "#GeneticAssimilation"
       ],
       "paper_id": "2026-07-23-arxiv-evolutionary_le_chatelier_s_principle_phenotypic_plasticity_and_genetic_assimilation_via_t",
       "paper_title": "Evolutionary Le Chatelier's Principle: Phenotypic Plasticity and Genetic Assimilation via Timescale Separation in the Price Equation",
       "paper_date": "2026-07-23",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-26T10:37:18",
+      "generated_at": "2026-07-25T10:21:57",
       "generator": "openai"
     }
   },
@@ -1002,29 +1002,29 @@
         "url": "https://arxiv.org/pdf/2607.20784v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "A generalized nD shape-function parameterization lets multimaterial topology optimization handle many materials in a compact, barycentric design space while preserving physically valid density interpolation.",
-      "engineering_relevance": "This enables scalable design of stiff structures and compliant mechanisms with far more candidate materials than traditional multimaterial formulations, improving flexibility for large engineering applications.",
+      "key_insight": "A generalized nD shape-function formulation lets multimaterial topology optimization use compact natural coordinates to interpolate many material densities while preserving barycentric validity.",
+      "engineering_relevance": "This makes it practical to optimize stiff structures and compliant mechanisms with far more candidate materials in 2D and 3D design problems.",
       "method": [
-        "Use natural coordinates of generalized linear shape functions as design variables for material densities.",
-        "Apply density filtering directly in natural-coordinate space, which is equivalent to filtering densities.",
-        "Use a tailored projection that preserves barycentric properties; solve sensitivities with the adjoint method and optimize with MMA."
+        "Use generalized linear/bilinear/trilinear shape functions in nD to map the multimaterial simplex.",
+        "Treat natural coordinates as design variables and derive material densities from them.",
+        "Apply density filtering and projection in a way that preserves barycentric properties; solve with adjoint sensitivities and MMA."
       ],
-      "evidence_signal": "The abstract reports successful 2D and 3D demonstrations for stiff structures and compliant mechanisms with up to 24 materials in 2D and 15 in 3D, along with smooth objective convergence.",
-      "watch_item": "The approach depends on careful projection/filtering to maintain barycentric validity, so implementation must preserve these properties when scaling to many materials.",
+      "evidence_signal": "The abstract reports successful 2D and 3D demonstrations with up to 24 materials for stiff structures and 15 materials for compliant mechanisms, along with smooth objective convergence.",
+      "watch_item": "The approach depends on careful implementation of filtering and projection so the natural-coordinate and density spaces remain physically consistent.",
       "hashtags": [
         "#TopologyOptimization",
         "#MultimaterialDesign",
-        "#ComputationalMechanics",
-        "#ShapeFunctions",
-        "#EngineeringDesign"
+        "#SolidMechanics",
+        "#CompliantMechanisms",
+        "#AdditiveManufacturing"
       ],
       "paper_id": "2026-07-22-arxiv-a_generalized_shape_function_approach_for_multimaterial_topology_optimization",
       "paper_title": "A generalized shape function approach for multimaterial topology optimization",
       "paper_date": "2026-07-22",
       "paper_category": "Topology Optimization",
-      "generated_at": "2026-07-26T10:37:20",
+      "generated_at": "2026-07-25T10:21:59",
       "generator": "openai"
     }
   }

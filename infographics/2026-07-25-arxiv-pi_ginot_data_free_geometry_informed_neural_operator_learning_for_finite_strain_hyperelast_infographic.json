@@ -1,24 +1,24 @@
 {
-  "key_insight": "PI-GINOT learns geometry-conditioned finite-strain hyperelastic responses directly from point-cloud descriptions, enabling data-free prediction across parametric DogBone shapes.",
-  "engineering_relevance": "It can reduce the need for repeated finite-element simulations in virtual testing, design optimization, and uncertainty studies when specimen geometry changes.",
+  "key_insight": "PI-GINOT learns geometry-conditioned hyperelastic responses for DogBone specimens without finite-element training data by combining a geometry encoder, cross-attention decoding, and physics-based losses.",
+  "engineering_relevance": "This enables faster virtual testing and geometry optimization for nonlinear solid mechanics when repeated finite-element simulations would be too expensive.",
   "method": [
-    "Encodes each DogBone boundary point cloud into geometry features.",
-    "Uses a cross-attention decoder to predict displacement at arbitrary query points while enforcing boundary conditions exactly.",
-    "Computes stresses via automatic differentiation with a compressible Neo-Hookean plane-stress model and trains with physics constraints (equilibrium, traction-free/symmetry, stability, internal-force consistency)."
+    "Encodes each specimen’s boundary point cloud into geometry features.",
+    "Uses a cross-attention decoder to predict displacement at arbitrary interior points.",
+    "Enforces boundary conditions exactly and trains with physics losses from equilibrium, traction-free/symmetry, stability, and internal-force consistency; stresses are obtained by automatic differentiation with a compressible Neo-Hookean plane-stress model."
   ],
-  "evidence_signal": "On eight unseen geometries, the method reports 2.1%–7.1% displacement error, 0.9%–13.3% peak von Mises stress error, and section-force error below 10.3%, with Abaqus used only for post-training validation.",
-  "watch_item": "Local stress components are less accurate near the gauge-to-fillet transition, especially for narrow specimens with steep stress gradients.",
+  "evidence_signal": "Validated on eight unseen geometries with displacement errors of 2.1%–7.1%, peak von Mises stress errors of 0.9%–13.3%, and section-force errors below 10.3% using Abaqus only for post-training validation.",
+  "watch_item": "Local stress components remain less accurate, especially in narrow specimens where steep gradients near the gauge-to-fillet transition are difficult to resolve.",
   "hashtags": [
-    "#PhysicsInformedAI",
+    "#PhysicsInformedML",
     "#NeuralOperators",
     "#SolidMechanics",
     "#Hyperelasticity",
-    "#DigitalTwin"
+    "#FiniteStrain"
   ],
   "paper_id": "2026-07-25-arxiv-pi_ginot_data_free_geometry_informed_neural_operator_learning_for_finite_strain_hyperelast",
   "paper_title": "PI-GINOT: Data-free geometry-informed neural operator learning for finite-strain hyperelasticity on parametric DogBone specimens",
   "paper_date": "2026-07-25",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-07-28T11:10:06",
+  "generated_at": "2026-07-29T11:15:22",
   "generator": "openai"
 }

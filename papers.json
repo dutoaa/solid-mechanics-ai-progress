@@ -1,5 +1,56 @@
 [
   {
+    "id": "2026-07-27-arxiv-fourier_feature_physics_informed_neural_networks_for_elasto_plastic_analysis_of_geomateria",
+    "arxiv_id": "2607.25150v1",
+    "date": "2026-07-27",
+    "title": "Fourier Feature Physics-Informed Neural Networks for Elasto-Plastic Analysis of Geomaterials with a Non-Associative Mohr-Coulomb Model",
+    "authors": "Apisit Robjanghvad, Sompote Youwai",
+    "abstract": "Elasto-plastic boundary value problems in geotechnical engineering are conventionally solved by the Finite Element Method (FEM), which incurs high computational cost from incremental-iterative procedures. Physics-Informed Neural Networks (PINNs) offer a mesh-free alternative but suffer from spectral bias, failing to resolve the sharp gradients arising at elastic-plastic boundaries and within localized plastic zones. This limitation is particularly consequential for the non-associative Mohr-Coulomb model, whose pressure-dependent yield surface and dilatant flow rule generate narrower plastic zones and steeper stress gradients than pressure-independent criteria. This study proposes a Fourier Feature Physics-Informed Neural Network (FF-PINN) for two-dimensional elasto-plastic problems governed by this model. Random Fourier feature mapping is embedded into the input layer to mitigate spectral bias, supported by a multi-objective loss function enforcing equilibrium, constitutive relations, and Karush-Kuhn-Tucker conditions against high-fidelity FEM data, together with a strain-adaptive sampling strategy. Benchmarked across three test cases, FF-PINN achieves superior accuracy across most predicted fields, with error reductions up to approximately 66 percent in displacement and 27 percent in stress components, and reproduces the plastic failure zone geometry with markedly closer fidelity to FEM. Sensitivity analysis confirms robustness across training data size, collocation density, loss weighting, and noise levels up to 2.0 percent. FF-PINN converges in half the training epochs required by the conventional PINN, halving wall-clock training time while achieving greater predictive accuracy. The framework therefore offers a computationally efficient and physics-consistent alternative to FEM for elasto-plastic geotechnical analysis.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-27T23:50:39Z",
+    "updated": "2026-07-27T23:50:39Z",
+    "primary_category": "cs.NE",
+    "categories": [
+      "cs.NE"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25150v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25150v1"
+      }
+    ],
+    "score": 96,
+    "infographic": {
+      "key_insight": "Embedding random Fourier features into a PINN reduces spectral bias, enabling much better resolution of sharp elastic-plastic gradients and plastic zones in non-associative Mohr-Coulomb geomaterials.",
+      "engineering_relevance": "The method offers a faster, mesh-free surrogate for geotechnical elasto-plastic analysis that can reduce reliance on costly FEM incremental-iterative solves while preserving physics consistency.",
+      "method": [
+        "Random Fourier feature mapping is added to the PINN input layer to better represent high-frequency stress/displacement fields.",
+        "A multi-objective loss enforces equilibrium, constitutive laws, and KKT conditions using FEM data.",
+        "Strain-adaptive sampling focuses training points near evolving plastic regions and failure boundaries."
+      ],
+      "evidence_signal": "Across three benchmark cases, FF-PINN reduced errors by up to about 66% in displacement and 27% in stress, reproduced plastic zone geometry more faithfully than a conventional PINN, and converged in roughly half the training epochs.",
+      "watch_item": "Performance is validated against specific benchmark cases and FEM data, so transfer to more complex 3D problems or strongly different loading/soil conditions may require retuning the feature mapping and loss weights.",
+      "hashtags": [
+        "#PINN",
+        "#ElastoPlasticity",
+        "#Geomaterials",
+        "#MohrCoulomb",
+        "#FourierFeatures"
+      ],
+      "paper_id": "2026-07-27-arxiv-fourier_feature_physics_informed_neural_networks_for_elasto_plastic_analysis_of_geomateria",
+      "paper_title": "Fourier Feature Physics-Informed Neural Networks for Elasto-Plastic Analysis of Geomaterials with a Non-Associative Mohr-Coulomb Model",
+      "paper_date": "2026-07-27",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-29T11:15:18",
+      "generator": "openai"
+    }
+  },
+  {
     "id": "2026-07-25-arxiv-pi_ginot_data_free_geometry_informed_neural_operator_learning_for_finite_strain_hyperelast",
     "arxiv_id": "2607.23299v1",
     "date": "2026-07-25",
@@ -24,29 +75,80 @@
         "url": "https://arxiv.org/pdf/2607.23299v1"
       }
     ],
-    "score": 93,
+    "score": 88,
     "infographic": {
-      "key_insight": "PI-GINOT learns geometry-conditioned finite-strain hyperelastic responses directly from point-cloud descriptions, enabling data-free prediction across parametric DogBone shapes.",
-      "engineering_relevance": "It can reduce the need for repeated finite-element simulations in virtual testing, design optimization, and uncertainty studies when specimen geometry changes.",
+      "key_insight": "PI-GINOT learns geometry-conditioned hyperelastic responses for DogBone specimens without finite-element training data by combining a geometry encoder, cross-attention decoding, and physics-based losses.",
+      "engineering_relevance": "This enables faster virtual testing and geometry optimization for nonlinear solid mechanics when repeated finite-element simulations would be too expensive.",
       "method": [
-        "Encodes each DogBone boundary point cloud into geometry features.",
-        "Uses a cross-attention decoder to predict displacement at arbitrary query points while enforcing boundary conditions exactly.",
-        "Computes stresses via automatic differentiation with a compressible Neo-Hookean plane-stress model and trains with physics constraints (equilibrium, traction-free/symmetry, stability, internal-force consistency)."
+        "Encodes each specimen’s boundary point cloud into geometry features.",
+        "Uses a cross-attention decoder to predict displacement at arbitrary interior points.",
+        "Enforces boundary conditions exactly and trains with physics losses from equilibrium, traction-free/symmetry, stability, and internal-force consistency; stresses are obtained by automatic differentiation with a compressible Neo-Hookean plane-stress model."
       ],
-      "evidence_signal": "On eight unseen geometries, the method reports 2.1%–7.1% displacement error, 0.9%–13.3% peak von Mises stress error, and section-force error below 10.3%, with Abaqus used only for post-training validation.",
-      "watch_item": "Local stress components are less accurate near the gauge-to-fillet transition, especially for narrow specimens with steep stress gradients.",
+      "evidence_signal": "Validated on eight unseen geometries with displacement errors of 2.1%–7.1%, peak von Mises stress errors of 0.9%–13.3%, and section-force errors below 10.3% using Abaqus only for post-training validation.",
+      "watch_item": "Local stress components remain less accurate, especially in narrow specimens where steep gradients near the gauge-to-fillet transition are difficult to resolve.",
       "hashtags": [
-        "#PhysicsInformedAI",
+        "#PhysicsInformedML",
         "#NeuralOperators",
         "#SolidMechanics",
         "#Hyperelasticity",
-        "#DigitalTwin"
+        "#FiniteStrain"
       ],
       "paper_id": "2026-07-25-arxiv-pi_ginot_data_free_geometry_informed_neural_operator_learning_for_finite_strain_hyperelast",
       "paper_title": "PI-GINOT: Data-free geometry-informed neural operator learning for finite-strain hyperelasticity on parametric DogBone specimens",
       "paper_date": "2026-07-25",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-28T11:10:06",
+      "generated_at": "2026-07-29T11:15:22",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-crack_tip_opening_as_a_probe_for_length_scale_separation_in_geometrically_nonlinear_solids",
+    "arxiv_id": "2607.25771v1",
+    "date": "2026-07-28",
+    "title": "Crack-Tip Opening as a Probe for Length-Scale Separation in Geometrically Nonlinear Solids",
+    "authors": "Raúl Lazo-Molina, Mokhtar Adda-Bedia, Mohit Pundir, Rodrigo Arias, David S. Kammer",
+    "abstract": "Soft elastic solids are highly deformable materials where fracture is driven by the complex coupling of geometric and material nonlinearities. While geometric nonlinearity (GNL) arises kinematically from the intrinsic capacity of solids to undergo large deformations, material nonlinearity stems from the constitutive behavior unique to each class of materials. Because GNL is a universal feature of all highly deformable solids, establishing its standalone impact is a prerequisite for understanding nonlinear fracture. Here, we focus on brittle soft solids to study the role of GNL alone on the near-tip fields of a static crack under mode I plane-strain conditions, providing a canonical baseline for integrating material nonlinearities in future investigations. By utilizing a compressible St. Venant-Kirchhoff material model, we analyze crack behavior under large deformations in the absence of material nonlinearity. We propose a robust postprocessing methodology based on the crack-tip opening displacement (CTOD) profile and derive asymptotic analytical solutions. Our results reveal a distinct near-tip region where the CTOD departs from classical linear elastic predictions, transitioning into a nonlinear regime dictated by Poisson's ratio. Using a matched-asymptotics approach, we define a physical nonlinear length scale $λ_\\mathrm{nl}$ that bounds this region and scales quadratically with the far-field stress intensity factor $K_I$. We show that GNL acts as an intrinsic strain-stiffening mechanism sufficient to trigger energy partitioning, effectively shielding the crack tip and imparting an apparent toughening. Ultimately, we conclude that the geometrically nonlinear material model serves as a foundational framework for the broader study of nonlinear elastic fracture mechanics.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-28T14:29:48Z",
+    "updated": "2026-07-28T14:29:48Z",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25771v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25771v1"
+      }
+    ],
+    "score": 83,
+    "infographic": {
+      "key_insight": "Geometric nonlinearity alone creates a distinct near-crack-tip nonlinear zone with a physical length scale that grows quadratically with the stress intensity factor.",
+      "engineering_relevance": "This provides a clean baseline for predicting fracture in highly deformable soft solids and for separating kinematic effects from true constitutive nonlinearity.",
+      "method": [
+        "Modelled a mode-I, plane-strain crack in a compressible St. Venant-Kirchhoff solid.",
+        "Postprocessed crack-tip opening displacement (CTOD) profiles to identify deviation from linear elastic fracture mechanics.",
+        "Used matched asymptotics to derive the nonlinear zone size \\u03bb_nl and its scaling with K_I."
+      ],
+      "evidence_signal": "The abstract reports asymptotic analytical solutions and a robust CTOD-based analysis showing a nonlinear near-tip regime governed by Poisson's ratio.",
+      "watch_item": "The conclusions are based on an idealized constitutive model without material nonlinearity, so extension to real soft solids will require additional validation.",
+      "hashtags": [
+        "#FractureMechanics",
+        "#SoftSolids",
+        "#GeometricNonlinearity",
+        "#CTOD",
+        "#FiniteDeformation"
+      ],
+      "paper_id": "2026-07-28-arxiv-crack_tip_opening_as_a_probe_for_length_scale_separation_in_geometrically_nonlinear_solids",
+      "paper_title": "Crack-Tip Opening as a Probe for Length-Scale Separation in Geometrically Nonlinear Solids",
+      "paper_date": "2026-07-28",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-07-29T11:15:26",
       "generator": "openai"
     }
   },
@@ -75,29 +177,29 @@
         "url": "https://arxiv.org/pdf/2607.24509v1"
       }
     ],
-    "score": 83,
+    "score": 78,
     "infographic": {
-      "key_insight": "The paper introduces a smooth, explicit elastoplastic-damage update that uses closed-form, history-based branches to preserve irreversible plasticity and damage without a local Newton solve.",
-      "engineering_relevance": "It is useful for graphics and real-time solid simulation because it favors simple, vectorizable implementation and stable history evolution over exact yield-surface enforcement.",
+      "key_insight": "The paper proposes a smooth, explicit elastoplastic-damage material update that avoids local Newton solves by using closed-form active/frozen branches driven by a history variable.",
+      "engineering_relevance": "This gives graphics simulation a compact, vectorizable constitutive update that preserves irreversibility and residual deformation while staying simple to implement in explicit solvers.",
       "method": [
-        "Softplus generates a candidate equivalent plastic strain, then a max-history projection enforces irreversibility.",
-        "A deviatoric plastic-strain tensor stores residual direction, while an exponential scalar variable drives damage degradation.",
-        "Active and frozen branches are evaluated analytically from one response energy, avoiding local nonlinear solves."
+        "Softplus generates a candidate equivalent plastic strain for smooth activation.",
+        "A max-history projection enforces irreversibility, while a deviatoric plastic-strain tensor stores residual direction.",
+        "An exponential damage variable is updated analytically from one response energy, with no local Newton iteration."
       ],
-      "evidence_signal": "The authors validate the method on 1D cyclic tension, 2D cantilever bending, 3D platen compression, and a torus, and report branchwise energy-gradient agreement, residual deformation, and mesh-resolution sensitivity.",
-      "watch_item": "The approach is intended for isotropic, proportional or nearly proportional loading; it degrades sharply under path changes and is not a substitute for general return mapping or anisotropic damage models.",
+      "evidence_signal": "Across cyclic tension, cantilever bending, platen compression, and a torus test, the method reproduced residual deformation and monotone internal variables, while the baseline J2 return mapping was 1.51–3.08× faster as a kernel.",
+      "watch_item": "The approach is intended for isotropic proportional or near-proportional loading; accuracy drops sharply for large loading-direction changes and it is not a general replacement for return mapping.",
       "hashtags": [
+        "#SolidMechanics",
         "#Elastoplasticity",
-        "#DamageMechanics",
+        "#DamageModeling",
         "#GraphicsSimulation",
-        "#ComputationalMechanics",
-        "#ExplicitMethods"
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-27-arxiv-a_smooth_explicit_elastoplastic_damage_update_for_graphics_simulation",
       "paper_title": "A Smooth Explicit Elastoplastic--Damage Update for Graphics Simulation",
       "paper_date": "2026-07-27",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-28T11:10:09",
+      "generated_at": "2026-07-29T11:15:29",
       "generator": "openai"
     }
   },
@@ -127,21 +229,21 @@
         "url": "https://arxiv.org/pdf/2607.22019v1"
       }
     ],
-    "score": 83,
+    "score": 78,
     "infographic": {
-      "key_insight": "PIML-OFEM combines overlapping finite elements with problem-independent machine learning to reuse local basis functions across load cases and boundary conditions for large heterogeneous structures.",
-      "engineering_relevance": "It enables faster, high-resolution structural analysis and topology optimization while maintaining accuracy close to fine-scale finite element solutions.",
+      "key_insight": "PIML-OFEM combines overlapping finite elements with problem-independent machine learning to reuse local basis functions across load cases and boundary conditions while keeping high accuracy for heterogeneous structures.",
+      "engineering_relevance": "It enables faster large-scale structural analysis and more stable high-resolution topology optimization for complex materials and fine-scale features.",
       "method": [
-        "Each substructure keeps only corner-node degrees of freedom.",
-        "Oversampled local basis functions are computed on extended domains and restricted back to the target substructure.",
-        "A U-Net predicts basis functions from local Young's modulus fields, and a partition-of-unity overlap ensures global continuity."
+        "Substructures keep only corner-node degrees of freedom.",
+        "Oversampled local elasticity problems generate numerical basis functions on extended domains and are restricted back to the target substructure.",
+        "A U-Net predicts basis functions from local Young’s modulus fields, and a partition-of-unity overlap blends local bases into a continuous global displacement field."
       ],
-      "evidence_signal": "The abstract reports close agreement with fine-scale FEM for displacement and elemental strain energy, with lower online cost than direct FEM and better accuracy than PIML substructure models using linear boundary interpolation.",
-      "watch_item": "The approach still depends on learning reliable basis mappings from representative material distributions, so performance may degrade for unseen heterogeneity or poorly covered training sets.",
+      "evidence_signal": "The abstract reports close agreement with fine-scale FEM in displacement and elemental strain energy, with lower online cost than direct FEM and better accuracy than PIML substructure models using linear boundary interpolation.",
+      "watch_item": "Performance depends on the quality of learned basis prediction and overlap construction, so generalization to unseen material distributions and complex geometries should be validated carefully.",
       "hashtags": [
         "#FiniteElementMethod",
-        "#MachineLearning",
         "#StructuralAnalysis",
+        "#MachineLearning",
         "#TopologyOptimization",
         "#ComputationalMechanics"
       ],
@@ -149,7 +251,7 @@
       "paper_title": "PIML-OFEM: A New Large-Scale Structural Analysis Method Based on Problem-Independent Machine Learning and Overlapping Finite Element Technique",
       "paper_date": "2026-07-24",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-28T11:10:12",
+      "generated_at": "2026-07-29T11:15:32",
       "generator": "openai"
     }
   },
@@ -178,17 +280,17 @@
         "url": "https://arxiv.org/pdf/2607.23003v1"
       }
     ],
-    "score": 82,
+    "score": 77,
     "infographic": {
-      "key_insight": "The paper extends the J-integral to 3D quasicontinuum fracture simulations and adds uncertainty quantification so crack-driving force estimates can be validated and trusted in multiscale settings.",
-      "engineering_relevance": "This gives fracture engineers a practical way to compute energy release rates in atomistic-continuum models, supporting large-scale crack simulations while still resolving tip-scale physics.",
+      "key_insight": "The paper extends the $J$-integral to 3D quasicontinuum fracture simulations and adds uncertainty quantification so crack-driving force estimates are both multiscale-consistent and statistically defensible.",
+      "engineering_relevance": "This enables more reliable fracture assessment in large-scale atomistic-to-continuum models, including practical silicon crack-growth simulations with atomistic resolution near the crack tip.",
       "method": [
-        "Implemented the J-integral in QC3D under plane strain using Cauchy-Born-derived stress and strain energy density fields.",
-        "Validated results against LEFM and the virtual crack extension method across elastic, nonlinear, and atomically relaxed regimes.",
-        "Added a Markov chain Monte Carlo procedure to quantify uncertainty from mesh and integration-domain choices."
+        "Implemented $J$-integral evaluation in QC3D using Cauchy-Born-derived continuum fields under plane strain.",
+        "Validated against LEFM and virtual crack extension across linear elasticity, nonlinear Cauchy-Born, and atomistically relaxed cases.",
+        "Used Markov chain Monte Carlo to quantify uncertainty from mesh and integration-domain choices."
       ],
-      "evidence_signal": "The abstract reports excellent agreement with LEFM/VCE in three regimes and close agreement between predicted and Griffith critical energy release rates in a silicon three-point bending simulation.",
-      "watch_item": "Accuracy depends on mesh quality, integration-domain selection, and plane-strain/Cauchy-Born assumptions, so careful setup is needed for robust results.",
+      "evidence_signal": "The abstract reports excellent agreement with LEFM and VCE across all three regimes, and the silicon three-point bending prediction closely matches the Griffith criterion.",
+      "watch_item": "Results depend on mesh resolution, integration domain selection, and the plane-strain/QC3D assumptions, so careful calibration is needed for other geometries or material systems.",
       "hashtags": [
         "#FractureMechanics",
         "#JIntegral",
@@ -200,7 +302,7 @@
       "paper_title": "Uncertainty-quantified $J$-integral computation for quasicontinuum and finite element methods",
       "paper_date": "2026-07-25",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-28T11:10:15",
+      "generated_at": "2026-07-29T11:15:35",
       "generator": "openai"
     }
   },
@@ -230,21 +332,21 @@
         "url": "https://arxiv.org/pdf/2607.20339v1"
       }
     ],
-    "score": 78,
+    "score": 73,
     "infographic": {
-      "key_insight": "The paper introduces interval and fuzzy physics-augmented neural networks that learn physically constrained lower/mean/upper free-energy branches to quantify and propagate constitutive uncertainty.",
-      "engineering_relevance": "This gives mechanics engineers a distribution-free way to build hyperelastic models that remain interpretable, data-efficient, and usable in finite element simulations under noisy or sparse stress data.",
+      "key_insight": "The paper introduces interval and fuzzy physics-augmented neural networks that learn physics-consistent lower, mean, and upper constitutive responses to quantify uncertainty in hyperelastic stress–strain modeling.",
+      "engineering_relevance": "This gives engineers a compact, distribution-free way to bound noisy material data and propagate constitutive uncertainty into finite element simulations.",
       "method": [
-        "Two-stage transfer learning: fit a sparse mean energy model first, then fine-tune lower and upper branches.",
-        "Use automatic differentiation to convert learned free-energy densities into stress predictions.",
-        "Embed interval branches into a fuzzy-set representation via alpha-cut interpolation and enforce mechanistic constraints with smoothed L0 regularization."
+        "Train a sparse mean free-energy model first, then transfer-learn lower and upper branches.",
+        "Compute stress from learned energy via automatic differentiation while enforcing objectivity, consistency, and polyconvexity-promoting constraints.",
+        "Convert interval bounds into fuzzy responses using alpha-cut interpolation for nested admissible predictions."
       ],
-      "evidence_signal": "On synthetic isotropic hyperelastic data with heteroscedastic noise, shifted noise means, and varying noise magnitudes, the learned bounds enclosed noisy stress observations and generalized to the test set.",
-      "watch_item": "Performance depends on careful training of the bound branches and constraint/regularization settings, so robustness on real experimental datasets with stronger heterogeneity still needs validation.",
+      "evidence_signal": "The models were tested on synthetic isotropic hyperelastic datasets with heteroscedastic noise, varying random realizations, shifted noise means, and different noise magnitudes, and the learned bounds enclosed noisy stress observations while generalizing to test data.",
+      "watch_item": "Performance depends on the quality of sparse data and the stability of the two-stage training, so bound tightness and transfer-learning behavior may be sensitive to noise level and initialization.",
       "hashtags": [
         "#ConstitutiveModeling",
         "#UncertaintyQuantification",
-        "#PhysicsAugmentedNeuralNetworks",
+        "#PhysicsInformedNN",
         "#Hyperelasticity",
         "#FiniteElementAnalysis"
       ],
@@ -252,7 +354,110 @@
       "paper_title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling",
       "paper_date": "2026-07-22",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-28T11:10:18",
+      "generated_at": "2026-07-29T11:15:38",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-27-arxiv-an_adaptive_phase_field_framework_for_large_scale_interface_evolution_problems_using_a_str",
+    "arxiv_id": "2607.25142v1",
+    "date": "2026-07-27",
+    "title": "An adaptive phase field framework for large-scale interface evolution problems using a strong-form gradient smoothing approach",
+    "authors": "Zirui Mao, Alice Xu, Shenyang Hu, Panos Stinis, Yuyan Shao, Ang Li",
+    "abstract": "Multiscale problems with evolving interfaces are ubiquitous in science and engineering. Phase-field models are a powerful tool for simulating interface-dominated phenomena in computational mechanics and materials modeling, but their application to large-scale problems is often constrained by the high computational cost of resolving thin diffuse interfaces over the entire domain. This paper presents an efficient strong-form phase-field solver that couples the Gradient Smoothing Method (GSM) with a hierarchical adaptive and moving structured mesh, enabling automatic localization of resolution within a narrow interfacial region while retaining coarse discretization in bulk domains. A layered refinement design is introduced to preserve locally uniform resolution across the interface, allowing the GSM discretization to maintain overall second-order accuracy despite strong mesh non-uniformity away from the interface. Although GSM incurs a higher per-degree-of-freedom cost than standard finite-difference schemes, the adaptive framework substantially reduces the total number of degrees of freedom, resulting in near-linear computational scaling compared with the quadratic scaling of uniform-grid approaches. Numerical examples based on the Allen-Cahn and Cahn-Hilliard equations demonstrate that the proposed adaptive GSM solver delivers desired accuracy for interface evolution while attaining more favorable computational complexity, O(N), than existing weak-form and strong-form solvers, becoming significantly more efficient for large-scale problems with thin interfaces or a small interfacial area fraction relative to the whole domain.",
+    "category": "AI Solid Mechanics",
+    "source": "arXiv",
+    "published": "2026-07-27T23:27:55Z",
+    "updated": "2026-07-27T23:27:55Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "math-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25142v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25142v1"
+      }
+    ],
+    "score": 68,
+    "infographic": {
+      "key_insight": "An adaptive strong-form phase-field solver localizes fine resolution to a narrow moving interface using gradient smoothing and layered mesh refinement, cutting cost while preserving accuracy.",
+      "engineering_relevance": "This enables scalable simulation of interface-dominated mechanics and materials problems where uniform fine meshes would be prohibitively expensive.",
+      "method": [
+        "Couple Gradient Smoothing Method (GSM) with a hierarchical adaptive and moving structured mesh.",
+        "Use layered refinement to keep locally uniform spacing across the diffuse interface.",
+        "Maintain coarse resolution in bulk regions to reduce degrees of freedom and improve scaling."
+      ],
+      "evidence_signal": "Allen-Cahn and Cahn-Hilliard tests show the adaptive GSM solver retains desired interface-evolution accuracy while achieving near-linear O(N) computational complexity.",
+      "watch_item": "GSM has a higher cost per degree of freedom than standard finite-difference methods, so performance depends on effective mesh adaptation and interface localization.",
+      "hashtags": [
+        "#PhaseField",
+        "#AdaptiveMesh",
+        "#GradientSmoothing",
+        "#ComputationalMechanics",
+        "#FiniteDifference"
+      ],
+      "paper_id": "2026-07-27-arxiv-an_adaptive_phase_field_framework_for_large_scale_interface_evolution_problems_using_a_str",
+      "paper_title": "An adaptive phase field framework for large-scale interface evolution problems using a strong-form gradient smoothing approach",
+      "paper_date": "2026-07-27",
+      "paper_category": "AI Solid Mechanics",
+      "generated_at": "2026-07-29T11:15:41",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-unimem_complementary_episodic_to_parametric_memory_for_boundary_agnostic_task_streams",
+    "arxiv_id": "2607.26017v1",
+    "date": "2026-07-28",
+    "title": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams",
+    "authors": "Siyu Xia, Chenheng Zhang, Yanting Wu, Haoxuan Li, Jiajun Chai, Xiaohan Wang",
+    "abstract": "Memory is essential for LLM agents to accumulate task experience and reuse task-specific execution strategies. However, real-world deployment over boundary-agnostic and evolving task streams exposes a fundamental stability-plasticity dilemma. External retrieval-based memory can rapidly absorb new evidence, but it often fails to internalize recurring execution patterns and incurs inference-time retrieval overhead. Parametric memory enables stable and efficient execution once learned, but typically relies on explicit task boundaries and fixed parameter budgets. Inspired by the human brain, which balances plasticity and stability through complementary episodic storage and gradual consolidation, we propose UniMem, a self-routing framework for autonomous memory management. UniMem uses learnable routing tokens as memory controllers, enabling adaptive coordination between complementary memory pathways: novel or sparse tasks are retained in an episodic buffer for retrieval-augmented execution, while recurring and reliable patterns are consolidated into expandable parametric memory. By decoupling task identification from task execution with routing tokens and parametric memory blocks, UniMem expands memory on demand without task labels during deployment or uncontrolled parameter growth. Experiments on long-horizon streaming task sequences show that UniMem consistently outperforms baselines while maintaining execution fidelity, achieving an average gain of 4.0 EM points across three backbone models.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-28T17:28:21Z",
+    "updated": "2026-07-28T17:28:21Z",
+    "primary_category": "cs.CL",
+    "categories": [
+      "cs.CL"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.26017v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.26017v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "UniMem learns to route streaming tasks into either episodic retrieval or expandable parametric memory, helping LLM agents stay stable on recurring patterns while remaining plastic for new ones.",
+      "engineering_relevance": "For autonomous engineering workflows, this offers a practical way to retain and reuse reliable execution strategies over long, boundary-agnostic task streams without requiring explicit task labels.",
+      "method": [
+        "Learnable routing tokens act as memory controllers.",
+        "Novel or sparse tasks are stored in an episodic buffer for retrieval-augmented execution.",
+        "Recurring and reliable patterns are consolidated into expandable parametric memory blocks."
+      ],
+      "evidence_signal": "In long-horizon streaming task evaluations across three backbone models, UniMem improved performance by an average of 4.0 EM points over baselines.",
+      "watch_item": "The approach adds routing and memory-management complexity, so its efficiency and robustness will depend on how well the controller generalizes and how memory growth is bounded in deployment.",
+      "hashtags": [
+        "#LLMAgents",
+        "#MemorySystems",
+        "#ContinualLearning",
+        "#RetrievalAugmentedGeneration",
+        "#AutonomousAI"
+      ],
+      "paper_id": "2026-07-28-arxiv-unimem_complementary_episodic_to_parametric_memory_for_boundary_agnostic_task_streams",
+      "paper_title": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams",
+      "paper_date": "2026-07-28",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-07-29T11:15:44",
       "generator": "openai"
     }
   },
@@ -281,29 +486,82 @@
         "url": "https://arxiv.org/pdf/2607.23525v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "A dual topological-derivative framework uses one enriched 3-D stress analysis to both remove material and predict crack-driving energy release rates, enabling fracture-aware topology optimization.",
-      "engineering_relevance": "This lets engineers design brittle structures that are not only lightweight but also less prone to crack initiation, with direct relevance to high-stakes 3-D components.",
+      "key_insight": "The paper introduces a 3-D fracture-mitigation topology optimization method that uses dual topological derivatives both to create holes during design and to estimate crack-driving energy release rates from a single enriched finite element solve.",
+      "engineering_relevance": "This enables designers of brittle solids to shape structures for lower fracture risk while avoiding repeated crack simulations, which can reduce computational cost in practical aerospace, civil, and mechanical design.",
       "method": [
-        "Level set topology is parameterized with radial basis functions and updated via optimization.",
-        "An interface-enriched finite element method computes stresses on the uncracked geometry.",
-        "Dual topological derivatives are used to nucleate holes and estimate boundary energy release rates; a p-mean aggregates the crack-risk measure."
+        "Level-set topology is parameterized with radial basis functions for shape evolution.",
+        "Interface-enriched finite elements capture the uncracked stress field accurately.",
+        "Dual topological derivatives estimate boundary energy release rates and guide hole nucleation; boundary ERRs are aggregated with a p-mean objective."
       ],
-      "evidence_signal": "The abstract reports 3-D numerical examples, including the L-bracket benchmark, to demonstrate the framework’s fracture-mitigation capability.",
-      "watch_item": "The approach depends sensitively on stress accuracy and on assumptions such as penny-shaped crack nucleation and maximum hoop stress criterion, so robust implementation is critical.",
+      "evidence_signal": "The framework is demonstrated on 3-D numerical examples, including the standard L-bracket benchmark, showing its ability to mitigate fracture in brittle solids.",
+      "watch_item": "Because the ERR estimates depend strongly on stress accuracy, the non-local stress-recovery and boundary enrichment strategy must be implemented carefully to avoid misleading crack-risk predictions.",
       "hashtags": [
         "#TopologyOptimization",
         "#FractureMechanics",
+        "#BrittleSolids",
         "#FiniteElementMethod",
-        "#LevelSetMethod",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-26-arxiv-partial_2_mathrm_to_a_dual_topological_derivative_based_enriched_topology_optimization_for",
       "paper_title": "$\\partial^2 ( \\mathrm{TO} ) $: A Dual Topological Derivative-Based Enriched Topology Optimization for Fracture Mitigation in 3-D Brittle Solids",
       "paper_date": "2026-07-26",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-28T11:10:21",
+      "generated_at": "2026-07-29T11:15:47",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-27-arxiv-calibrated_partial_resets_preventing_policy_collapse_in_continual_reinforcement_learning",
+    "arxiv_id": "2607.24996v1",
+    "date": "2026-07-27",
+    "title": "Calibrated Partial Resets: Preventing Policy Collapse in Continual Reinforcement Learning",
+    "authors": "Luc McCutcheon, Evangelos Chatzaroulas, Saber Fallah",
+    "abstract": "Neural networks are hindered by accumulating dormant neurons and loss of expressivity throughout training, particularly in non-stationary data settings, such as continual supervised and reinforcement learning. Recently, neuron resets have been used to maintain gradient flow and restore plasticity. However, full unit reinitialization often sacrifices peak performance and can destabilize training, leading to policy collapse. To preserve plasticity without destabilizing training, we propose Calibrated Partial Resets (CPR), an optimizer that periodically pulls low-utility neurons toward their initialization, with pull strength scaled by each neuron's utility. Unlike binary reset methods, partial resets avoid brittleness; unlike uniform decay, calibrated utility-scaling concentrates adjustment on the units that need it most. Among compared methods, only CPR avoids policy collapse over 400M training steps in SlipperyAnt, and it outperforms prior decay and reset-based methods on Continual MetaWorld and Continual MinAtar benchmarks. Ablations reveal a tunable trade-off between plasticity and peak performance, highlighting utility-scaled reinitialization as a promising direction for continual learning.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-27T18:53:00Z",
+    "updated": "2026-07-27T18:53:00Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.24996v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.24996v1"
+      }
+    ],
+    "score": 64,
+    "infographic": {
+      "key_insight": "Calibrated Partial Resets (CPR) preserves neural plasticity by gently pulling low-utility neurons back toward initialization instead of fully reinitializing them, reducing policy collapse while retaining performance.",
+      "engineering_relevance": "For continual reinforcement learning systems, CPR offers a practical stability-plasticity control mechanism that can improve long-horizon training robustness in non-stationary environments.",
+      "method": [
+        "Periodically apply partial resets to neurons with low utility rather than full unit reinitialization.",
+        "Scale reset strength by per-neuron utility so the least useful units are adjusted the most.",
+        "Use the reset schedule as a tunable knob to balance plasticity against peak performance."
+      ],
+      "evidence_signal": "In the abstract, CPR is reported to avoid policy collapse over 400M training steps on SlipperyAnt and to outperform prior decay- and reset-based methods on Continual MetaWorld and Continual MinAtar.",
+      "watch_item": "The reset strength and cadence must be carefully tuned, since overly aggressive partial resets could still reduce peak performance or destabilize training.",
+      "hashtags": [
+        "#ContinualLearning",
+        "#ReinforcementLearning",
+        "#NeuralPlasticity",
+        "#PolicyCollapse",
+        "#Optimization"
+      ],
+      "paper_id": "2026-07-27-arxiv-calibrated_partial_resets_preventing_policy_collapse_in_continual_reinforcement_learning",
+      "paper_title": "Calibrated Partial Resets: Preventing Policy Collapse in Continual Reinforcement Learning",
+      "paper_date": "2026-07-27",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-07-29T11:15:50",
       "generator": "openai"
     }
   },
@@ -332,29 +590,80 @@
         "url": "https://arxiv.org/pdf/2607.22833v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "The paper shows that topology optimization can be extended to high-temperature components by directly optimizing against nonlinear creep deformation instead of only elastic stiffness.",
-      "engineering_relevance": "This enables safer, longer-life designs for metallic parts such as turbine blades operating under sustained thermal and mechanical loads.",
+      "key_insight": "The paper introduces a differentiable thermo-structural topology optimization framework that directly accounts for nonlinear creep, enabling designs that better resist long-term permanent deformation at high temperature.",
+      "engineering_relevance": "This is relevant for high-temperature metal components such as turbine blades, where service life is strongly affected by creep rather than only elastic stiffness.",
       "method": [
-        "Uses a differentiable thermo-structural topology optimization framework with the Norton creep model.",
-        "Solves transient creep response with backward Euler over the service life and uses JAX automatic differentiation for adjoint sensitivities.",
-        "Supports gradient-based optimization for 2D benchmarks and a 3D graded-material turbine blade design challenge."
+        "Uses the Norton creep model to represent nonlinear, history-dependent material deformation.",
+        "Solves the transient coupled thermo-structural response with a backward Euler time integration scheme over the service life.",
+        "Employs JAX automatic differentiation for adjoint-based gradients in gradient-driven topology and multi-material optimization."
       ],
-      "evidence_signal": "The abstract reports benchmark studies showing substantially lower permanent deformation than elastic-stiffness-only designs, plus a 3D turbine blade challenge demonstrating the framework under coupled thermal, nonlinear, and multi-material conditions.",
-      "watch_item": "The approach depends on accurate creep constitutive parameters and a differentiable transient solver, so results may be sensitive to material-model calibration and computational cost.",
+      "evidence_signal": "The abstract reports canonical 2D benchmarks where the method significantly reduces permanent deformation versus elastic-only designs, plus a 3D graded-material turbine blade challenge problem.",
+      "watch_item": "Creep-aware optimization is computationally demanding because it must handle nonlinear time-dependent thermo-mechanical coupling and accurate material calibration.",
       "hashtags": [
         "#TopologyOptimization",
         "#Creep",
         "#ThermoStructural",
-        "#AdjointSensitivity",
-        "#AdditiveManufacturing"
+        "#AdjointMethods",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-24-arxiv-thermo_structural_topology_optimization_considering_nonlinear_creep",
       "paper_title": "Thermo-Structural Topology Optimization Considering Nonlinear Creep",
       "paper_date": "2026-07-24",
       "paper_category": "Topology Optimization",
-      "generated_at": "2026-07-28T11:10:24",
+      "generated_at": "2026-07-29T11:15:53",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-exact_discrete_adjoint_optimization_of_trap_timing_and_placement_in_a_stieltjes_time_react",
+    "arxiv_id": "2607.25450v1",
+    "date": "2026-07-28",
+    "title": "Exact discrete-adjoint optimization of trap timing and placement in a Stieltjes-time reaction-diffusion model: A Galicia case study",
+    "authors": "Francisco J. Fernández, Iván Area",
+    "abstract": "Seasonal population models must combine diffusion, inactive periods and abrupt biological transfers while remaining differentiable with respect to localized interventions. We formulate a finite-dimensional timing-and-placement control problem for a Stieltjes-time reaction--diffusion model and derive the exact adjoint of the fully discrete residual. Continuous finite elements and an implicit Stieltjes--Euler scheme represent propagation, compartment replacement, resets and historical phase averages. For the resulting box-constrained penalized problem, we prove well-posedness and differentiability of the discrete control-to-state map, existence of a minimizer, first-order stationarity, and equivalence between direct-sensitivity and adjoint gradients. Benchmark tests show machine-precision agreement (below $3\\times10^{-15}$) and adjoint speed-ups from about $7.5$ to $30.9$ as the number of traps increases from one to four. The method is applied to \\textit{Vespa velutina} trap campaigns on a realistic Galicia mesh. Smoothed activation windows, domain-normalized moving kernels and the complete adjoint are independently verified. The final two-cluster control remains admissible and has a scaled gradient infinity norm of $2.97\\times10^{-5}$ with 120 temporal subdivisions per month. Fixed-control evaluations at 60, 120 and 240 subdivisions yield a refinement-increment ratio of $0.4984$. At the finest level, the joint control outperforms time-only and reference controls, reducing the diagnostic objective by $0.49209%$. This reduction depends on uncalibrated trap-to-mortality intensities and should not be interpreted as field capture efficacy. The framework is fully reproducible, without claiming global optimality or a calibrated field-management prescription.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-07-28T08:41:17Z",
+    "updated": "2026-07-28T08:41:17Z",
+    "primary_category": "math.OC",
+    "categories": [
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25450v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25450v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "An exact discrete adjoint is derived for a finite-element Stieltjes-time reaction–diffusion control model, enabling efficient optimization of trap timing and placement.",
+      "engineering_relevance": "The framework provides a differentiable, reproducible way to optimize localized interventions in seasonal PDE systems with abrupt state transfers and inactive periods.",
+      "method": [
+        "Continuous finite elements + implicit Stieltjes–Euler time stepping",
+        "Exact adjoint of the fully discrete residual for timing/placement control",
+        "Box-constrained penalized optimization with discrete sensitivity checks"
+      ],
+      "evidence_signal": "The abstract reports machine-precision gradient agreement (<3×10^-15), adjoint speed-ups of about 7.5× to 30.9×, and a final scaled gradient infinity norm of 2.97×10^-5 on a Galicia case study.",
+      "watch_item": "Reported performance depends on uncalibrated trap-to-mortality intensities, so the optimization result should not be interpreted as validated field efficacy.",
+      "hashtags": [
+        "#DiscreteAdjoint",
+        "#ReactionDiffusion",
+        "#FiniteElementMethod",
+        "#Optimization",
+        "#ComputationalScience"
+      ],
+      "paper_id": "2026-07-28-arxiv-exact_discrete_adjoint_optimization_of_trap_timing_and_placement_in_a_stieltjes_time_react",
+      "paper_title": "Exact discrete-adjoint optimization of trap timing and placement in a Stieltjes-time reaction-diffusion model: A Galicia case study",
+      "paper_date": "2026-07-28",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-07-29T11:15:56",
       "generator": "openai"
     }
   },
@@ -383,29 +692,29 @@
         "url": "https://arxiv.org/pdf/2607.23279v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "The paper introduces a least-squares weak Galerkin finite element framework that solves linear elasticity on general polytopal meshes with a symmetric positive definite formulation and no discrete inf-sup constraint.",
-      "engineering_relevance": "This makes the method attractive for structural mechanics problems with complex geometry, irregular meshes, and nearly incompressible materials where locking and boundary-condition handling are challenging.",
+      "key_insight": "A least-squares weak Galerkin formulation solves linear elasticity on general polytopal meshes with a symmetric positive definite system and locking-free behavior near incompressibility.",
+      "engineering_relevance": "This makes elasticity simulation more robust for complex geometries and challenging boundary or interface conditions without relying on a discrete inf-sup condition.",
       "method": [
         "Uses weak differential operators: weak gradient, weak strain tensor, and weak divergence.",
-        "Formulates elasticity as a least-squares weak Galerkin method on weak finite element spaces.",
-        "Designed for polygonal/polyhedral meshes and robust treatment of boundary conditions and interfaces."
+        "Builds a least-squares weak Galerkin finite element scheme on polygonal/polyhedral meshes.",
+        "Proves uniqueness and optimal-order error estimates in a discrete energy norm."
       ],
-      "evidence_signal": "The abstract reports optimal-order error estimates and extensive numerical experiments showing stability, efficiency, and locking-free performance in the nearly incompressible regime.",
-      "watch_item": "Practical deployment may require careful construction of weak spaces and local operators to preserve stability and accuracy on highly irregular polytopal meshes.",
+      "evidence_signal": "The abstract reports extensive numerical experiments showing the method matches the theory and performs stably, efficiently, and locking-free in nearly incompressible tests.",
+      "watch_item": "The method’s practical efficiency still depends on implementing weak operators and least-squares terms accurately on general polytopal meshes.",
       "hashtags": [
         "#FiniteElementMethod",
         "#LinearElasticity",
         "#WeakGalerkin",
-        "#LeastSquares",
+        "#PolytopalMeshes",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-25-arxiv-a_least_squares_weak_galerkin_framework_for_linear_elasticity_on_polytopal_meshes",
       "paper_title": "A Least Squares Weak Galerkin Framework for Linear Elasticity on Polytopal Meshes",
       "paper_date": "2026-07-25",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-28T11:10:26",
+      "generated_at": "2026-07-29T11:15:58",
       "generator": "openai"
     }
   },
@@ -436,29 +745,29 @@
         "url": "https://arxiv.org/pdf/2607.23667v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "There is no universally best flow surrogate: the right architecture depends on whether the dynamics are boundary-driven or self-sustained, with time handling being the deciding factor.",
-      "engineering_relevance": "For process and fluid simulations, surrogate selection should match the physics and validation should use failure-mode-specific metrics rather than pointwise RMSE alone.",
+      "key_insight": "No single flow surrogate architecture is universally best: the optimal choice depends on whether the dynamics are boundary-driven or self-sustained, and on how time dependence is handled.",
+      "engineering_relevance": "For process and flow simulation, this means surrogate selection should be tied to the physics of the regime, because the wrong temporal model can miss the quantities engineers actually care about even if pointwise error looks good.",
       "method": [
-        "Compared 8 surrogate architectures across two transient flow regimes: CMP slurry film and cylinder wake (Karman vortex street).",
-        "Varied representation style (full-field vs latent) and rollout style (one-shot vs autoregressive/stepwise).",
-        "Evaluated models with five physical criteria: field accuracy, structure, invented motion, amplitude, and timing."
+        "Compared 8 surrogate models on two transient flows: a 3D CMP slurry film and a 2D Kármán vortex street.",
+        "Evaluated models under a shared pipeline spanning full-field vs latent representations and one-shot vs autoregressive prediction.",
+        "Judged performance with five physics-oriented metrics: field, structure, invented motion, amplitude, and timing."
       ],
-      "evidence_signal": "A one-shot full-field model reached 3.2% relative error on cumulative wall shear stress in CMP, while an autoregressive latent DeepONet preserved 96% of wake shedding power that other models nearly eliminated.",
-      "watch_item": "Offline training cost matters: the surrogate only pays off after enough queries, so deployment value depends on the number of post-training evaluations and the regime-specific setup.",
+      "evidence_signal": "A one-shot full-field model achieved 3.2% relative error on CMP wall-shear stress, while a latent autoregressive DeepONet preserved 96% of wake shedding power on KVS; all surrogates were 10^3–10^4× faster than the FEM solver.",
+      "watch_item": "Low pointwise RMSE can be misleading, and the offline training-simulation cost must be included because the break-even point differs by regime.",
       "hashtags": [
-        "#FlowSurrogates",
-        "#DeepLearning",
+        "#SurrogateModels",
         "#ComputationalFluidDynamics",
-        "#SurrogateModeling",
-        "#EngineeringAI"
+        "#DeepONet",
+        "#TimeVaryingBCs",
+        "#PhysicsInformedAI"
       ],
       "paper_id": "2026-07-26-arxiv-no_free_lunch_in_flow_surrogates_under_time_varying_boundary_conditions_a_two_regime_study",
       "paper_title": "No Free Lunch in Flow Surrogates under Time-Varying Boundary Conditions: A Two-Regime Study",
       "paper_date": "2026-07-26",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-28T11:10:29",
+      "generated_at": "2026-07-29T11:16:02",
       "generator": "openai"
     }
   },
@@ -487,17 +796,17 @@
         "url": "https://arxiv.org/pdf/2607.24503v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "Learning can organize synapses into dendritic clusters that improve a neuron’s ability to discriminate covariance structure, but only when dendritic nonlinearities and synaptic structural plasticity both remain active.",
-      "engineering_relevance": "The result suggests that distributed, compartmentalized connectivity may be a design principle for neuro-inspired hardware and models that need to encode higher-order correlations beyond linear separability.",
+      "key_insight": "Learning can organize synapses into dendritic clusters that help a neuron detect covariance structure, especially when dendritic nonlinearities and synaptic plasticity act together.",
+      "engineering_relevance": "The result suggests that structured dendritic compartments and learned synaptic organization could improve neuromorphic or dendrite-aware models for classification tasks beyond standard linear-nonlinear networks.",
       "method": [
-        "Built Dendrinet, a neural network with hierarchical dendritic segments and sparse conductance-based synapses.",
-        "Trained the model on a Permuted-Covariance Classification task that single-layer linear-nonlinear networks cannot solve.",
+        "Built Dendrinet, a neural architecture with hierarchical dendritic segments and sparse conductance-based synapses.",
+        "Trained the model on a Permuted-Covariance Classification task that is not solvable by a single-layer linear-nonlinear network.",
         "Tested causal roles by turning off dendritic nonlinearities and shuffling learned excitatory/inhibitory synaptic organization."
       ],
-      "evidence_signal": "In silico evaluation showed the dendritic model could solve the task and form excitatory and inhibitory synaptic clusters, while disabling nonlinearities or shuffling learned connectivity reduced performance.",
-      "watch_item": "The results are model-based and shuffling interventions may alter more than just functional synaptic clustering, so causal interpretations should be made cautiously.",
+      "evidence_signal": "In simulation, the model solved the covariance classification task and formed excitatory and inhibitory functional synapse clusters when both dendritic nonlinearities and structural plasticity were enabled.",
+      "watch_item": "The shuffling experiments alter more than cluster structure alone, so changes in performance cannot be attributed exclusively to FSCs.",
       "hashtags": [
         "#DendriticComputing",
         "#SynapticPlasticity",
@@ -509,13 +818,13 @@
       "paper_title": "Synaptic clustering emerges from learning and supports covariance discrimination",
       "paper_date": "2026-07-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-28T11:10:32",
+      "generated_at": "2026-07-29T11:16:05",
       "generator": "openai"
     }
   },
   {
     "id": "2026-07-27-arxiv-from_execution_to_capability_scientific_experience_consolidation_via_procedural_knowledge",
-    "arxiv_id": "2607.24459v1",
+    "arxiv_id": "2607.24459v2",
     "date": "2026-07-27",
     "title": "From Execution to Capability: Scientific Experience Consolidation via Procedural Knowledge Synthesis",
     "authors": "Liwei Dong, Jiahao Zhao, Nan Xu",
@@ -523,7 +832,7 @@
     "category": "Fracture and Damage",
     "source": "arXiv",
     "published": "2026-07-27T14:01:32Z",
-    "updated": "2026-07-27T14:01:32Z",
+    "updated": "2026-07-28T04:09:04Z",
     "primary_category": "cs.AI",
     "categories": [
       "cs.AI"
@@ -531,36 +840,36 @@
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.24459v1"
+        "url": "https://arxiv.org/abs/2607.24459v2"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.24459v1"
+        "url": "https://arxiv.org/pdf/2607.24459v2"
       }
     ],
-    "score": 63,
+    "score": 58,
     "infographic": {
-      "key_insight": "Verified runtime experiences can be consolidated into reusable procedural knowledge, but smaller models may need that knowledge concretized before it improves performance.",
-      "engineering_relevance": "For scientific computing and fracture/damage workflows, the method suggests a path from one-off solver feedback to durable assistant behavior that can generalize across tasks.",
+      "key_insight": "SciConsolidate turns verified execution traces into transferable procedural knowledge, then uses a stronger model to convert that knowledge into executable supervision so smaller models can actually benefit.",
+      "engineering_relevance": "For scientific and solid mechanics workflows, this offers a practical path to make LLMs better at reusing successful computational strategies across related problems instead of overfitting to one-off fixes.",
       "method": [
-        "Contrast verified successes and failures to extract cross-task procedures.",
-        "Use a development-validation gate plus failure-informed, answer-free query synthesis to grow consolidation data.",
-        "Have a stronger teacher concretize procedures into executable code for procedure-free SFT, with a no-procedure control for comparison."
+        "Contrast verified successes vs. failures to synthesize cross-task procedures",
+        "Use a development-validation gate to keep only robust procedures",
+        "Generate failure-informed, answer-free queries and concretize procedures with a stronger teacher for procedure-free SFT"
       ],
-      "evidence_signal": "On SciCode, procedure injection improved Qwen3.6-27B by +3.85/+6.26 sub-step/main-problem points, while the 9B student only improved after procedure-guided concretization (+3.89/+6.25 over control; +5.62/+11.25 over baseline).",
-      "watch_item": "The approach depends on a stronger model to bridge the abstraction-execution gap, so gains may not transfer if the student cannot reliably operationalize abstract procedures.",
+      "evidence_signal": "On SciCode, procedure injection improved Qwen3.6-27B by +3.85/+6.26 on sub-step/main-problem scores, and procedure-guided concretization improved the 9B student by +3.89/+6.25 over no-procedure SFT and +5.62/+11.25 over the original model.",
+      "watch_item": "The approach depends on a stronger teacher to operationalize abstractions, so gains may be limited when the target model cannot execute procedures or when teacher-generated concretization does not transfer cleanly.",
       "hashtags": [
         "#ScientificComputing",
-        "#LLMforEngineering",
-        "#ScientificAI",
-        "#ProcedureSynthesis",
-        "#SelfImprovingModels"
+        "#LLM4Science",
+        "#ProceduralKnowledge",
+        "#SelfImprovingAI",
+        "#FractureAndDamage"
       ],
       "paper_id": "2026-07-27-arxiv-from_execution_to_capability_scientific_experience_consolidation_via_procedural_knowledge",
       "paper_title": "From Execution to Capability: Scientific Experience Consolidation via Procedural Knowledge Synthesis",
       "paper_date": "2026-07-27",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-07-28T11:10:35",
+      "generated_at": "2026-07-29T11:16:09",
       "generator": "openai"
     }
   },
@@ -590,29 +899,80 @@
         "url": "https://arxiv.org/pdf/2607.21164v1"
       }
     ],
-    "score": 63,
+    "score": 58,
     "infographic": {
-      "key_insight": "A Cosserat rod can be reformulated as a chain of rigid nodes with pairwise compliant forces/moments, while retaining the rigor and anti-locking benefits of a mixed finite element derivation.",
-      "engineering_relevance": "This gives a robust, two-node-coupled rod model suitable for soft robotics and slender-structure dynamics, with simpler discrete mechanics than dense reduced-order strain models.",
+      "key_insight": "A mixed Petrov–Galerkin Cosserat rod FEM can be discretized into a two-node rigid-body chain with compliant coupling, preserving robustness and no-locking behavior while matching discrete rod dynamics.",
+      "engineering_relevance": "This provides a practical rod model for soft robotics, tendon-driven systems, and slender-structure dynamics with simpler pairwise interactions than dense reduced-order formulations.",
       "method": [
-        "Mixed Petrov–Galerkin Cosserat rod FEM with linear kinematic interpolation",
-        "Internal virtual work integrated by midpoint rule; external and inertial terms by trapezoidal rule",
-        "Independent stress DOFs in compliance form for dilatation, shear, torsion, and curvature"
+        "Represent the rod as rigid nodes connected by elastic force/moment couplings",
+        "Compute dilatation, shear, torsion, and curvature from relative node kinematics",
+        "Use a mixed compliance form with midpoint integration for internal work and trapezoidal rules for external/inertial terms"
       ],
-      "evidence_signal": "Three numerical examples—varying cross sections, tendon-driven actuation, and coupled longitudinal-torsional dynamics—show accuracy, robustness, and convergence.",
-      "watch_item": "The formulation’s accuracy depends on correct discrete integration and pairwise coupling setup, so implementation details may be critical for stability and consistency.",
+      "evidence_signal": "Three numerical examples—piecewise cross sections, tendon actuation at different discretizations, and longitudinal-torsional dynamics—show accuracy, robustness, and convergence.",
+      "watch_item": "The method depends on careful choice of quadrature and mixed variables; inconsistent implementation could compromise the intended no-locking behavior.",
       "hashtags": [
         "#CosseratRod",
         "#FiniteElementMethod",
         "#SoftRobotics",
-        "#MixedFormulation",
-        "#ComputationalMechanics"
+        "#ComputationalMechanics",
+        "#MixedFormulation"
       ],
       "paper_id": "2026-07-23-arxiv-a_mixed_discrete_cosserat_rod_formulation",
       "paper_title": "A Mixed Discrete Cosserat Rod Formulation",
       "paper_date": "2026-07-23",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-28T11:10:38",
+      "generated_at": "2026-07-29T11:16:12",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-integrating_moment_tensor_potentials_with_finite_element_modeling_for_heat_transfer_predic",
+    "arxiv_id": "2607.25803v1",
+    "date": "2026-07-28",
+    "title": "Integrating moment tensor potentials with finite-element modeling for heat transfer prediction in FLiBe-based molten salt systems",
+    "authors": "Mikhail Polovinkin, Ksenia Abramova, Oksana Rahmanova, Farit Valiev, Andrey Isakov, Andrey Goryachikh",
+    "abstract": "Molten fluoride salts are promising heat-transfer media for advanced molten salt reactors (MSRs), where reliable thermophysical property determination is critical for component design and safety. We present an integrated multiscale framework that couples machine-learning-driven atomistic simulations with finite-element (FE) modeling to predict the heat-transfer performance of FLiBe-based salts in a linear heat exchanger. At the atomistic scale, Moment Tensor Potentials (MTPs), actively trained on ab initio data, are developed for pure FLiBe (66-34 and 74-26 LiF-BeF2 mol%), FLiBe-LaF3, and FLiBe-UF4. These potentials are used in molecular dynamics simulations to obtain temperature- and composition-dependent transport properties (density, viscosity, thermal conductivity, and isobaric heat capacity), which are mapped as inputs to a three-dimensional FE model of the experimental thermal loop. The FE model with literature transport properties reproduces the experimental heat-transfer behavior of pure FLiBe to within 10% in the laminar regime and 18% in the transitional and turbulent regimes, validating the end-to-end pipeline for this composition. The same model with MTP-MD-derived transport properties systematically overestimates the heat-transfer coefficient by 25-28%, an offset consistent with the MTP-MD biases on thermal conductivity and viscosity. Applied to the ternary systems FLiBe-LaF3 and FLiBe-UF4 over 0-5 mol%, the MTP-MD-driven FE model predicts a mean reduction in heat-transfer efficiency of 8-11% relative to pure FLiBe, with UF4 exhibiting the strongest effect. The qualitative ordering of the three systems is the more robust result; the absolute value of the 8-11% figure is contingent on the MTP accuracy. The framework is complementary to high-temperature experiments and provides a physics-based pathway for the rapid screening of MSR coolant formulations.",
+    "category": "AI Solid Mechanics",
+    "source": "arXiv",
+    "published": "2026-07-28T14:49:50Z",
+    "updated": "2026-07-28T14:49:50Z",
+    "primary_category": "cond-mat.mtrl-sci",
+    "categories": [
+      "cond-mat.mtrl-sci"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25803v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25803v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "An actively trained MTP-to-FE pipeline can predict how FLiBe-based molten salts affect heat transfer, enabling rapid screening of coolant formulations.",
+      "engineering_relevance": "This framework supports reactor thermal design by linking atomistic transport properties to component-scale heat-transfer performance in molten salt systems.",
+      "method": [
+        "Train Moment Tensor Potentials on ab initio data for FLiBe, FLiBe-LaF3, and FLiBe-UF4.",
+        "Run molecular dynamics to extract density, viscosity, thermal conductivity, and heat capacity over temperature/composition ranges.",
+        "Feed the transport properties into a 3D finite-element model of a linear heat exchanger to predict heat-transfer behavior."
+      ],
+      "evidence_signal": "Using literature properties, the FE model matched pure FLiBe experiments within 10% in laminar flow and 18% in transitional/turbulent flow, while MTP-MD inputs overestimated heat-transfer coefficient by 25-28% and predicted an 8-11% reduction for ternary salts.",
+      "watch_item": "The absolute heat-transfer reduction for FLiBe-LaF3 and FLiBe-UF4 depends on MTP accuracy, especially biases in thermal conductivity and viscosity.",
+      "hashtags": [
+        "#MoltenSaltReactors",
+        "#FiniteElementModeling",
+        "#MachineLearningPotentials",
+        "#HeatTransfer",
+        "#MultiscaleSimulation"
+      ],
+      "paper_id": "2026-07-28-arxiv-integrating_moment_tensor_potentials_with_finite_element_modeling_for_heat_transfer_predic",
+      "paper_title": "Integrating moment tensor potentials with finite-element modeling for heat transfer prediction in FLiBe-based molten salt systems",
+      "paper_date": "2026-07-28",
+      "paper_category": "AI Solid Mechanics",
+      "generated_at": "2026-07-29T11:16:15",
       "generator": "openai"
     }
   },
@@ -642,19 +1002,19 @@
         "url": "https://arxiv.org/pdf/2607.20378v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "PG-KINN couples a KAN trial network with an independent Petrov-Galerkin test space to make physics-informed PDE learning more accurate, stable, and broadly applicable than strong-form or energy-form approaches.",
-      "engineering_relevance": "This is useful for solid mechanics and constitutive modeling because it handles nonlinear, non-self-adjoint, and inverse PDEs while reducing derivative order and improving conditioning.",
+      "key_insight": "PG-KINN pairs a KAN trial network with a Petrov-Galerkin weak form, using compact polynomial test functions to improve PDE solving accuracy, stability, and interpretability over standard physics-informed MLP/KAN approaches.",
+      "engineering_relevance": "The method is directly useful for solid mechanics and constitutive modeling because it handles nonlinear, non-self-adjoint, and inverse PDEs while reducing derivative order and improving conditioning.",
       "method": [
-        "Use a Kolmogorov-Arnold Network as the trial function approximator.",
-        "Use compactly supported piecewise-polynomial test functions with Gauss-Legendre quadrature.",
-        "Form a weak Petrov-Galerkin residual via integration by parts for forward and inverse PDEs."
+        "KAN as the trial solution space with learnable spline activations",
+        "Independent compactly supported polynomial test functions in a Petrov-Galerkin weak form",
+        "Gauss-Legendre quadrature with integration by parts to form element-wise residuals"
       ],
-      "evidence_signal": "The abstract reports consistent gains over MLP baselines and prior KAN-based strong/energy/inverse methods across benchmarks including crack singularities, stress concentration, Neo-Hookean hyperelasticity, inverse identification, and complex geometries.",
-      "watch_item": "Performance depends on careful implementation of the weak form, quadrature, and localized test-space design, and the abstract does not report detailed computational cost or robustness limits.",
+      "evidence_signal": "Across benchmarks including crack singularities, stress concentration, Neo-Hookean hyperelasticity, inverse identification in heterogeneous media, and complex geometries, the abstract reports consistent gains over MLP and prior KAN-based baselines.",
+      "watch_item": "Performance depends on accurate quadrature and test-space design, so implementation quality may strongly affect conditioning and final accuracy.",
       "hashtags": [
-        "#PhysicsInformedML",
+        "#PhysicsInformedAI",
         "#SolidMechanics",
         "#PetrovGalerkin",
         "#KAN",
@@ -664,365 +1024,7 @@
       "paper_title": "PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs",
       "paper_date": "2026-07-22",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-28T11:10:41",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-23-arxiv-a_hyper_reduced_neural_network_augmented_semi_smooth_newton_method_for_nonlinear_parametri",
-    "arxiv_id": "2607.21242v1",
-    "date": "2026-07-23",
-    "title": "A Hyper-Reduced Neural Network-Augmented Semi-smooth Newton Method for Nonlinear Parametric Variational Inequalities",
-    "authors": "Sofiane Ezzehi, Virginie Ehrlacher, Guillaume Enchéry, Thibault Faney",
-    "abstract": "We propose a model order reduction framework for nonlinear parametrized variational inequalities arising in computational mechanics. The high-dimensional model is written in mixed primal-dual form with projection-based complementarity conditions, leading to nonlinear nonsmooth algebraic systems solved by a semi-smooth Newton method in primal-dual form. On this basis, reduced models are constructed by proper orthogonal decomposition (POD) of both primal and dual solution snapshots, and the resulting reduced systems are solved by semi-smooth Newton iterations in the reduced space. To address cases where low-dimensional linear spaces provide limited approximation efficiency, we introduce a neural-network-augmented reduced model. Two feedforward networks learn corrections in the truncated POD coordinates of the primal and dual variables, defining a nonlinear manifold approximation that is embedded directly in the semi-smooth Newton iterations. The online cost associated with high-dimensional residual evaluations is reduced through hyper-reduction, using a sparse cubature approach based on greedy nonnegative least squares. Particular attention is paid to the interaction between hyper-reduction and the learned nonlinear manifold. The proposed methodology is assessed on two nonlinear variational inequalities with distinct sources of nonlinearity: a two-dimensional obstacle problem with a cubic nonlinearity in the state equation, and a three-dimensional frictional contact problem in which the Coulomb law induces a nonlinear projection in the constraint equation. Numerical results compare the high-dimensional model, the linear reduced model, the neural-network-augmented reduced model, and their hyper-reduced variants, demonstrating accurate approximations with substantial reductions in online computational cost.",
-    "category": "AI Solid Mechanics",
-    "source": "arXiv",
-    "published": "2026-07-23T12:04:26Z",
-    "updated": "2026-07-23T12:04:26Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.21242v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.21242v1"
-      }
-    ],
-    "score": 59,
-    "infographic": {
-      "key_insight": "A semi-smooth Newton reduced-order framework, augmented with neural corrections and hyper-reduction, can efficiently solve nonlinear parametric variational inequalities in solid mechanics.",
-      "engineering_relevance": "This enables faster surrogate simulation of contact and obstacle-type mechanics problems while preserving the primal-dual structure needed for accurate constraint handling.",
-      "method": [
-        "Build POD reduced bases for both primal and dual solution snapshots.",
-        "Add two feedforward networks to correct truncated POD coordinates and form a nonlinear manifold.",
-        "Use sparse-cubature hyper-reduction with greedy nonnegative least squares to cut online residual costs."
-      ],
-      "evidence_signal": "The abstract reports numerical tests on a 2D obstacle problem and a 3D frictional contact problem, comparing full-order, linear reduced, neural-augmented, and hyper-reduced variants with substantial online cost reductions.",
-      "watch_item": "Performance depends on the quality of snapshot training and on how well hyper-reduction preserves the nonlinear complementarity structure during Newton iterations.",
-      "hashtags": [
-        "#SolidMechanics",
-        "#ModelOrderReduction",
-        "#SemiSmoothNewton",
-        "#NeuralOperators",
-        "#HyperReduction"
-      ],
-      "paper_id": "2026-07-23-arxiv-a_hyper_reduced_neural_network_augmented_semi_smooth_newton_method_for_nonlinear_parametri",
-      "paper_title": "A Hyper-Reduced Neural Network-Augmented Semi-smooth Newton Method for Nonlinear Parametric Variational Inequalities",
-      "paper_date": "2026-07-23",
-      "paper_category": "AI Solid Mechanics",
-      "generated_at": "2026-07-28T11:10:43",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-26-arxiv-goal_oriented_error_estimation_for_least_squares_finite_element_methods_via_physically_mea",
-    "arxiv_id": "2607.23850v1",
-    "date": "2026-07-26",
-    "title": "Goal-Oriented Error Estimation for Least-Squares Finite Element Methods via Physically Meaningful Adjoint PDEs",
-    "authors": "Yueyao Wu, Shun Zhang",
-    "abstract": "We develop a goal-oriented error-estimation framework for first-order system least-squares (FOSLS) finite element methods based on the physical PDE adjoint rather than the adjoint induced by the least-squares formulation. Identified explicitly from the differential operator, its mixed boundary conditions, and the output, the physical adjoint admits its own first-order flux system and hence a native, built-in least-squares estimator, which the least-squares-induced adjoint does not. Our error identities rest on a primal-dual corrected functional: they follow from the continuous primal and adjoint equations alone, hold for arbitrary conforming approximations, and require no Galerkin orthogonality. For outputs containing a weighted Dirichlet-boundary flux, whose weight becomes the essential datum of the adjoint, we construct two corrected approximations, one from the potentials and one also using the fluxes, and prove product-type error estimates in the primal and adjoint errors. The least-squares functionals then yield computable a posteriori bounds and a balanced marking indicator whose element sum equals the product of the two estimators exactly. Numerical experiments confirm the predicted convergence and the effectiveness of the marking.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-26T21:31:59Z",
-    "updated": "2026-07-26T21:31:59Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.23850v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.23850v1"
-      }
-    ],
-    "score": 58,
-    "infographic": {
-      "key_insight": "The paper replaces the usual least-squares-induced adjoint with the physically defined PDE adjoint, enabling goal-oriented error estimates that remain valid for arbitrary conforming approximations.",
-      "engineering_relevance": "This gives FEM practitioners a more faithful and computable way to estimate and drive refinement for specific outputs, especially when boundary flux terms matter.",
-      "method": [
-        "Derive the adjoint directly from the differential operator, mixed boundary conditions, and output functional.",
-        "Build a first-order flux system for the physical adjoint so it also admits a native least-squares estimator.",
-        "Use primal-dual corrected functionals to obtain error identities and computable a posteriori bounds without Galerkin orthogonality."
-      ],
-      "evidence_signal": "Numerical experiments in the abstract confirm the predicted convergence and show the balanced marking strategy is effective.",
-      "watch_item": "The approach relies on correctly identifying the physical adjoint and its essential boundary data, which may be delicate for complex outputs or boundary conditions.",
-      "hashtags": [
-        "#FEM",
-        "#LeastSquaresMethods",
-        "#GoalOrientedErrorEstimation",
-        "#APosterioriError",
-        "#ComputationalMechanics"
-      ],
-      "paper_id": "2026-07-26-arxiv-goal_oriented_error_estimation_for_least_squares_finite_element_methods_via_physically_mea",
-      "paper_title": "Goal-Oriented Error Estimation for Least-Squares Finite Element Methods via Physically Meaningful Adjoint PDEs",
-      "paper_date": "2026-07-26",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-28T11:10:47",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-24-arxiv-algmortar_a_fully_algebraic_multiscale_mortar_preconditioner",
-    "arxiv_id": "2607.22905v1",
-    "date": "2026-07-24",
-    "title": "AlgMortar: a fully algebraic multiscale mortar preconditioner",
-    "authors": "Luan F. Santos, Fabricio S. Sousa, Roberto F. Ausas, Rafael T. Guiraldello, Felipe Pereira",
-    "abstract": "The solution of large-scale symmetric positive definite linear systems arising from discretizations of second-order elliptic equations is challenging, especially in applications with highly heterogeneous coefficients, such as flow in porous media, which can lead to severely ill-conditioned systems. In this context, multiscale methods have recently been used to accelerate Krylov subspace methods, owing to their favorable parallel scalability. In this work, we present AlgMortar, a fully algebraic realization of the Multiscale Mortar Mixed Finite Element Method (MMMFEM). The method uses only information extracted from the fine-grid system matrix, which facilitates its implementation in existing solvers. AlgMortar uses graph partitioning to define a domain decomposition directly from the matrix graph. On each subdomain, it builds local linear systems that mimic Dirichlet problems, and couples the resulting local solutions through an algebraic interface condition that recovers the weak flux-continuity mechanism of MMMFEM. We prove that the method is well posed when the fine-grid matrix is symmetric positive definite and has nonpositive off-diagonal entries, a structure commonly arising from discretizations of elliptic problems. Numerical experiments on fine-grid linear systems arising from finite-volume discretizations of Darcy flow problems show that, when used as a preconditioner for the conjugate gradient method, the proposed approach exhibits good scalability and is competitive with state-of-the-art algebraic multigrid methods for challenging heterogeneous, high-contrast test cases, including highly irregular corner-point grids.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-24T20:43:16Z",
-    "updated": "2026-07-24T20:43:16Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.22905v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.22905v1"
-      }
-    ],
-    "score": 58,
-    "infographic": {
-      "key_insight": "AlgMortar turns a multiscale mortar preconditioner into a fully algebraic, matrix-only method that can efficiently accelerate Krylov solvers for heterogeneous elliptic systems.",
-      "engineering_relevance": "It offers a practical preconditioning strategy for large, ill-conditioned flow and porous-media simulations where standard solvers struggle with high-contrast coefficients.",
-      "method": [
-        "Partition the matrix graph into subdomains using graph partitioning.",
-        "Solve local Dirichlet-like problems on each subdomain using only fine-grid matrix information.",
-        "Couple subdomain solutions with an algebraic interface condition that enforces weak flux continuity."
-      ],
-      "evidence_signal": "In Darcy-flow finite-volume tests, AlgMortar used as a CG preconditioner showed good scalability and competitive performance versus state-of-the-art algebraic multigrid, including difficult high-contrast and irregular corner-point grids.",
-      "watch_item": "The method’s well-posedness is proved under SPD matrices with nonpositive off-diagonal entries, so performance and guarantees may be more limited outside this matrix class.",
-      "hashtags": [
-        "#MultiscaleMethods",
-        "#Preconditioning",
-        "#FiniteElementMethod",
-        "#PorousMediaFlow",
-        "#AlgebraicMultigrid"
-      ],
-      "paper_id": "2026-07-24-arxiv-algmortar_a_fully_algebraic_multiscale_mortar_preconditioner",
-      "paper_title": "AlgMortar: a fully algebraic multiscale mortar preconditioner",
-      "paper_date": "2026-07-24",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-28T11:10:49",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-24-arxiv-high_order_finite_element_method_for_perfect_conductivity_and_linear_elasticity_with_nearl",
-    "arxiv_id": "2607.22128v1",
-    "date": "2026-07-24",
-    "title": "High-order finite element method for perfect conductivity and linear elasticity with nearly touching inclusions",
-    "authors": "Buyang Li, Haigang Li, Yonglin Li, Peihao Zhang",
-    "abstract": "In perfect conductivity and linear elasticity problems, the electric field and stress always become highly concentrated within narrow regions between adjacent perfect (rigid) inclusions, and blow up as the distance between inclusions approaches zero. The design of high-order numerical methods with rigorous error analysis for such concentration problems remains open. In this paper, we present the first high-order finite element method for solving these problems. Our approach is based on asymptotic estimates of high-order derivatives of solutions, employing a graded mesh and auxiliary basis functions specifically designed from these derivative estimates. We prove that the proposed method converges with an $H^1$-error bound of $O(h^p)$ and the error bound is independent of the distance (possibly approaching zero) between inclusions, where $h$ is the mesh size and $p$ is the degree of finite elements. Numerical examples in both two and three dimensions are presented to demonstrate the convergence rates of the numerical solutions. In particular, the blow-up behaviors of the gradients of solutions are demonstrated when the inclusions approach each other.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-07-24T09:21:51Z",
-    "updated": "2026-07-24T09:21:51Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.22128v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.22128v1"
-      }
-    ],
-    "score": 58,
-    "infographic": {
-      "key_insight": "The paper introduces the first high-order finite element method that remains accurate for perfect conductivity and linear elasticity problems with nearly touching inclusions, even as gradients blow up.",
-      "engineering_relevance": "This enables reliable simulation of stress and electric-field concentration in composite materials and microstructures where small gaps between rigid/perfect inclusions control failure or performance.",
-      "method": [
-        "Derive asymptotic estimates for high-order solution derivatives near nearly touching inclusions.",
-        "Use a graded mesh to resolve narrow gap regions efficiently.",
-        "Construct auxiliary basis functions from the derivative estimates to support high-order FEM accuracy."
-      ],
-      "evidence_signal": "The abstract reports 2D and 3D numerical examples showing the expected convergence rates and demonstrating gradient blow-up as the inclusion gap shrinks.",
-      "watch_item": "Performance and implementation may be sensitive to mesh grading and auxiliary basis construction, especially in complex 3D geometries.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#SolidMechanics",
-        "#StressConcentration",
-        "#HighOrderNumerics",
-        "#ComputationalScience"
-      ],
-      "paper_id": "2026-07-24-arxiv-high_order_finite_element_method_for_perfect_conductivity_and_linear_elasticity_with_nearl",
-      "paper_title": "High-order finite element method for perfect conductivity and linear elasticity with nearly touching inclusions",
-      "paper_date": "2026-07-24",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-28T11:10:52",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-26-arxiv-stability_and_error_analysis_of_imex_bdfk_finite_element_schemes_for_the_incompressible_na",
-    "arxiv_id": "2607.23635v1",
-    "date": "2026-07-26",
-    "title": "Stability and error analysis of IMEX-BDFk finite element schemes for the incompressible Navier-Stokes system",
-    "authors": "Qianqian Ding, Yifan Luo, Shipeng Mao",
-    "abstract": "In this paper, we propose and analyze a class of high-order numerical schemes within a fully discrete finite element framework for the incompressible Navier-Stokes equations with no-slip boundary conditions. The temporal discretization employs a kth-order (k=1,...,6) implicit-explicit backward difference formula (IMEX-BDFk), in which the nonlinear convection term is treated explicitly and the linear Stokes part implicitly, whereas the spatial discretization utilizes Taylor-Hood finite elements. We establish the stability and uniform boundedness of the numerical solution. We further establish optimal order error estimates in both space and time without any CFL-type condition, in the sense that the time step is independent of the spatial mesh size. In three dimensions, these include L2- and H1-norm error estimates for the velocity and L2-norm error estimates for the pressure, with temporal convergence rates up to sixth order for all variables. Numerical experiments are presented to demonstrate the effectiveness of the scheme and to confirm the theoretical convergence rates.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-26T12:50:26Z",
-    "updated": "2026-07-26T12:50:26Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.23635v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.23635v1"
-      }
-    ],
-    "score": 57,
-    "infographic": {
-      "key_insight": "The paper shows that high-order IMEX-BDFk finite element schemes can stably and accurately solve incompressible Navier-Stokes flow without requiring a CFL-type time-step restriction.",
-      "engineering_relevance": "This provides a practical, high-order time integration strategy for CFD and fluid-structure-related simulations where stability, accuracy, and mesh-independent time stepping are important.",
-      "method": [
-        "IMEX-BDFk time stepping for k=1 to 6",
-        "Explicit treatment of nonlinear convection; implicit treatment of the linear Stokes operator",
-        "Taylor-Hood finite elements for spatial discretization"
-      ],
-      "evidence_signal": "The authors prove stability, uniform boundedness, and optimal error estimates, and report numerical experiments that confirm the predicted convergence rates up to sixth order.",
-      "watch_item": "The scheme’s efficiency and robustness depend on careful implementation of high-order IMEX-BDF steps and compatible Taylor-Hood discretization, especially in 3D problems.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#IMEXBDF",
-        "#NavierStokes",
-        "#NumericalStability",
-        "#HighOrderMethods"
-      ],
-      "paper_id": "2026-07-26-arxiv-stability_and_error_analysis_of_imex_bdfk_finite_element_schemes_for_the_incompressible_na",
-      "paper_title": "Stability and error analysis of IMEX-BDFk finite element schemes for the incompressible Navier-Stokes system",
-      "paper_date": "2026-07-26",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-07-28T11:10:54",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-26-arxiv-scaling_limits_of_multichannel_spectral_routers_for_snapshot_imaging",
-    "arxiv_id": "2607.23508v1",
-    "date": "2026-07-26",
-    "title": "Scaling Limits of Multichannel Spectral Routers for Snapshot Imaging",
-    "authors": "Junseo Han, Seunghyun Lee, Donghyun Kim, Haejun Chung",
-    "abstract": "Inverse-designed spectral routers can enable compact snapshot spectral imaging by directing different wavelengths to designated detector sub-pixels without mechanical scanning or absorptive filters. Here, we examine how routing performance varies as the number of spectral channels increases while the visible bandwidth remains fixed. A delay-bandwidth analysis relates channel count, worst-channel efficiency, and device thickness, explaining the growing optical capacity required to generate many spatially distinct spectral outputs. We then use adjoint-based topology optimization and three-dimensional finite-difference time-domain simulations to design TiO2/SiO2 routers with 9, 16, 25, and 36 channels under matched material, bandwidth, and thickness conditions. The average routing efficiency increases with sub-pixel size and approaches a plateau, while the maximum near-plateau efficiency decreases monotonically from 97.0% for 9 channels to 82.3% for 36 channels. At a fixed channel count, compressing the wavelength spacing to 8 nm or rearranging the wavelength-to-sub-pixel assignment changes the efficiency by less than one percentage point. These results indicate that the observed efficiency penalty is governed mainly by the number of wavelength-dependent routing constraints rather than by wavelength spacing or local wavelength arrangement. The findings quantify the trade-off between spectral sampling and optical throughput in compact snapshot spectral imagers.",
-    "category": "Topology Optimization",
-    "source": "arXiv",
-    "published": "2026-07-26T07:17:16Z",
-    "updated": "2026-07-26T07:17:16Z",
-    "primary_category": "physics.optics",
-    "categories": [
-      "physics.optics"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.23508v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.23508v1"
-      }
-    ],
-    "score": 57,
-    "infographic": {
-      "key_insight": "As the number of spectral channels grows at fixed bandwidth and thickness, inverse-designed spectral routers face a fundamental throughput penalty: more routing constraints demand more optical capacity, lowering best-case efficiency.",
-      "engineering_relevance": "This quantifies the design trade-off for compact snapshot spectral imagers, helping engineers balance spectral resolution against detector throughput and device miniaturization.",
-      "method": [
-        "Used delay-bandwidth analysis to relate channel count, efficiency, and thickness.",
-        "Designed TiO2/SiO2 spectral routers with adjoint-based topology optimization.",
-        "Verified performance with 3D finite-difference time-domain simulations for 9, 16, 25, and 36 channels."
-      ],
-      "evidence_signal": "Across matched conditions, the maximum near-plateau routing efficiency decreased from 97.0% at 9 channels to 82.3% at 36 channels, while changing wavelength spacing or assignment altered efficiency by less than 1 percentage point.",
-      "watch_item": "Results are tied to a specific material stack, fixed thickness, and visible-band setting, so broader performance may differ under other fabrication tolerances or optical constraints.",
-      "hashtags": [
-        "#TopologyOptimization",
-        "#SpectralImaging",
-        "#InverseDesign",
-        "#FDTD",
-        "#Photonics"
-      ],
-      "paper_id": "2026-07-26-arxiv-scaling_limits_of_multichannel_spectral_routers_for_snapshot_imaging",
-      "paper_title": "Scaling Limits of Multichannel Spectral Routers for Snapshot Imaging",
-      "paper_date": "2026-07-26",
-      "paper_category": "Topology Optimization",
-      "generated_at": "2026-07-28T11:10:57",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-27-arxiv-continual_rl_for_generalization_in_autonomous_racing_on_the_roboracer_platform",
-    "arxiv_id": "2607.24320v1",
-    "date": "2026-07-27",
-    "title": "Continual-RL for Generalization in Autonomous Racing on the RoboRacer Platform",
-    "authors": "Joel Siegert, Edoardo Ghignone, Michele Magno",
-    "abstract": "A key challenge in modern robotics is to adapt to changing environments, a challenge that is exacerbated when simulations cannot encompass every possible real-world configuration, and therefore Reinforcement Learning (RL) in the physical world becomes necessary. Continual Reinforcement Learning provides the tools to address this challenge; however, both the frameworks and the methods remain underexplored. Autonomous Racing and in particular the RoboRacer competition provide a testing ground for such methods, as learning to drive on a new track-floor combination with the least amount of new experience naturally frames a continual learning problem. This work tries to address this gap by proposing a continual RL framework based on Continual Backpropagation that is able, with only real-world data, to train a generalistic policy on a set of tracks and then fine- tune it within 15 minutes to outperform classical controllers. Furthermore, a comparison method based on offline RL is proposed, and a simulation analysis of the plasticity properties of the methods is conducted.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-07-27T12:01:29Z",
-    "updated": "2026-07-27T12:01:29Z",
-    "primary_category": "cs.RO",
-    "categories": [
-      "cs.RO",
-      "eess.SY"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.24320v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.24320v1"
-      }
-    ],
-    "score": 56,
-    "infographic": {
-      "key_insight": "The paper shows that continual reinforcement learning can adapt a racing policy to new real-world track-floor combinations with minimal new experience, improving generalization and fast fine-tuning.",
-      "engineering_relevance": "For autonomous racing robotics, this offers a practical route to deploy controllers that keep learning on hardware where simulation cannot cover every environment variation.",
-      "method": [
-        "Build a continual RL framework based on Continual Backpropagation.",
-        "Train a generalistic policy directly from real-world data across multiple tracks.",
-        "Fine-tune the policy in about 15 minutes and compare against classical controllers and an offline RL baseline."
-      ],
-      "evidence_signal": "The abstract reports real-world training on a set of tracks, 15-minute fine-tuning, and a simulation analysis of plasticity, with the goal of outperforming classical controllers.",
-      "watch_item": "Results may depend on the specific RoboRacer hardware, track-floor conditions, and the stability/plasticity tradeoff of continual backpropagation, so transferability to other platforms is not guaranteed.",
-      "hashtags": [
-        "#ContinualLearning",
-        "#ReinforcementLearning",
-        "#AutonomousRacing",
-        "#Robotics",
-        "#RealWorldML"
-      ],
-      "paper_id": "2026-07-27-arxiv-continual_rl_for_generalization_in_autonomous_racing_on_the_roboracer_platform",
-      "paper_title": "Continual-RL for Generalization in Autonomous Racing on the RoboRacer Platform",
-      "paper_date": "2026-07-27",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-07-28T11:10:59",
+      "generated_at": "2026-07-29T11:16:17",
       "generator": "openai"
     }
   }

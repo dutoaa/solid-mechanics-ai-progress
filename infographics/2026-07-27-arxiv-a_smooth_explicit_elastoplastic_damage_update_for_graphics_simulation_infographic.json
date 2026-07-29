@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper introduces a smooth, explicit elastoplastic-damage update that uses closed-form, history-based branches to preserve irreversible plasticity and damage without a local Newton solve.",
-  "engineering_relevance": "It is useful for graphics and real-time solid simulation because it favors simple, vectorizable implementation and stable history evolution over exact yield-surface enforcement.",
+  "key_insight": "The paper proposes a smooth, explicit elastoplastic-damage material update that avoids local Newton solves by using closed-form active/frozen branches driven by a history variable.",
+  "engineering_relevance": "This gives graphics simulation a compact, vectorizable constitutive update that preserves irreversibility and residual deformation while staying simple to implement in explicit solvers.",
   "method": [
-    "Softplus generates a candidate equivalent plastic strain, then a max-history projection enforces irreversibility.",
-    "A deviatoric plastic-strain tensor stores residual direction, while an exponential scalar variable drives damage degradation.",
-    "Active and frozen branches are evaluated analytically from one response energy, avoiding local nonlinear solves."
+    "Softplus generates a candidate equivalent plastic strain for smooth activation.",
+    "A max-history projection enforces irreversibility, while a deviatoric plastic-strain tensor stores residual direction.",
+    "An exponential damage variable is updated analytically from one response energy, with no local Newton iteration."
   ],
-  "evidence_signal": "The authors validate the method on 1D cyclic tension, 2D cantilever bending, 3D platen compression, and a torus, and report branchwise energy-gradient agreement, residual deformation, and mesh-resolution sensitivity.",
-  "watch_item": "The approach is intended for isotropic, proportional or nearly proportional loading; it degrades sharply under path changes and is not a substitute for general return mapping or anisotropic damage models.",
+  "evidence_signal": "Across cyclic tension, cantilever bending, platen compression, and a torus test, the method reproduced residual deformation and monotone internal variables, while the baseline J2 return mapping was 1.51–3.08× faster as a kernel.",
+  "watch_item": "The approach is intended for isotropic proportional or near-proportional loading; accuracy drops sharply for large loading-direction changes and it is not a general replacement for return mapping.",
   "hashtags": [
+    "#SolidMechanics",
     "#Elastoplasticity",
-    "#DamageMechanics",
+    "#DamageModeling",
     "#GraphicsSimulation",
-    "#ComputationalMechanics",
-    "#ExplicitMethods"
+    "#ComputationalMechanics"
   ],
   "paper_id": "2026-07-27-arxiv-a_smooth_explicit_elastoplastic_damage_update_for_graphics_simulation",
   "paper_title": "A Smooth Explicit Elastoplastic--Damage Update for Graphics Simulation",
   "paper_date": "2026-07-27",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-07-28T11:10:09",
+  "generated_at": "2026-07-29T11:15:29",
   "generator": "openai"
 }

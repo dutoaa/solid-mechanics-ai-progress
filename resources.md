@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-07-31
+Generated: 2026-08-01
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Fourier Feature Physics-Informed Neural Networks for Elasto-Plastic Analysis of Geomaterials with a Non-Associative Mohr-Coulomb Model
@@ -115,15 +115,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.28534v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-topology_optimization_of_conduction_radiation_problems_based_on_a_ray_tracing_approach_infographic.json
 
-## 15. Uncertainty-quantified $J$-integral computation for quasicontinuum and finite element methods
-
-- Date: 2026-07-25
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2607.23003v1
-- PDF: https://arxiv.org/pdf/2607.23003v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-25-arxiv-uncertainty_quantified_j_integral_computation_for_quasicontinuum_and_finite_element_method_infographic.json
-
-## 16. The Kinetics of Training: A Driven-Nucleation Rate Law for Emergence, Plasticity Loss, and Circuit Control in Language Models
+## 15. The Kinetics of Training: A Driven-Nucleation Rate Law for Emergence, Plasticity Loss, and Circuit Control in Language Models
 
 - Date: 2026-07-29
 - Category: Constitutive Modeling
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.27281v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-the_kinetics_of_training_a_driven_nucleation_rate_law_for_emergence_plasticity_loss_and_ci_infographic.json
 
-## 17. R3MG-C: a high-order algebraic-geometric multilevel preconditioner for continuous finite element discretizations
+## 16. R3MG-C: a high-order algebraic-geometric multilevel preconditioner for continuous finite element discretizations
 
 - Date: 2026-07-30
 - Category: FEM Surrogates
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.28235v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-r3mg_c_a_high_order_algebraic_geometric_multilevel_preconditioner_for_continuous_finite_el_infographic.json
 
-## 18. Progressive Multimodal Alignment for Continual Instruction Tuning
+## 17. Progressive Multimodal Alignment for Continual Instruction Tuning
 
 - Date: 2026-07-29
 - Category: Constitutive Modeling
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.26947v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-progressive_multimodal_alignment_for_continual_instruction_tuning_infographic.json
 
-## 19. Strong imposition of Dirichlet boundary velocities in structure-preserving discretizations of elastodynamics
+## 18. Strong imposition of Dirichlet boundary velocities in structure-preserving discretizations of elastodynamics
 
 - Date: 2026-07-28
 - Category: FEM Surrogates
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.26248v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-28-arxiv-strong_imposition_of_dirichlet_boundary_velocities_in_structure_preserving_discretizations_infographic.json
 
-## 20. Data-free neural PDE solvers based on Graph Neural Networks and weak forms
+## 19. Data-free neural PDE solvers based on Graph Neural Networks and weak forms
 
 - Date: 2026-07-30
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2607.27901v1
 - PDF: https://arxiv.org/pdf/2607.27901v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-data_free_neural_pde_solvers_based_on_graph_neural_networks_and_weak_forms_infographic.json
+
+## 20. Design principles for energy dissipation in viscoelastic network metamaterials
+
+- Date: 2026-07-29
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.27525v1
+- PDF: https://arxiv.org/pdf/2607.27525v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-design_principles_for_energy_dissipation_in_viscoelastic_network_metamaterials_infographic.json

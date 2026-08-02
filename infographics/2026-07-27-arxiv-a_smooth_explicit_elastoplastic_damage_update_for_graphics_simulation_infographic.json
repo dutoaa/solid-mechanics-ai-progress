@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper proposes a smooth, explicit elastoplastic-damage material update that preserves history dependence and irreversibility without solving a local Newton problem.",
-  "engineering_relevance": "It offers a compact and vectorizable constitutive update for graphics simulation, making plastically deforming and degrading solids easier to implement in explicit solvers.",
+  "key_insight": "The paper proposes a smooth, closed-form elastoplastic-damage update for graphics simulation that preserves irreversible history without local Newton solves.",
+  "engineering_relevance": "It offers a compact, vectorizable material model for explicit solid simulation when smooth branch activation and simple implementation matter more than exact yield-surface enforcement.",
   "method": [
-    "Softplus generates a candidate equivalent plastic strain, then a max-history projection enforces irreversibility.",
-    "A deviatoric plastic-strain tensor stores residual direction while an exponential damage variable evolves from the same history.",
-    "Active and frozen branches are evaluated analytically from one response energy, avoiding local root-finding."
+    "Softplus generates a candidate plastic strain, then a max-history projection enforces irreversibility.",
+    "A deviatoric plastic-strain tensor stores residual direction while an exponential damage variable evolves from the saved history.",
+    "Active and frozen branches are evaluated analytically from one response energy, avoiding local iterative solves."
   ],
-  "evidence_signal": "Across 1D, 2D, and 3D tests, the method reproduced residual deformation and monotone internal variables, but a 90-degree loading turn produced a 49.39% normalized equivalent-stress error versus 1.53% under proportional loading.",
-  "watch_item": "The approach is intended for isotropic, proportional or near-proportional loading; it is not suitable as a general replacement for return mapping or anisotropic damage models.",
+  "evidence_signal": "The method was validated on cyclic tension, cantilever bending, platen compression, and a torus, showing residual deformation, monotone internal variables, and branchwise energy-gradient agreement, with proportional-loading error of 1.53% but 49.39% under a 90-degree path turn.",
+  "watch_item": "It is intended for isotropic, proportional or near-proportional loading and is not a substitute for general return mapping, anisotropic damage, or phase-field fracture.",
   "hashtags": [
-    "#ComputationalMechanics",
-    "#Elastoplasticity",
-    "#DamageModeling",
+    "#SolidMechanics",
+    "#Plasticity",
+    "#DamageModel",
     "#GraphicsSimulation",
-    "#ExplicitMethods"
+    "#Fracture"
   ],
   "paper_id": "2026-07-27-arxiv-a_smooth_explicit_elastoplastic_damage_update_for_graphics_simulation",
   "paper_title": "A Smooth Explicit Elastoplastic--Damage Update for Graphics Simulation",
   "paper_date": "2026-07-27",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-08-01T10:27:46",
+  "generated_at": "2026-08-02T10:27:24",
   "generator": "openai"
 }

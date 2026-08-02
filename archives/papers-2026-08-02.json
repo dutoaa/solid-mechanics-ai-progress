@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2607.25150v2"
       }
     ],
-    "score": 76,
+    "score": 81,
     "infographic": {
-      "key_insight": "Embedding random Fourier features into a PINN reduces spectral bias, allowing better capture of sharp elastic-plastic gradients and failure zones in non-associative Mohr-Coulomb geomaterials.",
-      "engineering_relevance": "The method offers a faster mesh-free surrogate for geotechnical elasto-plastic analysis, potentially reducing FEM cost while preserving physics consistency.",
+      "key_insight": "Embedding random Fourier features into a PINN reduces spectral bias, enabling much better capture of sharp elastoplastic gradients in non-associative Mohr-Coulomb geomaterials.",
+      "engineering_relevance": "The method provides a faster, mesh-free surrogate for FEM that can predict displacement, stress, and plastic zone evolution in geotechnical elasto-plastic analysis.",
       "method": [
-        "Random Fourier feature mapping is added to the PINN input layer to improve high-frequency function representation.",
-        "A multi-objective loss enforces equilibrium, constitutive laws, and KKT conditions using FEM supervision.",
-        "Strain-adaptive sampling targets localized plastic regions during training."
+        "Random Fourier feature mapping is added to the PINN input layer to improve representation of high-frequency field variations.",
+        "A multi-objective loss enforces equilibrium, constitutive laws, and KKT conditions using FEM guidance.",
+        "Strain-adaptive sampling focuses training on regions with steep gradients and plastic localization."
       ],
-      "evidence_signal": "Across three benchmark cases, FF-PINN improved most predicted fields, reduced displacement error by up to about 66% and stress error by about 27%, and converged in roughly half the epochs of a standard PINN.",
-      "watch_item": "Performance depends on high-quality FEM-based training targets and careful tuning of loss weights and sampling near narrow plastic zones.",
+      "evidence_signal": "Across three benchmark cases, FF-PINN reduced errors by up to about 66% in displacement and 27% in stress, reproduced plastic zones more faithfully, and converged in roughly half the epochs of a conventional PINN.",
+      "watch_item": "Performance depends on careful loss balancing and sampling design, and the approach is validated against specific 2D benchmark cases rather than full 3D field problems.",
       "hashtags": [
         "#PINN",
-        "#ElastoPlasticity",
-        "#MohrCoulomb",
+        "#FiniteElementMethod",
         "#Geomechanics",
+        "#ElastoPlasticity",
         "#FourierFeatures"
       ],
       "paper_id": "2026-07-27-arxiv-fourier_feature_physics_informed_neural_networks_for_elasto_plastic_analysis_of_geomateria",
       "paper_title": "Fourier Feature Physics-Informed Neural Networks for Elasto-Plastic Analysis of Geomaterials with a Non-Associative Mohr-Coulomb Model",
       "paper_date": "2026-07-27",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:26:57",
+      "generated_at": "2026-08-01T10:27:20",
       "generator": "openai"
     }
   },
@@ -76,29 +76,29 @@
         "url": "https://arxiv.org/pdf/2607.27062v1"
       }
     ],
-    "score": 75,
+    "score": 80,
     "infographic": {
-      "key_insight": "PIKS extends kernel regression to physics-informed learning with universal consistency for linear differential constraints, even when the true solution is outside the RKHS.",
-      "engineering_relevance": "For solid mechanics and FEM surrogate modeling, PIKS offers a closed-form, theoretically grounded alternative to PINNs that can enforce governing equations while remaining analytically tractable.",
+      "key_insight": "PIKS extends kernel learning to physics-informed problems and proves it can converge to the true solution while enforcing linear differential constraints, even without assuming the target lies in the RKHS.",
+      "engineering_relevance": "This offers a mathematically tractable surrogate modeling option for solid mechanics and FEM-style physics problems where PINNs are harder to analyze and kernel methods are usually too restrictive.",
       "method": [
-        "Impose linear differential constraints directly in a kernel learning objective.",
-        "Use universal kernels such as Gaussian or Matérn to guarantee asymptotic consistency.",
-        "Derive finite-sample error bounds via operator-theoretic analysis and source conditions."
+        "Use a universal kernel (e.g., Gaussian or Matérn) with physics constraints encoded through differential operators.",
+        "Analyze the estimator with operator-theoretic kernel learning tools to prove universal consistency.",
+        "Derive finite-sample error bounds under source conditions."
       ],
-      "evidence_signal": "The abstract reports numerical experiments showing PIKS is competitive with PINNs and traditional finite element methods.",
-      "watch_item": "Performance guarantees rely on linear differential constraints and suitable source conditions, so implementation quality and kernel choice may strongly affect practical accuracy.",
+      "evidence_signal": "The abstract reports numerical experiments showing PIKS can be competitive with PINNs and traditional finite element methods.",
+      "watch_item": "Performance and guarantees depend on linear constraints and suitable source conditions, so extension to more complex nonlinear physics may require additional care.",
       "hashtags": [
         "#PhysicsInformedML",
         "#KernelMethods",
+        "#SolidMechanics",
         "#FEMSurrogates",
-        "#PINNs",
-        "#ComputationalMechanics"
+        "#ScientificMachineLearning"
       ],
       "paper_id": "2026-07-29-arxiv-piks_universal_physics_informed_kernel_methods",
       "paper_title": "PIKS: Universal Physics-Informed Kernel Methods",
       "paper_date": "2026-07-29",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:00",
+      "generated_at": "2026-08-01T10:27:22",
       "generator": "openai"
     }
   },
@@ -129,17 +129,17 @@
         "url": "https://arxiv.org/pdf/2607.26490v1"
       }
     ],
-    "score": 75,
+    "score": 80,
     "infographic": {
-      "key_insight": "EvoPINN turns PINN design into an execution-grounded search process, using an LLM agent to discover executable algorithms and architectures that outperform hand-engineered baselines on PDE tasks.",
-      "engineering_relevance": "For solid mechanics and other physics simulations, this suggests a practical path to automate model and training design while preserving numerical validity and scientific constraints.",
+      "key_insight": "EvoPINN turns PINN design into an execution-grounded search problem, using an LLM agent to iteratively discover scientifically valid PDE-solving algorithms and architectures.",
+      "engineering_relevance": "For scientific and solid-mechanics-style PDE workflows, this suggests a path to automate model and training-design choices while respecting numerical constraints and improving solution accuracy.",
       "method": [
-        "Decouples neural representation from training program to create a modular search space.",
-        "Uses an LLM agent to iteratively propose memory-conditioned program modifications.",
-        "Filters candidates with strict structural verification and budget-matched PDE evaluation."
+        "Decouple neural representations from training programs in a modular search space.",
+        "Use an LLM agent to propose memory-conditioned code modifications iteratively.",
+        "Filter candidates with structural verification and budget-matched PDE evaluation."
       ],
-      "evidence_signal": "The abstract reports extensive tests across oscillatory, elliptic, dissipative, and nonlinear transport PDE regimes, with EvoPINN reducing relative L2 error and inventing SLRC-PINN, which remained strong under parameter-matched comparison.",
-      "watch_item": "The approach may be sensitive to the quality of verification, evaluation budgets, and search design, so gains could depend on careful experimental setup and not transfer uniformly to all PDE problems.",
+      "evidence_signal": "Across oscillatory, elliptic, dissipative, and nonlinear transport PDEs, the method reportedly reduces relative L2 error and the discovered SLRC-PINN remains strong under parameter-matched comparisons.",
+      "watch_item": "The approach still depends on reliable verification, fair budget matching, and stable execution of generated programs, which may limit practicality on harder or more expensive PDE setups.",
       "hashtags": [
         "#PhysicsInformedML",
         "#PINNs",
@@ -151,7 +151,7 @@
       "paper_title": "EvoPINN: Agentic Discovery of Executable Algorithms for Physics-Informed Neural Networks",
       "paper_date": "2026-07-29",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-08-02T10:27:02",
+      "generated_at": "2026-08-01T10:27:24",
       "generator": "openai"
     }
   },
@@ -181,29 +181,80 @@
         "url": "https://arxiv.org/pdf/2607.27251v1"
       }
     ],
-    "score": 73,
+    "score": 78,
     "infographic": {
-      "key_insight": "Recursive, weight-sharing transformers can outperform over-parameterized surrogates in small engineering datasets by shifting capacity from learnable parameters to reusable computation.",
-      "engineering_relevance": "For semiconductor thermo-mechanical reliability workflows, these models offer a practical way to replace costly repeated FEA with faster surrogate predictions while staying within tight memory and compute budgets.",
+      "key_insight": "Recursive, weight-sharing transformers can outperform overparameterized standard transformers for small engineering surrogate datasets by trading extra compute for far fewer learnable parameters.",
+      "engineering_relevance": "This is useful for thermo-mechanical reliability workflows in semiconductor package design, where repeated finite element analyses are expensive and low-dimensional design spaces favor compact surrogates.",
       "method": [
-        "Compare three recursive transformer variants: Tiny Recursive Model, Depth Recursive transformer, and a simple recursive transformer.",
-        "Evaluate predictive performance alongside parameter count and FLOPs to quantify the accuracy–efficiency trade-off.",
-        "Validate on two low-dimensional tasks: semiconductor package thermo-mechanical reliability and a Laplace PDE capacitance solver."
+        "Compared three recursive transformer variants: Tiny Recursive Model, Depth Recursive transformer, and a simple recursive transformer.",
+        "Evaluated hardware-aware tradeoffs using predictive metrics, parameter count, and FLOPs.",
+        "Tested on thermo-mechanical package reliability and a Laplace PDE capacitance solver."
       ],
-      "evidence_signal": "The abstract reports a hardware-aware comparison on two low-dimensional engineering prediction tasks using Recall, Mean Reciprocal Rank, parameter count, and FLOPs as evaluation signals.",
-      "watch_item": "Recursive architectures still need careful tuning and validation, because compute savings can come with architecture-specific training instability or limited gains if the surrogate task is not truly data-scarce.",
+      "evidence_signal": "The abstract reports systematic comparison on two low-dimensional engineering tasks using Recall, Mean Reciprocal Rank, parameter count, and FLOPs to assess accuracy versus efficiency.",
+      "watch_item": "Recursive models may still be constrained by the quality and coverage of the small training dataset, so careful validation is needed to avoid misleading gains from compactness alone.",
       "hashtags": [
+        "#SurrogateModeling",
+        "#Transformer",
         "#FiniteElementAnalysis",
-        "#TransformerSurrogates",
         "#SemiconductorReliability",
-        "#PhysicsInformedML",
-        "#EngineeringAI"
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-28-arxiv-recursive_transformers_for_semiconductor_thermo_mechanical_reliability",
       "paper_title": "Recursive transformers for semiconductor thermo-mechanical reliability",
       "paper_date": "2026-07-28",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:05",
+      "generated_at": "2026-08-01T10:27:26",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-25-arxiv-pi_ginot_data_free_geometry_informed_neural_operator_learning_for_finite_strain_hyperelast",
+    "arxiv_id": "2607.23299v1",
+    "date": "2026-07-25",
+    "title": "PI-GINOT: Data-free geometry-informed neural operator learning for finite-strain hyperelasticity on parametric DogBone specimens",
+    "authors": "Aamir Dean, Betim Bahtiri",
+    "abstract": "Parametric nonlinear solid-mechanics simulations are widely used in virtual testing, optimisation, and uncertainty analysis, but repeated finite-element simulations become costly when geometry changes. This paper presents PI-GINOT, a physics-informed neural operator that predicts finite-strain hyperelastic responses across a four-parameter family of DogBone specimens without using finite-element training data. Each specimen is described by a boundary point cloud, which is encoded into geometry features. A cross-attention decoder then predicts displacement at arbitrary points. Displacement boundary conditions are enforced exactly, while stresses are computed using automatic differentiation and a compressible Neo-Hookean plane-stress model. Training is guided by equilibrium, traction-free and symmetry conditions, deformation stability, and internal force consistency. Abaqus simulations are used only after training for validation. Across eight test geometries, PI-GINOT achieves displacement errors of 2.1%-7.1%, peak von Mises stress errors of 0.9%-13.3%, and section-force errors below 10.3%. Larger errors occur in individual stress components, especially for narrow specimens, mainly because of steep stress gradients near the gauge-to-fillet transition. These results show that PI-GINOT can provide useful geometry-dependent predictions for nonlinear solid mechanics without labelled simulation data, while also revealing where better local stress resolution is still needed.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-07-25T17:20:15Z",
+    "updated": "2026-07-25T17:20:15Z",
+    "primary_category": "physics.comp-ph",
+    "categories": [
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.23299v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.23299v1"
+      }
+    ],
+    "score": 73,
+    "infographic": {
+      "key_insight": "PI-GINOT learns geometry-conditioned hyperelastic responses directly from specimen boundaries, eliminating the need for finite-element training data while still enforcing physics constraints.",
+      "engineering_relevance": "This enables faster virtual testing and design studies for parametric solid structures like DogBone specimens when repeated nonlinear simulations would be too expensive.",
+      "method": [
+        "Encodes each specimen’s boundary point cloud into geometry features.",
+        "Uses a cross-attention decoder to predict displacement at arbitrary interior points.",
+        "Enforces boundary conditions exactly and computes stresses via automatic differentiation with physics-informed losses."
+      ],
+      "evidence_signal": "Validated on eight unseen geometries, the model reported displacement errors of 2.1%–7.1%, peak von Mises stress errors of 0.9%–13.3%, and section-force errors below 10.3% after training without FE labels.",
+      "watch_item": "Local stress components remain less accurate, especially near gauge-to-fillet transitions in narrow specimens where stress gradients are steep.",
+      "hashtags": [
+        "#PhysicsInformedAI",
+        "#NeuralOperators",
+        "#SolidMechanics",
+        "#Hyperelasticity",
+        "#DigitalTwin"
+      ],
+      "paper_id": "2026-07-25-arxiv-pi_ginot_data_free_geometry_informed_neural_operator_learning_for_finite_strain_hyperelast",
+      "paper_title": "PI-GINOT: Data-free geometry-informed neural operator learning for finite-strain hyperelasticity on parametric DogBone specimens",
+      "paper_date": "2026-07-25",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-08-01T10:27:28",
       "generator": "openai"
     }
   },
@@ -232,29 +283,29 @@
         "url": "https://arxiv.org/pdf/2607.27758v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "By combining notch-based and notch-free microbeam bending with phase-field fracture modeling, the study identifies both silica glass toughness and ultimate tensile strength from a single integrated framework.",
-      "engineering_relevance": "This provides a practical micromechanical route to characterize brittle materials across both fracture-controlled and strength-controlled regimes, improving design input for small-scale glass components.",
+      "key_insight": "By combining notched and notch-free microbeam tests with phase-field fracture modeling, the study extracts both the toughness (Gc) and ultimate strength (σc) of amorphous silica from the same framework.",
+      "engineering_relevance": "The approach provides a practical way to characterize brittle glass in both fracture-driven and strength-controlled regimes, which is valuable for micro- and nano-scale structural design.",
       "method": [
-        "FIB-fabricated single-notched microbeams for brittle fracture testing",
-        "Bone-shaped notch-free microbeams for strength-controlled bending tests",
-        "FEA coupled with phase-field fracture to extract $G_c$ and $\\sigma_c$"
+        "Fabricate single-notched and bone-shaped amorphous silica microbeams by FIB milling.",
+        "Test both geometries in bending in air to probe fracture and strength limits.",
+        "Couple experiments with FEA + phase-field fracture simulation to identify Gc, KIC, lc, and σc."
       ],
-      "evidence_signal": "From the abstract, the combined approach yields $G_c=5.1$ J/m$^2$, $K_{IC}=0.61$ MPa·m$^{1/2}$, $\\ell_c=9.1$ nm, and $\\sigma_c=6.8$ GPa, consistent with known silica glass behavior.",
-      "watch_item": "Results depend on precise microbeam geometry and dimensional metrology, so notch shape and measurement error can significantly affect the inferred toughness.",
+      "evidence_signal": "The abstract reports identified values of Gc = 5.1 J/m², KIC = 0.61 MPa·m^{1/2}, lc = 9.1 nm, and σc = 6.8 GPa, with parametric studies on notch geometry and measurement error.",
+      "watch_item": "Results depend on FIB-fabricated microbeam geometry and dimensional metrology, so notch shape and measurement error can materially affect the inferred toughness.",
       "hashtags": [
         "#FractureMechanics",
         "#PhaseField",
         "#SilicaGlass",
         "#MicrobeamTesting",
-        "#ComputationalMechanics"
+        "#ComputationalSolidMechanics"
       ],
       "paper_id": "2026-07-30-arxiv-a_combined_microbeam_and_phase_field_approach_to_identify_the_toughness_and_ultimate_stren",
       "paper_title": "A Combined Microbeam and Phase-Field Approach to Identify the Toughness and Ultimate Strength of Amorphous Silica",
       "paper_date": "2026-07-30",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-08-02T10:27:08",
+      "generated_at": "2026-08-01T10:27:31",
       "generator": "openai"
     }
   },
@@ -285,29 +336,29 @@
         "url": "https://arxiv.org/pdf/2607.27103v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "A nonstandard FEM–BEM transmission formulation can solve the London equation in unbounded 3D space and reveal vortex-favorable paths in superconductors.",
-      "engineering_relevance": "The method enables accurate magnetic-field computation without artificial domain truncation, supporting superconducting design and vortex-nucleation analysis in complex geometries.",
+      "key_insight": "A nonstandard FEM-BEM coupling plus a mixed H(curl) formulation lets the London equation be solved in unbounded space while computing the fields needed for the isoflux criterion.",
+      "engineering_relevance": "The approach supports more realistic superconductivity simulations without artificial domain truncation and helps identify where vortex nucleation is most likely in complex 3D geometries.",
       "method": [
-        "Reformulate the magnetic potential as a bounded–unbounded transmission problem.",
-        "Couple finite elements with boundary elements to compute the exterior magnetic field $H_0$.",
-        "Use the Kikuchi mixed formulation and $H(\\operatorname{curl})$-conforming FEM to recover the divergence-free field $B_0$."
+        "Reformulate the magnetic potential as a transmission problem for the whole-space magnetic field H0.",
+        "Use a nonstandard FEM-BEM coupling to handle the bounded superconducting region and the unbounded exterior domain.",
+        "Compute B0 via Helmholtz-Hodge decomposition and solve it with Kikuchi’s mixed formulation using H(curl)-conforming finite elements."
       ],
-      "evidence_signal": "The discretization is validated with convergence tests and then applied to the isoflux problem, showing the ball’s diameter is the maximizer while elongated ellipsoids exhibit off-axis competitors with higher isoflux ratios.",
-      "watch_item": "For highly elongated geometries, rotational symmetry can create non-unique maximizers and a degenerate direction, so interpretation of the isoflux optimum may require care.",
+      "evidence_signal": "The abstract reports convergence tests for the discretization and an isoflux application showing the ball’s diameter is the unique maximizer, while elongated ellipsoids exhibit off-axis competitors with larger isoflux ratios.",
+      "watch_item": "The off-axis maximizers in elongated ellipsoids suggest possible non-uniqueness and rotational degeneracy, so geometry-dependent interpretation is important.",
       "hashtags": [
         "#Superconductivity",
         "#FiniteElementMethod",
         "#BoundaryElementMethod",
-        "#ComputationalPhysics",
-        "#NumericalPDEs"
+        "#MixedFormulation",
+        "#ComputationalPhysics"
       ],
       "paper_id": "2026-07-29-arxiv-numerical_approach_to_the_london_equation_of_superconductivity",
       "paper_title": "Numerical approach to the London Equation of superconductivity",
       "paper_date": "2026-07-29",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:10",
+      "generated_at": "2026-08-01T10:27:33",
       "generator": "openai"
     }
   },
@@ -336,29 +387,29 @@
         "url": "https://arxiv.org/pdf/2607.27375v1"
       }
     ],
-    "score": 64,
+    "score": 69,
     "infographic": {
-      "key_insight": "Irradiation-induced vacancy loops in tungsten evolve during dislocation interactions in geometry-dependent ways, ranging from annihilation or transport to strong sessile defect formation, which changes obstacle strength.",
-      "engineering_relevance": "These atomistic interaction rules can be converted into constitutive parameters for mesoscale models, improving predictions of irradiation hardening in fusion-relevant tungsten components.",
+      "key_insight": "Vacancy loops in irradiated tungsten evolve differently depending on geometry and orientation: parallel loops can weaken, annihilate, or be transported, while inclined loops react to form strong sessile <100> segments that greatly increase dislocation pinning.",
+      "engineering_relevance": "These atomistic interaction rules provide constitutive-model inputs for predicting irradiation hardening and defect evolution in fusion reactor tungsten under plastic deformation.",
       "method": [
         "Molecular dynamics simulations of edge dislocations interacting with vacancy loops in tungsten",
         "Systematic variation of loop size, crystallographic orientation, and dislocation-loop intersection geometry",
-        "Translation of atomistic obstacle strengths into constitutive hardening parameters"
+        "Translation of atomistic obstacle strengths into mesoscale constitutive parameters"
       ],
-      "evidence_signal": "The abstract reports systematic simulation results across multiple interaction geometries and uses them to derive obstacle-strength trends and a framework for constitutive parameterization.",
-      "watch_item": "The constitutive mapping is demonstrated from atomistic data, but broader model transfer will still need validation across wider defect populations, temperatures, and loading conditions.",
+      "evidence_signal": "The study uses simulation-based interaction outcomes across multiple geometries to identify clear differences in defect evolution and pinning strength, especially between parallel and inclined loop configurations.",
+      "watch_item": "The constitutive mapping is based on atomistic simulations, so transferability to broader irradiation conditions and higher-scale microstructures may require additional validation.",
       "hashtags": [
         "#Tungsten",
-        "#IrradiationDamage",
-        "#DislocationDynamics",
+        "#IrradiationHardening",
         "#MolecularDynamics",
+        "#DislocationDynamics",
         "#ConstitutiveModeling"
       ],
       "paper_id": "2026-07-29-arxiv-evolution_of_the_irradiation_induced_defect_landscape_through_dislocation_vacancy_loop_int",
       "paper_title": "Evolution of the Irradiation Induced Defect Landscape through Dislocation Vacancy Loop Interactions in Tungsten",
       "paper_date": "2026-07-29",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-08-02T10:27:12",
+      "generated_at": "2026-08-01T10:27:35",
       "generator": "openai"
     }
   },
@@ -387,29 +438,29 @@
         "url": "https://arxiv.org/pdf/2607.28104v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "A tree-based adaptive finite-element level-set transport method refines only near the moving interface, keeping accuracy high while cutting cost.",
-      "engineering_relevance": "It offers a practical, mesh-compatible way to track evolving two-phase flow interfaces on structured or unstructured 2D/3D grids.",
+      "key_insight": "The paper introduces an adaptive finite-element level-set transport method that refines only near the moving interface, preserving accuracy while reducing cost.",
+      "engineering_relevance": "This is directly useful for two-phase flow and other interface-capturing simulations where efficient, accurate interface tracking is needed on complex meshes.",
       "method": [
-        "Dynamic local refinement and coarsening on a hierarchical mesh",
-        "Marker-driven interface prediction with backward characteristic tracing",
-        "Multilevel marker and point-location search across refinement levels"
+        "Use a tree-based hierarchical mesh with dynamic local refinement/coarsening around the zero level set.",
+        "Transport marker particles to predict interface motion and build the adaptive mesh hierarchy.",
+        "Use backward characteristic tracing plus multilevel marker/point-location search to evaluate the advected level-set field."
       ],
-      "evidence_signal": "The method was tested on severe interface deformations in 2D and 3D across quadrilateral, simplicial, wedge, and hexahedral meshes, showing accuracy comparable to uniform grids at much lower cost.",
-      "watch_item": "Aggressive adaptivity can complicate implementation, especially robust point-location, data management, and conservation control near refinement boundaries.",
+      "evidence_signal": "The method was tested on 2D and 3D structured and unstructured meshes, including quadrilateral, simplicial, wedge, and hexahedral grids, and matched uniform-grid accuracy at much lower computational cost.",
+      "watch_item": "Aggressive adaptivity depends on robust marker tracking and point-location across refinement levels, which can be implementation-sensitive in highly distorted interface motions.",
       "hashtags": [
+        "#LevelSetMethods",
+        "#AdaptiveMeshRefinement",
         "#FiniteElementMethod",
-        "#LevelSet",
-        "#AdaptiveMesh",
-        "#MultiphaseFlow",
+        "#TwoPhaseFlow",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-30-arxiv-an_adaptive_finite_element_method_for_marker_driven_level_set_transport_on_hierarchical_me",
       "paper_title": "An Adaptive Finite Element Method for Marker-Driven Level-Set Transport on Hierarchical Meshes",
       "paper_date": "2026-07-30",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:14",
+      "generated_at": "2026-08-01T10:27:37",
       "generator": "openai"
     }
   },
@@ -438,29 +489,29 @@
         "url": "https://arxiv.org/pdf/2607.26610v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "A variational thermo-mechanical phase transformation model couples heat flow, finite-strain mechanics, and first- and second-order glass transitions to predict vitrification and residual stress during glass additive manufacturing.",
-      "engineering_relevance": "The framework helps engineers forecast warpage, stress buildup, and microstructure locking under extreme thermal histories in laser-based glass printing.",
+      "key_insight": "A unified Hamilton-principle-based thermo-mechanical model captures first-order melting and second-order glass transition effects in glass additive manufacturing under extreme thermal histories.",
+      "engineering_relevance": "The framework helps predict residual stress, warpage, and microstructural freezing during laser-based glass printing, supporting more reliable process and material design.",
       "method": [
-        "Extended Hamilton principle for coupled thermal, mechanical, and phase-transformation fields",
-        "Finite-strain kinematic split with thermal expansion, density change, and viscoelastic deformation",
-        "Temperature-dependent viscosity and monolithic Neighbored Element Method for stable heat-equation solution"
+        "Extended variational formulation coupling heat, mechanics, and phase transformation at finite strains",
+        "Kinematic split including thermal expansion, density changes, and viscoelastic deformation",
+        "Temperature-dependent viscosity with monolithic NEM heat solution and 3D ANSYS process simulation"
       ],
-      "evidence_signal": "The abstract reports material-point validation against TTT behavior across cooling rates and 3D ANSYS deposition simulations showing residual stress accumulation and macroscopic warpage.",
-      "watch_item": "Accuracy depends on calibrated thermodynamic and viscosity laws, and the monolithic NEM/ANSYS workflow may require careful implementation for strongly coupled, highly transient cooling processes.",
+      "evidence_signal": "The model was validated at the material-point level against Time-Temperature-Transformation behavior and then demonstrated in 3D deposition simulations showing residual stress buildup and warpage.",
+      "watch_item": "Accurate deployment depends on reliable phase-kinetics and viscosity calibration, especially under very rapid cooling where small parameter errors can strongly affect predicted vitrification and stress evolution.",
       "hashtags": [
-        "#AdditiveManufacturing",
-        "#GlassPrinting",
-        "#ThermoMechanicalModeling",
+        "#GlassAM",
         "#PhaseTransformation",
+        "#ThermoMechanical",
+        "#ConstitutiveModeling",
         "#FiniteStrain"
       ],
       "paper_id": "2026-07-29-arxiv-first_and_second_order_phase_transformation_modeling_based_on_the_hamilton_principle_a_cou",
       "paper_title": "First- and Second-Order Phase Transformation Modeling Based on the Hamilton Principle: A Coupled Thermo-Mechanical Approach for Glass Additive Manufacturing",
       "paper_date": "2026-07-29",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-08-02T10:27:17",
+      "generated_at": "2026-08-01T10:27:39",
       "generator": "openai"
     }
   },
@@ -489,29 +540,29 @@
         "url": "https://arxiv.org/pdf/2607.25771v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "Geometric nonlinearity alone creates a distinct near-crack-tip nonlinear zone in soft elastic solids, with a physical length scale that grows quadratically with the stress intensity factor.",
-      "engineering_relevance": "This provides a clean baseline for predicting fracture in highly deformable solids and for separating geometry-driven effects from true material toughening.",
+      "key_insight": "Geometric nonlinearity alone creates a distinct near-tip crack-opening regime and a nonlinear length scale λ_nl that grows with K_I^2, providing a baseline for nonlinear fracture in soft solids.",
+      "engineering_relevance": "For soft elastic materials, this shows that large-deformation kinematics can shield the crack tip and produce apparent toughening even without material nonlinearity.",
       "method": [
-        "Modelled a compressible St. Venant-Kirchhoff solid to isolate geometric nonlinearity from material nonlinearity.",
-        "Analyzed mode I plane-strain cracks using CTOD-based postprocessing and asymptotic analysis.",
-        "Used matched asymptotics to define the nonlinear length scale λ_nl and its scaling with K_I."
+        "Model static mode-I plane-strain cracks with a compressible St. Venant-Kirchhoff solid.",
+        "Use crack-tip opening displacement (CTOD) profiles to detect deviation from linear elastic fracture mechanics.",
+        "Derive asymptotic solutions and matched-asymptotics to define the nonlinear length scale λ_nl."
       ],
-      "evidence_signal": "The abstract reports analytical asymptotic solutions and a CTOD-based near-tip comparison showing a departure from linear elastic predictions, but no experimental dataset is mentioned.",
-      "watch_item": "The conclusions are based on an idealized constitutive model and plane-strain mode I setting, so transfer to real soft materials with strong material nonlinearity may require additional validation.",
+      "evidence_signal": "The paper supports its claims through analytical asymptotic derivations and CTOD-based postprocessing, showing a near-tip deviation from classical linear predictions.",
+      "watch_item": "Results are for an idealized brittle, geometrically nonlinear but materially simple constitutive model, so extension to real soft materials with stronger material nonlinearity may not be direct.",
       "hashtags": [
+        "#SolidMechanics",
         "#FractureMechanics",
         "#GeometricNonlinearity",
-        "#SoftSolids",
-        "#ConstitutiveModeling",
-        "#CTOD"
+        "#CTOD",
+        "#SoftMaterials"
       ],
       "paper_id": "2026-07-28-arxiv-crack_tip_opening_as_a_probe_for_length_scale_separation_in_geometrically_nonlinear_solids",
       "paper_title": "Crack-Tip Opening as a Probe for Length-Scale Separation in Geometrically Nonlinear Solids",
       "paper_date": "2026-07-28",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-08-02T10:27:19",
+      "generated_at": "2026-08-01T10:27:41",
       "generator": "openai"
     }
   },
@@ -540,29 +591,29 @@
         "url": "https://arxiv.org/pdf/2607.27608v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "θ-TaN shows strong anisotropic tensile behavior, with higher strength along [0001] but greater ductility along [2-1-10], and it fractures by cleavage rather than dislocation-mediated plasticity.",
-      "engineering_relevance": "These atomistic strength and fracture data help assess θ-TaN as a reliable high-thermal-conductivity material for device thermal management and interconnect applications.",
+      "key_insight": "θ-TaN is strongly anisotropic in tension: the c-axis is stronger and stiffer, while the a-axis is more ductile before brittle cleavage fracture.",
+      "engineering_relevance": "These results help estimate the reliability of θ-TaN for high-thermal-conductivity interconnects and thermal-management components under directional loading.",
       "method": [
-        "Neuroevolution-potential molecular dynamics simulations of θ-TaN tensile loading",
-        "Size-convergence testing to select a 20 nm model length",
-        "Strain-rate and temperature sweeps to quantify mechanical anisotropy and thermal effects"
+        "Neuroevolution-potential molecular dynamics for tensile simulations",
+        "Size-convergence testing with a 20 nm model",
+        "Strain-rate and temperature sweeps to map anisotropic response"
       ],
-      "evidence_signal": "The abstract reports <3.5% variation in mechanical parameters across 10^7–10^9 s^-1 strain rates, with strength/modulus values differing by direction and retaining over 73% of 300 K strength at 900 K.",
-      "watch_item": "Results come from simulation-scale loading rates and idealized crystals, so real microstructure, defects, and experimental fracture behavior may differ.",
+      "evidence_signal": "The abstract reports <3.5% variation across 10^7–10^9 s^-1 strain rates and a clear directional split in strength/modulus/failure strain, with fracture controlled by cleavage-plane selection.",
+      "watch_item": "The conclusions come from high-rate MD conditions, so direct transfer to experimental or service-time loading may require additional validation.",
       "hashtags": [
-        "#TaN",
-        "#FractureMechanics",
+        "#ThetaTaN",
         "#MolecularDynamics",
-        "#MachineLearningPotential",
-        "#ComputationalMaterials"
+        "#FractureMechanics",
+        "#Anisotropy",
+        "#MaterialsReliability"
       ],
       "paper_id": "2026-07-30-arxiv-anisotropic_tensile_strength_and_fracture_mechanism_of_tan_a_machine_learning_potential_mo",
       "paper_title": "Anisotropic Tensile Strength and Fracture Mechanism of $θ$-TaN: A Machine-Learning Potential Molecular Dynamics Study",
       "paper_date": "2026-07-30",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-08-02T10:27:22",
+      "generated_at": "2026-08-01T10:27:44",
       "generator": "openai"
     }
   },
@@ -591,29 +642,29 @@
         "url": "https://arxiv.org/pdf/2607.24509v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "The paper proposes a smooth, closed-form elastoplastic-damage update for graphics simulation that preserves irreversible history without local Newton solves.",
-      "engineering_relevance": "It offers a compact, vectorizable material model for explicit solid simulation when smooth branch activation and simple implementation matter more than exact yield-surface enforcement.",
+      "key_insight": "The paper proposes a smooth, explicit elastoplastic-damage material update that preserves history dependence and irreversibility without solving a local Newton problem.",
+      "engineering_relevance": "It offers a compact and vectorizable constitutive update for graphics simulation, making plastically deforming and degrading solids easier to implement in explicit solvers.",
       "method": [
-        "Softplus generates a candidate plastic strain, then a max-history projection enforces irreversibility.",
-        "A deviatoric plastic-strain tensor stores residual direction while an exponential damage variable evolves from the saved history.",
-        "Active and frozen branches are evaluated analytically from one response energy, avoiding local iterative solves."
+        "Softplus generates a candidate equivalent plastic strain, then a max-history projection enforces irreversibility.",
+        "A deviatoric plastic-strain tensor stores residual direction while an exponential damage variable evolves from the same history.",
+        "Active and frozen branches are evaluated analytically from one response energy, avoiding local root-finding."
       ],
-      "evidence_signal": "The method was validated on cyclic tension, cantilever bending, platen compression, and a torus, showing residual deformation, monotone internal variables, and branchwise energy-gradient agreement, with proportional-loading error of 1.53% but 49.39% under a 90-degree path turn.",
-      "watch_item": "It is intended for isotropic, proportional or near-proportional loading and is not a substitute for general return mapping, anisotropic damage, or phase-field fracture.",
+      "evidence_signal": "Across 1D, 2D, and 3D tests, the method reproduced residual deformation and monotone internal variables, but a 90-degree loading turn produced a 49.39% normalized equivalent-stress error versus 1.53% under proportional loading.",
+      "watch_item": "The approach is intended for isotropic, proportional or near-proportional loading; it is not suitable as a general replacement for return mapping or anisotropic damage models.",
       "hashtags": [
-        "#SolidMechanics",
-        "#Plasticity",
-        "#DamageModel",
+        "#ComputationalMechanics",
+        "#Elastoplasticity",
+        "#DamageModeling",
         "#GraphicsSimulation",
-        "#Fracture"
+        "#ExplicitMethods"
       ],
       "paper_id": "2026-07-27-arxiv-a_smooth_explicit_elastoplastic_damage_update_for_graphics_simulation",
       "paper_title": "A Smooth Explicit Elastoplastic--Damage Update for Graphics Simulation",
       "paper_date": "2026-07-27",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-08-02T10:27:24",
+      "generated_at": "2026-08-01T10:27:46",
       "generator": "openai"
     }
   },
@@ -642,20 +693,20 @@
         "url": "https://arxiv.org/pdf/2607.28534v1"
       }
     ],
-    "score": 57,
+    "score": 62,
     "infographic": {
-      "key_insight": "A density-based topology optimization framework can directly include multidirectional mutual radiation by coupling ray-traced radiative exchange with finite-element conduction analysis.",
-      "engineering_relevance": "This enables more realistic design of lightweight thermal-management structures for space electronics, such as radiative heat sinks and radiation shields.",
+      "key_insight": "A density-based topology optimization framework can explicitly account for multidirectional mutual radiation by coupling ray-tracing radiative transfer with finite-element conduction analysis.",
+      "engineering_relevance": "This enables more physically realistic thermal design of spaceborne heat sinks and radiation shields, where conduction and radiation must be balanced for passive heat rejection.",
       "method": [
-        "Integrates a zonal-method radiation solver with ray tracing into finite-element heat conduction.",
-        "Treats intermediate density regions as participating media during optimization for physically consistent radiation evaluation.",
-        "Uses adjoint-based analytical sensitivities and verifies them against finite-difference results."
+        "Integrate a zonal-method radiation solver with ray tracing into the thermal FEM loop",
+        "Treat intermediate densities as participating media to evaluate radiation on implicit boundaries",
+        "Compute design sensitivities analytically with an adjoint method"
       ],
-      "evidence_signal": "The abstract reports numerical examples on radiative heat sinks and radiation shields, with sensitivity accuracy confirmed by comparison to finite-difference calculations.",
-      "watch_item": "Ray-tracing-based radiation analysis inside each optimization step may increase computational cost and implementation complexity.",
+      "evidence_signal": "The abstract reports validation by comparing adjoint sensitivities against finite-difference results and demonstrates optimized heat sink and radiation shield designs.",
+      "watch_item": "The approach may be computationally expensive because ray tracing and coupled radiation-conduction analysis must be repeated throughout the optimization.",
       "hashtags": [
         "#TopologyOptimization",
-        "#ThermalManagement",
+        "#ThermalDesign",
         "#RadiativeHeatTransfer",
         "#RayTracing",
         "#FiniteElementMethod"
@@ -664,7 +715,7 @@
       "paper_title": "Topology optimization of conduction-radiation problems based on a ray-tracing approach",
       "paper_date": "2026-07-30",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:26",
+      "generated_at": "2026-08-01T10:27:48",
       "generator": "openai"
     }
   },
@@ -693,29 +744,29 @@
         "url": "https://arxiv.org/pdf/2607.27281v1"
       }
     ],
-    "score": 56,
+    "score": 61,
     "infographic": {
-      "key_insight": "Capability emergence in language models follows a no-partial-credit, driven-nucleation process: all critical circuit parts must align before the capability appears.",
-      "engineering_relevance": "This provides a rate-law framework for predicting when capabilities will emerge or be lost, enabling more controlled training, monitoring, and circuit-level intervention.",
+      "key_insight": "Capability emergence in language models behaves like a driven nucleation event: all required circuit parts must align together, and missing parts increase the waiting time rather than allowing partial credit.",
+      "engineering_relevance": "The rate-law framing turns training dynamics into a controllable systems problem, enabling prediction, scheduling, preservation, or suppression of model capabilities by manipulating circuit occupancy and training drive.",
       "method": [
-        "Analyzed circuit alignment and ablation behavior across multiple capabilities and model scales.",
-        "Fit a preregistered rate equation with frozen constants to forward, backward, and completion-based training scenarios.",
-        "Validated the mechanism in a controlled gated-attention model and tested targeted re-initialization of circuit slices."
+        "Derived a stochastic rate equation with terms for sites, attempts, drive, and barrier height, plus a destruction term.",
+        "Validated the no-partial-credit mechanism with ablations across Pythia models and multiple capabilities.",
+        "Demonstrated control strategies in a gated-attention toy model and via targeted query-key reinitialization."
       ],
-      "evidence_signal": "Across seven capabilities and three scales, single-part ablations left a median 17% of the capability instead of the 50–83% expected under partial-credit models, and the proposed law predicted emergence timing with about 5% median error on six held-out models.",
-      "watch_item": "The framework is strongest for conjunction-style circuits and controlled settings, so generalization to broader model behaviors and interventions may be limited.",
+      "evidence_signal": "Across seven capabilities and three scales, one missing circuit part left only a median 17% of capability in 32/32 discriminating cells, and the proposed kinetics predicted capability onset and delay with strong agreement on held-out models.",
+      "watch_item": "The rate-law and control results are strongest for conjunction-style circuits, so broader generalization to other capability types or larger frontier models still needs confirmation.",
       "hashtags": [
-        "#MachineLearning",
-        "#LanguageModels",
-        "#CircuitMechanisms",
+        "#Transformers",
         "#TrainingDynamics",
-        "#ConstitutiveModeling"
+        "#MechanisticInterpretability",
+        "#RateLaw",
+        "#AIControl"
       ],
       "paper_id": "2026-07-29-arxiv-the_kinetics_of_training_a_driven_nucleation_rate_law_for_emergence_plasticity_loss_and_ci",
       "paper_title": "The Kinetics of Training: A Driven-Nucleation Rate Law for Emergence, Plasticity Loss, and Circuit Control in Language Models",
       "paper_date": "2026-07-29",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-08-02T10:27:28",
+      "generated_at": "2026-08-01T10:27:51",
       "generator": "openai"
     }
   },
@@ -744,29 +795,29 @@
         "url": "https://arxiv.org/pdf/2607.28235v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "R3MG-C is a high-order algebraic-geometric multilevel preconditioner that uses only finite-element support-point coordinates to build robust coarse spaces for continuous high-order discretizations.",
-      "engineering_relevance": "It offers a practical alternative to standard AMG when high-order FEM systems become difficult to precondition, helping keep solver iterations stable in real engineering simulations.",
+      "key_insight": "R3MG-C is a high-order algebraic-geometric multilevel preconditioner that improves robustness for continuous finite element systems by building coarse spaces from support-point agglomerates and local polynomial interpolation.",
+      "engineering_relevance": "It offers a mesh-agnostic, automatic preconditioning strategy for high-order FEM discretizations of elliptic PDEs, where standard AMG often loses efficiency.",
       "method": [
-        "Recursively partitions support points with an R-tree using axis-aligned bounding boxes to form agglomerates.",
-        "Builds prolongation and Galerkin levels automatically from these agglomerates, without a prescribed mesh hierarchy.",
-        "Uses local discontinuous polynomial coarse spaces of degree p'>0, transferred through continuous nodal interpolation."
+        "Recursively partition finite element support points with an R-tree using axis-aligned bounding boxes.",
+        "Construct multilevel agglomerates and Galerkin operators without a prescribed mesh hierarchy.",
+        "Embed local discontinuous polynomial coarse spaces of degree p'>0 via continuous nodal interpolation."
       ],
-      "evidence_signal": "The abstract reports two- and three-dimensional numerical experiments where the V-cycle preconditioner maintains stable iteration counts even in regimes where standard AMG deteriorates.",
-      "watch_item": "Performance depends on assumptions such as uniform box-regularity, interpolation stability, and stable decomposition, so robustness may vary on highly irregular geometries or partitions.",
+      "evidence_signal": "The abstract reports two- and three-dimensional numerical experiments showing stable V-cycle CG iteration counts, including regimes where standard AMG deteriorates.",
+      "watch_item": "Performance depends on assumptions such as box regularity, interpolation stability, and stable decomposition, so implementation details and geometric quality may affect robustness.",
       "hashtags": [
-        "#FiniteElements",
+        "#FiniteElementMethod",
         "#Multigrid",
         "#Preconditioning",
         "#HighOrderMethods",
-        "#ScientificComputing"
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-07-30-arxiv-r3mg_c_a_high_order_algebraic_geometric_multilevel_preconditioner_for_continuous_finite_el",
       "paper_title": "R3MG-C: a high-order algebraic-geometric multilevel preconditioner for continuous finite element discretizations",
       "paper_date": "2026-07-30",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:31",
+      "generated_at": "2026-08-01T10:27:53",
       "generator": "openai"
     }
   },
@@ -796,29 +847,29 @@
         "url": "https://arxiv.org/pdf/2607.26947v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "PMA tackles a neglected source of continual-learning failure in MLLMs: the projector itself forgets, so the model expands projector experts only when multimodal shifts demand it while keeping the pretrained projector as an anchor.",
-      "engineering_relevance": "For computational science and engineering workflows that rely on multimodal models, PMA offers a practical way to preserve prior visual-language alignment across evolving datasets and instructions without retraining the whole model.",
+      "key_insight": "PMA addresses a neglected failure mode in continual multimodal instruction tuning: the projector can forget past visual-language alignment, so it is progressively expanded while keeping the original projector as a stable anchor.",
+      "engineering_relevance": "For multimodal systems used in engineering workflows, PMA offers a practical way to update models over time without sacrificing earlier alignment, improving robustness under shifting data and tasks.",
       "method": [
         "Detect multimodal distribution shifts with a lightweight representation descriptor.",
-        "Progressively expand projector experts only when needed and route inputs with an expandable multimodal router.",
-        "Retain the original pretrained projector as a stable alignment anchor to balance plasticity and stability."
+        "Expand projector experts only when drift is detected, rather than retraining the whole alignment module.",
+        "Use an expandable router to combine expert outputs while retaining the pretrained projector as an anchor."
       ],
-      "evidence_signal": "The abstract reports extensive experiments on two recent MCIT benchmarks, with consistent gains over prior state-of-the-art methods and good transfer across diverse MLLM backbones.",
-      "watch_item": "Because PMA adds expert expansion and routing logic, its benefit may depend on reliable shift detection and careful control of parameter growth and routing overhead.",
+      "evidence_signal": "The abstract reports consistent gains over prior state of the art on two recent MCIT benchmarks and good transfer across multiple MLLM backbones.",
+      "watch_item": "Because PMA adds experts progressively, deployment must manage router reliability and the extra parameter/latency overhead as the system grows.",
       "hashtags": [
-        "#MultimodalAI",
+        "#MultimodalLLM",
         "#ContinualLearning",
         "#InstructionTuning",
-        "#VisionLanguageModels",
-        "#MachineLearning"
+        "#Alignment",
+        "#ModelRobustness"
       ],
       "paper_id": "2026-07-29-arxiv-progressive_multimodal_alignment_for_continual_instruction_tuning",
       "paper_title": "Progressive Multimodal Alignment for Continual Instruction Tuning",
       "paper_date": "2026-07-29",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-08-02T10:27:34",
+      "generated_at": "2026-08-01T10:27:55",
       "generator": "openai"
     }
   },
@@ -849,29 +900,29 @@
         "url": "https://arxiv.org/pdf/2607.26248v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "A lifting-based kinematic decomposition lets Dirichlet boundary velocities be enforced strongly in structure-preserving elastodynamics, avoiding DAE constraints while retaining an ODE form.",
-      "engineering_relevance": "This provides a practical FEM pathway for accurate boundary-actuated solid dynamics models with better boundary fidelity and cleaner time integration.",
+      "key_insight": "The paper enforces Dirichlet boundary velocities strongly in port-Hamiltonian elastodynamics by using a lifting-based kinematic decomposition, avoiding DAE constraints while preserving energy structure.",
+      "engineering_relevance": "This gives finite element practitioners an ODE-based alternative to Lagrange multipliers or weak imposition, improving boundary accuracy for structure-preserving solid mechanics simulations.",
       "method": [
         "Split displacement/velocity into a boundary-vanishing dynamic part plus a prescribed lifting field.",
-        "Embed the lifting map into virtual power to derive lifted port-Hamiltonian models.",
-        "Discretize into 2-field and 4-field FEM formulations that recover standard matrix partitioning under specific shape functions."
+        "Embed the lifting map in virtual power principles to obtain lifted port-Hamiltonian models.",
+        "Derive both 2-field and 4-field FEM formulations and show equivalence to standard matrix partitioning under special shape functions."
       ],
-      "evidence_signal": "The abstract reports numerical simulations validating energy balance properties and computational performance, and shows equivalence to classic FEM algebraic partitioning in suitable cases.",
-      "watch_item": "The approach depends on choosing an appropriate lifting function/shape-function structure, so implementation quality at the boundary may be sensitive to discretization design.",
+      "evidence_signal": "The abstract reports numerical simulations that verify energy-balance properties and computational performance of the proposed formulations.",
+      "watch_item": "The lifting field and associated discrete mapping must be chosen carefully, since poor construction could affect accuracy, implementation complexity, or equivalence to standard FEM.",
       "hashtags": [
+        "#Elastodynamics",
         "#FiniteElementMethod",
         "#PortHamiltonian",
-        "#Elastodynamics",
-        "#BoundaryConditions",
-        "#StructurePreserving"
+        "#StructurePreserving",
+        "#BoundaryConditions"
       ],
       "paper_id": "2026-07-28-arxiv-strong_imposition_of_dirichlet_boundary_velocities_in_structure_preserving_discretizations",
       "paper_title": "Strong imposition of Dirichlet boundary velocities in structure-preserving discretizations of elastodynamics",
       "paper_date": "2026-07-28",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:36",
+      "generated_at": "2026-08-01T10:27:57",
       "generator": "openai"
     }
   },
@@ -900,29 +951,29 @@
         "url": "https://arxiv.org/pdf/2607.27901v1"
       }
     ],
-    "score": 54,
+    "score": 59,
     "infographic": {
-      "key_insight": "A graph neural network can solve PDEs directly in weak form without training data by using finite-element shape-function gradients to enforce physics.",
-      "engineering_relevance": "This offers a scalable surrogate for solid mechanics that can handle new geometries and load cases while avoiding expensive high-fidelity dataset generation.",
+      "key_insight": "A data-free graph neural network can solve PDEs in solid mechanics by enforcing the weak form with finite-element shape-function gradients instead of automatic differentiation.",
+      "engineering_relevance": "This enables scalable surrogate solvers for arbitrary geometries and unseen load cases while avoiding the cost of generating and storing high-fidelity training data.",
       "method": [
-        "Message-passing GNN predicts nodal displacements on the FE mesh.",
-        "Residuals are computed from weak-form FEM operators, using polynomial shape-function gradients instead of automatic differentiation.",
-        "Residual-based refinement can be applied at test time when a user-defined tolerance is not met."
+        "Graph neural network with message passing predicts nodal displacements.",
+        "Residuals are computed from the weak form using polynomial FEM shape-function gradients.",
+        "Residual-based error checking can trigger refinement at inference time."
       ],
-      "evidence_signal": "The abstract reports residual convergence errors below 1% and successful generalization to unseen load cases and geometries.",
-      "watch_item": "Performance depends on the underlying mesh/FE weak-form setup, so implementation quality and residual tolerance choice may affect robustness.",
+      "evidence_signal": "The abstract reports residual convergence errors below 1% and claims generalization to unseen load cases and geometries on models of considerable size.",
+      "watch_item": "Performance still depends on a suitable FEM discretization and reliable residual tolerance settings for inference-time refinement.",
       "hashtags": [
-        "#FEMSurrogates",
         "#GraphNeuralNetworks",
-        "#PhysicsInformedAI",
+        "#PhysicsInformedML",
+        "#FiniteElementMethod",
         "#SolidMechanics",
-        "#WeakForm"
+        "#DataFreeAI"
       ],
       "paper_id": "2026-07-30-arxiv-data_free_neural_pde_solvers_based_on_graph_neural_networks_and_weak_forms",
       "paper_title": "Data-free neural PDE solvers based on Graph Neural Networks and weak forms",
       "paper_date": "2026-07-30",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:39",
+      "generated_at": "2026-08-01T10:28:00",
       "generator": "openai"
     }
   },
@@ -955,80 +1006,29 @@
         "url": "https://arxiv.org/pdf/2607.27525v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "Energy dissipation in viscoelastic truss networks is governed by how mass is redistributed across the network, with optimal designs decaying away from the drive point over an intrinsic attenuation length.",
-      "engineering_relevance": "This provides a practical design rule for vibration isolation and impact-protection metamaterials, enabling efficient tuning of damping without changing material composition.",
+      "key_insight": "Energy dissipation in viscoelastic truss metamaterials is governed by how mass is redistributed relative to the material’s intrinsic attenuation length, with optimal designs decaying away from the drive source.",
+      "engineering_relevance": "This provides a scalable design rule for vibration isolation and impact-protection networks, enabling architecture-level tuning of damping without changing material composition.",
       "method": [
-        "Graph-Laplacian spectral framework for viscoelastic truss networks.",
-        "Retains exact continuum rod dynamics while scaling with number of joints, not discretization points.",
-        "Uses gradient-based optimization and frequency-focused analysis near a global resonant mode."
+        "Graph-Laplacian spectral framework for viscoelastic truss networks",
+        "Retains exact rod continuum dynamics while scaling with the number of joints",
+        "Gradient-based optimization of cross-sectional area distributions under harmonic driving"
       ],
-      "evidence_signal": "The abstract reports comparative evaluation of random redistribution versus a uniform baseline and optimization results across driving frequencies, showing attenuation-length-controlled dissipation patterns.",
-      "watch_item": "The design rule is derived for viscoelastic truss networks near resonant excitation, so transferability to strongly nonlinear, non-resonant, or highly irregular real structures may require additional validation.",
+      "evidence_signal": "The abstract reports that random redistribution usually lowers dissipation, while optimized networks show attenuation-length-controlled architectures and a decay pattern that is independent of boundary conditions at small attenuation lengths.",
+      "watch_item": "The design principle is established near a global resonant mode, so performance may not generalize unchanged across broadband excitation or strongly different loading conditions.",
       "hashtags": [
+        "#SolidMechanics",
         "#Metamaterials",
         "#Viscoelasticity",
-        "#FiniteElementMethod",
-        "#GraphLaplacian",
-        "#StructuralOptimization"
+        "#FiniteElementMethods",
+        "#StructuralDynamics"
       ],
       "paper_id": "2026-07-29-arxiv-design_principles_for_energy_dissipation_in_viscoelastic_network_metamaterials",
       "paper_title": "Design principles for energy dissipation in viscoelastic network metamaterials",
       "paper_date": "2026-07-29",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:41",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-29-arxiv-stabilized_morley_fem_for_surface_stokes_in_stream_function_formulation_optimal_convergenc",
-    "arxiv_id": "2607.26664v1",
-    "date": "2026-07-29",
-    "title": "Stabilized Morley FEM for surface Stokes in stream-function formulation: Optimal convergence via a new geometric estimate",
-    "authors": "Shuonan Wu, Hao Zhou",
-    "abstract": "We propose an intrinsic stabilized Morley finite element method for the stream-function formulation of the surface Stokes problem on closed surfaces. The method is posed directly on a polyhedral approximation of the surface. A parameter-free jump stabilization is introduced to recover coercivity, and a discrete Korn's inequality for the trace-free Hessian is established. The main analytical contribution is a normal-separated geometric estimate for piecewise linearly approximated closed surfaces. It shows that a broad class of normal-dependent geometric consistency errors is in fact second order, even though a direct treatment suggests only first-order control. The missing order is recovered through an integral cancellation in the first normal variation. This estimate refines the standard $P_hν$-type estimate and yields second-order consistency for the trace-free Hessian, the Stokes-type tensor Green identity, and the conormal fluxes arising in the discretization. Together with the discrete Korn's inequality, these estimates yield, under the natural $H^3$ regularity, optimal-order convergence: first order in the broken $H^2$ norm and second order in the broken $H^1$ norm. As a direct consequence, the recovered tangential velocity admits a second-order $L^2$ estimate. Numerical experiments are provided to support the theoretical results.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-07-29T09:22:27Z",
-    "updated": "2026-07-29T09:22:27Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.26664v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.26664v1"
-      }
-    ],
-    "score": 52,
-    "infographic": {
-      "key_insight": "A stabilized Morley finite element method on polyhedral surfaces achieves optimal convergence for surface Stokes stream-function problems by exploiting a new geometric cancellation that upgrades key consistency errors from first to second order.",
-      "engineering_relevance": "This gives a practical, intrinsic surface PDE solver with provable accuracy for tangential flow simulation on curved geometries, which is useful in computational mechanics and multiphysics on manifolds.",
-      "method": [
-        "Use an intrinsic Morley FEM directly on a piecewise linear closed-surface approximation.",
-        "Add a parameter-free jump stabilization to recover coercivity.",
-        "Prove a discrete Korn inequality and a new normal-separated geometric estimate to control surface consistency errors."
-      ],
-      "evidence_signal": "The abstract reports theoretical optimal-order convergence under natural H3 regularity, with first order in broken H2, second order in broken H1, and second-order L2 error for recovered tangential velocity, supported by numerical experiments.",
-      "watch_item": "The method relies on a polyhedral surface approximation and a delicate geometric cancellation result, so implementation and mesh geometry quality may strongly affect robustness.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#SurfaceStokes",
-        "#ComputationalMechanics",
-        "#GeometricAnalysis",
-        "#NumericalPDE"
-      ],
-      "paper_id": "2026-07-29-arxiv-stabilized_morley_fem_for_surface_stokes_in_stream_function_formulation_optimal_convergenc",
-      "paper_title": "Stabilized Morley FEM for surface Stokes in stream-function formulation: Optimal convergence via a new geometric estimate",
-      "paper_date": "2026-07-29",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-08-02T10:27:44",
+      "generated_at": "2026-08-01T10:28:02",
       "generator": "openai"
     }
   }

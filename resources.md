@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-08-02
+Generated: 2026-08-03
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Fourier Feature Physics-Informed Neural Networks for Elasto-Plastic Analysis of Geomaterials with a Non-Associative Mohr-Coulomb Model
@@ -35,7 +35,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.27251v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-28-arxiv-recursive_transformers_for_semiconductor_thermo_mechanical_reliability_infographic.json
 
-## 5. A Combined Microbeam and Phase-Field Approach to Identify the Toughness and Ultimate Strength of Amorphous Silica
+## 5. Mechanical Modeling of Braided Neurovascular Flow Diverters using a Beam-to-Beam and Beam-to-Surface Contact Formulation
+
+- Date: 2026-07-31
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.29446v1
+- PDF: https://arxiv.org/pdf/2607.29446v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-31-arxiv-mechanical_modeling_of_braided_neurovascular_flow_diverters_using_a_beam_to_beam_and_beam_infographic.json
+
+## 6. A Combined Microbeam and Phase-Field Approach to Identify the Toughness and Ultimate Strength of Amorphous Silica
 
 - Date: 2026-07-30
 - Category: Fracture and Damage
@@ -43,7 +51,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.27758v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-a_combined_microbeam_and_phase_field_approach_to_identify_the_toughness_and_ultimate_stren_infographic.json
 
-## 6. Numerical approach to the London Equation of superconductivity
+## 7. Numerical approach to the London Equation of superconductivity
 
 - Date: 2026-07-29
 - Category: FEM Surrogates
@@ -51,7 +59,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.27103v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-numerical_approach_to_the_london_equation_of_superconductivity_infographic.json
 
-## 7. Evolution of the Irradiation Induced Defect Landscape through Dislocation Vacancy Loop Interactions in Tungsten
+## 8. Intestinal peristalsis and wrinkling: A novel paradigm
+
+- Date: 2026-07-31
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.29204v1
+- PDF: https://arxiv.org/pdf/2607.29204v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-31-arxiv-intestinal_peristalsis_and_wrinkling_a_novel_paradigm_infographic.json
+
+## 9. Evolution of the Irradiation Induced Defect Landscape through Dislocation Vacancy Loop Interactions in Tungsten
 
 - Date: 2026-07-29
 - Category: Constitutive Modeling
@@ -59,15 +75,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.27375v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-evolution_of_the_irradiation_induced_defect_landscape_through_dislocation_vacancy_loop_int_infographic.json
 
-## 8. An Adaptive Finite Element Method for Marker-Driven Level-Set Transport on Hierarchical Meshes
+## 10. Strength-degradation phase-field regularization of cohesive fracture: the antiplane case
 
-- Date: 2026-07-30
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.28104v1
-- PDF: https://arxiv.org/pdf/2607.28104v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-an_adaptive_finite_element_method_for_marker_driven_level_set_transport_on_hierarchical_me_infographic.json
+- Date: 2026-07-31
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2607.29157v1
+- PDF: https://arxiv.org/pdf/2607.29157v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-31-arxiv-strength_degradation_phase_field_regularization_of_cohesive_fracture_the_antiplane_case_infographic.json
 
-## 9. First- and Second-Order Phase Transformation Modeling Based on the Hamilton Principle: A Coupled Thermo-Mechanical Approach for Glass Additive Manufacturing
+## 11. First- and Second-Order Phase Transformation Modeling Based on the Hamilton Principle: A Coupled Thermo-Mechanical Approach for Glass Additive Manufacturing
 
 - Date: 2026-07-29
 - Category: Constitutive Modeling
@@ -75,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.26610v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-first_and_second_order_phase_transformation_modeling_based_on_the_hamilton_principle_a_cou_infographic.json
 
-## 10. Crack-Tip Opening as a Probe for Length-Scale Separation in Geometrically Nonlinear Solids
+## 12. Crack-Tip Opening as a Probe for Length-Scale Separation in Geometrically Nonlinear Solids
 
 - Date: 2026-07-28
 - Category: Constitutive Modeling
@@ -83,7 +99,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.25771v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-28-arxiv-crack_tip_opening_as_a_probe_for_length_scale_separation_in_geometrically_nonlinear_solids_infographic.json
 
-## 11. Anisotropic Tensile Strength and Fracture Mechanism of $θ$-TaN: A Machine-Learning Potential Molecular Dynamics Study
+## 13. An Adaptive Finite Element Method for Marker-Driven Level-Set Transport on Hierarchical Meshes
+
+- Date: 2026-07-30
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2607.28104v1
+- PDF: https://arxiv.org/pdf/2607.28104v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-an_adaptive_finite_element_method_for_marker_driven_level_set_transport_on_hierarchical_me_infographic.json
+
+## 14. Anisotropic Tensile Strength and Fracture Mechanism of $θ$-TaN: A Machine-Learning Potential Molecular Dynamics Study
 
 - Date: 2026-07-30
 - Category: Fracture and Damage
@@ -91,7 +115,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.27608v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-anisotropic_tensile_strength_and_fracture_mechanism_of_tan_a_machine_learning_potential_mo_infographic.json
 
-## 12. A Smooth Explicit Elastoplastic--Damage Update for Graphics Simulation
+## 15. A Smooth Explicit Elastoplastic--Damage Update for Graphics Simulation
 
 - Date: 2026-07-27
 - Category: Fracture and Damage
@@ -99,7 +123,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.24509v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-27-arxiv-a_smooth_explicit_elastoplastic_damage_update_for_graphics_simulation_infographic.json
 
-## 13. Topology optimization of conduction-radiation problems based on a ray-tracing approach
+## 16. Critical Flicker Fusion Frequency As A Falsifiable Boundary Between Plastic And Non-Plastic Neural Systems
+
+- Date: 2026-07-31
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2607.29068v1
+- PDF: https://arxiv.org/pdf/2607.29068v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-31-arxiv-critical_flicker_fusion_frequency_as_a_falsifiable_boundary_between_plastic_and_non_plasti_infographic.json
+
+## 17. Topology optimization of conduction-radiation problems based on a ray-tracing approach
 
 - Date: 2026-07-30
 - Category: FEM Surrogates
@@ -107,7 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.28534v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-topology_optimization_of_conduction_radiation_problems_based_on_a_ray_tracing_approach_infographic.json
 
-## 14. The Kinetics of Training: A Driven-Nucleation Rate Law for Emergence, Plasticity Loss, and Circuit Control in Language Models
+## 18. The Kinetics of Training: A Driven-Nucleation Rate Law for Emergence, Plasticity Loss, and Circuit Control in Language Models
 
 - Date: 2026-07-29
 - Category: Constitutive Modeling
@@ -115,7 +147,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.27281v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-the_kinetics_of_training_a_driven_nucleation_rate_law_for_emergence_plasticity_loss_and_ci_infographic.json
 
-## 15. R3MG-C: a high-order algebraic-geometric multilevel preconditioner for continuous finite element discretizations
+## 19. R3MG-C: a high-order algebraic-geometric multilevel preconditioner for continuous finite element discretizations
 
 - Date: 2026-07-30
 - Category: FEM Surrogates
@@ -123,42 +155,10 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.28235v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-r3mg_c_a_high_order_algebraic_geometric_multilevel_preconditioner_for_continuous_finite_el_infographic.json
 
-## 16. Progressive Multimodal Alignment for Continual Instruction Tuning
+## 20. Progressive Multimodal Alignment for Continual Instruction Tuning
 
 - Date: 2026-07-29
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2607.26947v1
-- PDF: https://arxiv.org/pdf/2607.26947v1
+- arXiv: https://arxiv.org/abs/2607.26947v2
+- PDF: https://arxiv.org/pdf/2607.26947v2
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-progressive_multimodal_alignment_for_continual_instruction_tuning_infographic.json
-
-## 17. Strong imposition of Dirichlet boundary velocities in structure-preserving discretizations of elastodynamics
-
-- Date: 2026-07-28
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.26248v1
-- PDF: https://arxiv.org/pdf/2607.26248v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-28-arxiv-strong_imposition_of_dirichlet_boundary_velocities_in_structure_preserving_discretizations_infographic.json
-
-## 18. Data-free neural PDE solvers based on Graph Neural Networks and weak forms
-
-- Date: 2026-07-30
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.27901v1
-- PDF: https://arxiv.org/pdf/2607.27901v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-30-arxiv-data_free_neural_pde_solvers_based_on_graph_neural_networks_and_weak_forms_infographic.json
-
-## 19. Design principles for energy dissipation in viscoelastic network metamaterials
-
-- Date: 2026-07-29
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.27525v1
-- PDF: https://arxiv.org/pdf/2607.27525v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-design_principles_for_energy_dissipation_in_viscoelastic_network_metamaterials_infographic.json
-
-## 20. Stabilized Morley FEM for surface Stokes in stream-function formulation: Optimal convergence via a new geometric estimate
-
-- Date: 2026-07-29
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2607.26664v1
-- PDF: https://arxiv.org/pdf/2607.26664v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-07-29-arxiv-stabilized_morley_fem_for_surface_stokes_in_stream_function_formulation_optimal_convergenc_infographic.json

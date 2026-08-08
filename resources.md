@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-08-07
+Generated: 2026-08-08
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. STAIL: Semantic Text-Anchored Incremental Learning for Medical Imaging via Large Language Models

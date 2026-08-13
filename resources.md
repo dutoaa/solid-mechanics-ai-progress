@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-08-11
+Generated: 2026-08-13
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Automatic differentiation in finite element stress updating
@@ -11,7 +11,71 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.09442v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-automatic_differentiation_in_finite_element_stress_updating_infographic.json
 
-## 2. Second order unfitted ghost-FEM for elliptic interface problems with applications to low-dimensional semiconductor devices
+## 2. On the Importance of Geometric Nonlinearity and Temperature-Dependent Properties in Multi-Material Thermo-Mechanical Topology Optimization
+
+- Date: 2026-08-11
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2608.10344v1
+- PDF: https://arxiv.org/pdf/2608.10344v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-on_the_importance_of_geometric_nonlinearity_and_temperature_dependent_properties_in_multi_infographic.json
+
+## 3. Multi-scale modeling of high strain rate deformation and spall fracture in poly-crystalline metals
+
+- Date: 2026-08-11
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2608.10734v1
+- PDF: https://arxiv.org/pdf/2608.10734v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-multi_scale_modeling_of_high_strain_rate_deformation_and_spall_fracture_in_poly_crystallin_infographic.json
+
+## 4. A Volumetrically Stabilized Mixed Formulation of the Finite Element Immersed Boundary Method for Fluid Structure Interaction with Fully Incompressible Hyperelastic Solids
+
+- Date: 2026-08-10
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2608.10217v1
+- PDF: https://arxiv.org/pdf/2608.10217v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-a_volumetrically_stabilized_mixed_formulation_of_the_finite_element_immersed_boundary_meth_infographic.json
+
+## 5. Multi-step deformation experiment and development of a model for the mechanical behavior of polymeric glasses
+
+- Date: 2026-08-11
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2608.11069v1
+- PDF: https://arxiv.org/pdf/2608.11069v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-multi_step_deformation_experiment_and_development_of_a_model_for_the_mechanical_behavior_o_infographic.json
+
+## 6. An improved bond-associated peridynamic model and its adaptive coupling with CCM for fracture analysis
+
+- Date: 2026-08-12
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2608.11950v1
+- PDF: https://arxiv.org/pdf/2608.11950v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-12-arxiv-an_improved_bond_associated_peridynamic_model_and_its_adaptive_coupling_with_ccm_for_fract_infographic.json
+
+## 7. Locking analysis and high-order locking-free finite element method for three-dimensional electroporoelasticity equations
+
+- Date: 2026-08-11
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2608.10830v1
+- PDF: https://arxiv.org/pdf/2608.10830v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-locking_analysis_and_high_order_locking_free_finite_element_method_for_three_dimensional_e_infographic.json
+
+## 8. History Matters: Damage-Mediated Amplification of Brain Deformation and Injury Risk under Repeated Head Impacts
+
+- Date: 2026-08-11
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2608.10331v1
+- PDF: https://arxiv.org/pdf/2608.10331v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-history_matters_damage_mediated_amplification_of_brain_deformation_and_injury_risk_under_r_infographic.json
+
+## 9. A Positivity-Preserving Expectation Scheme for Hamilton--Jacobi--Bellman Equations with Oblique Robin Boundary Conditions
+
+- Date: 2026-08-12
+- Category: AI Solid Mechanics
+- arXiv: https://arxiv.org/abs/2608.11936v1
+- PDF: https://arxiv.org/pdf/2608.11936v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-12-arxiv-a_positivity_preserving_expectation_scheme_for_hamilton_jacobi_bellman_equations_with_obli_infographic.json
+
+## 10. Second order unfitted ghost-FEM for elliptic interface problems with applications to low-dimensional semiconductor devices
 
 - Date: 2026-08-10
 - Category: FEM Surrogates
@@ -19,7 +83,47 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.09466v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-second_order_unfitted_ghost_fem_for_elliptic_interface_problems_with_applications_to_low_d_infographic.json
 
-## 3. A constrained Onsager variational framework for parametric approximations of Willmore and Helfrich flows
+## 11. A Physics-Informed Neural Network Approach to Multiphysics Continuum Modeling of Cancer Growth via Chemo-fluid Coupling
+
+- Date: 2026-08-08
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2608.10014v1
+- PDF: https://arxiv.org/pdf/2608.10014v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-08-arxiv-a_physics_informed_neural_network_approach_to_multiphysics_continuum_modeling_of_cancer_gr_infographic.json
+
+## 12. A Quadratic $C^0$ Interior Penalty Method for the von Kármán Obstacle Problem
+
+- Date: 2026-08-11
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2608.10507v1
+- PDF: https://arxiv.org/pdf/2608.10507v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-a_quadratic_c_0_interior_penalty_method_for_the_von_k_rm_n_obstacle_problem_infographic.json
+
+## 13. Drift and Dependence: Layer-wise Information-Theoretic Bounds for Replay-Based Continual Learning
+
+- Date: 2026-08-12
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2608.11690v1
+- PDF: https://arxiv.org/pdf/2608.11690v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-12-arxiv-drift_and_dependence_layer_wise_information_theoretic_bounds_for_replay_based_continual_le_infographic.json
+
+## 14. Exact characterisation of maximum-angle conditions for spherical finite element meshes
+
+- Date: 2026-08-11
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2608.11353v1
+- PDF: https://arxiv.org/pdf/2608.11353v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-exact_characterisation_of_maximum_angle_conditions_for_spherical_finite_element_meshes_infographic.json
+
+## 15. High-order Energy-stable and Charge-conservative Lagrangian FEM for 3D Incompressible Inductionless MHD equations with Variable Density
+
+- Date: 2026-08-11
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2608.10487v1
+- PDF: https://arxiv.org/pdf/2608.10487v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-high_order_energy_stable_and_charge_conservative_lagrangian_fem_for_3d_incompressible_indu_infographic.json
+
+## 16. A constrained Onsager variational framework for parametric approximations of Willmore and Helfrich flows
 
 - Date: 2026-08-07
 - Category: FEM Surrogates
@@ -27,7 +131,23 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.07244v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-07-arxiv-a_constrained_onsager_variational_framework_for_parametric_approximations_of_willmore_and_infographic.json
 
-## 4. Myelin Distribution at the Optic Nerve Myelination Transition Zone Influences Axonal Biomechanics
+## 17. Variational Enrichment of Adaptive Finite Element Spaces Beyond Polynomials
+
+- Date: 2026-08-12
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2608.11764v1
+- PDF: https://arxiv.org/pdf/2608.11764v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-12-arxiv-variational_enrichment_of_adaptive_finite_element_spaces_beyond_polynomials_infographic.json
+
+## 18. BPG: Balancing Plasticity and Generalization for Domain Incremental Learning
+
+- Date: 2026-08-11
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2608.10804v1
+- PDF: https://arxiv.org/pdf/2608.10804v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-bpg_balancing_plasticity_and_generalization_for_domain_incremental_learning_infographic.json
+
+## 19. Myelin Distribution at the Optic Nerve Myelination Transition Zone Influences Axonal Biomechanics
 
 - Date: 2026-08-08
 - Category: FEM Surrogates
@@ -35,130 +155,10 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.07831v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-08-arxiv-myelin_distribution_at_the_optic_nerve_myelination_transition_zone_influences_axonal_biome_infographic.json
 
-## 5. NeuPAT: Neuron-aware Plasticity Allocation Tuning for Language-Preserving MLLMs
+## 20. NeuPAT: Neuron-aware Plasticity Allocation Tuning for Language-Preserving MLLMs
 
 - Date: 2026-08-08
 - Category: Constitutive Modeling
 - arXiv: https://arxiv.org/abs/2608.08107v1
 - PDF: https://arxiv.org/pdf/2608.08107v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-08-arxiv-neupat_neuron_aware_plasticity_allocation_tuning_for_language_preserving_mllms_infographic.json
-
-## 6. Conditional Uniqueness and Optimal Energy-Norm Convergence for the Dynamic Diffusion Finite Element Method
-
-- Date: 2026-08-10
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.09505v1
-- PDF: https://arxiv.org/pdf/2608.09505v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-conditional_uniqueness_and_optimal_energy_norm_convergence_for_the_dynamic_diffusion_finit_infographic.json
-
-## 7. Mass Lumping and Numerical Quadrature for Approximation of Fractional Elliptic Differential Equations Driven by Gaussian White Noise
-
-- Date: 2026-08-09
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.08658v1
-- PDF: https://arxiv.org/pdf/2608.08658v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-09-arxiv-mass_lumping_and_numerical_quadrature_for_approximation_of_fractional_elliptic_differentia_infographic.json
-
-## 8. Convergence of a CutFEM for fluid--structure interaction with a deforming interface
-
-- Date: 2026-08-08
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.08140v1
-- PDF: https://arxiv.org/pdf/2608.08140v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-08-arxiv-convergence_of_a_cutfem_for_fluid_structure_interaction_with_a_deforming_interface_infographic.json
-
-## 9. Beyond Fast Contractions: Attenuation and Recovery of Matrix-Engine Speedups in High-Order Finite Elements
-
-- Date: 2026-08-10
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.09175v1
-- PDF: https://arxiv.org/pdf/2608.09175v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-beyond_fast_contractions_attenuation_and_recovery_of_matrix_engine_speedups_in_high_order_infographic.json
-
-## 10. STAIL: Semantic Text-Anchored Incremental Learning for Medical Imaging via Large Language Models
-
-- Date: 2026-08-06
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2608.05808v1
-- PDF: https://arxiv.org/pdf/2608.05808v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-06-arxiv-stail_semantic_text_anchored_incremental_learning_for_medical_imaging_via_large_language_m_infographic.json
-
-## 11. poly_rust: a domain-specific language for polytopal methods with a Rust interpreter
-
-- Date: 2026-08-10
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.09414v1
-- PDF: https://arxiv.org/pdf/2608.09414v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-poly_rust_a_domain_specific_language_for_polytopal_methods_with_a_rust_interpreter_infographic.json
-
-## 12. A transient nonlinear finite element framework and implementation of coupled electro-chemo-mechanics of polyelectrolyte hydrogels
-
-- Date: 2026-08-07
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.07638v1
-- PDF: https://arxiv.org/pdf/2608.07638v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-07-arxiv-a_transient_nonlinear_finite_element_framework_and_implementation_of_coupled_electro_chemo_infographic.json
-
-## 13. Numerical analysis and coarsening dynamics of the Active Cahn-Hilliard equation
-
-- Date: 2026-08-07
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.07450v1
-- PDF: https://arxiv.org/pdf/2608.07450v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-07-arxiv-numerical_analysis_and_coarsening_dynamics_of_the_active_cahn_hilliard_equation_infographic.json
-
-## 14. A block preconditioner with two parameters for double saddle point systems in liquid crystal director modeling
-
-- Date: 2026-08-10
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.09603v1
-- PDF: https://arxiv.org/pdf/2608.09603v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-a_block_preconditioner_with_two_parameters_for_double_saddle_point_systems_in_liquid_cryst_infographic.json
-
-## 15. A splitting mixed finite element method for a stochastic Keller-Segel system with multiplicative noise
-
-- Date: 2026-08-07
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.07798v1
-- PDF: https://arxiv.org/pdf/2608.07798v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-07-arxiv-a_splitting_mixed_finite_element_method_for_a_stochastic_keller_segel_system_with_multipli_infographic.json
-
-## 16. Transverse Instability and Bifurcation Analysis of the line soliton for the NLS equation on a Fractured Strip
-
-- Date: 2026-08-10
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2608.09553v1
-- PDF: https://arxiv.org/pdf/2608.09553v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-transverse_instability_and_bifurcation_analysis_of_the_line_soliton_for_the_nls_equation_o_infographic.json
-
-## 17. Aftab: A Comprehensive Benchmark of CNN Encoders and Advanced Value Functions in Parallelized Q-Networks
-
-- Date: 2026-08-07
-- Category: Composites and Metamaterials
-- arXiv: https://arxiv.org/abs/2608.07335v1
-- PDF: https://arxiv.org/pdf/2608.07335v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-07-arxiv-aftab_a_comprehensive_benchmark_of_cnn_encoders_and_advanced_value_functions_in_paralleliz_infographic.json
-
-## 18. Optimizing Wavefront-Deformation Sensor Placement for Active Radio-Telescope Surfaces
-
-- Date: 2026-08-10
-- Category: AI Solid Mechanics
-- arXiv: https://arxiv.org/abs/2608.09237v1
-- PDF: https://arxiv.org/pdf/2608.09237v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-optimizing_wavefront_deformation_sensor_placement_for_active_radio_telescope_surfaces_infographic.json
-
-## 19. A High-Order Surface Finite Element Method Based on Intersections with Background Tetrahedral Meshes
-
-- Date: 2026-08-07
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.07000v1
-- PDF: https://arxiv.org/pdf/2608.07000v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-07-arxiv-a_high_order_surface_finite_element_method_based_on_intersections_with_background_tetrahed_infographic.json
-
-## 20. Generalized high-order minimization-based polynomial corrections on unfitted spectral elements for the Poisson problem
-
-- Date: 2026-08-07
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2608.06999v1
-- PDF: https://arxiv.org/pdf/2608.06999v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-07-arxiv-generalized_high_order_minimization_based_polynomial_corrections_on_unfitted_spectral_elem_infographic.json

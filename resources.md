@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-08-14
+Generated: 2026-08-15
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Behavioral Reprogramming of Open-Weights Models: Cognitive Plasticity and Alignment Bounds

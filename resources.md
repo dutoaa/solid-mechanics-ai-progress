@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-08-15
+Generated: 2026-08-16
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Behavioral Reprogramming of Open-Weights Models: Cognitive Plasticity and Alignment Bounds
@@ -139,15 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.09466v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-10-arxiv-second_order_unfitted_ghost_fem_for_elliptic_interface_problems_with_applications_to_low_d_infographic.json
 
-## 18. A Physics-Informed Neural Network Approach to Multiphysics Continuum Modeling of Cancer Growth via Chemo-fluid Coupling
-
-- Date: 2026-08-08
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2608.10014v1
-- PDF: https://arxiv.org/pdf/2608.10014v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-08-arxiv-a_physics_informed_neural_network_approach_to_multiphysics_continuum_modeling_of_cancer_gr_infographic.json
-
-## 19. Time-ordered free energy in correlated quantum systems: An agentic approach
+## 18. Time-ordered free energy in correlated quantum systems: An agentic approach
 
 - Date: 2026-08-13
 - Category: AI Solid Mechanics
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.12942v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-13-arxiv-time_ordered_free_energy_in_correlated_quantum_systems_an_agentic_approach_infographic.json
 
-## 20. A Quadratic $C^0$ Interior Penalty Method for the von Kármán Obstacle Problem
+## 19. A Quadratic $C^0$ Interior Penalty Method for the von Kármán Obstacle Problem
 
 - Date: 2026-08-11
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2608.10507v1
 - PDF: https://arxiv.org/pdf/2608.10507v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-11-arxiv-a_quadratic_c_0_interior_penalty_method_for_the_von_k_rm_n_obstacle_problem_infographic.json
+
+## 20. Spectrally smooth broadband response via autocorrelation-constrained inverse design
+
+- Date: 2026-08-13
+- Category: Topology Optimization
+- arXiv: https://arxiv.org/abs/2608.13367v1
+- PDF: https://arxiv.org/pdf/2608.13367v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-08-13-arxiv-spectrally_smooth_broadband_response_via_autocorrelation_constrained_inverse_design_infographic.json

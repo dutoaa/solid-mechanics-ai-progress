@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-09-05
+Generated: 2026-09-06
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Calibration of neural viscoelastic models via full-field data

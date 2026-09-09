@@ -1,17 +1,97 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-09-08
+Generated: 2026-09-09
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
-## 1. Data-Driven Discovery of Composition-Dependent Constitutive Models for Hyperelasticity and Viscoelasticity of Digital Materials
+## 1. An integrated viscoelastic modeling framework combining analytical and FEM approaches: Application to WSe2 coatings
+
+- Date: 2026-09-07
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2609.07292v1
+- PDF: https://arxiv.org/pdf/2609.07292v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-an_integrated_viscoelastic_modeling_framework_combining_analytical_and_fem_approaches_appl_infographic.json
+
+## 2. Learning Metamaterial Eigenmodes with Wavelet-Encoded Fourier Neural Operators
+
+- Date: 2026-09-08
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2609.08102v1
+- PDF: https://arxiv.org/pdf/2609.08102v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-08-arxiv-learning_metamaterial_eigenmodes_with_wavelet_encoded_fourier_neural_operators_infographic.json
+
+## 3. Beyond Residuals: Energy based solutions of partial differential equations using scientific machine learning
+
+- Date: 2026-09-08
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2609.08239v1
+- PDF: https://arxiv.org/pdf/2609.08239v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-08-arxiv-beyond_residuals_energy_based_solutions_of_partial_differential_equations_using_scientific_infographic.json
+
+## 4. Constitutive State-Space Modeling of Path-Dependent Plasticity: A Resolution-Consistent and Parallelizable Computational Framework
+
+- Date: 2026-09-07
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.07294v1
+- PDF: https://arxiv.org/pdf/2609.07294v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-constitutive_state_space_modeling_of_path_dependent_plasticity_a_resolution_consistent_and_infographic.json
+
+## 5. Thermomechanics of dense granular materials: a particle-scale perspective
+
+- Date: 2026-09-08
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.08928v1
+- PDF: https://arxiv.org/pdf/2609.08928v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-08-arxiv-thermomechanics_of_dense_granular_materials_a_particle_scale_perspective_infographic.json
+
+## 6. Laser Shock Peening in Hydrogen Environments: Coupled Stress Transport Trapping Mechanisms and Application Gaps
+
+- Date: 2026-09-08
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2609.08469v1
+- PDF: https://arxiv.org/pdf/2609.08469v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-08-arxiv-laser_shock_peening_in_hydrogen_environments_coupled_stress_transport_trapping_mechanisms_infographic.json
+
+## 7. TASTE: Throughput-Aware Batch Size Tuning for On-Device Edge Learning
+
+- Date: 2026-09-07
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.07444v1
+- PDF: https://arxiv.org/pdf/2609.07444v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-taste_throughput_aware_batch_size_tuning_for_on_device_edge_learning_infographic.json
+
+## 8. High-Order Discontinuous Cut Finite Element Methods for Scalar Hyperbolic Conservation Laws
+
+- Date: 2026-09-08
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2609.08880v1
+- PDF: https://arxiv.org/pdf/2609.08880v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-08-arxiv-high_order_discontinuous_cut_finite_element_methods_for_scalar_hyperbolic_conservation_law_infographic.json
+
+## 9. Physics-Constrained Inverse Estimation of Irradiation-Induced Strain in He-H Ion-Implanted 4H-SiC Using Nanoindentation and Finite Element Modeling
+
+- Date: 2026-09-07
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2609.07157v1
+- PDF: https://arxiv.org/pdf/2609.07157v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-physics_constrained_inverse_estimation_of_irradiation_induced_strain_in_he_h_ion_implanted_infographic.json
+
+## 10. Buildability Assessment of 3D-Printed Concrete Structures Using Smoothed Mohr-Coulomb Plasticity with Isotropic Hardening
+
+- Date: 2026-09-07
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.07679v1
+- PDF: https://arxiv.org/pdf/2609.07679v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-buildability_assessment_of_3d_printed_concrete_structures_using_smoothed_mohr_coulomb_plas_infographic.json
+
+## 11. Data-Driven Discovery of Composition-Dependent Constitutive Models for Hyperelasticity and Viscoelasticity of Digital Materials
 
 - Date: 2026-09-03
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.04541v1
-- PDF: https://arxiv.org/pdf/2609.04541v1
+- arXiv: https://arxiv.org/abs/2609.04541v2
+- PDF: https://arxiv.org/pdf/2609.04541v2
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-data_driven_discovery_of_composition_dependent_constitutive_models_for_hyperelasticity_and_infographic.json
 
-## 2. Neural-field design of broadband Rayleigh-wave carpet cloaks under microstructure realisability constraints
+## 12. Neural-field design of broadband Rayleigh-wave carpet cloaks under microstructure realisability constraints
 
 - Date: 2026-09-04
 - Category: FEM Surrogates
@@ -19,7 +99,23 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2609.05163v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-04-arxiv-neural_field_design_of_broadband_rayleigh_wave_carpet_cloaks_under_microstructure_realisab_infographic.json
 
-## 3. Calibration of neural viscoelastic models via full-field data
+## 13. Probing the Structure and Dynamics of LLM Value Expression through Value Conflicts
+
+- Date: 2026-09-07
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.07296v1
+- PDF: https://arxiv.org/pdf/2609.07296v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-probing_the_structure_and_dynamics_of_llm_value_expression_through_value_conflicts_infographic.json
+
+## 14. A finite-strain logarithmic viscoelastic model for Antarctic ice shelves based on an additive split
+
+- Date: 2026-09-08
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.08451v1
+- PDF: https://arxiv.org/pdf/2609.08451v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-08-arxiv-a_finite_strain_logarithmic_viscoelastic_model_for_antarctic_ice_shelves_based_on_an_addit_infographic.json
+
+## 15. Calibration of neural viscoelastic models via full-field data
 
 - Date: 2026-09-03
 - Category: Constitutive Modeling
@@ -27,138 +123,42 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2609.03645v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-calibration_of_neural_viscoelastic_models_via_full_field_data_infographic.json
 
-## 4. Learning the Constitutive Behavior of Materials via Neural Operators and Causal Attention: Case Studies in Plasticity and Damage
+## 16. A third-medium approach for electro-thermo-mechanical contact considering Joule heating
 
-- Date: 2026-09-02
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.02194v1
-- PDF: https://arxiv.org/pdf/2609.02194v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-02-arxiv-learning_the_constitutive_behavior_of_materials_via_neural_operators_and_causal_attention_infographic.json
-
-## 5. Interfacial Accommodation as a Candidate Ductility Pathway in Intermetallic-Rich Alloys
-
-- Date: 2026-09-04
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2609.05147v1
-- PDF: https://arxiv.org/pdf/2609.05147v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-04-arxiv-interfacial_accommodation_as_a_candidate_ductility_pathway_in_intermetallic_rich_alloys_infographic.json
-
-## 6. Existence of thermodynamically consistent solutions for data-driven porous media problems
-
-- Date: 2026-09-04
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.05354v1
-- PDF: https://arxiv.org/pdf/2609.05354v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-04-arxiv-existence_of_thermodynamically_consistent_solutions_for_data_driven_porous_media_problems_infographic.json
-
-## 7. Strengthened Silicate Glasses by Residual Stress: Depth of Compression and Surface Flaws Stability Conditions
-
-- Date: 2026-09-03
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2609.04109v2
-- PDF: https://arxiv.org/pdf/2609.04109v2
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-strengthened_silicate_glasses_by_residual_stress_depth_of_compression_and_surface_flaws_st_infographic.json
-
-## 8. A discrete crack-tip theory for nonlinear lattice networks
-
-- Date: 2026-09-03
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2609.04568v1
-- PDF: https://arxiv.org/pdf/2609.04568v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-a_discrete_crack_tip_theory_for_nonlinear_lattice_networks_infographic.json
-
-## 9. Influence of dislocation density on the tribological response in oxides: case study on SrTiO3
-
-- Date: 2026-09-04
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2609.05056v1
-- PDF: https://arxiv.org/pdf/2609.05056v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-04-arxiv-influence_of_dislocation_density_on_the_tribological_response_in_oxides_case_study_on_srti_infographic.json
-
-## 10. Influence of Extruded Filament Shape on Buildability in 3D Concrete Printing: A Geometry-Informed Deep Learning-FEM Approach
-
-- Date: 2026-09-03
+- Date: 2026-09-07
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.04028v1
-- PDF: https://arxiv.org/pdf/2609.04028v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-influence_of_extruded_filament_shape_on_buildability_in_3d_concrete_printing_a_geometry_in_infographic.json
+- arXiv: https://arxiv.org/abs/2609.08031v1
+- PDF: https://arxiv.org/pdf/2609.08031v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-a_third_medium_approach_for_electro_thermo_mechanical_contact_considering_joule_heating_infographic.json
 
-## 11. A Non-Isothermal Viscoplastic Constitutive Model for Clay Slip Surfaces
+## 17. Analysis of a Surface Crouzeix-Raviart Element for the Stokes Problem
 
-- Date: 2026-09-01
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.01247v1
-- PDF: https://arxiv.org/pdf/2609.01247v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-01-arxiv-a_non_isothermal_viscoplastic_constitutive_model_for_clay_slip_surfaces_infographic.json
-
-## 12. A simple shallow neural network for emulating the solution to singularly perturbed problems
-
-- Date: 2026-09-04
+- Date: 2026-09-07
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.05180v1
-- PDF: https://arxiv.org/pdf/2609.05180v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-04-arxiv-a_simple_shallow_neural_network_for_emulating_the_solution_to_singularly_perturbed_problem_infographic.json
+- arXiv: https://arxiv.org/abs/2609.07527v1
+- PDF: https://arxiv.org/pdf/2609.07527v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-analysis_of_a_surface_crouzeix_raviart_element_for_the_stokes_problem_infographic.json
 
-## 13. Robot Aware Computational Design of Object Specific Passive Grippers for Additive Manufacturing
+## 18. Chemical and interface confinement effects in promoting plastic co-deformation in high-strength nano-scale eutectics
 
-- Date: 2026-09-03
-- Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2609.03761v1
-- PDF: https://arxiv.org/pdf/2609.03761v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-robot_aware_computational_design_of_object_specific_passive_grippers_for_additive_manufact_infographic.json
+- Date: 2026-09-06
+- Category: Composites and Metamaterials
+- arXiv: https://arxiv.org/abs/2609.06334v1
+- PDF: https://arxiv.org/pdf/2609.06334v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-06-arxiv-chemical_and_interface_confinement_effects_in_promoting_plastic_co_deformation_in_high_str_infographic.json
 
-## 14. Response of a Model Glass to Athermal Quasistatic Pinching
+## 19. Elastoplastic inherent strain-based topology optimization for residual stress reduction in metal additive manufacturing
 
-- Date: 2026-09-02
+- Date: 2026-09-07
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.02692v1
-- PDF: https://arxiv.org/pdf/2609.02692v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-02-arxiv-response_of_a_model_glass_to_athermal_quasistatic_pinching_infographic.json
+- arXiv: https://arxiv.org/abs/2609.07337v1
+- PDF: https://arxiv.org/pdf/2609.07337v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-07-arxiv-elastoplastic_inherent_strain_based_topology_optimization_for_residual_stress_reduction_in_infographic.json
 
-## 15. The Universal Role of Fragility on the Yielding Transition of Active Glass under Oscillatory Shear
+## 20. ONE CYLinder: A Benchmark for Graph-Based Surrogate Modeling of Unsteady Bluff-Body Flows
 
-- Date: 2026-09-02
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2609.02609v1
-- PDF: https://arxiv.org/pdf/2609.02609v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-02-arxiv-the_universal_role_of_fragility_on_the_yielding_transition_of_active_glass_under_oscillato_infographic.json
-
-## 16. A Multigrid Method for CutFEM and its Convergence
-
-- Date: 2026-09-03
+- Date: 2026-09-08
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.04067v1
-- PDF: https://arxiv.org/pdf/2609.04067v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-a_multigrid_method_for_cutfem_and_its_convergence_infographic.json
-
-## 17. Dimensional hyperreduction of nonlinear finite element models via empirical cubature with manifold-adaptive weights
-
-- Date: 2026-09-02
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.03068v1
-- PDF: https://arxiv.org/pdf/2609.03068v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-02-arxiv-dimensional_hyperreduction_of_nonlinear_finite_element_models_via_empirical_cubature_with_infographic.json
-
-## 18. Mini mixed finite element method for nearly incompressible linear elasticity problems
-
-- Date: 2026-09-03
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.03780v1
-- PDF: https://arxiv.org/pdf/2609.03780v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-mini_mixed_finite_element_method_for_nearly_incompressible_linear_elasticity_problems_infographic.json
-
-## 19. MePo++: Unifying Representation Refinement and Reconciliation for General Continual Learning
-
-- Date: 2026-09-04
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.05075v1
-- PDF: https://arxiv.org/pdf/2609.05075v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-04-arxiv-mepo_unifying_representation_refinement_and_reconciliation_for_general_continual_learning_infographic.json
-
-## 20. Lagrangian dynamics unveil polymer conformation in viscoelastic flows
-
-- Date: 2026-09-03
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.04538v1
-- PDF: https://arxiv.org/pdf/2609.04538v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-03-arxiv-lagrangian_dynamics_unveil_polymer_conformation_in_viscoelastic_flows_infographic.json
+- arXiv: https://arxiv.org/abs/2609.08947v1
+- PDF: https://arxiv.org/pdf/2609.08947v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-08-arxiv-one_cylinder_a_benchmark_for_graph_based_surrogate_modeling_of_unsteady_bluff_body_flows_infographic.json

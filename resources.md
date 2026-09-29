@@ -1,164 +1,164 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-09-16
+Generated: 2026-09-29
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
-## 1. A variational physics-informed graph neural network for heterogeneous solid mechanics
+## 1. CP-Agent: A Harness-Engineered Agent for Crystal Plasticity Simulation Workflows
 
-- Date: 2026-09-10
+- Date: 2026-09-25
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.10983v1
-- PDF: https://arxiv.org/pdf/2609.10983v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-10-arxiv-a_variational_physics_informed_graph_neural_network_for_heterogeneous_solid_mechanics_infographic.json
+- arXiv: https://arxiv.org/abs/2609.31790v1
+- PDF: https://arxiv.org/pdf/2609.31790v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-25-arxiv-cp_agent_a_harness_engineered_agent_for_crystal_plasticity_simulation_workflows_infographic.json
 
-## 2. A Hybridized Staggered Discontinuous Galerkin--Mixed Finite Element Method for Strain Gradient Elasticity
+## 2. Tessellated Isotropic Elastic Lattice Spring Model for Quasi-Brittle Fracture
 
-- Date: 2026-09-14
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.15186v1
-- PDF: https://arxiv.org/pdf/2609.15186v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-a_hybridized_staggered_discontinuous_galerkin_mixed_finite_element_method_for_strain_gradi_infographic.json
+- Date: 2026-09-24
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2609.28970v1
+- PDF: https://arxiv.org/pdf/2609.28970v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-24-arxiv-tessellated_isotropic_elastic_lattice_spring_model_for_quasi_brittle_fracture_infographic.json
 
-## 3. HGTO: A Unified Graph-Based Physics-Informed Formulation for Structural Topology Optimization
+## 3. Growth-Inspired Graph Generation and Inverse Design of Mechanical Lattices via Dot Matrices Database Augmentation and GCNN
 
-- Date: 2026-09-14
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.15001v1
-- PDF: https://arxiv.org/pdf/2609.15001v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-hgto_a_unified_graph_based_physics_informed_formulation_for_structural_topology_optimizati_infographic.json
-
-## 4. Drift Field Net: Learning Ocean Lagrangian advection fields from in-situ and satellite observations
-
-- Date: 2026-09-14
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2609.16288v1
-- PDF: https://arxiv.org/pdf/2609.16288v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-drift_field_net_learning_ocean_lagrangian_advection_fields_from_in_situ_and_satellite_obse_infographic.json
-
-## 5. From bending to stretching driven peeling of heterogeneous adhesives
-
-- Date: 2026-09-14
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.15417v1
-- PDF: https://arxiv.org/pdf/2609.15417v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-from_bending_to_stretching_driven_peeling_of_heterogeneous_adhesives_infographic.json
-
-## 6. Implicit Lagrangian Hydrodynamics with High-Order Finite Elements
-
-- Date: 2026-09-14
+- Date: 2026-09-24
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.16424v1
-- PDF: https://arxiv.org/pdf/2609.16424v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-implicit_lagrangian_hydrodynamics_with_high_order_finite_elements_infographic.json
+- arXiv: https://arxiv.org/abs/2609.29024v1
+- PDF: https://arxiv.org/pdf/2609.29024v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-24-arxiv-growth_inspired_graph_generation_and_inverse_design_of_mechanical_lattices_via_dot_matrice_infographic.json
 
-## 7. LiftGCN: Efficient Energy-Preserving Graph Learning via Joukowski Spectral Lifting for Finite Element Stress Prediction
+## 4. Mixed-Dimensional Electromechanical Coupling of Embedded Beam Networks in Soft Dielectric Composites
 
-- Date: 2026-09-14
+- Date: 2026-09-28
+- Category: Composites and Metamaterials
+- arXiv: https://arxiv.org/abs/2609.35584v1
+- PDF: https://arxiv.org/pdf/2609.35584v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-mixed_dimensional_electromechanical_coupling_of_embedded_beam_networks_in_soft_dielectric_infographic.json
+
+## 5. Lattice Structure Optimization for Additive Manufacturing: Manufacturability-Driven Design and Pareto Front Construction
+
+- Date: 2026-09-27
+- Category: Composites and Metamaterials
+- arXiv: https://arxiv.org/abs/2609.33598v1
+- PDF: https://arxiv.org/pdf/2609.33598v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-27-arxiv-lattice_structure_optimization_for_additive_manufacturing_manufacturability_driven_design_infographic.json
+
+## 6. TopoMamba: A Load-Support Relation-Guided Multi-Directional State-Space Model for Topology Optimization
+
+- Date: 2026-09-27
+- Category: Topology Optimization
+- arXiv: https://arxiv.org/abs/2609.33688v1
+- PDF: https://arxiv.org/pdf/2609.33688v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-27-arxiv-topomamba_a_load_support_relation_guided_multi_directional_state_space_model_for_topology_infographic.json
+
+## 7. Finite Element Approximation of a Hemivariational Inequality for Steady-State Heat Conduction: Double-Limit Convergence of Penalization and Discretization
+
+- Date: 2026-09-28
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.14977v1
-- PDF: https://arxiv.org/pdf/2609.14977v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-liftgcn_efficient_energy_preserving_graph_learning_via_joukowski_spectral_lifting_for_fini_infographic.json
+- arXiv: https://arxiv.org/abs/2609.35538v1
+- PDF: https://arxiv.org/pdf/2609.35538v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-finite_element_approximation_of_a_hemivariational_inequality_for_steady_state_heat_conduct_infographic.json
 
-## 8. Latent Inversion of Material Coefficients from Boundary Data via Finite Tests and Neural Surrogates
+## 8. Application and Evaluation of the Material Point Method for Low-Velocity Asteroid Collisions Involving Large Deformations
 
-- Date: 2026-09-15
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.17137v1
-- PDF: https://arxiv.org/pdf/2609.17137v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-15-arxiv-latent_inversion_of_material_coefficients_from_boundary_data_via_finite_tests_and_neural_s_infographic.json
-
-## 9. Structure-Preserving Augmented Lagrangian Finite Element Methods for Cavitation in Reynolds and Stokes Flows
-
-- Date: 2026-09-14
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.15223v1
-- PDF: https://arxiv.org/pdf/2609.15223v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-structure_preserving_augmented_lagrangian_finite_element_methods_for_cavitation_in_reynold_infographic.json
-
-## 10. Reliable training of neural hyperelastic models via full-field data
-
-- Date: 2026-09-11
+- Date: 2026-09-26
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.13001v1
-- PDF: https://arxiv.org/pdf/2609.13001v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-11-arxiv-reliable_training_of_neural_hyperelastic_models_via_full_field_data_infographic.json
+- arXiv: https://arxiv.org/abs/2609.32468v1
+- PDF: https://arxiv.org/pdf/2609.32468v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-26-arxiv-application_and_evaluation_of_the_material_point_method_for_low_velocity_asteroid_collisio_infographic.json
 
-## 11. CLARE: Scalable Class-Incremental Continual Learning via a Sparsity-Based Framework
+## 9. A hydrogen-informed Rice-Beltz model for crack-tip dislocation emission under mixed-mode loading
 
-- Date: 2026-09-15
+- Date: 2026-09-25
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.17026v1
-- PDF: https://arxiv.org/pdf/2609.17026v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-15-arxiv-clare_scalable_class_incremental_continual_learning_via_a_sparsity_based_framework_infographic.json
+- arXiv: https://arxiv.org/abs/2609.30776v1
+- PDF: https://arxiv.org/pdf/2609.30776v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-25-arxiv-a_hydrogen_informed_rice_beltz_model_for_crack_tip_dislocation_emission_under_mixed_mode_l_infographic.json
 
-## 12. Well-posedness, Regularity, and Strong Approximations of Superlinear Stochastic Reaction-Diffusion Equation
+## 10. Experimental and numerical study of shock wave propagation in water generated by pulsed arc electrohydraulic discharges
 
-- Date: 2026-09-15
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.16979v1
-- PDF: https://arxiv.org/pdf/2609.16979v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-15-arxiv-well_posedness_regularity_and_strong_approximations_of_superlinear_stochastic_reaction_dif_infographic.json
+- Date: 2026-09-28
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2609.35305v1
+- PDF: https://arxiv.org/pdf/2609.35305v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-experimental_and_numerical_study_of_shock_wave_propagation_in_water_generated_by_pulsed_ar_infographic.json
 
-## 13. IQFEM: A quantum finite element method for heterogeneous problems with immersed boundaries
+## 11. Hydrogen-stabilized multimodal high-index twin network in iron
 
-- Date: 2026-09-12
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.14077v1
-- PDF: https://arxiv.org/pdf/2609.14077v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-12-arxiv-iqfem_a_quantum_finite_element_method_for_heterogeneous_problems_with_immersed_boundaries_infographic.json
-
-## 14. A φ-FEM approach for time-dependent domains with unfitted meshes
-
-- Date: 2026-09-14
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.15630v1
-- PDF: https://arxiv.org/pdf/2609.15630v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-a_fem_approach_for_time_dependent_domains_with_unfitted_meshes_infographic.json
-
-## 15. What Does Layer-Importance Reveal About Transformers and State-Space Models?
-
-- Date: 2026-09-15
+- Date: 2026-09-24
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.16537v1
-- PDF: https://arxiv.org/pdf/2609.16537v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-15-arxiv-what_does_layer_importance_reveal_about_transformers_and_state_space_models_infographic.json
+- arXiv: https://arxiv.org/abs/2609.30458v1
+- PDF: https://arxiv.org/pdf/2609.30458v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-24-arxiv-hydrogen_stabilized_multimodal_high_index_twin_network_in_iron_infographic.json
 
-## 16. High-Intense Gamma-Ray Emission from a Crystalline Undulator with Realistic Bending Profiles
+## 12. Beyond Compression: Training Latent Representations for Stable Long-Horizon Rollout in Neural Surrogate Solvers
 
-- Date: 2026-09-14
+- Date: 2026-09-24
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.15101v1
-- PDF: https://arxiv.org/pdf/2609.15101v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-high_intense_gamma_ray_emission_from_a_crystalline_undulator_with_realistic_bending_profil_infographic.json
+- arXiv: https://arxiv.org/abs/2609.30198v1
+- PDF: https://arxiv.org/pdf/2609.30198v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-24-arxiv-beyond_compression_training_latent_representations_for_stable_long_horizon_rollout_in_neur_infographic.json
 
-## 17. A cylindrical sintering method for more realistic grain boundaries in nanocrystalline thin films
+## 13. Optimal Recovery for Solving Variational Problems
 
-- Date: 2026-09-14
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.15246v1
-- PDF: https://arxiv.org/pdf/2609.15246v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-a_cylindrical_sintering_method_for_more_realistic_grain_boundaries_in_nanocrystalline_thin_infographic.json
-
-## 18. Shape calculus and automatic differentiation for multi-phase level-set topology optimisation with unfitted finite elements
-
-- Date: 2026-09-14
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.15084v1
-- PDF: https://arxiv.org/pdf/2609.15084v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-14-arxiv-shape_calculus_and_automatic_differentiation_for_multi_phase_level_set_topology_optimisati_infographic.json
-
-## 19. MORTIS: Quadrature-compatible cofactor gauges and optimal material margins in finite elasticity
-
-- Date: 2026-09-11
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.13449v1
-- PDF: https://arxiv.org/pdf/2609.13449v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-11-arxiv-mortis_quadrature_compatible_cofactor_gauges_and_optimal_material_margins_in_finite_elasti_infographic.json
-
-## 20. Bilinearity Preserving Algebraic Flux Correction
-
-- Date: 2026-09-15
+- Date: 2026-09-24
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2609.16830v1
-- PDF: https://arxiv.org/pdf/2609.16830v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-15-arxiv-bilinearity_preserving_algebraic_flux_correction_infographic.json
+- arXiv: https://arxiv.org/abs/2609.30049v1
+- PDF: https://arxiv.org/pdf/2609.30049v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-24-arxiv-optimal_recovery_for_solving_variational_problems_infographic.json
+
+## 14. High-order energy diminishing ALE-SAV finite element methods for two-phase Navier--Stokes flow
+
+- Date: 2026-09-28
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2609.35590v1
+- PDF: https://arxiv.org/pdf/2609.35590v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-high_order_energy_diminishing_ale_sav_finite_element_methods_for_two_phase_navier_stokes_f_infographic.json
+
+## 15. Event-by-event track imaging of charged particles with an ultrafast plenoptic camera
+
+- Date: 2026-09-28
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2609.35509v1
+- PDF: https://arxiv.org/pdf/2609.35509v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-event_by_event_track_imaging_of_charged_particles_with_an_ultrafast_plenoptic_camera_infographic.json
+
+## 16. Environmental requirements for the use of social information by artificial life agents using evolved plastic artificial neural networks
+
+- Date: 2026-09-28
+- Category: AI Solid Mechanics
+- arXiv: https://arxiv.org/abs/2609.35018v1
+- PDF: https://arxiv.org/pdf/2609.35018v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-environmental_requirements_for_the_use_of_social_information_by_artificial_life_agents_usi_infographic.json
+
+## 17. Learn Here, Move Less Elsewhere: Input-Conditioned Plasticity from Retained-Domain Activation Atlases
+
+- Date: 2026-09-28
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.34478v1
+- PDF: https://arxiv.org/pdf/2609.34478v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-learn_here_move_less_elsewhere_input_conditioned_plasticity_from_retained_domain_activatio_infographic.json
+
+## 18. A Comparative Study on Robust Topology Optimization of Design-Dependent Pressure-Actuated Compliant Mechanisms with Quadrilateral Elements
+
+- Date: 2026-09-28
+- Category: Topology Optimization
+- arXiv: https://arxiv.org/abs/2609.34341v1
+- PDF: https://arxiv.org/pdf/2609.34341v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-28-arxiv-a_comparative_study_on_robust_topology_optimization_of_design_dependent_pressure_actuated_infographic.json
+
+## 19. KATOsuper: Surrogate-accelerated neural topology optimization with sensitivity-consistent Fourier neural operators
+
+- Date: 2026-09-23
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2609.27216v1
+- PDF: https://arxiv.org/pdf/2609.27216v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-23-arxiv-katosuper_surrogate_accelerated_neural_topology_optimization_with_sensitivity_consistent_f_infographic.json
+
+## 20. EngramRAG: Dynamic Usage-Weighted Topology and Synaptic Consolidation for Multi-Hop Agentic Memory
+
+- Date: 2026-09-25
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2609.32049v1
+- PDF: https://arxiv.org/pdf/2609.32049v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-25-arxiv-engramrag_dynamic_usage_weighted_topology_and_synaptic_consolidation_for_multi_hop_agentic_infographic.json

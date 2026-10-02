@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper introduces an automated running error analysis framework that computes forward rounding-error estimates alongside finite element kernel values to reveal and diagnose numerical instability as the code runs.",
-  "engineering_relevance": "This gives FEM developers a practical way to debug ill-conditioned formulations, assess mixed-precision safety, and improve robustness in performance-critical simulation kernels.",
+  "key_insight": "The paper introduces an automated way to estimate floating-point rounding error inside finite element kernels while the kernel computes its value, helping catch accuracy loss before it breaks a simulation.",
+  "engineering_relevance": "This makes FEM code more reliable for nonlinear mechanics, ill-conditioned meshes, reduced-precision workflows, and kernel debugging in production solvers.",
   "method": [
-    "Use Running Error Analysis (REA) to propagate an error estimate concurrently with each computed value.",
-    "Implement REA in FFCx via a C++ backend with templated kernels over a custom arithmetic type carrying value and error.",
-    "Apply the framework to detect cancellation in Neo-Hooke assembly and to study error behavior on a near-degenerate mesh."
+    "Wrap kernel arithmetic in a custom type that carries both value and running forward-error estimate.",
+    "Integrate the approach into the FEniCS Form Compiler (FFCx) via a C++ backend that generates type-generic templated kernels.",
+    "Use Running Error Analysis (REA) to compute an a posteriori error bound concurrently with each finite element operation."
   ],
-  "evidence_signal": "The abstract reports two demonstration cases and states that the REA implementation typically adds only about 2–4x performance overhead.",
-  "watch_item": "The approach introduces extra runtime cost and is tied to kernel generation support, so integration overhead and performance impact should be considered for large-scale production workflows.",
+  "evidence_signal": "The authors validate the framework on a Neo-Hooke hyperelasticity cancellation case and a near-degenerate Laplace assembly, reporting typical runtime overhead of only about 2–4x.",
+  "watch_item": "The approach adds overhead and depends on kernel-generation integration, so it may need careful tuning for large-scale or performance-critical HPC workflows.",
   "hashtags": [
-    "#FiniteElementMethod",
+    "#FiniteElementMethods",
     "#RoundingError",
-    "#NumericalAnalysis",
-    "#MixedPrecision",
-    "#ScientificComputing"
+    "#NumericalStability",
+    "#FEniCS",
+    "#ComputationalMechanics"
   ],
   "paper_id": "2026-09-29-arxiv-running_error_bounds_in_finite_element_kernels",
   "paper_title": "Running error bounds in finite element kernels",
   "paper_date": "2026-09-29",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-01T15:52:36",
+  "generated_at": "2026-10-02T15:13:37",
   "generator": "openai"
 }

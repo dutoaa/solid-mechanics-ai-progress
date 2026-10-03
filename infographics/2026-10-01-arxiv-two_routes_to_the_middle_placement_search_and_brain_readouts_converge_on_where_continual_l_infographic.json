@@ -1,24 +1,24 @@
 {
-  "key_insight": "Continual learners in vision transformers perform best when task-specific adapters are placed in intermediate blocks, and a frozen brain-readout signal can identify those blocks without expensive placement search.",
-  "engineering_relevance": "This offers a practical way to cut adapter storage and tuning cost in lifelong learning while preserving accuracy, especially when deploying compact task-specific modules in ViT backbones.",
+  "key_insight": "Continual-learning adapter placement is not best at the shallowest or deepest blocks; both search and a brain-readout heuristic point to intermediate-depth specialization as the sweet spot.",
+  "engineering_relevance": "A one-time placement strategy can cut adapter storage and runtime overhead while preserving accuracy, making ViT-based continual learning more deployable under tight memory budgets.",
   "method": [
-    "Search all contiguous four-block adapter placements and compare accuracy across depths.",
-    "Use LS-B: a frozen fMRI encoding model over 12 human visual areas to rank blocks by task-varying readouts versus stable structure.",
-    "Select one fixed placement per backbone and evaluate under matched storage and observation budgets."
+    "Exhaustively trained all contiguous four-block adapter placements to map accuracy versus depth.",
+    "Derived LS-B (brain-guided placement) by using frozen fMRI encoding readouts across 12 visual areas to select blocks with the largest task-varying signals.",
+    "Compared LS-B against shallow/deep placements and placement-search baselines across ViT-B/16 backbones and Split ImageNet-R."
   ],
-  "evidence_signal": "Across three ViT-B/16 backbones, the chosen blocks align with intermediate-depth regions, and on Split ImageNet-R LS-B uses 60% of full-BiLoRA storage while staying within 1.5 pp of final accuracy.",
-  "watch_item": "The allocation is backbone-specific and derived from fMRI-based readouts, so transferring the same placement rule to a new architecture or domain may require recalibration.",
+  "evidence_signal": "Across three ViT-B/16 backbones, LS-B gave stable backbone-specific allocations; on Split ImageNet-R it used 60% of full-BiLoRA adapter storage while staying within 1.5 pp of final accuracy.",
+  "watch_item": "LS-B depends on an external fMRI-based readout source, so its practical use requires a suitable brain-model proxy and may not transfer uniformly across backbones or domains.",
   "hashtags": [
     "#ContinualLearning",
     "#VisionTransformer",
     "#AdapterPlacement",
-    "#NeuroInspiredAI",
-    "#ModelCompression"
+    "#FMRIBasedLearning",
+    "#EfficientAI"
   ],
   "paper_id": "2026-10-01-arxiv-two_routes_to_the_middle_placement_search_and_brain_readouts_converge_on_where_continual_l",
   "paper_title": "Two Routes to the Middle: Placement Search and Brain Readouts Converge on Where Continual Learners Should Specialize",
   "paper_date": "2026-10-01",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-02T15:13:25",
+  "generated_at": "2026-10-03T14:05:24",
   "generator": "openai"
 }

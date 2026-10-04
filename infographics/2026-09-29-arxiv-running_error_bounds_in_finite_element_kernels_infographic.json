@@ -1,24 +1,24 @@
 {
-  "key_insight": "Running Error Analysis can track finite-element roundoff error automatically inside compiled kernels, exposing instability as computations happen.",
-  "engineering_relevance": "This makes FEM assembly more trustworthy for ill-conditioned, reduced-precision, and debugging-critical solid mechanics workflows.",
+  "key_insight": "The paper introduces automated running error analysis inside finite element kernels so rounding error is estimated alongside the computed value, helping catch instability before it corrupts results.",
+  "engineering_relevance": "This gives FEM developers a practical debugging and robustness tool for mixed-precision, embedded, and automatically generated PDE kernels where floating-point error can silently dominate.",
   "method": [
-    "Wrap generated FEniCS/FFCx kernels in a C++ type that carries both value and forward error estimate.",
-    "Compute the error estimate concurrently with the numerical result during kernel evaluation.",
-    "Use the estimates to flag cancellation and roundoff sensitivity in problematic PDE assemblies."
+    "Wrap kernel arithmetic in a custom type that propagates both value and forward error estimate.",
+    "Integrate the approach into the FEniCS Form Compiler (FFCx) via a C++ backend and templated type-generic kernels.",
+    "Use the error estimates to diagnose cancellation and near-degenerate-mesh sensitivity during assembly."
   ],
-  "evidence_signal": "The abstract reports two demonstrations—Neo-Hooke hyperelastic assembly and a near-degenerate Laplace operator case—and says the implementation typically adds only 2-4x overhead.",
-  "watch_item": "The approach adds runtime overhead and depends on templated custom arithmetic support in the kernel generation pipeline.",
+  "evidence_signal": "The abstract reports two demonstrations—catastrophic cancellation in Neo-Hooke assembly and a near-degenerate Laplace mesh test—and says the implementation typically adds only 2–4x runtime overhead.",
+  "watch_item": "The approach adds nontrivial performance overhead and depends on a compiler/backend integration path, so deployment complexity and kernel-specific tuning may matter.",
   "hashtags": [
-    "#FiniteElementMethod",
-    "#RoundoffError",
-    "#NumericalStability",
-    "#FEniCS",
-    "#ComputationalMechanics"
+    "#FiniteElementMethods",
+    "#RoundingError",
+    "#NumericalAnalysis",
+    "#MixedPrecision",
+    "#ScientificComputing"
   ],
   "paper_id": "2026-09-29-arxiv-running_error_bounds_in_finite_element_kernels",
   "paper_title": "Running error bounds in finite element kernels",
   "paper_date": "2026-09-29",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-03T14:05:36",
+  "generated_at": "2026-10-04T14:33:12",
   "generator": "openai"
 }

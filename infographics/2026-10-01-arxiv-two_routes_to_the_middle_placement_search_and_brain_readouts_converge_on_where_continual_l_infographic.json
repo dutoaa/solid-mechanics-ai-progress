@@ -1,24 +1,24 @@
 {
-  "key_insight": "Continual-learning adapters work best when specialized in intermediate transformer blocks, and a frozen brain-readout signal can pick those blocks without costly placement search.",
-  "engineering_relevance": "This provides a practical way to cut adapter storage and search overhead in vision-transformer continual learning while preserving near-full performance.",
+  "key_insight": "Continual-learning adapters work best when specialized in intermediate transformer blocks, and this placement can be found without search by using brain-readout signals from early tasks.",
+  "engineering_relevance": "The method cuts adapter storage growth while preserving accuracy, offering a practical way to place task-specific capacity in vision transformers with minimal compute and no labels.",
   "method": [
-    "Search all contiguous 4-block adapter placements across ViT-B/16 backbones.",
-    "Use frozen fMRI encoding-model readouts from 12 visual areas to rank blocks by task-dependent variation.",
-    "Commit task-specific capacity once to the most variable blocks, with no labels or backpropagation needed."
+    "Search all contiguous four-block adapter placements to map where accuracy peaks across depth.",
+    "Use frozen fMRI encoding readouts from twelve visual areas to score how task-varying each block is.",
+    "Commit capacity once to the blocks with the strongest cross-task variation and lowest structural stability."
   ],
-  "evidence_signal": "Across three ViT-B/16 backbones, LS-B found stable backbone-specific allocations; on Split ImageNet-R it used 60% of full-BiLoRA storage and stayed within 1.5 pp of final accuracy.",
-  "watch_item": "The chosen blocks are backbone-specific, so the allocation may need recalibration when the backbone or task distribution changes.",
+  "evidence_signal": "Across three ViT-B/16 backbones, LS-B consistently selected intermediate-depth blocks and on Split ImageNet-R used 60% of full-BiLoRA storage while staying within 1.5 percentage points of final accuracy.",
+  "watch_item": "The allocation is backbone-specific and depends on early-task observations, so portability to new architectures or shifted task streams may require re-validation.",
   "hashtags": [
     "#ContinualLearning",
     "#VisionTransformer",
     "#AdapterPlacement",
-    "#NeuroInspiredAI",
-    "#EfficientML"
+    "#NeuroAI",
+    "#EfficientAI"
   ],
   "paper_id": "2026-10-01-arxiv-two_routes_to_the_middle_placement_search_and_brain_readouts_converge_on_where_continual_l",
   "paper_title": "Two Routes to the Middle: Placement Search and Brain Readouts Converge on Where Continual Learners Should Specialize",
   "paper_date": "2026-10-01",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-04T14:33:02",
+  "generated_at": "2026-10-05T17:37:55",
   "generator": "openai"
 }

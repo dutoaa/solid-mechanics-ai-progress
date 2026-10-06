@@ -1,24 +1,24 @@
 {
-  "key_insight": "Co-PiLOT combines a generative latent space with physics-informed black-box optimization to make inverse design feasible for complex microstructure-driven mechanics problems.",
-  "engineering_relevance": "The approach can reduce expensive simulation trials when tuning microstructures or other high-dimensional engineering designs toward a target property.",
+  "key_insight": "Co-PiLOT turns inverse design into constrained optimization in a learned latent space, using a generative decoder as a validity prior and a physics-informed optimizer to search for target microstructures.",
+  "engineering_relevance": "This enables faster, more feasible design of magnesium alloy microstructures and textures for crystal plasticity-driven property targets without exhaustively querying the expensive simulator.",
   "method": [
-    "Train a ViT-based encoder and diffusion/transformer decoders on ~80k EBSD microstructure images to learn a compact latent representation.",
-    "Use the decoder as a learned validity prior and a self-segmenting orientation codec to map latent candidates back into solver-ready grids.",
-    "Optimize the latent space with MERIDIAN, which adds deep-kernel GP uncertainty, feasibility prediction, manifold-aware trust regions, and target-aware acquisition."
+    "ViT-based encoder compresses EBSD microstructure images into a low-dimensional latent code.",
+    "Latent diffusion / diffusion-transformer / rectified-flow decoders reconstruct candidate microstructures with learned validity.",
+    "MERIDIAN performs active latent search with deep-kernel GP uncertainty, feasibility prediction, manifold-aware trust regions, and target-aware acquisition."
   ],
-  "evidence_signal": "On the magnesium alloy inverse-design task, the ViT-FMDiT model achieved strong reconstructions (FID 27.86, MS-SSIM 0.178) and MERIDIAN reduced relative target error by 3–22% versus seven baselines within 160 simulations.",
-  "watch_item": "Performance depends on the quality of the learned decoder and latent manifold, so generalization and validity may weaken outside the training data distribution.",
+  "evidence_signal": "Trained on about 80,000 EBSD-derived microstructure samples; ViT-FMDiT achieved the best reconstruction quality (FID 27.86, MS-SSIM 0.178) and, within 160 simulations, reduced relative target error by 3–22% versus seven baselines.",
+  "watch_item": "Performance depends on the learned decoder and latent validity model, so out-of-distribution microstructures or solver mismatch could limit optimization reliability.",
   "hashtags": [
     "#InverseDesign",
     "#PhysicsInformedML",
     "#MicrostructureDesign",
-    "#GaussianProcesses",
+    "#LatentOptimization",
     "#ComputationalMechanics"
   ],
   "paper_id": "2026-09-29-arxiv-co_pilot_constrained_physics_informed_latent_optimization_for_target_driven_inverse_design",
   "paper_title": "Co-PiLOT: Constrained Physics-Informed Latent Optimization for Target-Driven Inverse Design",
   "paper_date": "2026-09-29",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-05T17:37:28",
+  "generated_at": "2026-10-06T15:35:41",
   "generator": "openai"
 }

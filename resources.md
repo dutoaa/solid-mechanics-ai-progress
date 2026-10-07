@@ -1,9 +1,17 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-10-06
+Generated: 2026-10-07
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
-## 1. On finite elements for geometrically-exact planar beams with hyperelastic material models
+## 1. Mechanistic transition between inter- and trans-granular creep cracking via a unified crystal plasticity-fracture framework
+
+- Date: 2026-10-06
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2610.07980v1
+- PDF: https://arxiv.org/pdf/2610.07980v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-mechanistic_transition_between_inter_and_trans_granular_creep_cracking_via_a_unified_cryst_infographic.json
+
+## 2. On finite elements for geometrically-exact planar beams with hyperelastic material models
 
 - Date: 2026-10-04
 - Category: Constitutive Modeling
@@ -11,7 +19,23 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.05231v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-04-arxiv-on_finite_elements_for_geometrically_exact_planar_beams_with_hyperelastic_material_models_infographic.json
 
-## 2. Mechanism-resolved phase-field fracture of composite shells with a certified admissible constitutive operator
+## 3. Identifying Plastic Inorganic Semiconductors Requires More Rigorous Criteria
+
+- Date: 2026-10-04
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.07007v1
+- PDF: https://arxiv.org/pdf/2610.07007v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-04-arxiv-identifying_plastic_inorganic_semiconductors_requires_more_rigorous_criteria_infographic.json
+
+## 4. Constitutive-Set Mechanics: variational mechanics on an admissible set of constitutive laws
+
+- Date: 2026-10-05
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.07151v1
+- PDF: https://arxiv.org/pdf/2610.07151v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-constitutive_set_mechanics_variational_mechanics_on_an_admissible_set_of_constitutive_laws_infographic.json
+
+## 5. Mechanism-resolved phase-field fracture of composite shells with a certified admissible constitutive operator
 
 - Date: 2026-10-05
 - Category: Fracture and Damage
@@ -19,7 +43,31 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.06705v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-mechanism_resolved_phase_field_fracture_of_composite_shells_with_a_certified_admissible_co_infographic.json
 
-## 3. From Sparse AFM Observations to Probabilistic Macroscale Mechanics: A Generative-Physics Framework for Plant Cell Walls
+## 6. Well-posed by Design: Learning Constitutive Laws from Velocity Data using Convex Neural Network Potentials
+
+- Date: 2026-10-05
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.07236v1
+- PDF: https://arxiv.org/pdf/2610.07236v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-well_posed_by_design_learning_constitutive_laws_from_velocity_data_using_convex_neural_net_infographic.json
+
+## 7. An FE2 model for shear-deformable beams considering periodic lattice-like truss mesostructures
+
+- Date: 2026-10-06
+- Category: Composites and Metamaterials
+- arXiv: https://arxiv.org/abs/2610.08607v1
+- PDF: https://arxiv.org/pdf/2610.08607v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-an_fe2_model_for_shear_deformable_beams_considering_periodic_lattice_like_truss_mesostruct_infographic.json
+
+## 8. Grain-boundary segregation delays the onset of plastic flow in nanocrystalline Fe-18Cr-12Ni
+
+- Date: 2026-10-06
+- Category: Composites and Metamaterials
+- arXiv: https://arxiv.org/abs/2610.08613v1
+- PDF: https://arxiv.org/pdf/2610.08613v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-grain_boundary_segregation_delays_the_onset_of_plastic_flow_in_nanocrystalline_fe_18cr_12n_infographic.json
+
+## 9. From Sparse AFM Observations to Probabilistic Macroscale Mechanics: A Generative-Physics Framework for Plant Cell Walls
 
 - Date: 2026-10-05
 - Category: Constitutive Modeling
@@ -27,15 +75,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.06436v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-from_sparse_afm_observations_to_probabilistic_macroscale_mechanics_a_generative_physics_fr_infographic.json
 
-## 4. Adaptive Inductor and Frequency Management for Integrated Power Converters
+## 10. Efficient localised model reduction for multiscale PDEs via Grassmannian interpolation
 
-- Date: 2026-10-05
+- Date: 2026-10-06
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2610.06555v1
-- PDF: https://arxiv.org/pdf/2610.06555v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-adaptive_inductor_and_frequency_management_for_integrated_power_converters_infographic.json
+- arXiv: https://arxiv.org/abs/2610.08657v1
+- PDF: https://arxiv.org/pdf/2610.08657v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-efficient_localised_model_reduction_for_multiscale_pdes_via_grassmannian_interpolation_infographic.json
 
-## 5. Label-free physics-informed strength reduction and a neural operator for the reliability of spatially variable slopes
+## 11. Label-free physics-informed strength reduction and a neural operator for the reliability of spatially variable slopes
 
 - Date: 2026-10-04
 - Category: Physics-Informed ML
@@ -43,7 +91,55 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.04828v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-04-arxiv-label_free_physics_informed_strength_reduction_and_a_neural_operator_for_the_reliability_o_infographic.json
 
-## 6. Dynamic Routing as a New Dimension for Test-time Versatility of LLMs
+## 12. An associated model of Coulomb friction based on the real area of contact
+
+- Date: 2026-10-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.08535v1
+- PDF: https://arxiv.org/pdf/2610.08535v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-an_associated_model_of_coulomb_friction_based_on_the_real_area_of_contact_infographic.json
+
+## 13. A Cut Finite Element Method for Transient Thermal Simulation in Multi-material Electronic Packaging Structures
+
+- Date: 2026-10-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.08543v1
+- PDF: https://arxiv.org/pdf/2610.08543v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-a_cut_finite_element_method_for_transient_thermal_simulation_in_multi_material_electronic_infographic.json
+
+## 14. Learning PDE solution operators with variable initial conditions via Latent Dynamics Networks
+
+- Date: 2026-10-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.08475v1
+- PDF: https://arxiv.org/pdf/2610.08475v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-learning_pde_solution_operators_with_variable_initial_conditions_via_latent_dynamics_netwo_infographic.json
+
+## 15. FOSLS-deRhaNN: native de Rham neural classes for H(div) and H(curl) with applications to first-order system least-squares neural network methods for partial differential equations
+
+- Date: 2026-10-06
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.08016v1
+- PDF: https://arxiv.org/pdf/2610.08016v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-fosls_derhann_native_de_rham_neural_classes_for_h_div_and_h_curl_with_applications_to_firs_infographic.json
+
+## 16. Adaptive Inductor and Frequency Management for Integrated Power Converters
+
+- Date: 2026-10-05
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.06555v1
+- PDF: https://arxiv.org/pdf/2610.06555v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-adaptive_inductor_and_frequency_management_for_integrated_power_converters_infographic.json
+
+## 17. Simplified Swarm Optimization for Surrogate-Assisted Reliability Design of Insulated-Gate Bipolar Transistor Power Modules Using an Open-Source Process Finite-Element Model
+
+- Date: 2026-10-05
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.07412v1
+- PDF: https://arxiv.org/pdf/2610.07412v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-simplified_swarm_optimization_for_surrogate_assisted_reliability_design_of_insulated_gate_infographic.json
+
+## 18. Dynamic Routing as a New Dimension for Test-time Versatility of LLMs
 
 - Date: 2026-10-03
 - Category: Constitutive Modeling
@@ -51,7 +147,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.04751v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-03-arxiv-dynamic_routing_as_a_new_dimension_for_test_time_versatility_of_llms_infographic.json
 
-## 7. Reformulating plastic instabilities within a damage-like variational framework
+## 19. Reformulating plastic instabilities within a damage-like variational framework
 
 - Date: 2026-10-02
 - Category: Fracture and Damage
@@ -59,106 +155,10 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.03328v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-02-arxiv-reformulating_plastic_instabilities_within_a_damage_like_variational_framework_infographic.json
 
-## 8. Global error estimators for parametric monotone nonlinearities and neural approximations
+## 20. Global error estimators for parametric monotone nonlinearities and neural approximations
 
 - Date: 2026-10-05
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2610.05767v1
 - PDF: https://arxiv.org/pdf/2610.05767v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-global_error_estimators_for_parametric_monotone_nonlinearities_and_neural_approximations_infographic.json
-
-## 9. MedPrune: Topology-Efficient Multimodal Multi-Agent Communication Evolution for Medical VQA Tasks
-
-- Date: 2026-10-05
-- Category: AI Solid Mechanics
-- arXiv: https://arxiv.org/abs/2610.06695v1
-- PDF: https://arxiv.org/pdf/2610.06695v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-05-arxiv-medprune_topology_efficient_multimodal_multi_agent_communication_evolution_for_medical_vqa_infographic.json
-
-## 10. Temperature-Dependent Multiphysics Modeling of Additive Friction Stir Deposition Using Multi-Task Coupled Physics-Informed Neural Networks
-
-- Date: 2026-10-02
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2610.04082v1
-- PDF: https://arxiv.org/pdf/2610.04082v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-02-arxiv-temperature_dependent_multiphysics_modeling_of_additive_friction_stir_deposition_using_mul_infographic.json
-
-## 11. Fully mixed finite element methods for the coupling of viscoelasticity and reaction-diffusion models
-
-- Date: 2026-10-02
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2610.03317v1
-- PDF: https://arxiv.org/pdf/2610.03317v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-02-arxiv-fully_mixed_finite_element_methods_for_the_coupling_of_viscoelasticity_and_reaction_diffus_infographic.json
-
-## 12. Co-PiLOT: Constrained Physics-Informed Latent Optimization for Target-Driven Inverse Design
-
-- Date: 2026-09-29
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2609.37875v1
-- PDF: https://arxiv.org/pdf/2609.37875v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-09-29-arxiv-co_pilot_constrained_physics_informed_latent_optimization_for_target_driven_inverse_design_infographic.json
-
-## 13. Task Vector Descent: Learning from Non-IID Batches
-
-- Date: 2026-10-04
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.05402v1
-- PDF: https://arxiv.org/pdf/2610.05402v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-04-arxiv-task_vector_descent_learning_from_non_iid_batches_infographic.json
-
-## 14. A Finite Element Method for the Grad--Mercier Equation
-
-- Date: 2026-10-04
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2610.05313v1
-- PDF: https://arxiv.org/pdf/2610.05313v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-04-arxiv-a_finite_element_method_for_the_grad_mercier_equation_infographic.json
-
-## 15. Deep learning enables large-scale inverse design of free-form metasurfaces
-
-- Date: 2026-10-04
-- Category: Topology Optimization
-- arXiv: https://arxiv.org/abs/2610.05021v1
-- PDF: https://arxiv.org/pdf/2610.05021v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-04-arxiv-deep_learning_enables_large_scale_inverse_design_of_free_form_metasurfaces_infographic.json
-
-## 16. AIGS: Adaptive Incremental Gating System for Online Representation Learning in Non-Stationary Data Streams
-
-- Date: 2026-10-02
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.02661v1
-- PDF: https://arxiv.org/pdf/2610.02661v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-02-arxiv-aigs_adaptive_incremental_gating_system_for_online_representation_learning_in_non_stationa_infographic.json
-
-## 17. A differentiable Lagrangian-coupled 3D Gaussian Splatting-SPH model for forward simulation and inverse analysis in solid mechanics
-
-- Date: 2026-10-03
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.04336v1
-- PDF: https://arxiv.org/pdf/2610.04336v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-03-arxiv-a_differentiable_lagrangian_coupled_3d_gaussian_splatting_sph_model_for_forward_simulation_infographic.json
-
-## 18. PaLoRA: Paced Low-Rank Adaptation for Continual Learning
-
-- Date: 2026-10-03
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.04226v1
-- PDF: https://arxiv.org/pdf/2610.04226v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-03-arxiv-palora_paced_low_rank_adaptation_for_continual_learning_infographic.json
-
-## 19. Selective Backpropagation for Efficient Few-Shot Class-Incremental Learning
-
-- Date: 2026-10-02
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.04003v1
-- PDF: https://arxiv.org/pdf/2610.04003v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-02-arxiv-selective_backpropagation_for_efficient_few_shot_class_incremental_learning_infographic.json
-
-## 20. A Polynomial-Scaling PDE Solver with Entanglement-Basis Tensor Networks
-
-- Date: 2026-10-01
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2610.02316v1
-- PDF: https://arxiv.org/pdf/2610.02316v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-01-arxiv-a_polynomial_scaling_pde_solver_with_entanglement_basis_tensor_networks_infographic.json

@@ -1,24 +1,24 @@
 {
-  "key_insight": "A label-free PINN with incremental strength reduction can reproduce slope failure factors of safety and weak-zone mechanisms for spatially variable c-phi slopes, and a neural operator can then extrapolate these results to millions of random fields quickly.",
-  "engineering_relevance": "This enables much faster reliability assessment of heterogeneous slopes without direct finite-element solves for every realization, supporting probabilistic geotechnical design and screening.",
+  "key_insight": "A label-free physics-informed neural network can estimate slope failure under spatially variable strength reduction, and a neural operator can then generalize those solutions to predict reliability at massive scale.",
+  "engineering_relevance": "This enables fast probabilistic slope stability assessment without running finite-element simulations for every random field, while still matching Abaqus factor of safety and failure zones closely enough for engineering screening.",
   "method": [
-    "Physics-informed neural network trained with a virtual-work loss on the finite-element mesh",
-    "Non-associated Mohr-Coulomb plasticity with incremental strength reduction for random c-phi fields",
-    "Neural operator trained on PINN-generated solutions to predict factor of safety, displacement path, and failure mode"
+    "PINN solves non-associated Mohr-Coulomb plasticity with a virtual-work loss on the FE mesh",
+    "Incremental strength reduction is used to estimate factor of safety across many random fields on GPU",
+    "A neural operator learns from PINN outputs to predict factor of safety, displacement path, and failure mode for many fields quickly"
   ],
-  "evidence_signal": "On 52 random fields, the PINN matched Abaqus factor of safety within 2-3% RMS and identified the same weak zones, while Monte Carlo, FORM, importance sampling, and the operator agreed on failure probabilities down to 1e-3.",
-  "watch_item": "The reported probabilities are sensitive to small factor-of-safety scatter and are tied to one mesh, while the plastic strain band is under-resolved.",
+  "evidence_signal": "On 52 random fields, the PINN reproduced Abaqus factor of safety within about 2–3% RMS and identified the same weak-zone failure mechanisms; the operator was then trained to predict a million fields in seconds.",
+  "watch_item": "The reported reliability is sensitive to small factor-of-safety errors and is tied to one mesh, so the under-resolved plastic strain band and mesh dependence should be checked before design use.",
   "hashtags": [
     "#PhysicsInformedML",
-    "#GeotechnicalEngineering",
     "#SlopeStability",
     "#NeuralOperator",
-    "#ReliabilityAnalysis"
+    "#ReliabilityAnalysis",
+    "#ComputationalMechanics"
   ],
   "paper_id": "2026-10-04-arxiv-label_free_physics_informed_strength_reduction_and_a_neural_operator_for_the_reliability_o",
   "paper_title": "Label-free physics-informed strength reduction and a neural operator for the reliability of spatially variable slopes",
   "paper_date": "2026-10-04",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-10-06T15:35:22",
+  "generated_at": "2026-10-07T15:56:07",
   "generator": "openai"
 }

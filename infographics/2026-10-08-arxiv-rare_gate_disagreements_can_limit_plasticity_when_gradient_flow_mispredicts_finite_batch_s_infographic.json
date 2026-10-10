@@ -1,24 +1,24 @@
 {
-  "key_insight": "Population gradient flow can predict recovery after pretraining, but finite-batch SGD can fail to recover because rare ReLU gate disagreements drive the critical updates.",
-  "engineering_relevance": "For training and fine-tuning deployed neural models, the result shows that batch size, step size, and pretraining duration can interact to create hard-to-see plasticity loss that gradient-flow analyses may miss.",
+  "key_insight": "Rare ReLU gate disagreements, not the average gradient, control whether finite-batch SGD can recover after long pretraining; when those disagreements become too scarce, plasticity can fail even though gradient flow predicts recovery.",
+  "engineering_relevance": "For constitutive or surrogate modeling workflows that rely on pretrained neural networks, the result warns that optimization behavior under real minibatches can diverge sharply from population dynamics, especially after long source-task training.",
   "method": [
-    "Two-unit ReLU regression with a source task that aligns neurons and a target task that benefits from separating them.",
-    "Compare population gradient flow against exact online SGD with finite batch size and step size across pretraining and target phases.",
-    "Analyze gate-disagreement probability and track its cumulative occurrence along the discrete SGD recursion."
+    "Two-unit ReLU regression with a source task that aligns neurons and a target task that rewards separating them",
+    "Compare population gradient flow against exact online SGD with batch size b and step size η",
+    "Track how disagreement-region sampling probability, weight decay, and pretraining time T govern recovery vs. failure"
   ],
-  "evidence_signal": "The abstract reports that failure occurs with high probability over a horizon of about e^{c/η} once T is large enough, and that recovery requires Nb  e^{\u0003bbT} plus b  ηe^{\u0003bbT} in the target phase.",
-  "watch_item": "The main mechanism depends on rare disagreement events and long-pretraining/small-step regimes, so conclusions may be most relevant when batch size is too small to reliably sample the critical wedge.",
+  "evidence_signal": "The abstract reports that the failure appears with high probability after T \\gtrsim\\u007f log(b/η), requires long pretraining and small steps jointly, and was confirmed in simulations where recovery scales with the disagreement budget bδ/η and saturates with horizon.",
+  "watch_item": "The phenomenon is proved for a very specific two-unit ReLU setup, so translating the threshold laws directly to larger architectures or different nonlinearities may require revalidation.",
   "hashtags": [
+    "#NeuralNetworks",
     "#SGD",
     "#ReLU",
-    "#Optimization",
-    "#TransferLearning",
-    "#NeuralNetworks"
+    "#Plasticity",
+    "#OptimizationTheory"
   ],
   "paper_id": "2026-10-08-arxiv-rare_gate_disagreements_can_limit_plasticity_when_gradient_flow_mispredicts_finite_batch_s",
   "paper_title": "Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD",
   "paper_date": "2026-10-08",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-09T15:41:23",
+  "generated_at": "2026-10-10T14:56:29",
   "generator": "openai"
 }

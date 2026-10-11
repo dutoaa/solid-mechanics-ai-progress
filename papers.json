@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2610.12151v1"
       }
     ],
-    "score": 86,
+    "score": 81,
     "infographic": {
-      "key_insight": "Specialized, physics-driven machine learning force fields are needed to make ML interatomic potentials reliable for complex materials dynamics beyond near-equilibrium settings.",
-      "engineering_relevance": "For fracture and damage modeling, task-specific MLIPs can extend atomistic simulation to larger scales and more realistic failure processes, but they must be validated against the exact observables of interest.",
+      "key_insight": "Specialized, physics-informed ML force fields are needed to reliably simulate far-from-equilibrium materials dynamics because general-purpose MLIPs break down on reactive, strained, and nonlocal phenomena.",
+      "engineering_relevance": "For fracture and damage modeling, these tailored potentials can extend atomistic simulation to larger length and time scales, but only if they are validated against the specific observables relevant to the target failure process.",
       "method": [
-        "Compare universal pretrained equivariant GNN force fields with specialized, physics-informed adaptations.",
-        "Target demanding dynamical settings: electrified interfaces, open compositionally fluctuating systems, multiphase evolution, and large-scale fracture.",
-        "Use observable-specific benchmarking to judge whether the force field captures the intended materials behavior."
+        "Assess MLIP design trade-offs for dynamics: strained-state coverage, message-passing cost, and nonlocal interactions.",
+        "Use task-specific specialization for challenging regimes such as electrified interfaces, open systems, multiphase evolution, and large-scale fracture.",
+        "Benchmark models with observable-specific validation rather than relying on zero-shot near-equilibrium accuracy."
       ],
-      "evidence_signal": "The review synthesizes performance trade-offs and benchmarking needs across four challenging application contexts rather than presenting a single new dataset.",
-      "watch_item": "High-order message passing, undersampled strained states, and missing nonlocal interactions can limit accuracy and increase computational cost in real fracture simulations.",
+      "evidence_signal": "The review synthesizes four demanding application contexts and uses them to compare how well specialized MLIPs capture intended dynamical observables versus broad pretrained models.",
+      "watch_item": "Specialization can improve performance, but undersampled high-strain states and high-order architectures may still limit robustness and computational scalability.",
       "hashtags": [
-        "#MachineLearningPotentials",
-        "#FractureMechanics",
+        "#MachineLearningForceFields",
         "#MaterialsDynamics",
+        "#FractureAndDamage",
         "#AtomisticSimulation",
-        "#PhysicsInformedML"
+        "#PhysicsInformedAI"
       ],
       "paper_id": "2026-10-08-arxiv-specialized_machine_learning_force_fields_for_materials_dynamics",
       "paper_title": "Specialized machine learning force fields for materials dynamics",
       "paper_date": "2026-10-08",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-10T14:55:44",
+      "generated_at": "2026-10-11T15:12:28",
       "generator": "openai"
     }
   },
@@ -75,29 +75,29 @@
         "url": "https://arxiv.org/pdf/2610.07980v1"
       }
     ],
-    "score": 77,
+    "score": 72,
     "infographic": {
-      "key_insight": "A unified crystal plasticity-fracture model shows that creep cracking shifts from transgranular at high stress to intergranular at low stress because slip-driven intragranular cracking competes with grain-boundary cavitation.",
-      "engineering_relevance": "This mechanism explains how stress level controls creep rupture mode, ductility, and life in polycrystalline metals, helping guide high-temperature alloy design and damage prediction.",
+      "key_insight": "A unified crystal plasticity-fracture model shows that creep cracking shifts from trans-granular at high stress to inter-granular at low stress, driven by the competition between slip-induced intragranular cracking and grain-boundary cavitation.",
+      "engineering_relevance": "This mechanistic map links micro-scale crack evolution to macroscopic creep rupture ductility and life, helping engineers predict whether a component will fail in a more ductile or quasi-brittle manner under service stress.",
       "method": [
-        "Explicit polycrystalline microstructure representation",
-        "Crystal plasticity coupled with grain-boundary cavitation",
-        "Crystallographic crack propagation to capture intra- and intergranular damage"
+        "Explicit polycrystalline microstructure with crystal plasticity.",
+        "Grain-boundary cavitation coupled with crystallographic crack propagation.",
+        "Stress-dependent simulations resolving crack-path transitions and damage localization."
       ],
-      "evidence_signal": "Microscale simulations reproduce a stress-dependent transition in crack paths and damage localization, linking high-stress ductile rupture to low-stress quasi-brittle rupture.",
-      "watch_item": "The framework is computationally detailed and material-specific, so calibration and validation against experiments are likely necessary before broad design use.",
+      "evidence_signal": "The abstract reports microscale computations across stress levels that reproduce distinct cracking regimes and quantify their impact on rupture ductility and creep life.",
+      "watch_item": "The framework is computational and mechanism-focused, so predictive accuracy will depend on calibration of grain-boundary and fracture parameters for the specific alloy and loading condition.",
       "hashtags": [
         "#CreepFracture",
         "#CrystalPlasticity",
         "#GrainBoundaryCavitation",
-        "#PolycrystalModeling",
-        "#DamageMechanics"
+        "#PolycrystallineMaterials",
+        "#FractureMechanics"
       ],
       "paper_id": "2026-10-06-arxiv-mechanistic_transition_between_inter_and_trans_granular_creep_cracking_via_a_unified_cryst",
       "paper_title": "Mechanistic transition between inter- and trans-granular creep cracking via a unified crystal plasticity-fracture framework",
       "paper_date": "2026-10-06",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-10T14:55:46",
+      "generated_at": "2026-10-11T15:12:30",
       "generator": "openai"
     }
   },
@@ -126,29 +126,29 @@
         "url": "https://arxiv.org/pdf/2610.09461v1"
       }
     ],
-    "score": 72,
+    "score": 67,
     "infographic": {
-      "key_insight": "A deep learning surrogate can replace repeated crystal plasticity finite element simulations to optimize polycrystalline microstructures while balancing competing spall and yield strength targets.",
-      "engineering_relevance": "This enables practical microstructure design under realistic quasi-static and dynamic loading by cutting optimization cost by about four orders of magnitude while retaining full-field physics fidelity.",
+      "key_insight": "A deep learning surrogate can replace expensive CPFE simulations to optimize polycrystalline microstructures for competing quasi-static and dynamic strength targets.",
+      "engineering_relevance": "This enables fast, full-field design optimization of microstructures while preserving the physics needed to assess spall, yield, and wave-driven failure behavior.",
       "method": [
-        "3D U-Net maps stochastic polycrystalline copper microstructures directly to full-field velocity histories from plate-impact simulations.",
-        "Couples the surrogate with stochastic microstructure generation and derivative-free optimization to search the design space efficiently.",
-        "Uses a distribution-consistent reliability region (DCRR) based on maximum mean discrepancy to flag surrogate extrapolation during optimization."
+        "3D U-Net maps 3D polycrystalline microstructures to full-field velocity histories from plate-impact simulations.",
+        "Couples stochastic microstructure generation with derivative-free optimization to search the design space efficiently.",
+        "Uses a distribution-consistent reliability region (DCRR) based on MMD to detect surrogate shift during optimization."
       ],
-      "evidence_signal": "Across multiple optimization cases, CPFE validation showed less than 3% prediction error, with cumulative evaluation time reduced by roughly four orders of magnitude versus direct CPFE optimization.",
-      "watch_item": "Reliability depends on staying within the surrogate's distribution-consistent region; designs far from the training data may require re-validation with high-fidelity simulation.",
+      "evidence_signal": "Validated optimal designs against CPFE with less than 3% prediction error, while reducing cumulative optimization time by about four orders of magnitude.",
+      "watch_item": "Reliability depends on the surrogate staying within the training-data distribution, so distribution shift must be monitored carefully during optimization.",
       "hashtags": [
         "#SolidMechanics",
+        "#DeepLearning",
         "#MicrostructureDesign",
-        "#DeepLearningSurrogate",
-        "#FiniteElementAnalysis",
-        "#MaterialsOptimization"
+        "#SurrogateModeling",
+        "#ComputationalMaterials"
       ],
       "paper_id": "2026-10-07-arxiv-deep_learning_driven_framework_for_optimization_of_polycrystalline_microstructures_under_c",
       "paper_title": "Deep learning driven framework for optimization of polycrystalline microstructures under competing strength requirements",
       "paper_date": "2026-10-07",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-10T14:55:49",
+      "generated_at": "2026-10-11T15:12:33",
       "generator": "openai"
     }
   },
@@ -177,29 +177,29 @@
         "url": "https://arxiv.org/pdf/2610.11688v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Use random features only where the interface cuts the mesh, while keeping standard finite elements elsewhere, to solve elliptic interface problems efficiently on unfitted grids.",
-      "engineering_relevance": "This hybrid unfitted-mesh strategy is well suited for engineering problems with sharp material jumps, complex or moving interfaces, and heterogeneous composites.",
+      "key_insight": "A localized hybrid FEM–random feature method solves interface problems by using standard finite elements away from the interface and random-feature models only in cut-cell bands near the interface.",
+      "engineering_relevance": "This reduces global surrogate complexity while handling high-contrast jumps and irregular interface geometries on unfitted meshes, making it attractive for multiphysics and heterogeneous-material simulations.",
       "method": [
-        "Apply standard Qp finite elements on all uncut background cells.",
-        "Use localized random feature representations on both sides of the interface only in the narrow cut-cell band.",
-        "Couple FEM and RFM through an artificial grid-aligned interface and enforce physical jumps via least-squares residuals with Schur reduction of interior FEM unknowns."
+        "Use Qp finite elements on uncut background cells.",
+        "Use local random-feature representations only in interface-cut cells on both physical sides of Γ.",
+        "Enforce solution/flux jumps on Γ and couple FEM–RFM across an artificial grid-aligned interface Γc via trace and flux residuals."
       ],
-      "evidence_signal": "The method is evaluated on 2D and 3D test cases with high coefficient contrasts, nonsmooth and multiple interfaces, irregular outer boundaries, and a thermal-homogenization application.",
-      "watch_item": "Accuracy and robustness depend on the cut-cell band coupling and constrained least-squares solve, which may require careful implementation for stability in highly complex geometries.",
+      "evidence_signal": "The abstract reports numerical tests in 2D and 3D on high-contrast, nonsmooth, multiple-interface, and irregular-boundary cases, plus a thermal-homogenization application for a periodic bicontinuous composite.",
+      "watch_item": "The method depends on accurate cut-cell identification and stable coupling/residual minimization, which may be sensitive in very thin interface bands or highly complex geometries.",
       "hashtags": [
         "#FiniteElementMethod",
         "#RandomFeatures",
-        "#UnfittedMesh",
         "#InterfaceProblems",
+        "#UnfittedMesh",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-10-08-arxiv-a_localized_hybrid_finite_element_random_feature_method_for_elliptic_interface_problems_on",
       "paper_title": "A Localized Hybrid Finite Element--Random Feature Method for Elliptic Interface Problems on Unfitted Meshes",
       "paper_date": "2026-10-08",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-10T14:55:52",
+      "generated_at": "2026-10-11T15:12:35",
       "generator": "openai"
     }
   },
@@ -229,29 +229,29 @@
         "url": "https://arxiv.org/pdf/2610.10874v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Ceramic performance is controlled by the chain from atomic bonding and processing to microstructure and, ultimately, mechanical, thermal, electrical, and biomedical properties.",
-      "engineering_relevance": "The review shows how processing choices such as sintering, sol--gel, and additive manufacturing can tune density, porosity, phase stability, and functionality in advanced ceramic components and implants.",
+      "key_insight": "Ceramic performance is controlled by the full processing–microstructure–property chain, where atomic bonding and defects dictate the trade-off between extreme hardness/stability and brittle fracture.",
+      "engineering_relevance": "The review highlights how sintering, sol–gel, and additive manufacturing can be used to tune density, porosity, phase stability, and biofunctionality for structural and biomedical ceramic design.",
       "method": [
-        "Conventional sintering to increase densification and control grain growth",
-        "Sol--gel processing for composition and microstructure control",
-        "Additive manufacturing for complex geometry and tailored porosity"
+        "Conventional sintering for densification and grain growth control",
+        "Sol–gel processing for composition and microstructure tailoring",
+        "Additive manufacturing for geometry, porosity, and multimaterial architectures"
       ],
-      "evidence_signal": "This is a narrative review that synthesizes prior studies on structure--property relationships, biomedical ceramic classes, and processing routes rather than presenting a new dataset or benchmark.",
-      "watch_item": "Ceramics remain vulnerable to brittle fracture, flaw sensitivity, and the porosity--strength trade-off, so improved processing must balance performance with reliability.",
+      "evidence_signal": "This is a review article synthesizing reported relationships across ceramic systems rather than presenting a single new experimental dataset or benchmark.",
+      "watch_item": "A major implementation concern is the porosity–strength trade-off and sensitivity to flaws, residual stresses, and processing heterogeneity.",
       "hashtags": [
         "#Ceramics",
-        "#MaterialsEngineering",
+        "#MaterialsScience",
         "#Microstructure",
         "#AdditiveManufacturing",
-        "#Biomaterials"
+        "#Bioceramics"
       ],
       "paper_id": "2026-10-07-arxiv-ceramic_materials_from_atomic_bonding_and_processing_to_microstructure_functional_properti",
       "paper_title": "Ceramic Materials: From Atomic Bonding and Processing to Microstructure, Functional Properties, and Biomedical Applications",
       "paper_date": "2026-10-07",
       "paper_category": "Composites and Metamaterials",
-      "generated_at": "2026-10-10T14:55:54",
+      "generated_at": "2026-10-11T15:12:37",
       "generator": "openai"
     }
   },
@@ -281,29 +281,29 @@
         "url": "https://arxiv.org/pdf/2610.10081v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Micropillar compression reveals that in anorthite, mechanical twinning is the easiest deformation mode (~300 MPa CRSS) while slip strength depends strongly on temperature, especially for specific slip systems.",
-      "engineering_relevance": "These quantified deformation thresholds improve constitutive modeling of plagioclase-rich crustal rocks, helping predict when brittle vs. plastic behavior will control crustal rheology.",
+      "key_insight": "Micropillar compression shows that in anorthite, mechanical twinning is easier than slip, with twinning CRSS near 300 MPa and slip strength dropping strongly as temperature rises.",
+      "engineering_relevance": "These measurements help constrain crustal rheology models by providing quantitative, temperature-dependent plasticity parameters for a major rock-forming mineral.",
       "method": [
-        "Focused-ion-beam milled ~1 µm micropillars from three crystal orientations",
-        "Compressed 36 pillars inside an SEM at 25, 300, or 800 °C",
-        "Measured yield stress and inferred CRSS for twinning and slip systems"
+        "Focused-ion-beam milled ~1 μm micropillars from three crystal orientations of anorthite single crystals.",
+        "Compressed 36 pillars inside an SEM at 25, 300, and 800 °C under ~0.001 s⁻¹ strain rate.",
+        "Compared activation of twinning and multiple slip systems from observed pillar deformation responses."
       ],
-      "evidence_signal": "The study uses uniaxial SEM micropillar tests on 36 anorthite pillars to compare temperature-dependent yield behavior and resolve activation of twinning versus distinct slip systems.",
-      "watch_item": "Micropillar results probe small, oriented volumes and may not fully capture scaling, defects, or interaction effects present in natural polycrystalline crustal rocks.",
+      "evidence_signal": "The study reports deformation data from 36 micropillar tests, showing a temperature-insensitive twinning CRSS around 300 MPa and a marked temperature-dependent reduction in slip yield stress.",
+      "watch_item": "Micropillar results capture single-crystal, small-scale behavior and may not fully represent polycrystalline crustal deformation where defects, grain interactions, and brittle failure can dominate.",
       "hashtags": [
+        "#SolidMechanics",
         "#ConstitutiveModeling",
-        "#CrystalPlasticity",
         "#MicropillarCompression",
-        "#Anorthite",
+        "#CrystalPlasticity",
         "#Geomechanics"
       ],
       "paper_id": "2026-10-07-arxiv-quantification_of_plastic_deformation_in_anorthite_using_micropillar_compression",
       "paper_title": "Quantification of plastic deformation in anorthite using micropillar compression",
       "paper_date": "2026-10-07",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-10T14:55:57",
+      "generated_at": "2026-10-11T15:12:41",
       "generator": "openai"
     }
   },
@@ -332,29 +332,29 @@
         "url": "https://arxiv.org/pdf/2610.08997v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "The paper shows that fracture in highly deformable thin structures must be modeled together with large geometric changes, and it does so with a unified discrete differential geometry phase-field framework.",
-      "engineering_relevance": "The method helps design flexible, damage-tolerant thin structures such as flexible electronics by predicting how cracks, bending, snapping, and reconfiguration interact during loading.",
+      "key_insight": "A discrete differential geometry phase-field model can couple large deformation, bending, and crack growth on the same thin-surface mesh, enabling realistic fracture simulation of highly flexible structures.",
+      "engineering_relevance": "The framework helps predict and design damage-tolerant thin devices such as flexible electronics, where geometry change and fracture strongly influence performance.",
       "method": [
-        "Discrete differential geometry on a triangulated midsurface for membrane and bending elasticity",
-        "Phase field defined on the same surface to track crack initiation and growth",
-        "Staggered solve with active-set irreversibility plus degradation-deletion for full crack opening"
+        "Formulate membrane and bending elasticity from discrete geometric measures on a triangulated midsurface.",
+        "Define the phase field on the same surface and solve the coupled fracture problem with a staggered scheme plus active-set irreversibility.",
+        "Use degradation-deletion of nearly failed elements to allow full crack opening and post-fracture reconfiguration."
       ],
-      "evidence_signal": "The abstract reports close agreement with geometrically nonlinear finite element results in 2D and successful 3D tearing simulations that reproduce crack convergence, coalescence, snap-through, and island--bridge behavior.",
-      "watch_item": "The degradation-deletion and topology reconstruction steps may add implementation complexity and could be sensitive to mesh quality and parameter choices.",
+      "evidence_signal": "The abstract reports close agreement with geometrically nonlinear finite-element results for 2D fracture and successful reproduction of 3D tearing behaviors, including crack convergence/coalescence and island-bridge snap-through.",
+      "watch_item": "The degradation-deletion/topology reconstruction step may be sensitive to mesh quality and threshold choices, especially for complex crack paths.",
       "hashtags": [
-        "#FractureMechanics",
-        "#PhaseField",
+        "#PhaseFieldFracture",
         "#DiscreteDifferentialGeometry",
         "#ThinStructures",
-        "#FlexibleElectronics"
+        "#FlexibleElectronics",
+        "#ComputationalMechanics"
       ],
       "paper_id": "2026-10-06-arxiv-phase_field_fracture_simulation_of_highly_deformable_thin_structures_via_a_discrete_differ",
       "paper_title": "Phase-Field Fracture Simulation of Highly Deformable Thin Structures via a Discrete Differential Geometry Framework",
       "paper_date": "2026-10-06",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-10T14:55:59",
+      "generated_at": "2026-10-11T15:12:44",
       "generator": "openai"
     }
   },
@@ -383,17 +383,17 @@
         "url": "https://arxiv.org/pdf/2610.11120v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "The paper shows that neural operators can be built directly from numerical discretizations, suggesting they may learn the underlying finite element/finite difference scheme rather than an abstract PDE operator alone.",
-      "engineering_relevance": "This provides a more interpretable and parameter-efficient path to surrogate models for PDE-based solid mechanics and other FEM-driven simulations.",
+      "key_insight": "The paper shows that neural operators can be constructed from finite element and time-stepping schemes, linking operator learning directly to classical numerical discretization.",
+      "engineering_relevance": "This provides a more interpretable and potentially parameter-efficient surrogate modeling path for PDE and solid mechanics simulations trained on numerical data.",
       "method": [
-        "Constructs neural operator basis functions using finite element concepts, either by approximating or directly learning the basis with neural networks.",
-        "Unrolls finite-difference time stepping into iterative neural architectures that produce basis coefficients.",
-        "Uses numerical analysis to derive convergence/error bounds for these discretization-inspired operator networks."
+        "Approximate or directly learn finite element basis functions with neural networks.",
+        "Unroll finite-difference time discretization into an iterative neural architecture.",
+        "Use numerical analysis to derive convergence/error bounds and polynomial network-size scaling in $L_2$ error."
       ],
-      "evidence_signal": "The abstract reports numerical experiments showing reduced errors and improved parameter efficiency, alongside theoretical convergence estimates with polynomial network-size dependence on L2 accuracy.",
-      "watch_item": "Performance may depend on the chosen discretization and PDE class, so the approach may not transfer equally well to all operator-learning settings or mesh types.",
+      "evidence_signal": "Numerical experiments in the paper report reduced errors and improved parameter efficiency for the numerically derived neural operators.",
+      "watch_item": "Performance and convergence may depend on the specific PDE class, discretization quality, and how faithfully the learned basis functions match the underlying numerical scheme.",
       "hashtags": [
         "#NeuralOperators",
         "#FiniteElementMethod",
@@ -405,7 +405,7 @@
       "paper_title": "Numerical Neural Operator: Connection Between Numerical Analysis and the Operator Learning and Building Discretized Neural Operators from Finite Element Methods",
       "paper_date": "2026-10-08",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-10T14:56:02",
+      "generated_at": "2026-10-11T15:12:46",
       "generator": "openai"
     }
   },
@@ -434,29 +434,29 @@
         "url": "https://arxiv.org/pdf/2610.10449v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "SAGE-PINN makes axisymmetric cylindrical flow PINNs stable by reparameterizing the radial coordinate and embedding conservation and boundary conditions into the network, removing the usual axis singularity.",
-      "engineering_relevance": "This enables mesh-free simulation of coupled flow and heat-transfer problems in cylindrical geometries, such as stenosed arteries, without case-specific tuning.",
+      "key_insight": "SAGE-PINN embeds axisymmetric cylindrical geometry and conservation laws directly into the network to remove singularity issues at the axis while learning coupled flow and heat transfer without labeled data.",
+      "engineering_relevance": "It offers a mesh-free way to simulate stenosed-artery nanofluid flow and thermal transport in cylindrical geometries, which is useful for biomedical and multiphysics design studies.",
       "method": [
-        "Uses the parity-preserving variable s = r^2 to eliminate explicit 1/r singular terms.",
-        "Employs a modified stream-function form so mass conservation is satisfied identically.",
-        "Adds boundary-fitted analytical ansätze, staged momentum-thermal joint training, residual normalization, and continuation in Péclet and Richardson numbers."
+        "Uses the parity-preserving variable s = r^2 and a modified stream-function form to eliminate explicit 1/r singular terms.",
+        "Enforces boundary conditions analytically with boundary-fitted ansätze so constraints are satisfied exactly.",
+        "Stabilizes training with staged momentum-thermal-joint optimization, residual normalization, parameter continuation, and a drift guard."
       ],
-      "evidence_signal": "Validated against finite-element reference solutions for steady nanofluid flow and heat transfer, achieving single-precision mass conservation and central-range errors of about 1.6% for axial velocity and 9.1% for temperature.",
-      "watch_item": "Accuracy degrades in extreme regimes, especially strongly buoyancy-driven slow flow and highly advection-dominated heat transfer.",
+      "evidence_signal": "Validated against finite-element reference solutions, achieving single-precision mass conservation and central-range errors of about 1.6% for axial velocity and 9.1% for temperature.",
+      "watch_item": "Performance degrades in extreme regimes, especially strongly buoyancy-influenced slow flow and highly advection-dominated heat transfer, so careful continuation and tuning may still be needed.",
       "hashtags": [
         "#PINN",
+        "#PhysicsInformedML",
         "#AxisymmetricFlow",
         "#CylindricalCoordinates",
-        "#Multiphysics",
-        "#ScientificMachineLearning"
+        "#Multiphysics"
       ],
       "paper_id": "2026-10-07-arxiv-sage_pinn_a_singularity_free_axisymmetric_geometry_encoded_physics_informed_neural_network",
       "paper_title": "SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates",
       "paper_date": "2026-10-07",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-10-10T14:56:05",
+      "generated_at": "2026-10-11T15:12:48",
       "generator": "openai"
     }
   },
@@ -487,184 +487,29 @@
         "url": "https://arxiv.org/pdf/2610.09433v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "The paper extends deep energy methods to thermo-mechanical fracture by modeling a sharp crack directly in neural solvers, enabling coupled heat conduction, thermoelasticity, and crack growth without a phase-field length scale.",
-      "engineering_relevance": "This provides a data-efficient framework for predicting temperature-driven crack initiation and propagation in structures where thermal loading and mechanical stress interact.",
+      "key_insight": "The paper extends deep energy methods to thermo-mechanical fracture by coupling sharp-crack heat conduction, thermoelasticity, and crack growth in a single neural energy framework.",
+      "engineering_relevance": "It provides a mesh-free surrogate for predicting crack initiation and propagation under coupled thermal and mechanical loading, which is useful for design and damage assessment.",
       "method": [
-        "Two neural networks learn temperature and displacement fields on a cracked domain.",
-        "A discontinuous scalar embedding lets fields jump across the sharp crack, while Williams-tip enrichment improves crack-tip accuracy.",
-        "Training minimizes incremental conduction and thermoelastic energy in a staggered scheme with Monte Carlo sampling refined near the crack tip."
+        "Two neural networks predict temperature and displacement, both conditioned on a sharp-crack embedding function so fields can jump across the crack without phase-field regularization.",
+        "The displacement field is enriched near the crack tip with the Williams expansion and trainable amplitudes.",
+        "Training alternates between conduction and thermoelastic energy minimization, using stratified Monte Carlo sampling with extra points near the tip and resampling during optimization."
       ],
-      "evidence_signal": "The method matches a published stress intensity factor for a stationary thermal edge crack to 0.11% and reproduces crack initiation and paths on graded and cruciform benchmark problems.",
-      "watch_item": "Performance depends on careful crack-tip sampling, contour-radius checks for stress intensity factors, and accurate implementation of the sharp-crack embedding and tip enrichment.",
+      "evidence_signal": "The method is validated on benchmark problems, including a stationary thermal edge crack with a stress intensity factor error of 0.11%, a functionally graded shear test matching a sharp-crack FEM result within one load step, and a cruciform specimen whose crack paths agree with published solutions.",
+      "watch_item": "Accuracy and stability depend on tip enrichment, contour-radius selection for stress intensity extraction, and the staggered training/sampling strategy.",
       "hashtags": [
-        "#FractureMechanics",
-        "#ThermoMechanical",
         "#DeepEnergyMethod",
-        "#PhysicsInformedML",
+        "#ThermoMechanicalFracture",
+        "#CrackPropagation",
+        "#PhysicsInformedAI",
         "#ComputationalMechanics"
       ],
       "paper_id": "2026-10-07-arxiv-an_extended_deep_energy_method_for_thermo_mechanical_crack_propagation",
       "paper_title": "An extended deep energy method for thermo-mechanical crack propagation",
       "paper_date": "2026-10-07",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-10T14:56:08",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-04-arxiv-on_finite_elements_for_geometrically_exact_planar_beams_with_hyperelastic_material_models",
-    "arxiv_id": "2610.05231v1",
-    "date": "2026-10-04",
-    "title": "On finite elements for geometrically-exact planar beams with hyperelastic material models",
-    "authors": "Abhishek Ghosh, Chennakesava Kadapa, Djordje Peric, Mokarram Hossain",
-    "abstract": "A geometrically-exact planar beam finite-element framework is developed for the analysis of beams with hyperelastic constitutive models. A conventional three-field beam model is first formulated with full geometrical nonlinearity and a linear elastic material law. The kinematics are then enriched by an additional global field that permits deformation through the in-plane thickness. The out-of-plane direction is incorporated separately through plane-strain and plane-stress constitutive reductions, allowing the cross-sectional deformation assumptions and constitutive behaviour to be formulated independently. Numerical results for the present benchmarks show that the plane-stress condition gives essentially coincident centreline deformations for the Poisson's ratio values considered. In contrast, the plane-strain condition, which is widely employed in the literature, makes the formulation sensitive to Poisson's ratio coupling, with the beam becoming significantly stiffer at higher Poisson's ratios. Comparisons between Saint Venant-Kirchhoff and Neo-Hookean hyperelastic models further demonstrate close agreement in the global deformation and in-plane thickness response, with small constitutive differences becoming more apparent in the local out-of-plane stretch. The proposed approach offers a simple and consistent framework to integrate hyperelastic material models into planar geometrically-exact beam models.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-10-04T13:52:29Z",
-    "updated": "2026-10-04T13:52:29Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA",
-      "physics.comp-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05231v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05231v1"
-      }
-    ],
-    "score": 66,
-    "infographic": {
-      "key_insight": "A geometrically exact planar beam model can incorporate hyperelasticity cleanly by separating cross-sectional kinematics from constitutive plane-stress or plane-strain reductions.",
-      "engineering_relevance": "This gives a more consistent way to model beam bending and thickness changes in large-deformation simulations, especially when Poisson's ratio effects matter.",
-      "method": [
-        "Start from a conventional three-field geometrically exact planar beam formulation.",
-        "Enrich the kinematics with a global in-plane thickness deformation field.",
-        "Treat the out-of-plane response independently using either plane-stress or plane-strain constitutive reduction for hyperelastic laws."
-      ],
-      "evidence_signal": "The abstract reports benchmark comparisons showing plane-stress gives nearly identical centerline deformation across Poisson's ratios, while plane-strain becomes much stiffer at higher Poisson's ratios; Saint Venant-Kirchhoff and Neo-Hookean models also agree closely overall.",
-      "watch_item": "Plane-strain assumptions can introduce strong Poisson's ratio sensitivity and over-stiffen the beam, so the constitutive reduction must be chosen carefully.",
-      "hashtags": [
-        "#FiniteElements",
-        "#GeometricallyExactBeams",
-        "#Hyperelasticity",
-        "#SolidMechanics",
-        "#ConstitutiveModeling"
-      ],
-      "paper_id": "2026-10-04-arxiv-on_finite_elements_for_geometrically_exact_planar_beams_with_hyperelastic_material_models",
-      "paper_title": "On finite elements for geometrically-exact planar beams with hyperelastic material models",
-      "paper_date": "2026-10-04",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-10T14:56:11",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-04-arxiv-identifying_plastic_inorganic_semiconductors_requires_more_rigorous_criteria",
-    "arxiv_id": "2610.07007v1",
-    "date": "2026-10-04",
-    "title": "Identifying Plastic Inorganic Semiconductors Requires More Rigorous Criteria",
-    "authors": "Qiao Wang",
-    "abstract": "The identification of plastic inorganic semiconductors becomes challenging when their mechanical responses depend on crystallographic orientation, sample size, and loading conditions. Using layered GeSe as a model system, we examine its deformation behavior through macroscopic compression, bending, conventional micropillar compression, and eccentric micropillar compression. Under macroscopic compression perpendicular to the layers, GeSe sustains approximately 23% strain without fracture, whereas bending along the c-axis armchair direction produces brittle cleavage fracture. Conventional micropillar compression results in brittle fragmentation, while eccentric loading introduces a shear component that activates pronounced interlayer sliding and accommodates deformation. These contrasting responses reflect the coupled effects of bonding topology, interlayer van der Waals interactions, defect density, stress constraints, and strain path on the competition between sliding and fracture. The results highlight the limitations of identifying plasticity from a single direction, scale, or test and support a systematic evaluation framework combining multiple directions, length scales, loading modes, and characterization techniques. More rigorous and unified criteria are needed to guide reliable materials selection for flexible electronics and devices integrated on curved surfaces.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-10-04T12:57:32Z",
-    "updated": "2026-10-04T12:57:32Z",
-    "primary_category": "cond-mat.mtrl-sci",
-    "categories": [
-      "cond-mat.mtrl-sci",
-      "physics.chem-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.07007v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.07007v1"
-      }
-    ],
-    "score": 66,
-    "infographic": {
-      "key_insight": "GeSe can appear highly plastic in some loading paths yet fracture brittly in others, so plasticity in inorganic semiconductors must be judged across multiple orientations, scales, and deformation modes.",
-      "engineering_relevance": "For flexible and curved-surface electronics, material selection should rely on a broader mechanical screening framework rather than a single compression test or crystal direction.",
-      "method": [
-        "Macroscopic compression perpendicular to layers",
-        "Bending along the c-axis armchair direction",
-        "Conventional and eccentric micropillar compression"
-      ],
-      "evidence_signal": "The abstract reports ~23% strain without fracture in macroscopic compression, but brittle cleavage in bending and fragmentation in conventional micropillar tests, with eccentric micropillar loading enabling interlayer sliding.",
-      "watch_item": "A positive plasticity result from one specimen geometry or loading mode may not generalize because response depends strongly on orientation, sample size, and stress state.",
-      "hashtags": [
-        "#SolidMechanics",
-        "#ConstitutiveModeling",
-        "#FlexibleElectronics",
-        "#Plasticity",
-        "#GeSe"
-      ],
-      "paper_id": "2026-10-04-arxiv-identifying_plastic_inorganic_semiconductors_requires_more_rigorous_criteria",
-      "paper_title": "Identifying Plastic Inorganic Semiconductors Requires More Rigorous Criteria",
-      "paper_date": "2026-10-04",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-10T14:56:13",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-08-arxiv-a_posteriori_error_estimation_for_coarse_or_distorted_meshes",
-    "arxiv_id": "2610.12088v1",
-    "date": "2026-10-08",
-    "title": "A posteriori error estimation for coarse or distorted meshes",
-    "authors": "Franz Chouly, Michel Duprez, Claudio Lobos, Zuqi Tang",
-    "abstract": "Finite element simulations carried out on meshes issued from real-world geometries - patient-specific anatomies, scanned industrial parts, fractured media - almost never satisfy the shape-regularity assumptions under which classical a posteriori error analysis is written. Practitioners are therefore left without a quantitative answer to a very legitimate question: how wrong is my simulation when my mesh is coarse and contains badly shaped elements? In this work, we study to which extent equilibrated flux estimators can provide such an answer. Indeed, they deliver a guaranteed and fully computable upper bound of the energy-norm discretization error, with a constant equal to one; and, crucially for the present study, its derivation uses no shape-regularity, quasi-uniformity or angle condition. The only geometric ingredient is the Poincaré constant on a single cell, which Payne and Weinberger showed to be at most hK /pi on any convex cell K, however distorted (hK being the cell size). Mesh quality affects the local efficiency - the sharpness of the estimator - but never its reliability, so that the failure mode under distortion is pessimism rather than false confidence.",
-    "category": "Fracture and Damage",
-    "source": "arXiv",
-    "published": "2026-10-08T14:58:00Z",
-    "updated": "2026-10-08T14:58:00Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.12088v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.12088v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "Equilibrated flux estimators can still provide a guaranteed, fully computable upper bound for finite-element energy error even on coarse or badly distorted meshes, without shape-regularity assumptions.",
-      "engineering_relevance": "This gives engineers a reliable way to quantify simulation error for real-world geometries and poor-quality meshes, where classical a posteriori theory may not apply.",
-      "method": [
-        "Use equilibrated fluxes to bound the energy-norm discretization error.",
-        "Exploit only local cell geometry via the Poincaré constant, not global mesh regularity.",
-        "Leverage the Payne–Weinberger bound on convex cells: Poincaré constant ≤ h_K/π."
-      ],
-      "evidence_signal": "The abstract argues analytically that reliability is preserved under distortion, with the main impact of poor mesh quality being reduced local efficiency rather than loss of guaranteed bounds.",
-      "watch_item": "The estimator may become pessimistic on highly distorted meshes, so a valid bound does not necessarily mean a sharp error estimate.",
-      "hashtags": [
-        "#FiniteElements",
-        "#APosterioriError",
-        "#MeshQuality",
-        "#EquilibratedFlux",
-        "#SolidMechanics"
-      ],
-      "paper_id": "2026-10-08-arxiv-a_posteriori_error_estimation_for_coarse_or_distorted_meshes",
-      "paper_title": "A posteriori error estimation for coarse or distorted meshes",
-      "paper_date": "2026-10-08",
-      "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-10T14:56:16",
+      "generated_at": "2026-10-11T15:12:51",
       "generator": "openai"
     }
   },
@@ -693,29 +538,29 @@
         "url": "https://arxiv.org/pdf/2610.10913v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "A 4D CTA pipeline can produce patient-specific ascending aortic strain maps that are reproducible across segmentation sources and preserve low-frequency mechanical patterns well.",
-      "engineering_relevance": "This enables noninvasive, geometry-aware assessment of aortic wall mechanics that could support risk stratification and clinical decision-making.",
+      "key_insight": "A validated 4D CTA pipeline can reproducibly map patient-specific ascending aortic strain, with median strain estimates remaining robust across segmentation sources and scales.",
+      "engineering_relevance": "This provides a practical surrogate-mechanics tool for noninvasive assessment of aortic wall behavior that could support risk stratification and patient-specific cardiovascular planning.",
       "method": [
-        "nnU-Net or observer segmentations were surface-remeshed and deformably registered across 4D CTA phases.",
-        "Mesh-based strain was estimated and validated against FE-derived synthetic 4D CT deformations.",
-        "Laplace-Beltrami spectral reconstructions were used to test strain reliability across spatial scales."
+        "nnU-Net or observer segmentations were remeshed into patient-specific aortic surfaces.",
+        "Deformable registration between 4D CTA phases was validated using FE-generated synthetic sequences.",
+        "Mesh-based strain was analyzed across Laplace-Beltrami spectral scales to test spatial robustness."
       ],
-      "evidence_signal": "Median strain showed minimal bias versus FE reference and narrow limits of agreement across segmentation sources, while 95th-percentile strain was more variable and related inversely to diameter, AHI, and age.",
-      "watch_item": "Higher-percentile strain metrics are more sensitive to segmentation variability and may require careful standardization before clinical use.",
+      "evidence_signal": "Median strain showed minimal bias versus FE reference and narrow interobserver / model-versus-observer limits of agreement, while 95th-percentile strain was more sensitive to segmentation differences and linked to diameter, AHI, and age.",
+      "watch_item": "High-percentile and regional strain measures are more segmentation-sensitive, so implementation quality and preprocessing consistency are critical for clinical use.",
       "hashtags": [
         "#AorticMechanics",
         "#4DCTA",
         "#FiniteElementModeling",
-        "#MedicalImaging",
-        "#StrainMapping"
+        "#MedicalImagingAI",
+        "#DigitalTwins"
       ],
       "paper_id": "2026-10-07-arxiv-toward_reliable_patient_specific_aortic_strain_mapping_from_4d_cta_validation_spectral_str",
       "paper_title": "Toward Reliable Patient-Specific Aortic Strain Mapping from 4D CTA: Validation, Spectral Structure, and Clinical Potential",
       "paper_date": "2026-10-07",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-10T14:56:18",
+      "generated_at": "2026-10-11T15:12:54",
       "generator": "openai"
     }
   },
@@ -745,29 +590,29 @@
         "url": "https://arxiv.org/pdf/2610.11527v1"
       }
     ],
-    "score": 63,
+    "score": 58,
     "infographic": {
-      "key_insight": "AtomWorld-Mirror learns a time-aware macro-step model that jumps between physically reachable atomic states, capturing critical evolution while skipping many low-impact micro-events.",
-      "engineering_relevance": "This could dramatically accelerate long-horizon materials simulation for damage, diffusion, aging, and fracture without losing structural validity or time semantics.",
+      "key_insight": "AtomWorld-Mirror replaces slow event-by-event atomistic simulation with a time-aware macro-step model that predicts physically reachable structural changes and elapsed time for long-term materials evolution.",
+      "engineering_relevance": "This could enable much faster forecasting of fracture, damage, diffusion, and irradiation-driven microstructure evolution while preserving key physical constraints needed for engineering analysis.",
       "method": [
-        "Distills short atomistic micro-event segments into reusable latent macro-step dynamics",
-        "Predicts sparse structural edits plus accumulated physical time in a single transition",
-        "Uses local reachability, inventory conservation, and continuous-time consistency constraints"
+        "Learns latent macro-step dynamics from short micro-event segments.",
+        "Predicts sparse structural edits plus accumulated physical time in one step.",
+        "Uses local reachability, inventory conservation, and continuous-time consistency constraints."
       ],
-      "evidence_signal": "The abstract reports evaluation across five atomic systems, including Cu-rich RPV steel irradiation aging, Cu-Zr metallic glass, and Li$_3$N-based anti-perovskite solid electrolyte, with 10^3 to 10^4× speedup over event-by-event simulation.",
-      "watch_item": "Macro-step inference must still reliably preserve rare-event physics and conservation constraints when extrapolating to unfamiliar materials or longer time horizons.",
+      "evidence_signal": "The abstract reports evaluation across five atomic systems, including Cu-rich RPV steel, Cu-Zr metallic glass, and Li3N-based anti-perovskite solid electrolyte, with 10^3 to 10^4 speedups over event-by-event simulation.",
+      "watch_item": "Macro-step inference must still be validated carefully for rare-event fidelity and out-of-distribution material states, where coarse transitions could miss critical local mechanisms.",
       "hashtags": [
-        "#MaterialsSimulation",
-        "#AtomisticModeling",
+        "#MaterialsDynamics",
+        "#AtomisticSimulation",
         "#WorldModeling",
         "#FractureAndDamage",
-        "#ScientificAI"
+        "#MultiscaleModeling"
       ],
       "paper_id": "2026-10-08-arxiv-atomworld_mirror_macro_step_world_modeling_of_critical_evolution_backbones_for_materials_d",
       "paper_title": "AtomWorld-Mirror: Macro-Step World Modeling of Critical Evolution Backbones for Materials Dynamics",
       "paper_date": "2026-10-08",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-10T14:56:20",
+      "generated_at": "2026-10-11T15:12:56",
       "generator": "openai"
     }
   },
@@ -796,19 +641,19 @@
         "url": "https://arxiv.org/pdf/2610.07151v1"
       }
     ],
-    "score": 63,
+    "score": 58,
     "infographic": {
-      "key_insight": "Constitutive-Set Mechanics replaces a single guessed material law with the whole admissible set, then uses the structure's own variational solve to certify robust bounds and identify which constitutive possibilities actually matter.",
-      "engineering_relevance": "This gives designers a way to quantify uncertainty in structural response when tests do not uniquely determine the material law, improving reliability for components with sparse or biased experimental data.",
+      "key_insight": "CSM replaces a single constitutive law with an admissible set and uses the structure’s own strain history to bound and select the robust response.",
+      "engineering_relevance": "This lets engineers quantify worst-case structural behavior when experiments cannot uniquely identify the material law, improving uncertainty-aware design and certification.",
       "method": [
-        "Formulate mechanics on an admissible set of constitutive laws instead of one law.",
-        "Use the occupation measure of strains reached by the structure to build a support-function energy over the set.",
-        "Extract equilibrium-based certificates for worst-case response and constitutive inference, with tighter results under global minimization."
+        "Formulate mechanics variationally over a set of admissible constitutive laws instead of one law.",
+        "Use the occupation measure of reached strains to turn the set response into a support-function energy.",
+        "Solve equilibrium to obtain rigorous upper bounds, with two-sided certificates under global minimization."
       ],
-      "evidence_signal": "The abstract reports demonstrations on linear elasticity, phase-field fracture, a finite-strain composite shell, and a membrane case where the certified worst-case energy exceeded the reference by more than fourfold.",
-      "watch_item": "The framework depends on the admissible constitutive set and on solving equilibrium problems accurately, so practical use may be sensitive to how that set is defined and how well the solver explores the relevant state space.",
+      "evidence_signal": "The paper demonstrates CSM on linear elasticity, fracture, a finite-strain composite shell, and a membrane; in one shell case the structure interrogates only 4 of 226 constitutive directions, and the membrane’s certified worst-case energy exceeds the reference by more than 4×.",
+      "watch_item": "The approach depends on reliable admissible-set specification and can be computationally sensitive when the constitutive space is large or poorly constrained.",
       "hashtags": [
-        "#SolidMechanics",
+        "#ComputationalMechanics",
         "#ConstitutiveModeling",
         "#UncertaintyQuantification",
         "#FiniteElementMethod",
@@ -818,7 +663,7 @@
       "paper_title": "Constitutive-Set Mechanics: variational mechanics on an admissible set of constitutive laws",
       "paper_date": "2026-10-05",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-10T14:56:23",
+      "generated_at": "2026-10-11T15:12:58",
       "generator": "openai"
     }
   },
@@ -847,29 +692,29 @@
         "url": "https://arxiv.org/pdf/2610.06705v1"
       }
     ],
-    "score": 63,
+    "score": 58,
     "infographic": {
-      "key_insight": "The paper reformulates phase-field fracture for composite shells as a certified, replaceable constitutive operator that resolves shell strain into orthogonal deformation channels with exact algebraic closure.",
-      "engineering_relevance": "This enables fracture models for fibre-reinforced curved shells that can use either analytic or learned material laws while preserving plane-stress condensation, consistent tangents, and solver robustness.",
+      "key_insight": "The paper reformulates shell fracture as a mechanism-resolved phase-field model by treating the constitutive law as a certified operator over orthogonal strain invariants, enabling fibre, inter-fibre, and interaction damage channels to be modeled separately.",
+      "engineering_relevance": "This makes fracture predictions for curved fibre-reinforced shells more flexible and physically interpretable, especially when curvature and fibre orientation create through-thickness asymmetry that simpler midsurface models miss.",
       "method": [
-        "Maps Green-Lagrange strain through the shell metric and Cholesky factor into four orthogonal invariants.",
-        "Splits energy into fibre, inter-fibre, and interaction channels with channel-wise degradation and exact tension-compression treatment.",
-        "Adds a three-tier certification protocol for algebraic validity, solver state, and admissible training data."
+        "Pulls Green-Lagrange strain through the shell metric Cholesky factor and decomposes it into four orthogonal invariants with exact closure.",
+        "Expresses tension-compression split, channel-wise degradation, plane-stress condensation, and consistent tangent directly in channel potentials and derivatives.",
+        "Certifies admissible operators with algebraic/solver/training-data checks, allowing either closed-form or learned constitutive laws."
       ],
-      "evidence_signal": "Numerical tests on notched IM7/8552 shells show accurate behavior in thin and curved regimes, with fibre orientation controlling damage/load capacity and curvature causing through-thickness fracture asymmetry.",
-      "watch_item": "The framework relies on admissible operator conditions and positive residual stiffness for regular plane-stress condensation, so learned or custom laws must be carefully certified before deployment.",
+      "evidence_signal": "The approach is verified numerically on notched IM7/8552 shells, including thin and curved cases, and the results show that fibre orientation and curvature strongly affect the damage envelope and load capacity.",
+      "watch_item": "The framework adds implementation complexity because admissibility, condensation, and degradation must remain consistent for each operator and curved-shell state.",
       "hashtags": [
         "#PhaseFieldFracture",
         "#CompositeShells",
-        "#Mechanics",
-        "#FiniteElementMethod",
+        "#MechanicsML",
+        "#ComputationalSolidMechanics",
         "#DamageModeling"
       ],
       "paper_id": "2026-10-05-arxiv-mechanism_resolved_phase_field_fracture_of_composite_shells_with_a_certified_admissible_co",
       "paper_title": "Mechanism-resolved phase-field fracture of composite shells with a certified admissible constitutive operator",
       "paper_date": "2026-10-05",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-10T14:56:26",
+      "generated_at": "2026-10-11T15:13:01",
       "generator": "openai"
     }
   },
@@ -900,29 +745,29 @@
         "url": "https://arxiv.org/pdf/2610.11475v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "Rare ReLU gate disagreements, not the average gradient, control whether finite-batch SGD can recover after long pretraining; when those disagreements become too scarce, plasticity can fail even though gradient flow predicts recovery.",
-      "engineering_relevance": "For constitutive or surrogate modeling workflows that rely on pretrained neural networks, the result warns that optimization behavior under real minibatches can diverge sharply from population dynamics, especially after long source-task training.",
+      "key_insight": "Gradient-flow theory can substantially overestimate plasticity recovery after pretraining because rare ReLU gate disagreements, not the average dynamics, control whether finite-batch SGD can separate the units.",
+      "engineering_relevance": "For transfer, fine-tuning, and constitutive-model training, this means recovery may fail unless batch size and sample budget are large enough to resolve rare disagreement events, especially after long pretraining with weight decay.",
       "method": [
-        "Two-unit ReLU regression with a source task that aligns neurons and a target task that rewards separating them",
-        "Compare population gradient flow against exact online SGD with batch size b and step size η",
-        "Track how disagreement-region sampling probability, weight decay, and pretraining time T govern recovery vs. failure"
+        "Two-unit ReLU regression with a source task that aligns the neurons and a target task that rewards their separation.",
+        "Compare population gradient flow to online finite-batch SGD with step size η, batch size b, and weight decay λ across pretraining and target phases.",
+        "Track the exact online recursion and bound how often the model samples the narrow input wedge where the two gates disagree."
       ],
-      "evidence_signal": "The abstract reports that the failure appears with high probability after T \\gtrsim\\u007f log(b/η), requires long pretraining and small steps jointly, and was confirmed in simulations where recovery scales with the disagreement budget bδ/η and saturates with horizon.",
-      "watch_item": "The phenomenon is proved for a very specific two-unit ReLU setup, so translating the threshold laws directly to larger architectures or different nonlinearities may require revalidation.",
+      "evidence_signal": "The abstract reports theoretical recovery bounds plus simulations showing recovery depends mainly on the disagreement budget bδ/η and saturates with training horizon.",
+      "watch_item": "The result is sharp for the analyzed two-unit ReLU setting, so extending the conclusion to deeper or non-ReLU models may require new disagreement-geometry estimates.",
       "hashtags": [
-        "#NeuralNetworks",
+        "#GradientFlow",
         "#SGD",
         "#ReLU",
-        "#Plasticity",
+        "#TransferLearning",
         "#OptimizationTheory"
       ],
       "paper_id": "2026-10-08-arxiv-rare_gate_disagreements_can_limit_plasticity_when_gradient_flow_mispredicts_finite_batch_s",
       "paper_title": "Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD",
       "paper_date": "2026-10-08",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-10T14:56:29",
+      "generated_at": "2026-10-11T15:13:04",
       "generator": "openai"
     }
   },
@@ -952,29 +797,29 @@
         "url": "https://arxiv.org/pdf/2610.11076v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "SVC treats each singular-vector channel in an LLM as a controllable unit of plasticity, selectively updating only the channels that best balance new-domain learning with retention of pretrained knowledge.",
-      "engineering_relevance": "This offers a principled, parameter-efficient strategy for continual adaptation, helping domain-specialized models improve without severe catastrophic forgetting.",
+      "key_insight": "The paper treats each singular-vector channel as a controllable unit of plasticity, selectively updating only the channels most likely to help adaptation while limiting catastrophic forgetting.",
+      "engineering_relevance": "This offers a principled, parameter-efficient way to continually adapt large language models to new domains without erasing previously learned capabilities.",
       "method": [
-        "Estimate each channel’s adaptation benefit using domain-specific data.",
-        "Use a fixed public general-domain corpus to proxy forgetting cost.",
-        "Select trainable channels via knee-based cost screening, Pareto-front filtering, and Otsu thresholding."
+        "Estimate each channel’s adaptation benefit from domain-specific data.",
+        "Use a fixed public general-domain corpus as a proxy for forgetting cost.",
+        "Select trainable channels with knee-based screening, Pareto filtering, and Otsu thresholding."
       ],
-      "evidence_signal": "The method was evaluated across four LLM families and eight downstream tasks, where it preserved pretrained capabilities better than PEFT baselines while maintaining strong task performance.",
-      "watch_item": "Channel scoring depends on proxy estimates before fine-tuning, so performance may be sensitive to the choice of domain data, public corpus, and selection thresholds.",
+      "evidence_signal": "The method is evaluated across four LLM families and eight downstream tasks, where it improves preservation of pretrained knowledge while maintaining strong downstream performance.",
+      "watch_item": "Channel scoring depends on proxy datasets and thresholding choices, so performance may be sensitive to data selection and implementation details.",
       "hashtags": [
         "#ContinualLearning",
-        "#LLM",
         "#PEFT",
+        "#LLMAdaptation",
         "#CatastrophicForgetting",
-        "#ModelSelection"
+        "#SingularVectors"
       ],
       "paper_id": "2026-10-08-arxiv-stability_plasticity_balance_via_singular_vector_selection_in_llm_continual_learning",
       "paper_title": "Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning",
       "paper_date": "2026-10-08",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-10T14:56:31",
+      "generated_at": "2026-10-11T15:13:05",
       "generator": "openai"
     }
   },
@@ -1005,29 +850,182 @@
         "url": "https://arxiv.org/pdf/2610.07236v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "Learn the dissipation potential with a convex, frame-indifferent neural network so the constitutive law remains physically well-posed while fitting only velocity data.",
-      "engineering_relevance": "This gives a safer way to identify complex-fluid material laws from indirect measurements and improves robustness when transferring to new geometries or unstable flow regimes.",
+      "key_insight": "Learn the dissipation potential with an input-convex neural network so the resulting constitutive law remains physically well-posed, even for indirect velocity-only data.",
+      "engineering_relevance": "This gives a robust way to identify complex-fluid models that generalize to new geometries and avoid unstable or nonphysical PDE behavior.",
       "method": [
-        "Use an input-convex neural network to represent the dissipation potential.",
-        "Enforce frame-indifference, evenness, and convexity by construction; penalize nonzero gradient at the origin for dissipativity.",
-        "Couple Firedrake and PyTorch to solve the PDE-constrained inverse problem and compute the loss gradient."
+        "Use an input-convex neural architecture (ICNNE) to enforce convexity by design.",
+        "Impose frame-indifference and evenness in the second strain-rate invariant through symmetrization.",
+        "Add a penalty to make the potential dissipative by encouraging zero gradient at the origin; train with Firedrake + PyTorch coupling."
       ],
-      "evidence_signal": "The approach was tested on four benchmarks: compressible Navier-Stokes, Herschel-Bulkley flow, Hibler sea-ice rheology, and DEM data, showing recovery of known physics, geometric transfer, and improved stability where unstructured methods diverge.",
-      "watch_item": "The method depends on careful symmetrization and weak dissipation enforcement, so training and implementation may be sensitive near very small strain rates.",
+      "evidence_signal": "The approach is tested on four settings—compressible Navier-Stokes, Herschel-Bulkley, Hibler sea-ice, and DEM data—and the learned potentials recover known physics, transfer to unseen geometries, and remain stable where unstructured methods diverge.",
+      "watch_item": "The method relies on careful PDE-constrained optimization and penalty tuning, so training stability and implementation complexity may limit adoption.",
       "hashtags": [
-        "#SolidMechanics",
         "#ConstitutiveModeling",
         "#PhysicsInformedML",
         "#NeuralPDE",
-        "#ComputationalMechanics"
+        "#SolidMechanics",
+        "#ComputationalScience"
       ],
       "paper_id": "2026-10-05-arxiv-well_posed_by_design_learning_constitutive_laws_from_velocity_data_using_convex_neural_net",
       "paper_title": "Well-posed by Design: Learning Constitutive Laws from Velocity Data using Convex Neural Network Potentials",
       "paper_date": "2026-10-05",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-10T14:56:34",
+      "generated_at": "2026-10-11T15:13:08",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-08-arxiv-a_posteriori_error_estimation_for_coarse_or_distorted_meshes",
+    "arxiv_id": "2610.12088v1",
+    "date": "2026-10-08",
+    "title": "A posteriori error estimation for coarse or distorted meshes",
+    "authors": "Franz Chouly, Michel Duprez, Claudio Lobos, Zuqi Tang",
+    "abstract": "Finite element simulations carried out on meshes issued from real-world geometries - patient-specific anatomies, scanned industrial parts, fractured media - almost never satisfy the shape-regularity assumptions under which classical a posteriori error analysis is written. Practitioners are therefore left without a quantitative answer to a very legitimate question: how wrong is my simulation when my mesh is coarse and contains badly shaped elements? In this work, we study to which extent equilibrated flux estimators can provide such an answer. Indeed, they deliver a guaranteed and fully computable upper bound of the energy-norm discretization error, with a constant equal to one; and, crucially for the present study, its derivation uses no shape-regularity, quasi-uniformity or angle condition. The only geometric ingredient is the Poincaré constant on a single cell, which Payne and Weinberger showed to be at most hK /pi on any convex cell K, however distorted (hK being the cell size). Mesh quality affects the local efficiency - the sharpness of the estimator - but never its reliability, so that the failure mode under distortion is pessimism rather than false confidence.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-10-08T14:58:00Z",
+    "updated": "2026-10-08T14:58:00Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12088v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.12088v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "Equilibrated flux estimators can give a guaranteed, fully computable upper bound on finite-element energy error even for coarse or badly distorted meshes, without relying on shape-regularity assumptions.",
+      "engineering_relevance": "This makes it possible to quantify simulation reliability on real-world geometries and poor-quality meshes, where classical a posteriori error estimates may not apply.",
+      "method": [
+        "Build an equilibrated flux estimator for the energy-norm discretization error",
+        "Use only a local Poincaré constant on each cell; no shape-regularity, quasi-uniformity, or angle condition is needed",
+        "Apply the Payne–Weinberger bound on convex cells to keep the estimator computable"
+      ],
+      "evidence_signal": "The abstract argues analytically that reliability is guaranteed with constant one, while mesh distortion mainly affects local efficiency rather than correctness.",
+      "watch_item": "The estimator can become pessimistic on highly distorted meshes, so it may overestimate error even though it remains reliable.",
+      "hashtags": [
+        "#APosterioriError",
+        "#FiniteElements",
+        "#ComputationalMechanics",
+        "#MeshQuality",
+        "#EquilibratedFlux"
+      ],
+      "paper_id": "2026-10-08-arxiv-a_posteriori_error_estimation_for_coarse_or_distorted_meshes",
+      "paper_title": "A posteriori error estimation for coarse or distorted meshes",
+      "paper_date": "2026-10-08",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-10-11T15:13:10",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-an_fe2_model_for_shear_deformable_beams_considering_periodic_lattice_like_truss_mesostruct",
+    "arxiv_id": "2610.08607v1",
+    "date": "2026-10-06",
+    "title": "An FE2 model for shear-deformable beams considering periodic lattice-like truss mesostructures",
+    "authors": "Julian Ochs, Jens Wackerfuß",
+    "abstract": "The increasing use of lattice-like architectures in load-bearing members, facilitated by advances in additive manufacturing, calls for efficient multiscale approaches to their structural analysis. For slender lattice-like structures, beam models provide a computationally efficient macroscopic representation while retaining the ability to account for the underlying lattice architecture through an homogenization approach. Although finite element squared (FE2) approaches combining beam models at the macroscopic scale with continuum models at the microscopic scale have been established, an FE2 framework combining a beam-based macroscopic model with a truss-based microscopic model of a lattice structure has not yet been reported. To address this gap, an FE2 framework is developed for three-dimensional shear-deformable beams with periodically repeated lattice-like microstructures and periodic displacement boundary conditions. The proposed FE2 framework introduces constraint equations that (a) prevent rigid-body translations and rotations of the representative volume element (RVE) without imposing additional kinematic restrictions and (b) ensure that the homogenized stress resultants and material matrix are independent of the selected RVE length. To mitigate artificial boundary effects arising at the boundaries of the lattice-like RVE, local correction factors are introduced. The framework is assessed through numerical studies of two- and three-dimensional lattice-like structures with different geometries, considering both geometric and material linearity and nonlinearity. The results demonstrate the independence of the homogenized stress resultants and material matrix from the selected RVE length and show good agreement with the corresponding reference models in all investigated cases.",
+    "category": "Composites and Metamaterials",
+    "source": "arXiv",
+    "published": "2026-10-06T16:09:21Z",
+    "updated": "2026-10-06T16:09:21Z",
+    "primary_category": "cs.CE",
+    "categories": [
+      "cs.CE"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.08607v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.08607v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "The paper extends FE2 homogenization to shear-deformable beam structures by coupling a beam-scale model with a truss-scale lattice RVE, enabling efficient multiscale analysis of periodic lattice-like members.",
+      "engineering_relevance": "This provides a practical modeling route for additive-manufactured load-bearing lattice beams, capturing microstructure effects without fully resolving the entire lattice in the global analysis.",
+      "method": [
+        "Beam-based FE2 framework for 3D shear-deformable macroscopic members",
+        "Truss-based microscopic RVE with periodic displacement boundary conditions",
+        "Constraint equations plus local correction factors to remove rigid-body modes and boundary artifacts"
+      ],
+      "evidence_signal": "Numerical studies on 2D and 3D lattice-like structures, including linear and nonlinear cases, show RVE-length-independent homogenized stress resultants/material matrices and good agreement with reference models.",
+      "watch_item": "The approach relies on carefully designed periodic RVEs and correction factors, so implementation may be sensitive to boundary treatment and microstructure periodicity assumptions.",
+      "hashtags": [
+        "#FE2",
+        "#Homogenization",
+        "#LatticeStructures",
+        "#BeamTheory",
+        "#AdditiveManufacturing"
+      ],
+      "paper_id": "2026-10-06-arxiv-an_fe2_model_for_shear_deformable_beams_considering_periodic_lattice_like_truss_mesostruct",
+      "paper_title": "An FE2 model for shear-deformable beams considering periodic lattice-like truss mesostructures",
+      "paper_date": "2026-10-06",
+      "paper_category": "Composites and Metamaterials",
+      "generated_at": "2026-10-11T15:13:13",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-an_associated_model_of_coulomb_friction_based_on_the_real_area_of_contact",
+    "arxiv_id": "2610.08535v1",
+    "date": "2026-10-06",
+    "title": "An associated model of Coulomb friction based on the real area of contact",
+    "authors": "Manon Thbaut, Laura De Lorenzis",
+    "abstract": "Coulomb friction is a non-associated law: it contains a threshold that depends on the contact pressure, i.e. a stress that is not conjugate to any internal variable, hence it admits no dissipation potential in the sense of generalized standard materials (GSM), and the incremental frictional contact problem is not a minimization problem. In this paper, we propose an alternative friction model that retains Coulomb-like behavior while being associated and fully GSM-compatible. Key to our formulation is the introduction of a new internal variable motivated by the microscopic contact state of rough surfaces, whose evolution is driven by the plastic deformation of the asperities. Under a non-decreasing contact pressure and below a threshold pressure, the model recovers Coulomb friction up to an asperity-scale penetration depth. This depth is physically meaningful and can be calibrated to reproduce known tribology results. Under decreasing contact pressures, the model exhibits a memory effect due to irreversible plastic deformation of the asperities, whereas above the pressure threshold it yields a saturation of the frictional traction. We present both penalty and Lagrange multiplier formulations of the model. A 2D finite element implementation of the penalty approach confirms excellent agreement with the classical Coulomb predictions across two benchmark tests.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-06T15:26:23Z",
+    "updated": "2026-10-06T15:26:23Z",
+    "primary_category": "physics.app-ph",
+    "categories": [
+      "physics.app-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.08535v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.08535v1"
+      }
+    ],
+    "score": 54,
+    "infographic": {
+      "key_insight": "The paper replaces non-associated Coulomb friction with a GSM-compatible associated model by introducing an internal variable tied to asperity-scale plastic deformation, while preserving Coulomb-like behavior over the relevant pressure range.",
+      "engineering_relevance": "This gives contact mechanics simulations a thermodynamically consistent friction law that can be implemented in FEM and calibrated to realistic tribology behavior, with improved suitability for variational and incremental solvers.",
+      "method": [
+        "Introduce a new internal state variable representing microscopic real contact evolution of rough surfaces.",
+        "Drive its evolution through plastic deformation of asperities to recover Coulomb-like friction under non-decreasing contact pressure.",
+        "Provide both penalty and Lagrange multiplier formulations for finite element contact analysis."
+      ],
+      "evidence_signal": "A 2D finite element penalty implementation is reported to match classical Coulomb predictions closely on two benchmark tests.",
+      "watch_item": "The model adds calibration and implementation complexity, and its response depends on the chosen asperity-scale penetration threshold and pressure-history effects.",
+      "hashtags": [
+        "#CoulombFriction",
+        "#ContactMechanics",
+        "#FiniteElementMethod",
+        "#ComputationalMechanics",
+        "#Tribology"
+      ],
+      "paper_id": "2026-10-06-arxiv-an_associated_model_of_coulomb_friction_based_on_the_real_area_of_contact",
+      "paper_title": "An associated model of Coulomb friction based on the real area of contact",
+      "paper_date": "2026-10-06",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-11T15:13:15",
       "generator": "openai"
     }
   }

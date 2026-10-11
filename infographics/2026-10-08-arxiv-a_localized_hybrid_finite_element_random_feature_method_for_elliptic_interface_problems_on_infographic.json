@@ -1,24 +1,24 @@
 {
-  "key_insight": "Use random features only where the interface cuts the mesh, while keeping standard finite elements elsewhere, to solve elliptic interface problems efficiently on unfitted grids.",
-  "engineering_relevance": "This hybrid unfitted-mesh strategy is well suited for engineering problems with sharp material jumps, complex or moving interfaces, and heterogeneous composites.",
+  "key_insight": "A localized hybrid FEM–random feature method solves interface problems by using standard finite elements away from the interface and random-feature models only in cut-cell bands near the interface.",
+  "engineering_relevance": "This reduces global surrogate complexity while handling high-contrast jumps and irregular interface geometries on unfitted meshes, making it attractive for multiphysics and heterogeneous-material simulations.",
   "method": [
-    "Apply standard Qp finite elements on all uncut background cells.",
-    "Use localized random feature representations on both sides of the interface only in the narrow cut-cell band.",
-    "Couple FEM and RFM through an artificial grid-aligned interface and enforce physical jumps via least-squares residuals with Schur reduction of interior FEM unknowns."
+    "Use Qp finite elements on uncut background cells.",
+    "Use local random-feature representations only in interface-cut cells on both physical sides of Γ.",
+    "Enforce solution/flux jumps on Γ and couple FEM–RFM across an artificial grid-aligned interface Γc via trace and flux residuals."
   ],
-  "evidence_signal": "The method is evaluated on 2D and 3D test cases with high coefficient contrasts, nonsmooth and multiple interfaces, irregular outer boundaries, and a thermal-homogenization application.",
-  "watch_item": "Accuracy and robustness depend on the cut-cell band coupling and constrained least-squares solve, which may require careful implementation for stability in highly complex geometries.",
+  "evidence_signal": "The abstract reports numerical tests in 2D and 3D on high-contrast, nonsmooth, multiple-interface, and irregular-boundary cases, plus a thermal-homogenization application for a periodic bicontinuous composite.",
+  "watch_item": "The method depends on accurate cut-cell identification and stable coupling/residual minimization, which may be sensitive in very thin interface bands or highly complex geometries.",
   "hashtags": [
     "#FiniteElementMethod",
     "#RandomFeatures",
-    "#UnfittedMesh",
     "#InterfaceProblems",
+    "#UnfittedMesh",
     "#ComputationalMechanics"
   ],
   "paper_id": "2026-10-08-arxiv-a_localized_hybrid_finite_element_random_feature_method_for_elliptic_interface_problems_on",
   "paper_title": "A Localized Hybrid Finite Element--Random Feature Method for Elliptic Interface Problems on Unfitted Meshes",
   "paper_date": "2026-10-08",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-10T14:55:52",
+  "generated_at": "2026-10-11T15:12:35",
   "generator": "openai"
 }

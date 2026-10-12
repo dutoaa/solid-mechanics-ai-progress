@@ -1,24 +1,24 @@
 {
-  "key_insight": "Gradient-flow theory can substantially overestimate plasticity recovery after pretraining because rare ReLU gate disagreements, not the average dynamics, control whether finite-batch SGD can separate the units.",
-  "engineering_relevance": "For transfer, fine-tuning, and constitutive-model training, this means recovery may fail unless batch size and sample budget are large enough to resolve rare disagreement events, especially after long pretraining with weight decay.",
+  "key_insight": "Gradient flow can predict recovery after pretraining, but finite-batch SGD can still fail because rare ReLU gate disagreements dominate the target-task dynamics.",
+  "engineering_relevance": "For transfer learning and plasticity analysis, batch size, step size, and pretraining duration jointly control whether a model can actually adapt after source-task training.",
   "method": [
-    "Two-unit ReLU regression with a source task that aligns the neurons and a target task that rewards their separation.",
-    "Compare population gradient flow to online finite-batch SGD with step size η, batch size b, and weight decay λ across pretraining and target phases.",
-    "Track the exact online recursion and bound how often the model samples the narrow input wedge where the two gates disagree."
+    "Two-unit ReLU regression with a source task that aligns neurons and a target task that separates them",
+    "Compare population gradient flow vs online SGD with finite batch and step size across pretraining and adaptation",
+    "Track the rare wedge of inputs where ReLU gates disagree and bound its cumulative sampling probability exactly"
   ],
-  "evidence_signal": "The abstract reports theoretical recovery bounds plus simulations showing recovery depends mainly on the disagreement budget bδ/η and saturates with training horizon.",
-  "watch_item": "The result is sharp for the analyzed two-unit ReLU setting, so extending the conclusion to deeper or non-ReLU models may require new disagreement-geometry estimates.",
+  "evidence_signal": "The abstract reports high-probability recovery failure over horizons of order e^{c/η} once T ≳ log(b/η), and simulations show recovery is mainly governed by the disagreement budget bδ/η.",
+  "watch_item": "The result is proved in a simplified two-unit ReLU setting, so translating the failure mode to larger architectures may require care.",
   "hashtags": [
-    "#GradientFlow",
     "#SGD",
     "#ReLU",
     "#TransferLearning",
-    "#OptimizationTheory"
+    "#Optimization",
+    "#NeuralDynamics"
   ],
   "paper_id": "2026-10-08-arxiv-rare_gate_disagreements_can_limit_plasticity_when_gradient_flow_mispredicts_finite_batch_s",
   "paper_title": "Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD",
   "paper_date": "2026-10-08",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-11T15:13:04",
+  "generated_at": "2026-10-12T18:24:49",
   "generator": "openai"
 }

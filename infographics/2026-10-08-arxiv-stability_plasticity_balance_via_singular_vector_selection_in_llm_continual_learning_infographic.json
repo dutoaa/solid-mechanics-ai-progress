@@ -1,24 +1,24 @@
 {
-  "key_insight": "SVC treats each singular-vector channel as a controllable unit of plasticity, selectively updating only the channels that best balance new-task learning and preservation of pretrained knowledge.",
-  "engineering_relevance": "This provides a principled, parameter-efficient way to adapt LLMs to new domains while reducing catastrophic forgetting, which is important for reliable continual deployment.",
+  "key_insight": "The paper argues that continual LLM adaptation works best when plasticity is allocated at the singular-vector channel level, allowing the model to learn new domains while preserving pretrained knowledge.",
+  "engineering_relevance": "This provides a principled parameter-efficient strategy for managing the stability–plasticity trade-off in domain-specific model updating, which is critical for reliable deployment of large models in evolving engineering workflows.",
   "method": [
-    "Estimate each channel’s adaptation benefit from domain-specific fine-tuning data.",
-    "Estimate forgetting cost using a fixed public general-domain corpus as a history-activation proxy.",
-    "Select trainable channels with knee-based cost screening, Pareto-front filtering, and Otsu thresholding."
+    "Treat each singular-vector channel as a unit that can be either updated or frozen.",
+    "Estimate adaptation benefit from domain-specific data and forgetting cost from a fixed public general-domain corpus.",
+    "Select trainable channels using knee-based cost screening, Pareto-front filtering, and Otsu thresholding."
   ],
-  "evidence_signal": "The abstract reports results across four LLM families and eight downstream tasks, with stronger pretrained-capability retention and competitive downstream performance versus PEFT baselines.",
-  "watch_item": "Channel scoring depends on proxy estimates and thresholding heuristics, so performance may be sensitive to corpus choice and selection settings.",
+  "evidence_signal": "Experiments across four LLM families and eight downstream tasks indicate that SVC preserves pretrained capabilities better than PEFT baselines while maintaining strong downstream performance.",
+  "watch_item": "The channel-selection pipeline depends on careful scoring and thresholding, so performance may be sensitive to corpus choice, task domain shift, and implementation details.",
   "hashtags": [
     "#ContinualLearning",
     "#LLM",
-    "#ParameterEfficientFineTuning",
+    "#PEFT",
     "#CatastrophicForgetting",
-    "#ModelAdaptation"
+    "#SingularValueDecomposition"
   ],
   "paper_id": "2026-10-08-arxiv-stability_plasticity_balance_via_singular_vector_selection_in_llm_continual_learning",
   "paper_title": "Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning",
   "paper_date": "2026-10-08",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-12T18:24:51",
+  "generated_at": "2026-10-13T16:37:12",
   "generator": "openai"
 }

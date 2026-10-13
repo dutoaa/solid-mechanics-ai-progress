@@ -1,24 +1,24 @@
 {
-  "key_insight": "Gradient flow can predict recovery after pretraining, but finite-batch SGD can still fail because rare ReLU gate disagreements dominate the target-task dynamics.",
-  "engineering_relevance": "For transfer learning and plasticity analysis, batch size, step size, and pretraining duration jointly control whether a model can actually adapt after source-task training.",
+  "key_insight": "Rare ReLU gate disagreements, not the average gradient, determine whether finite-batch SGD can recover after pretraining, so population gradient flow can be qualitatively wrong.",
+  "engineering_relevance": "For staged training or fine-tuning, this means recovery may fail unless batch size and update budget are large enough to sample the small set of disagreeing inputs.",
   "method": [
-    "Two-unit ReLU regression with a source task that aligns neurons and a target task that separates them",
-    "Compare population gradient flow vs online SGD with finite batch and step size across pretraining and adaptation",
-    "Track the rare wedge of inputs where ReLU gates disagree and bound its cumulative sampling probability exactly"
+    "Two-unit ReLU regression with a source task that aligns neurons and a target task that separates them.",
+    "Compare population gradient flow with online SGD under batch size b and step size η after source pretraining time T.",
+    "Track the rare wedge of inputs where gates disagree and bound its cumulative sampling probability along the exact recursion."
   ],
-  "evidence_signal": "The abstract reports high-probability recovery failure over horizons of order e^{c/η} once T ≳ log(b/η), and simulations show recovery is mainly governed by the disagreement budget bδ/η.",
-  "watch_item": "The result is proved in a simplified two-unit ReLU setting, so translating the failure mode to larger architectures may require care.",
+  "evidence_signal": "The abstract reports that, for T above about log(b/η), SGD can fail with high probability over a horizon of order e^{c/η}, while recovery from a gradient-flow checkpoint needs Nb ≳ e^{λT} and b ≳ ηe^{λT}; simulations show behavior collapses mainly as a function of bδ/η.",
+  "watch_item": "The result is derived for a specific two-unit ReLU setup, so the threshold laws may not transfer directly to deeper or more realistic architectures without re-checking gate-disagreement dynamics.",
   "hashtags": [
     "#SGD",
     "#ReLU",
-    "#TransferLearning",
-    "#Optimization",
-    "#NeuralDynamics"
+    "#OptimizationDynamics",
+    "#NeuralNetTheory",
+    "#GradientFlow"
   ],
   "paper_id": "2026-10-08-arxiv-rare_gate_disagreements_can_limit_plasticity_when_gradient_flow_mispredicts_finite_batch_s",
   "paper_title": "Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD",
   "paper_date": "2026-10-08",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-12T18:24:49",
+  "generated_at": "2026-10-13T16:37:11",
   "generator": "openai"
 }

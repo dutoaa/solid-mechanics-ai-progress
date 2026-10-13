@@ -1,24 +1,24 @@
 {
-  "key_insight": "SAGE-PINN makes axisymmetric cylindrical PINNs singularity-free by encoding geometry and conservation into the network, enabling stable multiphysics flow and heat-transfer learning without labeled data.",
-  "engineering_relevance": "The method offers a mesh-free way to model stenosed-artery-like axisymmetric flows in cylindrical coordinates while preserving mass conservation and boundary conditions exactly.",
+  "key_insight": "SAGE-PINN embeds axisymmetric cylindrical geometry, parity-preserving variables, and exact boundary ansätze into a PINN to remove the axis singularity and enforce mass conservation by construction.",
+  "engineering_relevance": "This enables mesh-free simulation of coupled flow and heat transfer in axisymmetric devices such as stenosed arteries, with no labeled training data and robust performance across varying buoyancy and advection regimes.",
   "method": [
-    "Use the parity-preserving variable s = r^2 and a modified stream-function form to remove explicit 1/r singular terms.",
-    "Enforce boundary conditions analytically with boundary-fitted ansätze, avoiding boundary-loss tuning.",
-    "Stabilize coupled training with staged momentum-thermal optimization, residual normalization, and parameter continuation in Péclet and Richardson numbers."
+    "Use the transformed radial variable s = r^2 and a modified stream-function form to eliminate explicit 1/r singular terms.",
+    "Enforce boundary conditions exactly with analytical boundary-fitted ansätze and train in staged momentum-thermal-joint phases.",
+    "Stabilize optimization with residual normalization, Péclet-/Richardson-number continuation, and a physics-scaled drift guard."
   ],
-  "evidence_signal": "Validated against finite-element references for steady nanofluid flow and heat transfer in a stenosed artery, with mass conservation at single-precision round-off and central-range errors of about 1.6% for axial velocity and 9.1% for temperature.",
-  "watch_item": "Accuracy degrades in extreme regimes, especially strongly buoyancy-dominated slow flow and highly advection-dominated heat transfer, so continuation and scaling choices may be sensitive.",
+  "evidence_signal": "Validated against finite-element reference solutions for steady nanofluid flow and heat transfer, the model kept mass conservation at single-precision round-off and achieved up to 1.6% axial-velocity and 9.1% temperature L2 error over the central operating range.",
+  "watch_item": "Accuracy degrades in the extreme regimes of strongly buoyancy-driven slow flow and highly advection-dominated heat transfer, so continuation and scaling choices may need careful tuning there.",
   "hashtags": [
     "#PINN",
-    "#PhysicsInformedML",
     "#AxisymmetricFlow",
     "#CylindricalCoordinates",
-    "#Multiphysics"
+    "#Multiphysics",
+    "#ComputationalMechanics"
   ],
   "paper_id": "2026-10-07-arxiv-sage_pinn_a_singularity_free_axisymmetric_geometry_encoded_physics_informed_neural_network",
   "paper_title": "SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates",
   "paper_date": "2026-10-07",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-10-12T18:24:47",
+  "generated_at": "2026-10-13T16:36:53",
   "generator": "openai"
 }

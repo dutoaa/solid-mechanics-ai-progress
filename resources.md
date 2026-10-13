@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-10-12
+Generated: 2026-10-13
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Specialized machine learning force fields for materials dynamics
@@ -11,15 +11,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.12151v2
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-08-arxiv-specialized_machine_learning_force_fields_for_materials_dynamics_infographic.json
 
-## 2. Mechanistic transition between inter- and trans-granular creep cracking via a unified crystal plasticity-fracture framework
-
-- Date: 2026-10-06
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2610.07980v1
-- PDF: https://arxiv.org/pdf/2610.07980v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-mechanistic_transition_between_inter_and_trans_granular_creep_cracking_via_a_unified_cryst_infographic.json
-
-## 3. Deep learning driven framework for optimization of polycrystalline microstructures under competing strength requirements
+## 2. Deep learning driven framework for optimization of polycrystalline microstructures under competing strength requirements
 
 - Date: 2026-10-07
 - Category: FEM Surrogates
@@ -27,7 +19,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.09461v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-07-arxiv-deep_learning_driven_framework_for_optimization_of_polycrystalline_microstructures_under_c_infographic.json
 
-## 4. A Localized Hybrid Finite Element--Random Feature Method for Elliptic Interface Problems on Unfitted Meshes
+## 3. A Localized Hybrid Finite Element--Random Feature Method for Elliptic Interface Problems on Unfitted Meshes
 
 - Date: 2026-10-08
 - Category: FEM Surrogates
@@ -35,7 +27,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.11688v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-08-arxiv-a_localized_hybrid_finite_element_random_feature_method_for_elliptic_interface_problems_on_infographic.json
 
-## 5. Ceramic Materials: From Atomic Bonding and Processing to Microstructure, Functional Properties, and Biomedical Applications
+## 4. Ceramic Materials: From Atomic Bonding and Processing to Microstructure, Functional Properties, and Biomedical Applications
 
 - Date: 2026-10-07
 - Category: Composites and Metamaterials
@@ -43,7 +35,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10874v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-07-arxiv-ceramic_materials_from_atomic_bonding_and_processing_to_microstructure_functional_properti_infographic.json
 
-## 6. A volume-controlled level-set method for topology optimization
+## 5. A volume-controlled level-set method for topology optimization
 
 - Date: 2026-10-09
 - Category: Constitutive Modeling
@@ -51,7 +43,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.12922v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-09-arxiv-a_volume_controlled_level_set_method_for_topology_optimization_infographic.json
 
-## 7. Quantification of plastic deformation in anorthite using micropillar compression
+## 6. Quantification of plastic deformation in anorthite using micropillar compression
 
 - Date: 2026-10-07
 - Category: Constitutive Modeling
@@ -59,7 +51,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10081v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-07-arxiv-quantification_of_plastic_deformation_in_anorthite_using_micropillar_compression_infographic.json
 
-## 8. Phase-Field Fracture Simulation of Highly Deformable Thin Structures via a Discrete Differential Geometry Framework
+## 7. Phase-Field Fracture Simulation of Highly Deformable Thin Structures via a Discrete Differential Geometry Framework
 
 - Date: 2026-10-06
 - Category: Fracture and Damage
@@ -67,13 +59,21 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.08997v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-06-arxiv-phase_field_fracture_simulation_of_highly_deformable_thin_structures_via_a_discrete_differ_infographic.json
 
-## 9. Numerical Neural Operator: Connection Between Numerical Analysis and the Operator Learning and Building Discretized Neural Operators from Finite Element Methods
+## 8. Numerical Neural Operator: Connection Between Numerical Analysis and the Operator Learning and Building Discretized Neural Operators from Finite Element Methods
 
 - Date: 2026-10-08
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2610.11120v1
 - PDF: https://arxiv.org/pdf/2610.11120v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-08-arxiv-numerical_neural_operator_connection_between_numerical_analysis_and_the_operator_learning_infographic.json
+
+## 9. SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates
+
+- Date: 2026-10-07
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2610.10449v1
+- PDF: https://arxiv.org/pdf/2610.10449v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-07-arxiv-sage_pinn_a_singularity_free_axisymmetric_geometry_encoded_physics_informed_neural_network_infographic.json
 
 ## 10. An extended deep energy method for thermo-mechanical crack propagation
 
@@ -139,15 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.12634v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-08-arxiv-early_time_dynamics_of_the_richtmyer_meshkov_instability_at_kelvin_voigt_viscoelastic_inte_infographic.json
 
-## 18. SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates
-
-- Date: 2026-10-07
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2610.10449v1
-- PDF: https://arxiv.org/pdf/2610.10449v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-07-arxiv-sage_pinn_a_singularity_free_axisymmetric_geometry_encoded_physics_informed_neural_network_infographic.json
-
-## 19. Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD
+## 18. Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD
 
 - Date: 2026-10-08
 - Category: Constitutive Modeling
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.11475v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-08-arxiv-rare_gate_disagreements_can_limit_plasticity_when_gradient_flow_mispredicts_finite_batch_s_infographic.json
 
-## 20. Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning
+## 19. Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning
 
 - Date: 2026-10-08
 - Category: Constitutive Modeling
 - arXiv: https://arxiv.org/abs/2610.11076v1
 - PDF: https://arxiv.org/pdf/2610.11076v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-08-arxiv-stability_plasticity_balance_via_singular_vector_selection_in_llm_continual_learning_infographic.json
+
+## 20. Static Gradient Attribution Underperforms a Density-Matched Random Mask on Loss-Based Forgetting Within LoRA B-Matrix
+
+- Date: 2026-10-08
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.12744v1
+- PDF: https://arxiv.org/pdf/2610.12744v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-08-arxiv-static_gradient_attribution_underperforms_a_density_matched_random_mask_on_loss_based_forg_infographic.json

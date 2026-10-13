@@ -1,24 +1,24 @@
 {
-  "key_insight": "Use random features only in interface-cut cells and standard finite elements elsewhere, coupled through a localized hybrid scheme that enforces interface jumps and flux continuity on unfitted meshes.",
-  "engineering_relevance": "This gives a practical way to solve challenging elliptic interface problems with high coefficient contrast and complex geometry while avoiding fully mesh-conforming remeshing.",
+  "key_insight": "A localized hybrid FEM–random feature approach can solve elliptic interface problems on unfitted meshes by using standard finite elements away from the interface and random features only in the narrow cut-cell band.",
+  "engineering_relevance": "This reduces the high cost of global surrogate representations while preserving accuracy for challenging multi-physics interface problems with coefficient jumps, irregular geometries, and high contrast.",
   "method": [
-    "RFM is restricted to the narrow cut-cell band on both sides of the physical interface.",
-    "Standard Q_p finite elements are kept on uncut background cells.",
-    "A Schur reduction removes interior FEM unknowns, leaving a reduced least-squares problem for coupling nodes and random-feature coefficients."
+    "Use standard Qp FEM on uncut background cells.",
+    "Use local random-feature representations only in interface-cut cells on both physical sides of the interface.",
+    "Enforce jump and flux conditions on the true interface, then couple FEM and RFM across an artificial grid-aligned interface via residual constraints and Schur reduction."
   ],
-  "evidence_signal": "The method is numerically tested on 2D and 3D interface problems with high contrasts, nonsmooth and multiple interfaces, irregular outer boundaries, and a thermal-homogenization example.",
-  "watch_item": "Performance depends on accurate interface localization and stable coupling across the artificial interface, which may complicate implementation for highly intricate geometries.",
+  "evidence_signal": "The method is numerically evaluated in 2D and 3D on high-contrast, nonsmooth, multiple-interface, and irregular-boundary problems, including a thermal-homogenization application.",
+  "watch_item": "The approach adds implementation complexity because it requires accurate interface localization, residual coupling across two interfaces, and efficient sparse elimination for the interior FEM unknowns.",
   "hashtags": [
-    "#FiniteElementMethod",
+    "#FEM",
     "#RandomFeatures",
     "#InterfaceProblems",
     "#UnfittedMesh",
-    "#ScientificComputing"
+    "#ComputationalMechanics"
   ],
   "paper_id": "2026-10-08-arxiv-a_localized_hybrid_finite_element_random_feature_method_for_elliptic_interface_problems_on",
   "paper_title": "A Localized Hybrid Finite Element--Random Feature Method for Elliptic Interface Problems on Unfitted Meshes",
   "paper_date": "2026-10-08",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-12T18:24:10",
+  "generated_at": "2026-10-13T16:36:39",
   "generator": "openai"
 }

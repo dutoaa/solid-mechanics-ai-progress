@@ -1,24 +1,24 @@
 {
-  "key_insight": "LizTail lets a fixed systolic array adapt both its shape and its parallel execution layout by splitting the array into reconfigurable segments with only endpoint connectivity.",
-  "engineering_relevance": "This improves utilization on irregular workloads like skinny CNN matrices and small-batch LLM decoding, where conventional fixed arrays waste compute and underuse available parallelism.",
+  "key_insight": "LizTail shows that a systolic array can be made both shape-adaptive and parallelism-aware by reconfiguring computation in predefined segments instead of at individual PEs.",
+  "engineering_relevance": "This matters for CNNs and LLM decoding because it improves utilization on skinny matrices, small-batch workloads, and multi-partition operators without the full overhead of fully flexible interconnects.",
   "method": [
-    "Partition a 128×128 array into 32 regular 128×4 segments.",
-    "Add only predefined endpoint links for trimming, turn-back extension, and distributed execution.",
-    "Use a hardware-constrained mapper to choose execution organization, dataflow, partitioning, and tiling."
+    "Partitions a 128×128 array into 32 fixed 128×4 segments.",
+    "Adds only endpoint connectivity, including trimming, 180° turn-back extension, and distributed execution across segments.",
+    "Uses differentiated PE datapaths plus segment-aware CEB/SIB buffers, guided by a hardware-constrained mapper."
   ],
-  "evidence_signal": "The abstract reports geometric-mean speedups of 5.02× for CNN inference and 25.67× for LLM decoding over a TPU-like array, with EDP reductions up to 38.23×.",
-  "watch_item": "The design depends on segmented reconfiguration and specialized buffers/control, so real hardware may face routing, timing, and implementation complexity tradeoffs.",
+  "evidence_signal": "The abstract reports geometric-mean speedups of 5.02× on CNN inference and 25.67× on LLM decoding over a TPU-like array, with EDP reduced by up to 38.23×.",
+  "watch_item": "The design depends on constrained segment-level reconfiguration, so performance may be limited by mapper quality and by the overheads of implementing segment-aware buffers and endpoint connections in hardware.",
   "hashtags": [
-    "#SystolicArrays",
-    "#ReconfigurableHardware",
-    "#AIAccelerators",
-    "#LLMInference",
-    "#CNNAcceleration"
+    "#SystolicArray",
+    "#AIHardware",
+    "#ReconfigurableComputing",
+    "#CNNAcceleration",
+    "#LLMDecoding"
   ],
   "paper_id": "2026-10-12-arxiv-liztail_unifying_shape_adaptation_and_spatial_parallelism_with_segment_reconfigurable_syst",
   "paper_title": "LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays",
   "paper_date": "2026-10-12",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-10-14T14:13:37",
+  "generated_at": "2026-10-15T13:48:51",
   "generator": "openai"
 }

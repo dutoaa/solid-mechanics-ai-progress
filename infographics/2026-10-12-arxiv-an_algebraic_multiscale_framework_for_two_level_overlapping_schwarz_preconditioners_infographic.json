@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper builds a fully algebraic multiscale coarse space for two-level overlapping Schwarz preconditioners by using reduced boundary-condition interface problems and energy-minimizing extensions, making the coarse correction robust to strong heterogeneity.",
-  "engineering_relevance": "This gives a matrix-based preconditioner that can improve scalability for heterogeneous diffusion and elasticity problems without requiring explicit multiscale finite-element mesh construction.",
+  "key_insight": "The paper replaces geometric coarse spaces in two-level overlapping Schwarz preconditioners with an algebraic multiscale coarse space built directly from the system matrix, preserving robustness for highly heterogeneous problems.",
+  "engineering_relevance": "This enables scalable, coefficient-aware preconditioning for elliptic diffusion and linear elasticity problems, especially when mesh geometry or coarse-space design is difficult to construct explicitly.",
   "method": [
-    "Construct the coarse space from the system matrix alone via an algebraic MsFEM formulation.",
-    "Solve reduced boundary condition problems on interface slabs, then extend them by energy minimization.",
-    "Embed the framework in an energy-minimizing form so it also applies to linear elasticity."
+    "Build coarse basis functions from algebraic multiscale finite element ideas using only the system matrix.",
+    "Solve reduced boundary condition problems on interface slabs and extend them by energy-minimizing interpolation.",
+    "Embed the construction in an energy-minimizing framework so it applies to linear elasticity and unstructured decompositions."
   ],
-  "evidence_signal": "The abstract reports that, for high-contrast inclusions on coarse nodes, iteration counts and condition numbers stay unchanged as contrast increases, and in 3D log-normal diffusion the method matches GDSW iteration counts with a coarse problem about 10× smaller.",
-  "watch_item": "Performance depends on how well the interface-based slabs and coarse-node selection capture rigid-body and heterogeneity effects, especially for elasticity and unstructured decompositions.",
+  "evidence_signal": "The abstract reports that the method is insensitive to increasing contrast for coarse-node inclusions, matches GDSW iteration counts in 3D log-normal diffusion while using a coarse problem about ten times smaller, and scales well for homogeneous linear elasticity.",
+  "watch_item": "Performance depends on how well the interface-slabs and reduced boundary problems capture coefficient variation, and the fully algebraic elasticity variant omits rotational rigid-body-mode basis functions.",
   "hashtags": [
-    "#MultiscalePreconditioning",
-    "#SchwarzMethods",
-    "#FEM",
+    "#MultiscaleMethods",
+    "#SchwarzPreconditioners",
+    "#FiniteElementMethods",
     "#LinearElasticity",
-    "#HighContrastPDEs"
+    "#HPC"
   ],
   "paper_id": "2026-10-12-arxiv-an_algebraic_multiscale_framework_for_two_level_overlapping_schwarz_preconditioners",
   "paper_title": "An algebraic multiscale framework for two-level overlapping Schwarz preconditioners",
   "paper_date": "2026-10-12",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-15T13:49:08",
+  "generated_at": "2026-10-16T13:39:24",
   "generator": "openai"
 }

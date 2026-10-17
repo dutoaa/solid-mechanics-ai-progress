@@ -24,17 +24,17 @@
         "url": "https://arxiv.org/pdf/2610.19094v1"
       }
     ],
-    "score": 79,
+    "score": 74,
     "infographic": {
-      "key_insight": "An incremental Deep Energy Method can model ductile fracture by coupling history-dependent J2 plasticity with a phase-field fracture formulation and separate neural representations for displacement and damage.",
-      "engineering_relevance": "The approach offers a meshless, energy-based alternative for predicting crack initiation and growth in elasto-plastic solids with results close to finite-element references.",
+      "key_insight": "An incremental Deep Energy Method can model ductile fracture by coupling J2 plasticity and phase-field fracture with separate neural representations for displacement and crack phase.",
+      "engineering_relevance": "This offers a physics-informed, mesh-free alternative for predicting elastic-plastic damage and crack growth in ductile solids with good agreement to finite-element references.",
       "method": [
-        "Minimize a reduced total energy alternately for displacement and phase-field fields.",
-        "Use a ReZero residual network for displacement and trainable localized Gaussian RBFs for the phase field.",
-        "Update plasticity locally with radial return and carry constitutive history across load steps via transfer learning."
+        "Uses small-strain J2 plasticity with linear isotropic hardening and a second-order Ambrosio-Tortorelli phase-field fracture model.",
+        "Represents displacement with a ReZero residual neural network and the phase field with localized Gaussian radial basis functions.",
+        "Minimizes reduced energy alternately across loading increments, with radial return updates and transfer learning for history variables."
       ],
-      "evidence_signal": "The abstract reports close agreement with finite-element reference solutions for force-displacement response, energy evolution, plastic deformation, and crack propagation.",
-      "watch_item": "Accuracy becomes more sensitive to load-step size near abrupt fracture events, so incremental control is important.",
+      "evidence_signal": "The abstract reports close agreement with finite-element solutions for force-displacement response, energy evolution, plastic deformation, and crack propagation.",
+      "watch_item": "Accuracy becomes more sensitive to the loading increment size near abrupt fracture events, so incremental step control is important.",
       "hashtags": [
         "#DeepEnergyMethod",
         "#PhaseFieldFracture",
@@ -46,7 +46,7 @@
       "paper_title": "A deep energy method formulation for phase-field modelling of ductile fracture",
       "paper_date": "2026-10-13",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-16T13:38:45",
+      "generated_at": "2026-10-17T12:35:48",
       "generator": "openai"
     }
   },
@@ -75,29 +75,29 @@
         "url": "https://arxiv.org/pdf/2610.21537v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "The paper shows that large language models contain highly specialized functional subnetworks that can be selectively updated to enable continual learning with less catastrophic forgetting.",
-      "engineering_relevance": "For AI system design, the method offers a targeted, parameter-efficient way to adapt models over long training sequences while preserving prior capabilities.",
+      "key_insight": "The paper shows that large language models contain functionally specialized subnetworks with very low overlap, and that isolating updates to these regions can improve continual learning while reducing catastrophic forgetting.",
+      "engineering_relevance": "For AI systems that must adapt over time, localized parameter updates offer a more efficient and stable alternative to full-model retraining, preserving prior capabilities under sequential learning.",
       "method": [
-        "Use gradient-attribution profiling to identify cognition-associated subnetworks with low mutual overlap.",
-        "Route each training example to its corresponding subnetwork and restrict weight/optimizer updates to those regions.",
-        "Apply CiMEO (Function-isolated Memory-Efficient Optimization) for localized continual adaptation."
+        "Use gradient-attribution profiling to identify cognition-associated functional subnetworks.",
+        "Route each training example to its corresponding subnetwork for targeted adaptation.",
+        "Restrict parameter updates and optimizer states to the selected regions in CiMEO."
       ],
-      "evidence_signal": "Evaluated on 1.4 million sequential instructions across five generative benchmarks, CiMEO achieved the best average performance among compared methods while reducing forgetting.",
-      "watch_item": "Subnetwork routing and overlap assumptions may depend on reliable task-to-subnetwork assignment, so misrouting or changing task boundaries could reduce the method’s benefit.",
+      "evidence_signal": "The method was evaluated on 1.4 million sequential instructions and achieved the best average performance across five generative benchmarks covering programming, exam-style tasks, and mathematical reasoning.",
+      "watch_item": "Subnetwork localization and routing add implementation complexity, and the approach depends on accurately identifying task-relevant regions without missing shared representations.",
       "hashtags": [
         "#ContinualLearning",
-        "#LLM",
+        "#LargeLanguageModels",
         "#CatastrophicForgetting",
-        "#EfficientFineTuning",
-        "#SubnetworkLocalization"
+        "#NeuralNetworks",
+        "#EfficientOptimization"
       ],
       "paper_id": "2026-10-15-arxiv-functional_subnetwork_localization_for_efficient_continual_learning_in_large_language_mode",
       "paper_title": "Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models",
       "paper_date": "2026-10-15",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-16T13:38:48",
+      "generated_at": "2026-10-17T12:35:51",
       "generator": "openai"
     }
   },
@@ -127,29 +127,29 @@
         "url": "https://arxiv.org/pdf/2610.21974v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "Continual learning for deepfake detection can worsen demographic unfairness over time, so preserving accuracy alone is not enough.",
-      "engineering_relevance": "For safety-critical AI systems, model update strategies must be evaluated for both performance stability and fairness across shifting data distributions.",
+      "key_insight": "Continual learning for deepfake detectors can worsen demographic unfairness over time, so preserving accuracy alone is not enough.",
+      "engineering_relevance": "For real-world security systems, model updates must be evaluated not just for robustness to new attacks but also for shifting fairness across demographic groups.",
       "method": [
-        "Tracked fairness across four dimensions and multiple demographics",
-        "Evaluated detectors on a chronological sequence of 11 real-world deepfake generation methods",
-        "Compared continual learning families: rehearsal, prompts, and regularization"
+        "Evaluated continual-learning deepfake detectors on a chronological sequence of 11 real-world generation methods.",
+        "Tracked four fairness dimensions across diverse demographics and demographic intersections over time.",
+        "Compared CL families including rehearsal, prompts, and regularization to study performance–fairness tradeoffs."
       ],
-      "evidence_signal": "The study analyzes fairness metrics over time on progressively trained deepfake detectors using a chronological dataset of 11 generation methods.",
-      "watch_item": "Fairness gains were rare and inequitable forgetting was not explained by underrepresentation alone, so deployment needs careful demographic monitoring beyond standard accuracy checks.",
+      "evidence_signal": "The study analyzes fairness metrics over time on 11 sequential deepfake generation methods, showing that accuracy drops often coincide with increased unfairness.",
+      "watch_item": "Fairness gains were scarce and inequitable forgetting was not fully explained by underrepresentation, so mitigation may require changes to representation learning rather than only data balancing.",
       "hashtags": [
         "#ContinualLearning",
-        "#Fairness",
         "#DeepfakeDetection",
+        "#AlgorithmicFairness",
         "#MachineLearning",
-        "#AITrust"
+        "#TrustworthyAI"
       ],
       "paper_id": "2026-10-15-arxiv-time_to_fake_it_continual_machine_learning_intensifies_unfairness_in_deepfake_detection",
       "paper_title": "Time to Fake It: Continual Machine Learning Intensifies Unfairness in Deepfake Detection",
       "paper_date": "2026-10-15",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-16T13:38:51",
+      "generated_at": "2026-10-17T12:35:53",
       "generator": "openai"
     }
   },
@@ -179,21 +179,21 @@
         "url": "https://arxiv.org/pdf/2610.20812v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "Water transport in anion exchange membranes is strongly coupled to swelling and deformation, so hydration-dependent mechanics must be modeled alongside diffusion to predict behavior accurately.",
-      "engineering_relevance": "A coupled transport-mechanics model can improve design and performance prediction for membranes used in continuous CO2 separations and other moisture-driven electrochemical systems.",
+      "key_insight": "Water transport in anion exchange membranes is bidirectionally coupled to swelling and mechanics, so hydration-dependent deformation changes the predicted diffusion response.",
+      "engineering_relevance": "Accurate CO2-separation membrane design needs models that capture both concentration-dependent transport and mechanical feedback under nonuniform hydration.",
       "method": [
-        "Transient finite element model of water transport and mechanical deformation in Fumasep FAA-3-50 membrane",
+        "Transient finite element model for water transport + deformation in Fumasep FAA-3-50 AEM",
         "Includes concentration-dependent diffusivity, hygroscopic swelling, and nonlinear viscoelastic response",
         "Compares uncoupled, one-way coupled, and fully coupled formulations"
       ],
-      "evidence_signal": "The fully coupled model was validated against steady-state water-transport measurements across water-activity gradients and matched the observed hydration dependence best at intermediate hydration levels.",
-      "watch_item": "The transport response remains primarily diffusion-driven, so added mechanical coupling improves fidelity but may have limited impact unless hydration gradients and deformation are significant.",
+      "evidence_signal": "The fully coupled model was validated against steady-state water-transport measurements across water-activity gradients and matched the observed hydration dependence best at intermediate hydration.",
+      "watch_item": "The model is still primarily diffusion-driven, so mechanical coupling may be less critical in regimes where hydration gradients and deformation are weak.",
       "hashtags": [
         "#AnionExchangeMembrane",
-        "#FiniteElementModeling",
-        "#CoupledTransport",
+        "#FiniteElementModel",
+        "#WaterTransport",
         "#SolidMechanics",
         "#CO2Separation"
       ],
@@ -201,7 +201,7 @@
       "paper_title": "Modeling Transport and Mechanics in Anion Exchange Membranes to Optimize Continuous CO2 Separations",
       "paper_date": "2026-10-14",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:38:54",
+      "generated_at": "2026-10-17T12:35:56",
       "generator": "openai"
     }
   },
@@ -230,29 +230,29 @@
         "url": "https://arxiv.org/pdf/2610.21230v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "Update-matched references help unlearning stay resistant to relearning without unnecessarily suppressing a model’s ability to learn new tasks.",
-      "engineering_relevance": "For deployable LLMs that will continue to be updated, UMU offers a practical way to preserve post-update plasticity while reducing recovery of deleted knowledge.",
+      "key_insight": "Update-Matched Unlearning (UMU) shows that robust unlearning should block relearning of removed knowledge without harming a model’s ability to learn new tasks after later fine-tuning.",
+      "engineering_relevance": "For deployed LLMs that keep getting updated, UMU offers a practical way to preserve safety and privacy while maintaining post-update adaptability.",
       "method": [
-        "Apply the same simulated relearning update to both the defended model and an undefended reference initialized from the unlearned model.",
-        "Use new-task learning as the selection signal so the model is judged on preserved plasticity, not only low relearning.",
-        "Compare against pre-update and update-matched references to isolate selective resistance from general capability loss."
+        "Apply the same simulated relearning update to both the defended model and an undefended reference starting from the same unlearned checkpoint.",
+        "Use an update-matched reference instead of a pre-update reference when judging whether the model should stay close after an update.",
+        "Select the defended model using new-task learning performance to balance suppression and plasticity."
       ],
-      "evidence_signal": "On TOFU and FaithUn with Llama and Qwen, UMU improved relearning resistance and plasticity across three base unlearning methods, reducing harmful and benign relearning by 30.4 and 9.9 points on average while increasing new-task accuracy by 3.5 points.",
-      "watch_item": "The approach adds evaluation and training complexity because the defense must simulate the downstream update and depends on how well that update matches real deployment behavior.",
+      "evidence_signal": "On TOFU and FaithUn with Llama and Qwen models, UMU improved relearning resistance and plasticity across three base unlearning methods, reducing harmful and benign relearning by 30.4 and 9.9 points on average while increasing new-task accuracy by 3.5 points.",
+      "watch_item": "If the reference is not updated consistently, evaluation can falsely reward over-conservative models that resist relearning but also lose plasticity.",
       "hashtags": [
         "#LLMUnlearning",
-        "#MachineLearningSafety",
-        "#ModelRobustness",
-        "#ContinualLearning",
-        "#AIEngineering"
+        "#ModelPlasticity",
+        "#PrivacySafety",
+        "#FineTuningRobustness",
+        "#AIAlignment"
       ],
       "paper_id": "2026-10-15-arxiv-not_all_change_is_damage_update_matched_unlearning_for_large_language_models",
       "paper_title": "Not All Change Is Damage: Update-Matched Unlearning for Large Language Models",
       "paper_date": "2026-10-15",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-16T13:38:57",
+      "generated_at": "2026-10-17T12:35:58",
       "generator": "openai"
     }
   },
@@ -281,21 +281,21 @@
         "url": "https://arxiv.org/pdf/2610.18181v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "Single-crystal Ti-15Mo shows unexpectedly inverted elastic anisotropy and orientation-dependent yield onset that cannot be explained by simple CRSS/Schmid-factor models.",
-      "engineering_relevance": "These orientation effects matter for texture-controlled processing of Ti-15Mo components because small changes in grain orientation can strongly alter stiffness, indentation yield, and deformation mode.",
+      "key_insight": "Single-crystal Ti-15Mo shows orientation-dependent nanoindentation behavior that reverses the expected cubic elastic anisotropy and produces yield-onset trends that simple Schmid-factor/CRSS models cannot explain.",
+      "engineering_relevance": "For texture engineering and component design, the study shows that local grain orientation can strongly alter elastic compliance and yielding, so single-phase cubic assumptions may miss critical anisotropy in β-Ti alloys.",
       "method": [
-        "EBSD was used to identify the crystallographic surface normals of single grains.",
-        "Nanoindentation measured hardness, indentation modulus, strain-rate sensitivity, and yield onset near selected orientations.",
-        "Strain-rate-jump tests were used to estimate activation volumes and infer likely deformation mechanisms."
+        "EBSD to identify crystallographic surface normals of indented single crystals",
+        "Nanoindentation mapping of hardness, indentation modulus, and yield onset across multiple orientations",
+        "Strain-rate-jump testing to estimate activation volume and infer deformation mechanism"
       ],
-      "evidence_signal": "Across orientations near <111>, <124>, <011>, <023>, and <013>, modulus varied by about 10%, yield onset by 41%, and hardness by 6.6%, with activation volumes of 18–31 b^3.",
-      "watch_item": "The mechanism assignment is suggestive rather than definitive, since the inferred role of retained athermal ω and the glide/twin separation are not directly proven by the indentation data alone.",
+      "evidence_signal": "Across orientations near <111>, <124>, <011>, <023>, and <013>, the authors report ~10% modulus anisotropy, 41% yield-onset spread, only 6.6% hardness variation, and activation volumes of 18–31 b^3.",
+      "watch_item": "The mechanism assignment is still inferential: the proposed role of retained athermal ω and the rejection of simple Schmid/CRSS predictions need confirmation with direct phase- and slip-system-resolved measurements.",
       "hashtags": [
         "#Nanoindentation",
-        "#Ti15Mo",
-        "#SingleCrystal",
+        "#TiAlloys",
+        "#CrystalPlasticity",
         "#Anisotropy",
         "#ConstitutiveModeling"
       ],
@@ -303,7 +303,7 @@
       "paper_title": "Orientation-Resolved Nanoindentation of Single Crystal Ti-15Mo: Inverted Elastic Anisotropy and Yield-Onset Behavior Beyond Simple CRSS Predictions",
       "paper_date": "2026-10-13",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-16T13:38:59",
+      "generated_at": "2026-10-17T12:36:00",
       "generator": "openai"
     }
   },
@@ -332,388 +332,29 @@
         "url": "https://arxiv.org/pdf/2610.16996v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "PC-GNO learns the full mid-plane six-component stress tensor field in concrete penetration by coupling graph neural operators with physics-informed message passing.",
-      "engineering_relevance": "It enables field-level surrogate prediction for penetration-resistant concrete design, so engineers can derive stress criteria and energy indicators from one model instead of separate scalar surrogates.",
+      "key_insight": "PC-GNO learns the full mid-plane six-component stress tensor field in concrete penetration by coupling graph neural operator updates with physics-informed interface impedance and spectral normalization.",
+      "engineering_relevance": "It enables field-level surrogate prediction for penetration-resistant concrete design, linking mesoscale aggregate heterogeneity to actionable stress and energy-response maps.",
       "method": [
-        "Aggregate-resolved FEM generates 359 training cases at 100, 135, and 165 m/s for concrete strengths of 14, 23, and 48 MPa.",
-        "Message passing strength is tied to material impedance contrast across interfaces to encode physics of heterogeneous concrete.",
-        "Spectral normalization stabilizes the operator learning and constrains the update process."
+        "Train on aggregate-resolved FEM penetration simulations in function space",
+        "Use impedance contrast across material interfaces to set message-passing strength",
+        "Constrain updates with spectral normalization to stabilize field evolution"
       ],
-      "evidence_signal": "On single-step prediction, PC-GNO reports 80.16% mean accuracy across three levels, outperforming the preceding-frame baseline and achieving 87.9% with only 20,664 parameters.",
-      "watch_item": "Performance is bounded by the training/evaluation regime and the studied impact velocities, strengths, and mesostructure distributions, so extrapolation beyond those conditions may be unreliable.",
+      "evidence_signal": "Trained on 359 validated FEM cases at 100, 135, and 165 m/s for concrete strengths of 14, 23, and 48 MPa, PC-GNO reached 80.16% mean accuracy and outperformed both a strong Fourier neural operator baseline and linear regression.",
+      "watch_item": "Applicability is limited to the velocity, strength, and geometry regimes represented in the training/evaluation data, so extrapolation beyond those conditions should be treated cautiously.",
       "hashtags": [
         "#SolidMechanics",
         "#GraphNeuralOperator",
-        "#FEMSurrogate",
+        "#FiniteElement",
         "#ConcretePenetration",
-        "#PhysicsInformedML"
+        "#PhysicsInformedAI"
       ],
       "paper_id": "2026-10-12-arxiv-a_physics_coupled_graph_neural_operator_for_mid_plane_six_component_stress_tensor_field_pr",
       "paper_title": "A physics-coupled graph neural operator for mid-plane six-component stress tensor field prediction in concrete penetration",
       "paper_date": "2026-10-12",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:02",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-12-arxiv-liztail_unifying_shape_adaptation_and_spatial_parallelism_with_segment_reconfigurable_syst",
-    "arxiv_id": "2610.16159v1",
-    "date": "2026-10-12",
-    "title": "LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays",
-    "authors": "Gang Liu, Chen Yang, Junyan Hu, Jianguo Chen, Lixin Duan",
-    "abstract": "Systolic arrays are widely used to accelerate neural-network inference, yet fixed two-dimensional arrays struggle with the substantial diversity in both matrix geometry and available parallelism across CNNs and Transformer-based large language models. This mismatch is particularly severe for skinny matrices, small-batch autoregressive decoding, and operators containing multiple independent partitions, leading to low processing-element (PE) utilization and repeated spatial folding. Existing reconfigurable arrays typically improve either shape adaptation or distributed execution, whereas supporting both through fine-grained routing incurs considerable interconnect, buffering, and control overheads. We present LizTail (named after lizard tail autotomy, where predefined fracture planes allow segments to detach and remain independently active, analogous to LizTail's predefined reconfiguration boundaries), a multi-mode systolic array that enables constrained segment-level reconfiguration by partitioning a $128\\times128$ array into 32 regular $128\\times4$ segments and adding connectivity only at predefined endpoints. The resulting substrate supports trimming, long-path extension through $180^\\circ$ turn-back connections, and distributed execution in which each subarray can itself be trimmed or extended. Differentiated PE datapaths and segment-aware CEB/SIB buffers provide the required compute and data-delivery flexibility without unrestricted PE-level routing. A hardware-constrained mapper selects the execution organization, dataflow, task partition, and tiling. Across representative workloads, LizTail achieves geometric-mean speedups of $5.02\\times$ on CNN inference and $25.67\\times$ on LLM decoding over a TPU-like array, while reducing EDP by up to $38.23\\times$. LizTail is open-sourced at https://github.com/kmjbwxa/LizTail.",
-    "category": "Fracture and Damage",
-    "source": "arXiv",
-    "published": "2026-10-12T04:34:03Z",
-    "updated": "2026-10-12T04:34:03Z",
-    "primary_category": "cs.AR",
-    "categories": [
-      "cs.AR"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.16159v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.16159v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "LizTail adds predefined segment-level reconfiguration to a systolic array so one accelerator can both reshape for awkward matrix dimensions and expose more parallelism when workloads are split across independent tasks.",
-      "engineering_relevance": "This matters for CNN inference and LLM decoding, where fixed arrays waste many PEs on skinny matrices, small batches, and partitioned operators, causing low utilization and repeated folding.",
-      "method": [
-        "Partitions a 128×128 array into 32 reconfigurable 128×4 segments.",
-        "Uses limited endpoint connectivity with trimming, 180° turn-back extension, and distributed execution across segments.",
-        "Adds segment-aware buffers and differentiated PE datapaths, guided by a hardware-constrained mapper."
-      ],
-      "evidence_signal": "On representative workloads, the design reports geometric-mean speedups of 5.02× for CNNs and 25.67× for LLM decoding over a TPU-like array, with up to 38.23× EDP reduction.",
-      "watch_item": "The flexibility comes from constrained but still nontrivial interconnect, buffering, and control logic, so area and design complexity must be managed carefully.",
-      "hashtags": [
-        "#SystolicArrays",
-        "#AIAccelerator",
-        "#ReconfigurableHardware",
-        "#LLMInference",
-        "#CNNAcceleration"
-      ],
-      "paper_id": "2026-10-12-arxiv-liztail_unifying_shape_adaptation_and_spatial_parallelism_with_segment_reconfigurable_syst",
-      "paper_title": "LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays",
-      "paper_date": "2026-10-12",
-      "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-16T13:39:06",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-13-arxiv-low_cost_non_iterative_sylvester_solvers_for_dynamical_low_rank_approximation_of_reaction",
-    "arxiv_id": "2610.18419v1",
-    "date": "2026-10-13",
-    "title": "Low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations",
-    "authors": "Joy Saha, Jun Yang, Peimeng Yin",
-    "abstract": "In this work, we develop low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations and incorporate them into a basis-update \\& Galerkin mass-lumped finite element method (\\mbox{BUG-MLFEM}). By incorporating mass lumping via Gauss-Lobatto quadrature, the spatial discretization yields a matrix differential equation equipped with diagonal positive-definite mass matrices. We establish the weighted dynamical low-rank approximation (WDLRA) within the Galerkin framework of the MLFEM system, proving the theoretical equivalence between the BUG integrator and MLFEM on low-rank subspaces, which guarantees the discrete well-posedness of the implicit BUG steps. To overcome the severe computational bottleneck of standard $O(m^3+n^3)$ Sylvester solvers, we develop tailored, low-cost non-iterative solvers that exploit the inherent sparse-by-small algebraic structure. Under Dirichlet and Neumann boundary conditions (BCs), the large coefficient matrices are banded, enabling efficient diagonalization of the small $r \\times r$ factor matrix and reducing the per-step computational complexity to $O((m+n)r^2)$ and storage to $O((m+n)r)$. For periodic BCs, we combine this diagonalization strategy with a rank-2 Sherman-Morrison-Woodbury update to handle wrap-around corner entries at negligible additional cost. Numerical experiments demonstrate first-order temporal and $(k+1)$th-order spatial convergence of the proposed BUG-MLFEM in the discrete $L^2$ norm, where $k$ denotes the polynomial degree of the finite element space, together with significant computational speedups over existing low-rank integrators.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-13T13:59:51Z",
-    "updated": "2026-10-13T13:59:51Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.18419v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.18419v1"
-      }
-    ],
-    "score": 63,
-    "infographic": {
-      "key_insight": "The paper introduces low-cost, non-iterative Sylvester solvers that make dynamical low-rank BUG-MLFEM practical for reaction-diffusion equations by exploiting sparse and banded matrix structure.",
-      "engineering_relevance": "This enables faster, memory-efficient finite element solvers for large reaction-diffusion systems while preserving well-posedness and accuracy under common boundary conditions.",
-      "method": [
-        "Uses mass-lumped finite elements with Gauss-Lobatto quadrature to obtain diagonal positive-definite mass matrices.",
-        "Formulates weighted dynamical low-rank approximation within the Galerkin framework and proves equivalence with BUG on low-rank subspaces.",
-        "Replaces expensive iterative Sylvester solves with structure-exploiting non-iterative solvers; uses a rank-2 Sherman-Morrison-Woodbury update for periodic BCs."
-      ],
-      "evidence_signal": "The abstract reports first-order temporal and (k+1)th-order spatial convergence in discrete L2 norm, along with significant speedups over existing low-rank integrators.",
-      "watch_item": "Performance depends on exploiting the problem’s sparse/banded structure, so benefits may diminish for geometries or discretizations that break this algebraic structure.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#LowRankApproximation",
-        "#ReactionDiffusion",
-        "#ScientificComputing",
-        "#NumericalPDEs"
-      ],
-      "paper_id": "2026-10-13-arxiv-low_cost_non_iterative_sylvester_solvers_for_dynamical_low_rank_approximation_of_reaction",
-      "paper_title": "Low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations",
-      "paper_date": "2026-10-13",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:09",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains",
-    "arxiv_id": "2610.19092v1",
-    "date": "2026-10-13",
-    "title": "Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains",
-    "authors": "Ioannis Kalogeris, Anaksagoras Spitas, Konstantinos Atzarakis, George Stavroulakis, Vissarion Papadopoulos",
-    "abstract": "We propose a method for solving partial differential equations on complex domains by learning smooth, invertible mappings from a fixed reference domain using Neural Spline Flows (NSFs). Monotone rational-quadratic spline coupling layers ensure a strictly positive Jacobian determinant by construction, eliminating the need for Jacobian-sign penalties. A diffeomorphic pullback transfers the weak form of the PDE to the reference domain, enabling finite element analysis on reusable structured meshes. To generalize across shapes, a shared NSF is conditioned on low-dimensional latent codes learned through an auto-decoder framework; a subsequent encoder predicts these codes for unseen geometries in a single forward pass. For a given learned map, the pullback preserves the mathematical structure of the PDE and is exactly equivalent to solving on the domain represented by that map. Because the learned domain generally approximates the target geometry, geometric mapping error remains distinct from finite element discretization and quadrature errors. Numerical benchmarks show that sufficiently accurate learned mappings yield reliable finite element solutions. By avoiding repeated generation of unstructured meshes, the method addresses a bottleneck in simulation workflows. The fixed reference mesh also creates opportunities for efficient assembly, memory-aligned data access, and precomputed quadrature. The resulting framework assigns geometric complexity to the neural network while retaining conventional finite element discretization and convergence properties on the learned domain, with overall accuracy also governed by geometric fidelity.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-13T19:29:58Z",
-    "updated": "2026-10-13T19:29:58Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.19092v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.19092v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "A Neural Spline Flow learns a smooth, invertible domain map so complex-geometry PDEs can be solved on a fixed reference finite element mesh via pullback.",
-      "engineering_relevance": "This reduces repeated unstructured meshing and enables reusable structured meshes, making simulation workflows faster and more scalable for complex parts and domains.",
-      "method": [
-        "Train a monotone rational-quadratic spline flow to produce a diffeomorphic mapping with positive Jacobian determinant.",
-        "Pull back the PDE weak form to a reference domain and solve it with standard finite elements on a fixed mesh.",
-        "Condition the shared flow on latent codes for shape generalization; use an encoder to predict codes for unseen geometries in one pass."
-      ],
-      "evidence_signal": "Benchmarks in the abstract indicate that when the learned mapping is sufficiently accurate, the resulting finite element solutions are reliable.",
-      "watch_item": "Overall accuracy depends on geometric fidelity, so mapping error can become the dominant source of error even if the FEM discretization is stable.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#NeuralSplineFlows",
-        "#ComputationalMechanics",
-        "#PhysicsInformedAI",
-        "#MeshFreeGeometry"
-      ],
-      "paper_id": "2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains",
-      "paper_title": "Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains",
-      "paper_date": "2026-10-13",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:12",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-13-arxiv-llm2r_from_large_language_models_to_3d_reassemblers",
-    "arxiv_id": "2610.18604v1",
-    "date": "2026-10-13",
-    "title": "LLM2R: From Large Language Models to 3D Reassemblers",
-    "authors": "Zhouhan Zhong, Qiuhong Shen, Xingyi Yang, Jinyi Xu, Xinchao Wang",
-    "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
-    "category": "Fracture and Damage",
-    "source": "arXiv",
-    "published": "2026-10-13T15:57:41Z",
-    "updated": "2026-10-13T15:57:41Z",
-    "primary_category": "cs.CV",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.RO"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.18604v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.18604v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "LLM2R reframes 3D part assembly as one-shot sequence modeling with a pretrained decoder-only LLM, using summary tokens to capture whole-assembly context and predict all part poses in a single forward pass.",
-      "engineering_relevance": "This matters for fracture and damage reassembly because it scales better to many fragments than pairwise or iterative methods, improving practical reconstruction of complex broken objects.",
-      "method": [
-        "Point-BERT + Q-Former compress each part into geometric token blocks.",
-        "Concatenate all part blocks and process them with a causal LLM adapted via LoRA.",
-        "Add learnable summary tokens after the last part and fuse them in a part-aware pose head to predict SE(3) transforms."
-      ],
-      "evidence_signal": "The paper reports state-of-the-art part accuracy and success on three PartNet categories, best rotation/translation errors and part accuracy on PartNeXt, and the fastest inference with lowest translation error on Breaking Bad, with especially large gains at 100 parts and strong zero-shot transfer.",
-      "watch_item": "Because the backbone is causal, early part states cannot directly attend to later parts; the summary-token design mitigates this, but performance may still depend on token compression quality and the learned ordering of parts.",
-      "hashtags": [
-        "#FractureAndDamage",
-        "#3DReassembly",
-        "#LargeLanguageModels",
-        "#PointClouds",
-        "#SE3PoseEstimation"
-      ],
-      "paper_id": "2026-10-13-arxiv-llm2r_from_large_language_models_to_3d_reassemblers",
-      "paper_title": "LLM2R: From Large Language Models to 3D Reassemblers",
-      "paper_date": "2026-10-13",
-      "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-16T13:39:15",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-12-arxiv-fem_validated_real_time_modelling_of_soft_tactile_deformation",
-    "arxiv_id": "2610.16667v1",
-    "date": "2026-10-12",
-    "title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
-    "authors": "Silvia Terrile, Kaichen Shi, Taejun Kwon, Jiseok Lee, Nathan Lepora, Yeejin Lee",
-    "abstract": "Accurate modelling of soft tactile sensors remains difficult because finite element methods (FEM) are computa- tionally expensive, while real-time simulators often lack fidelity for hyperelastic deformation. Large physical datasets are also impractical to collect because repeated testing can damage fragile sensors. We present a data-efficient framework that combines limited real-world validation, high-fidelity FEM, and graph neural networks (GNNs) for accurate real-time prediction of two-dimensional tactile deformation in a planar soft tactile structure. The key idea is to decouple validation from training: 82 camera-tracked contact configurations are used only to tune and validate an ANSYS FEM model, which then generates 768 synthetic contact scenarios for GNN training. We evaluate both forward prediction from marker deformation to contact localisation and inverse inference from contact configuration to marker deformation. The validated FEM achieves sub-0.5 mm error in more than 90% of validation cases, while the learned GNN surrogate reaches a mean absolute error of 0.32 mm with millisecond-scale inference, compared with minute-scale FEM simulation. Models trained entirely on synthetic FEM data retain sub-millimetre accuracy on real measurements from the 2D tactile structure, demonstrating strong sim-to-real transfer within the tested planar setting. We further integrate the learned model into a real-time visualisation pipeline, enabling rapid deformation prediction for virtual prototyping and simulator-based design exploration without extensive physical testing.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-12T12:15:46Z",
-    "updated": "2026-10-12T12:15:46Z",
-    "primary_category": "cs.RO",
-    "categories": [
-      "cs.RO"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.16667v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.16667v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "A validated FEM model can generate high-quality synthetic tactile deformation data that trains a fast GNN surrogate for real-time, sub-millimeter prediction.",
-      "engineering_relevance": "The approach enables accurate soft tactile sensor simulation and design exploration without costly repeated physical testing or minute-scale FEM runs.",
-      "method": [
-        "Use 82 real camera-tracked contact cases to tune and validate the ANSYS FEM model.",
-        "Generate 768 synthetic contact scenarios from the validated FEM for GNN training.",
-        "Train a graph neural network for both forward and inverse tactile deformation prediction, then deploy it in a real-time visualization pipeline."
-      ],
-      "evidence_signal": "The validated FEM achieved under 0.5 mm error in over 90% of validation cases, and the GNN reached 0.32 mm mean absolute error with millisecond inference.",
-      "watch_item": "Results are demonstrated on a planar 2D tactile structure, so broader performance on more complex 3D soft sensors may require additional validation.",
-      "hashtags": [
-        "#FEM",
-        "#GraphNeuralNetworks",
-        "#SoftTactileSensors",
-        "#RealTimeSimulation",
-        "#SimToReal"
-      ],
-      "paper_id": "2026-10-12-arxiv-fem_validated_real_time_modelling_of_soft_tactile_deformation",
-      "paper_title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
-      "paper_date": "2026-10-12",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:17",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-12-arxiv-deep_learning_based_mechanical_characterization_of_synthetically_generated_plant_fibers_un",
-    "arxiv_id": "2610.16529v1",
-    "date": "2026-10-12",
-    "title": "Deep Learning-based Mechanical Characterization of Synthetically Generated Plant Fibers under Transverse Compression",
-    "authors": "Nikolaos Kegkeroglou, Bilal Sabillah, Myrto Inglezou, Vincent Placet, Céndric Clevy, Antonios Porichis",
-    "abstract": "Plant fibers are increasingly used as sustainable reinforcements in composites, but the intrinsic variability of their microstructure causes substantial scatter in transverse mechanical behavior, complicating composite design. Characterizing this behavior relies on finite element (FE) simulations requiring several minutes of high-performance computing per fiber, making high-throughput characterization across realistic fiber populations impractical. In this study, we propose a deep learning framework replacing this FE bottleneck with a fast pipeline. It includes two coupled recursive U-Nets predicting the step-by-step evolution of fiber deformation and internal stress fields under transverse compression, followed by a regression CNN estimating the transverse Young's modulus from the final stress field. Unlike prior approaches predicting stress fields for fixed configurations or idealized geometries, our framework recursively resolves the full temporal stress evolution for synthetic fibers derived from real hemp cross-sections, with or without a lumen. Trained on 1,000 synthetic fiber geometries with FE ground truth, it reproduces the stress field sequence with a Structural Similarity Index Measure (SSIM) of $0.9574 \\pm 0.0074$ and a Root Mean Squared Error (RMSE) of $0.0345 \\pm 0.0079$. It estimates transverse Young's modulus with an $R^2$ of $0.938 \\pm 0.024$, a Mean Absolute Error (MAE) of $24.31 \\pm 1.23$ MPa, and a Mean Absolute Percentage Error (MAPE) of $5.25 \\pm 0.91\\%$. Inference requires under one second per fiber versus five minutes per FE simulation, drastically reducing computational cost. This offers a fast, reliable tool for mechanical characterization of synthetic plant fibers, with promising applications in designing natural fiber-reinforced composites.",
-    "category": "Composites and Metamaterials",
-    "source": "arXiv",
-    "published": "2026-10-12T10:19:05Z",
-    "updated": "2026-10-12T10:19:05Z",
-    "primary_category": "cs.CV",
-    "categories": [
-      "cs.CV"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.16529v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.16529v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "A recursive deep learning pipeline can replace slow finite-element simulations to predict the full transverse-compression response of synthetic plant fibers and their effective modulus.",
-      "engineering_relevance": "This enables high-throughput mechanical screening of realistic natural-fiber geometries, supporting faster design of sustainable fiber-reinforced composites.",
-      "method": [
-        "Two coupled recursive U-Nets predict step-by-step deformation and internal stress evolution under transverse compression.",
-        "A regression CNN uses the final stress field to estimate transverse Young’s modulus.",
-        "Trained on 1,000 synthetic hemp-like cross-sections with FE ground truth, including cases with and without lumen."
-      ],
-      "evidence_signal": "The model achieved SSIM 0.9574 ± 0.0074 and RMSE 0.0345 ± 0.0079 for stress-field sequences, and predicted modulus with R² = 0.938 ± 0.024, MAE = 24.31 ± 1.23 MPa, and MAPE = 5.25 ± 0.91%, while inference took under one second versus about five minutes for FE.",
-      "watch_item": "Performance is demonstrated on synthetic fibers derived from real cross-sections, so generalization to unseen species, broader defect patterns, or experimental measurements still needs validation.",
-      "hashtags": [
-        "#DeepLearning",
-        "#SolidMechanics",
-        "#FiniteElement",
-        "#NaturalFibers",
-        "#CompositeMaterials"
-      ],
-      "paper_id": "2026-10-12-arxiv-deep_learning_based_mechanical_characterization_of_synthetically_generated_plant_fibers_un",
-      "paper_title": "Deep Learning-based Mechanical Characterization of Synthetically Generated Plant Fibers under Transverse Compression",
-      "paper_date": "2026-10-12",
-      "paper_category": "Composites and Metamaterials",
-      "generated_at": "2026-10-16T13:39:21",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-12-arxiv-an_algebraic_multiscale_framework_for_two_level_overlapping_schwarz_preconditioners",
-    "arxiv_id": "2610.16359v1",
-    "date": "2026-10-12",
-    "title": "An algebraic multiscale framework for two-level overlapping Schwarz preconditioners",
-    "authors": "Filipe Cumaru, Hadi Hajibeygi, Cornelis Vuik, Alexander Heinlein",
-    "abstract": "The robustness of two-level overlapping additive Schwarz (OAS) preconditioners for highly heterogeneous elliptic problems hinges on the choice of the coarse space. We propose an algebraic multiscale (AM) coarse space built from the system matrix alone through an algebraic formulation of the multiscale finite element method (MsFEM). The coarse basis functions are energy-minimizing extensions of the solutions of reduced boundary condition (RBC) problems on the subdomain interface, so that coefficient variations along the interface enter the coarse space. By posing the RBC problems on slabs that extend the interface, the construction also applies to general unstructured domain decompositions. Embedding the AM formulation in an energy-minimizing framework extends it to linear elasticity, and we show that existing condition number bounds for OAS with MsFEM coarse spaces carry over to the algebraic setting. For problems with high coefficient inclusions on the coarse nodes, the AM iteration count and condition number are unaffected by increasing the contrast. In 3D scalar diffusion with log-normal coefficients, AM needs about as many iterations as the generalized Dryja--Smith--Widlund (GDSW) coarse space, while solving a coarse problem ten times smaller. For linear elasticity, omitting the coarse basis functions associated with the rotational rigid body modes yields a fully algebraic coarse space that still scales well for homogeneous problems.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-12T08:14:13Z",
-    "updated": "2026-10-12T08:14:13Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.16359v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.16359v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "The paper replaces geometric coarse spaces in two-level overlapping Schwarz preconditioners with an algebraic multiscale coarse space built directly from the system matrix, preserving robustness for highly heterogeneous problems.",
-      "engineering_relevance": "This enables scalable, coefficient-aware preconditioning for elliptic diffusion and linear elasticity problems, especially when mesh geometry or coarse-space design is difficult to construct explicitly.",
-      "method": [
-        "Build coarse basis functions from algebraic multiscale finite element ideas using only the system matrix.",
-        "Solve reduced boundary condition problems on interface slabs and extend them by energy-minimizing interpolation.",
-        "Embed the construction in an energy-minimizing framework so it applies to linear elasticity and unstructured decompositions."
-      ],
-      "evidence_signal": "The abstract reports that the method is insensitive to increasing contrast for coarse-node inclusions, matches GDSW iteration counts in 3D log-normal diffusion while using a coarse problem about ten times smaller, and scales well for homogeneous linear elasticity.",
-      "watch_item": "Performance depends on how well the interface-slabs and reduced boundary problems capture coefficient variation, and the fully algebraic elasticity variant omits rotational rigid-body-mode basis functions.",
-      "hashtags": [
-        "#MultiscaleMethods",
-        "#SchwarzPreconditioners",
-        "#FiniteElementMethods",
-        "#LinearElasticity",
-        "#HPC"
-      ],
-      "paper_id": "2026-10-12-arxiv-an_algebraic_multiscale_framework_for_two_level_overlapping_schwarz_preconditioners",
-      "paper_title": "An algebraic multiscale framework for two-level overlapping Schwarz preconditioners",
-      "paper_date": "2026-10-12",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:24",
+      "generated_at": "2026-10-17T12:36:03",
       "generator": "openai"
     }
   },
@@ -744,27 +385,386 @@
     ],
     "score": 60,
     "infographic": {
-      "key_insight": "Co2In balances plasticity and stability in incremental learning by separating fast knowledge acquisition in working memory from persistent retention in long-term memory.",
-      "engineering_relevance": "For computational science and engineering workflows that require continual model updates, Co2In offers a memory-efficient strategy to incorporate new information without catastrophic forgetting.",
+      "key_insight": "Co2In improves continual learning by separating fast adaptive learning in working memory from durable retention in long-term memory, then consolidating and integrating learned knowledge into compact representations.",
+      "engineering_relevance": "For data-driven constitutive modeling, this suggests a practical route to update material models with new experiments while reducing catastrophic forgetting of previously learned behaviors.",
       "method": [
-        "Working memory learns from new data and encodes knowledge into parameters.",
-        "A consolidation step extracts underlying patterns and compresses them into a compact knowledge representation.",
-        "The knowledge representation and patterns are integrated as separate layers into long-term memory."
+        "Working memory learns new-task parameters from incoming data to preserve plasticity.",
+        "Consolidation extracts patterns from learned parameters into compact knowledge representations.",
+        "Integrated long-term memory stores transformed knowledge in separate network layers for stable retention."
       ],
-      "evidence_signal": "The method was evaluated on CIFAR-10, CIFAR-100, and Tiny-ImageNet under exemplar-free Class-IL and Task-IL settings, where it achieved state-of-the-art performance with efficient memory use.",
-      "watch_item": "The approach relies on a consolidation and integration pipeline that may add implementation complexity and could be sensitive to how knowledge representations are extracted and merged.",
+      "evidence_signal": "The framework was evaluated on CIFAR-10, CIFAR-100, and Tiny-ImageNet in exemplar-free Class-IL and Task-IL settings, where it achieved state-of-the-art performance with efficient memory use.",
+      "watch_item": "Performance depends on the quality of consolidation and integration; in real deployments, added architectural complexity may increase implementation and tuning burden.",
       "hashtags": [
         "#IncrementalLearning",
         "#ContinualLearning",
-        "#MemorySystems",
+        "#MemoryArchitectures",
         "#KnowledgeConsolidation",
-        "#ComputationalEngineering"
+        "#AIforEngineering"
       ],
       "paper_id": "2026-10-15-arxiv-co2in_a_bi_level_memory_incremental_learning_framework_with_knowledge_encoding_consolidati",
       "paper_title": "Co2In: a Bi-level Memory Incremental Learning Framework with Knowledge Encoding, Consolidation, and Integration",
       "paper_date": "2026-10-15",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-16T13:39:27",
+      "generated_at": "2026-10-17T12:36:05",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-12-arxiv-liztail_unifying_shape_adaptation_and_spatial_parallelism_with_segment_reconfigurable_syst",
+    "arxiv_id": "2610.16159v1",
+    "date": "2026-10-12",
+    "title": "LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays",
+    "authors": "Gang Liu, Chen Yang, Junyan Hu, Jianguo Chen, Lixin Duan",
+    "abstract": "Systolic arrays are widely used to accelerate neural-network inference, yet fixed two-dimensional arrays struggle with the substantial diversity in both matrix geometry and available parallelism across CNNs and Transformer-based large language models. This mismatch is particularly severe for skinny matrices, small-batch autoregressive decoding, and operators containing multiple independent partitions, leading to low processing-element (PE) utilization and repeated spatial folding. Existing reconfigurable arrays typically improve either shape adaptation or distributed execution, whereas supporting both through fine-grained routing incurs considerable interconnect, buffering, and control overheads. We present LizTail (named after lizard tail autotomy, where predefined fracture planes allow segments to detach and remain independently active, analogous to LizTail's predefined reconfiguration boundaries), a multi-mode systolic array that enables constrained segment-level reconfiguration by partitioning a $128\\times128$ array into 32 regular $128\\times4$ segments and adding connectivity only at predefined endpoints. The resulting substrate supports trimming, long-path extension through $180^\\circ$ turn-back connections, and distributed execution in which each subarray can itself be trimmed or extended. Differentiated PE datapaths and segment-aware CEB/SIB buffers provide the required compute and data-delivery flexibility without unrestricted PE-level routing. A hardware-constrained mapper selects the execution organization, dataflow, task partition, and tiling. Across representative workloads, LizTail achieves geometric-mean speedups of $5.02\\times$ on CNN inference and $25.67\\times$ on LLM decoding over a TPU-like array, while reducing EDP by up to $38.23\\times$. LizTail is open-sourced at https://github.com/kmjbwxa/LizTail.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-10-12T04:34:03Z",
+    "updated": "2026-10-12T04:34:03Z",
+    "primary_category": "cs.AR",
+    "categories": [
+      "cs.AR"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.16159v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.16159v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "LizTail unifies shape adaptation and spatial parallelism by splitting a 128×128 systolic array into reconfigurable 128×4 segments, letting the hardware both fit awkward matrix shapes and execute independent sub-tasks efficiently.",
+      "engineering_relevance": "This matters for AI accelerators because CNNs and especially autoregressive LLM decoding often leave fixed arrays underutilized, so segment-level reconfiguration can raise PE utilization without the cost of full PE-level routing.",
+      "method": [
+        "Partitions the array into 32 regular segments with connectivity only at predefined endpoints.",
+        "Supports trimming, 180° turn-back extension, and distributed execution across subarrays.",
+        "Uses differentiated PE datapaths plus segment-aware CEB/SIB buffers, with a hardware-constrained mapper choosing execution mode and tiling."
+      ],
+      "evidence_signal": "On representative workloads, the design reports geometric-mean speedups of 5.02× for CNN inference and 25.67× for LLM decoding versus a TPU-like array, with EDP reductions up to 38.23×.",
+      "watch_item": "The added flexibility still depends on constrained predefined boundaries and custom mapping, so real performance may be sensitive to compiler quality, workload fit, and hardware implementation overheads.",
+      "hashtags": [
+        "#SystolicArrays",
+        "#AIHardware",
+        "#LLMInference",
+        "#CNNAcceleration",
+        "#ReconfigurableCompute"
+      ],
+      "paper_id": "2026-10-12-arxiv-liztail_unifying_shape_adaptation_and_spatial_parallelism_with_segment_reconfigurable_syst",
+      "paper_title": "LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays",
+      "paper_date": "2026-10-12",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-10-17T12:36:08",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-13-arxiv-low_cost_non_iterative_sylvester_solvers_for_dynamical_low_rank_approximation_of_reaction",
+    "arxiv_id": "2610.18419v1",
+    "date": "2026-10-13",
+    "title": "Low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations",
+    "authors": "Joy Saha, Jun Yang, Peimeng Yin",
+    "abstract": "In this work, we develop low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations and incorporate them into a basis-update \\& Galerkin mass-lumped finite element method (\\mbox{BUG-MLFEM}). By incorporating mass lumping via Gauss-Lobatto quadrature, the spatial discretization yields a matrix differential equation equipped with diagonal positive-definite mass matrices. We establish the weighted dynamical low-rank approximation (WDLRA) within the Galerkin framework of the MLFEM system, proving the theoretical equivalence between the BUG integrator and MLFEM on low-rank subspaces, which guarantees the discrete well-posedness of the implicit BUG steps. To overcome the severe computational bottleneck of standard $O(m^3+n^3)$ Sylvester solvers, we develop tailored, low-cost non-iterative solvers that exploit the inherent sparse-by-small algebraic structure. Under Dirichlet and Neumann boundary conditions (BCs), the large coefficient matrices are banded, enabling efficient diagonalization of the small $r \\times r$ factor matrix and reducing the per-step computational complexity to $O((m+n)r^2)$ and storage to $O((m+n)r)$. For periodic BCs, we combine this diagonalization strategy with a rank-2 Sherman-Morrison-Woodbury update to handle wrap-around corner entries at negligible additional cost. Numerical experiments demonstrate first-order temporal and $(k+1)$th-order spatial convergence of the proposed BUG-MLFEM in the discrete $L^2$ norm, where $k$ denotes the polynomial degree of the finite element space, together with significant computational speedups over existing low-rank integrators.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-13T13:59:51Z",
+    "updated": "2026-10-13T13:59:51Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.18419v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.18419v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "The paper couples mass-lumped finite elements with weighted dynamical low-rank approximation and fast non-iterative Sylvester solvers to make reaction-diffusion simulation cheaper without sacrificing accuracy.",
+      "engineering_relevance": "This enables faster, lower-memory time stepping for large PDE discretizations, which is useful for scalable multiphysics and reduced-order simulation workflows.",
+      "method": [
+        "Use BUG-MLFEM with Gauss-Lobatto mass lumping to obtain diagonal positive-definite mass matrices.",
+        "Formulate weighted dynamical low-rank approximation on the Galerkin MLFEM system and prove equivalence on low-rank subspaces.",
+        "Replace costly iterative Sylvester solves with structure-exploiting non-iterative solvers; for periodic BCs, add a rank-2 Sherman-Morrison-Woodbury update."
+      ],
+      "evidence_signal": "The abstract reports first-order temporal and (k+1)-th-order spatial convergence in discrete L2 norm, plus substantial speedups over existing low-rank integrators.",
+      "watch_item": "The approach depends on structured sparse/banded matrices and careful handling of boundary conditions, so implementation complexity may rise for more general meshes or operators.",
+      "hashtags": [
+        "#LowRankPDE",
+        "#FiniteElementMethod",
+        "#ReactionDiffusion",
+        "#ReducedOrderModeling",
+        "#ScientificComputing"
+      ],
+      "paper_id": "2026-10-13-arxiv-low_cost_non_iterative_sylvester_solvers_for_dynamical_low_rank_approximation_of_reaction",
+      "paper_title": "Low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations",
+      "paper_date": "2026-10-13",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-17T12:36:10",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains",
+    "arxiv_id": "2610.19092v1",
+    "date": "2026-10-13",
+    "title": "Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains",
+    "authors": "Ioannis Kalogeris, Anaksagoras Spitas, Konstantinos Atzarakis, George Stavroulakis, Vissarion Papadopoulos",
+    "abstract": "We propose a method for solving partial differential equations on complex domains by learning smooth, invertible mappings from a fixed reference domain using Neural Spline Flows (NSFs). Monotone rational-quadratic spline coupling layers ensure a strictly positive Jacobian determinant by construction, eliminating the need for Jacobian-sign penalties. A diffeomorphic pullback transfers the weak form of the PDE to the reference domain, enabling finite element analysis on reusable structured meshes. To generalize across shapes, a shared NSF is conditioned on low-dimensional latent codes learned through an auto-decoder framework; a subsequent encoder predicts these codes for unseen geometries in a single forward pass. For a given learned map, the pullback preserves the mathematical structure of the PDE and is exactly equivalent to solving on the domain represented by that map. Because the learned domain generally approximates the target geometry, geometric mapping error remains distinct from finite element discretization and quadrature errors. Numerical benchmarks show that sufficiently accurate learned mappings yield reliable finite element solutions. By avoiding repeated generation of unstructured meshes, the method addresses a bottleneck in simulation workflows. The fixed reference mesh also creates opportunities for efficient assembly, memory-aligned data access, and precomputed quadrature. The resulting framework assigns geometric complexity to the neural network while retaining conventional finite element discretization and convergence properties on the learned domain, with overall accuracy also governed by geometric fidelity.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-13T19:29:58Z",
+    "updated": "2026-10-13T19:29:58Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.19092v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.19092v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "The paper learns smooth, invertible Neural Spline Flow mappings from a fixed reference mesh to complex geometries, so finite element PDEs can be solved on reusable structured meshes via a diffeomorphic pullback.",
+      "engineering_relevance": "This can reduce the need for repeated unstructured mesh generation while preserving standard FEM structure, making simulation workflows faster and more reusable for complex-shaped domains.",
+      "method": [
+        "Use monotone rational-quadratic spline coupling layers to guarantee a positive Jacobian determinant and diffeomorphic mapping.",
+        "Transfer the PDE weak form to a reference domain with a pullback FEM formulation on a fixed structured mesh.",
+        "Condition a shared NSF on low-dimensional latent geometry codes, with an encoder for one-shot prediction on unseen shapes."
+      ],
+      "evidence_signal": "The abstract reports numerical benchmarks showing that when the learned mapping is sufficiently accurate, the resulting finite element solutions are reliable and the method remains equivalent to solving on the represented domain.",
+      "watch_item": "Overall solution accuracy still depends on geometric fidelity, so mapping error can become the dominant source of error if the learned geometry is not accurate enough.",
+      "hashtags": [
+        "#FiniteElementMethod",
+        "#NeuralFlows",
+        "#GeometryLearning",
+        "#ComputationalMechanics",
+        "#ScientificMachineLearning"
+      ],
+      "paper_id": "2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains",
+      "paper_title": "Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains",
+      "paper_date": "2026-10-13",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-17T12:36:12",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-13-arxiv-llm2r_from_large_language_models_to_3d_reassemblers",
+    "arxiv_id": "2610.18604v1",
+    "date": "2026-10-13",
+    "title": "LLM2R: From Large Language Models to 3D Reassemblers",
+    "authors": "Zhouhan Zhong, Qiuhong Shen, Xingyi Yang, Jinyi Xu, Xinchao Wang",
+    "abstract": "3D part assembly aims to reconstruct a complete shape from a set of unassembled parts by predicting a rigid SE(3) transformation for each part. Because the placement of a part is rarely determined by its own geometry, the task demands reasoning over the entire part set, and existing methods, which rely on pairwise relations or iterative generation and verification, scale poorly to objects with many parts. We present LLM2R, which casts part assembly as sequence modeling with a pretrained decoder-only large language model (LLM): a Point-BERT encoder and a Q-Former compress each part into a block of geometric tokens, the blocks of all parts are concatenated, and a causal LLM adapted with Low-Rank Adaptation (LoRA) processes the sequence in one forward pass. Causal attention, however, lets the hidden states of a part observe only the parts that precede it. LLM2R therefore appends a block of learnable summary tokens after the last part: these tokens follow every part, so their states aggregate the whole assembly at a constant token cost, and a part-aware pose head fuses each part's states with them before predicting its rotation and translation. One architecture thus handles semantic and geometric assembly and predicts all poses in a single non-autoregressive pass. LLM2R achieves the highest part accuracy and success rate on all three PartNet categories, the best rotation error, translation error, and part accuracy on PartNeXt, and the lowest translation error and fastest inference on Breaking Bad, where only a fracture-specialized method is more accurate. Its advantage grows with the number of parts: at 100 parts it exceeds GARF by 33.5 points in part accuracy on Breaking Bad and Assembler by 29.1 points on PartNet, and it transfers zero-shot to unseen categories with more than 16 points higher part accuracy than the strongest of three baselines.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-10-13T15:57:41Z",
+    "updated": "2026-10-13T15:57:41Z",
+    "primary_category": "cs.CV",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.18604v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.18604v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "LLM2R turns 3D part assembly into a single-pass sequence modeling problem, using a pretrained decoder-only LLM with summary tokens to reason over all parts and predict every rigid pose at once.",
+      "engineering_relevance": "This enables faster and more scalable reconstruction of fractured or disassembled 3D objects, especially when assemblies contain many parts and pairwise methods become inefficient.",
+      "method": [
+        "Encode each part with Point-BERT + Q-Former into geometric token blocks.",
+        "Concatenate all part blocks and process them with a LoRA-adapted causal LLM in one forward pass.",
+        "Append learnable summary tokens so each part's pose head can fuse local and global context before predicting SE(3) transform."
+      ],
+      "evidence_signal": "The method reports top performance across PartNet, PartNeXt, and Breaking Bad, with especially large gains as part count increases and strong zero-shot transfer to unseen categories.",
+      "watch_item": "Because causal attention is directional, the model depends on the ordering of part blocks, so sequence design and token budget may affect robustness and reproducibility.",
+      "hashtags": [
+        "#3DAssembly",
+        "#PointClouds",
+        "#LargeLanguageModels",
+        "#SE3Regression",
+        "#FractureReassembly"
+      ],
+      "paper_id": "2026-10-13-arxiv-llm2r_from_large_language_models_to_3d_reassemblers",
+      "paper_title": "LLM2R: From Large Language Models to 3D Reassemblers",
+      "paper_date": "2026-10-13",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-10-17T12:36:14",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-12-arxiv-fem_validated_real_time_modelling_of_soft_tactile_deformation",
+    "arxiv_id": "2610.16667v1",
+    "date": "2026-10-12",
+    "title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
+    "authors": "Silvia Terrile, Kaichen Shi, Taejun Kwon, Jiseok Lee, Nathan Lepora, Yeejin Lee",
+    "abstract": "Accurate modelling of soft tactile sensors remains difficult because finite element methods (FEM) are computa- tionally expensive, while real-time simulators often lack fidelity for hyperelastic deformation. Large physical datasets are also impractical to collect because repeated testing can damage fragile sensors. We present a data-efficient framework that combines limited real-world validation, high-fidelity FEM, and graph neural networks (GNNs) for accurate real-time prediction of two-dimensional tactile deformation in a planar soft tactile structure. The key idea is to decouple validation from training: 82 camera-tracked contact configurations are used only to tune and validate an ANSYS FEM model, which then generates 768 synthetic contact scenarios for GNN training. We evaluate both forward prediction from marker deformation to contact localisation and inverse inference from contact configuration to marker deformation. The validated FEM achieves sub-0.5 mm error in more than 90% of validation cases, while the learned GNN surrogate reaches a mean absolute error of 0.32 mm with millisecond-scale inference, compared with minute-scale FEM simulation. Models trained entirely on synthetic FEM data retain sub-millimetre accuracy on real measurements from the 2D tactile structure, demonstrating strong sim-to-real transfer within the tested planar setting. We further integrate the learned model into a real-time visualisation pipeline, enabling rapid deformation prediction for virtual prototyping and simulator-based design exploration without extensive physical testing.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-12T12:15:46Z",
+    "updated": "2026-10-12T12:15:46Z",
+    "primary_category": "cs.RO",
+    "categories": [
+      "cs.RO"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.16667v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.16667v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "A FEM-validated graph neural network can deliver real-time, sub-millimetre prediction of soft tactile deformation using only a small set of physical validations plus synthetic FEM data.",
+      "engineering_relevance": "This enables fast, accurate virtual prototyping of planar soft tactile sensors and contact localization without expensive repeated physical testing or minute-scale simulation.",
+      "method": [
+        "Use 82 camera-tracked real contact cases to tune and validate an ANSYS FEM model.",
+        "Generate 768 synthetic contact scenarios from the validated FEM for GNN training.",
+        "Deploy the trained GNN for forward and inverse deformation prediction in a real-time visualization pipeline."
+      ],
+      "evidence_signal": "The validated FEM achieved under 0.5 mm error in over 90% of validation cases, and the GNN reached 0.32 mm mean absolute error with millisecond-scale inference on the 2D tactile structure.",
+      "watch_item": "The demonstrated sim-to-real transfer is strongest for the tested planar setting, so performance may not directly generalize to more complex geometries or loading conditions without revalidation.",
+      "hashtags": [
+        "#FEM",
+        "#SoftRobotics",
+        "#TactileSensing",
+        "#GraphNeuralNetworks",
+        "#DigitalTwin"
+      ],
+      "paper_id": "2026-10-12-arxiv-fem_validated_real_time_modelling_of_soft_tactile_deformation",
+      "paper_title": "FEM-Validated Real-Time Modelling of Soft Tactile Deformation",
+      "paper_date": "2026-10-12",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-17T12:36:16",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-12-arxiv-deep_learning_based_mechanical_characterization_of_synthetically_generated_plant_fibers_un",
+    "arxiv_id": "2610.16529v1",
+    "date": "2026-10-12",
+    "title": "Deep Learning-based Mechanical Characterization of Synthetically Generated Plant Fibers under Transverse Compression",
+    "authors": "Nikolaos Kegkeroglou, Bilal Sabillah, Myrto Inglezou, Vincent Placet, Céndric Clevy, Antonios Porichis",
+    "abstract": "Plant fibers are increasingly used as sustainable reinforcements in composites, but the intrinsic variability of their microstructure causes substantial scatter in transverse mechanical behavior, complicating composite design. Characterizing this behavior relies on finite element (FE) simulations requiring several minutes of high-performance computing per fiber, making high-throughput characterization across realistic fiber populations impractical. In this study, we propose a deep learning framework replacing this FE bottleneck with a fast pipeline. It includes two coupled recursive U-Nets predicting the step-by-step evolution of fiber deformation and internal stress fields under transverse compression, followed by a regression CNN estimating the transverse Young's modulus from the final stress field. Unlike prior approaches predicting stress fields for fixed configurations or idealized geometries, our framework recursively resolves the full temporal stress evolution for synthetic fibers derived from real hemp cross-sections, with or without a lumen. Trained on 1,000 synthetic fiber geometries with FE ground truth, it reproduces the stress field sequence with a Structural Similarity Index Measure (SSIM) of $0.9574 \\pm 0.0074$ and a Root Mean Squared Error (RMSE) of $0.0345 \\pm 0.0079$. It estimates transverse Young's modulus with an $R^2$ of $0.938 \\pm 0.024$, a Mean Absolute Error (MAE) of $24.31 \\pm 1.23$ MPa, and a Mean Absolute Percentage Error (MAPE) of $5.25 \\pm 0.91\\%$. Inference requires under one second per fiber versus five minutes per FE simulation, drastically reducing computational cost. This offers a fast, reliable tool for mechanical characterization of synthetic plant fibers, with promising applications in designing natural fiber-reinforced composites.",
+    "category": "Composites and Metamaterials",
+    "source": "arXiv",
+    "published": "2026-10-12T10:19:05Z",
+    "updated": "2026-10-12T10:19:05Z",
+    "primary_category": "cs.CV",
+    "categories": [
+      "cs.CV"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.16529v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.16529v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "A recursive deep learning pipeline can replace slow finite-element simulation to predict the full transverse compression response of synthetic plant fibers and their effective modulus.",
+      "engineering_relevance": "This enables fast, scalable screening of plant-fiber microstructures for composite design, reducing per-fiber analysis from minutes to under one second.",
+      "method": [
+        "Two coupled recursive U-Nets predict stepwise deformation and internal stress evolution under transverse compression.",
+        "A regression CNN estimates transverse Young's modulus from the final stress field.",
+        "Trained on 1,000 synthetic hemp-derived fiber geometries with FE ground truth, including cases with and without a lumen."
+      ],
+      "evidence_signal": "The model achieved SSIM 0.9574 ± 0.0074 and RMSE 0.0345 ± 0.0079 for stress-field evolution, and predicted Young's modulus with R^2 = 0.938 ± 0.024, MAE = 24.31 ± 1.23 MPa, and MAPE = 5.25 ± 0.91%.",
+      "watch_item": "Performance is demonstrated on synthetic geometries trained against FE data, so generalization to experimental fibers with unresolved microstructural defects or manufacturing variability still needs validation.",
+      "hashtags": [
+        "#DeepLearning",
+        "#SolidMechanics",
+        "#PlantFibers",
+        "#FiniteElement",
+        "#Composites"
+      ],
+      "paper_id": "2026-10-12-arxiv-deep_learning_based_mechanical_characterization_of_synthetically_generated_plant_fibers_un",
+      "paper_title": "Deep Learning-based Mechanical Characterization of Synthetically Generated Plant Fibers under Transverse Compression",
+      "paper_date": "2026-10-12",
+      "paper_category": "Composites and Metamaterials",
+      "generated_at": "2026-10-17T12:36:19",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-12-arxiv-an_algebraic_multiscale_framework_for_two_level_overlapping_schwarz_preconditioners",
+    "arxiv_id": "2610.16359v1",
+    "date": "2026-10-12",
+    "title": "An algebraic multiscale framework for two-level overlapping Schwarz preconditioners",
+    "authors": "Filipe Cumaru, Hadi Hajibeygi, Cornelis Vuik, Alexander Heinlein",
+    "abstract": "The robustness of two-level overlapping additive Schwarz (OAS) preconditioners for highly heterogeneous elliptic problems hinges on the choice of the coarse space. We propose an algebraic multiscale (AM) coarse space built from the system matrix alone through an algebraic formulation of the multiscale finite element method (MsFEM). The coarse basis functions are energy-minimizing extensions of the solutions of reduced boundary condition (RBC) problems on the subdomain interface, so that coefficient variations along the interface enter the coarse space. By posing the RBC problems on slabs that extend the interface, the construction also applies to general unstructured domain decompositions. Embedding the AM formulation in an energy-minimizing framework extends it to linear elasticity, and we show that existing condition number bounds for OAS with MsFEM coarse spaces carry over to the algebraic setting. For problems with high coefficient inclusions on the coarse nodes, the AM iteration count and condition number are unaffected by increasing the contrast. In 3D scalar diffusion with log-normal coefficients, AM needs about as many iterations as the generalized Dryja--Smith--Widlund (GDSW) coarse space, while solving a coarse problem ten times smaller. For linear elasticity, omitting the coarse basis functions associated with the rotational rigid body modes yields a fully algebraic coarse space that still scales well for homogeneous problems.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-12T08:14:13Z",
+    "updated": "2026-10-12T08:14:13Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.16359v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.16359v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "The paper builds a fully algebraic multiscale coarse space for two-level overlapping Schwarz preconditioners that preserves robustness for highly heterogeneous elliptic and elasticity problems.",
+      "engineering_relevance": "It offers a matrix-only route to scalable domain decomposition preconditioners, reducing coarse problem size while maintaining strong performance on difficult multiscale mechanics and diffusion cases.",
+      "method": [
+        "Constructs coarse basis functions by solving algebraic reduced boundary condition (RBC) problems on subdomain interfaces.",
+        "Uses energy-minimizing extensions of interface solutions so coefficient variation is encoded in the coarse space.",
+        "Extends the framework to unstructured decompositions and linear elasticity via an energy-minimizing formulation."
+      ],
+      "evidence_signal": "The abstract reports contrast-independent iteration counts for high-coefficient inclusions, and in 3D log-normal diffusion the method matches GDSW iteration counts while solving a coarse problem about 10× smaller.",
+      "watch_item": "The fully algebraic elasticity variant drops rotational rigid-body basis functions, so robustness may depend on problem class and decomposition details.",
+      "hashtags": [
+        "#DomainDecomposition",
+        "#SchwarzPreconditioner",
+        "#MultiscaleMethods",
+        "#FiniteElementMethod",
+        "#ComputationalMechanics"
+      ],
+      "paper_id": "2026-10-12-arxiv-an_algebraic_multiscale_framework_for_two_level_overlapping_schwarz_preconditioners",
+      "paper_title": "An algebraic multiscale framework for two-level overlapping Schwarz preconditioners",
+      "paper_date": "2026-10-12",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-17T12:36:21",
       "generator": "openai"
     }
   },
@@ -793,29 +793,29 @@
         "url": "https://arxiv.org/pdf/2610.21618v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Se/ZnMgO photodiodes act as self-powered visual synapses whose weight change direction is controlled by light wavelength: short-wavelength light potentiates while longer-wavelength light depresses the response.",
-      "engineering_relevance": "This enables zero-bias, optically programmable synaptic devices for neuromorphic vision hardware, with energy-free read/write and flexibility-compatible operation.",
+      "key_insight": "Se/ZnMgO photodiodes act as self-powered visual synapses whose weight can be potentiated or depressed purely by light wavelength, enabling zero-bias learning and readout.",
+      "engineering_relevance": "This suggests a low-energy route to neuromorphic vision hardware that integrates sensing, memory, and computation in one flexible optoelectronic device.",
       "method": [
-        "Built Se/ZnMgO thin-film photodiodes that use zero-bias photocurrent as the synaptic state.",
-        "Compared wavelength-dependent updates under 365 nm and 455 nm light at equal photon flux.",
-        "Used optical simulations and drift-diffusion modeling to link plasticity to interface defect filling and light penetration depth."
+        "Built Se/ZnMgO thin-film photodiodes operated at zero bias as artificial synapses",
+        "Used wavelength-selective optical pulses and light soaking to map potentiation/depression behavior",
+        "Interpreted the mechanism with optical simulations and drift-diffusion modeling of interfacial defect states"
       ],
-      "evidence_signal": "At equal photon flux, 365 nm pulses increased photocurrent by 38% while 455 nm pulses decreased it, with up to 19 distinguishable levels per branch; a digit-recognition network reached 89% accuracy without noise and 85% with measured noise.",
-      "watch_item": "Performance depends on interface defect population and stored states can be erased by reverse bias or sub-gap light, so device consistency and ambient-light robustness need careful control.",
+      "evidence_signal": "At equal photon flux, 365 nm light increased photocurrent by 38% while 455 nm light decreased it, with up to 19 distinguishable levels per branch and digit-recognition accuracy of 89% ideal / 85% with measured noise.",
+      "watch_item": "Performance depends on interfacial defect populations and optical conditions, so reproducibility and long-term stability may be sensitive to fabrication variability and device aging.",
       "hashtags": [
         "#NeuromorphicComputing",
-        "#VisualSynapse",
-        "#Photodiode",
         "#Optoelectronics",
-        "#ComputationalScience"
+        "#SelfPoweredSensors",
+        "#VisualSynapse",
+        "#FlexibleElectronics"
       ],
       "paper_id": "2026-10-15-arxiv-wavelength_selective_bidirectional_plasticity_in_self_powered_se_znmgo_visual_synapses",
       "paper_title": "Wavelength-selective bidirectional plasticity in self-powered Se/ZnMgO visual synapses",
       "paper_date": "2026-10-15",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-16T13:39:30",
+      "generated_at": "2026-10-17T12:36:24",
       "generator": "openai"
     }
   },
@@ -844,29 +844,29 @@
         "url": "https://arxiv.org/pdf/2610.18502v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Two-level overlapping Schwarz preconditioners with GDSW and RGDSW coarse spaces remain robust for high-order 2D FEM/VEM Poisson discretizations, while RGDSW significantly shrinks the coarse problem.",
-      "engineering_relevance": "This enables scalable iterative solvers for high-order finite element and virtual element simulations by preserving convergence as polynomial degree increases.",
+      "key_insight": "Two-level overlapping Schwarz preconditioners with GDSW and RGDSW coarse spaces remain scalable for high-order 2D FEM/VEM Poisson problems, with RGDSW cutting coarse-space size substantially while preserving robustness.",
+      "engineering_relevance": "This offers a practical preconditioning strategy for high-order finite element and virtual element solvers where iteration stability and coarse-solver cost strongly affect performance.",
       "method": [
-        "Build two-level additive Schwarz preconditioners with overlapping subdomains and either GDSW or reduced GDSW coarse spaces.",
-        "Analyze conforming P_k and Q_k discretizations with a condition number bound that shows explicit dependence on polynomial degree k.",
-        "Validate on structured triangular/quadrilateral FEM meshes and polygonal VEM meshes for the 2D Poisson problem."
+        "Develop two-level overlapping additive Schwarz preconditioners with GDSW and reduced GDSW coarse spaces.",
+        "Analyze condition-number bounds for conforming P_k and Q_k discretizations with explicit polynomial-degree dependence.",
+        "Test on structured triangular/quadrilateral FEM meshes and polygonal VEM meshes."
       ],
-      "evidence_signal": "Numerical experiments up to polynomial order k=9 show scalable behavior for both coarse spaces, with RGDSW reducing coarse dimension by about 3x while keeping competitive iteration counts.",
-      "watch_item": "The reported robustness is demonstrated for 2D Poisson problems, so performance on more complex PDEs, higher dimensions, or highly heterogeneous coefficients may require additional verification.",
+      "evidence_signal": "Numerical experiments up to polynomial degree k=9 show scalable behavior, and RGDSW reduces coarse problem dimension by about a factor of three while keeping competitive iteration counts.",
+      "watch_item": "The reported robustness is for the 2D Poisson problem, so performance may differ for more complex PDEs, 3D geometries, or strongly heterogeneous coefficients.",
       "hashtags": [
         "#DomainDecomposition",
         "#SchwarzPreconditioner",
-        "#HighOrderFEM",
+        "#FiniteElementMethod",
         "#VirtualElementMethod",
-        "#ScientificComputing"
+        "#HighOrderMethods"
       ],
       "paper_id": "2026-10-13-arxiv-two_level_additive_schwarz_preconditioners_with_gdsw_coarse_spaces_for_high_order_discreti",
       "paper_title": "Two-level additive Schwarz preconditioners with GDSW coarse spaces for high-order discretizations in 2D",
       "paper_date": "2026-10-13",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:32",
+      "generated_at": "2026-10-17T12:36:26",
       "generator": "openai"
     }
   },
@@ -896,29 +896,29 @@
         "url": "https://arxiv.org/pdf/2610.22063v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "For finite volume discretizations of a heat equation with a measure-valued source, source singularity—not the scheme itself—dominates accuracy and reduces convergence below the nominal second order.",
-      "engineering_relevance": "This matters for thermal modeling with point-like injections or localized loads, where mesh-based solvers must account for dimension-dependent error degradation in 2D and 3D.",
+      "key_insight": "A classical two-point finite volume method loses its nominal second-order accuracy when the heat equation includes a measure-valued source, with convergence limited by spatial dimension.",
+      "engineering_relevance": "For simulations with point loads or other singular sources, engineers should expect reduced mesh-convergence rates and choose discretizations accordingly.",
       "method": [
-        "Classical two-point flux finite volume method for a time-dependent diffusion-reaction/heat equation.",
-        "Analytical convergence study for measure-valued sources such as Dirac delta point sources.",
-        "Comparison against smooth-source behavior and theoretical convergence orders."
+        "Analyze finite volume convergence for a time-dependent diffusion-reaction/heat equation with measure-valued forcing",
+        "Extend prior finite-element theory to the classical two-point flux finite volume scheme",
+        "Compare theoretical convergence limits in 2D and 3D with computational tests using a Dirac delta source"
       ],
-      "evidence_signal": "The abstract reports computational tests with a point source (Dirac delta) that match the predicted dimension-dependent convergence loss: order 1 in 2D and 0.5 in 3D.",
-      "watch_item": "Accuracy can drop sharply for singular sources, so refinement alone may not recover nominal second-order convergence without special source treatment or regularization.",
+      "evidence_signal": "The abstract reports computational tests with a Dirac delta point source that match the predicted reduced convergence rates: order 1 in two dimensions and 0.5 in three dimensions.",
+      "watch_item": "The main limitation is that singular or measure-valued sources can sharply reduce accuracy, so standard refinement may not recover second-order behavior.",
       "hashtags": [
         "#FiniteVolume",
         "#HeatEquation",
         "#MeasureValuedSource",
         "#ConvergenceAnalysis",
-        "#ComputationalMechanics"
+        "#ScientificComputing"
       ],
       "paper_id": "2026-10-15-arxiv-finite_volume_convergence_for_a_heat_equation_with_a_measure_valued_source",
       "paper_title": "Finite Volume Convergence for a Heat Equation with a Measure-Valued Source",
       "paper_date": "2026-10-15",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:36",
+      "generated_at": "2026-10-17T12:36:28",
       "generator": "openai"
     }
   },
@@ -947,29 +947,29 @@
         "url": "https://arxiv.org/pdf/2610.21721v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "The paper shows that steady lid-driven cavity flows can be computed robustly by iterative linearization and then assessed for stability through an eigenvalue problem on perturbations.",
-      "engineering_relevance": "This provides a practical FEM-based workflow for determining whether high-Reynolds-number cavity flow solutions are physically stable before using them in design or validation studies.",
+      "key_insight": "The paper computes steady lid-driven cavity flows with a linearized iterative solver and tests their stability by checking eigenvalues of the discretized perturbation problem.",
+      "engineering_relevance": "This provides a practical way to assess when high-Reynolds-number cavity-flow solutions are physically reliable or unstable in finite-element simulations.",
       "method": [
-        "Linearize the nonlinear convective terms iteratively, solving one linear boundary-value problem per step.",
-        "Discretize the steady flow and perturbation equations with finite elements on triangular meshes.",
-        "Form a generalized algebraic eigenvalue problem and check whether any eigenvalues have positive real part."
+        "Linearize the nonlinear convective terms and solve a sequence of linear steady-state problems.",
+        "Apply small perturbations to the steady velocity and pressure fields and linearize the perturbation equations.",
+        "Discretize on triangular finite-element meshes and solve the resulting generalized eigenvalue problem."
       ],
-      "evidence_signal": "The approach was tested on a sequence of refined meshes over a range of Reynolds numbers for square-cavity flow, with stability judged from the computed eigenvalues.",
-      "watch_item": "Stability conclusions depend on mesh refinement and the accuracy of the linearized eigenvalue solve, so coarse discretizations may miss weak unstable modes.",
+      "evidence_signal": "Stability was evaluated on a sequence of refined meshes across multiple Reynolds numbers for square-cavity flow, using the presence of eigenvalues with positive real part as the instability criterion.",
+      "watch_item": "Stability conclusions depend on mesh refinement and eigenvalue accuracy, so coarse discretization may miss critical unstable modes.",
       "hashtags": [
         "#FiniteElementMethod",
-        "#CavityFlow",
+        "#CFD",
         "#StabilityAnalysis",
-        "#EigenvalueProblem",
-        "#ComputationalFluidDynamics"
+        "#LidDrivenCavity",
+        "#EigenvalueProblem"
       ],
       "paper_id": "2026-10-15-arxiv-stability_analysis_of_the_steady_solution_for_incompressible_lid_driven_cavity_flow",
       "paper_title": "Stability analysis of the steady solution for incompressible lid-driven cavity flow",
       "paper_date": "2026-10-15",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:38",
+      "generated_at": "2026-10-17T12:36:30",
       "generator": "openai"
     }
   },
@@ -998,29 +998,29 @@
         "url": "https://arxiv.org/pdf/2610.21056v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "A symmetric graded-mesh Galerkin FEM with L1 time discretization is developed for time-fractional diffusion-wave equations with constant delay, enabling rigorous stability and convergence analysis via an auxiliary-variable reformulation.",
-      "engineering_relevance": "The method offers a practical and theoretically justified solver for delayed fractional dynamics in computational mechanics and diffusion-type engineering models where nonlocal time effects matter.",
+      "key_insight": "A symmetric graded-mesh FEM with L1 time stepping and an auxiliary-variable reformulation yields a stable and convergent solver for time-fractional diffusion-wave equations with constant delay.",
+      "engineering_relevance": "This provides a practical discretization framework for delayed anomalous-diffusion and wave-like processes where standard time stepping can lose accuracy or stability.",
       "method": [
-        "Reformulate the delayed fractional PDE into a coupled system using a symmetric fractional-order reduction and an auxiliary variable w.",
-        "Discretize in time with the L1 scheme on a symmetric graded mesh and in space with standard finite elements.",
-        "Prove stability and error bounds using a discrete fractional Grönwall inequality plus a new comparison principle and barrier function."
+        "Reformulate the delayed fractional PDE as an equivalent coupled system using a symmetric fractional-order reduction and auxiliary variable w.",
+        "Discretize time with the L1 scheme on a symmetric graded mesh and space with standard finite elements.",
+        "Prove stability via a discrete fractional Grönwall inequality and derive local error estimates using a new barrier-function comparison principle."
       ],
-      "evidence_signal": "The abstract reports numerical experiments that confirm the derived stability and convergence results across the proposed mesh and discretization settings.",
-      "watch_item": "Performance and error behavior depend on careful construction of the symmetric graded time mesh and barrier functions, so implementation details may be nontrivial.",
+      "evidence_signal": "The paper reports theoretical stability and error estimates, and states that numerical experiments confirm the predicted convergence behavior.",
+      "watch_item": "The method depends on symmetric graded time meshes and a carefully constructed barrier-function analysis, so implementation is more specialized than standard uniform-mesh FEM.",
       "hashtags": [
-        "#FEM",
+        "#FiniteElementMethod",
         "#FractionalPDE",
         "#TimeDelay",
         "#NumericalAnalysis",
-        "#ComputationalMechanics"
+        "#ScientificComputing"
       ],
       "paper_id": "2026-10-15-arxiv-galerkin_finite_element_method_for_time_fractional_diffusion_wave_equations_with_constant",
       "paper_title": "Galerkin finite element method for time fractional diffusion-wave equations with constant time delay",
       "paper_date": "2026-10-15",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-16T13:39:41",
+      "generated_at": "2026-10-17T12:36:32",
       "generator": "openai"
     }
   }

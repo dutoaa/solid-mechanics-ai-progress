@@ -1,24 +1,24 @@
 {
-  "key_insight": "Update-matched references help unlearning stay resistant to relearning without unnecessarily suppressing a model’s ability to learn new tasks.",
-  "engineering_relevance": "For deployable LLMs that will continue to be updated, UMU offers a practical way to preserve post-update plasticity while reducing recovery of deleted knowledge.",
+  "key_insight": "Update-Matched Unlearning (UMU) shows that robust unlearning should block relearning of removed knowledge without harming a model’s ability to learn new tasks after later fine-tuning.",
+  "engineering_relevance": "For deployed LLMs that keep getting updated, UMU offers a practical way to preserve safety and privacy while maintaining post-update adaptability.",
   "method": [
-    "Apply the same simulated relearning update to both the defended model and an undefended reference initialized from the unlearned model.",
-    "Use new-task learning as the selection signal so the model is judged on preserved plasticity, not only low relearning.",
-    "Compare against pre-update and update-matched references to isolate selective resistance from general capability loss."
+    "Apply the same simulated relearning update to both the defended model and an undefended reference starting from the same unlearned checkpoint.",
+    "Use an update-matched reference instead of a pre-update reference when judging whether the model should stay close after an update.",
+    "Select the defended model using new-task learning performance to balance suppression and plasticity."
   ],
-  "evidence_signal": "On TOFU and FaithUn with Llama and Qwen, UMU improved relearning resistance and plasticity across three base unlearning methods, reducing harmful and benign relearning by 30.4 and 9.9 points on average while increasing new-task accuracy by 3.5 points.",
-  "watch_item": "The approach adds evaluation and training complexity because the defense must simulate the downstream update and depends on how well that update matches real deployment behavior.",
+  "evidence_signal": "On TOFU and FaithUn with Llama and Qwen models, UMU improved relearning resistance and plasticity across three base unlearning methods, reducing harmful and benign relearning by 30.4 and 9.9 points on average while increasing new-task accuracy by 3.5 points.",
+  "watch_item": "If the reference is not updated consistently, evaluation can falsely reward over-conservative models that resist relearning but also lose plasticity.",
   "hashtags": [
     "#LLMUnlearning",
-    "#MachineLearningSafety",
-    "#ModelRobustness",
-    "#ContinualLearning",
-    "#AIEngineering"
+    "#ModelPlasticity",
+    "#PrivacySafety",
+    "#FineTuningRobustness",
+    "#AIAlignment"
   ],
   "paper_id": "2026-10-15-arxiv-not_all_change_is_damage_update_matched_unlearning_for_large_language_models",
   "paper_title": "Not All Change Is Damage: Update-Matched Unlearning for Large Language Models",
   "paper_date": "2026-10-15",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-10-16T13:38:57",
+  "generated_at": "2026-10-17T12:35:58",
   "generator": "openai"
 }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "LizTail adds predefined segment-level reconfiguration to a systolic array so one accelerator can both reshape for awkward matrix dimensions and expose more parallelism when workloads are split across independent tasks.",
-  "engineering_relevance": "This matters for CNN inference and LLM decoding, where fixed arrays waste many PEs on skinny matrices, small batches, and partitioned operators, causing low utilization and repeated folding.",
+  "key_insight": "LizTail unifies shape adaptation and spatial parallelism by splitting a 128×128 systolic array into reconfigurable 128×4 segments, letting the hardware both fit awkward matrix shapes and execute independent sub-tasks efficiently.",
+  "engineering_relevance": "This matters for AI accelerators because CNNs and especially autoregressive LLM decoding often leave fixed arrays underutilized, so segment-level reconfiguration can raise PE utilization without the cost of full PE-level routing.",
   "method": [
-    "Partitions a 128×128 array into 32 reconfigurable 128×4 segments.",
-    "Uses limited endpoint connectivity with trimming, 180° turn-back extension, and distributed execution across segments.",
-    "Adds segment-aware buffers and differentiated PE datapaths, guided by a hardware-constrained mapper."
+    "Partitions the array into 32 regular segments with connectivity only at predefined endpoints.",
+    "Supports trimming, 180° turn-back extension, and distributed execution across subarrays.",
+    "Uses differentiated PE datapaths plus segment-aware CEB/SIB buffers, with a hardware-constrained mapper choosing execution mode and tiling."
   ],
-  "evidence_signal": "On representative workloads, the design reports geometric-mean speedups of 5.02× for CNNs and 25.67× for LLM decoding over a TPU-like array, with up to 38.23× EDP reduction.",
-  "watch_item": "The flexibility comes from constrained but still nontrivial interconnect, buffering, and control logic, so area and design complexity must be managed carefully.",
+  "evidence_signal": "On representative workloads, the design reports geometric-mean speedups of 5.02× for CNN inference and 25.67× for LLM decoding versus a TPU-like array, with EDP reductions up to 38.23×.",
+  "watch_item": "The added flexibility still depends on constrained predefined boundaries and custom mapping, so real performance may be sensitive to compiler quality, workload fit, and hardware implementation overheads.",
   "hashtags": [
     "#SystolicArrays",
-    "#AIAccelerator",
-    "#ReconfigurableHardware",
+    "#AIHardware",
     "#LLMInference",
-    "#CNNAcceleration"
+    "#CNNAcceleration",
+    "#ReconfigurableCompute"
   ],
   "paper_id": "2026-10-12-arxiv-liztail_unifying_shape_adaptation_and_spatial_parallelism_with_segment_reconfigurable_syst",
   "paper_title": "LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays",
   "paper_date": "2026-10-12",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-10-16T13:39:06",
+  "generated_at": "2026-10-17T12:36:08",
   "generator": "openai"
 }

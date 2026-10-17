@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper replaces geometric coarse spaces in two-level overlapping Schwarz preconditioners with an algebraic multiscale coarse space built directly from the system matrix, preserving robustness for highly heterogeneous problems.",
-  "engineering_relevance": "This enables scalable, coefficient-aware preconditioning for elliptic diffusion and linear elasticity problems, especially when mesh geometry or coarse-space design is difficult to construct explicitly.",
+  "key_insight": "The paper builds a fully algebraic multiscale coarse space for two-level overlapping Schwarz preconditioners that preserves robustness for highly heterogeneous elliptic and elasticity problems.",
+  "engineering_relevance": "It offers a matrix-only route to scalable domain decomposition preconditioners, reducing coarse problem size while maintaining strong performance on difficult multiscale mechanics and diffusion cases.",
   "method": [
-    "Build coarse basis functions from algebraic multiscale finite element ideas using only the system matrix.",
-    "Solve reduced boundary condition problems on interface slabs and extend them by energy-minimizing interpolation.",
-    "Embed the construction in an energy-minimizing framework so it applies to linear elasticity and unstructured decompositions."
+    "Constructs coarse basis functions by solving algebraic reduced boundary condition (RBC) problems on subdomain interfaces.",
+    "Uses energy-minimizing extensions of interface solutions so coefficient variation is encoded in the coarse space.",
+    "Extends the framework to unstructured decompositions and linear elasticity via an energy-minimizing formulation."
   ],
-  "evidence_signal": "The abstract reports that the method is insensitive to increasing contrast for coarse-node inclusions, matches GDSW iteration counts in 3D log-normal diffusion while using a coarse problem about ten times smaller, and scales well for homogeneous linear elasticity.",
-  "watch_item": "Performance depends on how well the interface-slabs and reduced boundary problems capture coefficient variation, and the fully algebraic elasticity variant omits rotational rigid-body-mode basis functions.",
+  "evidence_signal": "The abstract reports contrast-independent iteration counts for high-coefficient inclusions, and in 3D log-normal diffusion the method matches GDSW iteration counts while solving a coarse problem about 10× smaller.",
+  "watch_item": "The fully algebraic elasticity variant drops rotational rigid-body basis functions, so robustness may depend on problem class and decomposition details.",
   "hashtags": [
+    "#DomainDecomposition",
+    "#SchwarzPreconditioner",
     "#MultiscaleMethods",
-    "#SchwarzPreconditioners",
-    "#FiniteElementMethods",
-    "#LinearElasticity",
-    "#HPC"
+    "#FiniteElementMethod",
+    "#ComputationalMechanics"
   ],
   "paper_id": "2026-10-12-arxiv-an_algebraic_multiscale_framework_for_two_level_overlapping_schwarz_preconditioners",
   "paper_title": "An algebraic multiscale framework for two-level overlapping Schwarz preconditioners",
   "paper_date": "2026-10-12",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-16T13:39:24",
+  "generated_at": "2026-10-17T12:36:21",
   "generator": "openai"
 }

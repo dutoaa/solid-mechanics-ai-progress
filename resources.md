@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-10-16
+Generated: 2026-10-17
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. A deep energy method formulation for phase-field modelling of ductile fracture
@@ -59,7 +59,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.16996v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-12-arxiv-a_physics_coupled_graph_neural_operator_for_mid_plane_six_component_stress_tensor_field_pr_infographic.json
 
-## 8. LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays
+## 8. Co2In: a Bi-level Memory Incremental Learning Framework with Knowledge Encoding, Consolidation, and Integration
+
+- Date: 2026-10-15
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.21804v1
+- PDF: https://arxiv.org/pdf/2610.21804v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-15-arxiv-co2in_a_bi_level_memory_incremental_learning_framework_with_knowledge_encoding_consolidati_infographic.json
+
+## 9. LizTail: Unifying Shape Adaptation and Spatial Parallelism with Segment-Reconfigurable Systolic Arrays
 
 - Date: 2026-10-12
 - Category: Fracture and Damage
@@ -67,7 +75,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.16159v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-12-arxiv-liztail_unifying_shape_adaptation_and_spatial_parallelism_with_segment_reconfigurable_syst_infographic.json
 
-## 9. Low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations
+## 10. Low-cost non-iterative Sylvester solvers for dynamical low-rank approximation of reaction-diffusion equations
 
 - Date: 2026-10-13
 - Category: FEM Surrogates
@@ -75,7 +83,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.18419v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-13-arxiv-low_cost_non_iterative_sylvester_solvers_for_dynamical_low_rank_approximation_of_reaction_infographic.json
 
-## 10. Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains
+## 11. Neural Spline Flow Diffeomorphisms for Pullback Finite Element Methods on Complex Domains
 
 - Date: 2026-10-13
 - Category: FEM Surrogates
@@ -83,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.19092v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-13-arxiv-neural_spline_flow_diffeomorphisms_for_pullback_finite_element_methods_on_complex_domains_infographic.json
 
-## 11. LLM2R: From Large Language Models to 3D Reassemblers
+## 12. LLM2R: From Large Language Models to 3D Reassemblers
 
 - Date: 2026-10-13
 - Category: Fracture and Damage
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.18604v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-13-arxiv-llm2r_from_large_language_models_to_3d_reassemblers_infographic.json
 
-## 12. FEM-Validated Real-Time Modelling of Soft Tactile Deformation
+## 13. FEM-Validated Real-Time Modelling of Soft Tactile Deformation
 
 - Date: 2026-10-12
 - Category: FEM Surrogates
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.16667v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-12-arxiv-fem_validated_real_time_modelling_of_soft_tactile_deformation_infographic.json
 
-## 13. Deep Learning-based Mechanical Characterization of Synthetically Generated Plant Fibers under Transverse Compression
+## 14. Deep Learning-based Mechanical Characterization of Synthetically Generated Plant Fibers under Transverse Compression
 
 - Date: 2026-10-12
 - Category: Composites and Metamaterials
@@ -107,21 +115,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.16529v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-12-arxiv-deep_learning_based_mechanical_characterization_of_synthetically_generated_plant_fibers_un_infographic.json
 
-## 14. An algebraic multiscale framework for two-level overlapping Schwarz preconditioners
+## 15. An algebraic multiscale framework for two-level overlapping Schwarz preconditioners
 
 - Date: 2026-10-12
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2610.16359v1
 - PDF: https://arxiv.org/pdf/2610.16359v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-12-arxiv-an_algebraic_multiscale_framework_for_two_level_overlapping_schwarz_preconditioners_infographic.json
-
-## 15. Co2In: a Bi-level Memory Incremental Learning Framework with Knowledge Encoding, Consolidation, and Integration
-
-- Date: 2026-10-15
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.21804v1
-- PDF: https://arxiv.org/pdf/2610.21804v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-15-arxiv-co2in_a_bi_level_memory_incremental_learning_framework_with_knowledge_encoding_consolidati_infographic.json
 
 ## 16. Wavelength-selective bidirectional plasticity in self-powered Se/ZnMgO visual synapses
 

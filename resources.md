@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-10-17
+Generated: 2026-10-18
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. A deep energy method formulation for phase-field modelling of ductile fracture

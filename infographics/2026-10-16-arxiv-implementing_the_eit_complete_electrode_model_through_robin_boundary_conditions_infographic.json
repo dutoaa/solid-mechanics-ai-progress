@@ -1,24 +1,26 @@
 {
-  "key_insight": "The paper shows that the complete electrode model for EIT can be implemented with standard Robin boundary conditions, making current-driven electrode simulations portable across finite element codes.",
-  "engineering_relevance": "This provides a practical, accurate way to model medical EIT electrodes in mainstream FEM software without custom boundary formulations.",
+  "key_insight": "The current-driven complete electrode model for electrical impedance tomography can be implemented using standard Robin boundary solves and a small electrode-level system.",
+  "engineering_relevance": "This provides a portable route to accurate electrode-voltage prediction in standard FEM packages without requiring a dedicated augmented CEM implementation.",
   "method": [
-    "Solve unit-potential Robin subproblems to build an electrode transadmittance matrix.",
-    "Prove equivalence to the conventional augmented CEM formulation, including discrete energy and reference handling.",
-    "Validate the approach across multiple FEM packages using matched nodal references and 2D P1 meshes."
+    "Solve Robin problems with unit electrode potentials to construct an electrode transadmittance matrix.",
+    "Solve the electrode-level system to enforce prescribed total electrode currents.",
+    "Prove equivalence to the augmented CEM and formalise discrete energy, equivalence and reference arguments in Lean 4."
   ],
-  "evidence_signal": "Across five FEM packages, electrode-potential differences from EIDORS stayed below 5×10^-13, and errors versus an exact rational-arithmetic reference were below 1.1×10^-13.",
-  "watch_item": "The equivalence relies on an invertible Robin matrix and careful consistent treatment of the electrode-current integration and reference potential.",
+  "evidence_signal": "Across five FEM packages using 2D P1 elements, maximum absolute electrode-potential differences were below 5×10⁻¹³ versus EIDORS and errors below 1.1×10⁻¹³ versus an exact rational-arithmetic reference.",
+  "watch_item": "Equivalence requires an invertible Robin matrix and identical assembled blocks; electrode-current integration and potential-reference handling must be consistent.",
   "hashtags": [
-    "#EIT",
-    "#FEM",
+    "#ElectricalImpedanceTomography",
+    "#FiniteElementMethod",
+    "#CompleteElectrodeModel",
     "#RobinBoundaryConditions",
-    "#MedicalImaging",
-    "#ComputationalScience"
+    "#ScientificComputing"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-16-arxiv-implementing_the_eit_complete_electrode_model_through_robin_boundary_conditions",
   "paper_title": "Implementing the EIT complete electrode model through Robin boundary conditions",
   "paper_date": "2026-10-16",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-19T20:52:56",
+  "generated_at": "2026-10-19T20:54:52",
   "generator": "openai"
 }

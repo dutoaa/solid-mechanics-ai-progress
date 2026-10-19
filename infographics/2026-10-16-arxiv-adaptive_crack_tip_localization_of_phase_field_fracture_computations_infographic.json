@@ -1,24 +1,26 @@
 {
-  "key_insight": "The paper localizes phase-field fracture computation to a small active crack-tip patch, using Schur complement condensation to avoid solving the full domain at every iteration.",
-  "engineering_relevance": "This can greatly reduce the cost of large-scale fracture simulations while preserving accurate crack growth predictions, making phase-field methods more practical for engineering analysis.",
+  "key_insight": "Localizing repeated phase-field fracture solves to an adaptive crack-tip patch preserves reference accuracy while substantially reducing computational cost.",
+  "engineering_relevance": "The approach makes large-scale brittle-fracture simulations more practical by concentrating resolution and solution effort near advancing cracks.",
   "method": [
-    "Adaptive mesh refinement and coarsening keeps high resolution near the crack tip.",
-    "Inactive exterior subdomains are eliminated with a Schur complement and condensed to the patch interface.",
-    "The exterior phase field is frozen and its factorization is reused while the patch stays fixed."
+    "Adaptively refine and coarsen the mesh around active crack-tip patches.",
+    "Condense the inactive exterior onto the patch interface using a Schur complement, reusing its factorization while the patch stays fixed.",
+    "Freeze the exterior phase field and implement the localized formulation in FEniCSx."
   ],
-  "evidence_signal": "Across quasi-static, dynamic branching, 3D mixed-mode, and multi-crack tests, the method matches reference solutions with global quantity differences below 0.5% and achieves up to 22.8× wall-time speedup.",
-  "watch_item": "Accuracy may degrade in the crack wake because the exterior phase field is approximated, and performance depends on how often the active patch changes.",
+  "evidence_signal": "Across quasi-static, dynamic branching, 3D mixed-mode, and crack-coalescence tests, global quantities differed from reference solutions by less than 0.5%; surfing-test speedups rose from 6.9× to 22.8× when domain size doubled.",
+  "watch_item": "Freezing the exterior phase field introduces a crack-wake approximation; patch updates must capture evolving fracture activity.",
   "hashtags": [
     "#PhaseFieldFracture",
-    "#AdaptiveMeshRefinement",
     "#ComputationalMechanics",
-    "#SolidMechanics",
-    "#FiniteElementMethod"
+    "#AdaptiveMeshing",
+    "#SchurComplement",
+    "#FEniCSx"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-16-arxiv-adaptive_crack_tip_localization_of_phase_field_fracture_computations",
   "paper_title": "Adaptive Crack-Tip Localization of Phase-Field Fracture Computations",
   "paper_date": "2026-10-16",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-10-19T20:53:14",
+  "generated_at": "2026-10-19T20:55:18",
   "generator": "openai"
 }

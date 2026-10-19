@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper localizes phase-field fracture solves to a small moving crack-tip patch by condensing the inactive exterior with a reusable Schur complement, cutting cost while preserving accuracy.",
-  "engineering_relevance": "This enables much faster large-scale fracture simulations in brittle solids, making adaptive phase-field methods more practical for quasi-static, dynamic, and 3D crack-growth problems.",
+  "key_insight": "The paper localizes phase-field fracture computation to a small active crack-tip patch, using Schur complement condensation to avoid solving the full domain at every iteration.",
+  "engineering_relevance": "This can greatly reduce the cost of large-scale fracture simulations while preserving accurate crack growth predictions, making phase-field methods more practical for engineering analysis.",
   "method": [
-    "Adaptively refine/coarsen a patch around the crack tip instead of solving the full domain every iteration.",
-    "Eliminate the inactive exterior with a Schur complement and reuse its factorization while the patch stays fixed.",
-    "Freeze the phase field in the exterior to reduce repeated work, with only a small approximation in the crack wake."
+    "Adaptive mesh refinement and coarsening keeps high resolution near the crack tip.",
+    "Inactive exterior subdomains are eliminated with a Schur complement and condensed to the patch interface.",
+    "The exterior phase field is frozen and its factorization is reused while the patch stays fixed."
   ],
-  "evidence_signal": "Across quasi-static, branching, mixed-mode, and multi-crack tests, the method matched reference solutions with global differences below 0.5% and achieved wall-time speedups up to 22.8x as the domain doubled.",
-  "watch_item": "Accuracy depends on the patch remaining a good approximation of the evolving crack zone; freezing the exterior phase field may be less reliable when damage spreads rapidly.",
+  "evidence_signal": "Across quasi-static, dynamic branching, 3D mixed-mode, and multi-crack tests, the method matches reference solutions with global quantity differences below 0.5% and achieves up to 22.8× wall-time speedup.",
+  "watch_item": "Accuracy may degrade in the crack wake because the exterior phase field is approximated, and performance depends on how often the active patch changes.",
   "hashtags": [
     "#PhaseFieldFracture",
     "#AdaptiveMeshRefinement",
-    "#SchurComplement",
     "#ComputationalMechanics",
-    "#FEniCSx"
+    "#SolidMechanics",
+    "#FiniteElementMethod"
   ],
   "paper_id": "2026-10-16-arxiv-adaptive_crack_tip_localization_of_phase_field_fracture_computations",
   "paper_title": "Adaptive Crack-Tip Localization of Phase-Field Fracture Computations",
   "paper_date": "2026-10-16",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-10-19T16:03:14",
+  "generated_at": "2026-10-19T20:53:14",
   "generator": "openai"
 }

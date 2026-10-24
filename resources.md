@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-10-23
+Generated: 2026-10-24
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins
@@ -59,7 +59,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.30356v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-21-arxiv-peridynamic_thermo_mechanical_modeling_of_cracking_in_tungsten_under_fusion_relevant_heat_infographic.json
 
-## 8. HERD: Harness-Evolving Recursive Distillation for Continual Learning
+## 8. Can Language Models Get "Aphasia" From Neuronal Ablation?
+
+- Date: 2026-10-20
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2610.28214v1
+- PDF: https://arxiv.org/pdf/2610.28214v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-20-arxiv-can_language_models_get_aphasia_from_neuronal_ablation_infographic.json
+
+## 9. HERD: Harness-Evolving Recursive Distillation for Continual Learning
 
 - Date: 2026-10-22
 - Category: Constitutive Modeling
@@ -67,7 +75,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.31401v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-22-arxiv-herd_harness_evolving_recursive_distillation_for_continual_learning_infographic.json
 
-## 9. A high-order multi-scale method and its error analysis for nonlocal-in-time fractionally damped wave problems in composite materials
+## 10. A high-order multi-scale method and its error analysis for nonlocal-in-time fractionally damped wave problems in composite materials
 
 - Date: 2026-10-21
 - Category: FEM Surrogates
@@ -75,21 +83,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.29451v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-21-arxiv-a_high_order_multi_scale_method_and_its_error_analysis_for_nonlocal_in_time_fractionally_d_infographic.json
 
-## 10. Conservative Finite Element Methods for Kirchhoff-Type Equations
+## 11. Conservative Finite Element Methods for Kirchhoff-Type Equations
 
 - Date: 2026-10-22
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2610.31487v1
 - PDF: https://arxiv.org/pdf/2610.31487v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-22-arxiv-conservative_finite_element_methods_for_kirchhoff_type_equations_infographic.json
-
-## 11. Can Language Models Get "Aphasia" From Neuronal Ablation?
-
-- Date: 2026-10-20
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2610.28214v1
-- PDF: https://arxiv.org/pdf/2610.28214v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-20-arxiv-can_language_models_get_aphasia_from_neuronal_ablation_infographic.json
 
 ## 12. Generalized modeling reveals stabilizing mechanisms in cross-feeding microbial communities
 

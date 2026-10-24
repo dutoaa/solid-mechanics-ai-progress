@@ -24,22 +24,22 @@
         "url": "https://arxiv.org/pdf/2610.30404v1"
       }
     ],
-    "score": 88,
+    "score": 83,
     "infographic": {
-      "key_insight": "Denoising diffusion models generate realistic additive-manufacturing microstructure images and enable inverse mappings from target properties or process conditions to microstructures.",
-      "engineering_relevance": "Generative microstructure models could support CPFEM-based digital twins and uncertainty quantification to accelerate metal AM qualification.",
+      "key_insight": "Denoising diffusion models generate realistic additive-manufacturing microstructure images and enable guided inverse mappings from properties or process conditions to structure.",
+      "engineering_relevance": "Synthetic microstructures could support crystal-plasticity simulations and uncertainty quantification to accelerate qualification of metal AM components.",
       "method": [
         "Train denoising diffusion probabilistic models to synthesize orientation-imaging micrographs.",
-        "Use classifier-free guidance for property-to-structure and process-to-structure inverse mappings.",
+        "Apply classifier-free guidance to property-to-structure and process-to-structure inverse problems.",
         "Demonstrate a qualification-relevant uncertainty quantification application."
       ],
-      "evidence_signal": "The abstract reports quantitative evidence of generated-sample fidelity but provides no dataset sizes, evaluation metrics, or numerical results.",
-      "watch_item": "Image fidelity alone does not establish mechanical predictive accuracy; generated microstructures need validation in downstream CPFEM workflows.",
+      "evidence_signal": "The abstract reports quantitative evidence of generated-micrograph fidelity but provides no dataset sizes, evaluation metrics, or numerical results.",
+      "watch_item": "Image fidelity alone does not establish accurate mechanical-property predictions; downstream simulation validation remains important.",
       "hashtags": [
         "#AdditiveManufacturing",
-        "#DigitalTwins",
         "#DiffusionModels",
-        "#CrystalPlasticity",
+        "#Microstructure",
+        "#DigitalTwins",
         "#InverseDesign"
       ],
       "model": "gpt-6.1-sol",
@@ -48,7 +48,7 @@
       "paper_title": "Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins",
       "paper_date": "2026-10-21",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:11",
+      "generated_at": "2026-10-24T13:00:34",
       "generator": "openai"
     }
   },
@@ -77,22 +77,22 @@
         "url": "https://arxiv.org/pdf/2610.28703v1"
       }
     ],
-    "score": 86,
+    "score": 81,
     "infographic": {
-      "key_insight": "Simultaneous neural topology optimization jointly optimizes state, adjoint, and design fields to produce scalable, super-resolution stress-constrained designs.",
-      "engineering_relevance": "The framework targets material-efficient structural design under stress limits while scaling computation across multiple GPUs.",
+      "key_insight": "Simultaneous neural topology optimization jointly optimizes neural representations of state, adjoint, and design fields to produce scalable, stress-constrained designs with sharp boundaries.",
+      "engineering_relevance": "The framework targets large-scale lightweight structural design where local stress limits make conventional topology optimization computationally demanding.",
       "method": [
-        "Represent state, adjoint, and design variables with custom neural networks optimized in a single loop.",
-        "Combine the design objective, aggregated local stress constraints, and potential energy functionals using continuous adjoints and automatic differentiation.",
-        "Distribute domain partitions across GPUs and accumulate gradients over smaller slices to control peak memory without additional interface loss terms."
+        "Jointly optimize custom neural networks in one loop using continuous adjoint analysis and automatic differentiation.",
+        "Combine the design objective, aggregated local stress constraints, and potential energy functionals in a multi-component loss.",
+        "Distribute domain partitions across GPUs and accumulate gradients from sequential slices to limit peak memory while preserving field continuity."
       ],
-      "evidence_signal": "The abstract reports sharper boundaries, smaller gray areas, and lower volume fractions than a conventional FEM-based approach on 2D benchmarks, plus 3D demonstrations with up to eight million collocation points on eight GPUs.",
-      "watch_item": "Aggregated stress constraints warrant checking local stress peaks; the abstract does not quantify constraint accuracy or runtime gains.",
+      "evidence_signal": "On 2D benchmarks, SNTO produced sharper boundaries, smaller gray areas, and lower volume fractions than a conventional FEM-based approach; 3D demonstrations reached eight million collocation points on up to eight GPUs.",
+      "watch_item": "Aggregated stress constraints warrant checking local peak stresses independently, particularly near sharp boundaries.",
       "hashtags": [
         "#TopologyOptimization",
         "#SolidMechanics",
         "#ScientificMachineLearning",
-        "#StressConstrainedDesign",
+        "#StressConstraints",
         "#MultiGPU"
       ],
       "model": "gpt-6.1-sol",
@@ -101,7 +101,7 @@
       "paper_title": "Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning",
       "paper_date": "2026-10-20",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:15",
+      "generated_at": "2026-10-24T13:00:37",
       "generator": "openai"
     }
   },
@@ -131,23 +131,23 @@
         "url": "https://arxiv.org/pdf/2610.27130v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "For shape-informed hemodynamic surrogates, active learning and finite-element physical consistency are more effective during fine-tuning than during initial training.",
-      "engineering_relevance": "The workflow supports scalable prediction of patient-specific aortic velocity and pressure fields, advancing surrogate modeling toward rapid cardiovascular assessment.",
+      "key_insight": "For shape-informed hemodynamic surrogates, active learning and finite-element physical consistency are most effective during fine-tuning, while out-of-distribution performance is chiefly limited by geometric coverage.",
+      "engineering_relevance": "The workflow supports scalable prediction of patient-specific aortic velocity and pressure fields toward real-time cardiovascular assessment.",
       "method": [
-        "Generate physiologically consistent CFD data from SynthAorta geometries using automatic boundary-condition adjustment.",
-        "Represent anatomies as displacement fields on a common reference geometry and train Graph U-Net and Transformer U-Net surrogates.",
-        "Fine-tune with active learning and differentiable finite-element residual constraints."
+        "Generate physiologically consistent CFD solutions on SynthAorta geometries using automatic boundary-condition adjustment.",
+        "Represent anatomy through displacement fields from a common reference and predict peak-systolic flow with Graph U-Net and Transformer U-Net models.",
+        "Fine-tune using active learning and differentiable finite-element residual constraints."
       ],
-      "evidence_signal": "Peak-systolic field evaluations show fine-tuning benefits from gradient- and subspace-based acquisition, while out-of-distribution tests identify geometric coverage as the primary limitation.",
-      "watch_item": "Generalization remains limited by the geometric support of the anatomy parametrization; changing network architecture alone may not resolve this.",
+      "evidence_signal": "The abstract reports comparisons of sampling and physics-constraint strategies across training stages, plus out-of-distribution tests, but provides no numerical accuracy or speedup results.",
+      "watch_item": "Generalization to anatomies outside the geometric parametrization remains a limitation that architecture changes alone may not resolve.",
       "hashtags": [
         "#Hemodynamics",
         "#SurrogateModeling",
         "#FiniteElementMethod",
         "#ActiveLearning",
-        "#ScientificMachineLearning"
+        "#PhysicsInformedML"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -155,7 +155,7 @@
       "paper_title": "Synthetic Dataset Generation, Physical Consistency and Active Learning for Shape-Informed Surrogate Modeling of Hemodynamics",
       "paper_date": "2026-10-19",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:18",
+      "generated_at": "2026-10-24T13:00:40",
       "generator": "openai"
     }
   },
@@ -185,17 +185,17 @@
         "url": "https://arxiv.org/pdf/2610.30389v1"
       }
     ],
-    "score": 75,
+    "score": 70,
     "infographic": {
-      "key_insight": "A NURBS level-set framework enables robust, CAD-compatible topology optimization of isogeometric Kirchhoff–Love shells using volume-based shape derivatives.",
-      "engineering_relevance": "The approach supports lightweight shell design under uncertain loads and material properties while preserving compatibility with CAD/CAM workflows.",
+      "key_insight": "A NURBS-based level set and speed-method formulation enable robust, CAD-compatible topology optimization of isogeometric Kirchhoff–Love shells without local refinement, adaptive quadrature, or trimming.",
+      "engineering_relevance": "The framework supports lightweight shell design under uncertain loads and material properties while preserving accurate boundaries for CAD/CAM workflows.",
       "method": [
-        "Model single- and multi-patch shells with isogeometric analysis, including non-matching meshes.",
-        "Use the speed method and a biharmonic equation to obtain descent directions without local refinement, adaptive quadrature, or trimming.",
-        "Represent uncertainty through Monte Carlo sampling and Gaussian random fields."
+        "Model single- and multi-patch shells using isogeometric analysis with non-matching meshes.",
+        "Compute volume-based shape derivatives via the speed method and obtain descent directions through a biharmonic equation.",
+        "Represent material boundaries with NURBS level sets and treat uncertainty using Monte Carlo sampling and Gaussian random fields."
       ],
-      "evidence_signal": "Numerical examples reproduce literature results with fewer elements than traditional FEM or refined IGA approaches, although the abstract provides no quantitative speedup.",
-      "watch_item": "Monte Carlo sampling may increase optimization cost; fewer elements alone do not establish lower total runtime.",
+      "evidence_signal": "Numerical single- and multi-patch examples reproduce literature results with fewer elements than traditional FEM or refined isogeometric approaches, according to the abstract.",
+      "watch_item": "Monte Carlo sampling may increase computational cost; the abstract does not quantify runtime or sampling convergence.",
       "hashtags": [
         "#TopologyOptimization",
         "#IsogeometricAnalysis",
@@ -209,7 +209,7 @@
       "paper_title": "Robust topology optimization of isogeometric Kirchhoff--Love shells by the Speed Method",
       "paper_date": "2026-10-21",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:20",
+      "generated_at": "2026-10-24T13:00:42",
       "generator": "openai"
     }
   },
@@ -239,23 +239,23 @@
         "url": "https://arxiv.org/pdf/2610.31322v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "Adaptive hyperreduction accelerates finite element discovery of neural constitutive laws while preserving accuracy as network weights change.",
-      "engineering_relevance": "Engineers can identify material behavior from structural reaction-force data without requiring measured full-field displacements, while accommodating arbitrary geometries and boundary conditions.",
+      "key_insight": "Adaptive hyperreduction accelerates neural constitutive model discovery from structural experiments while preserving identification accuracy in the reported examples.",
+      "engineering_relevance": "Engineers can identify material laws from reaction-force data without measuring full displacement fields, accommodating complex geometries and boundary conditions.",
       "method": [
         "Combine proper orthogonal decomposition with energy-conserving sampling and weighting.",
-        "Adapt the reduced trial space and sampled elements during training using reduced-model adjoint sensitivities.",
-        "Use a neural energy architecture that guarantees polyconvexity, coercivity, and non-negativity by construction."
+        "Adapt reduced trial spaces and sampled elements during optimization, using reduced-model adjoint sensitivities.",
+        "Use a neural strain-energy model that enforces polyconvexity, coercivity, and non-negativity by construction."
       ],
-      "evidence_signal": "Across two experimental datasets and one synthetic 3D example, the method reproduced reaction forces and predicted displacement fields; two-phase training fell from nine hours to 41 minutes without reported accuracy loss.",
-      "watch_item": "Accuracy depends on adapting the reduced basis and element sampling as the constitutive model evolves during optimization.",
+      "evidence_signal": "Across two experimental datasets and one synthetic 3D example, the method reproduced reaction forces and predicted displacement fields; two-phase specimen training fell from 9 hours to 41 minutes without reported accuracy loss.",
+      "watch_item": "Accuracy depends on keeping the reduced basis and element sampling representative as the neural material changes during training.",
       "hashtags": [
         "#AISolidMechanics",
-        "#NeuralMaterials",
+        "#ConstitutiveModeling",
         "#Hyperreduction",
         "#FiniteElementModelUpdating",
-        "#ConstitutiveModeling"
+        "#NeuralMaterials"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -263,7 +263,7 @@
       "paper_title": "Hyperreduction accelerates finite element model updating for the discovery of neural materials",
       "paper_date": "2026-10-22",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-23T13:58:24",
+      "generated_at": "2026-10-24T13:00:45",
       "generator": "openai"
     }
   },
@@ -292,22 +292,22 @@
         "url": "https://arxiv.org/pdf/2610.26688v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Ideal liquid crystal elastomers couple mesogen orientation and network deformation, enabling reversible actuation and finite deformation at nearly zero stress.",
+      "key_insight": "Ideal liquid crystal elastomers couple mesogen orientation with network deformation, enabling reversible actuation and finite deformation at nearly zero stress.",
       "engineering_relevance": "The theory provides a constitutive foundation for modeling soft actuators and predicting stretch-dependent mechanical responses in liquid crystal elastomers.",
       "method": [
-        "Bridge anisotropic Gaussian chain statistics with neo-classical continuum elasticity.",
-        "Explain spontaneous deformation and soft elasticity through stress-free states and coexisting stripe domains.",
-        "Use quasi-convex energy relaxation to classify polydomain behavior into three mechanical phases."
+        "Connect anisotropic Gaussian-chain statistics to neo-classical continuum elasticity.",
+        "Relate stress-free ground states to spontaneous deformation and soft stripe-domain formation.",
+        "Use quasi-convex energy relaxation to classify three macroscopic response regimes in polydomain elastomers."
       ],
-      "evidence_signal": "The abstract describes a theoretical review and three-phase classification, but reports no experimental datasets or quantitative validation metrics.",
-      "watch_item": "Ideal behavior assumes no memory of the crosslinking state; realistic predictions may require nonideality, director-gradient, and viscoelastic contributions.",
+      "evidence_signal": "The abstract describes a theoretical review and three predicted polydomain response regimes, but reports no experimental dataset or quantitative validation.",
+      "watch_item": "Ideal behavior assumes no memory of the crosslinking state; realistic predictions may require network nonideality, director-gradient elasticity, and temperature- and rate-dependent viscoelasticity.",
       "hashtags": [
         "#LiquidCrystalElastomers",
         "#ConstitutiveModeling",
-        "#SoftElasticity",
-        "#SoftActuators",
+        "#SoftMechanics",
+        "#StimuliResponsiveMaterials",
         "#ComputationalMechanics"
       ],
       "model": "gpt-6.1-sol",
@@ -316,7 +316,7 @@
       "paper_title": "Elastic theory of ideal liquid crystal elastomers",
       "paper_date": "2026-10-19",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-23T13:58:27",
+      "generated_at": "2026-10-24T13:00:48",
       "generator": "openai"
     }
   },
@@ -345,22 +345,22 @@
         "url": "https://arxiv.org/pdf/2610.30356v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Peridynamic thermo-mechanical simulations predict cracking thresholds in tungsten under cyclic, fusion-relevant heat fluxes across different base temperatures.",
-      "engineering_relevance": "The approach offers a pathway to screen plasma-facing materials and assess heat-flux-driven damage that limits fusion-component lifetime.",
+      "key_insight": "Peridynamic thermo-mechanical simulations predict cracking thresholds and damage accumulation in tungsten under fusion-relevant cyclic heat loads.",
+      "engineering_relevance": "The approach offers a pathway to screen plasma-facing materials and assess component lifetimes under severe thermal loading.",
       "method": [
-        "Run component-scale thermo-mechanical fracture simulations using CabanaPD.",
+        "Use CabanaPD for component-scale thermo-mechanical fracture simulations.",
         "Model cyclic electron-beam exposure across base temperatures and heat fluxes.",
-        "Track the spatial distribution and temporal accumulation of cracks and damage."
+        "Inform simulations with experimental data for recrystallized pure tungsten."
       ],
-      "evidence_signal": "Simulations informed by JUDITH electron-beam experiments on recrystallized pure tungsten agree well with experimental damage classifications.",
-      "watch_item": "Validation described in the abstract concerns electron-beam-induced thermal damage, not the combined particle and neutron exposure of a fusion reactor.",
+      "evidence_signal": "Simulations compare well with experimental damage classifications from the JUDITH electron-beam facility and identify cracking thresholds across loading conditions.",
+      "watch_item": "Agreement with electron-beam experiments does not establish predictive accuracy under combined plasma exposure and neutron irradiation.",
       "hashtags": [
         "#Peridynamics",
+        "#ThermoMechanicalFracture",
         "#Tungsten",
         "#FusionMaterials",
-        "#ThermoMechanicalFracture",
         "#ComputationalMechanics"
       ],
       "model": "gpt-6.1-sol",
@@ -369,168 +369,7 @@
       "paper_title": "Peridynamic Thermo-Mechanical Modeling of Cracking in Tungsten under Fusion-Relevant Heat Fluxes",
       "paper_date": "2026-10-21",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-23T13:58:30",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-22-arxiv-herd_harness_evolving_recursive_distillation_for_continual_learning",
-    "arxiv_id": "2610.31401v1",
-    "date": "2026-10-22",
-    "title": "HERD: Harness-Evolving Recursive Distillation for Continual Learning",
-    "authors": "Xun Sun, Thanh Thi Nguyen, Thuy-Trang Vu",
-    "abstract": "Continual learning requires a model to keep acquiring new skills and knowledge without compromising its existing capabilities. Parametric methods suffer from catastrophic forgetting and loss of plasticity. Non-parametric methods, such as prompts, skills, and harnesses, leverage in-context learning but are limited by context length and lossy plain-text compression. To effectively combine their complementary strengths, we propose HERD (Harness-Evolving Recursive Distillation), a hybrid continual learning framework that learns efficiently in the harness and internalizes experience into cumulative capabilities via distillation. On the harness side, HERD continually refines its skills to capture reusable patterns, while retaining high-residual examples that the skills fail to capture in a bounded memory. On the parameter side, HERD performs drift-constrained distillation with dual anchors, substantially reducing forgetting over long recursive runs. On the 25-stage task stream of TRACE+17, under fixed memory and compute budgets, HERD matches the strongest parametric baseline in new-task acquisition while exhibiting the least forgetting and the strongest retention of general capabilities.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-10-22T15:03:20Z",
-    "updated": "2026-10-22T15:03:20Z",
-    "primary_category": "cs.CL",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.31401v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.31401v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "HERD combines an evolving external harness with recursive distillation to acquire new capabilities while limiting catastrophic forgetting.",
-      "engineering_relevance": "HERD could support continually updated engineering AI assistants, but the abstract provides no solid-mechanics or constitutive-modeling validation.",
-      "method": [
-        "Refine reusable skills in an external harness.",
-        "Retain high-residual examples in bounded memory.",
-        "Distill experience into model parameters using dual-anchor drift constraints."
-      ],
-      "evidence_signal": "On the 25-stage TRACE+17 task stream under fixed memory and compute budgets, HERD matches the strongest parametric baseline in new-task acquisition while reporting the least forgetting and strongest general-capability retention.",
-      "watch_item": "Transfer to mechanics applications remains untested in the abstract; retention of physical consistency would require separate evaluation.",
-      "hashtags": [
-        "#ContinualLearning",
-        "#KnowledgeDistillation",
-        "#CatastrophicForgetting",
-        "#EngineeringAI",
-        "#HERD"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-22-arxiv-herd_harness_evolving_recursive_distillation_for_continual_learning",
-      "paper_title": "HERD: Harness-Evolving Recursive Distillation for Continual Learning",
-      "paper_date": "2026-10-22",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-23T13:58:32",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-21-arxiv-a_high_order_multi_scale_method_and_its_error_analysis_for_nonlocal_in_time_fractionally_d",
-    "arxiv_id": "2610.29451v1",
-    "date": "2026-10-21",
-    "title": "A high-order multi-scale method and its error analysis for nonlocal-in-time fractionally damped wave problems in composite materials",
-    "authors": "Gehao Wang, Hao Dong, Yufeng Nie, Junzhi Cui",
-    "abstract": "Significant spatial heterogeneity and nonlocal history-dependent attenuation jointly govern wave propagation in composite materials, making full-scale direct numerical simulation (DNS) computationally prohibitive. This study proposed a high-order multi-scale (HOMS) method for nonlocal-in-time fractionally damped wave problems with highly oscillatory and discontinuous material coefficients. Using a multi-scale asymptotic expansion approach, the macroscopic homogenized equation, and first- and second-order correction terms are derived to construct the high-accuracy HOMS solution. Moreover, a local pointwise error analysis identifies the leading residual eliminated by this HOMS solution and validates its local physical balance preservation. Then, a global energy-norm error estimate establishes the $O(\\varepsilon)$-order convergence rate for the HOMS solution. Subsequently, an efficient spatiotemporal multi-scale algorithm integrating the finite element and finite difference methods is designed, which employs a novel fully discrete $L2\\text{-}1_σ$-Newmark scheme, and corresponding unconditional shifted-energy stability and explicit convergence rates are also obtained for the macroscopic homogenized displacement and velocity, respectively. Both two- and three-dimensional examples are presented to demonstrate the accuracy, efficiency, reduced cost, and robustness of the proposed HOMS method. This work provides an effective multi-scale tool for nonlocal-in-time wave simulation in engineering applications.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-21T09:09:31Z",
-    "updated": "2026-10-21T09:09:31Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.29451v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.29451v1"
-      }
-    ],
-    "score": 63,
-    "infographic": {
-      "key_insight": "A high-order multiscale method captures heterogeneous, fractionally damped wave propagation with an O(ε) global energy-norm error estimate.",
-      "engineering_relevance": "The method reduces the computational burden of simulating history-dependent wave attenuation in composite materials compared with full-scale direct numerical simulation.",
-      "method": [
-        "Derive a homogenized wave equation and first- and second-order corrections through multiscale asymptotic expansion.",
-        "Establish local residual cancellation, global error bounds, and unconditional shifted-energy stability.",
-        "Combine finite elements and finite differences using a fully discrete L2-1σ–Newmark scheme."
-      ],
-      "evidence_signal": "Two- and three-dimensional numerical examples demonstrate accuracy, efficiency, reduced cost, and robustness, although the abstract reports no quantitative benchmarks.",
-      "watch_item": "Fractional damping requires history-dependent calculations; the abstract does not specify long-time memory costs or history-compression strategies.",
-      "hashtags": [
-        "#ComputationalMechanics",
-        "#MultiscaleModeling",
-        "#FiniteElementMethod",
-        "#FractionalDamping",
-        "#CompositeMaterials"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-21-arxiv-a_high_order_multi_scale_method_and_its_error_analysis_for_nonlocal_in_time_fractionally_d",
-      "paper_title": "A high-order multi-scale method and its error analysis for nonlocal-in-time fractionally damped wave problems in composite materials",
-      "paper_date": "2026-10-21",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:34",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-22-arxiv-conservative_finite_element_methods_for_kirchhoff_type_equations",
-    "arxiv_id": "2610.31487v1",
-    "date": "2026-10-22",
-    "title": "Conservative Finite Element Methods for Kirchhoff-Type Equations",
-    "authors": "Benjamin Dörich, Felix Krumbiegel, Jemal Rogava, Andreas Rupp, Zurab Vashakidze",
-    "abstract": "We construct and analyse a fully discrete scheme for a Kirchhoff-type nonlinear integro-differential equation in two spatial dimensions with time-dependent coefficients. The scheme combines a symmetric three-layer time discretization of Crank--Nicolson type with a conforming finite element method of arbitrary polynomial degree $p$ and a Picard iteration for the nonlinearity. We prove that the Picard iteration is well defined and, that the iterates converge to the Ritz projection of the exact solution measured in fractional-power norms of the discrete Laplacian. Running the same energy argument in the unshifted norms, and under the same hypotheses, we then obtain the optimal order $\\mathcal{O} ( h^{p+1} + τ^2 )$ in $L^2$ and $\\mathcal{O} ( h^{p} + τ^2 )$ in $H^1$ for the full error. For the homogeneous problem with constant coefficients, the exact solution of the scheme moreover preserves a discrete energy identically. Numerical experiments with manufactured solutions reproduce the predicted second order in time and the full spatial order $h^{p+1}$ in the $L^2$-norm.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-22T16:08:37Z",
-    "updated": "2026-10-22T16:08:37Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.31487v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.31487v1"
-      }
-    ],
-    "score": 62,
-    "infographic": {
-      "key_insight": "A fully discrete finite element scheme for Kirchhoff-type equations achieves optimal spatial accuracy and second-order time accuracy, while preserving discrete energy for homogeneous problems with constant coefficients.",
-      "engineering_relevance": "The method supports accurate simulation of nonlocal nonlinear structural dynamics where energy consistency helps control numerical artifacts.",
-      "method": [
-        "Conforming finite elements of arbitrary polynomial degree p in two spatial dimensions.",
-        "Symmetric three-layer Crank–Nicolson-type time discretization.",
-        "Picard iteration for the nonlinearity, with convergence and error analysis."
-      ],
-      "evidence_signal": "Manufactured-solution experiments reproduce second-order temporal convergence and spatial L² convergence of order h^(p+1), consistent with the theoretical error bounds.",
-      "watch_item": "Exact discrete energy preservation is established only for the homogeneous, constant-coefficient problem; the general convergence results require the paper’s stated hypotheses.",
-      "hashtags": [
-        "#FiniteElementMethods",
-        "#KirchhoffEquations",
-        "#ComputationalMechanics",
-        "#EnergyPreserving",
-        "#NumericalAnalysis"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-22-arxiv-conservative_finite_element_methods_for_kirchhoff_type_equations",
-      "paper_title": "Conservative Finite Element Methods for Kirchhoff-Type Equations",
-      "paper_date": "2026-10-22",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:36",
+      "generated_at": "2026-10-24T13:00:51",
       "generator": "openai"
     }
   },
@@ -562,18 +401,18 @@
     "score": 62,
     "infographic": {
       "key_insight": "Neuronal ablation produces architecture-dependent language failures: gradual decline in LSTMs, threshold-like collapse from Transformer MLP damage, and smoother decline from attention-head damage.",
-      "engineering_relevance": "These failure profiles offer a computational damage-tolerance perspective on how neural-network architecture influences robustness to progressive component loss.",
+      "engineering_relevance": "These failure profiles offer a computational damage-tolerance analogy for studying how component loss affects system performance and reserve capacity.",
       "method": [
         "Systematically ablate computational units in LSTM and Transformer language models.",
         "Compare Transformer feedforward MLP ablation with attention-head ablation.",
         "Apply limited fine-tuning as a proxy for compensatory plasticity."
       ],
-      "evidence_signal": "The abstract reports parallel syntactic and semantic decline in LSTMs, semantic substitutions and rising non-responses under MLP ablation, and reduced semantic specificity under attention-head ablation.",
-      "watch_item": "Parallels with aphasia and neurodegeneration are qualitative; computational ablation and limited fine-tuning do not establish biological equivalence or clinical validity.",
+      "evidence_signal": "The abstract reports parallel syntactic and semantic decline in LSTMs, semantic substitutions and rising non-responses after MLP ablation, and reduced semantic specificity after attention-head ablation.",
+      "watch_item": "The aphasia parallels are qualitative; computational ablation and limited fine-tuning do not establish biological equivalence or validate a solid-mechanics damage model.",
       "hashtags": [
         "#NeuronalAblation",
-        "#DamageTolerance",
         "#LanguageModels",
+        "#DamageTolerance",
         "#ComputationalNeuroscience",
         "#Aphasia"
       ],
@@ -583,7 +422,168 @@
       "paper_title": "Can Language Models Get \"Aphasia\" From Neuronal Ablation?",
       "paper_date": "2026-10-20",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-23T13:58:39",
+      "generated_at": "2026-10-24T13:00:53",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-22-arxiv-herd_harness_evolving_recursive_distillation_for_continual_learning",
+    "arxiv_id": "2610.31401v1",
+    "date": "2026-10-22",
+    "title": "HERD: Harness-Evolving Recursive Distillation for Continual Learning",
+    "authors": "Xun Sun, Thanh Thi Nguyen, Thuy-Trang Vu",
+    "abstract": "Continual learning requires a model to keep acquiring new skills and knowledge without compromising its existing capabilities. Parametric methods suffer from catastrophic forgetting and loss of plasticity. Non-parametric methods, such as prompts, skills, and harnesses, leverage in-context learning but are limited by context length and lossy plain-text compression. To effectively combine their complementary strengths, we propose HERD (Harness-Evolving Recursive Distillation), a hybrid continual learning framework that learns efficiently in the harness and internalizes experience into cumulative capabilities via distillation. On the harness side, HERD continually refines its skills to capture reusable patterns, while retaining high-residual examples that the skills fail to capture in a bounded memory. On the parameter side, HERD performs drift-constrained distillation with dual anchors, substantially reducing forgetting over long recursive runs. On the 25-stage task stream of TRACE+17, under fixed memory and compute budgets, HERD matches the strongest parametric baseline in new-task acquisition while exhibiting the least forgetting and the strongest retention of general capabilities.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-10-22T15:03:20Z",
+    "updated": "2026-10-22T15:03:20Z",
+    "primary_category": "cs.CL",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.31401v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.31401v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "HERD combines evolving external skills and bounded example memory with parameter distillation to acquire new capabilities while limiting forgetting.",
+      "engineering_relevance": "HERD may inform continual updating of engineering AI assistants, but the abstract does not demonstrate solid-mechanics or constitutive-modeling applications.",
+      "method": [
+        "Continually refine reusable skills in an external harness.",
+        "Retain high-residual examples not captured by skills in bounded memory.",
+        "Internalize experience through drift-constrained distillation with dual anchors."
+      ],
+      "evidence_signal": "On the 25-stage TRACE+17 task stream under fixed memory and compute budgets, HERD matches the strongest parametric baseline in new-task acquisition while reporting the least forgetting and strongest general-capability retention.",
+      "watch_item": "Transfer to mechanics workflows remains untested in the abstract and would require domain-specific validation.",
+      "hashtags": [
+        "#ContinualLearning",
+        "#KnowledgeDistillation",
+        "#CatastrophicForgetting",
+        "#EngineeringAI",
+        "#HERD"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-22-arxiv-herd_harness_evolving_recursive_distillation_for_continual_learning",
+      "paper_title": "HERD: Harness-Evolving Recursive Distillation for Continual Learning",
+      "paper_date": "2026-10-22",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-10-24T13:00:55",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-21-arxiv-a_high_order_multi_scale_method_and_its_error_analysis_for_nonlocal_in_time_fractionally_d",
+    "arxiv_id": "2610.29451v1",
+    "date": "2026-10-21",
+    "title": "A high-order multi-scale method and its error analysis for nonlocal-in-time fractionally damped wave problems in composite materials",
+    "authors": "Gehao Wang, Hao Dong, Yufeng Nie, Junzhi Cui",
+    "abstract": "Significant spatial heterogeneity and nonlocal history-dependent attenuation jointly govern wave propagation in composite materials, making full-scale direct numerical simulation (DNS) computationally prohibitive. This study proposed a high-order multi-scale (HOMS) method for nonlocal-in-time fractionally damped wave problems with highly oscillatory and discontinuous material coefficients. Using a multi-scale asymptotic expansion approach, the macroscopic homogenized equation, and first- and second-order correction terms are derived to construct the high-accuracy HOMS solution. Moreover, a local pointwise error analysis identifies the leading residual eliminated by this HOMS solution and validates its local physical balance preservation. Then, a global energy-norm error estimate establishes the $O(\\varepsilon)$-order convergence rate for the HOMS solution. Subsequently, an efficient spatiotemporal multi-scale algorithm integrating the finite element and finite difference methods is designed, which employs a novel fully discrete $L2\\text{-}1_σ$-Newmark scheme, and corresponding unconditional shifted-energy stability and explicit convergence rates are also obtained for the macroscopic homogenized displacement and velocity, respectively. Both two- and three-dimensional examples are presented to demonstrate the accuracy, efficiency, reduced cost, and robustness of the proposed HOMS method. This work provides an effective multi-scale tool for nonlocal-in-time wave simulation in engineering applications.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-21T09:09:31Z",
+    "updated": "2026-10-21T09:09:31Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.29451v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.29451v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "A high-order multiscale method captures heterogeneous, fractionally damped wave propagation with a proven O(ε) global energy-norm error bound.",
+      "engineering_relevance": "The method offers a lower-cost alternative to fully resolved simulations of wave propagation in composites with strong material contrasts and history-dependent attenuation.",
+      "method": [
+        "Derive a homogenized wave equation with first- and second-order multiscale corrections.",
+        "Combine finite elements and finite differences using an L2-1σ–Newmark time scheme.",
+        "Establish local residual cancellation, global error bounds, and unconditional shifted-energy stability."
+      ],
+      "evidence_signal": "Two- and three-dimensional numerical examples demonstrate accuracy, efficiency, reduced computational cost, and robustness; the abstract provides no numerical speedup figures.",
+      "watch_item": "Fractional history dependence remains an implementation concern; the abstract does not quantify long-time memory or storage costs.",
+      "hashtags": [
+        "#ComputationalMechanics",
+        "#MultiscaleModeling",
+        "#FiniteElementMethod",
+        "#FractionalDamping",
+        "#CompositeMaterials"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-21-arxiv-a_high_order_multi_scale_method_and_its_error_analysis_for_nonlocal_in_time_fractionally_d",
+      "paper_title": "A high-order multi-scale method and its error analysis for nonlocal-in-time fractionally damped wave problems in composite materials",
+      "paper_date": "2026-10-21",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-24T13:00:57",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-22-arxiv-conservative_finite_element_methods_for_kirchhoff_type_equations",
+    "arxiv_id": "2610.31487v1",
+    "date": "2026-10-22",
+    "title": "Conservative Finite Element Methods for Kirchhoff-Type Equations",
+    "authors": "Benjamin Dörich, Felix Krumbiegel, Jemal Rogava, Andreas Rupp, Zurab Vashakidze",
+    "abstract": "We construct and analyse a fully discrete scheme for a Kirchhoff-type nonlinear integro-differential equation in two spatial dimensions with time-dependent coefficients. The scheme combines a symmetric three-layer time discretization of Crank--Nicolson type with a conforming finite element method of arbitrary polynomial degree $p$ and a Picard iteration for the nonlinearity. We prove that the Picard iteration is well defined and, that the iterates converge to the Ritz projection of the exact solution measured in fractional-power norms of the discrete Laplacian. Running the same energy argument in the unshifted norms, and under the same hypotheses, we then obtain the optimal order $\\mathcal{O} ( h^{p+1} + τ^2 )$ in $L^2$ and $\\mathcal{O} ( h^{p} + τ^2 )$ in $H^1$ for the full error. For the homogeneous problem with constant coefficients, the exact solution of the scheme moreover preserves a discrete energy identically. Numerical experiments with manufactured solutions reproduce the predicted second order in time and the full spatial order $h^{p+1}$ in the $L^2$-norm.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-22T16:08:37Z",
+    "updated": "2026-10-22T16:08:37Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.31487v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.31487v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "A fully discrete finite element scheme for Kirchhoff-type equations achieves optimal spatial accuracy and second-order time accuracy, while exactly preserving discrete energy for homogeneous problems with constant coefficients.",
+      "engineering_relevance": "The method supports accurate simulation of nonlinear structural dynamics with nonlocal stiffness effects, with conservation guarantees in the constant-coefficient, homogeneous setting.",
+      "method": [
+        "Conforming finite elements of arbitrary polynomial degree p in two spatial dimensions.",
+        "Symmetric three-layer Crank–Nicolson-type time discretization.",
+        "Picard iteration for the nonlinearity, supported by well-definedness and convergence analysis."
+      ],
+      "evidence_signal": "Manufactured-solution experiments reproduce second-order temporal convergence and spatial L² accuracy of order h^(p+1), consistent with the theoretical error bounds.",
+      "watch_item": "Exact discrete energy conservation applies to the exactly solved scheme with constant coefficients and no forcing; finite Picard tolerances may introduce conservation errors.",
+      "hashtags": [
+        "#FiniteElementMethod",
+        "#KirchhoffEquations",
+        "#NonlinearDynamics",
+        "#EnergyConservation",
+        "#NumericalAnalysis"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-22-arxiv-conservative_finite_element_methods_for_kirchhoff_type_equations",
+      "paper_title": "Conservative Finite Element Methods for Kirchhoff-Type Equations",
+      "paper_date": "2026-10-22",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-24T13:01:00",
       "generator": "openai"
     }
   },
@@ -612,23 +612,23 @@
         "url": "https://arxiv.org/pdf/2610.31154v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
       "key_insight": "Microbial community stability depends on self-limitation, metabolic efficiency and plasticity, while hierarchical trophic organization can counteract destabilizing cross-feeding loops.",
-      "engineering_relevance": "The framework could inform the design of stable microbial consortia for bioprocessing, rather than AI or solid-mechanics applications.",
+      "engineering_relevance": "The findings could guide the design of more stable engineered microbial consortia, rather than solid-mechanics systems.",
       "method": [
-        "Develop a generalized dynamical model of resource competition and cross-feeding.",
-        "Assess stability across large model ensembles with varying size, structure and nonlinear dynamics.",
+        "Develop a generalized model of resource-mediated competition and cross-feeding.",
+        "Assess stability across model ensembles with varying sizes, structures and nonlinear dynamics.",
         "Identify metabolic, dynamical and organizational drivers of stability."
       ],
-      "evidence_signal": "Model-ensemble analysis identifies system-size constraints and stabilizing mechanisms; the abstract reports no experimental validation or quantitative performance metrics.",
-      "watch_item": "Applying these insights to engineered communities requires checking model assumptions and validating stability predictions experimentally.",
+      "evidence_signal": "The abstract reports model-ensemble stability analysis, but provides no quantitative effect sizes or experimental validation.",
+      "watch_item": "Stability around modeled equilibria does not necessarily establish resilience to large perturbations in real communities.",
       "hashtags": [
         "#MicrobialCommunities",
         "#GeneralizedModeling",
         "#CrossFeeding",
-        "#DynamicalSystems",
-        "#CommunityStability"
+        "#CommunityStability",
+        "#BioprocessEngineering"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -636,7 +636,7 @@
       "paper_title": "Generalized modeling reveals stabilizing mechanisms in cross-feeding microbial communities",
       "paper_date": "2026-10-22",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-23T13:58:41",
+      "generated_at": "2026-10-24T13:01:02",
       "generator": "openai"
     }
   },
@@ -665,17 +665,17 @@
         "url": "https://arxiv.org/pdf/2610.28903v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "A mixed finite element formulation couples heat, particle concentration, and flow to model heat-assisted consolidation and sedimentation.",
-      "engineering_relevance": "The model supports analysis of thermal effects in mineral-suspension sedimentation, relevant to separation and thickening processes.",
+      "key_insight": "A mixed finite element formulation couples sediment concentration, temperature, and flow to model heat-assisted consolidation–sedimentation.",
+      "engineering_relevance": "The model supports simulation of thermally assisted settling of mineral suspensions, where heat, solids transport, and fluid motion interact.",
       "method": [
-        "Formulate the quasi-stationary coupled system using pseudostress and temperature/concentration gradient variables.",
+        "Formulate the quasi-stationary coupled system using pseudostress and concentration and temperature gradient variables.",
         "Establish continuous well-posedness using Babuška–Brezzi theory and Banach’s fixed-point theorem.",
-        "Analyze a mixed finite element discretization, proving discrete existence and deriving Céa-type and a priori error estimates."
+        "Develop a mixed finite element discretization with discrete existence and Céa-type a priori error estimates."
       ],
       "evidence_signal": "Numerical examples demonstrate model performance and confirm theoretical convergence rates; the abstract reports no experimental validation.",
-      "watch_item": "Continuous existence and uniqueness require small-data and additional solution-regularity assumptions, limiting guarantees outside those conditions.",
+      "watch_item": "Continuous existence and uniqueness require small-data and additional solution-regularity assumptions; this is a numerical PDE method, not an AI surrogate.",
       "hashtags": [
         "#MixedFiniteElements",
         "#HeatAssistedSedimentation",
@@ -689,7 +689,7 @@
       "paper_title": "Mixed finite element methods for a heat-assisted model of sedimentation",
       "paper_date": "2026-10-20",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:43",
+      "generated_at": "2026-10-24T13:01:04",
       "generator": "openai"
     }
   },
@@ -719,17 +719,17 @@
         "url": "https://arxiv.org/pdf/2610.25565v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "Rectified-flow generation paired with exact latent-space refinement enables concurrent optimization of printable bone-scaffold microstructures and their spatial assignments.",
-      "engineering_relevance": "The framework designs highly porous scaffolds that closely match target bone mechanics while enforcing mechanical and feature-size constraints.",
+      "key_insight": "Rectified-flow generation combined with exact latent-space refinement enables concurrent design of printable bone-scaffold microstructures and their spatial arrangement to meet mechanical targets.",
+      "engineering_relevance": "The framework supports porous implant designs that preserve whole-bone mechanical response while enforcing microscale feature-size constraints.",
       "method": [
         "Generate periodic lattice cells with a conditional rectified-flow model.",
         "Refine cells in latent space using exact finite-element homogenization sensitivities.",
         "Jointly optimize cell geometries and spatial assignments under mechanical and feature-size constraints."
       ],
-      "evidence_signal": "Eight rabbit-benchmark refinements achieved under 1% error across six target moduli; human femoral designs reached 63% cortical porosity with compliance constraints satisfied within 2%, and 84% cancellous porosity with strain-energy deviations below 0.25%.",
-      "watch_item": "The abstract reports computational benchmarks; fabrication accuracy, fatigue performance, and biological integration still require experimental validation.",
+      "evidence_signal": "All eight rabbit-benchmark refinements achieved under 1% error across six target moduli; human femoral designs reached 63% cortical porosity with compliance within 2% and 84% cancellous porosity with strain-energy deviations below 0.25%.",
+      "watch_item": "The abstract reports computational benchmarks; physical printability, fatigue performance, and biological integration still require experimental validation.",
       "hashtags": [
         "#AISolidMechanics",
         "#TopologyOptimization",
@@ -743,7 +743,7 @@
       "paper_title": "Concurrent two-scale topology optimization of printable bone scaffolds via rectified-flow generation and exact latent-space refinement",
       "paper_date": "2026-10-18",
       "paper_category": "Composites and Metamaterials",
-      "generated_at": "2026-10-23T13:58:45",
+      "generated_at": "2026-10-24T13:01:06",
       "generator": "openai"
     }
   },
@@ -775,23 +775,23 @@
         "url": "https://arxiv.org/pdf/2610.31507v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "The paper proposes coherent magnons as mediators of nuclear resonance energy transfer, aiming to bypass mass dilution and thermal spin cancellation that constrain phonon-based approaches.",
-      "engineering_relevance": "If validated, this mechanism could shift metal-deuteride design constraints from lattice fracture limits toward controlled magnetic resonance and nuclear spin polarization.",
+      "key_insight": "The paper proposes that coherent ferromagnetic magnons could bypass mass dilution and nuclear spin cancellation that constrain phonon-mediated nuclear resonance energy transfer in metal deuterides.",
+      "engineering_relevance": "If validated, this mechanism could guide magnetic excitation strategies that avoid the lattice-fracture constraints of phonon-driven energy transfer.",
       "method": [
         "Extend a generalized nuclear Dicke model to ferromagnetic-resonance magnons.",
-        "Model hyperfine-amplified M1 coupling and polarization-enabled relativistic M2 coupling.",
-        "Derive a Suhl-clamped scaling law for nuclear energy transfer."
+        "Combine hyperfine-amplified M1 coupling with Overhauser-polarized Dirac M2 coupling.",
+        "Derive a Suhl-clamped ferromagnetic-resonance scaling law."
       ],
       "evidence_signal": "The abstract reports theoretical predictions of 14.2 MeV neutrons for Pd-106, 11.4 MeV neutrons for Ni-58, and 19.9 MeV alpha particles, but describes no experimental validation.",
-      "watch_item": "Experimental feasibility remains unestablished, particularly whether sufficient coherent magnon excitation and nuclear spin polarization can coexist under realistic material conditions.",
+      "watch_item": "The predicted nuclear energy transfer requires experimental verification under achievable magnon coherence and nuclear spin polarization.",
       "hashtags": [
-        "#NuclearEnergyTransfer",
+        "#NuclearResonance",
         "#CoherentMagnons",
         "#FerromagneticResonance",
         "#MetalDeuterides",
-        "#MaterialsModeling"
+        "#ComputationalPhysics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -799,7 +799,7 @@
       "paper_title": "Macroscopic Nuclear Resonance Energy Transfer Mediated by Coherent Magnons",
       "paper_date": "2026-10-22",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-23T13:58:47",
+      "generated_at": "2026-10-24T13:01:08",
       "generator": "openai"
     }
   },
@@ -828,23 +828,23 @@
         "url": "https://arxiv.org/pdf/2610.31091v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "An energy-structure-preserving finite element scheme delivers mesh-independent stability for rotating MHD-Boussinesq flows with nonlinear power-law viscosity.",
-      "engineering_relevance": "The method supports stable simulation of coupled flow, heat transfer, and magnetic effects in rotating electrically conducting fluids.",
+      "key_insight": "An energy-structure-preserving finite element scheme provides mesh-independent stability for rotating MHD–Boussinesq flows with nonlinear power-law viscosity.",
+      "engineering_relevance": "The scheme supports stable simulation of coupled flow, heat transfer, and magnetic effects in rotating electrically conducting fluids.",
       "method": [
-        "Combine conforming velocity–temperature elements, Nédélec magnetic elements, and semi-implicit backward Euler time stepping.",
-        "Preserve exact Lorentz–induction energy cancellation and energy-neutral Coriolis forcing.",
-        "Use time-translate compactness and a Minty argument to analyse convergence and identify nonlinear diffusion."
+        "Conforming velocity and temperature elements, Nédélec magnetic elements, and semi-implicit backward Euler time stepping.",
+        "Exact Lorentz–induction energy cancellation and energy-neutral Coriolis forcing.",
+        "Time-translate compactness and a Minty argument for nonlinear diffusion identification."
       ],
-      "evidence_signal": "Three-dimensional numerical experiments confirm predicted stability and convergence, alongside a priori error estimates requiring no mesh–time coupling.",
-      "watch_item": "Genuine weak-solution identification is established only in the Newtonian case and above an explicit three-dimensional power-law threshold imposed by the Lorentz force.",
+      "evidence_signal": "Three-dimensional numerical experiments confirm the predicted stability and convergence behaviour, alongside a priori error estimates requiring no mesh–time coupling.",
+      "watch_item": "Genuine weak-solution identification is established for the Newtonian case and, in 3D, above a Lorentz-force-dependent exponent threshold—not throughout the shear-thickening regime.",
       "hashtags": [
         "#FiniteElementMethod",
         "#Magnetohydrodynamics",
-        "#NonNewtonianFlows",
+        "#NonNewtonianFlow",
         "#EnergyStability",
-        "#MultiphysicsSimulation"
+        "#NumericalAnalysis"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -852,7 +852,7 @@
       "paper_title": "Finite Element Approximation of Rotating MHD-Boussinesq Flows with Nonlinear Power-Law Viscosity",
       "paper_date": "2026-10-22",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:50",
+      "generated_at": "2026-10-24T13:01:10",
       "generator": "openai"
     }
   },
@@ -881,23 +881,23 @@
         "url": "https://arxiv.org/pdf/2610.30692v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Learned smoothing improves energy-norm accuracy at a fixed multigrid budget, but larger classical smoothing budgets close the gap without a measured CPU advantage for learning.",
-      "engineering_relevance": "For high-contrast elliptic finite element solves, fixed-budget accuracy gains should be weighed against runtime and robustness before adopting learned smoothers.",
+      "key_insight": "Learned smoothers improve single-pass multigrid accuracy at a fixed smoothing budget, but the tested CPU implementation provides no computational advantage over classical solvers.",
+      "engineering_relevance": "For high-contrast elliptic finite element problems, better fixed-budget accuracy should not be mistaken for faster practical solution.",
       "method": [
         "Train only the smoothers within an operator-adapted multigrid V-cycle.",
         "Use operator-dependent transfers, Galerkin coarse operators, near-kernel deflation and an energy-norm safeguard.",
-        "Represent a specified class of fixed polynomial smoothers while preserving positive homogeneity in the load."
+        "Compare energy errors against classical smoothing at fixed and increased iteration budgets."
       ],
-      "evidence_signal": "On fresh problems, one learned pass reduced energy error by factors of 5.7–6.1 for conductive channels and 1.38–1.45 for insulating barriers versus the same cycle with four-step Jacobi-preconditioned CG smoothing; classical accuracy crossed the learned cycle at 8–14 and 5–8 steps per smoothing call, respectively.",
-      "watch_item": "The tested CPU implementation showed no computational advantage over classical solvers, while load changes and floating islands further limited accuracy.",
+      "evidence_signal": "On fresh problems, one learned pass reduced energy error by factors of 5.7–6.1 for conductive channels and 1.38–1.45 for insulating barriers relative to four-step Jacobi-preconditioned CG smoothing; classical accuracy caught up between 8–14 and 5–8 steps per call, respectively.",
+      "watch_item": "Load changes and floating islands further limit accuracy, and fixed-input Krylov comparisons do not establish superiority over all polynomial-smoothed cycles.",
       "hashtags": [
-        "#LearnedMultigrid",
-        "#FiniteElementMethod",
         "#ScientificMachineLearning",
-        "#EllipticPDEs",
-        "#SolverBenchmarking"
+        "#FiniteElementMethod",
+        "#Multigrid",
+        "#LearnedSmoothers",
+        "#ComputationalMechanics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -905,7 +905,7 @@
       "paper_title": "Learned smoothing in operator-adapted multigrid: controlled accuracy gains and computational limits",
       "paper_date": "2026-10-22",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:53",
+      "generated_at": "2026-10-24T13:01:13",
       "generator": "openai"
     }
   },
@@ -935,17 +935,17 @@
         "url": "https://arxiv.org/pdf/2610.31567v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "PPy-PVA hydrogel geometry provides an additional lever for tuning drug transport by altering microstructure and local electric fields.",
-      "engineering_relevance": "Geometry-driven hydrogel design could enable tunable iontophoretic delivery without separately adjusting current density for each design.",
+      "key_insight": "PPy-PVA hydrogel geometry tunes drug transport by altering microstructure and local electric fields, offering an alternative to current-density modulation.",
+      "engineering_relevance": "Geometry-based hydrogel design could enable adjustable iontophoretic delivery without independently tuning current density for each design.",
       "method": [
-        "Fabricated BSA-loaded hydrogels in five geometries, including Hilbert curve-based designs.",
-        "Evaluated electric fields with finite element analysis and microstructure with scanning electron microscopy.",
-        "Measured passive and iontophoretic transport using Franz diffusion cells with artificial membranes."
+        "Fabricated BSA-loaded PPy-PVA hydrogels in five geometries, including Hilbert curve-based designs.",
+        "Evaluated electric fields using finite element analysis and microstructure using scanning electron microscopy.",
+        "Measured passive and iontophoretic transport in Franz diffusion cells with artificial membranes."
       ],
-      "evidence_signal": "The five geometries showed distinct release, flux, and permeability profiles; average iontophoretic permeability was (3.80 ± 1.93) × 10⁻⁵, with units unspecified in the abstract.",
-      "watch_item": "Artificial-membrane testing does not establish performance or safety in skin, and the abstract reports no AI surrogate model.",
+      "evidence_signal": "The five geometries produced distinct transport profiles, while iontophoresis enhanced permeability over passive diffusion, with average iontophoretic permeability reported as (3.80 ± 1.93) × 10^-5.",
+      "watch_item": "Artificial-membrane testing does not establish performance in human skin, and the abstract reports FEM analysis rather than an AI surrogate.",
       "hashtags": [
         "#HydrogelDesign",
         "#Iontophoresis",
@@ -959,7 +959,7 @@
       "paper_title": "Geometry-Dependent Properties of Physically Crosslinked PPy-PVA Hydrogels Enable Tunable Iontophoretic Drug Delivery",
       "paper_date": "2026-10-22",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:55",
+      "generated_at": "2026-10-24T13:01:16",
       "generator": "openai"
     }
   },
@@ -988,23 +988,23 @@
         "url": "https://arxiv.org/pdf/2610.31472v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
       "key_insight": "VecTile uses passive silicone nubs to convert normal and shear forces into distinguishable pressure patterns, enabling low-cost three-axis tactile sensing.",
-      "engineering_relevance": "The flexible, 6 mm-thin sensor costs under US$35 for a 4×4 array and provides contact-force feedback for robotic manipulation.",
+      "engineering_relevance": "The flexible, 6 mm-thin array provides robots with contact-force feedback for grasp stability and manipulation at under $35 for a 4×4 array.",
       "method": [
-        "Combine a piezoresistive layer with passive silicone nubs.",
-        "Validate force-to-pressure transduction using finite element analysis and hardware experiments.",
-        "Calibrate force estimates and test transfer from flat to curved configurations."
+        "Combine a piezoresistive sensing layer with passive silicone nubs.",
+        "Validate force-to-pressure conversion using finite element analysis and hardware experiments.",
+        "Calibrate force estimates and test curved operation and robotic applications."
       ],
-      "evidence_signal": "Controlled single-taxel tests over 1–5 N normal force and up to 1.5 N shear force yielded RMSEs of 0.39 N and 0.16 N for normal and shear forces, respectively.",
-      "watch_item": "Reported force errors come from controlled single-taxel tests; full-array accuracy under simultaneous contacts is not established in the abstract.",
+      "evidence_signal": "Controlled single-taxel tests spanning 1–5 N normal force and up to 1.5 N shear force achieved RMSEs of 0.39 N for normal force and 0.16 N for shear force.",
+      "watch_item": "Reported force errors come from controlled single-taxel tests; they do not establish full-array accuracy under simultaneous, complex contacts.",
       "hashtags": [
         "#TactileSensing",
-        "#RoboticManipulation",
-        "#ForceSensing",
+        "#SoftSensors",
         "#FiniteElementAnalysis",
-        "#FlexibleSensors"
+        "#ForceSensing",
+        "#RobotManipulation"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -1012,7 +1012,7 @@
       "paper_title": "VecTile: A Low-Cost Flexible Tactile Array for 3-DoF Force Sensing",
       "paper_date": "2026-10-22",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-23T13:58:57",
+      "generated_at": "2026-10-24T13:01:18",
       "generator": "openai"
     }
   },
@@ -1041,23 +1041,23 @@
         "url": "https://arxiv.org/pdf/2610.29516v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
       "key_insight": "Compatible sparse-grid finite elements discretize BGG complexes with stable discrete potentials and dimension-independent convergence rates under mixed Sobolev regularity.",
-      "engineering_relevance": "The framework supports efficient discretizations of elasticity and higher-order mechanics problems with fewer degrees of freedom than full tensor-product grids.",
+      "engineering_relevance": "The approach supports efficient discretization of elasticity and higher-order mechanics problems while preserving their differential structure.",
       "method": [
         "Build compatible polynomial hierarchies from Alpert wavelets and their first and second primitives.",
-        "Construct a bounded commuting sparse-grid projection for Hessian, elasticity, and div-div complexes.",
-        "Prove approximation estimates under mixed Sobolev regularity."
+        "Construct tensor-product sparse-grid spaces for Hessian, elasticity, and div-div complexes.",
+        "Establish stability and approximation estimates using a bounded commuting sparse-grid projection."
       ],
       "evidence_signal": "Experiments on a 3D incompatibility problem and a 2D biharmonic problem on an annulus illustrate efficiency relative to full grids.",
-      "watch_item": "The convergence guarantees require mixed Sobolev regularity, which should be checked for problems with singularities or limited smoothness.",
+      "watch_item": "The convergence guarantees require mixed Sobolev regularity, which should be checked for applications with singular or nonsmooth solutions.",
       "hashtags": [
         "#SparseGrids",
         "#FiniteElements",
         "#BGGComplexes",
         "#ComputationalMechanics",
-        "#NumericalAnalysis"
+        "#StructurePreserving"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -1065,7 +1065,7 @@
       "paper_title": "Sparse-grid discretizations of BGG sequences",
       "paper_date": "2026-10-21",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-23T13:58:59",
+      "generated_at": "2026-10-24T13:01:20",
       "generator": "openai"
     }
   }

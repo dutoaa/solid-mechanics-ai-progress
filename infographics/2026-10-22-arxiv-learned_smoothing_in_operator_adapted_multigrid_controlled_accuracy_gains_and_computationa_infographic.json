@@ -1,19 +1,19 @@
 {
-  "key_insight": "Learned smoothing improves energy-norm accuracy at a fixed multigrid budget, but larger classical smoothing budgets close the gap without a measured CPU advantage for learning.",
-  "engineering_relevance": "For high-contrast elliptic finite element solves, fixed-budget accuracy gains should be weighed against runtime and robustness before adopting learned smoothers.",
+  "key_insight": "Learned smoothers improve single-pass multigrid accuracy at a fixed smoothing budget, but the tested CPU implementation provides no computational advantage over classical solvers.",
+  "engineering_relevance": "For high-contrast elliptic finite element problems, better fixed-budget accuracy should not be mistaken for faster practical solution.",
   "method": [
     "Train only the smoothers within an operator-adapted multigrid V-cycle.",
     "Use operator-dependent transfers, Galerkin coarse operators, near-kernel deflation and an energy-norm safeguard.",
-    "Represent a specified class of fixed polynomial smoothers while preserving positive homogeneity in the load."
+    "Compare energy errors against classical smoothing at fixed and increased iteration budgets."
   ],
-  "evidence_signal": "On fresh problems, one learned pass reduced energy error by factors of 5.7–6.1 for conductive channels and 1.38–1.45 for insulating barriers versus the same cycle with four-step Jacobi-preconditioned CG smoothing; classical accuracy crossed the learned cycle at 8–14 and 5–8 steps per smoothing call, respectively.",
-  "watch_item": "The tested CPU implementation showed no computational advantage over classical solvers, while load changes and floating islands further limited accuracy.",
+  "evidence_signal": "On fresh problems, one learned pass reduced energy error by factors of 5.7–6.1 for conductive channels and 1.38–1.45 for insulating barriers relative to four-step Jacobi-preconditioned CG smoothing; classical accuracy caught up between 8–14 and 5–8 steps per call, respectively.",
+  "watch_item": "Load changes and floating islands further limit accuracy, and fixed-input Krylov comparisons do not establish superiority over all polynomial-smoothed cycles.",
   "hashtags": [
-    "#LearnedMultigrid",
-    "#FiniteElementMethod",
     "#ScientificMachineLearning",
-    "#EllipticPDEs",
-    "#SolverBenchmarking"
+    "#FiniteElementMethod",
+    "#Multigrid",
+    "#LearnedSmoothers",
+    "#ComputationalMechanics"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Learned smoothing in operator-adapted multigrid: controlled accuracy gains and computational limits",
   "paper_date": "2026-10-22",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-10-23T13:58:53",
+  "generated_at": "2026-10-24T13:01:13",
   "generator": "openai"
 }

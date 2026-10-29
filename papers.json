@@ -24,22 +24,22 @@
         "url": "https://arxiv.org/pdf/2610.37124v1"
       }
     ],
-    "score": 86,
+    "score": 81,
     "infographic": {
-      "key_insight": "At affordable mesh resolution, a single phase-field parameter set cannot simultaneously match elastic slope, peak force, and crack path in brittle chocolate fracture.",
-      "engineering_relevance": "Reliable fracture predictions for food processing and handling require calibration to a declared objective, with numerical settings and boundary conditions reported.",
+      "key_insight": "At affordable mesh resolution, a single fracture-model parameter set cannot simultaneously match elastic slope, peak force and crack path in cooled dark chocolate.",
+      "engineering_relevance": "Predicting brittle-food breakage during processing, transport or consumption requires calibration tailored to the product response of interest.",
       "method": [
-        "Compare sharp-interface and diffuse phase-field frameworks for Griffith-type fracture in cooled dark chocolate.",
+        "Assess sharp-interface and diffuse phase-field finite element models of Griffith-type brittle fracture.",
         "Identify elastic parameters from pre-crack tension and compression, then critical energy release rate from three-point-bending peak force.",
-        "Calibrate phase-field width last, accounting for mesh-resolution constraints."
+        "Calibrate phase-field width last and report the calibration objective, numerical parameters and boundary value problem."
       ],
-      "evidence_signal": "The assessment uses tension, compression, and three-point bending to examine parameter calibration, while evaluating how phase-field width affects structural response, crack curvature, and stress fields.",
-      "watch_item": "Mesh-limited phase-field width can alter predicted fracture behavior, so calibration must target a specified observable rather than assume simultaneous agreement across all outputs.",
+      "evidence_signal": "The cooled-dark-chocolate case study assesses both frameworks at affordable spatial discretization and finds that phase-field width influences structural response, crack curvature and stress fields.",
+      "watch_item": "Affordable mesh resolution imposes a lower bound on phase-field width, creating trade-offs between matching load response and crack geometry.",
       "hashtags": [
         "#SolidMechanics",
-        "#FiniteElementAnalysis",
+        "#FiniteElementModeling",
         "#BrittleFracture",
-        "#PhaseFieldModeling",
+        "#PhaseField",
         "#FoodEngineering"
       ],
       "model": "gpt-6.1-sol",
@@ -48,7 +48,7 @@
       "paper_title": "Finite Element Modeling of Fracture in Brittle Foods with Physically Consistent Parameter Calibration: A Practical Case Study on Cooled Dark Chocolate",
       "paper_date": "2026-10-27",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-28T15:38:16",
+      "generated_at": "2026-10-29T15:44:31",
       "generator": "openai"
     }
   },
@@ -77,17 +77,17 @@
         "url": "https://arxiv.org/pdf/2610.35653v1"
       }
     ],
-    "score": 84,
+    "score": 79,
     "infographic": {
       "key_insight": "Retention-constrained fine-tuning improves an aluminium MACE potential’s defect predictions while preserving its tested near-equilibrium mechanical and vibrational response.",
-      "engineering_relevance": "The approach supports atomistic simulations of plasticity with better defect energetics and stresses without sacrificing validated bulk behavior.",
+      "engineering_relevance": "The protocol supports more reliable atomistic simulations of aluminium defect dynamics and plasticity without sacrificing validated bulk behavior.",
       "method": [
-        "Select configurations using conditional force uncertainty, with within-batch covariance updates.",
+        "Select configurations using conditional readout uncertainty with within-batch covariance updates.",
         "Iteratively update all model parameters while anchoring historical relative energies.",
-        "Gate updates against historical elastic-group energy and vibrational tolerances."
+        "Gate model acceptance using historical elastic-group energy and vibrational tolerances."
       ],
-      "evidence_signal": "After 32 acquired configurations and 400 gradient updates, mean development force error fell from 22.43 to 21.52 meV/Å, outperforming sampling baselines; all three force-uncertainty runs met retention criteria, with harmonic phonon RMS drift below 0.05 THz.",
-      "watch_item": "Retention is demonstrated for tested aluminium benchmarks; new deformation regimes require additional validation and compatible reference-energy protocols.",
+      "evidence_signal": "Four active-learning rounds acquired 32 configurations over 400 gradient updates, reducing mean development force error from 22.43 to 21.52 meV/Å; all three force-uncertainty runs met bulk-retention criteria, with phonon RMS drift below 0.05 THz.",
+      "watch_item": "Retention is demonstrated only for the tested aluminium responses; broader deployment requires additional validation, and the closed-loop MD–DFT result remains a pilot.",
       "hashtags": [
         "#AISolidMechanics",
         "#MachineLearningPotentials",
@@ -101,7 +101,7 @@
       "paper_title": "Retention-constrained fine-tuning of a pre-trained aluminium MACE potential for non-equilibrium defect dynamics and plasticity",
       "paper_date": "2026-10-26",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:18",
+      "generated_at": "2026-10-29T15:44:33",
       "generator": "openai"
     }
   },
@@ -130,22 +130,22 @@
         "url": "https://arxiv.org/pdf/2610.36945v1"
       }
     ],
-    "score": 75,
+    "score": 70,
     "infographic": {
-      "key_insight": "Total deformation-based MPM prevents numerical fracture in perfectly elastic solids while computing elastic forces on the current grid for contact handling.",
-      "engineering_relevance": "The approach supports simulation of elastic components undergoing large, recoverable deformations and contact without artificial breakup.",
+      "key_insight": "Computing total deformation from particle positions and a fixed reference grid enables perfectly elastic MPM solids to recover from large deformations without numerical fracture while retaining current-grid force evaluation.",
+      "engineering_relevance": "The approach supports simulation of highly deformable elastic components with contact while remaining compatible with standard grid-based MPM collision handling.",
       "method": [
-        "Compute deformation directly from particle positions using a fixed reference grid.",
-        "Evaluate elastic forces on the current grid, retaining standard grid-based collision handling.",
-        "Support particle-level collision handling and zero-energy mode suppression."
+        "Compute deformation directly from particle positions using a fixed reference grid, rather than velocity-gradient updates.",
+        "Evaluate elastic forces on the current grid to support grid-based contact handling.",
+        "Allow particle-level collision handling and suppress zero-energy modes associated with nonlinear deformation artifacts."
       ],
-      "evidence_signal": "The abstract reports efficient simulations of complex elastic objects under large deformations and contact, but provides no quantitative benchmarks.",
-      "watch_item": "Robustness and computational overhead of the fixed-reference deformation calculation and zero-energy mode suppression require assessment beyond the abstract.",
+      "evidence_signal": "The abstract reports simulations of complex elastic objects undergoing large deformations and contact, but provides no quantitative accuracy or performance metrics.",
+      "watch_item": "Robustness and computational cost of zero-energy mode suppression and collision coupling require evaluation beyond the abstract.",
       "hashtags": [
         "#MaterialPointMethod",
         "#ComputationalSolidMechanics",
-        "#Elasticity",
         "#LargeDeformation",
+        "#Elasticity",
         "#ContactSimulation"
       ],
       "model": "gpt-6.1-sol",
@@ -154,7 +154,7 @@
       "paper_title": "Total Deformation-based MPM for Perfectly Elastic Solid Simulation with Strong Deformations",
       "paper_date": "2026-10-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:21",
+      "generated_at": "2026-10-29T15:44:35",
       "generator": "openai"
     }
   },
@@ -183,23 +183,23 @@
         "url": "https://arxiv.org/pdf/2610.36753v1"
       }
     ],
-    "score": 75,
+    "score": 70,
     "infographic": {
-      "key_insight": "A minimizing-movement framework uses a convex surrogate energy to construct parametric finite element schemes with unique one-step solutions and discrete energy dissipation.",
-      "engineering_relevance": "The framework supports energy-consistent simulation of anisotropic interface motion, including area-preserving evolution relevant to materials microstructure modeling.",
+      "key_insight": "A minimizing-movement framework uses a convex energy surrogate to construct parametric finite element schemes for anisotropic curve shortening with provable one-step energy dissipation.",
+      "engineering_relevance": "The framework supports energy-consistent simulation of evolving interfaces, including anisotropic and area-preserving motion.",
       "method": [
-        "Majorize the anisotropic energy with a smooth, convex surrogate matching it at the current iterate.",
-        "Minimize at each time step using parametric finite elements of any fixed degree.",
+        "Majorize the anisotropic energy with a smooth, convex surrogate that matches it at the current iterate.",
+        "Solve a uniquely solvable unconstrained step for any positive time-step size, provided the current curve has nonvanishing elementwise parametric derivatives.",
         "Use convex splitting for strong anisotropy and a scalar constraint for area preservation."
       ],
-      "evidence_signal": "Numerical experiments show approximately expected convergence in smooth isotropic and weakly anisotropic cases, energy dissipation, and area preservation.",
-      "watch_item": "Strongly anisotropic tests develop mesh-scale oscillations under refinement; one-step uniqueness also requires a nonvanishing current-curve derivative on every element.",
+      "evidence_signal": "Numerical tests show approximately expected convergence for smooth isotropic and weakly anisotropic cases, energy dissipation, and area preservation.",
+      "watch_item": "Strongly anisotropic simulations develop sharp facet-like profiles but exhibit mesh-scale oscillations under grid refinement.",
       "hashtags": [
         "#FiniteElementMethods",
-        "#AnisotropicFlow",
-        "#EnergyStableMethods",
-        "#InterfaceEvolution",
-        "#ComputationalMechanics"
+        "#CurveShortening",
+        "#AnisotropicInterfaces",
+        "#MinimizingMovements",
+        "#EnergyStableMethods"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -207,7 +207,7 @@
       "paper_title": "A minimizing-movement framework for parametric finite element approximation of anisotropic curve shortening flows",
       "paper_date": "2026-10-27",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-28T15:38:23",
+      "generated_at": "2026-10-29T15:44:37",
       "generator": "openai"
     }
   },
@@ -238,22 +238,22 @@
         "url": "https://arxiv.org/pdf/2610.36005v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "Atomistic simulations link alumina inclusion fraction and aluminum grain structure to effective elastic properties, strength, and fracture behavior in aluminum-based nanocomposites.",
-      "engineering_relevance": "The workflow supports multiscale material modeling by extracting upper-scale mechanical parameters from nanoscale composite responses.",
+      "key_insight": "Atomistic simulations connect alumina inclusion fraction and aluminum grain count to effective elastic properties, strength, and damage behavior in aluminum-matrix nanocomposites.",
+      "engineering_relevance": "The extracted parameters can inform upper-scale constitutive models for particulate aluminum–alumina nanocomposites.",
       "method": [
-        "Run molecular statics simulations under tensile and compressive loading.",
-        "Compare single-inclusion unit cells with polycrystalline representative volume elements containing an alumina particle.",
-        "Extract elastic and damage parameters from stress–strain curves and compare isotropized elastic constants with Voigt–Reuss–Hill estimates."
+        "Run molecular statics simulations under tension and compression.",
+        "Vary alumina volume fraction in single-inclusion cells and aluminum grain count in polycrystalline representative volume elements.",
+        "Extract elastic and failure parameters from stress–strain curves and compare isotropized elastic constants with Voigt–Reuss–Hill estimates."
       ],
-      "evidence_signal": "The abstract reports evaluation of bulk, shear, and Young’s moduli, ultimate strength, ultimate strain, and failure strain, alongside analysis of ductile/brittle mechanisms and intergranular/transgranular fracture.",
-      "watch_item": "The abstract provides no quantitative accuracy or experimental validation, so transfer of atomistic parameters to engineering-scale predictions requires further assessment.",
+      "evidence_signal": "Evaluation uses two atomistic model classes, stress–strain responses, and classical elastic estimates, with atomistic outputs informing brittle versus ductile behavior and transgranular versus intergranular fracture.",
+      "watch_item": "Transferability beyond the simulated atomistic structures requires validation; the abstract reports no experimental comparison or quantitative accuracy metrics.",
       "hashtags": [
         "#ComputationalMechanics",
         "#MolecularStatics",
-        "#AluminumNanocomposites",
         "#MultiscaleModeling",
+        "#AluminumNanocomposites",
         "#FractureAndDamage"
       ],
       "model": "gpt-6.1-sol",
@@ -262,7 +262,7 @@
       "paper_title": "Evaluation of upper-scale mechanical parameters of particulate aluminum-based nanocomposites from molecular simulations",
       "paper_date": "2026-10-26",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-28T15:38:25",
+      "generated_at": "2026-10-29T15:44:39",
       "generator": "openai"
     }
   },
@@ -291,17 +291,17 @@
         "url": "https://arxiv.org/pdf/2610.34565v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Structurally constrained neural softening functions extend pseudo-elastic Mullins models to capture composition-dependent stress softening while preserving physical admissibility.",
-      "engineering_relevance": "The approach could improve constitutive predictions for filled rubber formulations whose nonlinear response varies with curative content.",
+      "key_insight": "Structurally constrained neural softening functions extend pseudo-elastic Mullins models to capture composition-dependent stress softening while enforcing physical admissibility.",
+      "engineering_relevance": "The approach can improve constitutive predictions for rubber components whose nonlinear response changes with material formulation and loading history.",
       "method": [
-        "Embed parameter-dependent, physics-augmented neural softening functions in a pseudo-elastic framework.",
-        "Use multiplicative softening decompositions to satisfy mechanical constraints by construction.",
-        "Derive an enforceable sufficient condition for ellipticity and assess constraint–flexibility trade-offs."
+        "Embed parameter-dependent neural softening functions in a pseudo-elastic framework.",
+        "Use a multiplicative decomposition to satisfy common constitutive conditions by construction.",
+        "Derive an enforceable sufficient condition for ellipticity and assess accuracy–robustness trade-offs."
       ],
-      "evidence_signal": "Evaluation uses multiaxial experimental data from carbon black-filled EPDM rubber with varying curative amounts to assess prediction accuracy and calibration robustness.",
-      "watch_item": "Generalization beyond the tested formulations and loading conditions is not established by the abstract.",
+      "evidence_signal": "Evaluation uses multiaxial experimental data from carbon black-filled EPDM rubber with varying curative contents to compare prediction accuracy and calibration robustness.",
+      "watch_item": "Performance beyond the tested formulations and loading conditions remains to be established.",
       "hashtags": [
         "#AISolidMechanics",
         "#ConstitutiveModeling",
@@ -315,7 +315,7 @@
       "paper_title": "Constrained neural softening functions for the Mullins effect in parameter-dependent materials",
       "paper_date": "2026-10-25",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:27",
+      "generated_at": "2026-10-29T15:44:41",
       "generator": "openai"
     }
   },
@@ -345,23 +345,23 @@
         "url": "https://arxiv.org/pdf/2610.37060v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "Physics-localized hyper-reduction preserves coupled soil displacement and pore-pressure predictions while accelerating elastoplastic hydro-mechanical simulations by up to 77×.",
-      "engineering_relevance": "Faster repeated simulations can support calibration, uncertainty quantification and scenario analysis for partially saturated earthfill and tailings dams.",
+      "key_insight": "Physics-localized hyper-reduction preserves coupled elastoplastic soil deformation and water-flow predictions while delivering up to 77× speed-up.",
+      "engineering_relevance": "Faster repeated dam simulations can support calibration, uncertainty quantification and safety scenario analysis.",
       "method": [
-        "Build separate displacement and pore-pressure reduced bases using proper orthogonal decomposition.",
-        "Evaluate affine residual terms exactly and approximate nonlinear corrections using one ECSW cubature rule per balance equation.",
-        "Assemble the original FEniCSx variational forms only on ECSW-selected elements."
+        "Build separate POD reduced bases for displacement and pore pressure.",
+        "Compute affine residual terms exactly and approximate nonlinear corrections with separate ECSW cubature rules for each balance equation.",
+        "Assemble original FEniCSx variational forms only on selected elements concentrated in plastified and unsaturated zones."
       ],
-      "evidence_signal": "Tests on 2D and 3D dams undergoing raising and consolidation, with varying material parameters and raise height, reported field errors below 0.5% relative to finite elements and speed-ups up to 43× and 77×, respectively.",
-      "watch_item": "Accuracy beyond the tested parameter ranges and loading scenarios remains unestablished; new yielding or unsaturated zones may require updated training and element selection.",
+      "evidence_signal": "Tests on 2D and 3D dams under raising and consolidation, with material properties and raise height varied, reported displacement and pressure errors below 0.5% relative to finite element solutions and speed-ups up to 43× and 77×, respectively.",
+      "watch_item": "Accuracy beyond the tested parameter ranges and loading scenarios remains to be established.",
       "hashtags": [
-        "#ComputationalMechanics",
-        "#ModelOrderReduction",
         "#HyperReduction",
-        "#Elastoplasticity",
-        "#GeotechnicalEngineering"
+        "#ReducedOrderModeling",
+        "#ComputationalGeomechanics",
+        "#HydroMechanicalCoupling",
+        "#DamSafety"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -369,7 +369,7 @@
       "paper_title": "A hyper-reduction strategy for elastoplastic hydro-mechanical problems in partially saturated soil",
       "paper_date": "2026-10-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:30",
+      "generated_at": "2026-10-29T15:44:44",
       "generator": "openai"
     }
   },
@@ -400,19 +400,19 @@
         "url": "https://arxiv.org/pdf/2610.32598v1"
       }
     ],
-    "score": 69,
+    "score": 64,
     "infographic": {
-      "key_insight": "Symmetric polyconvex neural networks guarantee symmetric polyconvexity by construction and universally approximate symmetric polyconvex energies without assuming isotropy.",
-      "engineering_relevance": "The approach supports learned small-strain constitutive models and approximation of symmetric polyconvex envelopes, which provide lower bounds for energy relaxation.",
+      "key_insight": "Symmetric polyconvex neural networks (SPCNNs) guarantee symmetric polyconvexity by construction and universally approximate symmetric polyconvex energies without requiring isotropy.",
+      "engineering_relevance": "SPCNNs offer a structure-preserving approach to small-strain constitutive modeling and approximation of symmetric polyconvex lower bounds for relaxed energies.",
       "method": [
         "Combine convexity with the required monotonicity in a lifted space of minors.",
-        "Prove universal approximation beyond the limitations of weight-restricted ReLU input-convex networks.",
-        "Quantify attainable affine pieces and derive reduced architectures for isotropic energies."
+        "Prove universal approximation and quantify attainable affine pieces.",
+        "Derive reduced architectures for isotropic energies."
       ],
       "evidence_signal": "Numerical examples assess stress-based regression and approximation of the symmetric polyconvex envelope of a double-well potential.",
-      "watch_item": "Symmetric polyconvexity is guaranteed, but fitted accuracy is assessed numerically and the envelope need not equal the fully relaxed energy.",
+      "watch_item": "Structural guarantees do not ensure finite-network fitting accuracy, and a symmetric polyconvex envelope need not equal the full relaxed energy.",
       "hashtags": [
-        "#SolidMechanics",
+        "#AISolidMechanics",
         "#ConstitutiveModeling",
         "#SymmetricPolyconvexity",
         "#NeuralNetworks",
@@ -424,7 +424,7 @@
       "paper_title": "Universal neural network approximation of symmetric polyconvex energies and envelopes",
       "paper_date": "2026-10-23",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:31",
+      "generated_at": "2026-10-29T15:44:46",
       "generator": "openai"
     }
   },
@@ -453,17 +453,17 @@
         "url": "https://arxiv.org/pdf/2610.36509v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "ARISE uses authentic-content reference geometry to learn emerging multimodal forgery attacks while reducing forgetting of earlier attacks.",
-      "engineering_relevance": "The method targets continually updated multimodal forensic systems, not solid mechanics or constitutive modeling.",
+      "key_insight": "ARISE uses authentic-content geometry as a stable reference to learn emerging multimodal forgeries while reducing forgetting of earlier attacks.",
+      "engineering_relevance": "The approach targets continually updated multimedia verification systems, not solid mechanics or constitutive modeling.",
       "method": [
         "Fit a real-only Gaussian mixture model to projected authentic replay representations.",
-        "Use GRASP to preserve historically stable representation directions while allowing adaptation elsewhere.",
-        "Use VAR to emphasize vulnerable historical stages based on training-time replay statistics, without adding inference modules."
+        "Use GRASP to constrain historically stable representation directions while preserving plasticity elsewhere.",
+        "Use VAR to emphasize vulnerable replay stages based on density degradation, boundary confusion, and authentic-mode drift."
       ],
-      "evidence_signal": "The abstract reports improved historical retention and final average performance across three Fable-Bench attack-evolution protocols and multiple detector architectures, but provides no numerical results.",
-      "watch_item": "Effectiveness may depend on how well the replay buffer and Gaussian mixture capture authentic-content diversity.",
+      "evidence_signal": "The abstract reports improved historical retention and final average performance over representative continual-learning baselines across three Fable-Bench attack-evolution protocols and multiple detector architectures, without numerical results.",
+      "watch_item": "Implementation requires replay data and reliable authentic-density estimates; inference uses only the original backbone and binary classification head.",
       "hashtags": [
         "#ContinualLearning",
         "#MultimodalForensics",
@@ -477,7 +477,7 @@
       "paper_title": "ARISE: Authentic Reference-Informed Stability Enhancement for Continual Multimodal Forgery Detection",
       "paper_date": "2026-10-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:34",
+      "generated_at": "2026-10-29T15:44:48",
       "generator": "openai"
     }
   },
@@ -507,17 +507,17 @@
         "url": "https://arxiv.org/pdf/2610.37139v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "Energy-Based Generative Replay (EB-Gen) reduces catastrophic forgetting by using Hopfield network dynamics to generate rehearsal samples internally.",
-      "engineering_relevance": "The approach could support edge-friendly continual learning, though the abstract reports image-classification benchmarks rather than solid-mechanics applications.",
+      "key_insight": "Energy-Based Generative Replay (EB-Gen) reduces forgetting by using a Hopfield network’s intrinsic dynamics to generate replay samples for continual learning.",
+      "engineering_relevance": "The approach could support edge-friendly continual learning without external data buffers or a separate generator, though no solid-mechanics application is evaluated.",
       "method": [
         "Train a Hopfield network using Equilibrium Propagation.",
-        "Generate past-task pseudo-data by relaxing a frozen copy of the network.",
-        "Rehearse generated samples while learning new classes, without an external data buffer or separate generator architecture."
+        "Generate pseudo-data representing prior tasks by relaxing a frozen network copy.",
+        "Rehearse on generated samples while learning new classes."
       ],
-      "evidence_signal": "Class-incremental evaluations report average accuracies of 75% on Split MNIST and 64% on Split CIFAR10, with comparisons against FineTune, ER, Gen-Replay, SRC and Joint training.",
-      "watch_item": "Maintaining a frozen network copy and generating replay samples still incur memory and computation costs; edge-hardware efficiency is not quantified in the abstract.",
+      "evidence_signal": "On class-incremental Split MNIST and Split CIFAR10, EB-Gen achieves reported average accuracies of 75% and 64%, respectively, with comparisons against FineTune, ER, Gen-Replay, SRC and joint training.",
+      "watch_item": "Maintaining a frozen network copy and relaxing it to generate samples incur memory and computation costs; edge-hardware efficiency is not quantified in the abstract.",
       "hashtags": [
         "#ContinualLearning",
         "#EquilibriumPropagation",
@@ -531,60 +531,7 @@
       "paper_title": "Generative Replay for Equilibrium Propagation: Toward Edge-Friendly Continual Learning in Hopfield Networks",
       "paper_date": "2026-10-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:36",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-21-arxiv-microstructural_generative_inverse_models_for_additive_manufacturing_digital_twins",
-    "arxiv_id": "2610.30404v1",
-    "date": "2026-10-21",
-    "title": "Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins",
-    "authors": "Pablo Luna Falcon, Jason Mayeur, Amirkoushyar Ziabari, Vincent Paquit, Patxi Fernandez-Zelaia",
-    "abstract": "Metal additive manufacturing (AM) offers substantial advantages to the fabrication of complex structural components, but its widespread adoption is slowed due to complexities in the process-structure-property relations which is the cause for uncertainty and drives risk. Accurately quantifying these complex relations solely via experimental workflows is time consuming and costly. Integrated computational materials and engineering (ICME) frameworks address this challenge by leveraging advanced computational tools, such as crystal plasticity finite element models (CPFEM), to predict critical mechanical properties directly from microstructural data. However, these frameworks require a large datasets that are often difficult to obtain, and their predictive accuracy depends on the availability of realistic AM microstructure representations. Generative deep learning models are a promising approach towards synthesizing AM microstructures which contain complex morphological and crystallographic features. Denoising diffusion probabilistic models (DDPMs), in particular, show a strong potential to capture the inherent complexities of AM structures. In this work, we demonstrate that DDPMs can reliably synthesize digital-twin orientation-imaging micrographs, and we support this claim with quantitative evidence of the fidelity of the generated samples. Additionally, we establish a classifier-free guidance framework for solving complex inverse problems such as property-to-structure and process-to-structure mappings, and we showcase a potential application on a qualification-relevant uncertainty quantification problem. Our work highlights the potential of AI-based generative modeling as a key component of computational frameworks for accelerating AM materials qualification and certification.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-21T20:11:02Z",
-    "updated": "2026-10-21T20:11:02Z",
-    "primary_category": "cond-mat.mtrl-sci",
-    "categories": [
-      "cond-mat.mtrl-sci"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.30404v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.30404v1"
-      }
-    ],
-    "score": 63,
-    "infographic": {
-      "key_insight": "Denoising diffusion models generate realistic additive-manufacturing microstructure images and enable inverse mappings from properties or process conditions to structure.",
-      "engineering_relevance": "Synthetic microstructures could support crystal-plasticity simulations and uncertainty quantification to accelerate qualification of additively manufactured metals.",
-      "method": [
-        "Train diffusion models to synthesize digital-twin orientation-imaging micrographs.",
-        "Use classifier-free guidance for property-to-structure and process-to-structure inverse mapping.",
-        "Demonstrate a qualification-relevant uncertainty quantification application."
-      ],
-      "evidence_signal": "The abstract reports quantitative evidence of generated-sample fidelity but provides no dataset sizes, evaluation metrics, or numerical results.",
-      "watch_item": "Image fidelity alone does not establish accurate downstream mechanical-property predictions; validation with crystal-plasticity simulations and experiments remains important.",
-      "hashtags": [
-        "#AdditiveManufacturing",
-        "#Microstructure",
-        "#DiffusionModels",
-        "#DigitalTwins",
-        "#ComputationalMechanics"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-21-arxiv-microstructural_generative_inverse_models_for_additive_manufacturing_digital_twins",
-      "paper_title": "Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins",
-      "paper_date": "2026-10-21",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-28T15:38:39",
+      "generated_at": "2026-10-29T15:44:50",
       "generator": "openai"
     }
   },
@@ -613,22 +560,22 @@
         "url": "https://arxiv.org/pdf/2610.36871v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "Co-optimizing network topology, dynamic line ratings, and variable impedance devices can reduce grid congestion and operating costs while retaining computational tractability.",
-      "engineering_relevance": "The framework helps transmission operators coordinate grid-enhancing technologies to better utilize existing infrastructure.",
+      "key_insight": "Co-optimizing network topology, dynamic line ratings, and variable impedance devices can reduce grid congestion and operating costs while iterative McCormick relaxation improves solution accuracy.",
+      "engineering_relevance": "The framework supports coordinated use of grid-enhancing technologies to better utilize existing power transmission infrastructure.",
       "method": [
-        "Model topology switching with a node-breaker formulation and adjust line limits using weather-dependent ratings.",
-        "Jointly optimize discrete topology decisions and variable impedance settings.",
-        "Iteratively refine McCormick relaxations of bilinear terms to improve solution accuracy."
+        "Model topology switching with a node-breaker formulation.",
+        "Adjust transmission limits using weather-dependent dynamic line ratings.",
+        "Iteratively refine McCormick relaxations of bilinear impedance terms."
       ],
-      "evidence_signal": "Tests on the IEEE 118-bus system and other benchmarks report better accuracy than standard McCormick relaxation, solution quality close to the nonlinear formulation, and computational efficiency.",
-      "watch_item": "The abstract provides no numerical accuracy or runtime results, so practical scalability and relaxation error require further assessment.",
+      "evidence_signal": "IEEE 118-bus tests and additional benchmark studies report improved accuracy over standard McCormick relaxation, solution quality close to the nonlinear formulation, and computational efficiency.",
+      "watch_item": "Relaxed solutions require feasibility checks against the original nonlinear constraints; the abstract provides no numerical accuracy or runtime results.",
       "hashtags": [
         "#PowerSystems",
-        "#GridEnhancingTechnologies",
-        "#NetworkTopologyOptimization",
+        "#TopologyOptimization",
         "#DynamicLineRating",
+        "#GridEnhancingTechnologies",
         "#McCormickRelaxation"
       ],
       "model": "gpt-6.1-sol",
@@ -637,7 +584,7 @@
       "paper_title": "Co-Optimization of Network Topology and Variable Impedance Devices under Dynamic Line Ratings Using Iterative McCormick Relaxation",
       "paper_date": "2026-10-27",
       "paper_category": "Topology Optimization",
-      "generated_at": "2026-10-28T15:38:41",
+      "generated_at": "2026-10-29T15:44:52",
       "generator": "openai"
     }
   },
@@ -666,23 +613,23 @@
         "url": "https://arxiv.org/pdf/2610.36862v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "Full-field bending strains can identify tension–compression stiffness asymmetry in a bimodulus granular micromechanics model.",
-      "engineering_relevance": "The approach supports more faithful elastic bending simulations of materials with different tensile and compressive stiffnesses.",
+      "key_insight": "Full-field bending strains and neutral-axis shift enable identification of tension–compression stiffness asymmetry in a bimodulus granular micromechanics model.",
+      "engineering_relevance": "The approach supports calibration of elastic models for materials whose tensile and compressive stiffnesses differ.",
       "method": [
-        "Measure full-field normal strains using digital image correlation during elastic three-point bending.",
+        "Measure elastic-regime normal strain fields using DIC during three-point bending.",
         "Initialize compressive stiffness from manufacturer data and stiffness asymmetry from the measured neutral-axis shift.",
         "Refine stiffness parameters through hybrid optimization matching numerical and experimental strain fields."
       ],
       "evidence_signal": "The identified parameters improved agreement with measured through-depth strain profiles and spatial strain distributions over the selected surface region.",
-      "watch_item": "The largest strain-field discrepancies occur near the concentrated load, warranting caution when evaluating local predictions there.",
+      "watch_item": "The largest numerical–experimental discrepancies occurred near the concentrated load, warranting caution when interpreting localized strain predictions.",
       "hashtags": [
         "#SolidMechanics",
-        "#GranularMicromechanics",
-        "#BimodulusMaterials",
+        "#ConstitutiveModeling",
         "#DigitalImageCorrelation",
-        "#InverseAnalysis"
+        "#InverseAnalysis",
+        "#GranularMicromechanics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -690,7 +637,7 @@
       "paper_title": "Stiffness coefficients in granular micromechanics determined with three-point bending experiments and digital image correlation for a bimodulus material",
       "paper_date": "2026-10-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:43",
+      "generated_at": "2026-10-29T15:44:55",
       "generator": "openai"
     }
   },
@@ -719,23 +666,23 @@
         "url": "https://arxiv.org/pdf/2610.36330v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "Entangled, intrinsically curved filaments can self-lock without friction through competing elastic shape-restoring forces and repulsive contact forces.",
-      "engineering_relevance": "Filament geometry and bundle size offer design levers for cohesive assemblies and potentially stimuli-responsive materials that assemble or disassemble.",
+      "key_insight": "Assemblies of intrinsically curved filaments can self-lock without friction through competition between elastic resistance to shape change and repulsive contact forces.",
+      "engineering_relevance": "Filament curvature and bundle size offer design levers for cohesive structures and stimuli-responsive materials that assemble or disassemble without adhesive bonds.",
       "method": [
         "Analyze a friction-free model of intrinsically helical filament assemblies.",
-        "Test a generalized fracture criterion for spontaneous detangling.",
-        "Use experiments and simulations with frictional filaments to probe elastic self-locking."
+        "Relate overcrowding-induced elastic prestress to self-locking or propagating detanglement fronts.",
+        "Test a generalized fracture criterion using experiments and simulations with frictional filaments."
       ],
-      "evidence_signal": "The abstract reports self-locking or soliton-like detanglement depending on filament number and preferred shape, including bundled structures that cannot self-lock at any friction level.",
-      "watch_item": "Self-locking is geometry-dependent; friction alone cannot compensate for all filament shapes and bundle configurations.",
+      "evidence_signal": "Experiments and simulations support the role of shape-elastic costs in self-locking and identify bundled structures that cannot self-lock at any friction level.",
+      "watch_item": "Self-locking depends on filament number and preferred shape; friction alone cannot stabilize every bundle geometry.",
       "hashtags": [
         "#SolidMechanics",
-        "#FilamentAssemblies",
         "#Elasticity",
+        "#EntangledMaterials",
         "#SelfLocking",
-        "#MechanicalMetamaterials"
+        "#ComputationalMechanics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -743,7 +690,7 @@
       "paper_title": "No friction required: Self-locking in entangled assemblies of curved filaments",
       "paper_date": "2026-10-26",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-28T15:38:45",
+      "generated_at": "2026-10-29T15:44:57",
       "generator": "openai"
     }
   },
@@ -772,17 +719,17 @@
         "url": "https://arxiv.org/pdf/2610.33247v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "Sequential hot rotary swaging refined Zr-4Nb-2Al microstructure and developed strong crystallographic textures, trading compressive yield strength for greater plastic deformability.",
-      "engineering_relevance": "Phase-field-controlled swaging offers a route to tailor dual-phase zirconium rods while reducing radial hardness heterogeneity.",
+      "key_insight": "Sequential hot rotary swaging tailored Zr-4Nb-2Al microstructure and texture, trading compressive yield strength for greater plastic deformability and more uniform radial hardness.",
+      "engineering_relevance": "Phase-field-controlled swaging offers a route to tune the strength–deformability balance of dual-phase zirconium rods.",
       "method": [
-        "Use electrical resistivity to identify phase-transformation temperatures.",
-        "Apply induction-assisted swaging at 880°C in the β field and 780°C in the α+β field.",
-        "Track microstructure, texture, phase content, hardness, and compression response."
+        "Use electrical resistivity to select swaging temperatures: 880°C in β and 780°C in α+β.",
+        "Apply induction-assisted rotary swaging with thermographic temperature control, reducing rod diameter from 12 to 6.3 mm.",
+        "Evaluate microstructure, crystallographic texture, phase constitution, compression response, and radial hardness."
       ],
-      "evidence_signal": "A 72% area reduction refined prior-β grains from millimetre scale to approximately 100 µm; subsequent α+β swaging lowered compressive yield strength from 1103 to 839 MPa, with maximum fracture strain reaching 32%.",
-      "watch_item": "The abstract reports compression results but does not establish tensile, fatigue, or service-environment performance.",
+      "evidence_signal": "At 72% total area reduction, prior-β grains refined to about 100 μm; subsequent α+β swaging lowered compressive yield strength from 1103 to 839 MPa, with maximum fracture strain reaching 32%.",
+      "watch_item": "Reported compression results do not establish tensile, fatigue, or service-environment performance.",
       "hashtags": [
         "#ZirconiumAlloys",
         "#RotarySwaging",
@@ -796,7 +743,7 @@
       "paper_title": "Evolution of microstructure and crystallographic texture in a novel Zr-4Nb-2Al alloy during hot rotary swaging",
       "paper_date": "2026-10-23",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-28T15:38:47",
+      "generated_at": "2026-10-29T15:45:00",
       "generator": "openai"
     }
   },
@@ -825,19 +772,19 @@
         "url": "https://arxiv.org/pdf/2610.37264v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Reliable a posteriori error estimators quantify finite element errors in evolution equations with memory without exponential growth in time, while remaining uniformly bounded across the fractional-kernel parameter range.",
-      "engineering_relevance": "These estimators can guide adaptive simulation of memory-dependent dynamics transitioning between diffusion and wave propagation.",
+      "key_insight": "Reliable a posteriori error estimators quantify finite element errors in evolution equations with memory without exponentially growing time factors.",
+      "engineering_relevance": "These estimators can guide adaptive simulations of history-dependent diffusion and wave-like dynamics while controlling spatial and temporal discretization errors.",
       "method": [
-        "Time-dependent finite element spaces with backward Euler time stepping and memory quadrature.",
+        "Time-dependent finite element spaces with backward Euler integration and memory quadrature.",
         "Elliptic reconstruction for optimal spatial error estimates.",
-        "Memory-lag analysis preserving convolution cancellation for first-order temporal estimation."
+        "Cancellation-preserving memory-lag analysis for first-order temporal estimation."
       ],
-      "evidence_signal": "Numerical experiments on a convex domain validate the estimates, and space-time adaptivity is demonstrated on an L-shaped domain with a corner singularity and two temporal layers.",
-      "watch_item": "The stated theory assumes convex polygonal or polyhedral domains; the nonconvex L-shaped example is an adaptive demonstration.",
+      "evidence_signal": "Numerical experiments on a convex domain validate the theory, and space-time adaptivity is demonstrated on an L-shaped domain with a corner singularity and two temporal layers.",
+      "watch_item": "The theory assumes bounded convex polygonal or polyhedral domains; the nonconvex L-shaped example demonstrates adaptivity beyond that stated setting.",
       "hashtags": [
-        "#FiniteElementMethods",
+        "#FiniteElementMethod",
         "#APosterioriError",
         "#MemoryEffects",
         "#AdaptiveSimulation",
@@ -849,7 +796,7 @@
       "paper_title": "A Posteriori Error Analysis of Finite Element Approximation to an Evolution Equation with a Positive-Type Memory Term",
       "paper_date": "2026-10-27",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-28T15:38:49",
+      "generated_at": "2026-10-29T15:45:02",
       "generator": "openai"
     }
   },
@@ -878,23 +825,23 @@
         "url": "https://arxiv.org/pdf/2610.35382v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "A BDF2-type finite element scheme for inertial magnetization dynamics is unconditionally stable and converges to a weak solution.",
+      "key_insight": "A BDF2-type finite element scheme for inertial magnetization dynamics is unconditionally stable and converges to a weak solution without coupling time-step and mesh sizes.",
       "engineering_relevance": "The method supports reliable simulation of subpicosecond magnetization dynamics relevant to ultrafast magnetic devices.",
       "method": [
-        "First-order finite elements in space and BDF2 time stepping.",
-        "Inertial term discretized using a convex combination of BDF2 and backward Euler.",
-        "Proves well-posedness, a discrete dissipative energy law, and explicit unit-length constraint error bounds."
+        "Use first-order finite elements in space and BDF2 time stepping.",
+        "Treat inertia with a convex combination of BDF2 and backward Euler.",
+        "Prove well-posedness, a discrete energy law, and explicit unit-length constraint error bounds."
       ],
-      "evidence_signal": "Numerical experiments assess scheme performance and validate theoretical findings, but the abstract provides no quantitative results.",
-      "watch_item": "Unconditional stability and convergence do not remove time-resolution requirements for accurately capturing ultrafast dynamics.",
+      "evidence_signal": "Numerical experiments assess performance and validate the theoretical findings, but the abstract reports no quantitative benchmarks.",
+      "watch_item": "Unconditional convergence does not guarantee accuracy at large time steps, and the unit-length constraint has a bounded discretization error.",
       "hashtags": [
         "#FiniteElementMethod",
-        "#Micromagnetics",
+        "#ComputationalMagnetism",
+        "#InertialLLG",
         "#BDF2",
-        "#NumericalAnalysis",
-        "#UltrafastMagnetism"
+        "#NumericalAnalysis"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -902,7 +849,7 @@
       "paper_title": "An unconditionally convergent BDF2-type finite element integrator for the inertial Landau-Lifshitz-Gilbert equation",
       "paper_date": "2026-10-26",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-28T15:38:52",
+      "generated_at": "2026-10-29T15:45:04",
       "generator": "openai"
     }
   },
@@ -931,17 +878,17 @@
         "url": "https://arxiv.org/pdf/2610.33385v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
       "key_insight": "An augmented block preconditioner enables robust iterative solution of fully coupled, two-phase incompressible inductionless MHD systems.",
-      "engineering_relevance": "The approach supports three-dimensional conducting-fluid simulations with discontinuous material properties and challenging coupled flow–current dynamics.",
+      "engineering_relevance": "The approach supports simulations of conducting two-phase flows with discontinuous material properties while preserving discrete charge conservation.",
       "method": [
-        "Discretize current density, velocity, electric potential and pressure using high-order, charge-conservative ALE finite elements and backward Euler time stepping.",
+        "Discretize current density, velocity, electric potential and pressure using high-order monolithic ALE finite elements and backward Euler time stepping.",
         "Add grad-div stabilization to the current-density and momentum equations.",
-        "Combine augmented Lagrangian techniques with approximate block factorization, then solve using preconditioned FGMRES."
+        "Solve the coupled system with FGMRES using an augmented Lagrangian block preconditioner and approximate block factorizations."
       ],
-      "evidence_signal": "Numerical experiments confirm high-order accuracy and discrete charge conservation; a heavy-fluid-drop benchmark demonstrates preconditioner robustness to material-property discontinuities and mesh size.",
-      "watch_item": "The abstract gives no quantitative iteration counts or runtime scaling, limiting assessment of computational efficiency.",
+      "evidence_signal": "Numerical tests confirm high-order accuracy and discrete charge conservation; a heavy-fluid drop benchmark demonstrates robustness to material-property discontinuities and mesh size.",
+      "watch_item": "The abstract does not quantify iteration counts, runtime gains or scalability for the large, ill-conditioned four-field systems.",
       "hashtags": [
         "#Magnetohydrodynamics",
         "#FiniteElementMethod",
@@ -955,7 +902,7 @@
       "paper_title": "Robust augmented Block Preconditioning for two-phase Incompressible Inductionless MHD",
       "paper_date": "2026-10-24",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-28T15:38:54",
+      "generated_at": "2026-10-29T15:45:06",
       "generator": "openai"
     }
   },
@@ -985,17 +932,17 @@
         "url": "https://arxiv.org/pdf/2610.37145v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "FS-EWC goes beyond protecting important parameters by shaping solutions to reduce Fisher sensitivity to bounded future parameter changes.",
-      "engineering_relevance": "For continually updated engineering models, this approach could help retain earlier learned behavior without replaying past data, though solid-mechanics validation is not reported in the abstract.",
+      "key_insight": "FS-EWC goes beyond protecting important parameters by shaping solutions to remain less sensitive to bounded future parameter changes.",
+      "engineering_relevance": "For sequentially trained engineering models, this approach could help retain earlier knowledge without replaying past data, though solid-mechanics validation is not reported in the abstract.",
       "method": [
-        "Minimize worst-case empirical Fisher information trace within a prescribed parameter neighborhood during task learning.",
+        "Minimize the worst-case empirical Fisher information trace within a prescribed parameter neighborhood.",
         "Merge multiple optimization states into a retained solution at task completion.",
-        "Estimate Fisher information at the merged solution for subsequent EWC consolidation."
+        "Estimate Fisher information at the retained solution for subsequent EWC consolidation."
       ],
-      "evidence_signal": "Multiple benchmark experiments report improvements over EWC, while controlled studies indicate a better stability–plasticity balance and greater tolerance to parameter drift.",
-      "watch_item": "Neighborhood-based optimization and trajectory merging may add computational cost; the abstract does not quantify this overhead.",
+      "evidence_signal": "Experiments across multiple benchmarks report improvements over EWC, with controlled studies indicating a better stability–plasticity balance and greater tolerance to parameter drift.",
+      "watch_item": "Neighborhood optimization and Fisher estimation may add computational cost; the abstract does not quantify this overhead.",
       "hashtags": [
         "#ContinualLearning",
         "#FisherInformation",
@@ -1009,7 +956,7 @@
       "paper_title": "Beyond Parameter Protection: Fisher-Shaped EWC for Replay-Free Continual Learning",
       "paper_date": "2026-10-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-28T15:38:56",
+      "generated_at": "2026-10-29T15:45:09",
       "generator": "openai"
     }
   },
@@ -1038,17 +985,17 @@
         "url": "https://arxiv.org/pdf/2610.35157v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "Two structure-preserving discretisations generate entropy and enforce quasi-incompressibility pointwise, while only the continuous Petrov–Galerkin method also conserves total energy.",
-      "engineering_relevance": "These methods support physically consistent simulation of coupled heat transfer, multicomponent diffusion, and fluid motion in miscible mixtures.",
+      "key_insight": "Two structure-preserving discretisations generate entropy and enforce quasi-incompressibility pointwise, while the continuous Petrov–Galerkin method also conserves total energy.",
+      "engineering_relevance": "These methods support physically consistent simulation of miscible multicomponent flows with coupled thermal, diffusion, and momentum effects.",
       "method": [
-        "Model thermal Maxwell–Stefan–Navier–Stokes dynamics using mass, momentum, and entropy balances.",
+        "Formulate the thermal Maxwell–Stefan–Navier–Stokes system using an entropy balance.",
         "Combine semi-implicit Euler time stepping with suitable spatial finite elements.",
         "Use continuous Petrov–Galerkin time discretisation for energy conservation and high-order temporal approximation."
       ],
-      "evidence_signal": "Numerical experiments demonstrate the structure-preserving properties and behaviour of both methods; the abstract reports no quantitative accuracy or efficiency metrics.",
-      "watch_item": "The semi-implicit Euler method numerically dissipates total energy, which may matter for long-time thermal simulations.",
+      "evidence_signal": "Numerical experiments demonstrate the structure-preserving properties and behaviour of both methods, but the abstract reports no quantitative accuracy or performance metrics.",
+      "watch_item": "The semi-implicit Euler method numerically dissipates total energy despite preserving entropy generation and the quasi-incompressibility constraint.",
       "hashtags": [
         "#StructurePreserving",
         "#FiniteElementMethods",
@@ -1062,7 +1009,60 @@
       "paper_title": "Structure-preserving discretisations for the quasi-incompressible, thermal Maxwell-Stefan equations",
       "paper_date": "2026-10-26",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-28T15:38:59",
+      "generated_at": "2026-10-29T15:45:11",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-27-arxiv-fracture_mechanics_and_self_healing_in_molecular_crystal_resonators_for_lasing",
+    "arxiv_id": "2610.36692v1",
+    "date": "2026-10-27",
+    "title": "Fracture Mechanics and Self-Healing in Molecular Crystal Resonators for Lasing",
+    "authors": "Melchi Chosenyah, Vuppu Vinay Pradeep Kapil Yadav, Ankur Khapre, Biswajit Kumar Barman, Raghavaiah Pallepogu, Rajadurai Chandrasekar",
+    "abstract": "Microscale damage poses a significant challenge to the reliability and longevity of miniaturized photonic devices; however, the mechanisms and repair of microscopic cracks and fractures in organic optical crystals remain largely unexplored. Here, we employ a mechanophotonic approach to induce microscale cracks and complete fractures in single crystals of 3-[4-(dimethylamino)phenyl]-1-(2-hydroxyphenyl)prop-2-en-1-one (HDMAC) using an atomic force microscopy (AFM) cantilever tip. We demonstrate the self-healing capability of these crystals while retaining their optical waveguiding and resonator properties, which are essential for lasing applications. HDMAC microcrystals exhibit self-healing of cracks introduced along the (010) and (001) crystallographic planes, demonstrating the versatility of this phenomenon across distinct crystal orientations. Furthermore, we identify different fracture mechanisms and establish a comprehensive assessment of healing efficiency by integrating optical loss measurements, resonator characteristics, and nanomechanical analyses. This multifaceted approach enables fair evaluation of the recovery of structural integrity and photonic functionality following self-healing.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-10-27T06:09:16Z",
+    "updated": "2026-10-27T06:09:16Z",
+    "primary_category": "cond-mat.mtrl-sci",
+    "categories": [
+      "cond-mat.mtrl-sci"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.36692v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.36692v1"
+      }
+    ],
+    "score": 53,
+    "infographic": {
+      "key_insight": "HDMAC molecular microcrystals can self-heal microscale damage while retaining optical waveguiding and resonator properties relevant to lasing.",
+      "engineering_relevance": "Self-healing organic crystal resonators could improve the reliability and longevity of miniaturized photonic devices.",
+      "method": [
+        "Induce microscale cracks and complete fractures using an AFM cantilever tip.",
+        "Examine healing along the (010) and (001) crystallographic planes.",
+        "Assess recovery using optical loss, resonator characteristics, and nanomechanical analyses."
+      ],
+      "evidence_signal": "The abstract reports crack healing in two crystal orientations and evaluates structural and photonic recovery, but provides no numerical healing efficiencies.",
+      "watch_item": "Healing conditions, repeat-cycle durability, and post-healing lasing performance are not specified in the abstract.",
+      "hashtags": [
+        "#FractureMechanics",
+        "#SelfHealingMaterials",
+        "#MolecularCrystals",
+        "#MicroPhotonics",
+        "#CrystalResonators"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-27-arxiv-fracture_mechanics_and_self_healing_in_molecular_crystal_resonators_for_lasing",
+      "paper_title": "Fracture Mechanics and Self-Healing in Molecular Crystal Resonators for Lasing",
+      "paper_date": "2026-10-27",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-10-29T15:45:12",
       "generator": "openai"
     }
   }

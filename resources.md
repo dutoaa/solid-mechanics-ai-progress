@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-10-28
+Generated: 2026-10-29
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Finite Element Modeling of Fracture in Brittle Foods with Physically Consistent Parameter Calibration: A Practical Case Study on Cooled Dark Chocolate
@@ -83,15 +83,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.37139v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-generative_replay_for_equilibrium_propagation_toward_edge_friendly_continual_learning_in_h_infographic.json
 
-## 11. Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins
-
-- Date: 2026-10-21
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2610.30404v1
-- PDF: https://arxiv.org/pdf/2610.30404v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-21-arxiv-microstructural_generative_inverse_models_for_additive_manufacturing_digital_twins_infographic.json
-
-## 12. Co-Optimization of Network Topology and Variable Impedance Devices under Dynamic Line Ratings Using Iterative McCormick Relaxation
+## 11. Co-Optimization of Network Topology and Variable Impedance Devices under Dynamic Line Ratings Using Iterative McCormick Relaxation
 
 - Date: 2026-10-27
 - Category: Topology Optimization
@@ -99,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.36871v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-co_optimization_of_network_topology_and_variable_impedance_devices_under_dynamic_line_rati_infographic.json
 
-## 13. Stiffness coefficients in granular micromechanics determined with three-point bending experiments and digital image correlation for a bimodulus material
+## 12. Stiffness coefficients in granular micromechanics determined with three-point bending experiments and digital image correlation for a bimodulus material
 
 - Date: 2026-10-27
 - Category: Constitutive Modeling
@@ -107,7 +99,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.36862v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-stiffness_coefficients_in_granular_micromechanics_determined_with_three_point_bending_expe_infographic.json
 
-## 14. No friction required: Self-locking in entangled assemblies of curved filaments
+## 13. No friction required: Self-locking in entangled assemblies of curved filaments
 
 - Date: 2026-10-26
 - Category: Fracture and Damage
@@ -115,7 +107,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.36330v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-26-arxiv-no_friction_required_self_locking_in_entangled_assemblies_of_curved_filaments_infographic.json
 
-## 15. Evolution of microstructure and crystallographic texture in a novel Zr-4Nb-2Al alloy during hot rotary swaging
+## 14. Evolution of microstructure and crystallographic texture in a novel Zr-4Nb-2Al alloy during hot rotary swaging
 
 - Date: 2026-10-23
 - Category: Fracture and Damage
@@ -123,7 +115,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.33247v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-23-arxiv-evolution_of_microstructure_and_crystallographic_texture_in_a_novel_zr_4nb_2al_alloy_durin_infographic.json
 
-## 16. A Posteriori Error Analysis of Finite Element Approximation to an Evolution Equation with a Positive-Type Memory Term
+## 15. A Posteriori Error Analysis of Finite Element Approximation to an Evolution Equation with a Positive-Type Memory Term
 
 - Date: 2026-10-27
 - Category: FEM Surrogates
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.37264v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-a_posteriori_error_analysis_of_finite_element_approximation_to_an_evolution_equation_with_infographic.json
 
-## 17. An unconditionally convergent BDF2-type finite element integrator for the inertial Landau-Lifshitz-Gilbert equation
+## 16. An unconditionally convergent BDF2-type finite element integrator for the inertial Landau-Lifshitz-Gilbert equation
 
 - Date: 2026-10-26
 - Category: FEM Surrogates
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.35382v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-26-arxiv-an_unconditionally_convergent_bdf2_type_finite_element_integrator_for_the_inertial_landau_infographic.json
 
-## 18. Robust augmented Block Preconditioning for two-phase Incompressible Inductionless MHD
+## 17. Robust augmented Block Preconditioning for two-phase Incompressible Inductionless MHD
 
 - Date: 2026-10-24
 - Category: FEM Surrogates
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.33385v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-24-arxiv-robust_augmented_block_preconditioning_for_two_phase_incompressible_inductionless_mhd_infographic.json
 
-## 19. Beyond Parameter Protection: Fisher-Shaped EWC for Replay-Free Continual Learning
+## 18. Beyond Parameter Protection: Fisher-Shaped EWC for Replay-Free Continual Learning
 
 - Date: 2026-10-27
 - Category: Constitutive Modeling
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.37145v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-beyond_parameter_protection_fisher_shaped_ewc_for_replay_free_continual_learning_infographic.json
 
-## 20. Structure-preserving discretisations for the quasi-incompressible, thermal Maxwell-Stefan equations
+## 19. Structure-preserving discretisations for the quasi-incompressible, thermal Maxwell-Stefan equations
 
 - Date: 2026-10-26
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2610.35157v1
 - PDF: https://arxiv.org/pdf/2610.35157v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-26-arxiv-structure_preserving_discretisations_for_the_quasi_incompressible_thermal_maxwell_stefan_e_infographic.json
+
+## 20. Fracture Mechanics and Self-Healing in Molecular Crystal Resonators for Lasing
+
+- Date: 2026-10-27
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2610.36692v1
+- PDF: https://arxiv.org/pdf/2610.36692v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-fracture_mechanics_and_self_healing_in_molecular_crystal_resonators_for_lasing_infographic.json

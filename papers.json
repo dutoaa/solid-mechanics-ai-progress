@@ -25,17 +25,17 @@
         "url": "https://arxiv.org/pdf/2610.38672v1"
       }
     ],
-    "score": 80,
+    "score": 75,
     "infographic": {
-      "key_insight": "A differentiable Schwarz-coupled finite element solver combines near-wall and bulk transport models to enable inverse modeling of thin boundary layers with agentic AI optimization.",
-      "engineering_relevance": "The framework targets high-Péclet transport problems, reducing mesh demands while preserving governing equations, boundary conditions, and interface continuity during parameter inference.",
+      "key_insight": "A differentiable Schwarz-coupled finite element solver combines near-wall and bulk transport models to support inverse modeling of thin boundary layers with coarser meshes.",
+      "engineering_relevance": "The framework could reduce computational cost when identifying unknown parameters in high-Péclet transport problems with steep near-wall gradients.",
       "method": [
-        "Split near-wall and bulk dynamics into overlapping, perturbation-based FEM subproblems.",
-        "Differentiate the coupled solver to compute adjoint sensitivities for inverse optimization.",
-        "Use LLM-directed updates or an AI agent that stages optimization and expands a functional basis under a prescribed admission policy."
+        "Split near-wall and bulk dynamics using perturbation theory and overlapping Schwarz domain decomposition.",
+        "Differentiate through coupled FEM solves, enforcing governing equations, boundary conditions, and interface continuity.",
+        "Use adjoint sensitivities with an LLM optimizer or a workflow-enabled AI agent that expands a functional basis under a prescribed admission policy."
       ],
-      "evidence_signal": "The abstract reports lower computational cost than a single-domain formulation and greater agentic AI benefit for functional-basis unknowns than nodal fields, but provides no quantitative benchmarks.",
-      "watch_item": "Agentic optimization benefits may depend on the unknown-field representation and the policy governing candidate basis admission.",
+      "evidence_signal": "The abstract reports lower computational cost than a single-domain formulation and greater agentic AI benefit for functional-basis unknowns than for high-dimensional nodal fields, but provides no quantitative benchmarks.",
+      "watch_item": "Practical performance may depend on overlap design, mesh resolution, and the basis-admission policy; quantitative accuracy and speedup evidence is needed.",
       "hashtags": [
         "#DifferentiablePhysics",
         "#FiniteElementMethod",
@@ -49,7 +49,7 @@
       "paper_title": "Differentiable Schwarz-Coupled Solvers for Thin Boundary Layer Transport: Inverse Modeling via Agentic AI Optimization",
       "paper_date": "2026-10-28",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:26:49",
+      "generated_at": "2026-10-31T14:55:00",
       "generator": "openai"
     }
   },
@@ -78,20 +78,20 @@
         "url": "https://arxiv.org/pdf/2610.37124v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "At affordable mesh resolutions, a single fracture-model parameter set cannot simultaneously match elastic slope, peak force and crack path in cooled dark chocolate.",
-      "engineering_relevance": "Predicting brittle-food breakage requires calibration tailored to the target property, such as failure load or fragment geometry.",
+      "key_insight": "At affordable mesh resolution, brittle-fracture models for cooled dark chocolate cannot practically match elastic slope, peak force and crack path with a single parameter set, so calibration must prioritize a stated objective.",
+      "engineering_relevance": "Objective-specific fracture calibration can support simulations of food breakage during production, transport, cutting and mastication.",
       "method": [
-        "Assess sharp-interface and diffuse phase-field models for Griffith-type brittle fracture.",
+        "Compare sharp-interface and diffuse phase-field frameworks for Griffith-type brittle fracture.",
         "Identify elastic parameters from pre-crack tension and compression, then critical energy release rate from three-point-bending peak force.",
-        "Calibrate phase-field width last and report the calibration objective, numerical settings and boundary value problem."
+        "Calibrate phase-field width last and report the calibration objective, numerical parameters and boundary value problem."
       ],
-      "evidence_signal": "The cooled-dark-chocolate case study assesses both frameworks at affordable spatial discretization, using staged loading responses to identify parameters.",
-      "watch_item": "Mesh resolution constrains phase-field width, which influences structural response, crack curvature and stress fields.",
+      "evidence_signal": "The assessment uses cooled dark chocolate as a reproducible model material and evaluates elastic response, bending peak force and crack behavior at affordable spatial discretization.",
+      "watch_item": "Mesh resolution constrains the minimum phase-field width, which can alter structural response, crack curvature and stress fields.",
       "hashtags": [
         "#ComputationalMechanics",
-        "#FiniteElementModeling",
+        "#FiniteElementAnalysis",
         "#BrittleFracture",
         "#PhaseFieldModeling",
         "#FoodEngineering"
@@ -102,7 +102,7 @@
       "paper_title": "Finite Element Modeling of Fracture in Brittle Foods with Physically Consistent Parameter Calibration: A Practical Case Study on Cooled Dark Chocolate",
       "paper_date": "2026-10-27",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-30T15:26:51",
+      "generated_at": "2026-10-31T14:55:02",
       "generator": "openai"
     }
   },
@@ -131,17 +131,17 @@
         "url": "https://arxiv.org/pdf/2610.35653v1"
       }
     ],
-    "score": 74,
+    "score": 69,
     "infographic": {
-      "key_insight": "Retention-constrained fine-tuning improves an aluminium MACE potential’s defect predictions while preserving its tested near-equilibrium mechanical and vibrational response.",
-      "engineering_relevance": "The approach supports more reliable atomistic simulations of aluminium defect dynamics and plasticity without sacrificing tested bulk-response accuracy.",
+      "key_insight": "Uncertainty-guided, retention-constrained fine-tuning improves an aluminium MACE potential for defect dynamics while preserving tested bulk elastic and vibrational behavior.",
+      "engineering_relevance": "The protocol supports more reliable atomistic simulations of aluminium plasticity without sacrificing near-equilibrium mechanical fidelity.",
       "method": [
-        "Use conditional readout force uncertainty to acquire configurations, updating covariance within each batch.",
-        "Iteratively update all model parameters with relative-energy anchoring to limit loss of historical accuracy.",
-        "Gate candidate updates against historical energy and vibrational tolerances."
+        "Acquire configurations using uncertainty from sensitivities over 144 readout weights, updating covariance within each batch.",
+        "Iteratively fine-tune all model parameters with relative-energy anchoring to retain historical behavior.",
+        "Gate updates against historical elastic-group energy and vibrational tolerances."
       ],
-      "evidence_signal": "After 32 acquisitions and 400 gradient updates, mean development force error fell from 22.43 to 21.52 meV/Å, outperforming comparison strategies; all three force-uncertainty runs met bulk-retention criteria, with harmonic phonon RMS drift below 0.05 THz.",
-      "watch_item": "Retention is demonstrated only for the tested aluminium configurations and tolerances; new deformation regimes require additional validation.",
+      "evidence_signal": "After four rounds, 32 acquired configurations and 400 gradient updates, mean development force error fell from 22.43 to 21.52 meV/Å, outperforming sampling baselines; all three force-uncertainty runs met retention criteria, with harmonic phonon RMS drift below 0.05 THz.",
+      "watch_item": "Retention is demonstrated only for the tested aluminium potential and evaluation conditions; broader deployment requires renewed validation and acceptance gating.",
       "hashtags": [
         "#AISolidMechanics",
         "#MachineLearningPotentials",
@@ -155,7 +155,7 @@
       "paper_title": "Retention-constrained fine-tuning of a pre-trained aluminium MACE potential for non-equilibrium defect dynamics and plasticity",
       "paper_date": "2026-10-26",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:26:53",
+      "generated_at": "2026-10-31T14:55:05",
       "generator": "openai"
     }
   },
@@ -185,23 +185,23 @@
         "url": "https://arxiv.org/pdf/2610.39796v1"
       }
     ],
-    "score": 72,
+    "score": 67,
     "infographic": {
-      "key_insight": "Spiking neural networks could complement transformer-based AI through event-driven computation, local learning, and temporal information processing.",
-      "engineering_relevance": "Neuromorphic approaches may support energy-efficient engineering AI, although the abstract reports no solid-mechanics application.",
+      "key_insight": "Spiking neural networks offer an event-driven, potentially energy-efficient complement to transformer-based AI rather than a wholesale replacement.",
+      "engineering_relevance": "Neuromorphic approaches may support low-power engineering sensing and edge inference, although the abstract reports no solid-mechanics application.",
       "method": [
-        "Explain transformer-based text generation using ChatGPT as an example.",
-        "Compare spiking-network coding, learning, and design with biological mechanisms.",
-        "Review neuromorphic hardware and prospects for hybrid AI systems."
+        "Explain transformer principles and computational costs using ChatGPT text generation.",
+        "Compare spiking-network coding, local learning, and network design with conventional AI.",
+        "Review neural mechanisms, the Neural Engineering Framework, and neuromorphic hardware."
       ],
-      "evidence_signal": "The abstract describes a conceptual, mathematically grounded monograph rather than a benchmark study, contrasting large-model energy demands with the brain’s approximately 20-watt power consumption.",
-      "watch_item": "Practical energy savings and task performance require workload-specific evaluation; the abstract provides no direct comparative measurements.",
+      "evidence_signal": "The abstract presents a comparative monograph, citing a roughly 20-watt human-brain reference but reporting no controlled benchmarks or measured model-to-model energy savings.",
+      "watch_item": "Practical energy advantages require workload-specific evaluation that accounts for accuracy, hardware, and system overhead.",
       "hashtags": [
         "#NeuromorphicAI",
         "#SpikingNeuralNetworks",
         "#EnergyEfficientAI",
-        "#HybridAI",
-        "#ComputationalEngineering"
+        "#EdgeComputing",
+        "#HybridAI"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -209,7 +209,7 @@
       "paper_title": "AI at a Turning Point: From ChatGPT through Neural Networks to Neuromorphic AI",
       "paper_date": "2026-10-29",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:26:56",
+      "generated_at": "2026-10-31T14:55:07",
       "generator": "openai"
     }
   },
@@ -238,21 +238,21 @@
         "url": "https://arxiv.org/pdf/2610.39210v1"
       }
     ],
-    "score": 72,
+    "score": 67,
     "infographic": {
-      "key_insight": "An H²-based equilibrated residual framework provides guaranteed error control and polynomial-degree-robust a posteriori lower bounds for several finite element problems.",
-      "engineering_relevance": "For solid mechanics, the framework enables guaranteed stress-error assessment in mixed linear elasticity, supporting more reliable simulation verification.",
+      "key_insight": "An H²-based equilibrated residual framework provides guaranteed finite element error control and polynomial-degree-robust a posteriori lower bounds.",
+      "engineering_relevance": "The framework supports reliable error assessment for plate bending, Poisson problems, and stress prediction in mixed linear elasticity.",
       "method": [
         "Decompose vector- and tensor-valued Sobolev spaces into H² and H¹ components.",
         "Reconstruct symmetric, piecewise-polynomial tensors on vertex patches in broken H(div div) spaces.",
-        "Apply residual estimates to conforming FEM for biharmonic, Poisson, and mixed linear elasticity problems."
+        "Derive equilibrated residual estimates for biharmonic energy error, Poisson L² error, and elasticity stress error."
       ],
-      "evidence_signal": "Numerical experiments illustrate estimator effectiveness, alongside theoretical guarantees for biharmonic energy error, Poisson L² error, and elasticity stress error.",
-      "watch_item": "Implementation requires specialized vertex-patch tensor reconstructions; their computational overhead is not quantified in the abstract.",
+      "evidence_signal": "Numerical experiments illustrate estimator effectiveness, but the abstract reports no quantitative accuracy or computational-cost results.",
+      "watch_item": "Implementation requires specialized local tensor reconstructions; their computational overhead is not quantified in the abstract.",
       "hashtags": [
         "#FiniteElementMethods",
         "#APosterioriErrorEstimation",
-        "#SolidMechanics",
+        "#ComputationalMechanics",
         "#LinearElasticity",
         "#VerifiedSimulation"
       ],
@@ -262,7 +262,7 @@
       "paper_title": "$H^2$-based equilibrated residual error estimates",
       "paper_date": "2026-10-29",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:26:58",
+      "generated_at": "2026-10-31T14:55:09",
       "generator": "openai"
     }
   },
@@ -291,23 +291,23 @@
         "url": "https://arxiv.org/pdf/2610.39668v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "Scale-driven averaging reduces uncertainty in panel ultimate load, but spatially correlated interface variability remains essential for predicting early damage initiation and location.",
-      "engineering_relevance": "Match model complexity to the design criterion: spatially uniform variability for global load capacity and correlated random fields for local skin–stringer bond integrity.",
+      "key_insight": "Scale-driven averaging attenuates uncertainty in panel ultimate load, while spatially correlated interface variability remains essential for predicting early damage initiation and location.",
+      "engineering_relevance": "Match uncertainty-model complexity to the design criterion: spatially uniform variability for global capacity and correlated random fields for local damage in aerospace skin–stringer bonds.",
       "method": [
-        "Extend likelihood-free Bayesian calibration to Mode II fracture using experimental coupon data.",
-        "Propagate interface variability from coupons to aerospace panels using simulation-based stochastic finite elements.",
-        "Compare B-basis design, spatially uniform variability, and spatially correlated random fields."
+        "Extend likelihood-free Bayesian calibration from Mode I to Mode II using experimental coupon data.",
+        "Propagate interface variability from coupons to panels using simulation-based stochastic finite elements.",
+        "Compare industrial B-basis, spatially uniform variability, and spatially correlated random-field approaches."
       ],
-      "evidence_signal": "Coupon experiments inform stochastic calibration, while panel simulations show uncertainty attenuation in ultimate load and sensitivity of early damage to local weak spots.",
-      "watch_item": "The abstract reports no quantitative errors or panel-level experimental validation, leaving predictive accuracy and transferability to other structures unresolved.",
+      "evidence_signal": "Coupon experiments support stochastic parameter identification, and panel simulations indicate uncertainty attenuation in ultimate load but sensitivity of early damage to local weak spots.",
+      "watch_item": "The abstract does not report quantitative accuracy or panel-scale experimental validation, so applicability beyond the studied configurations needs verification.",
       "hashtags": [
         "#CompositeStructures",
-        "#InterfaceFracture",
-        "#UncertaintyQuantification",
         "#StochasticFiniteElements",
-        "#AerospaceEngineering"
+        "#UncertaintyQuantification",
+        "#InterfaceFracture",
+        "#DamageTolerance"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -315,7 +315,7 @@
       "paper_title": "Scaling of Interface Variability in Aerospace Composite Structures: A Multi-scale Stochastic Approach from Local Identification to Panel Response",
       "paper_date": "2026-10-29",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-30T15:27:00",
+      "generated_at": "2026-10-31T14:55:12",
       "generator": "openai"
     }
   },
@@ -345,21 +345,21 @@
         "url": "https://arxiv.org/pdf/2610.38783v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Atomistic stiffness calculations coupled with EBSD-informed finite elements and analytical homogenization reproduce the effective elastic response of polycrystalline NiAl.",
-      "engineering_relevance": "The framework links crystal-scale elasticity and measured grain structure to bulk stiffness predictions for NiAl engineering components.",
+      "key_insight": "Atomistic stiffness calculations coupled with EBSD-informed finite elements accurately reproduced the elastic response of polycrystalline NiAl under the study’s modeling assumptions.",
+      "engineering_relevance": "The framework links crystal-scale stiffness and realistic grain structure to effective elastic properties for engineering analysis of NiAl components.",
       "method": [
-        "Compute the single-crystal NiAl stiffness tensor using atomistic calculations.",
-        "Build an EBSD-informed 3D polycrystal preserving grain-size and orientation distributions, then simulate uniaxial tension with FEM.",
-        "Compare effective elastic properties with experiments and classical analytical homogenization estimates."
+        "Calculate the single-crystal NiAl stiffness tensor atomistically.",
+        "Build a 3D polycrystal using EBSD-derived grain orientation and size distributions.",
+        "Simulate uniaxial tension with FEM and compare effective properties with analytical homogenization estimates."
       ],
-      "evidence_signal": "The abstract reports very good FEM–experiment agreement for Young’s modulus and Poisson’s ratio; the Hashin–Shtrikman upper bound and self-consistent approximation closely reproduce experimental Young’s modulus.",
-      "watch_item": "Agreement depends on the stated modeling assumptions, and the abstract provides no numerical errors to quantify predictive accuracy.",
+      "evidence_signal": "The abstract reports very good FEM–experiment agreement for Young’s modulus and Poisson’s ratio, with minor Young’s modulus deviations for the Hashin–Shtrikman upper bound and self-consistent approximation.",
+      "watch_item": "No numerical errors are reported in the abstract, and accuracy depends on the atomistic inputs and reconstructed microstructure; no AI surrogate is described.",
       "hashtags": [
         "#MultiscaleModeling",
-        "#ComputationalMechanics",
-        "#PolycrystallineNiAl",
+        "#NiAl",
+        "#FiniteElementMethod",
         "#EBSD",
         "#Homogenization"
       ],
@@ -369,220 +369,7 @@
       "paper_title": "Multiscale evaluation of the elastic response of polycrystalline NiAl using molecular statics, EBSD-based finite element and analytical homogenization methods",
       "paper_date": "2026-10-28",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:27:04",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-29-arxiv-higher_order_qmc_galerkin_fem_for_singular_perturbation_reaction_diffusion_with_affine_par",
-    "arxiv_id": "2610.39734v1",
-    "date": "2026-10-29",
-    "title": "Higher-Order QMC Galerkin FEM for Singular Perturbation: Reaction-Diffusion with Affine-Parametric Reaction",
-    "authors": "Fabian Rohner, Christoph Schwab",
-    "abstract": "We analyze higher-order quasi-Monte Carlo (QMC) Galerkin discretizations for a singularly perturbed reaction-diffusion problem with an affine-parametric reaction coefficient. We derive error estimates that are robust with respect to the perturbation parameter $\\varepsilon$. To this end, we establish $\\varepsilon$-uniform stability and mixed-parametric regularity estimates in an $\\varepsilon$-weighted energy norm, with constants independent of the parameter dimension and of $\\varepsilon$. These estimates imply robust dimension truncation estimates and dimension-independent higher-order QMC error bounds for linear quantities of interest. Assuming an abstract, $\\varepsilon$-robust finite element approximation property, we combine the parametric estimates with the spatial discretization analysis to derive a general fully discrete QMC-FE error estimate with constants independent of both the parameter dimension and $\\varepsilon$. We verify this approximation property for a one-dimensional model problem using continuous piecewise affine finite elements on Shishkin meshes. Numerical experiments illustrate the predicted robustness and convergence rates.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-29T10:00:07Z",
-    "updated": "2026-10-29T10:00:07Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.39734v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.39734v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "Higher-order QMC–Galerkin finite element analysis yields error bounds independent of both the perturbation parameter ε and the parameter dimension for reaction–diffusion problems with affine-parametric reaction coefficients.",
-      "engineering_relevance": "The framework supports reliable uncertainty quantification for reaction–diffusion models with thin boundary layers and many uncertain inputs.",
-      "method": [
-        "Establish ε-uniform stability and mixed-parametric regularity in an ε-weighted energy norm.",
-        "Derive robust dimension-truncation and dimension-independent higher-order QMC bounds for linear quantities of interest.",
-        "Combine these bounds with ε-robust FEM approximation, verified in 1D using piecewise affine elements on Shishkin meshes."
-      ],
-      "evidence_signal": "Numerical experiments illustrate the predicted robustness and convergence rates, alongside theoretical verification of the required FEM approximation property for a one-dimensional model.",
-      "watch_item": "The fully discrete guarantee assumes ε-robust FEM approximation, which the abstract verifies only for a one-dimensional Shishkin-mesh setting.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#QuasiMonteCarlo",
-        "#UncertaintyQuantification",
-        "#SingularPerturbation",
-        "#ReactionDiffusion"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-29-arxiv-higher_order_qmc_galerkin_fem_for_singular_perturbation_reaction_diffusion_with_affine_par",
-      "paper_title": "Higher-Order QMC Galerkin FEM for Singular Perturbation: Reaction-Diffusion with Affine-Parametric Reaction",
-      "paper_date": "2026-10-29",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:27:06",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-27-arxiv-a_differentiable_gpu_accelerated_finite_element_formulation_in_jax_for_large_deformation_s",
-    "arxiv_id": "2610.38075v1",
-    "date": "2026-10-27",
-    "title": "A Differentiable, GPU-Accelerated Finite-Element Formulation in JAX for Large-Deformation Shells with Contact: Application to Patient-Specific Aortic Valve Simulation",
-    "authors": "Mohsen Nakhaei, Alison M. Pouch, Matthew A. Jolley, Wensi Wu",
-    "abstract": "Patient-specific aortic-valve models can help assess how tissue properties and geometry influence leaflet deformation and coaptation, with potential to inform intervention planning. Large deformations, near-incompressibility, and evolving contact make these simulations computationally demanding and can challenge nonlinear convergence. Differentiable, GPU-accelerated methods offer efficient derivative evaluation and parallel computation, but their matrix-free application to soft-tissue shells with contact remains less established. We developed a forward solver using tatva's energy-based finite-element framework in JAX. The solver combines finite-strain extensible-director shells, hyperelastic constitutive models, and a finite-range repulsive contact energy. Nonlinear equilibrium is solved using a regularized, matrix-free Newton-Krylov method with two-level preconditioning. Automatic differentiation evaluates tangent-vector products without forming or storing the primary tangent matrix, while GPU execution parallelizes element and quadrature-point computations. Constitutive, shell, contact, and self-contact responses were assessed against analytical, semi-analytical, and published benchmarks. At a contact-free plate equilibrium, implicit sensitivities of the converged apex displacement to constitutive parameters, thickness, and pressure agreed with finite differences from independent nonlinear simulations. Simulations of three patient-specific aortic-valve models (two tricuspid and one bicuspid) achieved final relative equilibrium residuals below 10^-4. Median GPU runtimes were approximately 15-25 minutes, with 5.3-6.5-fold speedups relative to corresponding CPU runs on the tested hardware. These results provide component-level verification and demonstrate GPU-accelerated forward valve simulation in the tested cases, supporting future gradient-based inverse studies.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-10-27T23:44:20Z",
-    "updated": "2026-10-27T23:44:20Z",
-    "primary_category": "q-bio.QM",
-    "categories": [
-      "q-bio.QM",
-      "physics.comp-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.38075v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.38075v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "A differentiable, matrix-free JAX finite-element solver enables GPU-accelerated simulation of large-deformation aortic-valve shells with contact.",
-      "engineering_relevance": "Faster patient-specific valve simulations could support tissue-property studies and future gradient-based inverse analysis.",
-      "method": [
-        "Energy-based finite-strain extensible-director shells with hyperelastic materials and finite-range repulsive contact.",
-        "Regularized matrix-free Newton–Krylov equilibrium solver with two-level preconditioning.",
-        "Automatic-differentiation tangent-vector products and GPU-parallel element and quadrature computations."
-      ],
-      "evidence_signal": "Component benchmarks and contact-free sensitivity checks supported verification; three patient-specific valves reached relative equilibrium residuals below 10^-4 in median GPU runtimes of approximately 15–25 minutes, with 5.3–6.5× speedups over corresponding CPU runs.",
-      "watch_item": "Sensitivity verification was limited to a contact-free plate; gradient accuracy for patient-specific valves with evolving contact remains to be established.",
-      "hashtags": [
-        "#ComputationalMechanics",
-        "#DifferentiableSimulation",
-        "#FiniteElementMethod",
-        "#GPUComputing",
-        "#CardiacBiomechanics"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-27-arxiv-a_differentiable_gpu_accelerated_finite_element_formulation_in_jax_for_large_deformation_s",
-      "paper_title": "A Differentiable, GPU-Accelerated Finite-Element Formulation in JAX for Large-Deformation Shells with Contact: Application to Patient-Specific Aortic Valve Simulation",
-      "paper_date": "2026-10-27",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:27:08",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-27-arxiv-total_deformation_based_mpm_for_perfectly_elastic_solid_simulation_with_strong_deformation",
-    "arxiv_id": "2610.36945v1",
-    "date": "2026-10-27",
-    "title": "Total Deformation-based MPM for Perfectly Elastic Solid Simulation with Strong Deformations",
-    "authors": "Timna Böttcher, Rick Ridder, Jan Bender",
-    "abstract": "We present a new MPM-based solver for perfectly elastic solids, which can recover from strong deformations and naturally allows contact handling. Typical MPM solvers suffer from numerical fracture, where objects break apart even when no plasticity is included in the elasticity model. Previous approaches for perfectly elastic solids solve this by computing forces on a fixed grid in the reference configuration. However, this makes them incompatible with standard collision handling methods. We instead propose a method for deformable solid simulation without numerical fracture, that still computes elastic forces on the current grid. Our method can easily include grid-based collision handling, as commonly used in MPM frameworks. Additionally, we compute the deformation directly from the particle positions and a fixed reference grid, without any updates based on velocity gradients. This facilitates the inclusion of particle-level collision handling and zero-energy mode suppression, which counteracts artifacts from non-linear deformations. As a result, we can efficiently simulate complex scenarios of elastic objects undergoing large deformations, including contact.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-10-27T10:03:02Z",
-    "updated": "2026-10-27T10:03:02Z",
-    "primary_category": "cs.GR",
-    "categories": [
-      "cs.GR"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.36945v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.36945v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "Computing total deformation from particle positions and a fixed reference grid enables perfectly elastic MPM solids to withstand strong deformations without numerical fracture while retaining current-grid force computation.",
-      "engineering_relevance": "The approach supports large-deformation elastic simulations with contact while remaining compatible with standard grid-based MPM collision handling.",
-      "method": [
-        "Compute deformation directly from particle positions relative to a fixed reference grid, rather than updating it through velocity gradients.",
-        "Evaluate elastic forces on the current grid to preserve compatibility with grid-based contact handling.",
-        "Support particle-level collision handling and zero-energy mode suppression to counter nonlinear deformation artifacts."
-      ],
-      "evidence_signal": "The abstract reports efficient simulations of complex elastic objects undergoing large deformations and contact, but provides no quantitative benchmarks.",
-      "watch_item": "The implementation cost and robustness of reference-grid deformation reconstruction and zero-energy mode suppression require evaluation beyond the abstract.",
-      "hashtags": [
-        "#MaterialPointMethod",
-        "#ComputationalMechanics",
-        "#ElasticSolids",
-        "#LargeDeformation",
-        "#ContactSimulation"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-27-arxiv-total_deformation_based_mpm_for_perfectly_elastic_solid_simulation_with_strong_deformation",
-      "paper_title": "Total Deformation-based MPM for Perfectly Elastic Solid Simulation with Strong Deformations",
-      "paper_date": "2026-10-27",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:27:10",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-27-arxiv-a_minimizing_movement_framework_for_parametric_finite_element_approximation_of_anisotropic",
-    "arxiv_id": "2610.36753v1",
-    "date": "2026-10-27",
-    "title": "A minimizing-movement framework for parametric finite element approximation of anisotropic curve shortening flows",
-    "authors": "Wei Jiang, Chunmei Su, Ganghui Zhang",
-    "abstract": "We propose a minimizing-movement framework for constructing parametric finite element methods (PFEMs) for anisotropic curve shortening flows. The cornerstone is an admissible modified energy: a smooth, convex, and iteration-dependent surrogate that majorizes the original anisotropic energy and agrees with it at the current iterate. For any fixed finite element degree $n\\geq1$ and any positive surface energy density $γ\\in C^2(\\mathbb{S}^1)$, the unconstrained one-step problem has a unique solution for any time-step size whenever the parametric derivative of the current discrete curve does not vanish on any mesh element. It also satisfies a one-step discrete energy dissipation inequality. It therefore preserves the variational structure of the underlying $L^2$-gradient flow. The framework recovers a variational interpretation of Dziuk's isotropic scheme and applies directly to the weak anisotropies. For strong anisotropies, a convex splitting removes the weak-anisotropy restriction on the original density. A scalar constraint further extends the framework to area-preserving flows. Numerical experiments exhibit approximately the expected convergence for smooth isotropic and weakly anisotropic examples. They also confirm energy dissipation and area preservation. In the strongly anisotropic regime, the computations produce sharp facet-like profiles but reveal mesh-scale oscillations under the grid refinement.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-27T07:11:14Z",
-    "updated": "2026-10-27T07:11:14Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.36753v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.36753v1"
-      }
-    ],
-    "score": 65,
-    "infographic": {
-      "key_insight": "A convex, iteration-dependent energy surrogate enables variational finite element schemes for anisotropic curve shortening with one-step energy dissipation.",
-      "engineering_relevance": "The framework supports structure-preserving simulation of anisotropic interface evolution, including area-preserving flows.",
-      "method": [
-        "Construct a smooth, convex surrogate that majorizes the anisotropic energy and matches it at the current iterate.",
-        "Minimize a time-step functional using parametric finite elements of any fixed degree.",
-        "Use convex splitting for strong anisotropy and a scalar constraint for area preservation."
-      ],
-      "evidence_signal": "Numerical experiments show approximately expected convergence for smooth isotropic and weakly anisotropic cases, energy dissipation, and area preservation.",
-      "watch_item": "Strong-anisotropy simulations develop mesh-scale oscillations under refinement; unique unconstrained steps also require a nonvanishing current curve derivative on every element.",
-      "hashtags": [
-        "#FiniteElementMethods",
-        "#AnisotropicFlows",
-        "#MinimizingMovements",
-        "#EnergyStableSchemes",
-        "#ComputationalMechanics"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-27-arxiv-a_minimizing_movement_framework_for_parametric_finite_element_approximation_of_anisotropic",
-      "paper_title": "A minimizing-movement framework for parametric finite element approximation of anisotropic curve shortening flows",
-      "paper_date": "2026-10-27",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:27:13",
+      "generated_at": "2026-10-31T14:55:14",
       "generator": "openai"
     }
   },
@@ -615,19 +402,19 @@
     ],
     "score": 63,
     "infographic": {
-      "key_insight": "Atomistic simulations link alumina inclusion fraction and aluminum grain structure to effective elastic properties, strength, and fracture behavior in aluminum-based nanocomposites.",
-      "engineering_relevance": "The approach supplies upper-scale material parameters for multiscale modeling of particulate aluminum–alumina composites.",
+      "key_insight": "Atomistic simulations connect alumina reinforcement fraction and aluminum grain structure to effective elastic properties, strength, and failure behavior of aluminum-matrix nanocomposites.",
+      "engineering_relevance": "The approach supports multiscale material modeling by extracting continuum-scale elastic and damage parameters from nanoscale mechanical responses.",
       "method": [
-        "Apply molecular statics under tension and compression.",
-        "Vary alumina volume fraction in single-inclusion unit cells and aluminum grain count in polycrystalline RVEs.",
-        "Extract elastic and damage parameters from stress–strain curves and compare isotropized elastic constants with Voigt–Reuss–Hill estimates."
+        "Run molecular statics simulations under tension and compression.",
+        "Vary alumina volume fraction in single-inclusion unit cells and aluminum grain count in polycrystalline representative volume elements.",
+        "Extract elastic and failure parameters from stress–strain curves and compare isotropized elastic constants with Voigt–Reuss–Hill estimates."
       ],
-      "evidence_signal": "Evaluation uses simulated stress–strain responses and atomistic deformation patterns to characterize elastic moduli, ultimate strength, ultimate and failure strains, and fracture mechanisms.",
-      "watch_item": "The abstract reports no experimental validation or quantitative agreement, so transferability to engineering-scale behavior remains to be established.",
+      "evidence_signal": "The abstract reports stress–strain-based evaluation of moduli, ultimate strength, ultimate strain, and failure strain, alongside analysis of deformation and fracture mechanisms, but provides no numerical results.",
+      "watch_item": "Transferability to engineering loading conditions requires validation beyond the atomistic model sizes and molecular-statics conditions described.",
       "hashtags": [
         "#ComputationalSolidMechanics",
-        "#AluminumNanocomposites",
         "#MolecularStatics",
+        "#AluminumNanocomposites",
         "#MultiscaleModeling",
         "#FractureAndDamage"
       ],
@@ -637,113 +424,7 @@
       "paper_title": "Evaluation of upper-scale mechanical parameters of particulate aluminum-based nanocomposites from molecular simulations",
       "paper_date": "2026-10-26",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-30T15:27:15",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-27-arxiv-convergence_analysis_of_an_augmented_dual_mixed_fnite_element_method_with_skew_symmetric_n",
-    "arxiv_id": "2610.38032v1",
-    "date": "2026-10-27",
-    "title": "Convergence analysis of an augmented dual-mixed fnite element method with skew-symmetric Nitsche stabilization for the generalized Oseen equations with mixed boundary conditions",
-    "authors": "Cristian Cárcamo, Abner Haguit Poza, Ramiro James Rebolledo",
-    "abstract": "In this paper, we propose and analyze a new skew-symmetric Nitsche-augmented mixed scheme for the generalized Oseen equations with non-solenoidal convective fields, subject to mixed boundary conditions. The scheme is based on a continuous pseudostress-velocity augmented dual-mixed finite element formulation, in which the Dirichlet datum is imposed naturally, whereas the prescribed normal trace of the pseudostress is incorporated into the $H(div,)$ stress space. We establish the well-posedness of the continuous formulation by means of a classical lifting argument and its corresponding homogeneous problem. The essential boundary condition is then weakly enforced in the discrete scheme through suitable stabilizing Nitsche terms. We establish the existence and uniqueness of the solution to the discrete scheme, allowing the use of general conforming approximation spaces for both the pseudostress and the velocity. Moreover, in the case of homogeneous Dirichlet boundary conditions and general Neumann data, we establish the stability of the Nitsche scheme. Under mild regularity assumptions on the exact solution, we prove optimal convergence rates in an energy norm. Finally, numerical experiments in two and three dimensions confirm the theoretical convergence rates and assess the performance of the proposed scheme for non-solenoidal convective fields and solutions exhibiting boundary layers.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-27T22:34:55Z",
-    "updated": "2026-10-27T22:34:55Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.38032v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.38032v1"
-      }
-    ],
-    "score": 62,
-    "infographic": {
-      "key_insight": "A skew-symmetric Nitsche-augmented dual-mixed finite element scheme achieves optimal energy-norm convergence for generalized Oseen equations with mixed boundary conditions and non-solenoidal convection.",
-      "engineering_relevance": "The method supports reliable finite element simulation of viscous flow with mixed boundary data and boundary layers.",
-      "method": [
-        "Use an augmented pseudostress–velocity dual-mixed formulation.",
-        "Weakly impose the prescribed pseudostress normal trace through skew-symmetric Nitsche stabilization.",
-        "Prove continuous and discrete well-posedness and optimal energy-norm convergence."
-      ],
-      "evidence_signal": "Two- and three-dimensional numerical experiments confirm theoretical convergence rates and evaluate performance with non-solenoidal convective fields and boundary-layer solutions.",
-      "watch_item": "Optimal convergence assumes mild solution regularity; the stated stability result covers homogeneous Dirichlet conditions with general Neumann data.",
-      "hashtags": [
-        "#FiniteElementMethod",
-        "#OseenEquations",
-        "#NitscheMethod",
-        "#MixedFormulation",
-        "#ComputationalFluidDynamics"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-27-arxiv-convergence_analysis_of_an_augmented_dual_mixed_fnite_element_method_with_skew_symmetric_n",
-      "paper_title": "Convergence analysis of an augmented dual-mixed fnite element method with skew-symmetric Nitsche stabilization for the generalized Oseen equations with mixed boundary conditions",
-      "paper_date": "2026-10-27",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:27:17",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-25-arxiv-constrained_neural_softening_functions_for_the_mullins_effect_in_parameter_dependent_mater",
-    "arxiv_id": "2610.34565v1",
-    "date": "2026-10-25",
-    "title": "Constrained neural softening functions for the Mullins effect in parameter-dependent materials",
-    "authors": "Dominik K. Klein, Jonas Fey, Maximilian Kannapinn, Oliver Weeger",
-    "abstract": "Accurately capturing the Mullins effect across varying material compositions remains challenging, as constitutive models must unify flexible representations of stress softening with physical consistency and robust parameter calibration. In this work, we investigate parameter-dependent physics-augmented neural network constitutive models within the pseudo-elastic modeling framework, focusing on structural constraints that ensure physically admissible neural softening functions. This paper has three key contributions: (1) We formulate different neural softening functions within the pseudo-elastic framework, including a multiplicative decomposition of the softening function that enables parameter-dependent ansatz functions satisfying common mechanical constitutive conditions by construction. (2) We derive a sufficient condition for ellipticity of pseudo-elastic constitutive models, which can be enforced in the constitutive models by construction. (3) We systematically investigate how flexibility and structural constraints influence the performance of neural softening functions in terms of prediction accuracy and calibration robustness. For this, we consider multiaxial experimental data of carbon black-filled EPDM rubber synthesized with varying amounts of curatives. The findings of our work suggest that neural softening functions are a promising extension of the classical pseudo-elastic framework and, when subject to suitable constraints, can improve predictive accuracy for highly nonlinear, parameter-dependent materials.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-10-25T21:07:59Z",
-    "updated": "2026-10-25T21:07:59Z",
-    "primary_category": "cs.CE",
-    "categories": [
-      "cs.CE"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.34565v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.34565v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "Structurally constrained neural softening functions extend pseudo-elastic Mullins-effect models to capture composition-dependent stress softening while preserving physical admissibility.",
-      "engineering_relevance": "The approach can improve constitutive predictions for filled rubber formulations while supporting more robust parameter calibration.",
-      "method": [
-        "Embed parameter-dependent neural softening functions in a pseudo-elastic framework.",
-        "Use multiplicative softening decompositions to enforce mechanical conditions by construction.",
-        "Derive an enforceable sufficient condition for ellipticity and assess accuracy–constraint trade-offs."
-      ],
-      "evidence_signal": "Evaluation uses multiaxial experimental data from carbon black-filled EPDM rubber with varying curative contents to compare prediction accuracy and calibration robustness.",
-      "watch_item": "The abstract does not establish generalization beyond the tested rubber formulations or quantify the gains from individual constraints.",
-      "hashtags": [
-        "#AISolidMechanics",
-        "#ConstitutiveModeling",
-        "#MullinsEffect",
-        "#PhysicsAugmentedAI",
-        "#RubberMechanics"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-10-25-arxiv-constrained_neural_softening_functions_for_the_mullins_effect_in_parameter_dependent_mater",
-      "paper_title": "Constrained neural softening functions for the Mullins effect in parameter-dependent materials",
-      "paper_date": "2026-10-25",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:27:20",
+      "generated_at": "2026-10-31T14:55:16",
       "generator": "openai"
     }
   },
@@ -777,18 +458,18 @@
       "key_insight": "Automated model discovery identified a sparse three-term hyperelastic law for TPU-coated woven nylon, combining one isotropic and two anisotropic contributions.",
       "engineering_relevance": "The discovered law can support finite-element simulations of fabric-based structures, including soft robotic devices.",
       "method": [
-        "Fit Constitutive Artificial Neural Networks to biaxial test data.",
-        "Discover constitutive terms and calibrate their parameters simultaneously.",
-        "Compare with independent sparse regression using LARS-LASSO."
+        "Fit Constitutive Artificial Neural Networks to biaxial test data to discover model terms and parameters jointly.",
+        "Assess predictive robustness across 20 initializations.",
+        "Use LARS-LASSO to independently identify dominant constitutive contributions."
       ],
-      "evidence_signal": "The neural-network models reproduced measured biaxial responses with mean R² = 0.97 and robust accuracy across 20 initializations; LARS-LASSO recovered the same dominant contributions at approximately 100-fold lower computational cost.",
-      "watch_item": "Correlated candidate terms yield different sparse representations with similar accuracy, so predictive fit alone does not establish a unique constitutive law.",
+      "evidence_signal": "The neural-network-discovered models reproduced measured biaxial responses with mean R² = 0.97, while LARS-LASSO recovered the same dominant contributions at approximately 100-fold lower computational cost.",
+      "watch_item": "Correlated candidate terms produced different sparse representations with similar accuracy, so the exact constitutive form may not be uniquely identifiable.",
       "hashtags": [
         "#AISolidMechanics",
         "#ConstitutiveModeling",
-        "#AutomatedModelDiscovery",
+        "#ModelDiscovery",
         "#WovenFabrics",
-        "#SoftRobotics"
+        "#FiniteElementAnalysis"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -796,7 +477,326 @@
       "paper_title": "Unweaving the mechanics of woven fabrics through automated model discovery",
       "paper_date": "2026-10-29",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:27:22",
+      "generated_at": "2026-10-31T14:55:18",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-29-arxiv-higher_order_qmc_galerkin_fem_for_singular_perturbation_reaction_diffusion_with_affine_par",
+    "arxiv_id": "2610.39734v1",
+    "date": "2026-10-29",
+    "title": "Higher-Order QMC Galerkin FEM for Singular Perturbation: Reaction-Diffusion with Affine-Parametric Reaction",
+    "authors": "Fabian Rohner, Christoph Schwab",
+    "abstract": "We analyze higher-order quasi-Monte Carlo (QMC) Galerkin discretizations for a singularly perturbed reaction-diffusion problem with an affine-parametric reaction coefficient. We derive error estimates that are robust with respect to the perturbation parameter $\\varepsilon$. To this end, we establish $\\varepsilon$-uniform stability and mixed-parametric regularity estimates in an $\\varepsilon$-weighted energy norm, with constants independent of the parameter dimension and of $\\varepsilon$. These estimates imply robust dimension truncation estimates and dimension-independent higher-order QMC error bounds for linear quantities of interest. Assuming an abstract, $\\varepsilon$-robust finite element approximation property, we combine the parametric estimates with the spatial discretization analysis to derive a general fully discrete QMC-FE error estimate with constants independent of both the parameter dimension and $\\varepsilon$. We verify this approximation property for a one-dimensional model problem using continuous piecewise affine finite elements on Shishkin meshes. Numerical experiments illustrate the predicted robustness and convergence rates.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-29T10:00:07Z",
+    "updated": "2026-10-29T10:00:07Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.39734v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.39734v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "Higher-order QMC–Galerkin finite element analysis yields error bounds independent of parameter dimension and the singular perturbation parameter ε.",
+      "engineering_relevance": "The framework supports reliable uncertainty quantification for reaction–diffusion models with small ε, where sharp boundary layers challenge standard discretizations.",
+      "method": [
+        "Establish ε-uniform stability and mixed-parametric regularity in an ε-weighted energy norm.",
+        "Combine dimension truncation and higher-order QMC integration with robust finite element approximation.",
+        "Verify the spatial approximation property in 1D using piecewise affine elements on Shishkin meshes."
+      ],
+      "evidence_signal": "Theoretical error estimates are complemented by numerical experiments illustrating the predicted robustness and convergence rates.",
+      "watch_item": "The fully discrete guarantee assumes ε-robust spatial approximation, verified here only for a one-dimensional model problem.",
+      "hashtags": [
+        "#QuasiMonteCarlo",
+        "#FiniteElementMethod",
+        "#UncertaintyQuantification",
+        "#SingularPerturbation",
+        "#ReactionDiffusion"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-29-arxiv-higher_order_qmc_galerkin_fem_for_singular_perturbation_reaction_diffusion_with_affine_par",
+      "paper_title": "Higher-Order QMC Galerkin FEM for Singular Perturbation: Reaction-Diffusion with Affine-Parametric Reaction",
+      "paper_date": "2026-10-29",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-31T14:55:20",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-27-arxiv-a_differentiable_gpu_accelerated_finite_element_formulation_in_jax_for_large_deformation_s",
+    "arxiv_id": "2610.38075v1",
+    "date": "2026-10-27",
+    "title": "A Differentiable, GPU-Accelerated Finite-Element Formulation in JAX for Large-Deformation Shells with Contact: Application to Patient-Specific Aortic Valve Simulation",
+    "authors": "Mohsen Nakhaei, Alison M. Pouch, Matthew A. Jolley, Wensi Wu",
+    "abstract": "Patient-specific aortic-valve models can help assess how tissue properties and geometry influence leaflet deformation and coaptation, with potential to inform intervention planning. Large deformations, near-incompressibility, and evolving contact make these simulations computationally demanding and can challenge nonlinear convergence. Differentiable, GPU-accelerated methods offer efficient derivative evaluation and parallel computation, but their matrix-free application to soft-tissue shells with contact remains less established. We developed a forward solver using tatva's energy-based finite-element framework in JAX. The solver combines finite-strain extensible-director shells, hyperelastic constitutive models, and a finite-range repulsive contact energy. Nonlinear equilibrium is solved using a regularized, matrix-free Newton-Krylov method with two-level preconditioning. Automatic differentiation evaluates tangent-vector products without forming or storing the primary tangent matrix, while GPU execution parallelizes element and quadrature-point computations. Constitutive, shell, contact, and self-contact responses were assessed against analytical, semi-analytical, and published benchmarks. At a contact-free plate equilibrium, implicit sensitivities of the converged apex displacement to constitutive parameters, thickness, and pressure agreed with finite differences from independent nonlinear simulations. Simulations of three patient-specific aortic-valve models (two tricuspid and one bicuspid) achieved final relative equilibrium residuals below 10^-4. Median GPU runtimes were approximately 15-25 minutes, with 5.3-6.5-fold speedups relative to corresponding CPU runs on the tested hardware. These results provide component-level verification and demonstrate GPU-accelerated forward valve simulation in the tested cases, supporting future gradient-based inverse studies.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-10-27T23:44:20Z",
+    "updated": "2026-10-27T23:44:20Z",
+    "primary_category": "q-bio.QM",
+    "categories": [
+      "q-bio.QM",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.38075v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.38075v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "A differentiable JAX finite-element solver combines large-deformation shells and contact to simulate patient-specific aortic valves with 5.3–6.5× GPU speedups over corresponding CPU runs.",
+      "engineering_relevance": "Faster valve mechanics simulations could support assessment of tissue properties and geometry, with future potential for gradient-based parameter identification and intervention planning.",
+      "method": [
+        "Energy-based finite-strain extensible-director shells with hyperelastic materials and finite-range repulsive contact.",
+        "Regularized matrix-free Newton–Krylov equilibrium solver with two-level preconditioning.",
+        "Automatic differentiation for tangent-vector products and GPU-parallel element and quadrature computations."
+      ],
+      "evidence_signal": "Component benchmarks and contact-free plate sensitivity checks supported verification; three patient-specific valves reached relative equilibrium residuals below 10^-4 with median GPU runtimes of approximately 15–25 minutes.",
+      "watch_item": "Sensitivity agreement was demonstrated only for a contact-free plate, leaving gradient reliability under evolving valve contact unestablished.",
+      "hashtags": [
+        "#ComputationalMechanics",
+        "#FiniteElementAnalysis",
+        "#DifferentiableSimulation",
+        "#GPUComputing",
+        "#AorticValve"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-27-arxiv-a_differentiable_gpu_accelerated_finite_element_formulation_in_jax_for_large_deformation_s",
+      "paper_title": "A Differentiable, GPU-Accelerated Finite-Element Formulation in JAX for Large-Deformation Shells with Contact: Application to Patient-Specific Aortic Valve Simulation",
+      "paper_date": "2026-10-27",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-10-31T14:55:22",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-27-arxiv-total_deformation_based_mpm_for_perfectly_elastic_solid_simulation_with_strong_deformation",
+    "arxiv_id": "2610.36945v1",
+    "date": "2026-10-27",
+    "title": "Total Deformation-based MPM for Perfectly Elastic Solid Simulation with Strong Deformations",
+    "authors": "Timna Böttcher, Rick Ridder, Jan Bender",
+    "abstract": "We present a new MPM-based solver for perfectly elastic solids, which can recover from strong deformations and naturally allows contact handling. Typical MPM solvers suffer from numerical fracture, where objects break apart even when no plasticity is included in the elasticity model. Previous approaches for perfectly elastic solids solve this by computing forces on a fixed grid in the reference configuration. However, this makes them incompatible with standard collision handling methods. We instead propose a method for deformable solid simulation without numerical fracture, that still computes elastic forces on the current grid. Our method can easily include grid-based collision handling, as commonly used in MPM frameworks. Additionally, we compute the deformation directly from the particle positions and a fixed reference grid, without any updates based on velocity gradients. This facilitates the inclusion of particle-level collision handling and zero-energy mode suppression, which counteracts artifacts from non-linear deformations. As a result, we can efficiently simulate complex scenarios of elastic objects undergoing large deformations, including contact.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-10-27T10:03:02Z",
+    "updated": "2026-10-27T10:03:02Z",
+    "primary_category": "cs.GR",
+    "categories": [
+      "cs.GR"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.36945v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.36945v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "Total deformation-based MPM targets numerical fracture in perfectly elastic solids while retaining current-grid force computation for contact handling.",
+      "engineering_relevance": "The method supports simulation of elastic components undergoing large, recoverable deformations and contact.",
+      "method": [
+        "Compute deformation directly from particle positions using a fixed reference grid, rather than velocity-gradient updates.",
+        "Compute elastic forces on the current grid to support standard grid-based collision handling.",
+        "Enable particle-level collision handling and zero-energy mode suppression to counter nonlinear deformation artifacts."
+      ],
+      "evidence_signal": "The abstract reports efficient simulation of complex large-deformation elastic contact scenarios, but provides no quantitative benchmarks or error metrics.",
+      "watch_item": "Robustness and computational cost across contact conditions and discretization resolutions require validation beyond the abstract.",
+      "hashtags": [
+        "#MaterialPointMethod",
+        "#SolidMechanics",
+        "#ComputationalMechanics",
+        "#LargeDeformation",
+        "#ContactSimulation"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-27-arxiv-total_deformation_based_mpm_for_perfectly_elastic_solid_simulation_with_strong_deformation",
+      "paper_title": "Total Deformation-based MPM for Perfectly Elastic Solid Simulation with Strong Deformations",
+      "paper_date": "2026-10-27",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-10-31T14:55:24",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-27-arxiv-a_minimizing_movement_framework_for_parametric_finite_element_approximation_of_anisotropic",
+    "arxiv_id": "2610.36753v1",
+    "date": "2026-10-27",
+    "title": "A minimizing-movement framework for parametric finite element approximation of anisotropic curve shortening flows",
+    "authors": "Wei Jiang, Chunmei Su, Ganghui Zhang",
+    "abstract": "We propose a minimizing-movement framework for constructing parametric finite element methods (PFEMs) for anisotropic curve shortening flows. The cornerstone is an admissible modified energy: a smooth, convex, and iteration-dependent surrogate that majorizes the original anisotropic energy and agrees with it at the current iterate. For any fixed finite element degree $n\\geq1$ and any positive surface energy density $γ\\in C^2(\\mathbb{S}^1)$, the unconstrained one-step problem has a unique solution for any time-step size whenever the parametric derivative of the current discrete curve does not vanish on any mesh element. It also satisfies a one-step discrete energy dissipation inequality. It therefore preserves the variational structure of the underlying $L^2$-gradient flow. The framework recovers a variational interpretation of Dziuk's isotropic scheme and applies directly to the weak anisotropies. For strong anisotropies, a convex splitting removes the weak-anisotropy restriction on the original density. A scalar constraint further extends the framework to area-preserving flows. Numerical experiments exhibit approximately the expected convergence for smooth isotropic and weakly anisotropic examples. They also confirm energy dissipation and area preservation. In the strongly anisotropic regime, the computations produce sharp facet-like profiles but reveal mesh-scale oscillations under the grid refinement.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-27T07:11:14Z",
+    "updated": "2026-10-27T07:11:14Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.36753v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.36753v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "A minimizing-movement framework uses a smooth, convex energy surrogate to construct parametric finite element schemes with one-step energy dissipation for anisotropic curve shortening.",
+      "engineering_relevance": "The framework supports variationally consistent simulation of anisotropic interface evolution, including area-preserving flows and facet-like geometries.",
+      "method": [
+        "Majorize the anisotropic energy with an iteration-dependent convex surrogate that matches it at the current curve.",
+        "Solve a uniquely solvable unconstrained step for any time-step size, assuming nonvanishing elementwise parametric derivatives.",
+        "Use convex splitting for strong anisotropy and a scalar constraint for area preservation."
+      ],
+      "evidence_signal": "Numerical tests show approximately expected convergence for smooth isotropic and weakly anisotropic cases, energy dissipation, and area preservation.",
+      "watch_item": "Strongly anisotropic tests develop mesh-scale oscillations under refinement despite producing sharp facet-like profiles.",
+      "hashtags": [
+        "#FiniteElementMethods",
+        "#AnisotropicFlow",
+        "#CurveShortening",
+        "#MinimizingMovements",
+        "#EnergyStableSchemes"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-27-arxiv-a_minimizing_movement_framework_for_parametric_finite_element_approximation_of_anisotropic",
+      "paper_title": "A minimizing-movement framework for parametric finite element approximation of anisotropic curve shortening flows",
+      "paper_date": "2026-10-27",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-31T14:55:26",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-27-arxiv-convergence_analysis_of_an_augmented_dual_mixed_fnite_element_method_with_skew_symmetric_n",
+    "arxiv_id": "2610.38032v1",
+    "date": "2026-10-27",
+    "title": "Convergence analysis of an augmented dual-mixed fnite element method with skew-symmetric Nitsche stabilization for the generalized Oseen equations with mixed boundary conditions",
+    "authors": "Cristian Cárcamo, Abner Haguit Poza, Ramiro James Rebolledo",
+    "abstract": "In this paper, we propose and analyze a new skew-symmetric Nitsche-augmented mixed scheme for the generalized Oseen equations with non-solenoidal convective fields, subject to mixed boundary conditions. The scheme is based on a continuous pseudostress-velocity augmented dual-mixed finite element formulation, in which the Dirichlet datum is imposed naturally, whereas the prescribed normal trace of the pseudostress is incorporated into the $H(div,)$ stress space. We establish the well-posedness of the continuous formulation by means of a classical lifting argument and its corresponding homogeneous problem. The essential boundary condition is then weakly enforced in the discrete scheme through suitable stabilizing Nitsche terms. We establish the existence and uniqueness of the solution to the discrete scheme, allowing the use of general conforming approximation spaces for both the pseudostress and the velocity. Moreover, in the case of homogeneous Dirichlet boundary conditions and general Neumann data, we establish the stability of the Nitsche scheme. Under mild regularity assumptions on the exact solution, we prove optimal convergence rates in an energy norm. Finally, numerical experiments in two and three dimensions confirm the theoretical convergence rates and assess the performance of the proposed scheme for non-solenoidal convective fields and solutions exhibiting boundary layers.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-10-27T22:34:55Z",
+    "updated": "2026-10-27T22:34:55Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.38032v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.38032v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "A skew-symmetric Nitsche-augmented dual-mixed finite element scheme achieves optimal energy-norm convergence for generalized Oseen equations with mixed boundary conditions and non-solenoidal convection.",
+      "engineering_relevance": "The method supports reliable finite element simulation of linearized viscous flow with mixed boundary data and boundary-layer behavior.",
+      "method": [
+        "Use an augmented pseudostress–velocity dual-mixed formulation.",
+        "Weakly enforce the prescribed pseudostress normal trace using skew-symmetric Nitsche stabilization.",
+        "Prove continuous and discrete well-posedness for general conforming approximation spaces."
+      ],
+      "evidence_signal": "Two- and three-dimensional numerical experiments confirm theoretical convergence rates and assess non-solenoidal convection and boundary-layer solutions.",
+      "watch_item": "Optimal convergence requires solution regularity, and the stated stability result assumes homogeneous Dirichlet conditions with general Neumann data.",
+      "hashtags": [
+        "#FiniteElementMethod",
+        "#OseenEquations",
+        "#NitscheMethod",
+        "#MixedMethods",
+        "#ComputationalFluidDynamics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-27-arxiv-convergence_analysis_of_an_augmented_dual_mixed_fnite_element_method_with_skew_symmetric_n",
+      "paper_title": "Convergence analysis of an augmented dual-mixed fnite element method with skew-symmetric Nitsche stabilization for the generalized Oseen equations with mixed boundary conditions",
+      "paper_date": "2026-10-27",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-10-31T14:55:28",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-25-arxiv-constrained_neural_softening_functions_for_the_mullins_effect_in_parameter_dependent_mater",
+    "arxiv_id": "2610.34565v1",
+    "date": "2026-10-25",
+    "title": "Constrained neural softening functions for the Mullins effect in parameter-dependent materials",
+    "authors": "Dominik K. Klein, Jonas Fey, Maximilian Kannapinn, Oliver Weeger",
+    "abstract": "Accurately capturing the Mullins effect across varying material compositions remains challenging, as constitutive models must unify flexible representations of stress softening with physical consistency and robust parameter calibration. In this work, we investigate parameter-dependent physics-augmented neural network constitutive models within the pseudo-elastic modeling framework, focusing on structural constraints that ensure physically admissible neural softening functions. This paper has three key contributions: (1) We formulate different neural softening functions within the pseudo-elastic framework, including a multiplicative decomposition of the softening function that enables parameter-dependent ansatz functions satisfying common mechanical constitutive conditions by construction. (2) We derive a sufficient condition for ellipticity of pseudo-elastic constitutive models, which can be enforced in the constitutive models by construction. (3) We systematically investigate how flexibility and structural constraints influence the performance of neural softening functions in terms of prediction accuracy and calibration robustness. For this, we consider multiaxial experimental data of carbon black-filled EPDM rubber synthesized with varying amounts of curatives. The findings of our work suggest that neural softening functions are a promising extension of the classical pseudo-elastic framework and, when subject to suitable constraints, can improve predictive accuracy for highly nonlinear, parameter-dependent materials.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-10-25T21:07:59Z",
+    "updated": "2026-10-25T21:07:59Z",
+    "primary_category": "cs.CE",
+    "categories": [
+      "cs.CE"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.34565v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.34565v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "Structurally constrained neural softening functions extend pseudo-elastic Mullins models to capture composition-dependent stress softening while preserving physical admissibility.",
+      "engineering_relevance": "The approach supports more accurate constitutive modeling of filled rubber across formulations, with constraints designed to improve calibration robustness.",
+      "method": [
+        "Embed parameter-dependent, physics-augmented neural softening functions in a pseudo-elastic framework.",
+        "Use a multiplicative softening decomposition to satisfy common constitutive conditions by construction.",
+        "Derive an enforceable sufficient condition for ellipticity and compare flexibility–constraint trade-offs."
+      ],
+      "evidence_signal": "Evaluation uses multiaxial experimental data from carbon black-filled EPDM rubber with varying curative amounts to assess prediction accuracy and calibration robustness.",
+      "watch_item": "Generalization beyond the tested EPDM formulations and loading conditions remains to be established.",
+      "hashtags": [
+        "#AISolidMechanics",
+        "#ConstitutiveModeling",
+        "#MullinsEffect",
+        "#PhysicsAugmentedAI",
+        "#RubberMechanics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-10-25-arxiv-constrained_neural_softening_functions_for_the_mullins_effect_in_parameter_dependent_mater",
+      "paper_title": "Constrained neural softening functions for the Mullins effect in parameter-dependent materials",
+      "paper_date": "2026-10-25",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-10-31T14:55:30",
       "generator": "openai"
     }
   },
@@ -826,20 +826,20 @@
         "url": "https://arxiv.org/pdf/2610.39750v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "A transfer principle converts continuous elliptic Carleman estimates into mesh-uniform discrete estimates without added stabilization, with radial-weight parameters satisfying s ≤ ch^(-4/5).",
-      "engineering_relevance": "The framework supports stability analysis for finite-element and finite-difference inverse boundary problems relevant to reconstructing spatially varying material properties.",
+      "key_insight": "A transfer principle converts continuous elliptic Carleman estimates into mesh-uniform estimates for conforming Galerkin discretizations without added stabilization.",
+      "engineering_relevance": "The framework supports stability analysis for finite-element and finite-difference inverse boundary problems, helping quantify how measurement error and mesh resolution affect potential recovery.",
       "method": [
-        "Construct a shifted continuous problem whose Galerkin solution reproduces the prescribed discrete state.",
-        "Use weighted approximation to transfer continuous estimates to the discrete operator.",
-        "Apply the estimates to discrete Calderón recovery from independently prescribed, possibly disjoint boundary patches."
+        "Introduce a shifted continuous problem whose Galerkin solution reconstructs the prescribed discrete state.",
+        "Use weighted approximation to transfer estimates to the discrete operator.",
+        "For radial weights, control the Carleman parameter by s ≤ c h^(-4/5)."
       ],
-      "evidence_signal": "The abstract reports theoretical verification for piecewise affine FEM with consistent or lumped mass and Cartesian finite differences, yielding a single logarithmic data term and an O(h^(1/2)) mesh remainder.",
-      "watch_item": "The inverse stability result assumes dimension d ≥ 3, potential agreement near the boundary, and uniformly stable discrete Dirichlet problems.",
+      "evidence_signal": "The abstract reports theoretical verification for piecewise affine finite elements with consistent or lumped mass and Cartesian finite differences, plus partial-boundary Calderón stability with a single logarithmic data term and an O(h^(1/2)) mesh remainder.",
+      "watch_item": "The inverse stability result requires d ≥ 3, potentials agreeing near the boundary, and uniformly stable discrete Dirichlet problems; no numerical benchmark is reported in the abstract.",
       "hashtags": [
+        "#FiniteElements",
         "#CarlemanEstimates",
-        "#FiniteElementMethod",
         "#InverseProblems",
         "#CalderonProblem",
         "#NumericalAnalysis"
@@ -850,7 +850,7 @@
       "paper_title": "A Transfer Principle for Elliptic Carleman Estimates: Application to Discrete Calderón Stability",
       "paper_date": "2026-10-29",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:27:25",
+      "generated_at": "2026-10-31T14:55:32",
       "generator": "openai"
     }
   },
@@ -879,23 +879,23 @@
         "url": "https://arxiv.org/pdf/2610.39465v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Mixing nanoscale Laponite with microscale Bentonite reduces drying damage, with composition and substrate influencing whether clay films remain intact, crack or peel.",
-      "engineering_relevance": "Clay composition offers a simple route to improve drying resistance in coatings, barrier layers and ceramic processing.",
+      "key_insight": "Mixing nanoscale Laponite with microscale Bentonite reduces drying damage, with most intermediate compositions on glass outperforming a simple average of the pure-clay outcomes.",
+      "engineering_relevance": "Clay composition offers a practical route to improve crack resistance in coatings, barrier layers and ceramic processing.",
       "method": [
-        "Compare drying damage across clay compositions on hydrophobic polypropylene and hydrophilic glass.",
-        "Measure two-step yielding and derive step-dependent cohesive energies from gel rheology.",
-        "Use an energy-balance-derived cohesion–adhesion index to interpret cracking versus peeling."
+        "Compared drying damage across clay compositions on hydrophobic polypropylene and hydrophilic glass.",
+        "Measured two-step yielding in gelled suspensions and derived cohesive energies.",
+        "Used an energy-balance-based cohesion–adhesion index to interpret peeling versus cracking."
       ],
-      "evidence_signal": "Replicate experiments found essentially intact Laponite films, extensive Bentonite fracture and, on glass, less damage for most intermediate compositions than a simple average would predict.",
-      "watch_item": "Rheology–damage correlations must specify the yielding step used, because inferred cohesive energies differ by orders of magnitude.",
+      "evidence_signal": "Replicate experiments supported essentially intact Laponite films, extensively fractured Bentonite films and reduced damage in mixtures; every composition exhibited two-step yielding.",
+      "watch_item": "Rheology–cracking correlations must specify the yielding step used because derived cohesive energies differ by orders of magnitude.",
       "hashtags": [
+        "#SolidMechanics",
         "#FractureMechanics",
         "#ClayComposites",
         "#DryingStress",
-        "#Rheology",
-        "#Coatings"
+        "#Rheology"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -903,7 +903,7 @@
       "paper_title": "Resisting Drying Stress in Laponite Bentonite Clay Composites, Two Step Yielding and Crack Peel Selection",
       "paper_date": "2026-10-29",
       "paper_category": "Fracture and Damage",
-      "generated_at": "2026-10-30T15:27:27",
+      "generated_at": "2026-10-31T14:55:34",
       "generator": "openai"
     }
   },
@@ -933,22 +933,22 @@
         "url": "https://arxiv.org/pdf/2610.37060v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Hyper-reduction targets localized nonlinear corrections to accelerate coupled elastoplastic soil deformation and water-flow simulations while retaining high accuracy.",
-      "engineering_relevance": "Faster repeated dam simulations can support parameter calibration, uncertainty quantification and safety scenario analysis.",
+      "key_insight": "Physics-localized hyper-reduction accelerates coupled elastoplastic soil deformation and water-flow simulations while preserving displacement and pore-pressure accuracy.",
+      "engineering_relevance": "Faster repeated simulations can support calibration, uncertainty quantification and safety assessment of earthfill dams.",
       "method": [
         "Build separate displacement and pore-pressure reduced bases using proper orthogonal decomposition.",
-        "Compute affine residual terms exactly and approximate nonlinear corrections with ECSW cubature, one rule per balance equation.",
-        "Assemble the original FEniCSx variational forms only on selected elements."
+        "Evaluate affine residual terms exactly and approximate nonlinear corrections with equation-specific ECSW cubature rules.",
+        "Assemble the original variational forms only on selected elements in FEniCSx."
       ],
-      "evidence_signal": "Tests on 2D and 3D dams undergoing raising and consolidation reported displacement and pressure errors below 0.5% relative to finite element solutions, with speed-ups up to 43× and 77×, respectively.",
-      "watch_item": "Accuracy beyond the tested parameter ranges and loading scenarios is not established by the abstract.",
+      "evidence_signal": "Tests on 2D and 3D dams undergoing raising and consolidation reported field errors below 0.5% relative to finite elements, with speed-ups up to 43× and 77×, respectively.",
+      "watch_item": "Accuracy beyond the tested parameter ranges and loading scenarios remains unestablished by the abstract.",
       "hashtags": [
         "#ComputationalMechanics",
         "#ModelOrderReduction",
         "#HyperReduction",
-        "#GeotechnicalEngineering",
+        "#SoilMechanics",
         "#HydroMechanicalCoupling"
       ],
       "model": "gpt-6.1-sol",
@@ -957,7 +957,7 @@
       "paper_title": "A hyper-reduction strategy for elastoplastic hydro-mechanical problems in partially saturated soil",
       "paper_date": "2026-10-27",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:27:29",
+      "generated_at": "2026-10-31T14:55:37",
       "generator": "openai"
     }
   },
@@ -986,23 +986,23 @@
         "url": "https://arxiv.org/pdf/2610.39625v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
       "key_insight": "Emerging non-volatile memory devices can emulate synaptic plasticity through conductance modulation, supporting hardware neural networks.",
-      "engineering_relevance": "Dense, low-power neuromorphic circuits could use these devices to retain synaptic weights without continuous power.",
+      "engineering_relevance": "These devices offer a route to dense, low-power neuromorphic circuits with persistent synaptic weights.",
       "method": [
-        "Review ReRAM, phase-change memory, and spintronics-based memory.",
-        "Explain how device conductance emulates adjustable synaptic strength.",
-        "Discuss neuromorphic integration, recent advances, and implementation challenges."
+        "Review ReRAM, phase-change memory, and spintronics-based memory devices.",
+        "Relate conductance modulation to biological synaptic plasticity.",
+        "Discuss neuromorphic integration advances, challenges, and opportunities."
       ],
-      "evidence_signal": "The abstract describes a review chapter but reports no quantitative benchmarks, datasets, or device-level evaluation results.",
-      "watch_item": "Scalability and low-power potential do not establish system-level performance; integration challenges require further evaluation.",
+      "evidence_signal": "The abstract describes a review chapter and reports no quantitative benchmarks or experimental validation.",
+      "watch_item": "Device scalability and synaptic-like behavior do not alone establish reliable large-scale system integration.",
       "hashtags": [
         "#NeuromorphicComputing",
         "#NonVolatileMemory",
-        "#SynapticPlasticity",
         "#ReRAM",
-        "#HardwareNeuralNetworks"
+        "#PhaseChangeMemory",
+        "#Spintronics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -1010,7 +1010,7 @@
       "paper_title": "Non-Volatile Memory Devices for Neuromorphic Computing",
       "paper_date": "2026-10-29",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-10-30T15:27:31",
+      "generated_at": "2026-10-31T14:55:39",
       "generator": "openai"
     }
   },
@@ -1039,23 +1039,23 @@
         "url": "https://arxiv.org/pdf/2610.39719v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "Standard adaptive finite element methods achieve rate-optimal convergence for the Poisson problem with any Dörfler bulk parameter θ ∈ (0,1), removing the classical smallness restriction.",
-      "engineering_relevance": "The result broadens theoretically justified marking-parameter choices for adaptive Poisson solvers relevant to engineering simulation.",
+      "key_insight": "Standard adaptive FEM achieves rate-optimal convergence for the Poisson problem with any Dörfler bulk parameter θ ∈ (0,1), removing the classical smallness restriction.",
+      "engineering_relevance": "The result broadens theoretically justified marking-parameter choices for adaptive Poisson solvers used in engineering simulation.",
       "method": [
-        "Standard adaptive finite element method for the Poisson problem.",
-        "Conforming Lagrange finite elements.",
-        "Dörfler marking with any bulk parameter θ ∈ (0,1)."
+        "Standard adaptive finite element method",
+        "Conforming Lagrange finite elements",
+        "Dörfler marking with any θ ∈ (0,1)"
       ],
-      "evidence_signal": "The abstract reports a mathematical proof of rate-optimal convergence, not numerical benchmarks or experimental evaluation.",
-      "watch_item": "The stated guarantee is specific to the Poisson problem and does not establish practical runtime gains or extensions to nonlinear solid mechanics.",
+      "evidence_signal": "The abstract reports a theoretical convergence proof, not numerical benchmarks or experimental validation.",
+      "watch_item": "The stated guarantee concerns the Poisson problem and does not establish equivalent results for general solid-mechanics models or learned surrogates.",
       "hashtags": [
         "#AdaptiveFEM",
         "#FiniteElementMethod",
         "#OptimalConvergence",
         "#DorflerMarking",
-        "#PoissonEquation"
+        "#PoissonProblem"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -1063,7 +1063,7 @@
       "paper_title": "Optimal AFEM convergence for any bulk parameter smaller than one",
       "paper_date": "2026-10-29",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-10-30T15:27:33",
+      "generated_at": "2026-10-31T14:55:41",
       "generator": "openai"
     }
   }

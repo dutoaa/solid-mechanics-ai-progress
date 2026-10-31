@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-10-30
+Generated: 2026-10-31
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Differentiable Schwarz-Coupled Solvers for Thin Boundary Layer Transport: Inverse Modeling via Agentic AI Optimization
@@ -59,39 +59,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38783v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-28-arxiv-multiscale_evaluation_of_the_elastic_response_of_polycrystalline_nial_using_molecular_stat_infographic.json
 
-## 8. Higher-Order QMC Galerkin FEM for Singular Perturbation: Reaction-Diffusion with Affine-Parametric Reaction
-
-- Date: 2026-10-29
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2610.39734v1
-- PDF: https://arxiv.org/pdf/2610.39734v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-29-arxiv-higher_order_qmc_galerkin_fem_for_singular_perturbation_reaction_diffusion_with_affine_par_infographic.json
-
-## 9. A Differentiable, GPU-Accelerated Finite-Element Formulation in JAX for Large-Deformation Shells with Contact: Application to Patient-Specific Aortic Valve Simulation
-
-- Date: 2026-10-27
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.38075v1
-- PDF: https://arxiv.org/pdf/2610.38075v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-a_differentiable_gpu_accelerated_finite_element_formulation_in_jax_for_large_deformation_s_infographic.json
-
-## 10. Total Deformation-based MPM for Perfectly Elastic Solid Simulation with Strong Deformations
-
-- Date: 2026-10-27
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.36945v1
-- PDF: https://arxiv.org/pdf/2610.36945v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-total_deformation_based_mpm_for_perfectly_elastic_solid_simulation_with_strong_deformation_infographic.json
-
-## 11. A minimizing-movement framework for parametric finite element approximation of anisotropic curve shortening flows
-
-- Date: 2026-10-27
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2610.36753v1
-- PDF: https://arxiv.org/pdf/2610.36753v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-a_minimizing_movement_framework_for_parametric_finite_element_approximation_of_anisotropic_infographic.json
-
-## 12. Evaluation of upper-scale mechanical parameters of particulate aluminum-based nanocomposites from molecular simulations
+## 8. Evaluation of upper-scale mechanical parameters of particulate aluminum-based nanocomposites from molecular simulations
 
 - Date: 2026-10-26
 - Category: Fracture and Damage
@@ -99,7 +67,47 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.36005v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-26-arxiv-evaluation_of_upper_scale_mechanical_parameters_of_particulate_aluminum_based_nanocomposit_infographic.json
 
-## 13. Convergence analysis of an augmented dual-mixed fnite element method with skew-symmetric Nitsche stabilization for the generalized Oseen equations with mixed boundary conditions
+## 9. Unweaving the mechanics of woven fabrics through automated model discovery
+
+- Date: 2026-10-29
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.40260v1
+- PDF: https://arxiv.org/pdf/2610.40260v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-29-arxiv-unweaving_the_mechanics_of_woven_fabrics_through_automated_model_discovery_infographic.json
+
+## 10. Higher-Order QMC Galerkin FEM for Singular Perturbation: Reaction-Diffusion with Affine-Parametric Reaction
+
+- Date: 2026-10-29
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.39734v1
+- PDF: https://arxiv.org/pdf/2610.39734v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-29-arxiv-higher_order_qmc_galerkin_fem_for_singular_perturbation_reaction_diffusion_with_affine_par_infographic.json
+
+## 11. A Differentiable, GPU-Accelerated Finite-Element Formulation in JAX for Large-Deformation Shells with Contact: Application to Patient-Specific Aortic Valve Simulation
+
+- Date: 2026-10-27
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.38075v1
+- PDF: https://arxiv.org/pdf/2610.38075v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-a_differentiable_gpu_accelerated_finite_element_formulation_in_jax_for_large_deformation_s_infographic.json
+
+## 12. Total Deformation-based MPM for Perfectly Elastic Solid Simulation with Strong Deformations
+
+- Date: 2026-10-27
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2610.36945v1
+- PDF: https://arxiv.org/pdf/2610.36945v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-total_deformation_based_mpm_for_perfectly_elastic_solid_simulation_with_strong_deformation_infographic.json
+
+## 13. A minimizing-movement framework for parametric finite element approximation of anisotropic curve shortening flows
+
+- Date: 2026-10-27
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2610.36753v1
+- PDF: https://arxiv.org/pdf/2610.36753v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-a_minimizing_movement_framework_for_parametric_finite_element_approximation_of_anisotropic_infographic.json
+
+## 14. Convergence analysis of an augmented dual-mixed fnite element method with skew-symmetric Nitsche stabilization for the generalized Oseen equations with mixed boundary conditions
 
 - Date: 2026-10-27
 - Category: FEM Surrogates
@@ -107,21 +115,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38032v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-27-arxiv-convergence_analysis_of_an_augmented_dual_mixed_fnite_element_method_with_skew_symmetric_n_infographic.json
 
-## 14. Constrained neural softening functions for the Mullins effect in parameter-dependent materials
+## 15. Constrained neural softening functions for the Mullins effect in parameter-dependent materials
 
 - Date: 2026-10-25
 - Category: Constitutive Modeling
 - arXiv: https://arxiv.org/abs/2610.34565v1
 - PDF: https://arxiv.org/pdf/2610.34565v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-25-arxiv-constrained_neural_softening_functions_for_the_mullins_effect_in_parameter_dependent_mater_infographic.json
-
-## 15. Unweaving the mechanics of woven fabrics through automated model discovery
-
-- Date: 2026-10-29
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2610.40260v1
-- PDF: https://arxiv.org/pdf/2610.40260v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-10-29-arxiv-unweaving_the_mechanics_of_woven_fabrics_through_automated_model_discovery_infographic.json
 
 ## 16. A Transfer Principle for Elliptic Carleman Estimates: Application to Discrete Calderón Stability
 

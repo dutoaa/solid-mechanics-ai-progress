@@ -1,13 +1,13 @@
 {
-  "key_insight": "BISECT improves continual learning by splitting low-rank updates into shared and novel feature directions rather than treating all cross-task overlap as interference.",
-  "engineering_relevance": "The approach could support sequential adaptation of vision-based engineering inspection models, though solid-mechanics applications are not evaluated in the abstract.",
+  "key_insight": "BISECT counters spectral starvation in continual LoRA learning by splitting a fixed low-rank budget between shared invariant features and task-specific novelty.",
+  "engineering_relevance": "For engineering vision workflows with sequentially arriving tasks, BISECT offers a potential adaptation strategy without added inference parameters or FLOPs, though solid-mechanics applications are not evaluated.",
   "method": [
-    "Partition a fixed LoRA rank budget into dominant joint historical–current modes and an orthogonal novelty complement.",
-    "Extract novelty directions using generalized Rayleigh whitening followed by orthogonal complement projection.",
-    "Merge trained updates into the frozen backbone, gating shared rank-1 atoms by current-to-joint Rayleigh ratios and preserving novelty atoms at unit gain."
+    "Extract invariant directions from dominant modes of the joint historical-and-current Gram matrix.",
+    "Build an orthogonal novelty block using generalized Rayleigh whitening and complement projection.",
+    "Fold trained updates into the frozen backbone, scaling invariant atoms by current-to-joint Rayleigh ratios and retaining novelty atoms at unit gain."
   ],
-  "evidence_signal": "Across eight incremental settings on five vision datasets, BISECT reportedly outperforms prompt, adapter, and LoRA baselines without extra inference parameters or FLOPs; historical null tails capture only 5.5% of incoming-task variance.",
-  "watch_item": "Training-time costs and numerical stability of Gram-matrix decomposition and whitening are not quantified in the abstract.",
+  "evidence_signal": "The abstract reports that historical null tails capture only 5.5% of incoming-task variance and that BISECT outperforms prompt, adapter, and LoRA baselines across eight incremental settings on five vision datasets.",
+  "watch_item": "Training-time costs and numerical stability of Gram-matrix estimation and generalized Rayleigh whitening are not quantified in the abstract.",
   "hashtags": [
     "#ContinualLearning",
     "#LowRankAdaptation",
@@ -21,6 +21,6 @@
   "paper_title": "BISECT: Bilevel Spectral Decomposition for Low-Rank Continual Learning",
   "paper_date": "2026-11-02",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-11-05T16:59:08",
+  "generated_at": "2026-11-06T16:31:07",
   "generator": "openai"
 }

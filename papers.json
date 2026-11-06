@@ -24,20 +24,20 @@
         "url": "https://arxiv.org/pdf/2611.05735v1"
       }
     ],
-    "score": 78,
+    "score": 73,
     "infographic": {
-      "key_insight": "A self-supervised functional autoencoder learns a reusable latent space, separating function representation from task-specific operator learning.",
-      "engineering_relevance": "For solid-mechanics surrogates, frozen representations can reduce training memory and time while supporting fields sampled on arbitrary point clouds.",
+      "key_insight": "A self-supervised functional autoencoder learns a reusable, task-agnostic latent space, separating function representation from neural operator training.",
+      "engineering_relevance": "For solid-mechanics surrogates, frozen representations can reduce operator-training memory and time while supporting fields sampled on arbitrary point clouds.",
       "method": [
-        "Pre-train on analytically generated functions without solvers or labels.",
-        "Freeze translation-, dilation-, and amplitude-equivariant representation maps and cache dataset embeddings.",
-        "Train task-specific neural operators in latent space and decode predicted fields."
+        "Pre-train a functional autoencoder on analytic functions synthesized without solvers or labels.",
+        "Freeze translation-, dilation-, and amplitude-equivariant representation maps, then train operators on cached embeddings.",
+        "Run predictions and rollouts in latent space, with chunked decoding for large fields."
       ],
-      "evidence_signal": "Across 28 tasks spanning solid mechanics and other PDE domains, the abstract reports accuracy that can exceed state-of-the-art end-to-end models, up to 10× higher throughput, and chunked inference on over half a billion points.",
-      "watch_item": "Accuracy and efficiency gains should be verified for the target mechanics regime; the abstract does not establish performance for every material law or boundary condition.",
+      "evidence_signal": "Across 28 tasks spanning solid mechanics, fluids, acoustics, Helmholtz, and Poisson equations, the abstract reports accuracy that can exceed state-of-the-art end-to-end models, up to an order-of-magnitude higher throughput, and inference on over half a billion points using one consumer-grade GPU.",
+      "watch_item": "For engineering deployment, validate transfer accuracy and physical fidelity on the intended geometries, boundary conditions, and material regimes; aggregate benchmarks do not guarantee reliability for every mechanics problem.",
       "hashtags": [
         "#SolidMechanics",
-        "#OperatorLearning",
+        "#NeuralOperators",
         "#SelfSupervisedLearning",
         "#LatentSpaces",
         "#ScientificMachineLearning"
@@ -48,7 +48,7 @@
       "paper_title": "Self-Supervised Learning of Universal Latent Spaces for Operator Learning",
       "paper_date": "2026-11-03",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:58:29",
+      "generated_at": "2026-11-06T16:30:22",
       "generator": "openai"
     }
   },
@@ -56,9 +56,9 @@
     "id": "2026-11-04-arxiv-a_tensor_network_chebyshev_galerkin_method_for_boundary_value_problems_in_computational_me",
     "arxiv_id": "2611.06552v1",
     "date": "2026-11-04",
-    "title": "A Tensor-Network Chebyshev--Galerkin Method for Boundary-Value Problems in Computational Mechanics",
+    "title": "A Tensor-Network Chebyshev-Galerkin Method for Boundary-Value Problems in Computational Mechanics",
     "authors": "Juan José Rodríguez-Aldavero, Ángel de la Rosa Velasco, Juan José García-Ripoll",
-    "abstract": "Quantum-inspired numerical methods for partial differential equations represent discretized fields and operators as quantics tensor trains (QTT), so that their cost depends on how compressible the problem is rather than on the number of unknowns. Global spectral formulations in this setting have so far relied on Fourier bases, restricted to periodic problems, or on collocation, which does not preserve the variational structure exploited by tensor-network solvers. We introduce a QTT Chebyshev--Galerkin method that assembles and solves global spectral systems directly in compressed form, without forming the underlying arrays. Starting from the weak formulation, the method handles coupled elliptic systems with variable coefficients, smoothly mapped geometries, and mixed Dirichlet--Robin boundary conditions, and yields symmetric positive-definite systems suited to variational tensor-network solvers. Parameters and random inputs enter as additional coordinates, so the same construction returns the solution over an entire parameter space in a single solve. In linear elasticity, the method retains spectral convergence and reaches errors below $10^{-8}$ on a three-dimensional benchmark, beyond those attained by QTT finite differences and Q2/Q4 FEniCSx finite elements over the tested range. A six-parameter cantilever design study covering $1.7\\times10^{7}$ designs is solved in a single 92~s run, and a stochastic problem with ten random coordinates is represented with $2.4\\times10^{6}$ times less memory than its full coefficient array.",
+    "abstract": "Quantum-inspired numerical methods for partial differential equations represent discretized fields and operators as quantics tensor trains (QTT), so that their cost depends on how compressible the problem is rather than on the number of unknowns. Global spectral formulations in this setting have so far relied on Fourier bases, restricted to periodic problems, or on collocation, which does not preserve the variational structure exploited by tensor-network solvers. We introduce a QTT Chebyshev-Galerkin method that assembles and solves global spectral systems directly in compressed form, without forming the underlying arrays. Starting from the weak formulation, the method handles coupled elliptic systems with variable coefficients, smoothly mapped geometries, and mixed Dirichlet-Robin boundary conditions, and yields symmetric positive-definite systems suited to variational tensor-network solvers. Parameters and random inputs enter as additional coordinates, so the same construction returns the solution over an entire parameter space in a single solve. In linear elasticity, the method retains spectral convergence and reaches errors below $10^{-8}$ on a three-dimensional benchmark, beyond those attained by QTT finite differences and Q2/Q4 FEniCSx finite elements over the tested range. A six-parameter cantilever design study covering $1.7\\times10^{7}$ designs is solved in a single 92s run, and a stochastic problem with ten random coordinates is represented with $2.4\\times10^{6}$ times less memory than its full coefficient array.",
     "category": "FEM Surrogates",
     "source": "arXiv",
     "published": "2026-11-04T14:16:51Z",
@@ -78,17 +78,17 @@
         "url": "https://arxiv.org/pdf/2611.06552v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "A quantics tensor-train (QTT) Chebyshev–Galerkin method solves global spectral boundary-value problems directly in compressed form while preserving their variational structure.",
-      "engineering_relevance": "The method enables accurate linear-elasticity analysis across large design and uncertainty spaces without explicitly storing full solution arrays.",
+      "key_insight": "A quantics tensor-train (QTT) Chebyshev–Galerkin method solves nonperiodic boundary-value problems directly in compressed form while preserving their variational structure.",
+      "engineering_relevance": "The method enables accurate elasticity analysis across large design and uncertainty spaces without storing every field coefficient explicitly.",
       "method": [
-        "Assemble weak-form spectral systems directly as QTT representations.",
-        "Handle variable coefficients, mapped geometries, and mixed Dirichlet–Robin conditions.",
-        "Treat parameters and random inputs as extra coordinates for a single joint solve."
+        "Assemble global Chebyshev–Galerkin systems from the weak formulation directly in QTT form.",
+        "Handle variable coefficients, smoothly mapped geometries, and mixed Dirichlet–Robin conditions.",
+        "Treat design parameters and random inputs as extra coordinates for a single joint solution."
       ],
-      "evidence_signal": "The abstract reports errors below 10⁻⁸ on a 3D elasticity benchmark, 1.7×10⁷ cantilever designs solved in 92 s, and 2.4×10⁶-fold memory reduction versus a full coefficient array for a ten-random-coordinate problem.",
-      "watch_item": "Computational savings depend on tensor compressibility; the reported benchmarks do not establish comparable gains for poorly compressible problems.",
+      "evidence_signal": "The abstract reports errors below 10⁻⁸ on a 3D elasticity benchmark, 1.7×10⁷ cantilever designs solved in 92 seconds, and 2.4×10⁶-fold coefficient-storage savings for a ten-random-coordinate problem.",
+      "watch_item": "Efficiency depends on tensor compressibility; the reported gains may not carry over to problems requiring high tensor ranks.",
       "hashtags": [
         "#ComputationalMechanics",
         "#TensorNetworks",
@@ -99,10 +99,63 @@
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
       "paper_id": "2026-11-04-arxiv-a_tensor_network_chebyshev_galerkin_method_for_boundary_value_problems_in_computational_me",
-      "paper_title": "A Tensor-Network Chebyshev--Galerkin Method for Boundary-Value Problems in Computational Mechanics",
+      "paper_title": "A Tensor-Network Chebyshev-Galerkin Method for Boundary-Value Problems in Computational Mechanics",
       "paper_date": "2026-11-04",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:58:32",
+      "generated_at": "2026-11-06T16:30:25",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-04-arxiv-finite_element_elastographic_analysis_of_kidney_mri_for_computational_assessment_of_chroni",
+    "arxiv_id": "2611.07135v1",
+    "date": "2026-11-04",
+    "title": "Finite Element Elastographic Analysis of Kidney MRI for Computational Assessment of Chronic Kidney Disease",
+    "authors": "A. Bhattacharjee, M. M. Rahman, A. Srivastava, E. H. Bhuiyan",
+    "abstract": "Background and Objective: Bridging kidney MRI with patient-specific computational biomechanics may enable accurate, noninvasive assessment of chronic kidney disease. To develop a finite element method (FEM)-based computational elastography framework for estimating renal biomechanical properties from conventional kidney MRI and to evaluate its ability to differentiate chronic kidney disease (CKD) from healthy controls. Methods: Kidney segmentation masks from healthy control and CKD subjects were converted into triangulated surface meshes, and watertight surfaces were tetrahedralized to create volumetric FEM meshes. Kidney tissue was modeled as a nearly incompressible Kelvin-Voigt viscoelastic material. Harmonic wave propagation simulations were performed using FEM, followed by Helmholtz-based elastographic inversion to estimate complex shear modulus distributions. Derived biomechanical parameters were used for CKD classification using machine learning models. Results: FEM-derived stiffness estimates showed consistency with stiffness ranges previously reported in human renal MRE studies and also showed measurable differences between healthy and CKD groups. Machine learning models trained on FEM-derived features achieved classification performance up to 86.26% cross-validation accuracy with an AUC of 0.92. Conclusion: FEM-derived elastographic parameters showed potential for distinguishing CKD from healthy tissue and may provide an alternative for renal biomechanical assessment without dedicated MRE acquisition.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-04T21:03:26Z",
+    "updated": "2026-11-04T21:03:26Z",
+    "primary_category": "eess.IV",
+    "categories": [
+      "eess.IV"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.07135v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.07135v1"
+      }
+    ],
+    "score": 68,
+    "infographic": {
+      "key_insight": "MRI-derived finite element elastography showed potential to distinguish CKD from healthy kidneys without dedicated MRE acquisition.",
+      "engineering_relevance": "The framework connects kidney geometry from conventional MRI to simulated viscoelastic responses and biomechanical features for computational disease assessment.",
+      "method": [
+        "Convert kidney segmentation masks into watertight surfaces and tetrahedral FEM meshes.",
+        "Simulate harmonic waves using a nearly incompressible Kelvin–Voigt tissue model.",
+        "Estimate complex shear modulus via Helmholtz inversion and classify CKD using machine learning."
+      ],
+      "evidence_signal": "FEM-derived stiffness was consistent with reported human renal MRE ranges, and classification reached 86.26% cross-validation accuracy with an AUC of 0.92.",
+      "watch_item": "Stiffness is inferred from simulated rather than measured wave fields; the abstract reports no direct patient-level MRE validation.",
+      "hashtags": [
+        "#FiniteElementMethod",
+        "#ComputationalBiomechanics",
+        "#KidneyMRI",
+        "#Elastography",
+        "#ChronicKidneyDisease"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-04-arxiv-finite_element_elastographic_analysis_of_kidney_mri_for_computational_assessment_of_chroni",
+      "paper_title": "Finite Element Elastographic Analysis of Kidney MRI for Computational Assessment of Chronic Kidney Disease",
+      "paper_date": "2026-11-04",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-11-06T16:30:27",
       "generator": "openai"
     }
   },
@@ -133,23 +186,23 @@
         "url": "https://arxiv.org/pdf/2611.04356v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "CloakFEM shows that valid, solvable FEM programs can act as efficiency attacks, dramatically increasing solver work without causing execution failure.",
-      "engineering_relevance": "Simulation services may need resource-aware safeguards because successful FEM execution does not guarantee computationally safe workloads.",
+      "key_insight": "CloakFEM generates valid, solvable FEM programs that expose resource-exhaustion vulnerabilities by sharply increasing solver work.",
+      "engineering_relevance": "FEM simulation services may need computational safeguards because successful completion does not guarantee reasonable resource use.",
       "method": [
-        "Use an LLM agent to search for computationally expensive FEM programs.",
-        "Guide generation with an FEM-specific intermediate representation.",
+        "Use a domain-guided LLM agent to search for adversarial FEM programs.",
+        "Represent candidates with an FEM-specific intermediate representation.",
         "Apply a deterministic validity gate to enforce runnable constraints."
       ],
-      "evidence_signal": "Across three FEM stacks, 17 problem classes, and 1,068 seeds, CloakFEM outperformed five generic black-box baselines; the largest reported iteration increase was 43 to 247,367 (5,752.72×).",
-      "watch_item": "Iteration amplification is not necessarily proportional to wall-clock slowdown, and vulnerability may depend on the solver and problem configuration.",
+      "evidence_signal": "Across three FEM stacks, 17 problem classes, and 1,068 seeds, CloakFEM outperformed five generic black-box baselines; the most extreme case increased solver iterations from 43 to 247,367 (5,752.72×).",
+      "watch_item": "Iteration amplification is not necessarily proportional to wall-clock slowdown, and vulnerability can depend on the solver and problem.",
       "hashtags": [
         "#FiniteElementMethod",
-        "#AIForEngineering",
-        "#LLMAgents",
-        "#ComputationalSecurity",
-        "#ScientificComputing"
+        "#ComputationalMechanics",
+        "#AgenticAI",
+        "#ScientificComputing",
+        "#ResourceExhaustion"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -157,7 +210,60 @@
       "paper_title": "CloakFEM: Agentic FEM Code Generation for Red-Teaming Computational Resource Exhaustion",
       "paper_date": "2026-11-03",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:58:34",
+      "generated_at": "2026-11-06T16:30:29",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-02-arxiv-two_level_additive_schwarz_preconditioners_with_gdsw_coarse_spaces_for_high_order_discreti",
+    "arxiv_id": "2611.03447v1",
+    "date": "2026-11-02",
+    "title": "Two-level additive Schwarz preconditioners with GDSW coarse spaces for high-order discretizations in 3D",
+    "authors": "Tommaso Bevilacqua, Axel Klawonn, Martin Lanser, Adam Wasiak",
+    "abstract": "Overlapping Schwarz methods are among the most successful domain decomposition preconditioners for large-scale finite element simulations. In this work, the Generalized Dryja-Smith-Widlund (GDSW), GDSW$^*$, and Reduced GDSW (RGDSW) coarse spaces are studied for three-dimensional high-order finite element method (FEM) and virtual element method (VEM) for the Poisson equation and the equations of linear elasticity. To the best of our knowledge, this is the first study of GDSW-type coarse spaces for polynomial degrees $k\\ge 3$ in three dimensions, for either discretization. In 3D VEM, the face degrees of freedom (DOFs) are moments instead of point values. The kernel of the differential operator, which defines the interface values of the GDSW coarse basis functions, must be represented through these moments. The construction is therefore no longer purely algebraic and, without this correction, the coarse level loses its effect for $k\\ge 3$. FEM and VEM are tested on hexahedral meshes, and VEM is additionally tested on polyhedral ones. Polynomial degrees up to $k=5$ and runs on up to $4\\,096$ subdomains and parallel cores are included in the numerical study. Numerical experiments show scalable iteration counts for all coarse space variants for the Poisson problem, illustrating the expected trade-off between the coarse space size and robustness. Further experiments for linear elasticity confirms that the moment-based construction extends naturally from the scalar to the vector-valued problem.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-02T16:58:17Z",
+    "updated": "2026-11-02T16:58:17Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.03447v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.03447v1"
+      }
+    ],
+    "score": 66,
+    "infographic": {
+      "key_insight": "GDSW-type coarse spaces support scalable high-order 3D Schwarz solvers, but VEM requires moment-based representation of operator kernels to preserve coarse-level effectiveness for k≥3.",
+      "engineering_relevance": "These preconditioners enable scalable parallel solution of high-order finite element and virtual element systems for Poisson and linear elasticity problems.",
+      "method": [
+        "Study two-level overlapping additive Schwarz preconditioners with GDSW, GDSW*, and RGDSW coarse spaces.",
+        "Represent operator kernels through face moments when constructing 3D VEM coarse bases.",
+        "Evaluate FEM and VEM on hexahedral meshes, plus VEM on polyhedral meshes."
+      ],
+      "evidence_signal": "Tests reach polynomial degree k=5 and 4,096 subdomains and parallel cores, showing scalable Poisson iteration counts across all coarse-space variants and extension to linear elasticity.",
+      "watch_item": "The VEM construction is not purely algebraic: omitting the face-moment correction makes the coarse level ineffective for k≥3.",
+      "hashtags": [
+        "#DomainDecomposition",
+        "#HighOrderFEM",
+        "#VirtualElementMethod",
+        "#ParallelSolvers",
+        "#ComputationalMechanics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-02-arxiv-two_level_additive_schwarz_preconditioners_with_gdsw_coarse_spaces_for_high_order_discreti",
+      "paper_title": "Two-level additive Schwarz preconditioners with GDSW coarse spaces for high-order discretizations in 3D",
+      "paper_date": "2026-11-02",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-11-06T16:30:33",
       "generator": "openai"
     }
   },
@@ -187,21 +293,21 @@
         "url": "https://arxiv.org/pdf/2611.02622v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Physics-informed neural networks identify plate orientations for near-isotropic, ultrastiff lattices, with six plates found to be the minimum required.",
-      "engineering_relevance": "These architectures offer a systematic route to lightweight structures with high specific stiffness and nearly direction-independent elastic response.",
+      "key_insight": "Physics-informed neural networks identify plate orientations for near-isotropic, ultrastiff closed-cell lattices, with six plates found to be the minimum required.",
+      "engineering_relevance": "The approach offers a systematic route to lightweight, stiff architectures with nearly direction-independent mechanical properties.",
       "method": [
         "Apply PINNs to analytical equations to solve for plate orientations.",
-        "Assemble orientations into closed-cell, quasi-random foam geometries and evaluate them using finite element simulations.",
-        "Additively manufacture six-plate geometries using LAPIS and characterize them experimentally."
+        "Assemble orientations into quasi-random foam-like geometries and validate using finite element simulations.",
+        "Additively manufacture six-plate lattices using LAPIS and characterize them experimentally."
       ],
       "evidence_signal": "Reported lattices reach 90% of the Hashin–Shtrikman stiffness upper bound at relative density 0.4 and a near-isotropic Zener ratio of 0.95 at relative density 0.1.",
-      "watch_item": "Suboptimal plate placement introduces bending, so orientation solutions alone do not guarantee realization of the theoretical stiffness limit.",
+      "watch_item": "Suboptimal plate placement introduces bending, so orientation solutions alone do not guarantee bound-level stiffness in assembled lattices.",
       "hashtags": [
         "#PhysicsInformedNeuralNetworks",
-        "#SolidMechanics",
         "#MechanicalMetamaterials",
+        "#SolidMechanics",
         "#IsotropicLattices",
         "#AdditiveManufacturing"
       ],
@@ -211,7 +317,7 @@
       "paper_title": "Derivation of Novel Isotropic Metamaterials at the Hashin Shtrikman Stiffness Limit Enabled by Physics Informed Neural Networks",
       "paper_date": "2026-11-02",
       "paper_category": "Composites and Metamaterials",
-      "generated_at": "2026-11-05T16:58:41",
+      "generated_at": "2026-11-06T16:30:35",
       "generator": "openai"
     }
   },
@@ -240,17 +346,17 @@
         "url": "https://arxiv.org/pdf/2611.06012v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Auxiliary-space multigrid preconditioners remove the need for nested conforming coarse meshes by building the hierarchy through arbitrary mesh agglomeration.",
-      "engineering_relevance": "The approach offers robust preconditioning for conforming finite element systems on general domains where constructing conforming coarse meshes is difficult.",
+      "key_insight": "Auxiliary-space multigrid preconditioners let conforming finite element solvers use arbitrarily agglomerated coarse meshes without requiring conforming coarse meshes.",
+      "engineering_relevance": "The approach offers a flexible route to preconditioning finite element systems on complex engineering geometries.",
       "method": [
-        "Couple fine-mesh conforming Lagrange elements to coarse polytopal DG or hybrid high-order discretisations.",
-        "Transfer coarse solutions by element-wise interpolation and nodal averaging, with local potential reconstruction for the hybrid high-order variant.",
-        "Apply multigrid on further agglomerated meshes using point-Jacobi or vertex-star additive Schwarz smoothing."
+        "Precondition fine-mesh conforming Lagrange elements using a coarse polytopal DG or hybrid high-order discretisation.",
+        "Build subsequent multigrid levels entirely by mesh agglomeration.",
+        "Transfer coarse solutions by element-wise interpolation and nodal averaging, with local potential reconstruction for hybrid high-order elements."
       ],
-      "evidence_signal": "Condition-number bounds scale as O((H/h)^3), improving to O((H/h)^2) for DG with appropriately scaled penalties; 2D and 3D tests on structured and unstructured meshes confirm robustness.",
-      "watch_item": "The bounds worsen with the coarsening ratio H/h, so aggressive agglomeration may reduce preconditioner effectiveness.",
+      "evidence_signal": "Experiments in 2D and 3D on structured and unstructured meshes with automatically clustered agglomerates support preconditioner robustness.",
+      "watch_item": "The proven condition-number bound grows as O((H/h)^3), improving to O((H/h)^2) for DG with appropriately scaled penalties, so aggressive coarsening warrants care.",
       "hashtags": [
         "#FiniteElementMethods",
         "#GeometricMultigrid",
@@ -264,7 +370,7 @@
       "paper_title": "Geometric Multigrid Preconditioners for conforming Finite Element Methods on Arbitrarily Agglomerated Meshes",
       "paper_date": "2026-11-04",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:58:44",
+      "generated_at": "2026-11-06T16:30:38",
       "generator": "openai"
     }
   },
@@ -294,22 +400,22 @@
         "url": "https://arxiv.org/pdf/2611.05327v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Direct interpolation followed by constraint optimization enables minimally diffusive ALE remapping while enforcing global conservation and physical bounds.",
-      "engineering_relevance": "The approach supports high-order hydrodynamics simulations with large Lagrangian mesh displacements while preserving sharp features and conserving volume, mass, momentum, and total energy.",
+      "key_insight": "Direct interpolation followed by constrained optimization enables minimally diffusive ALE remapping while enforcing physical bounds and global conservation.",
+      "engineering_relevance": "The approach supports high-order hydrodynamics simulations with large mesh displacements while conserving volume, mass, momentum, and total energy.",
       "method": [
-        "Transfer fields by direct physical-space interpolation using parallel, GPU-capable routines.",
+        "Transfer fields through direct physical-space interpolation rather than PDE-based advection.",
         "Restore global conservation through optimization while preserving physical bounds.",
         "Remap arbitrary-order finite element fields and integration-point quantities without intermediate projection."
       ],
-      "evidence_signal": "The method is evaluated on standard 2D and 3D remap benchmarks and full ALE hydrodynamics simulations; the abstract reports no quantitative performance metrics.",
-      "watch_item": "The computational cost and parallel scalability of the conservation-restoring optimization require assessment for large simulations.",
+      "evidence_signal": "The method is evaluated on standard 2D and 3D remap benchmarks and full ALE hydrodynamics simulations; the abstract provides no quantitative results.",
+      "watch_item": "The scalability and computational cost of the conservation-restoring optimization require assessment for large production simulations.",
       "hashtags": [
         "#ALEHydrodynamics",
-        "#FiniteElementMethods",
+        "#FiniteElements",
+        "#ConstrainedOptimization",
         "#ConservativeRemapping",
-        "#ConstraintOptimization",
         "#ComputationalMechanics"
       ],
       "model": "gpt-6.1-sol",
@@ -318,7 +424,61 @@
       "paper_title": "Remap for ALE Hydrodynamics via Direct Interpolation and Constraint Optimization",
       "paper_date": "2026-11-03",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:58:47",
+      "generated_at": "2026-11-06T16:30:40",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-05-arxiv-trapping_and_fracture_of_particles_in_three_sphere_ball_milling_collisions",
+    "arxiv_id": "2611.08435v1",
+    "date": "2026-11-05",
+    "title": "Trapping and Fracture of Particles in Three-Sphere Ball-Milling Collisions",
+    "authors": "Ziyi Cui, Qiong Zhang, Suwei Liu, Richard M. Lueptow",
+    "abstract": "We numerically investigate the collision and fracture processes of ball milling based on a minimal model of a three-sphere geometry using discrete element method (DEM) simulations combined with Christensen-type and Weibull-type normalized fracture criteria. The outcome of the brittle target particle (ejected versus trapped, fractured versus intact) depends on the impact geometry and velocity. We develop a reduced three-sphere collision description in which trapping is governed by impact geometry and friction, while fracture inside the trapping regime is evaluated from DEM output using stress-based and contact-force-based normalized criteria. The trapping regime follows a closed-form geometric condition, while the critical conditions for fracture vary with impact angle, obliquity angle, impact velocity, and particle size ratio. Head-on collisions with larger size ratios require lower critical impact velocities for fracture.",
+    "category": "Fracture and Damage",
+    "source": "arXiv",
+    "published": "2026-11-05T18:28:30Z",
+    "updated": "2026-11-05T18:28:30Z",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft",
+      "physics.app-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.08435v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.08435v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "A minimal three-sphere model separates geometry- and friction-controlled particle trapping from fracture, with head-on impacts requiring lower fracture velocities at larger particle size ratios.",
+      "engineering_relevance": "The model can help guide ball-milling impact conditions toward particle capture and breakage rather than ejection.",
+      "method": [
+        "Simulate three-sphere collisions using the discrete element method (DEM).",
+        "Determine trapping with a closed-form geometric condition accounting for friction.",
+        "Evaluate fracture using Christensen-type stress and Weibull-type contact-force normalized criteria."
+      ],
+      "evidence_signal": "DEM results show that particle outcomes and fracture thresholds depend on impact angle, obliquity, velocity, and particle size ratio.",
+      "watch_item": "The reduced three-sphere model may not capture collective interactions in a full mill, and the abstract reports no experimental validation.",
+      "hashtags": [
+        "#BallMilling",
+        "#DiscreteElementMethod",
+        "#ParticleFracture",
+        "#GranularMechanics",
+        "#ComputationalMechanics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-05-arxiv-trapping_and_fracture_of_particles_in_three_sphere_ball_milling_collisions",
+      "paper_title": "Trapping and Fracture of Particles in Three-Sphere Ball-Milling Collisions",
+      "paper_date": "2026-11-05",
+      "paper_category": "Fracture and Damage",
+      "generated_at": "2026-11-06T16:30:42",
       "generator": "openai"
     }
   },
@@ -350,23 +510,23 @@
         "url": "https://arxiv.org/pdf/2611.03485v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Exact boundary and initial constraints enable PINNs to identify the shear piezoelectric coefficient e15 accurately from sparse, noisy simulated wavefields.",
-      "engineering_relevance": "The approach could support nondestructive characterization of shear electromechanical coupling in PMUTs and SAW devices without dedicated destructive resonance tests.",
+      "key_insight": "Exact boundary and initial constraints enable PINNs to identify the shear piezoelectric coefficient e15 accurately from sparse, noisy simulated wavefields without tuning boundary or initial-condition penalty weights.",
+      "engineering_relevance": "The approach could support non-destructive characterization of shear-mode coupling in PMUTs and SAW devices, potentially replacing dedicated destructive resonance tests.",
       "method": [
-        "Embed spatial distance functions and temporal multipliers into network outputs to enforce boundary and initial conditions exactly.",
-        "Train against coupled electro-elastodynamic equations and sparse observations, eliminating boundary and initial-condition penalty weights.",
-        "Nondimensionalize governing coefficients to comparable scales for optimization."
+        "Embed spatial distance functions and temporal multipliers into network outputs to enforce clamped, grounded boundaries and a resting initial state exactly.",
+        "Train using coupled electro-elastodynamic equations and observation misfit, with non-dimensional scaling to balance governing coefficients.",
+        "Use a quadratic temporal multiplier to reduce early-time electrostatic residuals."
       ],
-      "evidence_signal": "Across six formulations on manufactured data at 30 dB, constrained PINNs achieved 0.15–0.51% mean e15 error; the full formulation achieved 1.19% on finite-element data sampled along one subsurface line.",
-      "watch_item": "Validation uses simulated plane-strain data; robustness to experimental noise, model mismatch, and real device geometries remains unestablished.",
+      "evidence_signal": "On simulated plane-strain PZT-5H data, constrained variants achieved 0.15–0.51% mean e15 error in a six-way comparison; the full formulation achieved 1.19% on finite-element data at 30 dB noise.",
+      "watch_item": "Validation is limited to simulated data; experimental robustness and construction of exact constraint functions for complex device geometries remain untested.",
       "hashtags": [
         "#PhysicsInformedML",
         "#SolidMechanics",
         "#Piezoelectricity",
         "#InverseProblems",
-        "#NondestructiveTesting"
+        "#NonDestructiveTesting"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -374,60 +534,60 @@
       "paper_title": "Identifying the Shear Piezoelectric Coefficient using Physics-Informed Neural Networks under Exact Boundary and Initial Constraints",
       "paper_date": "2026-11-02",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-11-05T16:58:49",
+      "generated_at": "2026-11-06T16:30:45",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-11-02-arxiv-two_level_additive_schwarz_preconditioners_with_gdsw_coarse_spaces_for_high_order_discreti",
-    "arxiv_id": "2611.03447v1",
-    "date": "2026-11-02",
-    "title": "Two-level additive Schwarz preconditioners with GDSW coarse spaces for high-order discretizations in 3D",
-    "authors": "Tommaso Bevilacqua, Axel Klawonn, Martin Lanser, Adam Wasiak",
-    "abstract": "Overlapping Schwarz methods are among the most successful domain decomposition preconditioners for large-scale finite element simulations. In this work, the Generalized Dryja-Smith-Widlund (GDSW), GDSW$^*$, and Reduced GDSW (RGDSW) coarse spaces are studied for three-dimensional high-order finite element method (FEM) and virtual element method (VEM) for the Poisson equation and the equations of linear elasticity. To the best of our knowledge, this is the first study of GDSW-type coarse spaces for polynomial degrees $k\\ge 3$ in three dimensions, for either discretization. In 3D VEM, the face degrees of freedom (DOFs) are moments instead of point values. The kernel of the differential operator, which defines the interface values of the GDSW coarse basis functions, must be represented through these moments. The construction is therefore no longer purely algebraic and, without this correction, the coarse level loses its effect for $k\\ge 3$. FEM and VEM are tested on hexahedral meshes, and VEM is additionally tested on polyhedral ones. Polynomial degrees up to $k=5$ and runs on up to $4\\,096$ subdomains and parallel cores are included in the numerical study. Numerical experiments show scalable iteration counts for all coarse space variants for the Poisson problem, illustrating the expected trade-off between the coarse space size and robustness. Further experiments for linear elasticity confirms that the moment-based construction extends naturally from the scalar to the vector-valued problem.",
-    "category": "FEM Surrogates",
+    "id": "2026-11-05-arxiv-finite_element_reconstruction_of_molten_zone_dynamics_and_chemical_segregation_in_optical",
+    "arxiv_id": "2611.08250v1",
+    "date": "2026-11-05",
+    "title": "Finite-element reconstruction of molten-zone dynamics and chemical segregation in optical floating-zone grown Ni--Mn--Ga",
+    "authors": "Denys Musiienko, Taras Kovaliuk, Petr Harcuba, Oleg Heczko, Ross H. Colman",
+    "abstract": "Homogeneous single-crystal growth of Ni--Mn--Ga magnetic shape-memory alloys is limited by incongruent melting, Mn reactivity, and longitudinal composition segregation. We report a modified optical floating-zone method in which growth is performed inside a transparent sapphire crucible, stabilising the molten zone while preserving optical heating and visual monitoring. The resulting crystals show improved growth reproducibility and controlled macroscopic geometry. To interpret the measured segregation profiles, a transient finite-element heat-transfer model in COMSOL Multiphysics was coupled to an effective molten-zone mass-balance calculation. The model reveals that the local solidification velocity is not fixed by the imposed translation speed but varies strongly as the molten-zone geometry evolves. The calculated solidification-front geometry is independently supported by EBSD analysis of a quenched growth interface, while the coupled mass-balance calculation reproduces the dominant features of the measured composition profiles. These results show that deviations from ideal Scheil--Pfann behaviour arise from the evolving molten-zone geometry and solidification conditions. The experimentally constrained model therefore provides a practical means of reconstructing otherwise inaccessible growth conditions and a basis for optimisation of sapphire-confined floating-zone growth of incongruently melting alloys.",
+    "category": "AI Solid Mechanics",
     "source": "arXiv",
-    "published": "2026-11-02T16:58:17Z",
-    "updated": "2026-11-02T16:58:17Z",
-    "primary_category": "math.NA",
+    "published": "2026-11-05T16:27:23Z",
+    "updated": "2026-11-05T16:27:23Z",
+    "primary_category": "cond-mat.mtrl-sci",
     "categories": [
-      "math.NA"
+      "cond-mat.mtrl-sci"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.03447v1"
+        "url": "https://arxiv.org/abs/2611.08250v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.03447v1"
+        "url": "https://arxiv.org/pdf/2611.08250v1"
       }
     ],
-    "score": 66,
+    "score": 59,
     "infographic": {
-      "key_insight": "GDSW-type coarse spaces enable scalable high-order 3D Schwarz preconditioning, but VEM requires moment-correct representations of the operator kernel to retain coarse-level effectiveness for k ≥ 3.",
-      "engineering_relevance": "These preconditioners support parallel finite element and virtual element simulations of Poisson and linear elasticity problems.",
+      "key_insight": "Evolving molten-zone geometry changes local solidification velocity, helping explain chemical segregation in sapphire-confined floating-zone growth of Ni–Mn–Ga.",
+      "engineering_relevance": "Sapphire confinement improves growth reproducibility and macroscopic geometry control, while physics-based reconstruction supports optimisation of more compositionally uniform crystals.",
       "method": [
-        "Study two-level additive Schwarz preconditioners with GDSW, GDSW*, and reduced GDSW coarse spaces.",
-        "Represent operator-kernel interface values through face moments for high-order 3D VEM.",
-        "Evaluate FEM on hexahedral meshes and VEM on hexahedral and polyhedral meshes."
+        "Grow Ni–Mn–Ga inside a transparent sapphire crucible using optical floating-zone heating.",
+        "Couple transient COMSOL finite-element heat transfer to an effective molten-zone mass balance.",
+        "Compare reconstructed interface geometry and segregation with EBSD and measured composition profiles."
       ],
-      "evidence_signal": "Tests reach polynomial degree k = 5 and 4,096 subdomains and parallel cores, showing scalable Poisson iteration counts across all coarse-space variants and extension of the moment-based construction to linear elasticity.",
-      "watch_item": "The VEM coarse-space construction is not purely algebraic: omitting the face-moment correction makes the coarse level ineffective for k ≥ 3.",
+      "evidence_signal": "EBSD of a quenched interface independently supports the calculated front geometry, and the coupled model reproduces dominant features of measured composition profiles.",
+      "watch_item": "The abstract reports no quantitative prediction errors; the effective mass-balance model may need validation across other growth conditions.",
       "hashtags": [
-        "#DomainDecomposition",
-        "#AdditiveSchwarz",
-        "#HighOrderFEM",
-        "#VirtualElementMethod",
-        "#ParallelComputing"
+        "#FiniteElementAnalysis",
+        "#CrystalGrowth",
+        "#NiMnGa",
+        "#ChemicalSegregation",
+        "#ComputationalMaterials"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
-      "paper_id": "2026-11-02-arxiv-two_level_additive_schwarz_preconditioners_with_gdsw_coarse_spaces_for_high_order_discreti",
-      "paper_title": "Two-level additive Schwarz preconditioners with GDSW coarse spaces for high-order discretizations in 3D",
-      "paper_date": "2026-11-02",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:58:52",
+      "paper_id": "2026-11-05-arxiv-finite_element_reconstruction_of_molten_zone_dynamics_and_chemical_segregation_in_optical",
+      "paper_title": "Finite-element reconstruction of molten-zone dynamics and chemical segregation in optical floating-zone grown Ni--Mn--Ga",
+      "paper_date": "2026-11-05",
+      "paper_category": "AI Solid Mechanics",
+      "generated_at": "2026-11-06T16:30:48",
       "generator": "openai"
     }
   },
@@ -456,22 +616,22 @@
         "url": "https://arxiv.org/pdf/2611.06288v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "For high-wavenumber Helmholtz equations in 2D and 3D, the paper proves optimal inf-sup scaling μ ≍ k⁻¹ for full-space and truncated uniaxial perfectly matched layers, enabling preasymptotic CIP-FEM error estimates.",
-      "engineering_relevance": "These results strengthen the theoretical basis for finite-element simulation of high-frequency waves with absorbing layers that represent unbounded domains.",
+      "key_insight": "For high-wavenumber Helmholtz problems, the paper proves optimal inf-sup scaling μ ≍ k⁻¹ for full-space and truncated uniaxial perfectly matched layers, enabling preasymptotic CIP-FEM error estimates.",
+      "engineering_relevance": "These results support reliable finite-element simulation of high-frequency wave propagation using absorbing layers to truncate unbounded domains.",
       "method": [
-        "Establish wavenumber-explicit stability for full-space UPML.",
-        "Transfer optimal inf-sup estimates to truncated UPML.",
+        "Analyze full-space UPML stability in two and three dimensions.",
+        "Transfer optimal stability estimates to truncated UPML domains.",
         "Derive preasymptotic error estimates for linear continuous interior penalty FEM."
       ],
-      "evidence_signal": "Numerical simulations confirm the theoretical predictions and demonstrate CIP-FEM effectiveness at high wavenumbers; the abstract provides no quantitative benchmarks.",
-      "watch_item": "The stability guarantees require sufficiently large wavenumbers and specified absorption-profile regularity and small-derivative conditions near the onset of absorption.",
+      "evidence_signal": "Numerical simulations confirm the theoretical predictions and demonstrate CIP-FEM effectiveness at high wavenumbers, though the abstract reports no quantitative benchmarks.",
+      "watch_item": "The stability guarantees require sufficiently large wavenumbers and a prescribed piecewise-power absorption profile with controlled derivatives where absorption is small.",
       "hashtags": [
         "#HelmholtzEquation",
         "#CIPFEM",
         "#PerfectlyMatchedLayers",
-        "#WaveSimulation",
+        "#WavePropagation",
         "#NumericalAnalysis"
       ],
       "model": "gpt-6.1-sol",
@@ -480,7 +640,7 @@
       "paper_title": "Optimal stability estimates and preasymptotic error analysis of the CIP-FEM for the Helmholtz equation with uniaxial perfectly matched layers",
       "paper_date": "2026-11-04",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:58:55",
+      "generated_at": "2026-11-06T16:30:50",
       "generator": "openai"
     }
   },
@@ -509,17 +669,17 @@
         "url": "https://arxiv.org/pdf/2611.05065v1"
       }
     ],
-    "score": 64,
+    "score": 59,
     "infographic": {
-      "key_insight": "Process-zone condensation reduces nonlinear composite-cell solves without training while remaining exact relative to the full discretization as long as the eliminated region stays elastic.",
-      "engineering_relevance": "The method can accelerate FE² simulations of composites with fibre–matrix debonding and matrix plasticity while preserving macroscopic stress and consistent tangent accuracy.",
+      "key_insight": "Process-zone condensation reproduces the full discretized cell response without training while the eliminated matrix region remains elastic.",
+      "engineering_relevance": "The method can accelerate FE² analysis of composites with fibre–matrix debonding and matrix plasticity while preserving stress and consistent-tangent accuracy.",
       "method": [
-        "Schur-condense the linear elastic remainder, retaining all interface and process-zone internal variables.",
+        "Schur-condense the linear elastic remainder, retaining interface and process-zone internal variables.",
         "Recover macroscopic stress and consistent tangent using influence matrices.",
-        "Back-substitute once per increment to check elasticity outside the retained zone and expand it when needed."
+        "Check the eliminated matrix region by back-substitution each increment; expand the retained zone when needed."
       ],
-      "evidence_signal": "Eight of nine 2D paths matched full-cell stress and tangent to 1e-11, with the ninth flagged; aggregate 2D path speed-up was 3.3× excluding setup and checks, while adaptive plate FE² achieved 1.51× for glass/polypropylene.",
-      "watch_item": "Speed-up is not guaranteed: certified 3D zones showed none, glass/epoxy plate simulations were slower, and efficiency depends on zone size, active sets and adaptation costs.",
+      "evidence_signal": "Eight of nine 2D paths matched full-cell stress and tangent to 1e-11, with the ninth flagged; aggregate 2D speed-up was 3.3× excluding setup and checks, while plate FE² achieved 1.51× for glass/polypropylene.",
+      "watch_item": "Speed-up depends on zone size, active set and adaptation costs: certified 3D zones showed no gain, and glass/epoxy plate FE² was slower.",
       "hashtags": [
         "#ComputationalMechanics",
         "#MultiscaleModeling",
@@ -533,7 +693,60 @@
       "paper_title": "Process-zone condensation: a discretization-exact reduced cell model for FE$^2$ analysis of composites with fibre-matrix debonding and matrix plasticity",
       "paper_date": "2026-11-03",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-11-05T16:58:58",
+      "generated_at": "2026-11-06T16:30:52",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-05-arxiv-a_second_order_semi_implicit_projection_time_stepping_scheme_for_the_shallow_water_equatio",
+    "arxiv_id": "2611.08169v1",
+    "date": "2026-11-05",
+    "title": "A Second-Order Semi-Implicit Projection Time-Stepping Scheme for the Shallow-Water Equations on the Sphere Using Compatible Finite Elements",
+    "authors": "Karina Kowalczyk, Colin Cotter",
+    "abstract": "We propose a second-order, semi-implicit time-stepping scheme for the shallow-water equations on the sphere discretised with compatible finite elements. The scheme splits the advection operator from the wave operator, applying a DG-upwind SSPRK3 method to the advection part and an $H(\\text{div})$-conforming implicit discretisation to the wave part, solved efficiently via hybridisation. The scheme follows a three-step symmetric splitting: an explicit half-step, a full advection step, and an implicit half-step that simultaneously projects the velocity back into the $H(\\text{div})$ space. This symmetry guarantees global second-order accuracy and confines the stability restriction to the CFL condition of the advection step alone. The time-step can therefore be extended beyond this limit by subcycling the advection step without additional implicit solves. The method is implemented in Firedrake and validated against a standard suite of spherical shallow-water benchmarks, demonstrating stable results for Courant numbers up to 1 (with two advection subcycles) with second-order finite elements, second-order convergence, and good parallel scaling.",
+    "category": "FEM Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-05T15:27:56Z",
+    "updated": "2026-11-05T15:27:56Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.08169v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.08169v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "A symmetric semi-implicit projection scheme achieves second-order shallow-water time integration on the sphere while restricting stability by advection rather than fast waves.",
+      "engineering_relevance": "The method supports larger time steps for spherical geophysical flow simulations, with advection subcycling requiring no additional implicit solves.",
+      "method": [
+        "Use compatible finite elements to separate advection and wave dynamics.",
+        "Apply an explicit half-step, a DG-upwind SSPRK3 advection step, and an implicit half-step that projects velocity into H(div).",
+        "Solve the implicit wave system efficiently through hybridisation in Firedrake."
+      ],
+      "evidence_signal": "Standard spherical shallow-water benchmarks show second-order convergence, stable results at Courant numbers up to 1 with two advection subcycles and second-order finite elements, and good parallel scaling.",
+      "watch_item": "Reported stability is benchmark-specific; advection subcycling still must respect its CFL restriction and adds explicit computational work.",
+      "hashtags": [
+        "#ShallowWaterEquations",
+        "#CompatibleFiniteElements",
+        "#SemiImplicitMethods",
+        "#GeophysicalSimulation",
+        "#Firedrake"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-05-arxiv-a_second_order_semi_implicit_projection_time_stepping_scheme_for_the_shallow_water_equatio",
+      "paper_title": "A Second-Order Semi-Implicit Projection Time-Stepping Scheme for the Shallow-Water Equations on the Sphere Using Compatible Finite Elements",
+      "paper_date": "2026-11-05",
+      "paper_category": "FEM Surrogates",
+      "generated_at": "2026-11-06T16:30:55",
       "generator": "openai"
     }
   },
@@ -562,22 +775,22 @@
         "url": "https://arxiv.org/pdf/2611.06733v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "A finite element model couples a pure fluid to a deformable poroelastic medium while allowing velocity and pressure jumps and dissipation at their interface.",
-      "engineering_relevance": "Interface modeling significantly affects predicted fluid–porous structure behavior, making it important for reliable coupled-flow and deformation simulations.",
+      "key_insight": "A finite element model couples pure fluid flow with a deformable poroelastic medium while capturing interface dissipation that significantly affects system behavior.",
+      "engineering_relevance": "The formulation supports simulations of fluid–porous structure interaction where interface transport and traction transfer influence deformation and flow.",
       "method": [
-        "Use mixture theory and an arbitrary Lagrangian–Eulerian formulation in both domains.",
-        "Represent skeleton deformation and fluid mesh motion with a globally continuous displacement field.",
-        "Enforce normal filtration continuity with a Lagrange multiplier and momentum jump conditions that account for traction transfer and interface dissipation."
+        "Use mixture theory and an arbitrary Lagrangian–Eulerian formulation for fluid and poroelastic domains.",
+        "Allow discontinuous fluid velocity and pressure across the interface, with a globally continuous displacement field.",
+        "Enforce normal filtration-velocity continuity through a Lagrange multiplier and incorporate dissipative momentum jump conditions."
       ],
-      "evidence_signal": "Manufactured-solution tests show satisfactory convergence, an analytical benchmark is reproduced, and a sample problem compares inert and fully dissipative interfaces.",
-      "watch_item": "The abstract reports numerical verification rather than experimental validation; the interface dissipation model requires careful selection for each application.",
+      "evidence_signal": "Manufactured-solution tests showed satisfactory convergence, a benchmark reproduced an analytical solution, and a sample problem compared inert and fully dissipative interfaces.",
+      "watch_item": "The abstract reports numerical verification but no experimental validation; interface dissipation must be chosen carefully because it strongly influences predictions.",
       "hashtags": [
         "#FiniteElementMethod",
-        "#Poroelasticity",
         "#FluidStructureInteraction",
-        "#InterfaceDissipation",
+        "#Poroelasticity",
+        "#InterfaceMechanics",
         "#ComputationalMechanics"
       ],
       "model": "gpt-6.1-sol",
@@ -586,7 +799,7 @@
       "paper_title": "A Finite Element Model for Fluid--Poroelastic Structure Interaction with Dissipative Interface",
       "paper_date": "2026-11-04",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:59:00",
+      "generated_at": "2026-11-06T16:30:58",
       "generator": "openai"
     }
   },
@@ -615,22 +828,22 @@
         "url": "https://arxiv.org/pdf/2611.05741v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "OUCH combines pneumatic actuation with focused indenter geometry to deliver controlled wrist stimulation and elicit discomfort at approximately 89% lower applied force than a handheld pressure algometer.",
-      "engineering_relevance": "A compact wearable actuator could standardize stimulus delivery for neurological assessment while reducing reliance on variable manual techniques.",
+      "key_insight": "OUCH combines pneumatic actuation with a focused indenter to evoke discomfort at approximately 89% lower applied force than a handheld pressure algometer in preliminary testing.",
+      "engineering_relevance": "A compact wrist-worn device could standardize mechanical stimulation for neurological assessment while reducing reliance on variable manual application.",
       "method": [
         "Stacked pneumatic pouch actuators drive a rigid indenter.",
         "A compliant spacer buckles at a set load, allowing skin contact only during actuation.",
-        "Finite element analysis and deformable-testbed measurements characterize tissue loading."
+        "Finite element analysis and physical testing characterize contact mechanics and tissue deformation."
       ],
-      "evidence_signal": "Blocked-force tests, clinician evaluation, finite element analysis, and preliminary perceptual testing supported an estimated contact pressure of 18,500 kPa at 200 kPa inflation and comparable deformation at depth to the algometer.",
-      "watch_item": "Preliminary discomfort results do not establish safety or diagnostic validity in patients with disorders of consciousness.",
+      "evidence_signal": "Evaluation included blocked-force tests, clinician evaluation, finite element analysis, a deformable testbed, and preliminary perceptual testing; at 200 kPa inflation, estimated contact pressure reached 18,500 kPa—over 25 times the algometer tip's pressure.",
+      "watch_item": "Preliminary discomfort results do not establish clinical assessment accuracy or repeated-use skin safety in patients with disorders of consciousness.",
       "hashtags": [
         "#SoftRobotics",
         "#Haptics",
+        "#ContactMechanics",
         "#FiniteElementAnalysis",
-        "#Biomechanics",
         "#NeurologicalAssessment"
       ],
       "model": "gpt-6.1-sol",
@@ -639,7 +852,7 @@
       "paper_title": "OUCH: Objective, Uniform, Controlled Haptic Stimulation for Automated Neurological Assessment",
       "paper_date": "2026-11-03",
       "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:59:03",
+      "generated_at": "2026-11-06T16:31:00",
       "generator": "openai"
     }
   },
@@ -668,17 +881,17 @@
         "url": "https://arxiv.org/pdf/2611.03293v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
-      "key_insight": "ENGINE couples low-variance subspace updates with high-dimensional corrections to improve zeroth-order LLM fine-tuning without additional peak memory overhead.",
-      "engineering_relevance": "It transfers variational multiscale ideas from computational mechanics to memory-efficient optimization of large language models.",
+      "key_insight": "ENGINE uses high-dimensional probes to correct low-dimensional zeroth-order updates, reducing the trade-off between gradient variance and information loss in LLM fine-tuning.",
+      "engineering_relevance": "It transfers variational multiscale ideas from computational mechanics to memory-efficient LLM optimization.",
       "method": [
-        "Treat low-dimensional and full parameter spaces as resolved coarse and unresolved fine scales.",
-        "Alternate between scales using a multigrid-style V-cycle.",
-        "Probe fine-scale information to correct coarse-space sampling and updates."
+        "Treat low-dimensional and full-parameter spaces as resolved coarse and unresolved fine scales.",
+        "Alternate between scales through a multigrid-style V-cycle.",
+        "Inject fine-scale information into coarse updates to reduce variance and curvature-induced bias."
       ],
-      "evidence_signal": "On standard LLM benchmarks, the abstract reports higher accuracy and faster convergence than existing zeroth-order methods, with up to 2.61× speed-up measured in forward passes and zero additional peak memory overhead.",
-      "watch_item": "Theoretical guarantees depend on assumptions, and forward-pass savings do not necessarily translate directly into wall-clock speed-ups.",
+      "evidence_signal": "On standard LLM benchmarks, the abstract reports higher accuracy and faster convergence than existing zeroth-order methods, with up to 2.61× speed-up in forward passes and no additional peak memory overhead.",
+      "watch_item": "The theoretical guarantees depend on assumptions, and the abstract does not specify benchmark-level variability or practical subspace-selection requirements.",
       "hashtags": [
         "#AISolidMechanics",
         "#VariationalMultiscale",
@@ -692,7 +905,61 @@
       "paper_title": "ENGINE: Endogenous Variational MultiScale Optimization for Zeroth-Order LLM Fine-Tuning",
       "paper_date": "2026-11-02",
       "paper_category": "AI Solid Mechanics",
-      "generated_at": "2026-11-05T16:59:05",
+      "generated_at": "2026-11-06T16:31:03",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-05-arxiv-permanent_and_transient_representations_for_continual_reinforcement_learning",
+    "arxiv_id": "2611.07327v1",
+    "date": "2026-11-05",
+    "title": "Permanent and Transient Representations for Continual Reinforcement Learning",
+    "authors": "Nishanth Anand, Doina Precup",
+    "abstract": "Continual Reinforcement Learning (CRL) agents struggle to adapt to new situations while retaining prior knowledge, leading to a stability-plasticity trade-off. One approach to solving this problem is by using complementary learning systems: one for slow, long-term learning and another for quick, transient adaptation. Anand & Precup (2023) instantiated this idea using permanent and transient value functions, but used the same features in both systems. Intuitively, long-term learning should rely more on parametric representations for broad generalization, while transient learning would be best served by non-parametric representations for situation-specific adaptation. In this paper, we explore this idea both theoretically and empirically. By introducing a novel non-parametric approximation for estimating the transient value function in complex tasks, we demonstrate that our method enables online learning and outperforms competitive baselines on image-based tasks and Craftax-Classic, underscoring the effectiveness of our system-level decomposition.",
+    "category": "Constitutive Modeling",
+    "source": "arXiv",
+    "published": "2026-11-05T02:11:47Z",
+    "updated": "2026-11-05T02:11:47Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.07327v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.07327v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "Separating permanent parametric representations from transient non-parametric representations helps continual reinforcement learning balance knowledge retention with rapid adaptation.",
+      "engineering_relevance": "This architecture may inform adaptive engineering control, but the abstract provides no solid-mechanics or constitutive-modeling validation.",
+      "method": [
+        "Decompose value estimation into permanent and transient components.",
+        "Use parametric representations for long-term generalization.",
+        "Introduce a non-parametric transient value approximation for online, situation-specific adaptation."
+      ],
+      "evidence_signal": "The abstract reports theoretical and empirical investigation, with performance exceeding competitive baselines on image-based tasks and Craftax-Classic.",
+      "watch_item": "Memory and computational scaling of the non-parametric component require scrutiny; the abstract gives no resource-cost measurements.",
+      "hashtags": [
+        "#ContinualReinforcementLearning",
+        "#RepresentationLearning",
+        "#ComplementaryLearningSystems",
+        "#OnlineLearning",
+        "#AdaptiveControl"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-05-arxiv-permanent_and_transient_representations_for_continual_reinforcement_learning",
+      "paper_title": "Permanent and Transient Representations for Continual Reinforcement Learning",
+      "paper_date": "2026-11-05",
+      "paper_category": "Constitutive Modeling",
+      "generated_at": "2026-11-06T16:31:05",
       "generator": "openai"
     }
   },
@@ -721,17 +988,17 @@
         "url": "https://arxiv.org/pdf/2611.03574v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "BISECT improves continual learning by splitting low-rank updates into shared and novel feature directions rather than treating all cross-task overlap as interference.",
-      "engineering_relevance": "The approach could support sequential adaptation of vision-based engineering inspection models, though solid-mechanics applications are not evaluated in the abstract.",
+      "key_insight": "BISECT counters spectral starvation in continual LoRA learning by splitting a fixed low-rank budget between shared invariant features and task-specific novelty.",
+      "engineering_relevance": "For engineering vision workflows with sequentially arriving tasks, BISECT offers a potential adaptation strategy without added inference parameters or FLOPs, though solid-mechanics applications are not evaluated.",
       "method": [
-        "Partition a fixed LoRA rank budget into dominant joint historical–current modes and an orthogonal novelty complement.",
-        "Extract novelty directions using generalized Rayleigh whitening followed by orthogonal complement projection.",
-        "Merge trained updates into the frozen backbone, gating shared rank-1 atoms by current-to-joint Rayleigh ratios and preserving novelty atoms at unit gain."
+        "Extract invariant directions from dominant modes of the joint historical-and-current Gram matrix.",
+        "Build an orthogonal novelty block using generalized Rayleigh whitening and complement projection.",
+        "Fold trained updates into the frozen backbone, scaling invariant atoms by current-to-joint Rayleigh ratios and retaining novelty atoms at unit gain."
       ],
-      "evidence_signal": "Across eight incremental settings on five vision datasets, BISECT reportedly outperforms prompt, adapter, and LoRA baselines without extra inference parameters or FLOPs; historical null tails capture only 5.5% of incoming-task variance.",
-      "watch_item": "Training-time costs and numerical stability of Gram-matrix decomposition and whitening are not quantified in the abstract.",
+      "evidence_signal": "The abstract reports that historical null tails capture only 5.5% of incoming-task variance and that BISECT outperforms prompt, adapter, and LoRA baselines across eight incremental settings on five vision datasets.",
+      "watch_item": "Training-time costs and numerical stability of Gram-matrix estimation and generalized Rayleigh whitening are not quantified in the abstract.",
       "hashtags": [
         "#ContinualLearning",
         "#LowRankAdaptation",
@@ -745,7 +1012,7 @@
       "paper_title": "BISECT: Bilevel Spectral Decomposition for Low-Rank Continual Learning",
       "paper_date": "2026-11-02",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-11-05T16:59:08",
+      "generated_at": "2026-11-06T16:31:07",
       "generator": "openai"
     }
   },
@@ -774,17 +1041,17 @@
         "url": "https://arxiv.org/pdf/2611.03513v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "RASP separates reading from learning: inference uses all LoRA atoms, while updates target only a sparse subset within a fixed-size adapter.",
-      "engineering_relevance": "The approach could support memory-bounded continual adaptation of engineering vision systems, but the abstract does not evaluate constitutive modeling or solid mechanics tasks.",
+      "key_insight": "RASP separates reading from learning: inference uses all LoRA atoms, while training updates only a sparse subset within one fixed-size adapter.",
+      "engineering_relevance": "The approach could support memory-bounded continual adaptation of engineering vision systems, but the abstract reports no solid-mechanics or constitutive-modeling validation.",
       "method": [
-        "A scene-modulated cosine router selects the top-q unlocked atoms for gradient updates while preserving full-rank adapter access during inference.",
-        "A Gram-coherence penalty discourages overlap between active and non-updated output directions.",
-        "Activation history and atom spectral norms guide Cauchy step attenuation and boundary anchor locking to protect consolidated knowledge."
+        "A scene-modulated cosine router selects the top-q unlocked atoms for gradient updates while inference retains all r atoms.",
+        "A Frobenius Gram-coherence penalty separates active output directions from non-updated directions.",
+        "Router activation histories and atom spectral norms guide Cauchy step attenuation and boundary anchor locking."
       ],
-      "evidence_signal": "On CIFAR-100, CUB-200, ImageNet-R, and ImageNet-A, the abstract reports matching or exceeding branch-expanding LoRA learners with constant adapter parameter count, but provides no numerical results.",
-      "watch_item": "Atom locking may constrain future learning over long task sequences; constant parameter count alone does not establish sustained adaptability.",
+      "evidence_signal": "Across CIFAR-100, CUB-200, ImageNet-R, and ImageNet-A, the abstract reports matching or surpassing branch-expanding LoRA learners with a strictly constant parameter footprint.",
+      "watch_item": "Long-horizon capacity under progressive atom locking remains unclear; the abstract provides no quantitative saturation analysis.",
       "hashtags": [
         "#ContinualLearning",
         "#LoRA",
@@ -798,275 +1065,7 @@
       "paper_title": "RASP: Read-All, Sparse-Plasticity Continual Learning in a Stationary-Size LoRA",
       "paper_date": "2026-11-02",
       "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-11-05T16:59:11",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-04-arxiv-optimal_error_estimates_with_polynomial_dependence_on_1_for_mixed_finite_element_methods_o",
-    "arxiv_id": "2611.06174v1",
-    "date": "2026-11-04",
-    "title": "Optimal Error Estimates With Polynomial Dependence on $ε^{-1}$ for Mixed Finite Element Methods of the Cahn-Hilliard-Navier-Stokes System",
-    "authors": "Haijun Gao, Xi Li, Xiaoli Li",
-    "abstract": "In this paper, we analyze a first-order convex-splitting mixed finite element scheme for the Cahn--Hilliard--Navier--Stokes system, tracking explicitly how the error constants depend on the interface width $ε$. Due to the strong nonlinear coupling inherent in the CHNS system and the singular dependence of the Cahn--Hilliard equation on $ε$, conventional energy-based analyzes often lead to severe dependence of the error constants on $ε^{-1}$, and may even result in exponential growth. Such dependence significantly limits the applicability of the resulting error estimates in the small-interfacial-thickness regime. To overcome this difficulty, we develop a robust parameter error analysis framework with respect to interfacial thickness $ε$. In particular, by introducing $H^{-1}$ approximation properties for the Ritz projection and the Ritz and Stokes quasi-projection operators, together with spectral-type estimates for the discrete perturbed Cahn--Hilliard operator, we effectively control the singular terms arising from the interfacial thickness parameter in the error analysis. Compared with the classical results, which address only the Allen-Cahn or Cahn-Hilliard equation, we adopt a three-term discrete Gagliardo-Nirenberg inequality analysis technique and achieve a substantial reduction in the degree of polynomial dependence for the coupled system. Numerical experiments are presented to verify the effectiveness of the theoretical results and to demonstrate the robustness of the method for different parameters of interfacial thickness.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-11-04T08:55:14Z",
-    "updated": "2026-11-04T08:55:14Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.06174v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.06174v1"
-      }
-    ],
-    "score": 60,
-    "infographic": {
-      "key_insight": "The analysis establishes optimal error estimates with polynomial, rather than potentially exponential, dependence on inverse interface width for a mixed finite element scheme of the coupled Cahn–Hilliard–Navier–Stokes system.",
-      "engineering_relevance": "These estimates strengthen confidence in finite element simulations of two-phase flows with thin diffuse interfaces.",
-      "method": [
-        "Analyze a first-order convex-splitting mixed finite element scheme.",
-        "Combine H⁻¹ approximation properties of Ritz and Stokes projections with discrete Cahn–Hilliard spectral estimates.",
-        "Use a three-term discrete Gagliardo–Nirenberg inequality to reduce the degree of polynomial parameter dependence."
-      ],
-      "evidence_signal": "Numerical experiments test the theoretical results and demonstrate robustness across different interface-width parameters; the abstract provides no quantitative errors or convergence rates.",
-      "watch_item": "Polynomial dependence still allows error constants to grow as interface width decreases; the abstract does not specify mesh or time-step restrictions.",
-      "hashtags": [
-        "#FiniteElementMethods",
-        "#CahnHilliard",
-        "#NavierStokes",
-        "#ErrorEstimation",
-        "#MultiphaseFlow"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-04-arxiv-optimal_error_estimates_with_polynomial_dependence_on_1_for_mixed_finite_element_methods_o",
-      "paper_title": "Optimal Error Estimates With Polynomial Dependence on $ε^{-1}$ for Mixed Finite Element Methods of the Cahn-Hilliard-Navier-Stokes System",
-      "paper_date": "2026-11-04",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:59:13",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-03-arxiv-manifold_embedding_of_deep_image_features_for_image_matching_via_neural_adjoint_maps",
-    "arxiv_id": "2611.05083v1",
-    "date": "2026-11-03",
-    "title": "Manifold Embedding of Deep Image Features for Image Matching via Neural Adjoint Maps",
-    "authors": "Nafie El Amrani, Moritz Heep, Florian Bernard",
-    "abstract": "Estimating semantic correspondences between different object instances of similar categories in real-world images is a fundamental challenge in computer vision. While the recent progress in foundation models has significantly advanced solutions for such difficult image correspondence problems, respective methods are often insufficiently regularised. For example, common nearest-neighbour matching with foundation model features often results in noisy correspondences, which is particularly prominent when solving for dense correspondences. In this work, we tackle image matching via functional maps, which have been popularised for 3D shape matching due to their powerful spectral formalism utilising an efficient low-dimensional linear representation. However, functional maps require that domains (in our cases the rectangular image grids) are equipped with an informative and non-trivial geometry. To define a meaningful manifold structure for images, we use Galerkin's method from finite elements to derive a discrete Laplace-Beltrami operator (LBO) based on a manifold embedding of deep image features. Further, we leverage a neural adjoint map that allows to represent non-linear mappings. We demonstrate that our method sets the new state of the art among zero-shot image correspondence methods on multiple dense correspondence benchmarks of real-world images. Our code is publicly available: https://github.com/NafieAmrani/NAMI",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-11-03T15:42:20Z",
-    "updated": "2026-11-03T15:42:20Z",
-    "primary_category": "cs.CV",
-    "categories": [
-      "cs.CV"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.05083v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.05083v1"
-      }
-    ],
-    "score": 60,
-    "infographic": {
-      "key_insight": "Embedding deep image features into a manifold enables geometry-aware semantic image matching with spectral regularisation and non-linear neural adjoint maps.",
-      "engineering_relevance": "The work transfers finite-element and spectral geometry tools to image correspondence, rather than developing a solid-mechanics or FEM surrogate model.",
-      "method": [
-        "Construct a meaningful image manifold from deep feature embeddings.",
-        "Use finite-element Galerkin discretisation to derive a Laplace–Beltrami operator for spectral functional maps.",
-        "Leverage a neural adjoint map to represent non-linear correspondences."
-      ],
-      "evidence_signal": "The abstract reports state-of-the-art zero-shot performance on multiple real-world dense image correspondence benchmarks, without naming datasets or providing numerical results.",
-      "watch_item": "Matching quality may depend on the geometry induced by the deep features; robustness to domain shifts is not established in the abstract.",
-      "hashtags": [
-        "#ImageCorrespondence",
-        "#ManifoldLearning",
-        "#FiniteElements",
-        "#FunctionalMaps",
-        "#NeuralAdjointMaps"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-03-arxiv-manifold_embedding_of_deep_image_features_for_image_matching_via_neural_adjoint_maps",
-      "paper_title": "Manifold Embedding of Deep Image Features for Image Matching via Neural Adjoint Maps",
-      "paper_date": "2026-11-03",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:59:16",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-02-arxiv-coupled_soft_clamped_polygon_resonators_with_tunable_mechanical_coupling",
-    "arxiv_id": "2611.02442v1",
-    "date": "2026-11-02",
-    "title": "Coupled Soft-Clamped Polygon Resonators with Tunable Mechanical Coupling",
-    "authors": "Zhihao Niu, Peng Chen, Shenggen Zheng, Yuan-Yuan Zhao, Yuanyuan Zhao",
-    "abstract": "Coupler geometry controls both the frequency splitting and the dissipation of coupled polygon resonators. We develop a continuum model for two identical square-shaped resonators coupled by a shared tether and compare the analytical predictions with finite element simulations. The model relates the coupler length and width to the frequency splitting and dissipation dilution of the two coupled modes. In the short-coupler limit, $k_cl_c\\ll1$, the symmetric-mode coupler undergoes nearly uniform rotation, and its torsional strain energy vanishes asymptotically. The remaining loss contributions arise from polygon-side bending and supporting-tether torsion. The reduced supporting-tether contribution allows the symmetric-mode dissipation dilution to exceed that of an isolated polygon with the same side and supporting-tether dimensions. The antisymmetric mode retains torsional strain in the coupler and has an additional loss contribution. We also derive an expression for $Q\\cdot f$ in the short-coupler and short-tether limits, where $Q$ is the mechanical quality factor and $f$ is the resonance frequency. This expression gives the dependence of $Q\\cdot f$ on tensile stress, film thickness, and supporting-tether geometry. For a coupler length of $100~μ\\mathrm{m}$ and width of $2~μ\\mathrm{m}$, finite element calculations give a frequency splitting of $17.7~\\mathrm{Hz}$ and a symmetric-mode dilution factor approximately $13\\%$ above the analytical isolated-polygon value.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-11-02T03:05:33Z",
-    "updated": "2026-11-02T03:05:33Z",
-    "primary_category": "physics.app-ph",
-    "categories": [
-      "physics.app-ph",
-      "physics.optics"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.02442v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.02442v1"
-      }
-    ],
-    "score": 60,
-    "infographic": {
-      "key_insight": "A shared tether tunes frequency splitting and dissipation in coupled square resonators, with short couplers enabling symmetric-mode dissipation dilution above the isolated-polygon value.",
-      "engineering_relevance": "Coupler geometry offers a design lever for controlling mechanical coupling while reducing dissipation in resonator devices.",
-      "method": [
-        "Develop a continuum model of two identical square resonators joined by a shared tether.",
-        "Relate coupler dimensions to mode splitting and dissipation dilution; compare predictions with finite element simulations.",
-        "Derive short-coupler and short-tether scaling for the quality-factor–frequency product, Q·f."
-      ],
-      "evidence_signal": "For a 100 μm-long, 2 μm-wide coupler, finite element calculations yield 17.7 Hz frequency splitting and symmetric-mode dilution approximately 13% above the analytical isolated-polygon value.",
-      "watch_item": "Validation is simulation-based, and the simplified Q·f expression assumes short couplers and short supporting tethers.",
-      "hashtags": [
-        "#SolidMechanics",
-        "#MechanicalResonators",
-        "#FiniteElementAnalysis",
-        "#DissipationDilution",
-        "#CoupledResonators"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-02-arxiv-coupled_soft_clamped_polygon_resonators_with_tunable_mechanical_coupling",
-      "paper_title": "Coupled Soft-Clamped Polygon Resonators with Tunable Mechanical Coupling",
-      "paper_date": "2026-11-02",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:59:18",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-02-arxiv-allen_cahn_residual_constrained_topology_optimization_via_an_augmented_lagrangian_method",
-    "arxiv_id": "2611.02375v1",
-    "date": "2026-11-02",
-    "title": "Allen--Cahn Residual-Constrained Topology Optimization via an Augmented Lagrangian Method",
-    "authors": "Run Du, Xuan Xiao, Wenming Cheng, Zeqiang Zhang",
-    "abstract": "This paper presents a residual-constrained topology optimization framework that controls interface transition bandwidth without requiring external density filters. The steady conserved Allen--Cahn (AC) equation is formulated as an equality residual constraint and solved via a mass-weighted Augmented Lagrangian Method (ALM) coupled with the Method of Moving Asymptotes (MMA). A closed-form chemical potential projection eliminates the constant residual mode, ensuring algebraic compatibility with external volume targets. Variational sensitivity analysis reveals a symmetric-plus-rank-one Jacobian that yields matrix-free sensitivities without additional adjoint PDE solves, reducing residual sensitivity overhead to only 0.11% of the state elasticity solve time in 3D. Systematic 2D benchmarks confirm that interface bandwidth is governed intrinsically by reaction--diffusion parameters across mesh refinements. While diffuse interfaces incur a continuous compliance elevation (1.4%--12.3%), a volume-preserving 0/1 post-processing audit across 48 benchmark cases demonstrates that this gap stems primarily from intermediate-density penalization: binarized AC-ALM designs achieve equal or superior stiffness in 45 configurations (averaging 1.2% stiffer than SIMP). Simultaneously, single-node hinges and strut fragmentation are substantially suppressed compared to unregularized baselines. Three-dimensional benchmarks further demonstrate practical spatial viability for complex structures.",
-    "category": "Constitutive Modeling",
-    "source": "arXiv",
-    "published": "2026-11-02T01:42:25Z",
-    "updated": "2026-11-02T01:42:25Z",
-    "primary_category": "cs.CE",
-    "categories": [
-      "cs.CE",
-      "math.OC"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.02375v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.02375v1"
-      }
-    ],
-    "score": 60,
-    "infographic": {
-      "key_insight": "Constraining the steady conserved Allen–Cahn residual controls topology interface bandwidth intrinsically, without external density filters.",
-      "engineering_relevance": "The approach suppresses single-node hinges and strut fragmentation while producing binarized designs with competitive stiffness.",
-      "method": [
-        "Enforce the Allen–Cahn equality residual using a mass-weighted augmented Lagrangian method coupled with MMA.",
-        "Project the chemical potential to eliminate the constant residual mode and maintain compatibility with prescribed volume targets.",
-        "Exploit a symmetric-plus-rank-one Jacobian for matrix-free residual sensitivities without additional adjoint PDE solves."
-      ],
-      "evidence_signal": "Across 48 benchmark cases, volume-preserving binarized designs matched or exceeded SIMP stiffness in 45 cases and averaged 1.2% stiffer; reported 3D residual-sensitivity overhead was 0.11% of the elasticity solve time.",
-      "watch_item": "Diffuse designs showed 1.4%–12.3% higher compliance, so stiffness gains should be interpreted in the context of the volume-preserving binarization audit.",
-      "hashtags": [
-        "#TopologyOptimization",
-        "#AllenCahn",
-        "#AugmentedLagrangian",
-        "#ComputationalMechanics",
-        "#StructuralOptimization"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-02-arxiv-allen_cahn_residual_constrained_topology_optimization_via_an_augmented_lagrangian_method",
-      "paper_title": "Allen--Cahn Residual-Constrained Topology Optimization via an Augmented Lagrangian Method",
-      "paper_date": "2026-11-02",
-      "paper_category": "Constitutive Modeling",
-      "generated_at": "2026-11-05T16:59:21",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-01-arxiv-three_dimensional_computational_rheometry_of_viscoplastic_fluids_in_vane_in_cup_fixtures",
-    "arxiv_id": "2611.02115v1",
-    "date": "2026-11-01",
-    "title": "Three-dimensional computational rheometry of viscoplastic fluids in vane-in-cup fixtures",
-    "authors": "James Malcolm, Clare McColgan, Emma Mullarkey, Emad Chaparian",
-    "abstract": "We develop a computational framework to investigate the flow kinematics of viscoplastic materials, described by the Herschel-Bulkley model, in vane-in-cup rheometers. Numerical simulations are performed using augmented Lagrangian finite element and regularised finite volume methods for two- and three-dimensional configurations, respectively, to characterise the hydrodynamics and yielding behaviour over a broad range of effective parameters. Three types of vanes are investigated: conventional 4- and 6-arm bespoke vanes and a 24-arm fractal vane (Owens et al., J. Rheol., vol. 64(3), 2020, 643-662). Our previous two-dimensional study (Chaparian et al., J. Non-Newtonian Fluid Mech., vol. 307, 2022, 104857) demonstrated the superiority of the fractal vane over conventional N-arm designs. The bespoke vanes produce highly non-uniform yielding, leading to significant deviations from the circular Couette analogy, whereas the 24-arm fractal vane generates nearly axisymmetric yield surfaces that effectively \"cloak\" the vane geometry. Consequently, the resulting flow closely resembles the azimuthal shear in a conventional \"bob & cup\" rheometer, providing substantially more accurate rheological measurements. Building on these findings, the present study revisits the torque-to-stress and rotation-to-strain rate conversions used in vane-in-cup rheometry. In particular, we re-examine the circular Couette analogy that underpins both the physical interpretation of the flow and the extraction of flow curves from raw rheometric data. Based on our extensive two- and three-dimensional simulations, we identify limitations of the existing conversion relations and propose improved closure expressions that enable more accurate determination of material's rheological properties. Furthermore, the three-dimensional flow structures and yielding patterns within the vane-in-cup fixtures are characterised.",
-    "category": "FEM Surrogates",
-    "source": "arXiv",
-    "published": "2026-11-01T18:44:00Z",
-    "updated": "2026-11-01T18:44:00Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "cond-mat.soft"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.02115v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.02115v1"
-      }
-    ],
-    "score": 60,
-    "infographic": {
-      "key_insight": "Simulations show that a 24-arm fractal vane produces nearly axisymmetric yielding, while improved conversion expressions support more accurate rheological measurements.",
-      "engineering_relevance": "Better vane designs and torque-to-stress and rotation-to-strain-rate conversions can improve characterization of yield-stress materials.",
-      "method": [
-        "Model viscoplastic flow using the Herschel–Bulkley constitutive law.",
-        "Use augmented Lagrangian finite elements in 2D and regularised finite volumes in 3D.",
-        "Compare 4-arm, 6-arm and 24-arm fractal vanes and revisit circular Couette conversion assumptions."
-      ],
-      "evidence_signal": "The abstract reports extensive 2D and 3D simulations across a broad parameter range, but provides no quantitative error reductions or experimental validation details.",
-      "watch_item": "This is a numerical rheometry study, not an AI surrogate; conversion accuracy should be checked for the intended geometry and material parameters.",
-      "hashtags": [
-        "#ComputationalRheology",
-        "#Viscoplasticity",
-        "#VaneRheometry",
-        "#FiniteElementMethod",
-        "#YieldStressFluids"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-01-arxiv-three_dimensional_computational_rheometry_of_viscoplastic_fluids_in_vane_in_cup_fixtures",
-      "paper_title": "Three-dimensional computational rheometry of viscoplastic fluids in vane-in-cup fixtures",
-      "paper_date": "2026-11-01",
-      "paper_category": "FEM Surrogates",
-      "generated_at": "2026-11-05T16:59:23",
+      "generated_at": "2026-11-06T16:31:10",
       "generator": "openai"
     }
   }

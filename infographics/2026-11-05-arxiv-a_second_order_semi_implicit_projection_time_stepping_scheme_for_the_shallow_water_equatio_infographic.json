@@ -1,19 +1,19 @@
 {
-  "key_insight": "A symmetric semi-implicit projection scheme achieves second-order shallow-water time integration on the sphere while restricting stability by advection rather than fast waves.",
-  "engineering_relevance": "The method supports larger time steps for spherical geophysical flow simulations, with advection subcycling requiring no additional implicit solves.",
+  "key_insight": "Symmetric splitting delivers second-order shallow-water time stepping on the sphere while restricting stability through advection rather than fast waves.",
+  "engineering_relevance": "The scheme supports efficient spherical flow simulations relevant to weather and climate modelling, with advection subcycling enabling larger overall time steps without extra implicit solves.",
   "method": [
-    "Use compatible finite elements to separate advection and wave dynamics.",
-    "Apply an explicit half-step, a DG-upwind SSPRK3 advection step, and an implicit half-step that projects velocity into H(div).",
-    "Solve the implicit wave system efficiently through hybridisation in Firedrake."
+    "Split time stepping into an explicit half-step, a full advection step, and an implicit half-step.",
+    "Advance advection with DG-upwind SSPRK3 and discretise waves implicitly using compatible finite elements.",
+    "Use hybridisation for the implicit solve while projecting velocity back into the H(div)-conforming space."
   ],
-  "evidence_signal": "Standard spherical shallow-water benchmarks show second-order convergence, stable results at Courant numbers up to 1 with two advection subcycles and second-order finite elements, and good parallel scaling.",
-  "watch_item": "Reported stability is benchmark-specific; advection subcycling still must respect its CFL restriction and adds explicit computational work.",
+  "evidence_signal": "Firedrake tests on standard spherical shallow-water benchmarks report second-order convergence, good parallel scaling, and stability at Courant numbers up to 1 with two advection subcycles and second-order elements.",
+  "watch_item": "Advection remains CFL-limited, and larger overall time steps require subcycling; the abstract does not quantify runtime savings.",
   "hashtags": [
     "#ShallowWaterEquations",
     "#CompatibleFiniteElements",
     "#SemiImplicitMethods",
-    "#GeophysicalSimulation",
-    "#Firedrake"
+    "#Firedrake",
+    "#ComputationalGeoscience"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "A Second-Order Semi-Implicit Projection Time-Stepping Scheme for the Shallow-Water Equations on the Sphere Using Compatible Finite Elements",
   "paper_date": "2026-11-05",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-11-06T16:30:55",
+  "generated_at": "2026-11-07T15:17:52",
   "generator": "openai"
 }

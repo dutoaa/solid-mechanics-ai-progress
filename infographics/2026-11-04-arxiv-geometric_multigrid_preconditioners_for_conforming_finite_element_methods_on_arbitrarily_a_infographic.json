@@ -1,13 +1,13 @@
 {
-  "key_insight": "Auxiliary-space multigrid preconditioners let conforming finite element solvers use coarse meshes built entirely by agglomeration, without requiring conforming coarse meshes.",
-  "engineering_relevance": "This approach can simplify scalable finite element solver construction on complex engineering geometries by relaxing coarse-mesh constraints.",
+  "key_insight": "Agglomeration-based multigrid preconditioners remove the need for conforming coarse meshes while retaining provable condition-number bounds for conforming finite element systems.",
+  "engineering_relevance": "The approach supports iterative finite element solvers on complex domains without requiring a conforming mesh hierarchy.",
   "method": [
-    "Precondition fine-mesh conforming Lagrange elements with coarse polytopal DG or hybrid high-order discretisations.",
-    "Build subsequent multigrid levels by further agglomeration.",
-    "Transfer coarse solutions through element-wise interpolation and nodal averaging, with local potential reconstruction for hybrid high-order elements."
+    "Precondition fine-mesh conforming Lagrange elements using coarse polytopal DG or hybrid high-order discretisations.",
+    "Build all coarse levels by mesh agglomeration and connect them with geometric multigrid.",
+    "Transfer coarse solutions by element-wise interpolation and nodal averaging, with local potential reconstruction for the hybrid high-order variant."
   ],
-  "evidence_signal": "Experiments in 2D and 3D on structured and unstructured meshes with automatically clustered agglomerates support robustness; proven condition-number bounds are O((H/h)^3), improving to O((H/h)^2) for DG with appropriately scaled penalty.",
-  "watch_item": "Condition-number bounds worsen with the coarsening ratio H/h, so aggressive agglomeration requires care.",
+  "evidence_signal": "Experiments in 2D and 3D on structured and unstructured meshes with automatically clustered agglomerates confirm preconditioner robustness.",
+  "watch_item": "The proved condition-number bounds grow as O((H/h)^3), or O((H/h)^2) for DG with suitably scaled penalties, so aggressive coarsening can affect solver performance.",
   "hashtags": [
     "#FiniteElementMethods",
     "#GeometricMultigrid",
@@ -21,6 +21,6 @@
   "paper_title": "Geometric Multigrid Preconditioners for conforming Finite Element Methods on Arbitrarily Agglomerated Meshes",
   "paper_date": "2026-11-04",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-11-07T15:17:44",
+  "generated_at": "2026-11-08T15:41:08",
   "generator": "openai"
 }

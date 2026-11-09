@@ -1,17 +1,17 @@
 {
-  "key_insight": "Process-zone condensation preserves full-discretization accuracy without training while the eliminated region of the composite cell remains elastic.",
-  "engineering_relevance": "The method can accelerate FE² simulations of composites with fibre–matrix debonding and matrix plasticity, but gains depend on material and process-zone size.",
+  "key_insight": "Process-zone condensation exactly reproduces the full discretized composite cell while plasticity stays inside the retained zone, without training.",
+  "engineering_relevance": "The method can accelerate FE² simulations of composites with fibre–matrix debonding and matrix plasticity while preserving macroscopic stress and consistent tangent.",
   "method": [
-    "Eliminate the linear elastic cell remainder using a Schur complement, retaining interface and process-zone internal variables.",
-    "Recover macroscopic stress and consistent tangent through influence matrices.",
-    "Check the eliminated region by back-substitution each increment and expand the retained zone when needed."
+    "Eliminate the linear elastic cell remainder using a Schur complement.",
+    "Retain interface and process-zone variables; recover stress and tangent through influence matrices.",
+    "Back-substitute once per increment to check that the eliminated matrix remains elastic."
   ],
-  "evidence_signal": "Eight of nine 2D paths matched full-cell stress and tangent to 1e-11; 2D path timings yielded a 3.3× aggregate speed-up excluding setup and checks, while adaptive plate simulations were 1.51× faster for glass/polypropylene but slower for glass/epoxy.",
-  "watch_item": "Exactness requires the eliminated region to remain elastic; zone expansion, active-set changes and adaptation costs can erase speed gains, as in the certified 3D cases.",
+  "evidence_signal": "Eight of nine 2D paths matched full-cell stress and tangent to 1e-11; aggregate 2D speed-up was 3.3× excluding setup and checks, while plate simulations were 1.51× faster for glass/polypropylene but slower for glass/epoxy.",
+  "watch_item": "Exactness requires the eliminated region to remain elastic; zone expansion and adaptation costs can erase speed gains, as seen in the certified 3D cases.",
   "hashtags": [
     "#ComputationalMechanics",
     "#MultiscaleModeling",
-    "#ModelReduction",
+    "#ModelOrderReduction",
     "#CompositeMaterials",
     "#FE2"
   ],
@@ -21,6 +21,6 @@
   "paper_title": "Process-zone condensation: a discretization-exact reduced cell model for FE$^2$ analysis of composites with fibre-matrix debonding and matrix plasticity",
   "paper_date": "2026-11-03",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-11-08T15:41:22",
+  "generated_at": "2026-11-09T19:23:10",
   "generator": "openai"
 }

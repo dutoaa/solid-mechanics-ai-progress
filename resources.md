@@ -1,9 +1,73 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-11-09
+Generated: 2026-11-10
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
-## 1. SSF-Net: A Spatial-Spectral Fusion Network for Accurate PDE Operator Learning
+## 1. Operator Learning of Microstructure-Dependent Internal-Variable Models for Inelastic Homogenization: Approximation and Complexity
+
+- Date: 2026-11-09
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.11805v1
+- PDF: https://arxiv.org/pdf/2611.11805v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-operator_learning_of_microstructure_dependent_internal_variable_models_for_inelastic_homog_infographic.json
+
+## 2. Anchor Behavior, Not Parameters: Rehearsal-Free Continual Learning with a Single Shared Prompt
+
+- Date: 2026-11-09
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.12777v1
+- PDF: https://arxiv.org/pdf/2611.12777v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-anchor_behavior_not_parameters_rehearsal_free_continual_learning_with_a_single_shared_prom_infographic.json
+
+## 3. Are UFOs Real? Introducing Unified Factored Organizers
+
+- Date: 2026-11-09
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2611.11862v1
+- PDF: https://arxiv.org/pdf/2611.11862v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-are_ufos_real_introducing_unified_factored_organizers_infographic.json
+
+## 4. A transversely isotropic constitutive model for semisoft elasticity in main-chain liquid crystal elastomers
+
+- Date: 2026-11-06
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.10060v1
+- PDF: https://arxiv.org/pdf/2611.10060v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-a_transversely_isotropic_constitutive_model_for_semisoft_elasticity_in_main_chain_liquid_c_infographic.json
+
+## 5. An open source Python code for three-dimensional topology optimization in single precision on a consumer GPU
+
+- Date: 2026-11-09
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2611.12027v1
+- PDF: https://arxiv.org/pdf/2611.12027v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-an_open_source_python_code_for_three_dimensional_topology_optimization_in_single_precision_infographic.json
+
+## 6. A new approach to measuring both the steady flow curve and the planar extensional viscosity of complex fluids using exponential shear
+
+- Date: 2026-11-07
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.10780v1
+- PDF: https://arxiv.org/pdf/2611.10780v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-07-arxiv-a_new_approach_to_measuring_both_the_steady_flow_curve_and_the_planar_extensional_viscosit_infographic.json
+
+## 7. Parameterized Physics-Informed Neural Networks for Efficient Simulation of Embedded Microfluidic Chip Cooling
+
+- Date: 2026-11-07
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2611.10666v1
+- PDF: https://arxiv.org/pdf/2611.10666v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-07-arxiv-parameterized_physics_informed_neural_networks_for_efficient_simulation_of_embedded_microf_infographic.json
+
+## 8. Enhancing valley splitting in Si/SiGe Wiggle Well quantum dots through integrated stressor-gate architectures
+
+- Date: 2026-11-09
+- Category: AI Solid Mechanics
+- arXiv: https://arxiv.org/abs/2611.12850v1
+- PDF: https://arxiv.org/pdf/2611.12850v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-enhancing_valley_splitting_in_si_sige_wiggle_well_quantum_dots_through_integrated_stressor_infographic.json
+
+## 9. SSF-Net: A Spatial-Spectral Fusion Network for Accurate PDE Operator Learning
 
 - Date: 2026-11-06
 - Category: FEM Surrogates
@@ -11,15 +75,23 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.08912v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-ssf_net_a_spatial_spectral_fusion_network_for_accurate_pde_operator_learning_infographic.json
 
-## 2. Mathematical analysis and vectorized FEM implementation of logarithmic strain space framework for finite strains: a case study on elastoplasticity
+## 10. Mathematical analysis and vectorized FEM implementation of logarithmic strain space framework for finite strains: a case study on elastoplasticity
 
 - Date: 2026-11-06
 - Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2611.09492v1
-- PDF: https://arxiv.org/pdf/2611.09492v1
+- arXiv: https://arxiv.org/abs/2611.09492v2
+- PDF: https://arxiv.org/pdf/2611.09492v2
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-mathematical_analysis_and_vectorized_fem_implementation_of_logarithmic_strain_space_framew_infographic.json
 
-## 3. Finite-strain second-gradient elasticity with an energetic surface: existence of minimizers, incremental theory and elastocapillary beading
+## 11. The Outer Eshelby Problem in Amorphous Solids with Odd Dipole Screening
+
+- Date: 2026-11-08
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.11251v1
+- PDF: https://arxiv.org/pdf/2611.11251v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-08-arxiv-the_outer_eshelby_problem_in_amorphous_solids_with_odd_dipole_screening_infographic.json
+
+## 12. Finite-strain second-gradient elasticity with an energetic surface: existence of minimizers, incremental theory and elastocapillary beading
 
 - Date: 2026-11-06
 - Category: Constitutive Modeling
@@ -27,138 +99,66 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.09587v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-finite_strain_second_gradient_elasticity_with_an_energetic_surface_existence_of_minimizers_infographic.json
 
-## 4. PhyCAD: Physics-Aware Text-to-CAD Generation via Hierarchical Reinforcement Learning
+## 13. Consistent Mapping for Fluid Structure Interaction with Geometrically Nonlinear Isogeometric Beams
 
-- Date: 2026-11-06
+- Date: 2026-11-09
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.09401v1
-- PDF: https://arxiv.org/pdf/2611.09401v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-phycad_physics_aware_text_to_cad_generation_via_hierarchical_reinforcement_learning_infographic.json
+- arXiv: https://arxiv.org/abs/2611.12599v1
+- PDF: https://arxiv.org/pdf/2611.12599v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-consistent_mapping_for_fluid_structure_interaction_with_geometrically_nonlinear_isogeometr_infographic.json
 
-## 5. Self-Supervised Learning of Universal Latent Spaces for Operator Learning
+## 14. Law-Invariant Operators for Stochastic Mechanics
 
-- Date: 2026-11-03
+- Date: 2026-11-09
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.05735v1
-- PDF: https://arxiv.org/pdf/2611.05735v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-03-arxiv-self_supervised_learning_of_universal_latent_spaces_for_operator_learning_infographic.json
+- arXiv: https://arxiv.org/abs/2611.12361v1
+- PDF: https://arxiv.org/pdf/2611.12361v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-law_invariant_operators_for_stochastic_mechanics_infographic.json
 
-## 6. A Tensor-Network Chebyshev-Galerkin Method for Boundary-Value Problems in Computational Mechanics
+## 15. Spectral Bias Reduction in Local Gated ReLU Architectures
 
-- Date: 2026-11-04
+- Date: 2026-11-07
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.06552v1
-- PDF: https://arxiv.org/pdf/2611.06552v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-04-arxiv-a_tensor_network_chebyshev_galerkin_method_for_boundary_value_problems_in_computational_me_infographic.json
+- arXiv: https://arxiv.org/abs/2611.10700v1
+- PDF: https://arxiv.org/pdf/2611.10700v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-07-arxiv-spectral_bias_reduction_in_local_gated_relu_architectures_infographic.json
 
-## 7. Finite Element Elastographic Analysis of Kidney MRI for Computational Assessment of Chronic Kidney Disease
+## 16. Unified Factored Representations Resist Catastrophic Forgetting
 
-- Date: 2026-11-04
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.07135v1
-- PDF: https://arxiv.org/pdf/2611.07135v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-04-arxiv-finite_element_elastographic_analysis_of_kidney_mri_for_computational_assessment_of_chroni_infographic.json
-
-## 8. CloakFEM: Agentic FEM Code Generation for Red-Teaming Computational Resource Exhaustion
-
-- Date: 2026-11-03
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.04356v1
-- PDF: https://arxiv.org/pdf/2611.04356v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-03-arxiv-cloakfem_agentic_fem_code_generation_for_red_teaming_computational_resource_exhaustion_infographic.json
-
-## 9. SparseModesNet for coupled thermal-hydraulic-mechanical system in heterogeneous porous media
-
-- Date: 2026-11-06
+- Date: 2026-11-07
 - Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2611.09616v1
-- PDF: https://arxiv.org/pdf/2611.09616v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-sparsemodesnet_for_coupled_thermal_hydraulic_mechanical_system_in_heterogeneous_porous_med_infographic.json
+- arXiv: https://arxiv.org/abs/2611.11020v1
+- PDF: https://arxiv.org/pdf/2611.11020v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-07-arxiv-unified_factored_representations_resist_catastrophic_forgetting_infographic.json
 
-## 10. A Hybrid Quantum-Classical Coarse-to-Fine Finite Element Solver for Heterogeneous Darcy Flow
+## 17. Reconstructing Flash-Evoked Potentials in the Human Brain and Tracking Cortical Activity Using Spatiotemporal Filtering: Numerical Simulation Study
+
+- Date: 2026-11-09
+- Category: AI Solid Mechanics
+- arXiv: https://arxiv.org/abs/2611.12366v1
+- PDF: https://arxiv.org/pdf/2611.12366v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-reconstructing_flash_evoked_potentials_in_the_human_brain_and_tracking_cortical_activity_u_infographic.json
+
+## 18. A level-set method for shape and topology optimization of Stokes--Darcy flows with Beavers--Joseph--Saffman coupling
+
+- Date: 2026-11-09
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2611.11769v1
+- PDF: https://arxiv.org/pdf/2611.11769v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-a_level_set_method_for_shape_and_topology_optimization_of_stokes_darcy_flows_with_beavers_infographic.json
+
+## 19. Convergence of Adaptive Least Squares Finite Element Methods
 
 - Date: 2026-11-06
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.09593v1
-- PDF: https://arxiv.org/pdf/2611.09593v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-a_hybrid_quantum_classical_coarse_to_fine_finite_element_solver_for_heterogeneous_darcy_fl_infographic.json
+- arXiv: https://arxiv.org/abs/2611.10278v1
+- PDF: https://arxiv.org/pdf/2611.10278v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-convergence_of_adaptive_least_squares_finite_element_methods_infographic.json
 
-## 11. Geometric Multigrid Preconditioners for conforming Finite Element Methods on Arbitrarily Agglomerated Meshes
+## 20. Optimal adaptive finite element methods in $W^{1,p}$
 
-- Date: 2026-11-04
+- Date: 2026-11-08
 - Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.06012v1
-- PDF: https://arxiv.org/pdf/2611.06012v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-04-arxiv-geometric_multigrid_preconditioners_for_conforming_finite_element_methods_on_arbitrarily_a_infographic.json
-
-## 12. Mass-lumped finite elements with maximum-bound preservation and original-energy dissipation for the degenerate-mobility Allen-Cahn equation
-
-- Date: 2026-11-06
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.09832v1
-- PDF: https://arxiv.org/pdf/2611.09832v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-mass_lumped_finite_elements_with_maximum_bound_preservation_and_original_energy_dissipatio_infographic.json
-
-## 13. Locating Contact on Tendon-Driven Continuum Robots From Tendon Measurements Alone via Constrained Moving Horizon Estimation
-
-- Date: 2026-11-06
-- Category: AI Solid Mechanics
-- arXiv: https://arxiv.org/abs/2611.09877v1
-- PDF: https://arxiv.org/pdf/2611.09877v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-06-arxiv-locating_contact_on_tendon_driven_continuum_robots_from_tendon_measurements_alone_via_cons_infographic.json
-
-## 14. Finite-element reconstruction of molten-zone dynamics and chemical segregation in optical floating-zone grown Ni--Mn--Ga
-
-- Date: 2026-11-05
-- Category: AI Solid Mechanics
-- arXiv: https://arxiv.org/abs/2611.08250v1
-- PDF: https://arxiv.org/pdf/2611.08250v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-05-arxiv-finite_element_reconstruction_of_molten_zone_dynamics_and_chemical_segregation_in_optical_infographic.json
-
-## 15. Optimal stability estimates and preasymptotic error analysis of the CIP-FEM for the Helmholtz equation with uniaxial perfectly matched layers
-
-- Date: 2026-11-04
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.06288v1
-- PDF: https://arxiv.org/pdf/2611.06288v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-04-arxiv-optimal_stability_estimates_and_preasymptotic_error_analysis_of_the_cip_fem_for_the_helmho_infographic.json
-
-## 16. Process-zone condensation: a discretization-exact reduced cell model for FE$^2$ analysis of composites with fibre-matrix debonding and matrix plasticity
-
-- Date: 2026-11-03
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2611.05065v1
-- PDF: https://arxiv.org/pdf/2611.05065v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-03-arxiv-process_zone_condensation_a_discretization_exact_reduced_cell_model_for_fe_2_analysis_of_c_infographic.json
-
-## 17. AlterNet: Adaptive-Depth Mixture-of-Experts with Learned Halting for Elastic Inference
-
-- Date: 2026-11-05
-- Category: AI Solid Mechanics
-- arXiv: https://arxiv.org/abs/2611.08741v1
-- PDF: https://arxiv.org/pdf/2611.08741v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-05-arxiv-alternet_adaptive_depth_mixture_of_experts_with_learned_halting_for_elastic_inference_infographic.json
-
-## 18. Remap for ALE Hydrodynamics via Direct Interpolation and Constraint Optimization
-
-- Date: 2026-11-03
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.05327v1
-- PDF: https://arxiv.org/pdf/2611.05327v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-03-arxiv-remap_for_ale_hydrodynamics_via_direct_interpolation_and_constraint_optimization_infographic.json
-
-## 19. Trapping and Fracture of Particles in Three-Sphere Ball-Milling Collisions
-
-- Date: 2026-11-05
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2611.08435v1
-- PDF: https://arxiv.org/pdf/2611.08435v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-05-arxiv-trapping_and_fracture_of_particles_in_three_sphere_ball_milling_collisions_infographic.json
-
-## 20. A Second-Order Semi-Implicit Projection Time-Stepping Scheme for the Shallow-Water Equations on the Sphere Using Compatible Finite Elements
-
-- Date: 2026-11-05
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.08169v2
-- PDF: https://arxiv.org/pdf/2611.08169v2
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-05-arxiv-a_second_order_semi_implicit_projection_time_stepping_scheme_for_the_shallow_water_equatio_infographic.json
+- arXiv: https://arxiv.org/abs/2611.11668v1
+- PDF: https://arxiv.org/pdf/2611.11668v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-08-arxiv-optimal_adaptive_finite_element_methods_in_w_1_p_infographic.json

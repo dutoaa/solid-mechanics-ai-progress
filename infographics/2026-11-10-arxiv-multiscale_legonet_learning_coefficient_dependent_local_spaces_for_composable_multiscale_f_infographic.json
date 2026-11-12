@@ -1,18 +1,18 @@
 {
-  "key_insight": "Ms-LegONet learns reusable, coefficient-dependent local finite-element spaces that compose into larger solvers with localized error bounds.",
-  "engineering_relevance": "It accelerates heterogeneous elliptic simulations while allowing changes in coefficient layouts, loads, boundary data and domain size without retraining within the trained coefficient class.",
+  "key_insight": "Ms-LegONet learns reusable coefficient-dependent local spaces, then composes them into continuous multiscale finite element solutions with localized error bounds.",
+  "engineering_relevance": "For heterogeneous elliptic simulations, the method supports changes in material layout, loading, boundary conditions and domain size without retraining within the trained coefficient class.",
   "method": [
-    "Train one network per spatial dimension on local coefficient patches and patch-level harmonic responses, without global training solves.",
-    "Predict zero-boundary spaces, then compute multiscale basis functions through local Galerkin harmonic extensions with shared interface traces.",
-    "Assemble larger blocks by recursive static condensation and attribute approximation error to individual primitives using a localized Céa bound."
+    "Train one network per spatial dimension on local coefficient patches and patch-level harmonic responses, with no global training solves.",
+    "Predict zero-boundary spaces and compute multiscale basis functions through Galerkin harmonic extensions with shared interface traces.",
+    "Assemble larger blocks by recursive static condensation and attribute error primitive by primitive using a localized Céa bound."
   ],
-  "evidence_signal": "The abstract reports 4–150× lower L² errors than baselines at equal unknowns on 2D mosaics, 1.6–2.3× speedups over fine-grid direct solves in 2D, and 30–900× speedups for 3D many-query port responses.",
-  "watch_item": "Reuse is restricted to the trained coefficient class; accuracy for out-of-distribution material patterns requires separate validation.",
+  "evidence_signal": "The abstract reports 4–150× lower L2 error than baselines at equal unknowns on 2D mosaics of 256 high-contrast primitives, plus 30–900× faster many-query 3D chain port responses at 10⁻⁴ relative error.",
+  "watch_item": "Reuse is restricted to the trained coefficient class, and inference still requires local Galerkin solves and multiscale assembly.",
   "hashtags": [
     "#MultiscaleFEM",
     "#ScientificMachineLearning",
-    "#LearnedLocalSpaces",
-    "#StaticCondensation",
+    "#ComputationalMechanics",
+    "#HeterogeneousMaterials",
     "#ErrorBounds"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "Multiscale LegONet: Learning Coefficient-Dependent Local Spaces for Composable Multiscale Finite Elements with Localized Error Bounds",
   "paper_date": "2026-11-10",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-11-11T16:47:16",
+  "generated_at": "2026-11-12T17:15:46",
   "generator": "openai"
 }

@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-11-11
+Generated: 2026-11-12
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Thermodynamically consistent neural constitutive models for elastoplasticity via eigen-representations
@@ -19,15 +19,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.11805v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-operator_learning_of_microstructure_dependent_internal_variable_models_for_inelastic_homog_infographic.json
 
-## 3. Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium
-
-- Date: 2026-11-10
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2611.14341v1
-- PDF: https://arxiv.org/pdf/2611.14341v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-numerical_analysis_of_coupled_flow_deformation_and_frictional_contact_mechanics_in_a_fract_infographic.json
-
-## 4. Adapting a Vision Foundation Model for Fracture Characterization in Acoustic Image Logs
+## 3. Adapting a Vision Foundation Model for Fracture Characterization in Acoustic Image Logs
 
 - Date: 2026-11-10
 - Category: Fracture and Damage
@@ -35,13 +27,21 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.13911v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-adapting_a_vision_foundation_model_for_fracture_characterization_in_acoustic_image_logs_infographic.json
 
-## 5. When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+## 4. When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
 
 - Date: 2026-11-10
 - Category: Constitutive Modeling
 - arXiv: https://arxiv.org/abs/2611.14508v1
 - PDF: https://arxiv.org/pdf/2611.14508v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-when_does_the_real_wiring_win_testing_connectome_structure_function_claims_against_unmeasu_infographic.json
+
+## 5. Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium
+
+- Date: 2026-11-10
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.14341v1
+- PDF: https://arxiv.org/pdf/2611.14341v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-numerical_analysis_of_coupled_flow_deformation_and_frictional_contact_mechanics_in_a_fract_infographic.json
 
 ## 6. Accelerating matrix-free fast diagonalization and preconditioned linear solvers for higher-order finite element discretized elliptic problems on distributed GPUs
 

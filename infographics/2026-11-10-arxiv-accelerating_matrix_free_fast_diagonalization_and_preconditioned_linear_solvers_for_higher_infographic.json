@@ -1,18 +1,18 @@
 {
-  "key_insight": "Matrix-free fast diagonalization and tailored preconditioners accelerate high-order finite element elliptic solves on distributed GPUs by reducing both iteration counts and per-iteration cost.",
-  "engineering_relevance": "Faster elliptic solves can reduce computational bottlenecks in large-scale engineering simulations using high-order finite elements.",
+  "key_insight": "Matrix-free fast diagonalization and tailored preconditioners reduce iteration counts and per-iteration costs for high-order finite element elliptic problems on distributed GPUs.",
+  "engineering_relevance": "These solvers can accelerate large elliptic finite element analyses while supporting NVIDIA, AMD and Intel GPUs through CUDA, HIP and SYCL.",
   "method": [
-    "Distributed exact fast-diagonalization solver for supported tensor-product meshes and coefficient structures.",
-    "Hybrid Schwarz with exact FD cell inverses and p-multigrid with fused hanging-node constraint handling.",
-    "FP32 acceleration within FP64 conjugate gradients, adaptive coarse-level distribution, and CUDA/HIP/SYCL support."
+    "Distributed direct fast diagonalization provides exact solves for supported tensor-product meshes and an exact coarse solver.",
+    "Hybrid Schwarz uses fast-diagonalization cell inverses, while p-multigrid applies fused Chebyshev–Jacobi smoothing with hanging-node constraints.",
+    "FP64 conjugate gradients combine eligible FP32 operations, adaptive coarse-level distribution and multiple-right-hand-side block solves."
   ],
-  "evidence_signal": "Tests span uniform, graded and octree meshes across NVIDIA, AMD and Intel GPUs: direct FD is 100–1,000× faster than Jacobi PCG on uniform meshes, while HS-FD converges in 11 iterations across 8–1,024 MI250X graphics compute dies for an octree generalized Poisson problem.",
-  "watch_item": "Exact direct FD requires supported tensor-product structure and coefficients varying along one coordinate direction; FP32 acceleration also depends on cell shapes and coefficients.",
+  "evidence_signal": "Across mesh and coefficient tests plus four applications, the direct solver was 100–1,000× faster than Jacobi PCG on uniform meshes, and HS-FD converged in 11 iterations on an octree problem across 8–1,024 MI250X graphics compute dies.",
+  "watch_item": "Direct-solver exactness requires supported tensor-product structure and coefficient variation; FP32 eligibility also depends on cell shapes and coefficients.",
   "hashtags": [
     "#HighOrderFEM",
     "#MatrixFree",
-    "#DistributedGPU",
     "#FastDiagonalization",
+    "#DistributedGPU",
     "#EllipticSolvers"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "Accelerating matrix-free fast diagonalization and preconditioned linear solvers for higher-order finite element discretized elliptic problems on distributed GPUs",
   "paper_date": "2026-11-10",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-11-11T16:47:07",
+  "generated_at": "2026-11-12T17:15:37",
   "generator": "openai"
 }

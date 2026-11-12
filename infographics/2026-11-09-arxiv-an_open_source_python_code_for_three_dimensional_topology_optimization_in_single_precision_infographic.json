@@ -1,18 +1,18 @@
 {
-  "key_insight": "TOF3D enables large-scale 3D topology optimization on a single consumer GPU by using displacement differences to avoid accuracy loss in single-precision stiffness calculations.",
-  "engineering_relevance": "The open-source Python code makes stress-constrained, manufacturing-robust, compliant-mechanism and porous-infill design accessible on a 12 GB GPU.",
+  "key_insight": "TOF3D enables large-scale 3D topology optimization on a consumer GPU using single precision while suppressing numerical errors through displacement-difference element products.",
+  "engineering_relevance": "The open-source Python code makes stress-constrained, manufacturing-robust, compliant-mechanism and bone-like porous-infill optimization accessible on a single 12 GB GPU.",
   "method": [
-    "Density-based topology optimization with matrix-free stiffness application.",
+    "Density-based topology optimization with a matrix-free stiffness operator.",
     "Conjugate gradient solver preconditioned by geometric multigrid.",
-    "Element products formed from nodal displacement differences to suppress spurious rigid-body energy."
+    "Displacement-difference element products preserve rigid-body behavior in single precision."
   ],
-  "evidence_signal": "Reported compliance error fell from up to 5.4% to 1.3×10⁻⁵; on an RTX 3060, cantilever iterations took 0.46 s for 0.5 million elements and 15 s for 33.5 million.",
-  "watch_item": "Single precision requires careful operator implementation: directly rounding element stiffness matrices introduced spurious rigid-body energy.",
+  "evidence_signal": "On an RTX 3060, cantilever iterations took 0.46 s for 0.5 million elements and 15 s for 33.5 million; the numerical reformulation reduced compliance error from up to 5.4% to 1.3×10⁻⁵.",
+  "watch_item": "Naively rounding element matrices to single precision introduces spurious rigid-body energy, so the displacement-difference formulation is essential to the reported accuracy.",
   "hashtags": [
     "#TopologyOptimization",
-    "#ComputationalMechanics",
-    "#GPUComputing",
     "#FiniteElementMethod",
+    "#GPUComputing",
+    "#SinglePrecision",
     "#OpenSource"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "An open source Python code for three-dimensional topology optimization in single precision on a consumer GPU",
   "paper_date": "2026-11-09",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-11-11T16:47:30",
+  "generated_at": "2026-11-12T17:15:56",
   "generator": "openai"
 }

@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-11-13
+Generated: 2026-11-14
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Thermodynamically consistent neural constitutive models for elastoplasticity via eigen-representations
@@ -19,39 +19,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.15719v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-11-arxiv-dynamic_prandtl_reuss_thermoplasticity_with_degenerating_yield_constraints_infographic.json
 
-## 3. A scaling law for numerical computation of fracture stress intensity factors
-
-- Date: 2026-11-12
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2611.16850v1
-- PDF: https://arxiv.org/pdf/2611.16850v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-a_scaling_law_for_numerical_computation_of_fracture_stress_intensity_factors_infographic.json
-
-## 4. Operator Learning of Microstructure-Dependent Internal-Variable Models for Inelastic Homogenization: Approximation and Complexity
-
-- Date: 2026-11-09
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2611.11805v1
-- PDF: https://arxiv.org/pdf/2611.11805v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-operator_learning_of_microstructure_dependent_internal_variable_models_for_inelastic_homog_infographic.json
-
-## 5. Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium
-
-- Date: 2026-11-10
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2611.14341v1
-- PDF: https://arxiv.org/pdf/2611.14341v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-numerical_analysis_of_coupled_flow_deformation_and_frictional_contact_mechanics_in_a_fract_infographic.json
-
-## 6. SiC-BN composites with extreme thermal and environmental stability
-
-- Date: 2026-11-12
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2611.17283v1
-- PDF: https://arxiv.org/pdf/2611.17283v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-sic_bn_composites_with_extreme_thermal_and_environmental_stability_infographic.json
-
-## 7. Ultrasound Elastography: Excitation Methods and Low-Cost Alternative
+## 3. Ultrasound Elastography: Excitation Methods and Low-Cost Alternative
 
 - Date: 2026-11-11
 - Category: FEM Surrogates
@@ -59,7 +27,47 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.15645v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-11-arxiv-ultrasound_elastography_excitation_methods_and_low_cost_alternative_infographic.json
 
-## 8. Physics-constrained differentiable causal discovery of constitutive mechanisms through boundary value problems
+## 4. A scaling law for numerical computation of fracture stress intensity factors
+
+- Date: 2026-11-12
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2611.16850v1
+- PDF: https://arxiv.org/pdf/2611.16850v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-a_scaling_law_for_numerical_computation_of_fracture_stress_intensity_factors_infographic.json
+
+## 5. Operator Learning of Microstructure-Dependent Internal-Variable Models for Inelastic Homogenization: Approximation and Complexity
+
+- Date: 2026-11-09
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.11805v1
+- PDF: https://arxiv.org/pdf/2611.11805v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-operator_learning_of_microstructure_dependent_internal_variable_models_for_inelastic_homog_infographic.json
+
+## 6. Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium
+
+- Date: 2026-11-10
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.14341v1
+- PDF: https://arxiv.org/pdf/2611.14341v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-numerical_analysis_of_coupled_flow_deformation_and_frictional_contact_mechanics_in_a_fract_infographic.json
+
+## 7. SiC-BN composites with extreme thermal and environmental stability
+
+- Date: 2026-11-12
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2611.17283v1
+- PDF: https://arxiv.org/pdf/2611.17283v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-sic_bn_composites_with_extreme_thermal_and_environmental_stability_infographic.json
+
+## 8. Partition of Unity Data-driven Finite Element Method for Anisotropic Diffusion in Magnetized Plasmas
+
+- Date: 2026-11-12
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2611.17086v1
+- PDF: https://arxiv.org/pdf/2611.17086v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-partition_of_unity_data_driven_finite_element_method_for_anisotropic_diffusion_in_magnetiz_infographic.json
+
+## 9. Physics-constrained differentiable causal discovery of constitutive mechanisms through boundary value problems
 
 - Date: 2026-11-12
 - Category: Constitutive Modeling
@@ -67,7 +75,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.16468v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-physics_constrained_differentiable_causal_discovery_of_constitutive_mechanisms_through_bou_infographic.json
 
-## 9. Mechanical behaviour of the intact brain-skull interface under tension, compression and shear
+## 10. Mechanical behaviour of the intact brain-skull interface under tension, compression and shear
 
 - Date: 2026-11-12
 - Category: Fracture and Damage
@@ -75,7 +83,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.16197v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-mechanical_behaviour_of_the_intact_brain_skull_interface_under_tension_compression_and_she_infographic.json
 
-## 10. Adapting a Vision Foundation Model for Fracture Characterization in Acoustic Image Logs
+## 11. Adapting a Vision Foundation Model for Fracture Characterization in Acoustic Image Logs
 
 - Date: 2026-11-10
 - Category: Fracture and Damage
@@ -83,7 +91,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.13911v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-adapting_a_vision_foundation_model_for_fracture_characterization_in_acoustic_image_logs_infographic.json
 
-## 11. When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
+## 12. When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology
 
 - Date: 2026-11-10
 - Category: Constitutive Modeling
@@ -91,21 +99,13 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.14508v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-when_does_the_real_wiring_win_testing_connectome_structure_function_claims_against_unmeasu_infographic.json
 
-## 12. A pseudostress-based fully mixed finite element method for the stationary Biot--Poisson--Nernst--Planck system
+## 13. A pseudostress-based fully mixed finite element method for the stationary Biot--Poisson--Nernst--Planck system
 
 - Date: 2026-11-11
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2611.15960v1
 - PDF: https://arxiv.org/pdf/2611.15960v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-11-arxiv-a_pseudostress_based_fully_mixed_finite_element_method_for_the_stationary_biot_poisson_ner_infographic.json
-
-## 13. Partition of Unity Data-driven Finite Element Method for Anisotropic Diffusion in Magnetized Plasmas
-
-- Date: 2026-11-12
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.17086v1
-- PDF: https://arxiv.org/pdf/2611.17086v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-partition_of_unity_data_driven_finite_element_method_for_anisotropic_diffusion_in_magnetiz_infographic.json
 
 ## 14. Accelerating matrix-free fast diagonalization and preconditioned linear solvers for high-order finite element discretized elliptic problems on distributed GPUs
 

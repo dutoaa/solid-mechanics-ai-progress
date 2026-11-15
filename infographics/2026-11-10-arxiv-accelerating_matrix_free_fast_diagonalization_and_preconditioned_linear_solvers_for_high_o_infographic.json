@@ -1,19 +1,19 @@
 {
-  "key_insight": "GPU-optimized fast diagonalization and matrix-free preconditioners accelerate high-order finite-element elliptic solves by reducing both iteration counts and per-iteration costs.",
-  "engineering_relevance": "These methods can shorten large-scale elliptic solves in engineering simulations, with solver choice guided by mesh structure and coefficient variation.",
+  "key_insight": "GPU-optimized fast diagonalization and matrix-free preconditioning accelerate high-order finite-element elliptic solves by reducing both iteration counts and per-iteration cost.",
+  "engineering_relevance": "Faster distributed elliptic solvers can reduce computational bottlenecks in engineering simulations using high-order finite elements.",
   "method": [
     "Distributed direct fast diagonalization for tensor-product meshes with direction-wise grading and coefficients varying along one coordinate.",
-    "Hybrid Schwarz with exact local fast-diagonalization solves and p-multigrid with fused hanging-node constraint handling.",
-    "Selective FP32 work within FP64 conjugate gradients, adaptive coarse-level distribution, and multiple-right-hand-side support across CUDA, HIP, and SYCL."
+    "Hybrid Schwarz with exact FD cell inverses and Chebyshev–Jacobi p-multigrid, both supporting hanging-node octrees.",
+    "CUDA, HIP and SYCL implementations with selective FP32 computation, FP64 conjugate gradients and adaptive coarse-level distribution."
   ],
-  "evidence_signal": "Evaluations across NVIDIA, AMD, and Intel GPUs report 100–1,000× faster direct solves than Jacobi PCG on uniform meshes and 11 HS-FD iterations on generalized Poisson octree problems across 8–1,024 MI250X compute dies.",
-  "watch_item": "The direct solver requires tensor-product structure and restricted coefficient variation; selective FP32 use also depends on cell shapes and coefficients.",
+  "evidence_signal": "The abstract reports 100–1,000× faster direct solves than Jacobi PCG on uniform meshes and 11 HS-FD iterations on octrees across 8–1,024 MI250X graphics compute dies.",
+  "watch_item": "Direct fast diagonalization requires suitable tensor-product structure and restricted coefficient variation; solver and precision choices depend on mesh and operator properties.",
   "hashtags": [
-    "#FiniteElementMethods",
+    "#HighOrderFEM",
     "#MatrixFree",
-    "#GPUComputing",
+    "#GPUSolvers",
     "#FastDiagonalization",
-    "#EllipticSolvers"
+    "#ScientificComputing"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Accelerating matrix-free fast diagonalization and preconditioned linear solvers for high-order finite element discretized elliptic problems on distributed GPUs",
   "paper_date": "2026-11-10",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-11-14T15:26:07",
+  "generated_at": "2026-11-15T15:59:02",
   "generator": "openai"
 }

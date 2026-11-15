@@ -1,19 +1,19 @@
 {
-  "key_insight": "For linear elastostatics, minimizing discrete potential energy is exactly supervised regression in the energy norm, aligning surrogate training with stress accuracy rather than displacement accuracy.",
+  "key_insight": "For linear elastostatics, minimizing discrete potential energy is equivalent to supervised learning in the energy norm, aligning surrogate training with stress accuracy rather than displacement accuracy.",
   "engineering_relevance": "Energy-norm training improves stress predictions for perforated plates and solids with cavities, where holes concentrate stress.",
   "method": [
-    "Train and evaluate finite-element surrogates using the energy norm.",
-    "Train without solution labels by minimizing assembled discrete potential energy.",
-    "Screen predictions within a load case using energy; its sign flags predictions worse than the zero field."
+    "Train finite-element surrogates using energy-norm supervision or discrete potential energy without solution labels.",
+    "Evaluate energy-norm and stress errors alongside displacement errors.",
+    "Use potential energy to rank predictions for a load case and flag those worse than the zero field."
   ],
-  "evidence_signal": "In pre-registered comparisons, changing only the supervised loss norm reduced a 3D transformer's median energy-norm error 7.5-fold and median von Mises error 6.1-fold; 2D von Mises error more than halved, including on held-out instances.",
-  "watch_item": "No network transferred to a substantially finer mesh; when the stiffness matrix was available, Ritz projection outperformed the label-free transformer in seed means on every metric except peak stress.",
+  "evidence_signal": "In pre-registered comparisons, changing only the supervised loss norm reduced a 3D transformer's median energy-norm error 7.5-fold and median von Mises error 6.1-fold; 2D von Mises error more than halved.",
+  "watch_item": "No tested network transferred to a substantially finer mesh, limiting claims of mesh generalization.",
   "hashtags": [
     "#AISolidMechanics",
-    "#FiniteElementSurrogates",
+    "#FiniteElementAnalysis",
     "#EnergyNorm",
     "#StressAnalysis",
-    "#ScientificMachineLearning"
+    "#PhysicsBasedLearning"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "The norm, not the labels: training and evaluating finite-element surrogates for stress analysis in the energy norm",
   "paper_date": "2026-11-09",
   "paper_category": "FEM Surrogates",
-  "generated_at": "2026-11-14T15:26:18",
+  "generated_at": "2026-11-15T15:59:13",
   "generator": "openai"
 }

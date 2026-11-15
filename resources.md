@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-11-14
+Generated: 2026-11-15
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Thermodynamically consistent neural constitutive models for elastoplasticity via eigen-representations
@@ -19,15 +19,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.15719v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-11-arxiv-dynamic_prandtl_reuss_thermoplasticity_with_degenerating_yield_constraints_infographic.json
 
-## 3. Ultrasound Elastography: Excitation Methods and Low-Cost Alternative
-
-- Date: 2026-11-11
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.15645v1
-- PDF: https://arxiv.org/pdf/2611.15645v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-11-arxiv-ultrasound_elastography_excitation_methods_and_low_cost_alternative_infographic.json
-
-## 4. A scaling law for numerical computation of fracture stress intensity factors
+## 3. A scaling law for numerical computation of fracture stress intensity factors
 
 - Date: 2026-11-12
 - Category: Fracture and Damage
@@ -35,7 +27,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.16850v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-a_scaling_law_for_numerical_computation_of_fracture_stress_intensity_factors_infographic.json
 
-## 5. Operator Learning of Microstructure-Dependent Internal-Variable Models for Inelastic Homogenization: Approximation and Complexity
+## 4. Operator Learning of Microstructure-Dependent Internal-Variable Models for Inelastic Homogenization: Approximation and Complexity
 
 - Date: 2026-11-09
 - Category: Constitutive Modeling
@@ -43,7 +35,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.11805v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-09-arxiv-operator_learning_of_microstructure_dependent_internal_variable_models_for_inelastic_homog_infographic.json
 
-## 6. Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium
+## 5. Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium
 
 - Date: 2026-11-10
 - Category: Constitutive Modeling
@@ -51,7 +43,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.14341v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-10-arxiv-numerical_analysis_of_coupled_flow_deformation_and_frictional_contact_mechanics_in_a_fract_infographic.json
 
-## 7. SiC-BN composites with extreme thermal and environmental stability
+## 6. SiC-BN composites with extreme thermal and environmental stability
 
 - Date: 2026-11-12
 - Category: Fracture and Damage
@@ -59,13 +51,21 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.17283v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-sic_bn_composites_with_extreme_thermal_and_environmental_stability_infographic.json
 
-## 8. Partition of Unity Data-driven Finite Element Method for Anisotropic Diffusion in Magnetized Plasmas
+## 7. Partition of Unity Data-driven Finite Element Method for Anisotropic Diffusion in Magnetized Plasmas
 
 - Date: 2026-11-12
 - Category: FEM Surrogates
 - arXiv: https://arxiv.org/abs/2611.17086v1
 - PDF: https://arxiv.org/pdf/2611.17086v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-12-arxiv-partition_of_unity_data_driven_finite_element_method_for_anisotropic_diffusion_in_magnetiz_infographic.json
+
+## 8. Ultrasound Elastography: Excitation Methods and Low-Cost Alternative
+
+- Date: 2026-11-11
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2611.15645v1
+- PDF: https://arxiv.org/pdf/2611.15645v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-11-arxiv-ultrasound_elastography_excitation_methods_and_low_cost_alternative_infographic.json
 
 ## 9. Physics-constrained differentiable causal discovery of constitutive mechanisms through boundary value problems
 

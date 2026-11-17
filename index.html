@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI Solid Mechanics Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-11-16. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-11-17. Ranked from recent arXiv AI Solid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,26 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>83</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>80</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Variationally correct physics-informed operator learning for nonlinear partial differential equations</h2>
+        <p class="authors">Yuan Qiu, Wolfgang Dahmen, Peng Chen</p>
+        <p class="abstract">Physics-informed operator learning trains neural operators on the residual of a parametric partial differential equation (PDE) instead of labeled solution data, but its reliability depends on a variationally correct residual: one that is equivalent to the error in a norm dictated by the equation, the PDE-compliant norm. For nonlinear equations written as first-order systems, we prove that the first-order system least-squares residual is equivalent to the error in this norm near a solution branch if the linearized residual is stable and the residual derivative is Lipschitz continuous, possibly in a norm stronger than the error norm. We verify these conditions for monotone reaction, solution- and gradient-dependent diffusion, and compressible Neo-Hookean hyperelasticity. The stability mechanisms vary across these classes, as do the regions where the equivalence holds, from arbitrary bounded sets to a neighborhood of the branch. In a conforming finite element space, we show that the loss excess of a state near the finite element solution is equivalent to its squared distance from that solution. We use this loss to train a reduced basis neural operator with values in this space, with solution snapshots needed only for the basis and the loss and its symbolically derived gradient assembled by the finite element library. At inference, this loss estimates the error. Numerically, the square root of the loss excess tracks the error within factors comparable to those of the linear case, and the operator achieves higher accuracy in the PDE-compliant norm than grid-based baselines evaluated in the same finite element space.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.21469v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.21469v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A variationally correct first-order least-squares residual makes physics-informed operator learning locally error-equivalent in the PDE-compliant norm.</p>
+          <p><b>Engineering relevance:</b> For nonlinear mechanics, including compressible Neo-Hookean hyperelasticity, this provides a principled training objective and an inference-time error indicator.</p>
+          <ul><li>Establish residual–error equivalence using linearized stability and Lipschitz continuity of the residual derivative.</li><li>Train a reduced-basis neural operator in a conforming finite element space, using solution snapshots only to construct the basis.</li><li>Assemble the residual loss and its symbolically derived gradient with a finite element library.</li></ul>
+          <p><b>Evidence signal:</b> Numerical tests show that the square root of loss excess tracks error within factors comparable to the linear case, while the operator outperforms grid-based baselines in the PDE-compliant norm.</p>
+          <p><b>Watch item:</b> The guarantees depend on stability and regularity assumptions and may hold only near a solution branch, rather than globally.</p>
+          <div class="tags"><span>#PhysicsInformedLearning</span> <span>#NeuralOperators</span> <span>#FiniteElements</span> <span>#NonlinearMechanics</span> <span>#ErrorEstimation</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>78</strong></div>
         <p class="date">2026-11-13</p>
         <h2>Fuse-PINN: Combining Finite Element Methods and Physics-Informed Neural Networks to enable massively parallel simulations of non-linear PDEs</h2>
         <p class="authors">Stanislas Pamela, Nicolas Pailliez, Emmanuel Franck, Victor Michel-Dansac, Laurent Navoret, Vignesh Gopakumar</p>
@@ -39,37 +58,132 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.18409v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.18409v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Fuse-PINN combines finite-element methods and physics-informed neural networks to enable scalable multi-GPU simulation of nonlinear PDEs.</p>
-          <p><b>Engineering relevance:</b> The framework offers a route to GPU-parallel engineering PDE simulation, demonstrated on magnetic-confinement fusion models rather than solid mechanics.</p>
-          <ul><li>Formulate neural-network PDE models within a finite-element framework.</li><li>Distribute computation across GPU-based HPC systems.</li><li>Use Energy Natural Gradient Descent for high-precision convergence.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports near-perfect multi-GPU scaling as problem size increases, with demonstrations on nonlinear convective models exhibiting fine-scale dynamics.</p>
-          <p><b>Watch item:</b> Increasing-problem-size scaling does not establish fixed-problem speedups or accuracy and cost advantages over conventional FEM solvers.</p>
+          <p><b>Key insight:</b> Fuse-PINN combines finite-element methods with physics-informed neural networks to enable scalable multi-GPU simulations of nonlinear PDEs.</p>
+          <p><b>Engineering relevance:</b> The framework offers a route to large-domain, fine-scale nonlinear physics simulation on GPU-based HPC systems, demonstrated for magnetic-confinement fusion rather than solid mechanics.</p>
+          <ul><li>Formulates a finite-element method for neural networks (FEM-NN).</li><li>Implements FEM-NN in a modular framework for parallel GPU execution.</li><li>Uses Energy Natural Gradient Descent for high-precision convergence.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports near-perfect scaling as problem size increases across multiple GPUs, with demonstrations including nonlinear convective models with fine-scale dynamics.</p>
+          <p><b>Watch item:</b> The abstract does not quantify GPU counts, accuracy, or speedups over conventional FEM solvers, leaving practical performance gains to be assessed.</p>
           <div class="tags"><span>#PhysicsInformedNeuralNetworks</span> <span>#FiniteElementMethods</span> <span>#ScientificMachineLearning</span> <span>#HighPerformanceComputing</span> <span>#FusionSimulation</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>67</strong></div>
-        <p class="date">2026-11-09</p>
-        <h2>Thermodynamically consistent neural constitutive models for elastoplasticity via eigen-representations</h2>
-        <p class="authors">Harikrishnan Vijayakumaran, Shunyu Yin, Martin Abendroth, Miguel A. Bessa, Karl A. Kalina</p>
-        <p class="abstract">Neural network material models can represent yield surfaces and hardening laws with far more flexibility than classical closed-form plasticity formulations, but training such a model end-to-end through an implicit return map introduces non-trivial challenges. This work presents a thermodynamically consistent neural constitutive model for rate-independent, isotropic elastoplasticity that jointly learns a flexible yield function together with its evolution laws. For non-associative flow, the yield function extends the convex flow potential by a jointly trained additive term, which renders the model thermodynamically consistent by construction. Isotropy and convexity are enforced simultaneously across all learnable components through a permutation-invariant, spectral (eigenvalue-based) representation. Training proceeds through a backward-Euler return map, with gradients propagated by the implicit function theorem together with an eigenvalue-degeneracy-aware scheme for safe differentiation. The robustness and generality of the approach are demonstrated by reproducing known constitutive models, including non-associative flow, learning material behavior from stress--strain data extracted from a full-field finite element simulation, and capturing unknown non-associative behavior from homogenized representative volume elements of a foam. Finally, the proposed neural plasticity model is evaluated within finite element simulations to solve boundary-value-problem under plane stress.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.13162v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.13162v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>77</strong></div>
+        <p class="date">2026-11-14</p>
+        <h2>Mesoscale Neural Operators: Learning Nonlinear Constitutive Laws from Molecular Dynamics for Scalable Fracture Predictions</h2>
+        <p class="authors">Yue Yu, Jihong Wang, Stewart Silling, Ziwei Yang</p>
+        <p class="abstract">Molecular dynamics (MD) simulations can capture the nanoscale physics of fracture at the atomistic level, but their computational cost prohibits predictions at the length scales and time scales needed for many applications. Machine learning approaches, on the other hand, have been proposed as heuristic surrogates for material fracture, yet they cannot guarantee the physical consistency of the predicted response. To address this shortcoming, we propose the mesoscale neural operator (MNO): a data-driven nonlocal constitutive model that is learned directly from MD loading and displacement data. After training, it can be used in continuum fracture simulations on much larger domains and grid sizes. The key idea of the MNO is to exploit the built-in characteristic length of a nonlocal model, called the horizon, to travel across scales. Physical consistency across scales is obtained by building two structural ingredients into the MNO: a normalized kernel that renders the strain energy density invariant under horizon rescaling, and a rescaled critical bond stretch that keeps the energy release rate consistent across scales. Through tests on synthetic data, we show that the MNO and its learning workflow indeed discover the nonlocal continuum multiscale model in the form of the nonlocal kernel and the nonlinear constitutive relation. We then apply the framework to coarse-grained MD data and find that in a test problem, the learned model matches the MD strain energy density and critical energy release rate within 3%. It also predicts the peak transmitted forces within 6% in out-of-distribution tension tests. As a further demonstration, the model is applied to a plate with 4000 times the area of the training specimens and containing an initial defect. In this problem, the model reproduces the main features of dynamic brittle fracture, including branch and cascading branch networks.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.19658v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.19658v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> An eigenvalue-based neural constitutive model jointly learns yield behavior and evolution laws for isotropic elastoplasticity while enforcing thermodynamic consistency, including non-associative flow.</p>
-          <p><b>Engineering relevance:</b> The approach enables flexible, data-driven plasticity models to be integrated into finite element simulations of boundary-value problems.</p>
-          <ul><li>Use permutation-invariant spectral representations to enforce isotropy and convexity across learnable components.</li><li>Construct the non-associative yield function by adding a jointly learned term to a convex flow potential.</li><li>Train through a backward-Euler return map using implicit differentiation and eigenvalue-degeneracy-aware gradients.</li></ul>
-          <p><b>Evidence signal:</b> Evaluation includes reproducing known constitutive models, learning from full-field finite element stress–strain data and homogenized foam RVEs, and deployment in plane-stress finite element simulations.</p>
-          <p><b>Watch item:</b> Implementation requires careful handling of implicit return-map differentiation near repeated eigenvalues; the stated scope is rate-independent, isotropic elastoplasticity.</p>
-          <div class="tags"><span>#ComputationalMechanics</span> <span>#NeuralConstitutiveModels</span> <span>#Elastoplasticity</span> <span>#ThermodynamicConsistency</span> <span>#FiniteElementAnalysis</span></div>
+          <p><b>Key insight:</b> Mesoscale neural operators learn nonlocal constitutive laws from molecular dynamics while preserving strain energy density and fracture energy across horizon rescaling.</p>
+          <p><b>Engineering relevance:</b> The approach enables continuum fracture simulations on much larger domains and coarser grids than atomistic simulations can afford.</p>
+          <ul><li>Learn a nonlocal kernel and nonlinear constitutive relation from MD loading and displacement data.</li><li>Normalize the kernel to preserve strain energy density under horizon rescaling.</li><li>Rescale critical bond stretch to maintain consistent fracture energy across scales.</li></ul>
+          <p><b>Evidence signal:</b> Synthetic tests support model recovery; MD-based tests report energy metrics within 3% and out-of-distribution peak forces within 6%, plus a fracture demonstration on a plate with 4,000× the training-specimen area.</p>
+          <p><b>Watch item:</b> The reported tests do not establish generalization to other materials or loading regimes; broader validation is needed before engineering deployment.</p>
+          <div class="tags"><span>#NeuralOperators</span> <span>#SolidMechanics</span> <span>#MolecularDynamics</span> <span>#MultiscaleModeling</span> <span>#FractureMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>66</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>74</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Scientific Coding with Large Language Models: Evidence from Finite Element Analysis</h2>
+        <p class="authors">Erfan Hamdi, Joel Shor, Emma Lejeune</p>
+        <p class="abstract">Large language models (LLMs) offer a potential route to automating scientific programming, but their usefulness depends on consistently producing numerically correct code. We extend FEM-Bench to 17 finite element tasks involving nonlinear and history-dependent mechanics and structural dynamics, and evaluate 15 models on implementation and test generation without execution feedback. The best model succeeds in 87.1% of single-pass implementation trials, but rankings differ between tracks. The leading implementer achieves 49.9% joint test success, while the leading tester reaches 82.6%. For six models, we compare single-pass generation with two agentic harnesses that allow code execution and revision. Agentic execution solves some tasks that never succeeded in single-pass trials and improves consistency on others, but gains vary across models and harnesses, and regressions also occur. Claude Opus 5 with SimpleAgent reaches 96.5% Pass@3, the probability of at least one success in three attempts, but 77.1% Pass$^3$, the probability that all three succeed. No model-harness combination exceeds 78.8% Pass$^3$. To understand why agents submit incorrect code after passing their own checks, we analyze 249 failed agentic trajectories and identify six categories of self-verification failure. The most common are inadequate test coverage (73.1%) and reliance on generic consistency checks (70.3%), and in 28.5% of cases the tests share an error with the implementation. Motivated by these findings, an exploratory configuration with separate coder and tester agents achieves the highest observed scores, with 97.6% Pass@3 and 88.8% Pass$^3$. These results identify consistency across attempts and independent verification as the main obstacles to trusting LLM-generated scientific code.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.21176v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.21176v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> LLMs can generate correct finite element code, but consistency across attempts and independent verification remain critical barriers to trust.</p>
+          <p><b>Engineering relevance:</b> Automating nonlinear mechanics and structural dynamics coding requires numerical validation beyond passing an agent’s own tests.</p>
+          <ul><li>Extend FEM-Bench to 17 finite element tasks and evaluate 15 models on implementation and test generation.</li><li>Compare single-pass generation with two execution-and-revision harnesses for six models.</li><li>Analyze 249 failed agentic trajectories and explore separate coder and tester agents.</li></ul>
+          <p><b>Evidence signal:</b> The exploratory coder–tester configuration achieved 97.6% probability of at least one success across three attempts and 88.8% probability that all three succeeded.</p>
+          <p><b>Watch item:</b> Self-tests can falsely reassure: 28.5% of failed agentic trajectories had tests sharing an error with the implementation, and the separate-agent results remain exploratory.</p>
+          <div class="tags"><span>#FiniteElementAnalysis</span> <span>#SolidMechanics</span> <span>#ScientificCoding</span> <span>#LLMAgents</span> <span>#NumericalVerification</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>72</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>A Staggered Discontinuous Galerkin Neural Network Method with a Computable Error Decomposition</h2>
+        <p class="authors">Gung-Min Gie, Chang-Yeol Jung, Bongsuk Kwon, Kiwoong Kwon</p>
+        <p class="abstract">We develop a staggered discontinuous Galerkin neural network (SDGNN) method for scalar elliptic problems with a computable error decomposition. The staggered discontinuous Galerkin (SDG) method requires only local continuity of its trial functions and gives a square, inf-sup stable system without stabilization parameters; we carry this structure over to neural networks. Networks defined on the patches of a staggered mesh satisfy the SDG continuity conditions for all values of the network parameters, and the loss is the squared dual norm of the SDG weak residual. We show that the loss is equivalent, with computable constants, to the square of the training error, the distance between the SDG projection of the network and the SDG finite element approximation, so that the full error is bounded by the discretization error, a multiple of the square root of the loss, and the network projection error. The weak residual requires no derivatives of the networks, the boundary and convection terms carry no penalty or stabilization weights, and the scalar trial functions may jump across the midlines of the primal cells. Numerical experiments show that the square root of the loss tracks the error during the training, that prescribed jumps across a square and a circular interface are captured consistently over the initializations, and that the method is more accurate than physics-informed neural networks at the same parameter counts.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.20556v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.20556v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> SDGNN preserves staggered discontinuous Galerkin structure while providing a computable error decomposition linking the training loss to solution accuracy.</p>
+          <p><b>Engineering relevance:</b> For scalar elliptic simulations relevant to engineering, the method offers an error-aware neural approximation that accommodates prescribed interface jumps.</p>
+          <ul><li>Define patchwise neural networks that satisfy SDG continuity conditions by construction.</li><li>Minimize the squared dual norm of the weak residual without network derivatives or penalty and stabilization weights.</li><li>Bound total error by discretization error, a computable multiple of the square root of the loss, and network projection error.</li></ul>
+          <p><b>Evidence signal:</b> Numerical experiments show that the square root of the loss tracks error during training, square and circular interface jumps are captured consistently across initializations, and SDGNN outperforms PINNs at matched parameter counts.</p>
+          <p><b>Watch item:</b> A small training loss alone does not guarantee small total error; discretization and network projection errors must also be controlled.</p>
+          <div class="tags"><span>#ScientificMachineLearning</span> <span>#DiscontinuousGalerkin</span> <span>#NeuralPDEs</span> <span>#ErrorEstimation</span> <span>#ComputationalEngineering</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>72</strong></div>
+        <p class="date">2026-11-14</p>
+        <h2>A mesoscale damage model for void nucleation and growth in shock loaded microstructure informed by computer vision</h2>
+        <p class="authors">Abhijith Thoopul Anantharanga, Brandon Runnels</p>
+        <p class="abstract">Spallation in ductile materials under high strain rates occurs through the process of void nucleation, growth, and coalescence. Void nucleation is known to depend on factors ranging from microstructural to stress state. The criteria for void nucleation in damage models are stochastic, and microstructural awareness is often neglected. Recently, it was shown that nucleation propensity can be estimated using computer vision. In the present work, this is integrated with a continuum damage model framework for comprehensive simulation of spallation in tantalum under plate impact. Void nucleation probability is governed by a susceptibility field, predicted from grain orientations and grain boundary (GB) energy, with a mechanical barrier set by the local maximum principal stress. This is coupled to a crystal plasticity model within a Lagrangian shock simulation, with microstructure selectively resolved to reduce computational cost. The model is calibrated at a flyer velocity of 196 m/s, where the simulated free surface velocity (FSV) matches experimental measurements of shock arrival, peak state, release and the pullback signal measured in flyer impact experiments, with some deviations confined to the late time ringing. With no further parameter changes, the model transfers to a 214 m/s case and accurately reproduces the FSV. To demonstrate the microstructure-awareness of the nucleation model, a selection of synthetic microstructures is presented for comparison. In the resolved microstructure, voids nucleate predominantly (though not exclusively) at GBs and triple junctions. It is shown that the FSV differs significantly based on the incorporated microstructure, yielding the correct FSV prediction only in the case of representative microstructures.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.19159v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.19159v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Computer-vision-informed void nucleation makes a mesoscale damage model sensitive to microstructure and enables prediction of shock-induced spallation in tantalum.</p>
+          <p><b>Engineering relevance:</b> The approach links grain-scale structure to plate-impact response, supporting microstructure-aware assessment of high-rate material failure.</p>
+          <ul><li>Predict a void-nucleation susceptibility field from grain orientations and grain-boundary energy.</li><li>Gate nucleation by local maximum principal stress and model subsequent void growth.</li><li>Couple damage to crystal plasticity in a Lagrangian shock simulation with selectively resolved microstructure.</li></ul>
+          <p><b>Evidence signal:</b> Calibrated at 196 m/s flyer velocity, the model reproduced key experimental free-surface velocity features and transferred to 214 m/s without parameter changes.</p>
+          <p><b>Watch item:</b> Accurate predictions depend on representative microstructures, and late-time free-surface velocity ringing showed deviations.</p>
+          <div class="tags"><span>#AISolidMechanics</span> <span>#ComputationalMechanics</span> <span>#ConstitutiveModeling</span> <span>#Microstructure</span> <span>#Spallation</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>68</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Pharmaco-mechanical computational simulation of atherosclerotic arteries: effects of calcium channel blockers on local stress distributions</h2>
+        <p class="authors">Sharan Nurani Ramesh, Lea Saßmannshausen, Axel Klawonn, Daniel Balzani</p>
+        <p class="abstract">This paper presents a computational model integrating transmural drug transport, smooth muscle cell contraction, nonlinear anisotropic material behavior, and residual stresses to investigate the effects of calcium channel blockers~(CCBs) on local stress distributions in atherosclerotic arteries. The balance of linear momentum is coupled with a three-dimensional reaction-diffusion equation for the drug transport. Smooth muscle contraction is modeled phenomenologically based on a chemo-mechanical model that incorporates the effects of stretch on intracellular calcium dynamics and calcium sensitization. A novel drug-tissue interaction model is proposed to capture the effects of CCBs on intracellular calcium and thus on smooth muscle contraction. Material parameters are identified by fitting to experimental data from the literature and finite element simulations are conducted on five exemplary atherosclerotic arterial geometries reconstructed from histological cross-sections. Simulation results show that although CCBs reduce the stresses in the media through reduced smooth muscle contraction, they shift load to the fibrous cap, whose stress increases in all five geometries (median of up to 28.9~kPa). This increase varies strongly between plaque morphologies and becomes smaller with lower smooth muscle tone before treatment, lower drug concentrations in the arterial wall and increasing axial pre-stretch. A blood pressure reduction of 10~mmHg already lowers it to a median of at most 3.8~kPa in four of the five geometries. Our findings suggest that CCBs may increase the rupture risk of vulnerable plaques with highly loaded fibrous caps under insufficient blood pressure reduction, which remains to be confirmed experimentally and clinically.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.21320v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.21320v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> The simulations predict that calcium channel blockers reduce arterial media stress but shift load to the fibrous cap, potentially increasing plaque rupture risk if blood pressure reduction is insufficient.</p>
+          <p><b>Engineering relevance:</b> Coupled drug-transport and arterial-mechanics modeling reveals local stress trade-offs that should be considered when assessing treatment effects on atherosclerotic plaques.</p>
+          <ul><li>Couple 3D reaction–diffusion drug transport with finite element arterial mechanics.</li><li>Model calcium-dependent smooth muscle contraction and drug–tissue interactions.</li><li>Include nonlinear anisotropic tissue behavior and residual stresses.</li></ul>
+          <p><b>Evidence signal:</b> With material parameters fitted to literature experiments, simulations of five histology-derived geometries predicted fibrous-cap stress increases in all five, with median increases up to 28.9 kPa; a 10 mmHg blood pressure reduction limited median increases to at most 3.8 kPa in four geometries.</p>
+          <p><b>Watch item:</b> The predicted increase in plaque rupture risk remains unconfirmed experimentally and clinically, and evaluation covered only five exemplary geometries.</p>
+          <div class="tags"><span>#ComputationalBiomechanics</span> <span>#FiniteElementAnalysis</span> <span>#Atherosclerosis</span> <span>#DrugTransport</span> <span>#VascularMechanics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>62</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Scaled boundary finite elements for FFT-based computational micromechanics</h2>
+        <p class="authors">Flavia Gehrig, Carolin Birk, Matti Schneider</p>
+        <p class="abstract">We introduce a matrix-free FFT-based solver for three-dimensional linear elastic homogenization problems discretized by the scaled boundary finite element method (SBFEM) on a voxel grid. Owing to its analytical solution in the radial direction, the SBFEM discretization is inherently softer than fully integrated voxel finite elements, whereas its displacement-based formulation remains symmetric, conforming, and supports arbitrary stiffness anisotropy. These properties make SBFEM an attractive candidate for porous and highly heterogeneous microstructures, where existing voxel-based FFT discretizations offer no generally reliable choice: Reduced-integration hexahedral elements, equivalently the rotated staggered grid discretization, may suffer from hourglass instabilities in the presence of voids, whereas fully integrated hexahedral elements are often too stiff. The proposed discretization uses hexahedral SBFEM cells on the full voxel mesh of a regular periodic grid, retaining the simplicity of a fixed-resolution voxel representation without requiring adaptive mesh coarsening. The main contribution is a preconditioner based on the homogeneous SBFEM stiffness operator. We show that this preconditioner may be applied locally in Fourier space and that the condition number of the preconditioned system is bounded by the material contrast, independently of the grid resolution. This result enables a fully matrix-free implementation of the SBFEM-discretized problem, without assembling or storing the global stiffness matrix. Numerical experiments on a short-fibre reinforced composite, a polyurethane foam and a sand-based binder jet microstructure demonstrate robust convergence and competitive accuracy compared with established voxel discretizations. In particular, SBFEM remains stable for porous microstructures, for which reduced-integration hexahedral elements become unstable.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.20722v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.20722v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A matrix-free FFT solver using scaled boundary finite elements offers a softer alternative to fully integrated voxel elements while remaining stable in tested porous microstructures.</p>
+          <p><b>Engineering relevance:</b> The method supports elastic homogenization of porous and highly heterogeneous materials on regular voxel grids without assembling or storing a global stiffness matrix.</p>
+          <ul><li>Discretize a periodic voxel grid with hexahedral SBFEM cells and analytical radial solutions.</li><li>Apply a homogeneous SBFEM stiffness preconditioner locally in Fourier space.</li><li>Bound the preconditioned system’s condition number by material contrast, independently of grid resolution.</li></ul>
+          <p><b>Evidence signal:</b> Tests on a short-fibre composite, polyurethane foam, and sand-based binder jet microstructure showed robust convergence and competitive accuracy, including stability where reduced-integration elements became unstable.</p>
+          <p><b>Watch item:</b> The condition-number bound depends on material contrast, so grid independence alone does not guarantee contrast-independent convergence.</p>
+          <div class="tags"><span>#ComputationalMicromechanics</span> <span>#SBFEM</span> <span>#FFTSolvers</span> <span>#ElasticHomogenization</span> <span>#PorousMaterials</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>61</strong></div>
         <p class="date">2026-11-13</p>
         <h2>Making Plasticity Visible: A Case Study for High-Temperature Exposed Aluminum Alloy</h2>
         <p class="authors">Bakhtiyar Mammadli, Karol Frydrych, Casim Yazici, Azad Mammadli, Kazimierz Skrobas, Siddharth Suman</p>
@@ -77,18 +191,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.18120v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.18120v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PCA of full-field strain measurements reveals signatures of yielding and early strain localization that are less distinct in instantaneous strain maps.</p>
-          <p><b>Engineering relevance:</b> The approach could help identify plasticity onset and failure-prone regions in aluminum components with different thermal exposure histories.</p>
-          <ul><li>Measure sequential strain fields using Digital Image Correlation during uniaxial tensile loading.</li><li>Apply unsupervised Principal Component Analysis to extract temporal signatures and spatial deformation maps.</li><li>Compare the second-component projection peak with 0.2% offset yielding and inspect pre-transition localization.</li></ul>
-          <p><b>Evidence signal:</b> Tests on AA6063-T5 in as-received and 100°C, 200°C, and 300°C exposed conditions showed agreement between the second-component peak and offset yielding, while pre-transition component maps highlighted subsequent failure regions.</p>
-          <p><b>Watch item:</b> The abstract does not establish generalization beyond this alloy and loading mode; early-localization analysis also relies on high-temporal-resolution strain measurements.</p>
-          <div class="tags"><span>#SolidMechanics</span> <span>#PrincipalComponentAnalysis</span> <span>#DigitalImageCorrelation</span> <span>#Plasticity</span> <span>#StrainLocalization</span></div>
+          <p><b>Key insight:</b> PCA of full-field strain measurements reveals signatures of yielding and early strain localization that are less distinguishable in instantaneous strain maps.</p>
+          <p><b>Engineering relevance:</b> The approach could help identify plasticity onset and failure-prone regions in aluminum components despite thermal-exposure-induced changes in mechanical response.</p>
+          <ul><li>Measure sequential strain fields during uniaxial tension using Digital Image Correlation (DIC).</li><li>Apply unsupervised Principal Component Analysis (PCA) to extract temporal deformation signatures and spatial component maps.</li><li>Compare the second-component projection peak with 0.2% offset yielding and inspect pre-transition maps for localization.</li></ul>
+          <p><b>Evidence signal:</b> For AA6063-T5 tested as received and after exposure at 100°C, 200°C, and 300°C, the second-component peak agreed with 0.2% offset yielding, while pre-transition component maps highlighted regions associated with subsequent failure.</p>
+          <p><b>Watch item:</b> Evidence is limited to one alloy under uniaxial tension; robustness to other loading conditions and DIC acquisition settings remains to be established.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#DigitalImageCorrelation</span> <span>#PrincipalComponentAnalysis</span> <span>#Plasticity</span> <span>#StrainLocalization</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>65</strong></div>
+        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>60</strong></div>
         <p class="date">2026-11-13</p>
         <h2>Unified constitutive model of body-centered cubic metals informed by discrete dislocation dynamics</h2>
         <p class="authors">Jiarui Zhang, Yin Zhang</p>
@@ -96,18 +210,94 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.17617v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.17617v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A mechanism-based constitutive model links dislocation-scale physics to BCC metal plasticity, distinguishing structural resistance from thermal activation and phonon drag.</p>
-          <p><b>Engineering relevance:</b> The model supports strength and creep predictions across temperature and strain-rate regimes, including anomalous thermal hardening.</p>
-          <ul><li>Develop a temperature-dependent screw-dislocation mobility law combining thermal activation and relativistic effects.</li><li>Run discrete dislocation dynamics tension and compression simulations at different initial dislocation densities.</li><li>Derive a unified constitutive model with physical criteria for combining structural and kinetic resistance.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports bottom-up simulations that quantify the crossover from thermal activation to phonon-drag-dominated flow, but provides no numerical accuracy metrics.</p>
-          <p><b>Watch item:</b> Experimental validation and transferability across specific BCC metals are not established in the abstract.</p>
-          <div class="tags"><span>#ConstitutiveModeling</span> <span>#BCCMetals</span> <span>#DislocationDynamics</span> <span>#CrystalPlasticity</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> A dislocation-informed constitutive model links BCC metal flow to temperature and strain rate while specifying how structural resistance and competing kinetic mechanisms combine.</p>
+          <p><b>Engineering relevance:</b> The model supports mechanism-based prediction of strength and creep across temperature and loading-rate regimes, with potential value for alloy design.</p>
+          <ul><li>Develop a temperature-dependent screw-dislocation mobility law combining thermal activation and relativistic effects.</li><li>Run discrete dislocation dynamics tension and compression simulations with varied initial dislocation densities.</li><li>Derive a unified constitutive model connecting microscopic mechanisms to continuum plastic flow.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports bottom-up simulations that quantify the crossover from thermal activation to phonon drag and explain anomalous thermal hardening.</p>
+          <p><b>Watch item:</b> Experimental validation and quantitative prediction errors are not reported in the abstract, leaving practical transferability to specific BCC alloys uncertain.</p>
+          <div class="tags"><span>#ConstitutiveModeling</span> <span>#SolidMechanics</span> <span>#BCCMetals</span> <span>#DislocationDynamics</span> <span>#MechanismBasedModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>60</strong></div>
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Maximum principle preserving approximation of scalar conservation equations with a fractional Laplacian</h2>
+        <p class="authors">Andrea Bonito, Jean-Luc Guermond, Murtazo Nazarov</p>
+        <p class="abstract">In this paper, we propose a maximum principle preserving continuous finite element method for scalar conservation laws augmented with a fractional diffusion operator of order $s\in (0,1)$. Conservation laws with fractional diffusion operators arise in a variety of physical models involving anomalous transport and nonlocal regularization, including geophysical flows, plasma physics, and nonlinear acoustics. The fractional Laplacian is approximated using a sinc-quadrature representation, yielding a resolvent-based formulation compatible with continuous finite elements and explicit strong stability preserving Runge--Kutta time integration. A first-order monotone scheme is constructed using graph viscosity and is shown to satisfy a discrete maximum principle under an explicit CFL condition. A high-order extension is obtained via entropy-consistent corrections and convex limiting, achieving second-order accuracy while preserving the maximum principle, and hence positivity, as well as mass conservation in the periodic setting. Numerical experiments, including applications to the Surface Quasi-Geostrophic equation, confirm the second-order accuracy and the robustness of the proposed method on unstructured meshes.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.20833v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.20833v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A continuous finite element method achieves second-order accuracy for scalar conservation laws with fractional diffusion while preserving a discrete maximum principle.</p>
+          <p><b>Engineering relevance:</b> The method supports physically bounded simulations of anomalous transport and nonlocal diffusion on unstructured meshes.</p>
+          <ul><li>Approximate the fractional Laplacian using sinc quadrature and finite element resolvent solves.</li><li>Combine graph viscosity with explicit SSP Runge–Kutta integration for a monotone baseline.</li><li>Apply entropy-consistent corrections and convex limiting for maximum-principle-preserving second-order accuracy.</li></ul>
+          <p><b>Evidence signal:</b> Numerical experiments, including Surface Quasi-Geostrophic applications, confirm second-order accuracy and robustness on unstructured meshes.</p>
+          <p><b>Watch item:</b> Maximum-principle preservation requires an explicit CFL restriction, while fractional diffusion introduces multiple resolvent solves.</p>
+          <div class="tags"><span>#FiniteElementMethods</span> <span>#FractionalDiffusion</span> <span>#ConservationLaws</span> <span>#MaximumPrinciple</span> <span>#ComputationalScience</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
+        <p class="date">2026-11-14</p>
+        <h2>An all-steps-at-once algorithm for time-domain wave propagation in heterogeneous and unbounded media</h2>
+        <p class="authors">V. Domínguez, M. Ganesh</p>
+        <p class="abstract">We propose, analyze, and implement a convolution quadrature (CQ) algorithm for transient acoustic waves in an unbounded medium consisting of a heterogeneous domain embedded in free space, where the wave speed may be spatially variable and discontinuous. Multistep CQ, applied to the time-domain solution operator, reduces the evolution problem to a family of Helmholtz problems with damped complex frequencies, which can be solved independently in parallel, all time steps at once. The frequency problems are discretized by an overlapping coupling of finite elements (FEM) on a polygonal/polyhedral domain containing the inhomogeneity, and boundary elements (BEM) on a smooth curve enclosed by that domain, in the region where the medium is homogeneous, which accounts exactly for the unbounded exterior. Neither discretization needs to conform to the geometry of the heterogeneous domain, nor to each other. For the resulting FEM--BEM coupling we prove bounds for the solution operators of the transformed problems that are explicit in the Laplace parameter and the wave speed. These bounds yield convergence of the time discretization for A-stable multistep schemes. We also prove explicit estimates on the exponential decay of the transformed solutions away from the heterogeneity, which show that the correction provided by the BEM part is small but relevant, and cheap to compute: a few GMRES iterations suffice, and the correction is needed only over a fixed range of weakly damped frequencies, beyond which it becomes negligible and can be dropped. Numerical experiments confirm the predicted convergence rates in time and space and explore iterative (multigrid) methods for the interior FEM problems.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.19288v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.19288v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Convolution quadrature converts transient acoustic wave propagation in heterogeneous, unbounded media into independent complex-frequency Helmholtz problems that can be solved in parallel.</p>
+          <p><b>Engineering relevance:</b> The method supports wave simulations with variable or discontinuous wave speeds while accounting for the unbounded exterior without artificial truncation.</p>
+          <ul><li>Apply A-stable multistep convolution quadrature to solve all time steps through parallel frequency-domain problems.</li><li>Couple interior FEM with exterior BEM using overlapping, mutually nonconforming discretizations.</li><li>Retain BEM corrections for weakly damped frequencies and omit them where exponential decay makes them negligible.</li></ul>
+          <p><b>Evidence signal:</b> Numerical experiments confirm predicted temporal and spatial convergence rates and explore multigrid solvers for the interior FEM problems.</p>
+          <p><b>Watch item:</b> Choosing when to omit BEM corrections requires care, because small exterior corrections remain relevant at weakly damped frequencies.</p>
+          <div class="tags"><span>#ComputationalAcoustics</span> <span>#WavePropagation</span> <span>#ConvolutionQuadrature</span> <span>#FEMBEM</span> <span>#ParallelComputing</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>58</strong></div>
+        <p class="date">2026-11-14</p>
+        <h2>Learning inadequacy of Bayesian neural operators for PDE-constrained inference and design</h2>
+        <p class="authors">Pratyush Kumar Singh, Lianghao Cao, E. Bruce Pitman, Danial Faghihi</p>
+        <p class="abstract">Partial differential equations (PDEs) underpin predictive modeling across science, engineering and medicine. Their use in digital twins, parameter inference and optimal design requires repeated solutions across parameters and scenarios. For nonlinear, transient and multiphysics systems, these calculations can make numerical simulation prohibitively expensive. Here we introduce the residual-informed Bayesian neural operator (RI-BNO), which learns operator inadequacy using a posteriori error estimates from the governing PDEs and incorporates its correction and uncertainty into Bayesian training and prediction. We establish local error bounds for the residual-informed estimates under stability and smoothness assumptions. We demonstrate RI-BNO on a non-linear reaction-diffusion benchmark with DeepONet and latent-subspace architectures, Markov chain Monte Carlo inference of glioma parameter fields from magnetic resonance imaging, and Monte Carlo risk-averse optimization of three-dimensional thermal breaks in building envelopes under manufacturing uncertainty. Across the evaluated examples, RI-BNO improves agreement with finite element (FE) reference predictions, parameter posteriors and optimized designs while using half as many full nonlinear or transient training simulations as the vanilla Bayesian neural operator (vBNO). For thermal break design, online optimization time decreases from 178 hours with the FE model to 18 minutes with RI-BNO. These results demonstrate the value of explicit inadequacy modeling in neural operators for reliable PDE-based inference and design.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.19115v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.19115v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Residual-informed Bayesian neural operators learn and quantify surrogate inadequacy using PDE-based error estimates, improving inference and design with fewer full-order training simulations.</p>
+          <p><b>Engineering relevance:</b> More reliable PDE surrogates can accelerate digital twins, parameter estimation and risk-averse engineering design without ignoring surrogate error.</p>
+          <ul><li>Estimate operator inadequacy from governing-PDE residuals using a posteriori error estimates.</li><li>Incorporate inadequacy correction and uncertainty into Bayesian training and prediction.</li><li>Establish local error bounds under stability and smoothness assumptions.</li></ul>
+          <p><b>Evidence signal:</b> Across reaction–diffusion, glioma inference and 3D thermal-break design examples, RI-BNO improved agreement with FE references using half as many full nonlinear or transient training simulations as vanilla BNO; thermal-break online optimization fell from 178 hours with FE to 18 minutes.</p>
+          <p><b>Watch item:</b> Error guarantees are local and depend on stability and smoothness assumptions; reliability beyond the evaluated regimes requires validation.</p>
+          <div class="tags"><span>#BayesianNeuralOperators</span> <span>#PDEsurrogates</span> <span>#FiniteElementMethods</span> <span>#UncertaintyQuantification</span> <span>#EngineeringDesign</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>57</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Long-time asymptotics of advection-diffusion of finite element differential forms</h2>
+        <p class="authors">Kaibo Hu, Jindong Wang, Umberto Zerbinati</p>
+        <p class="abstract">This paper establishes global numerical analysis for the long-time behavior of Lie advection--diffusion of differential forms discretized by finite element exterior calculus (FEEC). For potential flows we prove a weighted Hodge decomposition implying convergence to harmonic forms of dimension equal to the Betti number, yielding a differential-form antidynamo theorem. For general advection, a mixed FEEC scheme is introduced and shown to preserve key structural properties: the dimension of closed stationary discrete $k$-forms is at least $b_k$. Under verified spectral-preservation assumptions (satisfied for small $h$ by spectral approximation and for arbitrary $h$ by a lowest-order exponential-fitting $M$-matrix discretization), discrete antidynamo theorems are obtained. In particular, on two-dimensional manifolds the numerical $1$-forms converge exponentially to a uniquely determined closed stationary form for every diffusion coefficient $η&gt;0$, rigorously excluding spurious dynamo growth. The results guarantee that FEEC faithfully inherits the topological long-time asymptotics of the continuous system.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.21169v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.21169v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Structure-preserving finite element discretizations retain topology-controlled long-time behavior of advected differential forms and, under spectral-preservation conditions, exclude spurious dynamo growth.</p>
+          <p><b>Engineering relevance:</b> These guarantees support reliable long-duration advection–diffusion simulations where artificial growth or incorrect steady states would undermine predictions.</p>
+          <ul><li>Use a weighted Hodge decomposition to characterize potential-flow limits through harmonic forms and Betti numbers.</li><li>Construct a mixed finite element exterior calculus scheme that preserves closed stationary modes.</li><li>Establish discrete antidynamo results using spectral approximation or lowest-order exponential-fitting M-matrix discretization.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports analytical guarantees, including exponential convergence of numerical 1-forms on two-dimensional manifolds for every positive diffusion coefficient, rather than empirical benchmarks.</p>
+          <p><b>Watch item:</b> Discrete antidynamo guarantees require spectral preservation; arbitrary-mesh validity is established for the specified lowest-order exponential-fitting discretization, not generic FEEC schemes.</p>
+          <div class="tags"><span>#FiniteElementMethods</span> <span>#ExteriorCalculus</span> <span>#AdvectionDiffusion</span> <span>#StructurePreserving</span> <span>#LongTimeStability</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>55</strong></div>
         <p class="date">2026-11-12</p>
         <h2>A scaling law for numerical computation of fracture stress intensity factors</h2>
         <p class="authors">Ronghao Cui, Jan Martin Nordbotten, Ivar Stefansson, Inga Berre</p>
@@ -116,17 +306,74 @@
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
           <p><b>Key insight:</b> Linking fracture-tip sampling distance to mesh resolution enables convergent stress intensity factor estimates where conventional nearest-tip sampling fails.</p>
-          <p><b>Engineering relevance:</b> More reliable stress intensity factors support accurate predictions of whether pre-existing fractures will propagate.</p>
-          <ul><li>Extract stress intensity factors using two-point displacement correlation.</li><li>Balance asymptotic truncation error against numerical discretization error to derive a sampling-distance scaling law.</li><li>Validate with quadratic finite elements, quarter-point finite elements, and a multi-point stress approximation finite volume method.</li></ul>
-          <p><b>Evidence signal:</b> Pure-mode and mixed-mode fracture benchmarks showed decreasing stress intensity factor errors under mesh refinement with scaling-based sampling across all three discretization methods.</p>
-          <p><b>Watch item:</b> The abstract does not specify the scaling formula or implementation constants; these must be checked before applying the method.</p>
-          <div class="tags"><span>#FractureMechanics</span> <span>#StressIntensityFactors</span> <span>#ComputationalMechanics</span> <span>#MeshConvergence</span> <span>#NumericalMethods</span></div>
+          <p><b>Engineering relevance:</b> More reliable stress intensity factors support fracture-propagation decisions in computational solid mechanics.</p>
+          <ul><li>Extract stress intensity factors using two-point displacement correlation.</li><li>Derive a sampling-distance scaling law by balancing asymptotic truncation and numerical discretization errors.</li><li>Validate with quadratic finite elements, quarter-point finite elements, and multi-point stress approximation finite volumes.</li></ul>
+          <p><b>Evidence signal:</b> On pure-mode and mixed-mode fracture benchmarks, scaling-based sampling produced decreasing errors under mesh refinement across all three methods, unlike nearest-tip sampling.</p>
+          <p><b>Watch item:</b> The abstract does not specify the scaling formula or its parameters, so implementation requires consulting the full paper.</p>
+          <div class="tags"><span>#FractureMechanics</span> <span>#StressIntensityFactors</span> <span>#ComputationalMechanics</span> <span>#MeshRefinement</span> <span>#NumericalMethods</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>54</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Using an instrumented hammer to predict the lateral hinge fracture in high tibial osteotomy: A cadaveric study</h2>
+        <p class="authors">Claire Bastard, Manon Bas-Dit Nugues, Giuseppe Rosi, Charles-Henri Flouzat-Lachaniette, Arnaud Dubory, Guillaume Haiat</p>
+        <p class="abstract">Open-wedge High-Tibial Osteotomy is the most commonly employed technique addressing varus knee osteoarthritis. During this procedure, the osteotome passes through cortical and trabecular bone. A common complication is lateral hinge fractures, which depends upon when the surgeon stops impacting the osteotome. The aim of the present study is to determine whether an instrumented hammer can be employed to detect (i) the bone type (cortical or trabecular) surrounding the osteotome tip and (ii) when bone is fractured by the osteotome. Seventeen lower-limb specimens were obtained from nine fresh human anatomical subjects. The osteotome was impacted using the instrumented hammer until rupture. Each impact signal was recorded and analyzed. An algorithm was developed to detect the transitions between cortical and trabecular bone and vice versa. Detection was based on the relative variation of $τ$ derived from the force signal as a function of time as the time difference between the second___and___first impact peaks. The values of $τ$ were significantly lower in cortical bone compared to trabecular bone. Considering the arrival of the osteotome tip in trabecular bone during a medial, a difference of less than 2 impacts between the surgeon and the algorithm was obtained for 71% of the cases. For the lateral osteotomy it was obtained in 81% of the cases. This cadaveric study demonstrated that the instrumented hammer could prevent impacts leading to hinge rupture, which suggests that future clinical trials are warranted.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.20961v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.20961v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Timing between force-signal peaks from an instrumented hammer distinguished cortical from trabecular bone and showed potential to warn against impacts causing lateral hinge fracture.</p>
+          <p><b>Engineering relevance:</b> Impact-force monitoring could provide intraoperative feedback to help surgeons stop osteotome advancement before hinge rupture during open-wedge high tibial osteotomy.</p>
+          <ul><li>Record hammer force–time signals during osteotome impacts until bone rupture.</li><li>Calculate τ, the time interval between the first and second impact peaks.</li><li>Use relative changes in τ to detect transitions between cortical and trabecular bone.</li></ul>
+          <p><b>Evidence signal:</b> Across 17 lower-limb specimens from nine cadaveric donors, τ was significantly lower in cortical bone; algorithm–surgeon differences in identifying trabecular entry were under two impacts in 71% of medial and 81% of lateral osteotomies.</p>
+          <p><b>Watch item:</b> Clinical validation is needed: cadaveric transition-detection results do not establish reliable fracture prevention in patients.</p>
+          <div class="tags"><span>#SolidMechanics</span> <span>#Biomechanics</span> <span>#HighTibialOsteotomy</span> <span>#FracturePrevention</span> <span>#InstrumentedHammer</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>54</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Baryonic Keys and the Inheritance of Crypto-Assets: Revisiting the Tales From the Crypt Protocol</h2>
+        <p class="authors">Frédéric Prost</p>
+        <p class="abstract">The inheritance of crypto-assets faces a structural obstacle: ownership is the knowledge of a key, so the key either disappears with its owner or has to be shared beforehand. The Tales From the Crypt Protocol (TFCP) addressed one part of the problem, the distributed and privacy-preserving acknowledgment of a death by a blockchain. We revisit it with a new primitive. A \emph{baryonic key} is a physical object from which bits are obtained only through a measurement, are never stored digitally, and which exists in exactly $n$ copies, where $n$ is neither zero nor unbounded. We define the primitive, outline a candidate instantiation based on a replicated micro-fractured relief, and state its limits: digitising a copy is slow and tamper-evident, not impossible. We also outline other uses of the primitive, from post-quantum pre-shared keys to common coins for Byzantine agreement. We then give a threat model for TFCP, review the attack models of the literature that apply to it, and show where it resists and where it does not. We propose TFCP-B, in which decrypting the will requires both a secret shared among registrars and the response of a baryonic key, and in which heirs claim their share through hash commitments, without any prior key or wallet. We detail each change from TFCP to TFCP-B, with its rationale and its price. TFCP-B removes the anonymity loss caused by colluding registrars and blocks several false-alarm attacks. It does not remove the shallow-account attack, remains exposed to transaction censorship during the deliberation period, and introduces new assumptions on custodians and reading devices. The security arguments are informal and the physical figures are design estimates.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.20782v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.20782v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> TFCP-B combines physically measured baryonic keys with registrar-held secret shares to strengthen crypto-asset inheritance without requiring heirs to hold prior keys or wallets.</p>
+          <p><b>Engineering relevance:</b> A proposed replicated micro-fractured relief links physical surface measurement and tamper evidence to cryptographic access control.</p>
+          <ul><li>Define a baryonic key as a physical object with a finite, nonzero number of copies whose bits are obtained through measurement.</li><li>Require both a registrar-shared secret and a baryonic-key response to decrypt the will.</li><li>Use hash commitments for heir claims and analyze TFCP-B against inheritance-protocol threats.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports informal security arguments and physical design estimates, not experimentally validated performance.</p>
+          <p><b>Watch item:</b> Digitization is slow and tamper-evident rather than impossible; custodian and reader assumptions, shallow-account attacks, and transaction censorship remain concerns.</p>
+          <div class="tags"><span>#BaryonicKeys</span> <span>#CryptoAssetInheritance</span> <span>#MicroFracturedRelief</span> <span>#PhysicalSecurity</span> <span>#BlockchainSecurity</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Topology Optimization</span><span>arXiv</span><strong>54</strong></div>
+        <p class="date">2026-11-16</p>
+        <h2>Explicit topology control in isogeometric topology optimization using persistent homology</h2>
+        <p class="authors">Wenliang Yin, Gengchen Li, Hongwei Lin</p>
+        <p class="abstract">Explicitly controlling structural topology remains a major challenge in topology optimization. While many implicit methods regulate topology only indirectly, available explicit strategies often focus on two-dimensional hole control or extend to 3D without a unified treatment of tunnels and cavities. This study proposes a differentiable, persistent homology-based framework for explicit topology control in 2D and 3D isogeometric topology optimization. A NURBS-represented density field induces a single sublevel filtration whose persistence diagrams quantify the connected components, holes in 2D, and tunnels and cavities in 3D directly. To enforce prescribed bounds on topological feature counts, weighted topological objectives are applied in a staged manner that coordinates the different homology dimensions. Each redundant feature is removed either by cutting or by filling according to the region of its corresponding persistence pair, avoiding the excessive structural changes associated with filling alone. The topological inverse mapping yields analytical sensitivities with respect to the density control coefficients, so that the resulting objective is readily incorporated into gradient-based optimization and solved by the method of moving asymptotes. Numerical experiments on 2D and 3D benchmarks demonstrate explicit and reliable topology control while maintaining competitive mechanical performance and stable convergence.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.20664v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.20664v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Persistent homology enables explicit control of connected components, holes, tunnels, and cavities in 2D and 3D isogeometric topology optimization.</p>
+          <p><b>Engineering relevance:</b> Engineers can prescribe topology bounds while seeking mechanically competitive structural designs.</p>
+          <ul><li>Compute persistence diagrams from a single sublevel filtration of a NURBS density field.</li><li>Apply staged, weighted topological objectives and remove redundant features by cutting or filling.</li><li>Derive analytical density-control sensitivities through topological inverse mapping and optimize using the method of moving asymptotes.</li></ul>
+          <p><b>Evidence signal:</b> Reported 2D and 3D benchmark experiments demonstrate reliable topology control, competitive mechanical performance, and stable convergence.</p>
+          <p><b>Watch item:</b> The abstract does not quantify computational overhead or sensitivity to the staged objective weights.</p>
+          <div class="tags"><span>#TopologyOptimization</span> <span>#PersistentHomology</span> <span>#IsogeometricAnalysis</span> <span>#ComputationalMechanics</span> <span>#StructuralDesign</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-11-13</p>
         <h2>Machine learning of strength surfaces enables high regularization length phase-field fracture</h2>
         <p class="authors">S Chockalingam, Aditya Kumar, Adrian Buganza Tepole</p>
@@ -134,18 +381,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.18473v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.18473v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A physics-constrained neural-network strength function preserves accurate phase-field strength surfaces at regularization lengths up to 10 times the Irwin characteristic length.</p>
-          <p><b>Engineering relevance:</b> Decoupling strength accuracy from regularization length reduces mesh-resolution demands for phase-field fracture simulations of large structures.</p>
-          <ul><li>Learn the material strength function directly from data using a physics-constrained neural network.</li><li>Calibrate the nucleation driving force against multiple strength states and enforce openness in selected directions.</li><li>Embed the learned strength function in phase-field fracture simulations.</li></ul>
-          <p><b>Evidence signal:</b> Tests cover four synthetic strength surfaces, experimental data for graphite and two rubbers, and finite-element fracture simulations; learned surfaces remain accurate up to ε = 10 l_ch, while analytic counterparts perform comparatively poorly even at ε = 0.5 l_ch.</p>
-          <p><b>Watch item:</b> Reliability beyond the sampled strength states and loading regimes requires validation, particularly when selecting directions in which the strength surface remains open.</p>
-          <div class="tags"><span>#PhaseFieldFracture</span> <span>#MachineLearning</span> <span>#SolidMechanics</span> <span>#StrengthSurfaces</span> <span>#ComputationalMechanics</span></div>
+          <p><b>Key insight:</b> A physics-constrained neural-network strength function preserves phase-field strength accuracy at regularization lengths up to 10 times the Irwin characteristic length.</p>
+          <p><b>Engineering relevance:</b> Decoupling strength fidelity from regularization length enables coarser meshes, reducing computational demands for fracture simulations of large structures.</p>
+          <ul><li>Learn the material strength function directly from data using a physics-constrained neural network.</li><li>Incorporate the learned function into the phase-field crack-nucleation driving force.</li><li>Generalize calibration to multiple strength states and enforce openness in selected directions.</li></ul>
+          <p><b>Evidence signal:</b> One architecture fits four synthetic strength surfaces and experimental data for graphite and two rubbers; finite-element simulations validate the theory across fracture regimes.</p>
+          <p><b>Watch item:</b> Reliable deployment still requires representative strength data and validation for the target material and loading conditions.</p>
+          <div class="tags"><span>#PhaseFieldFracture</span> <span>#ScientificMachineLearning</span> <span>#ComputationalMechanics</span> <span>#FractureMechanics</span> <span>#FiniteElementAnalysis</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-11-13</p>
         <h2>A mesh-free deep energy method for phase-field modeling of thermally driven brittle fracture</h2>
         <p class="authors">Han Zhang, Mehrisadat Makki Alamdari, Babak Shahbodagh, Mohammad Vahab, Cosmin Anitescu, Timon Rabczuk</p>
@@ -154,258 +401,11 @@
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
           <p><b>Key insight:</b> A mesh-free deep energy method predicts thermally driven crack nucleation, spacing, propagation and arrest without prescribing crack paths or nucleation sites.</p>
-          <p><b>Engineering relevance:</b> The approach could support thermal-shock assessment of brittle components with evolving temperature gradients and initially unknown fracture patterns.</p>
-          <ul><li>Use separate multiresolution neural networks for displacement–phase fields and transient temperature.</li><li>Minimize mechanical energy and a backward Euler thermal functional using integration points resampled each iteration.</li><li>Restrict irreversibility to the crack set, retain optimizer state across load steps and decay learning rates within each step.</li></ul>
-          <p><b>Evidence signal:</b> Tests show close agreement with finite element initiation peak loads on two notched plates, an oscillation threshold near linear stability predictions in quenched glass, and ceramic-slab crack spacing near a published benchmark.</p>
-          <p><b>Watch item:</b> Slab and annulus crack arrays are denser than finite element predictions on the same material field, leaving crack-density agreement unresolved.</p>
+          <p><b>Engineering relevance:</b> The approach supports thermal-shock fracture analysis where evolving thermal boundary layers and unknown crack paths complicate mesh-based simulation.</p>
+          <ul><li>Separate multiresolution neural representations model displacement and phase fields, and transient temperature.</li><li>Minimize mechanical energy and a backward Euler thermal functional using integration points resampled each iteration.</li><li>Restrict irreversibility to the crack set, retain optimizer state across load steps and decay learning rates within each step.</li></ul>
+          <p><b>Evidence signal:</b> Tests show close agreement with finite element initiation peak loads on two notched plates, a glass-strip oscillation threshold near linear stability predictions and ceramic-slab crack spacing near a published benchmark.</p>
+          <p><b>Watch item:</b> Crack arrays in the slab and annulus are denser than finite element predictions on the same material field, leaving a discrepancy that warrants further validation.</p>
           <div class="tags"><span>#AISolidMechanics</span> <span>#DeepEnergyMethod</span> <span>#PhaseFieldFracture</span> <span>#ThermalShock</span> <span>#MeshFreeMethods</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>58</strong></div>
-        <p class="date">2026-11-11</p>
-        <h2>Dynamic Prandtl-Reuss Thermoplasticity with Degenerating Yield Constraints</h2>
-        <p class="authors">Sebastian Owczarek</p>
-        <p class="abstract">We study a three-dimensional dynamic thermoplastic system with a temperature-dependent convex yield set whose deviatoric section may collapse completely at a finite temperature. The underlying constitutive model is rate-independent Prandtl-Reuss perfect plasticity, without Kelvin-Voigt viscosity, hardening, or a safe-load condition. We construct global approximation-generated relaxed entropy-energy states by a one-parameter Temam-Norton-Hoff-Galerkin scheme with an undiscretized heat equation and untruncated plastic heat production. The logarithmic temperature is strongly compact in $L^2(0,T;L^q(Ω))$ for every $q&lt;6$ and in $L^p((0,T)\timesΩ)$ for every $p&lt;8/3$. An entropy-weighted work estimate yields convergence of the overstress at rate $O(\sqrt{\log n/n})$ in every fixed finite Lebesgue space and identifies stress admissibility. The constitutive limit comprises a distributional plastic balance, finite support-weighted measures, and compact-fibre lifts carrying exact normality and maximum plastic work. A locally finite lift on the positive-radius fibres unifies the level-restricted limits at every continuity level. At the macroscopic level, however, the available compactness does not identify a canonical stress-plastic-flow pairing. Moreover, an explicit smooth state satisfying the intrinsic relaxed balance conditions shows that these conditions do not imply macroscopic Prandtl-Reuss normality. In the fully collapsed regime, an energy-entropy rigidity argument determines the evolution and yields approximation-generated examples in which the plastic flow need not be a finite measure or the displacement need not retain its full boundary trace. Thermal concentration and plastic entropy production remain explicit throughout.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.15719v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.15719v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Global relaxed entropy-energy states can be constructed for dynamic thermoplasticity even when the temperature-dependent yield set collapses, but macroscopic Prandtl–Reuss normality is not guaranteed.</p>
-          <p><b>Engineering relevance:</b> The analysis clarifies what thermoplastic models can predict when heating eliminates shear resistance, without viscosity, hardening, or a safe-load assumption.</p>
-          <ul><li>Use a one-parameter Temam–Norton–Hoff–Galerkin approximation with an undiscretized heat equation and untruncated plastic heating.</li><li>Establish logarithmic-temperature compactness and stress admissibility through entropy-weighted estimates.</li><li>Represent limiting plastic behavior with support-weighted measures and fibre lifts preserving exact normality.</li></ul>
-          <p><b>Evidence signal:</b> Analytical results include an overstress convergence rate of O(√(log n/n)) in every fixed finite Lebesgue space and an explicit smooth counterexample to macroscopic normality; the abstract reports no numerical benchmarks.</p>
-          <p><b>Watch item:</b> Available compactness does not identify a canonical macroscopic stress–plastic-flow pairing; complete yield collapse can also permit non-measure plastic flow or loss of the full displacement boundary trace.</p>
-          <div class="tags"><span>#Thermoplasticity</span> <span>#ComputationalMechanics</span> <span>#PerfectPlasticity</span> <span>#EntropyMethods</span> <span>#ConstitutiveModeling</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>56</strong></div>
-        <p class="date">2026-11-13</p>
-        <h2>A Unified Framework for First- and Second-Order Energy-Stable Parametric Finite Element Methods for Planar Willmore Flow</h2>
-        <p class="authors">Xiaoli Li, Yujing Yan</p>
-        <p class="abstract">The construction of structure-preserving schemes for planar Willmore flow that are second-order accurate in time and avoid large coupled nonlinear solves remains challenging. In this work, we develop a unified framework for first- and second-order fully discrete energy-stable parametric finite element schemes for planar Willmore flow with a length-penalization term. The framework is based on a new equivalent reformulation involving a global auxiliary variable. The main novelty lies in the second-order construction, which combines midpoint curvature quantities weighted by elementwise arc-length Jacobian ratios with a compatible discrete tangent to obtain exact discrete chain rules for the bending energy and curve length. A further contribution is to show that both schemes satisfy discrete modified energy dissipation laws that yield the same type of a priori bounds on the discrete solution as the original energy law. They also retain Barrett--Garcke--N{ü}rnberg tangential motion to promote favorable mesh distribution. Each stage reduces to two linear solves with exactly the same coefficient matrix and one scalar nonlinear solve. We rigorously prove unique solvability of the linear subproblems under suitable assumptions and derive computable sufficient conditions for local existence and uniqueness of the scalar solution near unity. Numerical experiments demonstrate the expected temporal accuracy, energy dissipation, good mesh quality and computational efficiency.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.17700v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.17700v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A unified parametric finite element framework delivers first- and second-order time integration for planar Willmore flow with provable modified energy dissipation while avoiding large coupled nonlinear solves.</p>
-          <p><b>Engineering relevance:</b> The framework supports efficient simulation of planar curve relaxation governed by bending energy and length penalization while promoting good mesh distribution.</p>
-          <ul><li>Reformulate the flow using a global auxiliary variable.</li><li>Combine Jacobian-weighted midpoint curvature and a compatible discrete tangent to obtain exact discrete chain rules.</li><li>Reduce each stage to two linear solves sharing one coefficient matrix and one scalar nonlinear solve.</li></ul>
-          <p><b>Evidence signal:</b> Numerical experiments demonstrate the expected temporal accuracy, energy dissipation, good mesh quality and computational efficiency.</p>
-          <p><b>Watch item:</b> Solvability guarantees require suitable assumptions, and scalar-solve existence and uniqueness are local near unity under computable sufficient conditions.</p>
-          <div class="tags"><span>#FiniteElementMethods</span> <span>#WillmoreFlow</span> <span>#EnergyStableSchemes</span> <span>#ComputationalMechanics</span> <span>#GeometricFlows</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>56</strong></div>
-        <p class="date">2026-11-11</p>
-        <h2>Ultrasound Elastography: Excitation Methods and Low-Cost Alternative</h2>
-        <p class="authors">Corin F. Otesteanu</p>
-        <p class="abstract">Ultrasound elastography (or elasticity imaging) is a method that characterizes the tissue mechanical properties with the purpose of aiding the diagnosis of certain pathologies. Many novel clinical applications use the assumption that these tissue properties are changed in the presence of pathological processes. Characterization of tissue mechanical properties is achieved by imaging the response of the tissue to an induced stress or excitation. A plethora of approaches have been used in the scientific community to induce excitation in tissue, which usually require additional tools or devices than are costly. Furthermore these are usually integrated in the imaging pipeline using additional software or hardware for control. An alternative that is simpler, faster to integrate (and low-cost) is proposed in this work, by using readily available smartphones as a source of mechanical excitation. The induced displacements are used to solve the elasticity inverse problem (IP) using a finite element method (FEM) approach. Preliminary elasticity reconstructions of a phantom that mimics tissue are similar to when using a dedicated actuator as means of inducing harmonic displacements, illustrating the feasibility of our low-cost ultrasound elasography approach.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.15645v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.15645v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Readily available smartphones can provide low-cost mechanical excitation for ultrasound elastography, with preliminary phantom reconstructions similar to those obtained using a dedicated actuator.</p>
-          <p><b>Engineering relevance:</b> Smartphone excitation could reduce hardware costs and simplify integration of tissue-stiffness imaging systems.</p>
-          <ul><li>Use a smartphone to induce mechanical excitation in a tissue-mimicking phantom.</li><li>Image the induced tissue displacements with ultrasound.</li><li>Solve the elasticity inverse problem using a finite element method.</li></ul>
-          <p><b>Evidence signal:</b> Preliminary tissue-mimicking phantom tests produced elasticity reconstructions described as similar to those obtained with a dedicated harmonic actuator, without quantitative metrics in the abstract.</p>
-          <p><b>Watch item:</b> Feasibility is demonstrated only in preliminary phantom tests; clinical accuracy and excitation reproducibility remain unestablished.</p>
-          <div class="tags"><span>#UltrasoundElastography</span> <span>#SolidMechanics</span> <span>#FiniteElementMethod</span> <span>#InverseProblems</span> <span>#LowCostImaging</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>55</strong></div>
-        <p class="date">2026-11-12</p>
-        <h2>Physics-constrained differentiable causal discovery of constitutive mechanisms through boundary value problems</h2>
-        <p class="authors">Michael A. Kraus</p>
-        <p class="abstract">Data-driven constitutive model discovery is recast as causal discovery of mechanism parent sets using time-unrolled structural causal models. Hard-coding balance laws and constitutive skeletons, candidate graphs score environment--mechanism and state--state edges via weak-form equilibrium gaps evaluated from full-field displacements, avoiding the need to measure stresses or internal variables. An adaptive lasso and a NOTEARS-type constraint ensure graph acyclicity and an explicit evaluation order, treating climate-chamber protocols as interventions. Automatic differentiation yields the score&#x27;s Gauss--Newton matrix as a local identifiability certificate, driving greedy D-optimal test design. In a synthetic study on a hygro-thermo-viscoelastic damaging plate (8 true edges among 13 candidates), interventional data recover the exact true graph in 7 of 10 runs (0.01px displacement noise) with zero attribution error. Conversely, observational data with a temperature--moisture correlation of $-0.998$ fail entirely because confounded scores are 250--380 times flatter. Observationally discovered models reproduce training climates (3.6% error) but mispredict hot and humid climates by up to 41.5% (16.9% average), whereas interventionally discovered models stay within 3.2%. A correlation sweep shows the certificate successfully predicts attribution errors, though weak-form score noise bias remains a primary limitation. Computed without knowledge of the truth, the D-optimal design selects test sets ranked second or third out of 126 candidates.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.16468v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.16468v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Physics-constrained causal discovery can identify constitutive mechanism dependencies from displacement fields, while correlated observational data can hide the correct attribution.</p>
-          <p><b>Engineering relevance:</b> Climate-chamber interventions can help build constitutive models that generalize to unseen environments without measuring stresses or internal variables.</p>
-          <ul><li>Embed balance laws and constitutive skeletons in time-unrolled causal models scored by weak-form equilibrium gaps.</li><li>Use adaptive lasso and a NOTEARS-type acyclicity constraint to select mechanism dependencies.</li><li>Compute a Gauss–Newton identifiability certificate via automatic differentiation to guide greedy D-optimal test design.</li></ul>
-          <p><b>Evidence signal:</b> On a synthetic plate with 8 true edges among 13 candidates, interventional data recovered the exact graph in 7/10 runs at 0.01-pixel displacement noise; prediction errors stayed within 3.2%, versus up to 41.5% for observationally discovered models in hot, humid climates.</p>
-          <p><b>Watch item:</b> Evidence is synthetic, and noise bias in the weak-form score remains a primary limitation.</p>
-          <div class="tags"><span>#AISolidMechanics</span> <span>#ConstitutiveModeling</span> <span>#CausalDiscovery</span> <span>#DifferentiablePhysics</span> <span>#OptimalExperimentalDesign</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>55</strong></div>
-        <p class="date">2026-11-12</p>
-        <h2>Mechanical behaviour of the intact brain-skull interface under tension, compression and shear</h2>
-        <p class="authors">Sajjad Arzemanzadeh, Karol Miller, Ron Kikinis, Adam Wittek</p>
-        <p class="abstract">The brain-skull interface governs the boundary/contact conditions of the brain in computational head models, yet its mechanical behaviour remains poorly characterised experimentally. We characterised the brain-skull interface by testing brain-skull complex samples (skull bone, meninges and brain tissue in their native arrangement) excised from 19 sheep cadaver heads under uniaxial tension and compression at strain rates of 0.002, 0.02 and 0.2 s$^{-1}$ and simple shear at 0.02 s$^{-1}$. Histology confirmed that the meningeal layers remained intact and attached to the brain and skull after excision. We acquired magnetic resonance images of every sample, reconstructed their geometry and developed a sample-specific finite element model of each experiment. We represented the brain tissue using a second-order Ogden hyperelastic model and the brain-skull interface using a cohesive zone model. Using inverse finite element analysis, we first calibrated the brain tissue parameters for each subject. Keeping these parameters fixed, we then identified the interface parameters from the corresponding brain-skull complex specimen. The brain tissue shear modulus increased with strain rate from 0.94 $\pm$ 0.16 kPa at 0.002 s$^{-1}$ to 1.60 $\pm$ 0.30 kPa at 0.2 s$^{-1}$. In contrast, the interface properties (maximum normal traction 2.35 $\pm$ 0.81 kPa, maximum tangential traction 4.14 $\pm$ 0.97 kPa, and fracture energy 0.35 $\pm$ 0.14 N m$^{-1}$) showed no significant dependence on strain rate or loading mode. In all samples, failure occurred within the subarachnoid space. Neither a rigid brain-skull connection nor frictionless sliding contact with separation reproduced the measured mechanical response or failure mode of the brain-skull interface. Our experimentally derived cohesive zone model provides a realistic representation of the brain-skull interface for computational head models.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.16197v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.16197v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The intact brain–skull interface is better represented by a cohesive zone model than by rigid attachment or frictionless sliding, with failure occurring within the subarachnoid space.</p>
-          <p><b>Engineering relevance:</b> Experimentally calibrated interface properties can improve boundary and contact conditions in computational head models.</p>
-          <ul><li>Test native brain–skull specimens from 19 sheep cadaver heads under tension, compression and shear.</li><li>Use MRI-derived geometry to build specimen-specific finite element models.</li><li>Apply inverse finite element analysis to calibrate Ogden brain tissue parameters, then cohesive interface parameters.</li></ul>
-          <p><b>Evidence signal:</b> Brain shear modulus increased from 0.94 to 1.60 kPa across tested strain rates, while interface properties showed no significant rate or loading-mode dependence: peak normal traction 2.35 ± 0.81 kPa, peak tangential traction 4.14 ± 0.97 kPa and fracture energy 0.35 ± 0.14 N/m.</p>
-          <p><b>Watch item:</b> Parameters derived from sheep cadaver specimens require validation before use in human head models or extrapolation beyond the tested loading rates.</p>
-          <div class="tags"><span>#BrainBiomechanics</span> <span>#CohesiveZoneModel</span> <span>#FiniteElementAnalysis</span> <span>#FractureMechanics</span> <span>#HeadInjuryModelling</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>55</strong></div>
-        <p class="date">2026-11-10</p>
-        <h2>Adapting a Vision Foundation Model for Fracture Characterization in Acoustic Image Logs</h2>
-        <p class="authors">Guangyu Wang, Xiaodong Ma, Xinming Wu</p>
-        <p class="abstract">Natural fractures (NFs) and drilling-induced tensile fractures (DITFs) in acoustic image logs provide insights into rock mass structure and in situ stress, but manual characterization is time-consuming. Deep learning can automate this task, although expert-labeled data are scarce. We investigate whether adapting a pretrained vision foundation model (VFM) outperforms task-specific models trained from scratch with limited annotations. Using 80 annotated acoustic image samples, we fine-tuned DINOv3, pretrained on satellite imagery, and evaluated it on four boreholes excluded from fine-tuning. The adapted model estimated NF and DITF parameters comparably to human interpretation. Relative to U-Net, YOLOv8, and Swin Transformer models trained from scratch, it yielded fewer false positives and negatives and more accurate fracture counts and orientations. However, its performance advantage generally narrowed as training sample size decreased. We also assessed decoder architecture, fine-tuning strategy, and image enhancement. A progressive upsampling decoder with full fine-tuning performed best among the DINOv3 configurations tested, while fracture-focused image enhancement did not consistently improve accuracy. These results demonstrate the potential of VFM adaptation for fracture characterization in acoustic image logs with limited labeled data and suggest a transferable workflow for other annotation-scarce geoscientific imaging tasks.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.13911v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.13911v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Adapting pretrained DINOv3 improved fracture characterization in acoustic image logs over task-specific models trained from scratch with limited annotations.</p>
-          <p><b>Engineering relevance:</b> Automated characterization of natural and drilling-induced tensile fractures can support rock mass assessment and in situ stress interpretation while reducing manual analysis.</p>
-          <ul><li>Fine-tune satellite-imagery-pretrained DINOv3 on annotated acoustic image logs.</li><li>Compare against U-Net, YOLOv8, and Swin Transformer models trained from scratch.</li><li>Test decoder designs, fine-tuning strategies, and fracture-focused image enhancement.</li></ul>
-          <p><b>Evidence signal:</b> Using 80 annotated samples and four boreholes excluded from fine-tuning, adapted DINOv3 estimated fracture parameters comparably to human interpretation and produced fewer detection errors than the scratch-trained baselines.</p>
-          <p><b>Watch item:</b> The performance advantage generally narrowed as training sample size decreased, and fracture-focused image enhancement did not consistently improve accuracy.</p>
-          <div class="tags"><span>#RockMechanics</span> <span>#FractureCharacterization</span> <span>#AcousticImageLogs</span> <span>#VisionFoundationModels</span> <span>#GeoscienceAI</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Constitutive Modeling</span><span>arXiv</span><strong>54</strong></div>
-        <p class="date">2026-11-10</p>
-        <h2>Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium</h2>
-        <p class="authors">Marius Nevland, Kundan Kumar, Inga Berre, Jakub Wiktor Both, Eirik Keilegavlen</p>
-        <p class="abstract">This paper studies the numerical approximation of a mathematical model of coupled flow and viscoelastic deformation in a fractured porous medium including fracture contact mechanics. We consider a mixed-dimensional model, where the fracture is modeled as a co-dimension one object within the porous medium. This model couples Darcy flow in the matrix and fracture, linear viscoelasticity of the matrix and frictional contact mechanics of the fracture surfaces; the contact conditions include normal compliance and a Coulomb friction law. We propose and analyze a fully discrete numerical scheme for this problem, using conformal finite elements in space and the implicit Euler method in time. Existence and uniqueness of the discrete solution is established, and stability and a priori error estimates are derived. A numerical experiment is performed in which numerical error estimates are computed and compared to the theoretical results.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.14341v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.14341v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A fully discrete mixed-dimensional scheme couples porous flow, viscoelastic deformation and frictional fracture contact, with proven discrete existence, uniqueness, stability and a priori error estimates.</p>
-          <p><b>Engineering relevance:</b> The framework supports simulation of fractured porous materials where fluid flow, deformation and fracture sliding interact.</p>
-          <ul><li>Couple matrix and fracture Darcy flow with linear viscoelastic matrix deformation.</li><li>Represent fractures as co-dimension-one interfaces with normal compliance and Coulomb friction.</li><li>Discretize using conforming finite elements in space and implicit Euler time stepping.</li></ul>
-          <p><b>Evidence signal:</b> A numerical experiment computes discretization errors and compares them with the theoretical estimates.</p>
-          <p><b>Watch item:</b> The abstract reports one numerical experiment, leaving broad practical validation of the model unestablished.</p>
-          <div class="tags"><span>#ComputationalMechanics</span> <span>#Poromechanics</span> <span>#FractureContact</span> <span>#FiniteElementMethod</span> <span>#NumericalAnalysis</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>53</strong></div>
-        <p class="date">2026-11-11</p>
-        <h2>A pseudostress-based fully mixed finite element method for the stationary Biot--Poisson--Nernst--Planck system</h2>
-        <p class="authors">Cristian Inzunza</p>
-        <p class="abstract">We develop a pseudostress-based fully mixed finite element method for the stationary Biot-Poisson-Nernst-Planck system describing ionic transport in a charged, saturated, and deformable porous medium. The mechanical equations are reformulated in terms of a non-symmetric pseudostress and the solid displacement, while mixed formulations are retained for the Darcy, electrostatic, and ionic equations. The nonlinear electrostatic and advective couplings are treated in a Banach space setting. The formulation provides direct approximations of the pseudostress, fluxes, and concentration gradients, and permits algebraic reconstruction of the displacement gradient and Cauchy stress. Under block-stability and small-data assumptions, we establish continuous and discrete well-posedness, with poroelastic stability bounds uniform with respect to the first Lame parameter. A conforming Raviart-Thomas discretization, completed by discontinuous polynomials, yields a priori error estimates and convergence rates. For the coupled scheme in two dimensions, we construct a residual-based a posteriori error estimator and establish its reliability under an additional smallness condition on the prescribed data. Local efficiency is proved for polynomial boundary data, with boundary-data oscillation included for general traces. We also describe the estimator modifications for nonhomogeneous displacement and normal-flux data under corresponding stability and solvability hypotheses. Numerical experiments examine convergence of the mixed and reconstructed fields, robustness in the nearly incompressible regime, adaptive refinement, and ionic polarization in a charged porous medium.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.15960v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.15960v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A pseudostress-based fully mixed finite element method couples porous-solid deformation, fluid flow, electrostatics, and ionic transport while retaining stability near incompressibility.</p>
-          <p><b>Engineering relevance:</b> The formulation supports simulation of charged, deformable porous media with direct flux approximations and algebraically reconstructed Cauchy stress.</p>
-          <ul><li>Reformulate mechanics using non-symmetric pseudostress and displacement, with mixed Darcy, electrostatic, and ionic equations.</li><li>Discretize using conforming Raviart–Thomas elements and discontinuous polynomials.</li><li>Use a residual-based error estimator to guide adaptive refinement in two dimensions.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports well-posedness and error estimates under stated assumptions, plus numerical tests of convergence, near-incompressibility robustness, adaptivity, and ionic polarization.</p>
-          <p><b>Watch item:</b> Well-posedness requires block-stability and small-data assumptions; estimator reliability requires an additional smallness condition, and general boundary traces introduce oscillation terms.</p>
-          <div class="tags"><span>#MixedFEM</span> <span>#Poroelasticity</span> <span>#IonTransport</span> <span>#AdaptiveMeshing</span> <span>#ComputationalMechanics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>52</strong></div>
-        <p class="date">2026-11-13</p>
-        <h2>Patient-specific Modeling of the Tricuspid Valve from 3D Transesophageal Echocardiography</h2>
-        <p class="authors">Davide Tondi, Vijay K. Dubey, Collin E. Haese, Colton J. Kostelnik, Mrudang Mathur, Sumedh Seetharam</p>
-        <p class="abstract">Purpose: Image-based patient-specific simulations of the tricuspid valve (TV) could support repair planning. However, clinical images incompletely resolve the chordal anatomy and cannot directly determine tissue properties, which hinders the development of such models. We developed and evaluated a framework that simulates the TV from clinical images and addresses these limitations using measurements on explanted human valves. Methods: We reconstructed ten functionally competent human TVs from 3D transesophageal echocardiography. Following manual segmentation, we automatically built finite element models with synthetic chordae and with leaflet thickness, chordal insertion density, and tissue properties informed by ex vivo human measurements. Next, we used shape matching and force-based chordal-length adjustment to simulate valve closure. We also assessed inter-observer segmentation variability and sensitivity to chordal insertion density, leaflet stiffness, leaflet thickness, and chordal size and material properties. Results: Per-valve median geometric errors were 0.61-1.13 mm relative to the morphed references and 0.55-0.95 mm relative to the image-derived surfaces. Coaptation covered 20-42% of the leaflet area, and median leaflet stresses ranged from 7.6 to 16.9 kPa. Inter-observer variability in segmentation most strongly affected coaptation area. Of the population-based inputs, insertion density and leaflet stiffness most affected geometric error. Thickness primarily affected stress, whereas chordal size and material properties had limited effects. Conclusion: Clinical echocardiography, supplemented with ex vivo human tissue data, enabled patient-specific simulation of ten human TVs. This framework provides a foundation for investigating valve mechanics and developing repair-planning tools, while sensitivity analyses identify priorities for model refinement and uncertainty assessment.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.18522v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.18522v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Patient-specific tricuspid valve finite element models can reproduce valve closure using clinical 3D echocardiography supplemented with ex vivo human tissue measurements.</p>
-          <p><b>Engineering relevance:</b> The framework supports valve mechanics analysis and future repair-planning tools while identifying modeling inputs that require careful uncertainty assessment.</p>
-          <ul><li>Manually segment 3D transesophageal echocardiography and automatically construct finite element models with synthetic chordae.</li><li>Assign leaflet thickness, chordal insertion density, and tissue properties using ex vivo human measurements.</li><li>Simulate closure through shape matching and force-based chordal-length adjustment; assess segmentation and parameter sensitivity.</li></ul>
-          <p><b>Evidence signal:</b> Across ten functionally competent human valves, per-valve median geometric errors were 0.55–0.95 mm against image-derived surfaces, with coaptation covering 20–42% of leaflet area.</p>
-          <p><b>Watch item:</b> Evaluation was limited to functionally competent valves; segmentation variability strongly affected coaptation, and pathological-valve repair planning remains unvalidated.</p>
-          <div class="tags"><span>#ComputationalBiomechanics</span> <span>#FiniteElementAnalysis</span> <span>#TricuspidValve</span> <span>#PatientSpecificModeling</span> <span>#Echocardiography</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>52</strong></div>
-        <p class="date">2026-11-13</p>
-        <h2>Quantum algorithmic framework for finite element analysis of isotropic linear elastic materials via efficient block-encoding</h2>
-        <p class="authors">Yuki Sato, Ruho Kondo</p>
-        <p class="abstract">Quantum computing offers a promising approach to accelerating large-scale numerical analysis, including the finite element method. However, its practical application requires efficient quantum circuit implementations of discretized linear systems. In this study, we develop a quantum algorithmic framework for two-dimensional isotropic linear elastic materials discretized using the finite element method. The key contribution is an explicit construction of a normalized block-encoding of the shifted global stiffness matrix, which is essential for applying a quantum linear system solver based on the quantum singular value transformation with improved dependence on the condition number. By analytically diagonalizing the element stiffness matrix and expressing the global stiffness matrix through a factorized finite element assembly, we construct the required block-encoding using a constant number of ancilla qubits and a gate complexity logarithmic in the number of degrees of freedom. We further analyze the computational complexity of displacement state preparation, strain energy estimation, and low-resolution displacement reconstruction, identifying conditions under which polynomial quantum speedups may be achieved. Numerical experiments on cantilever beam problems verify the accuracy of the proposed quantum circuits and demonstrate agreement with conventional finite element solutions. These results establish an explicit and resource-efficient quantum framework for finite element analysis of isotropic linear elastic materials.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.18100v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.18100v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> An explicit, resource-efficient block-encoding enables quantum linear-system solvers for finite element analysis of 2D isotropic linear elastic materials.</p>
-          <p><b>Engineering relevance:</b> The framework could accelerate displacement and strain-energy calculations under suitable conditions for polynomial quantum speedups.</p>
-          <ul><li>Analytically diagonalize the element stiffness matrix and factorize global finite element assembly.</li><li>Block-encode the normalized, shifted global stiffness matrix using constant ancilla qubits and gate complexity logarithmic in the degrees of freedom.</li><li>Apply a quantum singular value transformation–based linear-system solver and analyze selected output costs.</li></ul>
-          <p><b>Evidence signal:</b> Numerical cantilever-beam experiments verify the proposed quantum circuits and show agreement with conventional finite element solutions.</p>
-          <p><b>Watch item:</b> Efficient block-encoding alone does not guarantee end-to-end speedup; displacement-state preparation and output reconstruction costs must also be considered.</p>
-          <div class="tags"><span>#QuantumComputing</span> <span>#FiniteElementMethod</span> <span>#SolidMechanics</span> <span>#BlockEncoding</span> <span>#LinearElasticity</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>52</strong></div>
-        <p class="date">2026-11-13</p>
-        <h2>Improved Closed-Form Identification of the Air-Gap Permeance in Magnetic Equivalent Circuits of Rotor-Eccentric Electric Motors</h2>
-        <p class="authors">Philip Desenfans</p>
-        <p class="abstract">Fast and accurate simulation of electric motors is essential for their design, fault diagnosis and control. Magnetic equivalent circuits (MECs) offer a computationally efficient alternative to the finite element method (FEM), yet their flux tube representation poorly captures the air-gap field. This creates a challenge, as the air gap stores most of the magnetic energy and governs the electromagnetic torque and, in rotor-eccentric motors, the unbalanced magnetic pull (UMP). Existing air-gap permeance expressions vary widely in their results for torque ripple and UMP and account for tooth-normal eccentricity only. This paper proposes the dual-term air-gap permeance (DTAP) model, a closed-form expression for the air-gap permeance between a stator and a rotor tooth that accounts for tooth-normal and tooth-tangential eccentricity, with and without rotor skew. Its parameters are identified from a FEM model of the air gap and the complete set of tooth heads, which includes the shielding by the neighbouring teeth. For three motors, DTAP reproduces the FEM air-gap permeance with a 2.8-4.8 times smaller error than the state of the art, at a comparable computational cost. Implemented in the MEC of an eccentric induction motor, it reproduces the torque ripple within 1.6% and the peak UMP within 1.3% of the reference, i.e., with 2.8 and 27 times smaller deviations than the state of the art. DTAP thereby enables MEC to predict the torque pulsations and bearing loads of eccentric motors more accurately without sacrificing computational speed.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.17815v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.17815v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The dual-term air-gap permeance (DTAP) model improves magnetic equivalent circuit accuracy by capturing both tooth-normal and tooth-tangential rotor eccentricity at comparable computational cost.</p>
-          <p><b>Engineering relevance:</b> More accurate torque ripple and unbalanced magnetic pull predictions support motor fault diagnosis, control, and bearing-load assessment.</p>
-          <ul><li>Use a closed-form permeance expression between stator and rotor teeth, with or without rotor skew.</li><li>Identify parameters using an air-gap FEM model containing all tooth heads to capture neighboring-tooth shielding.</li><li>Integrate DTAP into a magnetic equivalent circuit for eccentric-motor simulation.</li></ul>
-          <p><b>Evidence signal:</b> Across three motors, DTAP reduced air-gap permeance error by factors of 2.8–4.8; in an eccentric induction motor, torque ripple and peak unbalanced magnetic pull were within 1.6% and 1.3% of the reference, respectively.</p>
-          <p><b>Watch item:</b> Parameter identification requires FEM, and validation across three motors does not establish accuracy for all motor geometries or eccentricity conditions.</p>
-          <div class="tags"><span>#ElectricMotors</span> <span>#MagneticEquivalentCircuits</span> <span>#FEMSurrogates</span> <span>#RotorEccentricity</span> <span>#ComputationalEngineering</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Fracture and Damage</span><span>arXiv</span><strong>51</strong></div>
-        <p class="date">2026-11-12</p>
-        <h2>SiC-BN composites with extreme thermal and environmental stability</h2>
-        <p class="authors">Abhijit Biswas, Eugenio Garcia-Granados, Saman Zare, Mozhdeh Mirakhory, JungHun Park, Shuvodeep De</p>
-        <p class="abstract">Ceramic materials that maintain structural integrity and resist thermal-shock under extreme conditions are critical for many applications. Here we show that spark plasma sintered composites containing equal weight fractions of hexagonal silicon carbide (6H-SiC) and boron nitride (h-BN) exhibit exceptional stability under extreme high-temperature oxidizing conditions and unusually stable temperature-independent thermal conductivity across a broad temperature range. Under high-velocity oxygen-fuel torch exposure in air, it withstands prolonged heating and thermal-cycling at surface temperatures reaching &gt;1500 °C, whereas pure 6H-SiC and h-BN rapidly fractures or erodes. Microstructural evaluation shows the formation of a multi-phase surface silica layer that further protects the material from oxidation. Finite-element analysis heat-flux map shows that intrinsic porosity mitigates thermal stress, while ReaxFF molecular dynamics simulations reveal thermally driven interfacial reconstruction and the formation of a Si-N/C-B-rich bonding network, enhancing the interfacial cohesion at elevated temperatures. This lightweight, easily machinable ceramic composite will be a promising structural material in extreme environment applications.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.17283v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.17283v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A spark plasma sintered composite with equal weight fractions of 6H-SiC and h-BN withstands extreme oxidizing heat while maintaining unusually temperature-independent thermal conductivity.</p>
-          <p><b>Engineering relevance:</b> This lightweight, machinable ceramic is a promising candidate for structural components exposed to severe heating and thermal cycling.</p>
-          <ul><li>Spark plasma sintering of equal-weight 6H-SiC and h-BN.</li><li>High-velocity oxygen-fuel torch testing and surface microstructural evaluation.</li><li>Finite-element heat-flux analysis and ReaxFF molecular dynamics simulations.</li></ul>
-          <p><b>Evidence signal:</b> The composite survived prolonged torch heating and thermal cycling at surface temperatures above 1500 °C, while pure 6H-SiC and h-BN rapidly fractured or eroded.</p>
-          <p><b>Watch item:</b> The abstract does not quantify retained mechanical strength or service lifetime, leaving long-term structural durability to be established.</p>
-          <div class="tags"><span>#CeramicComposites</span> <span>#ExtremeEnvironments</span> <span>#ThermalShock</span> <span>#ComputationalMechanics</span> <span>#MolecularDynamics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>FEM Surrogates</span><span>arXiv</span><strong>51</strong></div>
-        <p class="date">2026-11-12</p>
-        <h2>Partition of Unity Data-driven Finite Element Method for Anisotropic Diffusion in Magnetized Plasmas</h2>
-        <p class="authors">Siu Wun Cheung, Youngsoo Choi</p>
-        <p class="abstract">Numerical simulation of transport processes in magnetized plasmas is characterized by extreme anisotropy, where diffusion along magnetic field lines can be many orders of magnitude larger than in the perpendicular direction. This anisotropy leads to thin, steep boundary layers and numerical pollution that standard finite element methods struggle to resolve without prohibitive mesh refinement. In this paper, we introduce the Partition of Unity Data-Driven Finite Element Method (PU-DDFEM), a data-driven local model reduction approach, for anisotropic diffusion. The method utilizes a bottom-up construction to enable a complete offline-online splitting. We parametrize the local magnetic field and boundary conditions to generate a snapshot space that captures the essential physics of plasma confinement. Dominant modes are extracted via a local spectral problem to identify representative features. These modes are then mapped to the global domain using a partition of unity to form a conforming approximation space. This ensures that the basis functions are fully reusable across different global magnetic configurations, significantly reducing the online computational overhead for large-scale plasma simulations.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.17086v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.17086v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> PU-DDFEM builds reusable local reduced bases and combines them through a partition of unity to approximate strongly anisotropic diffusion in magnetized plasmas.</p>
-          <p><b>Engineering relevance:</b> The approach targets lower online simulation costs for plasma transport, where extreme anisotropy can make standard finite element mesh refinement prohibitively expensive.</p>
-          <ul><li>Generate local snapshots by parametrizing magnetic fields and boundary conditions.</li><li>Extract dominant local modes through a spectral problem.</li><li>Assemble a conforming global approximation using partition-of-unity functions with complete offline–online splitting.</li></ul>
-          <p><b>Evidence signal:</b> The abstract describes the construction and intended computational benefits but reports no quantitative accuracy results, speedups, or benchmark details.</p>
-          <p><b>Watch item:</b> Accuracy for new global magnetic configurations may depend on how well the offline snapshots cover relevant local fields and boundary conditions.</p>
-          <div class="tags"><span>#FiniteElementMethod</span> <span>#ModelOrderReduction</span> <span>#DataDrivenModeling</span> <span>#AnisotropicDiffusion</span> <span>#PlasmaSimulation</span></div>
         </section>
       </article>
     </section>

@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-11-19
+Generated: 2026-11-20
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Element-Wise Femoral Stress Prediction: A Hybrid Graph Neural Network Surrogate for Finite Element Analysis
@@ -11,7 +11,31 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.24274v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-18-arxiv-element_wise_femoral_stress_prediction_a_hybrid_graph_neural_network_surrogate_for_finite_infographic.json
 
-## 2. Frame Based Inelasticity for Strength and Fracture in Anisotropic Media
+## 2. Constitutive Kolmogorov-Arnold Networks in Finite Element Model Updating: Closed-Form Hyperelastic Strain Energies from Heterogeneous Experiments
+
+- Date: 2026-11-19
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2611.26528v1
+- PDF: https://arxiv.org/pdf/2611.26528v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-constitutive_kolmogorov_arnold_networks_in_finite_element_model_updating_closed_form_hyper_infographic.json
+
+## 3. AI agents can redesign engineering parts with more than a thousand CAD parameters and nonlinear simulations
+
+- Date: 2026-11-19
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.26003v1
+- PDF: https://arxiv.org/pdf/2611.26003v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-ai_agents_can_redesign_engineering_parts_with_more_than_a_thousand_cad_parameters_and_nonl_infographic.json
+
+## 4. Emergent Fatigue Dynamics from Foundational Interatomic Potentials
+
+- Date: 2026-11-19
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2611.26533v1
+- PDF: https://arxiv.org/pdf/2611.26533v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-emergent_fatigue_dynamics_from_foundational_interatomic_potentials_infographic.json
+
+## 5. Frame Based Inelasticity for Strength and Fracture in Anisotropic Media
 
 - Date: 2026-11-17
 - Category: Fracture and Damage
@@ -19,7 +43,23 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.22020v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-frame_based_inelasticity_for_strength_and_fracture_in_anisotropic_media_infographic.json
 
-## 3. A locking-free enriched linearized neural network for linear elasticity
+## 6. Unusual increase in electrical and thermal conductivity of severely deformed CrMnFeCoNi high-entropy alloy: Roles of disordering and nanostructuring in electron and phonon transport
+
+- Date: 2026-11-19
+- Category: AI Solid Mechanics
+- arXiv: https://arxiv.org/abs/2611.26213v1
+- PDF: https://arxiv.org/pdf/2611.26213v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-unusual_increase_in_electrical_and_thermal_conductivity_of_severely_deformed_crmnfeconi_hi_infographic.json
+
+## 7. Ising-Encoded Computational Homogenization: Stress as a Quantum Observable
+
+- Date: 2026-11-19
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.25383v1
+- PDF: https://arxiv.org/pdf/2611.25383v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-ising_encoded_computational_homogenization_stress_as_a_quantum_observable_infographic.json
+
+## 8. A locking-free enriched linearized neural network for linear elasticity
 
 - Date: 2026-11-17
 - Category: Constitutive Modeling
@@ -27,15 +67,15 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.22398v2
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-a_locking_free_enriched_linearized_neural_network_for_linear_elasticity_infographic.json
 
-## 4. Axion: A differentiable, GPU-native finite element framework,demonstrated on phase-field fracture
+## 9. Helices at Twisted Ferroelectric Interfaces
 
-- Date: 2026-11-18
-- Category: Fracture and Damage
-- arXiv: https://arxiv.org/abs/2611.23682v1
-- PDF: https://arxiv.org/pdf/2611.23682v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-18-arxiv-axion_a_differentiable_gpu_native_finite_element_framework_demonstrated_on_phase_field_fra_infographic.json
+- Date: 2026-11-19
+- Category: Composites and Metamaterials
+- arXiv: https://arxiv.org/abs/2611.25828v1
+- PDF: https://arxiv.org/pdf/2611.25828v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-helices_at_twisted_ferroelectric_interfaces_infographic.json
 
-## 5. Variationally correct physics-informed operator learning for nonlinear partial differential equations
+## 10. Variationally correct physics-informed operator learning for nonlinear partial differential equations
 
 - Date: 2026-11-16
 - Category: FEM Surrogates
@@ -43,7 +83,63 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.21469v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-16-arxiv-variationally_correct_physics_informed_operator_learning_for_nonlinear_partial_differentia_infographic.json
 
-## 6. Nonlocal regularization of sharp-crack energetics: a variational bridge from Griffith geometry to emergent constitutive degradation
+## 11. A GPU Interior-Point Solver with Macro-Element Condensation for Equilibrium-Based Plasticity
+
+- Date: 2026-11-19
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.25386v1
+- PDF: https://arxiv.org/pdf/2611.25386v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-a_gpu_interior_point_solver_with_macro_element_condensation_for_equilibrium_based_plastici_infographic.json
+
+## 12. Controlling the Humanoid Robot H1-2 With a Simulated Biologically Plausible Network
+
+- Date: 2026-11-19
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.26074v1
+- PDF: https://arxiv.org/pdf/2611.26074v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-controlling_the_humanoid_robot_h1_2_with_a_simulated_biologically_plausible_network_infographic.json
+
+## 13. High-Order Area-Preserving Runge--Kutta Methods for Surface Diffusion Flow of Curves
+
+- Date: 2026-11-19
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2611.26014v1
+- PDF: https://arxiv.org/pdf/2611.26014v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-high_order_area_preserving_runge_kutta_methods_for_surface_diffusion_flow_of_curves_infographic.json
+
+## 14. From AI Surrogate to Engineering Tool: Toward Production Use of Fiber-Orientation Prediction in Crash CAE
+
+- Date: 2026-11-19
+- Category: Constitutive Modeling
+- arXiv: https://arxiv.org/abs/2611.25991v1
+- PDF: https://arxiv.org/pdf/2611.25991v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-from_ai_surrogate_to_engineering_tool_toward_production_use_of_fiber_orientation_predictio_infographic.json
+
+## 15. Alloying effects on the interface cohesion of grain boundaries in the Ni--Fe--Cr system
+
+- Date: 2026-11-19
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2611.25944v1
+- PDF: https://arxiv.org/pdf/2611.25944v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-alloying_effects_on_the_interface_cohesion_of_grain_boundaries_in_the_ni_fe_cr_system_infographic.json
+
+## 16. Axion: A differentiable, GPU-native finite element framework,demonstrated on phase-field fracture
+
+- Date: 2026-11-18
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2611.23682v1
+- PDF: https://arxiv.org/pdf/2611.23682v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-18-arxiv-axion_a_differentiable_gpu_native_finite_element_framework_demonstrated_on_phase_field_fra_infographic.json
+
+## 17. A time-domain adversarial example demonstrating the failure of $H^1$ elements in $a$-$φ$ electromagnetic simulation
+
+- Date: 2026-11-19
+- Category: Fracture and Damage
+- arXiv: https://arxiv.org/abs/2611.26546v1
+- PDF: https://arxiv.org/pdf/2611.26546v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-a_time_domain_adversarial_example_demonstrating_the_failure_of_h_1_elements_in_a_electroma_infographic.json
+
+## 18. Nonlocal regularization of sharp-crack energetics: a variational bridge from Griffith geometry to emergent constitutive degradation
 
 - Date: 2026-11-17
 - Category: Fracture and Damage
@@ -51,15 +147,7 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.22284v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-nonlocal_regularization_of_sharp_crack_energetics_a_variational_bridge_from_griffith_geome_infographic.json
 
-## 7. Fuse-PINN: Combining Finite Element Methods and Physics-Informed Neural Networks to enable massively parallel simulations of non-linear PDEs
-
-- Date: 2026-11-13
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.18409v1
-- PDF: https://arxiv.org/pdf/2611.18409v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-13-arxiv-fuse_pinn_combining_finite_element_methods_and_physics_informed_neural_networks_to_enable_infographic.json
-
-## 8. Mesoscale Neural Operators: Learning Nonlinear Constitutive Laws from Molecular Dynamics for Scalable Fracture Predictions
+## 19. Mesoscale Neural Operators: Learning Nonlinear Constitutive Laws from Molecular Dynamics for Scalable Fracture Predictions
 
 - Date: 2026-11-14
 - Category: FEM Surrogates
@@ -67,98 +155,10 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.19658v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-14-arxiv-mesoscale_neural_operators_learning_nonlinear_constitutive_laws_from_molecular_dynamics_fo_infographic.json
 
-## 9. Locking-free numerical methods for poroelasticity optimal control problems with minimal regularities
+## 20. Locking-free numerical methods for poroelasticity optimal control problems with minimal regularities
 
 - Date: 2026-11-17
 - Category: Constitutive Modeling
 - arXiv: https://arxiv.org/abs/2611.22585v1
 - PDF: https://arxiv.org/pdf/2611.22585v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-locking_free_numerical_methods_for_poroelasticity_optimal_control_problems_with_minimal_re_infographic.json
-
-## 10. From dynamic strain aging to Alessandro--Beatrice--Bertotti--Montorsi dynamics of propagating Portevin--Le Chatelier bands
-
-- Date: 2026-11-18
-- Category: AI Solid Mechanics
-- arXiv: https://arxiv.org/abs/2611.24141v1
-- PDF: https://arxiv.org/pdf/2611.24141v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-18-arxiv-from_dynamic_strain_aging_to_alessandro_beatrice_bertotti_montorsi_dynamics_of_propagating_infographic.json
-
-## 11. Stability Does Not Mirror Plasticity: A Module-Level View of Declarative and Procedural Learning in Transformers
-
-- Date: 2026-11-17
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2611.23427v1
-- PDF: https://arxiv.org/pdf/2611.23427v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-stability_does_not_mirror_plasticity_a_module_level_view_of_declarative_and_procedural_lea_infographic.json
-
-## 12. Scientific Coding with Large Language Models: Evidence from Finite Element Analysis
-
-- Date: 2026-11-16
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.21176v1
-- PDF: https://arxiv.org/pdf/2611.21176v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-16-arxiv-scientific_coding_with_large_language_models_evidence_from_finite_element_analysis_infographic.json
-
-## 13. Differentiable High-Order Mesh $r$-Adaptivity
-
-- Date: 2026-11-17
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.22099v1
-- PDF: https://arxiv.org/pdf/2611.22099v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-differentiable_high_order_mesh_r_adaptivity_infographic.json
-
-## 14. Modelling the human-exoskeleton interaction interface - Benchmarking MuJoCo's deformable model
-
-- Date: 2026-11-18
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.24008v1
-- PDF: https://arxiv.org/pdf/2611.24008v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-18-arxiv-modelling_the_human_exoskeleton_interaction_interface_benchmarking_mujoco_s_deformable_mod_infographic.json
-
-## 15. A Staggered Discontinuous Galerkin Neural Network Method with a Computable Error Decomposition
-
-- Date: 2026-11-16
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.20556v1
-- PDF: https://arxiv.org/pdf/2611.20556v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-16-arxiv-a_staggered_discontinuous_galerkin_neural_network_method_with_a_computable_error_decomposi_infographic.json
-
-## 16. A mesoscale damage model for void nucleation and growth in shock loaded microstructure informed by computer vision
-
-- Date: 2026-11-14
-- Category: Constitutive Modeling
-- arXiv: https://arxiv.org/abs/2611.19159v1
-- PDF: https://arxiv.org/pdf/2611.19159v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-14-arxiv-a_mesoscale_damage_model_for_void_nucleation_and_growth_in_shock_loaded_microstructure_inf_infographic.json
-
-## 17. PANO: Parallel Latent Space Neural Operator for Solving PDEs
-
-- Date: 2026-11-17
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.22782v1
-- PDF: https://arxiv.org/pdf/2611.22782v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-pano_parallel_latent_space_neural_operator_for_solving_pdes_infographic.json
-
-## 18. Pharmaco-mechanical computational simulation of atherosclerotic arteries: effects of calcium channel blockers on local stress distributions
-
-- Date: 2026-11-16
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.21320v1
-- PDF: https://arxiv.org/pdf/2611.21320v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-16-arxiv-pharmaco_mechanical_computational_simulation_of_atherosclerotic_arteries_effects_of_calciu_infographic.json
-
-## 19. Semi-Implicit and Convex Splitting Schemes for the Surface Cahn--Hilliard Equation on Curved Closed Surfaces
-
-- Date: 2026-11-18
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.23915v1
-- PDF: https://arxiv.org/pdf/2611.23915v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-18-arxiv-semi_implicit_and_convex_splitting_schemes_for_the_surface_cahn_hilliard_equation_on_curve_infographic.json
-
-## 20. On global error estimates of a local discontinuous Galerkin method of the Boussinesq system of equations
-
-- Date: 2026-11-18
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.23901v1
-- PDF: https://arxiv.org/pdf/2611.23901v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-18-arxiv-on_global_error_estimates_of_a_local_discontinuous_galerkin_method_of_the_boussinesq_syste_infographic.json

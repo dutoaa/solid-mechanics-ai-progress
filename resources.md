@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-11-21
+Generated: 2026-11-22
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. Element-Wise Femoral Stress Prediction: A Hybrid Graph Neural Network Surrogate for Finite Element Analysis
@@ -147,18 +147,18 @@ Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.22284v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-nonlocal_regularization_of_sharp_crack_energetics_a_variational_bridge_from_griffith_geome_infographic.json
 
-## 19. Mesoscale Neural Operators: Learning Nonlinear Constitutive Laws from Molecular Dynamics for Scalable Fracture Predictions
-
-- Date: 2026-11-14
-- Category: FEM Surrogates
-- arXiv: https://arxiv.org/abs/2611.19658v1
-- PDF: https://arxiv.org/pdf/2611.19658v1
-- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-14-arxiv-mesoscale_neural_operators_learning_nonlinear_constitutive_laws_from_molecular_dynamics_fo_infographic.json
-
-## 20. Locking-free numerical methods for poroelasticity optimal control problems with minimal regularities
+## 19. Locking-free numerical methods for poroelasticity optimal control problems with minimal regularities
 
 - Date: 2026-11-17
 - Category: Constitutive Modeling
 - arXiv: https://arxiv.org/abs/2611.22585v1
 - PDF: https://arxiv.org/pdf/2611.22585v1
 - Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-17-arxiv-locking_free_numerical_methods_for_poroelasticity_optimal_control_problems_with_minimal_re_infographic.json
+
+## 20. A Heterogeneous CPU-GPU Framework for Finite Element Micromagnetic Simulations on Tetrahedral Meshes
+
+- Date: 2026-11-19
+- Category: FEM Surrogates
+- arXiv: https://arxiv.org/abs/2611.25565v1
+- PDF: https://arxiv.org/pdf/2611.25565v1
+- Infographic JSON: https://dutoaa.github.io/solid-mechanics-ai-progress/infographics/2026-11-19-arxiv-a_heterogeneous_cpu_gpu_framework_for_finite_element_micromagnetic_simulations_on_tetrahed_infographic.json

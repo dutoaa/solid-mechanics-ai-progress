@@ -1,13 +1,13 @@
 {
-  "key_insight": "Axion makes differentiable phase-field fracture simulation GPU-native by compiling the full finite element solution workflow into a single JAX program.",
-  "engineering_relevance": "It accelerates computationally demanding fracture analyses while enabling solution sensitivities to material and model parameters.",
+  "key_insight": "Axion makes finite element fracture simulations differentiable and GPU-native by compiling the full solution workflow into one on-device JAX program.",
+  "engineering_relevance": "Faster fracture analysis and solution sensitivities could support parameter calibration and design studies for complex structures and materials.",
   "method": [
-    "JIT-compile element kernels, nonlinear solvers, damage constraints, and load stepping for GPU execution without host intervention.",
-    "Use forward-mode automatic differentiation for consistent tangents and differentiate the solver program for parameter sensitivities.",
-    "Apply global operators matrix-free, with fixed-array octree refinement and multi-GPU domain decomposition."
+    "JAX/XLA compiles element kernels, nonlinear solves, damage updates, and load stepping for GPU execution.",
+    "Automatic differentiation provides consistent element tangents and solution sensitivities.",
+    "Matrix-free operators, fixed-array octree refinement, and domain decomposition support large-scale and multi-GPU simulations."
   ],
-  "evidence_signal": "The abstract reports 37.9× speedup over single-CPU FEniCSx at identical 2D discretization, 92% strong and 96% weak scaling efficiency on four GPUs, and a 96M-DOF dam demonstration on one GPU.",
-  "watch_item": "The reported speedup compares different hardware platforms, so it should not be interpreted as a hardware-independent algorithmic advantage.",
+  "evidence_signal": "On the 2D benchmark at identical discretization, one GPU achieved 37.9× speedup over FEniCSx on one CPU; four-GPU strong and weak scaling efficiencies were 92% and 96%, with a 96M-DOF dam demonstration on one GPU.",
+  "watch_item": "The reported speedup compares different hardware, and the abstract does not quantify sensitivity accuracy or differentiation cost through bound-constrained fracture solves.",
   "hashtags": [
     "#ComputationalMechanics",
     "#PhaseFieldFracture",
@@ -21,6 +21,6 @@
   "paper_title": "Axion: A differentiable, GPU-native finite element framework,demonstrated on phase-field fracture",
   "paper_date": "2026-11-18",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-11-21T16:30:47",
+  "generated_at": "2026-11-22T16:48:30",
   "generator": "openai"
 }

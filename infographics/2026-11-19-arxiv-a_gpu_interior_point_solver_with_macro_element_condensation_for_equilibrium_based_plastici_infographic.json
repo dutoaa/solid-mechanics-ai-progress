@@ -1,19 +1,19 @@
 {
-  "key_insight": "Four-tetrahedron macro-element condensation shrinks interior-point Newton systems, enabling faster and more memory-efficient equilibrium-based plasticity solves on CPUs and GPUs.",
-  "engineering_relevance": "The approach makes larger 3D elastoplasticity and limit-analysis computations feasible while retaining statically admissible stress fields.",
+  "key_insight": "Four-tetrahedron macro-element condensation shrinks equilibrium-based plasticity Newton systems by an estimated 4× in dimension and structural nonzeros relative to stress-only elimination.",
+  "engineering_relevance": "Smaller linear systems reduce memory demand and accelerate large-scale 3D elastoplasticity and limit-analysis simulations while retaining statically admissible stress fields.",
   "method": [
-    "Eliminate stress directions and macro-internal traction-continuity multipliers to obtain reduced systems compatible with positive-definite factorizations.",
-    "Establish nonsingularity conditions, using trace-bound augmentation for von Mises limit analysis.",
-    "Use CUDA Fortran batched macro-local operations and cuDSS sparse solves, with a memory-saving PCG option for elastoplasticity."
+    "Eliminate stress directions and macro-internal traction-continuity multipliers to obtain reduced systems supporting positive-definite factorization.",
+    "Establish global and local nonsingularity conditions, including trace-bound augmentation for von Mises limit analysis.",
+    "Use CUDA Fortran batched routines and cuDSS, with an optional preconditioned conjugate-gradient solver for elastoplasticity."
   ],
   "evidence_signal": "Reported tests show up to 2× CPU speedup and 66.5% lower peak linear-solver memory versus stress-only elimination, plus GPU speedups up to 13.5× over the CPU counterpart and 87.5× over MOSEK.",
-  "watch_item": "The reported gains are benchmark-dependent, and the lower-memory GPU PCG option increases solution time relative to the direct GPU solver.",
+  "watch_item": "The lower-memory iterative GPU option increases solution time, and the reported peak speedups should not be assumed across all problem sizes.",
   "hashtags": [
     "#ComputationalMechanics",
     "#Plasticity",
     "#GPUComputing",
     "#InteriorPointMethods",
-    "#MacroElementCondensation"
+    "#FiniteElementAnalysis"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "A GPU Interior-Point Solver with Macro-Element Condensation for Equilibrium-Based Plasticity",
   "paper_date": "2026-11-19",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-11-21T16:30:37",
+  "generated_at": "2026-11-22T16:48:18",
   "generator": "openai"
 }

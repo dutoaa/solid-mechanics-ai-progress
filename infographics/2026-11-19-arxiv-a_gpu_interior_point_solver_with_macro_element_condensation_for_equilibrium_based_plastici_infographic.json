@@ -1,19 +1,19 @@
 {
-  "key_insight": "Four-tetrahedron macro-element condensation shrinks equilibrium-based plasticity Newton systems by an estimated 4× in dimension and structural nonzeros relative to stress-only elimination.",
-  "engineering_relevance": "Smaller linear systems reduce memory demand and accelerate large-scale 3D elastoplasticity and limit-analysis simulations while retaining statically admissible stress fields.",
+  "key_insight": "Four-tetrahedron macro-element condensation shrinks interior-point Newton systems, enabling faster and more memory-efficient 3D equilibrium-based plasticity solves.",
+  "engineering_relevance": "The approach makes larger statically admissible elastoplasticity and limit-analysis computations feasible on CPUs and GPUs.",
   "method": [
-    "Eliminate stress directions and macro-internal traction-continuity multipliers to obtain reduced systems supporting positive-definite factorization.",
-    "Establish global and local nonsingularity conditions, including trace-bound augmentation for von Mises limit analysis.",
-    "Use CUDA Fortran batched routines and cuDSS, with an optional preconditioned conjugate-gradient solver for elastoplasticity."
+    "Eliminate stress directions and macro-internal traction-continuity multipliers to form reduced systems suitable for positive-definite factorization.",
+    "Establish global and macro-local nonsingularity conditions, using trace-bound augmentation for von Mises limit analysis.",
+    "Implement batched macro-local operations in CUDA Fortran and reduced sparse solves with cuDSS."
   ],
-  "evidence_signal": "Reported tests show up to 2× CPU speedup and 66.5% lower peak linear-solver memory versus stress-only elimination, plus GPU speedups up to 13.5× over the CPU counterpart and 87.5× over MOSEK.",
-  "watch_item": "The lower-memory iterative GPU option increases solution time, and the reported peak speedups should not be assumed across all problem sizes.",
+  "evidence_signal": "Reported tests show up to approximately 2× CPU speedup and 66.5% lower peak linear-solver memory versus stress-only elimination; the GPU implementation reaches up to 13.5× speedup over its CPU counterpart and 87.5× over MOSEK.",
+  "watch_item": "For elastoplasticity, the lower-memory GPU conjugate-gradient option increases solution time relative to the direct GPU solver.",
   "hashtags": [
     "#ComputationalMechanics",
     "#Plasticity",
     "#GPUComputing",
     "#InteriorPointMethods",
-    "#FiniteElementAnalysis"
+    "#FiniteElements"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "A GPU Interior-Point Solver with Macro-Element Condensation for Equilibrium-Based Plasticity",
   "paper_date": "2026-11-19",
   "paper_category": "Constitutive Modeling",
-  "generated_at": "2026-11-22T16:48:18",
+  "generated_at": "2026-11-23T20:44:57",
   "generator": "openai"
 }

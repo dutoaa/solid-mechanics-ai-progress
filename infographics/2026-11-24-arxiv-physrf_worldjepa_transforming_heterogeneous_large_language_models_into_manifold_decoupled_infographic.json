@@ -1,13 +1,13 @@
 {
-  "key_insight": "Decoupling radar-state prediction from language alignment improves radar-to-text retrieval without degrading continuous physical-state estimates.",
-  "engineering_relevance": "The approach supports privacy-preserving motion and scene monitoring under darkness, clutter, sensor blackouts, and through-wall conditions, rather than directly modeling material fracture.",
+  "key_insight": "Separating radar-state prediction from language alignment improves radar-to-text retrieval without degrading continuous physical-state estimates.",
+  "engineering_relevance": "The approach supports privacy-preserving motion and scene monitoring during sensor blackouts and through visual obstructions, though fracture or material-damage assessment is not demonstrated.",
   "method": [
-    "Combine a clock anchor and dual-scale RF encoder with an LLM adapted using approximately 3% LoRA parameters.",
-    "Train denoising and rollout with EMA-JEPA and Batch-VICReg to predict physical states 3 seconds ahead.",
-    "Freeze the physical backbone and train a separate language-alignment head with stop-gradient and false-negative masking."
+    "Encode radar streams with a dual-scale RF encoder and clock anchor feeding an LLM with approximately 3% LoRA adaptation.",
+    "Learn continuous states using two-step EMA-JEPA denoising and rollout, plus Batch-VICReg, to predict 3 seconds ahead.",
+    "Freeze the physical backbone and train a stop-gradient language-alignment head with false-negative masking."
   ],
-  "evidence_signal": "On 4,541 radar windows across three domains and against 10 baselines, the decoupled head raised retrieval R@10 from 5.95% to 15.01% while preserving physical readouts, including 3.37° blackout torso-tilt error at +3 seconds.",
-  "watch_item": "Retrieval R@10 remains 15.01%, and the reported radar benchmarks do not establish performance for solid-mechanics damage or fracture monitoring.",
+  "evidence_signal": "On 4,541 radar windows across three domains against 10 baselines, the decoupled head increased radar-to-text R@10 from 5.95% to 15.01% while preserving physical readouts, including 3.37° torso-tilt error at a 3-second blackout horizon.",
+  "watch_item": "Blackout-prediction gains vary by LLM family and representation, so transfer to new sensors and engineering monitoring tasks needs validation.",
   "hashtags": [
     "#RadarSensing",
     "#WorldModels",
@@ -21,6 +21,6 @@
   "paper_title": "PhysRF-WorldJEPA: Transforming Heterogeneous Large Language Models into Manifold-Decoupled Millimeter-Wave Radar World Models",
   "paper_date": "2026-11-24",
   "paper_category": "Fracture and Damage",
-  "generated_at": "2026-11-26T18:44:15",
+  "generated_at": "2026-11-27T18:35:49",
   "generator": "openai"
 }

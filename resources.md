@@ -1,6 +1,6 @@
 # AI Solid Mechanics Progress Public Resources
 
-Generated: 2026-11-26
+Generated: 2026-11-27
 Public site: https://dutoaa.github.io/solid-mechanics-ai-progress/
 
 ## 1. hp-Adaptive Finite Element Modeling of Static Cracks in Density-Dependent Media
